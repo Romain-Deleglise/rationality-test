@@ -1,0 +1,494 @@
+{
+  "version": "courte",
+  "totalPoints": 55,
+  "estimatedTime": 50,
+  "modules": [
+    {
+      "id": "prob-stats",
+      "name": "Raisonnement Probabiliste (10 items)",
+      "points": 10,
+      "time": 8,
+      "questions": [
+        {
+          "id": "crt-1",
+          "type": "number",
+          "text": "Une batte et une balle coûtent 1,10€ au total. La batte coûte 1€ de plus que la balle. Combien coûte la balle ?",
+          "unit": "centimes",
+          "correct": 5,
+          "points": 1,
+          "explanation": "La bonne réponse est 5 centimes. Si la balle coûte 5c, la batte coûte 1,05€ (1€ de plus), total = 1,10€. L'erreur intuitive est de répondre 10 centimes."
+        },
+        {
+          "id": "crt-2",
+          "type": "number",
+          "text": "Si 5 machines prennent 5 minutes pour faire 5 widgets, combien de temps prennent 100 machines pour faire 100 widgets ?",
+          "unit": "minutes",
+          "correct": 5,
+          "points": 1,
+          "explanation": "La réponse est 5 minutes. Chaque machine prend 5 minutes pour faire 1 widget. Donc 100 machines prennent aussi 5 minutes pour faire 100 widgets (en parallèle)."
+        },
+        {
+          "id": "gambler-1",
+          "type": "multiple-choice",
+          "text": "Imaginez que nous lançons une pièce équilibrée (50-50 pile ou face) et qu'elle vient de tomber sur pile cinq fois d'affilée. Pour le sixième lancer :",
+          "options": [
+            "Il est plus probable que face sorte plutôt que pile",
+            "Il est plus probable que pile sorte plutôt que face",
+            "Pile et face sont également probables au sixième lancer"
+          ],
+          "correct": 2,
+          "points": 1,
+          "explanation": "Les lancers sont indépendants. La pièce n'a pas de mémoire. P(pile) = P(face) = 50% à chaque lancer."
+        },
+        {
+          "id": "base-rate-1",
+          "type": "number",
+          "text": "Un test médical détecte une maladie rare (prévalence 0,5%). Le test a 95% de sensibilité et 5% de faux positifs. Votre test est positif. Quelle est la probabilité que vous ayez vraiment la maladie ?",
+          "unit": "%",
+          "correct": 9,
+          "tolerance": 5,
+          "points": 1,
+          "explanation": "Environ 9%. Sur 1000 personnes : 5 sont malades (4,75 détectées), 995 sont saines (49,75 faux positifs). Probabilité = 4,75 / (4,75 + 49,75) ≈ 8,7%."
+        },
+        {
+          "id": "linda-problem",
+          "type": "ranking",
+          "text": "Linda a 31 ans, célibataire, franche et brillante. Elle a étudié la philosophie. Étudiante, elle était préoccupée par la discrimination et la justice sociale. Classez par probabilité (1 = plus probable) :",
+          "options": [
+            "Linda est enseignante",
+            "Linda est caissière de banque",
+            "Linda est active dans le mouvement féministe",
+            "Linda est caissière de banque ET active dans le mouvement féministe"
+          ],
+          "scoring": {
+            "type": "conjunction-check",
+            "rule": "option-1 > option-3"
+          },
+          "points": 1,
+          "explanation": "L'option 'caissière' doit être classée plus probable que 'caissière ET féministe' car P(A) > P(A ∩ B) toujours."
+        },
+        {
+          "id": "sample-size",
+          "type": "multiple-choice",
+          "text": "Une ville a 2 hôpitaux : le grand (45 bébés/jour) et le petit (15 bébés/jour). Environ 50% des bébés sont des garçons, mais le % varie d'un jour à l'autre. Sur un an, chaque hôpital a enregistré les jours où plus de 60% des bébés étaient des garçons. Quel hôpital a enregistré le plus de tels jours ?",
+          "options": [
+            "Le plus grand hôpital",
+            "Le plus petit hôpital",
+            "À peu près pareil"
+          ],
+          "correct": 1,
+          "points": 1,
+          "explanation": "Le petit hôpital. Les petits échantillons ont plus de variance. Il est plus facile d'avoir 60%+ avec 15 bébés qu'avec 45."
+        },
+        {
+          "id": "regression-mean",
+          "type": "multiple-choice",
+          "text": "En baseball des jeunes à Toulouse, après 3 semaines, plusieurs batteurs ont des moyennes >0,500. Mais aucun n'a jamais fini la saison >0,500. Pourquoi ?",
+          "options": [
+            "Les lanceurs se concentrent plus sur les meilleurs batteurs",
+            "Les lanceurs s'améliorent au cours de la saison",
+            "Une moyenne élevée en début de saison peut être due à la chance. Une saison plus longue donne un test plus réaliste",
+            "Un batteur performant subit du stress qui affecte son jeu",
+            "Les entraîneurs développent des stratégies contre les meilleurs"
+          ],
+          "correct": 2,
+          "points": 1,
+          "explanation": "Régression vers la moyenne. Les performances extrêmes en début de saison incluent de la chance, qui disparaît sur le long terme."
+        },
+        {
+          "id": "prob-calc-1",
+          "type": "number",
+          "text": "Pour une personne de plus de 60 ans, les chances d'avoir un zona à un moment de leur vie sont de 0,06. Sur 30 000 personnes de plus de 60 ans, combien environ peut-on s'attendre à ce qu'elles aient un zona ?",
+          "unit": "personnes",
+          "correct": 1800,
+          "tolerance": 100,
+          "points": 1,
+          "explanation": "30 000 × 0,06 = 1 800 personnes."
+        },
+        {
+          "id": "prob-calc-2",
+          "type": "number",
+          "text": "Une personne non vaccinée a 10% de chances d'attraper la grippe. Le vaccin est efficace à 80%. Quelles sont les chances qu'une personne vaccinée attrape quand même la grippe ?",
+          "unit": "%",
+          "correct": 2,
+          "points": 1,
+          "explanation": "10% × (100% - 80%) = 10% × 20% = 2%."
+        },
+        {
+          "id": "calibration-1",
+          "type": "confidence-interval",
+          "text": "Donnez un intervalle de confiance à 90% : Quelle est la population du Canada ?",
+          "unit": "millions d'habitants",
+          "correct": 38,
+          "points": 1,
+          "explanation": "La population du Canada est d'environ 38 millions. Votre intervalle devrait contenir cette valeur pour être bien calibré."
+        }
+      ]
+    },
+    {
+      "id": "sci-reasoning",
+      "name": "Raisonnement Scientifique (12 items)",
+      "points": 12,
+      "time": 15,
+      "questions": [
+        {
+          "id": "wason-1",
+          "type": "multiple-choice",
+          "text": "Règle à tester : 'Si Lyon est sur un côté du ticket, alors train est sur l'autre côté.' Vous avez 4 tickets : [Lyon], [Paris], [Voiture], [Train]. Lesquels retourner pour vérifier la règle ?",
+          "options": [
+            "Lyon seulement",
+            "Lyon et Train",
+            "Lyon et Voiture",
+            "Tous",
+            "Lyon, Paris et Voiture"
+          ],
+          "correct": 2,
+          "points": 1,
+          "explanation": "Lyon (vérifier que l'autre côté = train) et Voiture (vérifier que l'autre côté ≠ Lyon). Train et Paris ne peuvent pas violer la règle."
+        },
+        {
+          "id": "wason-2",
+          "type": "multiple-choice",
+          "text": "Vous vérifiez la loi : 'Si une personne boit de l'alcool, elle doit avoir 18 ans ou plus.' 4 personnes : [Boit de la bière], [Boit du jus], [A 25 ans], [A 16 ans]. Qui vérifier ?",
+          "options": [
+            "Boit de la bière seulement",
+            "Boit de la bière et A 16 ans",
+            "Boit de la bière et A 25 ans",
+            "Tous",
+            "Boit de la bière, Boit du jus et A 16 ans"
+          ],
+          "correct": 1,
+          "points": 1,
+          "explanation": "Vérifier [Bière] (âge ≥18?) et [16 ans] (boit de l'alcool?). Les autres ne peuvent pas violer la règle."
+        },
+        {
+          "id": "correlation-1",
+          "type": "multiple-choice",
+          "text": "Des chercheurs ont découvert que les adolescents qui fument ont tendance à avoir des scores de QI plus faibles. Cela signifie-t-il qu'empêcher les ados de fumer augmenterait leur QI ?",
+          "options": [
+            "Oui",
+            "Non",
+            "On ne peut pas le dire"
+          ],
+          "correct": 2,
+          "points": 1,
+          "explanation": "Corrélation ≠ causalité. Il peut y avoir une variable confondante (stress, environnement socio-économique, etc.)."
+        },
+        {
+          "id": "control-group-1",
+          "type": "multiple-choice",
+          "text": "Une directrice d'école impopulaire est défendue car l'absentéisme a baissé de 12% depuis sa nomination. Quelle preuve réfuterait le mieux cette affirmation ?",
+          "options": [
+            "40% plus d'absents sont signalés dans les enquêtes que dans les dossiers officiels",
+            "Le bon sens dit qu'un directeur a peu d'impact sur l'absentéisme",
+            "Les taux d'absentéisme des deux villes voisines ont baissé de 18% durant la même période",
+            "Le surintendant avait des contacts commerciaux douteux"
+          ],
+          "correct": 2,
+          "points": 1,
+          "explanation": "La comparaison avec un groupe contrôle (villes similaires) montre que la baisse est générale, pas due à la directrice."
+        },
+        {
+          "id": "likelihood-1",
+          "type": "multiple-choice",
+          "text": "Talia a un épaississement des doigts. Quelles infos sont nécessaires pour estimer P(Syndrome de Fustis Digitus | épaississement) ?",
+          "options": [
+            "% de personnes SANS syndrome qui ont un épaississement",
+            "% de personnes AVEC syndrome",
+            "% de personnes SANS syndrome",
+            "% de personnes AVEC syndrome qui ont un épaississement",
+            "a et d",
+            "b et c"
+          ],
+          "correct": 4,
+          "points": 1,
+          "explanation": "Il faut P(symptôme|maladie) et P(symptôme|pas maladie) pour calculer P(maladie|symptôme) via Bayes."
+        }
+      ]
+    },
+    {
+      "id": "crt",
+      "name": "Réflexion vs Intuition (7 items)",
+      "points": 7,
+      "time": 5,
+      "questions": [
+        {
+          "id": "crt-3",
+          "type": "number",
+          "text": "Dans un lac, il y a un nénuphar. Chaque jour, sa taille double. Il faut 48 jours pour couvrir tout le lac. En combien de jours couvre-t-il la moitié du lac ?",
+          "unit": "jours",
+          "correct": 47,
+          "points": 1,
+          "explanation": "47 jours. Si le lac est couvert au jour 48 et que la taille double chaque jour, alors au jour 47 il est à moitié."
+        },
+        {
+          "id": "crt-4",
+          "type": "number",
+          "text": "Si cela prend une minute pour faire chaque coupe, combien de temps faudra-t-il pour couper une planche de 25 pieds en 25 morceaux égaux ?",
+          "unit": "minutes",
+          "correct": 24,
+          "points": 1,
+          "explanation": "24 minutes. Il faut 24 coupes pour obtenir 25 morceaux."
+        },
+        {
+          "id": "crt-5",
+          "type": "number",
+          "text": "Le nombre de bactéries dans un conteneur double chaque heure. S'il faut 32 heures pour remplir le conteneur, combien d'heures faut-il pour remplir la moitié ?",
+          "unit": "heures",
+          "correct": 31,
+          "points": 1,
+          "explanation": "31 heures. À l'heure 31, c'est la moitié. Ensuite ça double → plein à l'heure 32."
+        },
+        {
+          "id": "crt-6",
+          "type": "multiple-choice",
+          "text": "Si vous êtes en course et que vous dépassez le coureur en deuxième position, à quelle position êtes-vous maintenant ?",
+          "options": [
+            "Première position",
+            "Deuxième position",
+            "Troisième position"
+          ],
+          "correct": 1,
+          "points": 1,
+          "explanation": "Deuxième position. Vous prenez la place de celui qui était 2ème, donc vous êtes maintenant 2ème."
+        },
+        {
+          "id": "crt-7",
+          "type": "multiple-choice",
+          "text": "Dans un magasin, tous les articles sont réduits de moitié. Le dernier jour, il y a une remise supplémentaire de 10% sur le prix soldé. Si le prix initial était 100€, quel est le prix final ?",
+          "options": [
+            "40€",
+            "45€",
+            "50€",
+            "55€"
+          ],
+          "correct": 1,
+          "points": 1,
+          "explanation": "45€. Première remise : 50€. Puis 10% de réduction sur 50€ = 5€ → 45€."
+        }
+      ]
+    },
+    {
+      "id": "belief-bias",
+      "name": "Biais de Croyance (8 items)",
+      "points": 4,
+      "time": 8,
+      "questions": [
+        {
+          "id": "syllogism-1",
+          "type": "multiple-choice",
+          "text": "Prémisse 1 : Toutes les fleurs sont des carbitops. Prémisse 2 : Toutes les tulipes sont des carbitops. Conclusion : Toutes les tulipes sont des fleurs.",
+          "options": [
+            "La conclusion suit nécessairement des prémisses",
+            "La conclusion ne suit PAS nécessairement des prémisses"
+          ],
+          "correct": 1,
+          "points": 0.5,
+          "explanation": "Invalide logiquement (erreur AAA2). Même si la conclusion est vraie dans la réalité, elle ne suit pas logiquement des prémisses."
+        },
+        {
+          "id": "syllogism-2",
+          "type": "multiple-choice",
+          "text": "Prémisse 1 : Tous les poissons sont des bictodes. Prémisse 2 : Aucun requin n'est un bictode. Conclusion : Aucun requin n'est un poisson.",
+          "options": [
+            "La conclusion suit nécessairement des prémisses",
+            "La conclusion ne suit PAS nécessairement des prémisses"
+          ],
+          "correct": 0,
+          "points": 0.5,
+          "explanation": "Valide logiquement (AEE2). Même si la conclusion est fausse dans la réalité (les requins sont des poissons), elle suit logiquement des prémisses."
+        }
+      ]
+    },
+    {
+      "id": "disjunctive",
+      "name": "Raisonnement Disjonctif (3 items)",
+      "points": 3,
+      "time": 5,
+      "questions": [
+        {
+          "id": "disj-1",
+          "type": "multiple-choice",
+          "text": "Trois boîtes empilées : [Haut : fraises fraîches], [Milieu : ?], [Bas : fraises congelées]. Les fraises fraîches ne doivent PAS toucher les congelées. Une boîte de fraises fraîches touche-t-elle une boîte de fraises congelées ?",
+          "options": [
+            "Oui",
+            "Non",
+            "On ne peut pas déterminer"
+          ],
+          "correct": 0,
+          "points": 1,
+          "explanation": "Oui. Si Milieu = fraîches, alors Milieu touche Bas (congelé). Si Milieu = congelé, alors Haut (fraîches) touche Milieu. Dans les deux cas : violation."
+        },
+        {
+          "id": "disj-2",
+          "type": "multiple-choice",
+          "text": "Anne regarde Paul. Paul regarde Marie. Anne est mariée. Marie n'est pas mariée. On ne sait pas si Paul est marié. Est-ce qu'une personne mariée regarde une personne non mariée ?",
+          "options": [
+            "Oui",
+            "Non",
+            "On ne peut pas déterminer"
+          ],
+          "correct": 0,
+          "points": 1,
+          "explanation": "Oui. Si Paul est marié, il regarde Marie (non mariée). Si Paul n'est pas marié, Anne (mariée) le regarde. Dans les deux cas : oui."
+        }
+      ]
+    },
+    {
+      "id": "anchoring",
+      "name": "Ancrage (4 items)",
+      "points": 2,
+      "time": 5,
+      "questions": [
+        {
+          "id": "anchor-1",
+          "type": "number",
+          "text": "La distance de San Francisco à Hawaï est-elle supérieure à 500 miles ? Quelle est selon vous la distance exacte ?",
+          "unit": "miles",
+          "correct": 2387,
+          "anchorType": "low",
+          "points": 0.5,
+          "explanation": "La distance réelle est ~2387 miles. Si votre estimation est <1000, vous avez été influencé par l'ancre basse (500)."
+        },
+        {
+          "id": "anchor-2",
+          "type": "number",
+          "text": "La durée de l'orbite de Mars autour du Soleil est-elle supérieure à 1500 jours ? Quelle est selon vous la durée exacte ?",
+          "unit": "jours",
+          "correct": 687,
+          "anchorType": "high",
+          "points": 0.5,
+          "explanation": "La durée réelle est 687 jours. Si votre estimation est >1000, vous avez été influencé par l'ancre haute (1500)."
+        }
+      ]
+    },
+    {
+      "id": "calibration-full",
+      "name": "Calibration des Connaissances (26 items)",
+      "points": 3,
+      "time": 10,
+      "questions": [
+        {
+          "id": "calib-mc-1",
+          "type": "multiple-choice-confidence",
+          "text": "La Politique de la Porte Ouverte exigeait que :",
+          "options": [
+            "Aucune nation ne puisse revendiquer des droits commerciaux exclusifs en Chine",
+            "Les journalistes doivent être autorisés à observer les effets de la Révolution culturelle"
+          ],
+          "correct": 0,
+          "points": 0.1,
+          "confidenceLevels": [50, 60, 70, 80, 90, 100]
+        },
+        {
+          "id": "calib-interval-1",
+          "type": "confidence-interval",
+          "text": "Quelle est la hauteur de la Tour Eiffel ?",
+          "unit": "mètres",
+          "correct": 330,
+          "points": 0.1,
+          "explanation": "La Tour Eiffel mesure 330 mètres (avec antenne)."
+        }
+      ]
+    },
+    {
+      "id": "numeracy",
+      "name": "Numératie Probabiliste (5 items)",
+      "points": 5,
+      "time": 6,
+      "questions": [
+        {
+          "id": "num-3",
+          "type": "number",
+          "text": "Dans une loterie, la probabilité de gagner est de 1 sur 500. Si 5000 personnes jouent, combien environ peut-on s'attendre à ce qu'elles gagnent ?",
+          "unit": "personnes",
+          "correct": 10,
+          "points": 1,
+          "explanation": "5000 / 500 = 10 personnes."
+        },
+        {
+          "id": "num-4",
+          "type": "number",
+          "text": "Un test médical a un taux de faux positifs de 3%. Si 10 000 personnes saines passent le test, combien environ recevront un résultat faussement positif ?",
+          "unit": "personnes",
+          "correct": 300,
+          "points": 1,
+          "explanation": "10 000 × 0,03 = 300 personnes."
+        }
+      ]
+    },
+    {
+      "id": "superstition",
+      "name": "Pensée Superstitieuse (12 items)",
+      "points": 5,
+      "time": 5,
+      "questions": [
+        {
+          "id": "super-1",
+          "type": "likert",
+          "text": "Les pensées d'une personne peuvent influencer le mouvement d'un objet physique.",
+          "reverse": false,
+          "points": 0.42
+        },
+        {
+          "id": "super-2",
+          "type": "likert",
+          "text": "L'astrologie peut être utile pour juger de la personnalité.",
+          "reverse": false,
+          "points": 0.42
+        },
+        {
+          "id": "super-3",
+          "type": "likert",
+          "text": "La lecture de la pensée n'est pas possible.",
+          "reverse": true,
+          "points": 0.42
+        }
+      ]
+    },
+    {
+      "id": "anti-science",
+      "name": "Attitudes Anti-Science (13 items)",
+      "points": 5,
+      "time": 5,
+      "questions": [
+        {
+          "id": "science-1",
+          "type": "likert",
+          "text": "Le fait que les scientifiques ne soient souvent pas d'accord montre que la science implique plus d'opinions personnelles que de preuves réelles.",
+          "reverse": false,
+          "points": 0.38
+        },
+        {
+          "id": "science-2",
+          "type": "likert",
+          "text": "Quand la science entre en conflit avec la sagesse conventionnelle, c'est généralement la science qui a raison.",
+          "reverse": true,
+          "points": 0.38
+        }
+      ]
+    },
+    {
+      "id": "conspiracy",
+      "name": "Croyances Conspirationnistes (24 items)",
+      "points": 10,
+      "time": 8,
+      "questions": [
+        {
+          "id": "conspiracy-1",
+          "type": "likert",
+          "text": "Des hauts responsables du gouvernement américain savaient à l'avance que l'attaque du 11 septembre allait se produire.",
+          "reverse": false,
+          "points": 0.42
+        },
+        {
+          "id": "conspiracy-2",
+          "type": "likert",
+          "text": "Les preuves que certains vaccins infantiles peuvent causer l'autisme ont été cachées par des compagnies pharmaceutiques.",
+          "reverse": false,
+          "points": 0.42
+        }
+      ]
+    }
+  ]
+}
