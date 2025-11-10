@@ -111,9 +111,12 @@ export function scoreQuestion(
 
       case 'ranking':
         const userRanking = answer.value as number[];
-        const correctRanking = question.correct as number[];
+        // Corriger le cast pour gérer string | number
+        const correctRanking = Array.isArray(question.correct) 
+          ? question.correct as number[]
+          : [];
         
-        if (!Array.isArray(userRanking) || !Array.isArray(correctRanking)) {
+        if (!Array.isArray(userRanking) || !Array.isArray(correctRanking) || correctRanking.length === 0) {
           break;
         }
         
@@ -185,12 +188,7 @@ export function scoreQuestion(
   };
 }
 
-/**
- * Calcule le score pour un module
- */
-/**
- * Calcule le score pour un module
- */
+
 export function scoreModule(
   module: Module,
   answers: Answer[]

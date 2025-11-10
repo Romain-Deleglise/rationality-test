@@ -25,19 +25,18 @@ export function RadarChartComponent({ moduleScores }: ResultsChartsProps) {
   const data = moduleScores
     .filter(m => m.possible > 0)
     .map((module) => ({
-      module: module.moduleName.split(' (')[0], // Enlever le "(X items)"
+      module: module.moduleName.split(' (')[0].substring(0, 18), // Limiter à 18 caractères
       score: Math.round(module.percentage),
       fullMark: 100,
     }));
 
   return (
-    <ResponsiveContainer width="100%" height={400}>
-      <RadarChart data={data}>
+    <ResponsiveContainer width="100%" height={450}>
+      <RadarChart data={data} margin={{ top: 20, right: 30, bottom: 20, left: 30 }}>
         <PolarGrid stroke="#e5e7eb" />
         <PolarAngleAxis 
           dataKey="module" 
-          tick={{ fill: '#4b5563', fontSize: 12 }}
-          style={{ fontSize: '12px' }}
+          tick={{ fill: '#4b5563', fontSize: 10 }}
         />
         <PolarRadiusAxis angle={90} domain={[0, 100]} tick={{ fill: '#9ca3af' }} />
         <Radar
@@ -64,27 +63,31 @@ export function BarChartComponent({ moduleScores }: ResultsChartsProps) {
   const data = moduleScores
     .filter(m => m.possible > 0)
     .map((module) => ({
-      name: module.moduleName.split(' (')[0],
+      name: module.moduleName.split(' (')[0].substring(0, 20), // Limiter la longueur
       score: Math.round(module.percentage),
     }))
-    .sort((a, b) => b.score - a.score); // Trier par score décroissant
+    .sort((a, b) => b.score - a.score);
 
   const getBarColor = (score: number) => {
-    if (score >= 75) return '#10b981'; // vert
-    if (score >= 50) return '#f59e0b'; // orange
-    return '#ef4444'; // rouge
+    if (score >= 75) return '#10b981';
+    if (score >= 50) return '#f59e0b';
+    return '#ef4444';
   };
 
   return (
     <ResponsiveContainer width="100%" height={400}>
-      <BarChart data={data} layout="horizontal">
+      <BarChart data={data}>
         <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
-        <XAxis type="number" domain={[0, 100]} tick={{ fill: '#6b7280' }} />
-        <YAxis 
+        <XAxis 
           dataKey="name" 
-          type="category" 
-          width={180}
-          tick={{ fill: '#4b5563', fontSize: 12 }}
+          angle={-45}
+          textAnchor="end"
+          height={100}
+          tick={{ fill: '#4b5563', fontSize: 11 }}
+        />
+        <YAxis 
+          domain={[0, 100]}
+          tick={{ fill: '#6b7280' }}
         />
         <Tooltip
           contentStyle={{
@@ -94,7 +97,7 @@ export function BarChartComponent({ moduleScores }: ResultsChartsProps) {
           }}
           formatter={(value: number) => `${value}%`}
         />
-        <Bar dataKey="score" radius={[0, 8, 8, 0]}>
+        <Bar dataKey="score" radius={[8, 8, 0, 0]}>
           {data.map((entry, index) => (
             <Cell key={`cell-${index}`} fill={getBarColor(entry.score)} />
           ))}
