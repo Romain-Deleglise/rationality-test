@@ -1,7 +1,7 @@
 'use client';
 
-import { useEffect } from 'react';
-import { useRouter } from 'next/navigation';
+import { useEffect, useState } from 'react';
+import { useRouter, useSearchParams } from 'next/navigation';
 import { useTestStore } from '@/store/useTestStore';
 import { Progress } from '@/components/ui/progress';
 import { Button } from '@/components/ui/button';
@@ -11,6 +11,9 @@ import { Module } from '@/types';
 
 export default function TestPage() {
   const router = useRouter();
+  const searchParams = useSearchParams();
+  const [isInitialized, setIsInitialized] = useState(false);
+  
   const {
     session,
     modules,
@@ -22,21 +25,40 @@ export default function TestPage() {
     getCurrentModule,
     getCurrentQuestion,
     getProgress,
+    resetTest,
   } = useTestStore();
 
   useEffect(() => {
+    // Empêcher les boucles infinies
+    if (isInitialized) return;
+
+    // Si paramètre reset=true, on reset
+    if (searchParams.get('reset') === 'true') {
+      resetTest();
+      // Rediriger sans le paramètre pour éviter les boucles
+      router.replace('/test');
+    }
+    
+    // Démarrer le test seulement s'il n'y a pas de session
     if (!session) {
       startTest(testData.modules as Module[]);
     }
-  }, [session, startTest]);
+    
+    setIsInitialized(true);
+  }, []); // Dépendances vides = s'exécute une seule fois
 
-  if (!session || !modules.length) {
+  if (!isInitialized || !session || !modules.length) {
     return (
       <div className="min-h-screen flex items-center justify-center">
-        <p>Chargement du test...</p>
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4"></div>
+          <p className="text-gray-600">Chargement du test...</p>
+        </div>
       </div>
     );
   }
+
+  
 
   const currentModule = getCurrentModule();
   const currentQuestion = getCurrentQuestion();
