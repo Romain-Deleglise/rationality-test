@@ -30,29 +30,33 @@ export default function TestContent() {
   } = useTestStore();
 
   useEffect(() => {
-    // Empêcher les boucles infinies
-    if (isInitialized) return;
+    const reset = searchParams.get('reset');
+    const version = searchParams.get('version');
 
-    // Si paramètre reset=true, on reset
-    if (searchParams.get('reset') === 'true') {
+    // Si paramètre reset=true, on reset et redirige
+    if (reset === 'true') {
       resetTest();
-      // Rediriger sans le paramètre pour éviter les boucles
-      router.replace('/test');
+
+      // Construire l'URL de redirection en préservant la version
+      const redirectUrl = version === 'full' ? '/test?version=full' : '/test';
+      router.replace(redirectUrl);
+      return;
     }
 
-    // Démarrer le test seulement s'il n'y a pas de session
-    if (!session) {
-      const version = searchParams.get('version');
-
+    // Démarrer le test seulement s'il n'y a pas de session et qu'on est initialisé
+    if (!session && !reset) {
       // Charger les bonnes données selon la version
       const testData = version === 'full' ? testCompletData : testCourtData;
       const selectedModules = testData.modules as Module[];
+      const versionLabel = version === 'full' ? 'complète' : 'courte';
 
-      startTest(selectedModules);
+      startTest(selectedModules, versionLabel);
+      setIsInitialized(true);
+    } else if (session && !isInitialized) {
+      // Si une session existe déjà (depuis localStorage), marquer comme initialisé
+      setIsInitialized(true);
     }
-
-    setIsInitialized(true);
-  }, []); // Dépendances vides = s'exécute une seule fois
+  }, [searchParams, session, isInitialized, resetTest, startTest, router]);
 
   if (!isInitialized || !session || !modules.length) {
     return (
@@ -104,24 +108,42 @@ export default function TestContent() {
     0
   );
 
+  // Calculer le temps restant estimé
+  const totalTestTime = modules.reduce((sum: number, m: Module) => sum + m.time, 0);
+  const timePerQuestion = totalTestTime / totalQuestions;
+  const questionsRemaining = totalQuestions - questionNumber + 1; // +1 car on compte la question actuelle
+  const timeRemaining = Math.ceil(timePerQuestion * questionsRemaining);
+
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Barre de progression */}
       <div className="bg-white border-b sticky top-0 z-10 shadow-sm">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between mb-3">
-            <div>
-              <p className="text-sm font-medium text-gray-700">
-                Module {session.currentModuleIndex + 1}/{modules.length}:{' '}
-                {currentModule.name}
-              </p>
-              <p className="text-xs text-gray-500">
-                Question {questionNumber} / {totalQuestions}
-              </p>
+            <div className="flex items-center gap-3">
+              <div>
+                <p className="text-sm font-medium text-gray-700">
+                  Module {session.currentModuleIndex + 1}/{modules.length}:{' '}
+                  {currentModule.name}
+                </p>
+                <p className="text-xs text-gray-500">
+                  Question {questionNumber}/{totalQuestions}
+                </p>
+              </div>
+              <span className={`px-2.5 py-0.5 rounded-full text-xs font-semibold ${
+                session.version === 'complète'
+                  ? 'bg-blue-100 text-blue-700'
+                  : 'bg-green-100 text-green-700'
+              }`}>
+                Version {session.version}
+              </span>
             </div>
             <div className="text-right">
-              <p className="text-sm text-gray-600">
-                ⏱️ ~{currentModule.time} min restantes
+              <p className="text-sm font-semibold text-gray-700">
+                ⏱️ ~{timeRemaining} min restantes
+              </p>
+              <p className="text-xs text-gray-500">
+                Durée totale : ~{totalTestTime} min
               </p>
             </div>
           </div>
