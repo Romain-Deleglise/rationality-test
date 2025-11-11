@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
+import { useTranslations } from 'next-intl';
 import { getTestResultByToken } from '@/lib/supabase';
 import { ChevronDown, ChevronUp, Database, Home } from 'lucide-react';
 import Link from 'next/link';
@@ -10,6 +11,8 @@ import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
 
 export default function SavedResultsPage({ params }: { params: { token: string; locale: string } }) {
   const router = useRouter();
+  const t = useTranslations('results');
+  const tCommon = useTranslations('common');
   const [result, setResult] = useState<any>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -20,12 +23,12 @@ export default function SavedResultsPage({ params }: { params: { token: string; 
       try {
         const data = await getTestResultByToken(params.token);
         if (!data) {
-          setError('Résultats introuvables');
+          setError(t('notFound'));
           return;
         }
         setResult(data);
       } catch (err) {
-        setError('Erreur de chargement');
+        setError(tCommon('error'));
       } finally {
         setLoading(false);
       }
@@ -42,11 +45,11 @@ export default function SavedResultsPage({ params }: { params: { token: string; 
   };
 
   const getScoreLabel = (score: number) => {
-    if (score >= 85) return 'Très Élevée';
-    if (score >= 70) return 'Élevée';
-    if (score >= 55) return 'Moyenne';
-    if (score >= 40) return 'Sous la Moyenne';
-    return 'Limitée';
+    if (score >= 85) return t('scoreLabels.veryHigh');
+    if (score >= 70) return t('scoreLabels.high');
+    if (score >= 55) return t('scoreLabels.average');
+    if (score >= 40) return t('scoreLabels.belowAverage');
+    return t('scoreLabels.limited');
   };
 
   if (loading) {
@@ -54,7 +57,7 @@ export default function SavedResultsPage({ params }: { params: { token: string; 
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">
           <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4"></div>
-          <p className="text-gray-600">Chargement des résultats...</p>
+          <p className="text-gray-600">{t('loadingResults')}</p>
         </div>
       </div>
     );
@@ -65,14 +68,14 @@ export default function SavedResultsPage({ params }: { params: { token: string; 
       <div className="min-h-screen flex items-center justify-center bg-gradient-to-b from-blue-50 to-white">
         <div className="text-center max-w-md p-8">
           <div className="text-6xl mb-4">😕</div>
-          <h1 className="text-2xl font-bold text-gray-900 mb-2">Résultats introuvables</h1>
+          <h1 className="text-2xl font-bold text-gray-900 mb-2">{t('notFound')}</h1>
           <p className="text-gray-600 mb-6">
-            Ce lien de résultats n'existe pas ou a expiré.
+            {t('notFoundDescription')}
           </p>
           <Link href={`/${locale}`}>
             <button className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-lg transition-colors flex items-center gap-2 mx-auto">
               <Home className="w-5 h-5" />
-              Retour à l'accueil
+              {t('backHome')}
             </button>
           </Link>
         </div>
@@ -90,15 +93,15 @@ export default function SavedResultsPage({ params }: { params: { token: string; 
           <div className="flex items-center justify-center gap-2 mb-4">
             <Database className="w-8 h-8 text-blue-600" />
             <h1 className="text-4xl font-bold text-gray-900">
-              Résultats Sauvegardés
+              {t('savedResultsTitle')}
             </h1>
           </div>
           <p className="text-xl text-gray-600">
-            Test de Rationalité (CART adapté)
+            {t('subtitle')}
           </p>
           <div className="flex items-center justify-center gap-2 mt-2">
             <p className="text-sm text-gray-500">
-              Complété le {new Date(result.created_at).toLocaleDateString('fr-FR', {
+              {t('completedOn')} {new Date(result.created_at).toLocaleDateString(locale === 'fr' ? 'fr-FR' : 'en-US', {
                 day: 'numeric',
                 month: 'long',
                 year: 'numeric',
@@ -110,23 +113,23 @@ export default function SavedResultsPage({ params }: { params: { token: string; 
                 ? 'bg-blue-100 text-blue-700'
                 : 'bg-green-100 text-green-700'
             }`}>
-              Version {result.test_version}
+              {tCommon('version')} {result.test_version === 'complète' ? tCommon('full') : tCommon('short')}
             </span>
           </div>
         </div>
 
         {/* Score Global */}
         <div className="bg-white rounded-xl shadow-lg p-8 mb-8 text-center border-t-4 border-blue-600">
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">Score Global</h2>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">{t('globalScore')}</h2>
           <div className="mb-6">
             <div className={`text-6xl font-bold mb-2 ${getScoreColor(result.percentage)}`}>
               {result.percentage.toFixed(1)}%
             </div>
             <div className={`text-2xl font-semibold mb-2 ${getScoreColor(result.percentage)}`}>
-              Rationalité {getScoreLabel(result.percentage)}
+              {t('rationality')} {getScoreLabel(result.percentage)}
             </div>
             <div className="text-lg text-gray-600">
-              {result.total_points.toFixed(1)} / {result.total_possible.toFixed(1)} points
+              {result.total_points.toFixed(1)} / {result.total_possible.toFixed(1)} {t('points')}
             </div>
           </div>
         </div>
@@ -135,7 +138,7 @@ export default function SavedResultsPage({ params }: { params: { token: string; 
         <div className="space-y-6 mb-8">
           <Card>
             <CardHeader>
-              <CardTitle>Profil de Rationalité</CardTitle>
+              <CardTitle>{t('radarChart')}</CardTitle>
             </CardHeader>
             <CardContent>
               <RadarChartComponent moduleScores={moduleScores} />
@@ -144,7 +147,7 @@ export default function SavedResultsPage({ params }: { params: { token: string; 
 
           <Card>
             <CardHeader>
-              <CardTitle>Classement par Module</CardTitle>
+              <CardTitle>{t('barChart')}</CardTitle>
             </CardHeader>
             <CardContent>
               <BarChartComponent moduleScores={moduleScores} />
@@ -155,7 +158,7 @@ export default function SavedResultsPage({ params }: { params: { token: string; 
         {/* Détail par Module */}
         <div className="bg-white rounded-xl shadow-lg p-8 mb-8 border-t-4 border-blue-500">
           <h2 className="text-2xl font-bold text-gray-900 mb-6">
-            Détail par Module
+            {t('moduleDetails')}
           </h2>
 
           <div className="space-y-3">
@@ -199,11 +202,11 @@ export default function SavedResultsPage({ params }: { params: { token: string; 
           <Link href={`/${locale}`}>
             <button className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-lg transition-colors flex items-center gap-2 mx-auto">
               <Home className="w-5 h-5" />
-              Retour à l'accueil
+              {t('backHome')}
             </button>
           </Link>
           <p className="text-sm text-gray-500 mt-4">
-            Envie de tester votre rationalité ? Passez le test !
+            {t('wantToTest')}
           </p>
         </div>
       </div>

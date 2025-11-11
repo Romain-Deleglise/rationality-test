@@ -2,12 +2,15 @@
 
 import { useEffect, useState } from 'react';
 import { useRouter, useSearchParams, useParams } from 'next/navigation';
+import { useTranslations } from 'next-intl';
 import { useTestStore } from '@/store/useTestStore';
 import { Progress } from '@/components/ui/progress';
 import { Button } from '@/components/ui/button';
 import Question from '@/components/Question';
-import testCourtData from '@/data/test-court.json';
-import testCompletData from '@/data/test-complet.json';
+import testCourtDataFr from '@/data/test-court.json';
+import testCompletDataFr from '@/data/test-complet.json';
+import testCourtDataEn from '@/data/test-court-en.json';
+import testCompletDataEn from '@/data/test-complet-en.json';
 import { Module } from '@/types';
 
 export default function TestContent() {
@@ -15,6 +18,8 @@ export default function TestContent() {
   const searchParams = useSearchParams();
   const params = useParams();
   const locale = params.locale as string;
+  const t = useTranslations('test');
+  const tCommon = useTranslations('common');
   const [isInitialized, setIsInitialized] = useState(false);
 
   const {
@@ -47,9 +52,16 @@ export default function TestContent() {
 
     // Démarrer le test seulement s'il n'y a pas de session et qu'on est initialisé
     if (!session && !reset) {
-      // Charger les bonnes données selon la version
-      const testData = version === 'full' ? testCompletData : testCourtData;
+      // Charger les bonnes données selon la version et la langue
+      let testData;
+      if (locale === 'en') {
+        testData = version === 'full' ? testCompletDataEn : testCourtDataEn;
+      } else {
+        testData = version === 'full' ? testCompletDataFr : testCourtDataFr;
+      }
+
       const selectedModules = testData.modules as Module[];
+      // Store version in French for consistency, translate only for display
       const versionLabel = version === 'full' ? 'complète' : 'courte';
 
       startTest(selectedModules, versionLabel);
@@ -58,14 +70,14 @@ export default function TestContent() {
       // Si une session existe déjà (depuis localStorage), marquer comme initialisé
       setIsInitialized(true);
     }
-  }, [searchParams, session, isInitialized, resetTest, startTest, router]);
+  }, [searchParams, session, isInitialized, resetTest, startTest, router, locale]);
 
   if (!isInitialized || !session || !modules.length) {
     return (
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">
           <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4"></div>
-          <p className="text-gray-600">Chargement du test...</p>
+          <p className="text-gray-600">{t('loading')}</p>
         </div>
       </div>
     );
@@ -129,7 +141,7 @@ export default function TestContent() {
                   {currentModule.name}
                 </p>
                 <p className="text-xs text-gray-500">
-                  Question {questionNumber}/{totalQuestions}
+                  {t('question')} {questionNumber} {t('of')} {totalQuestions}
                 </p>
               </div>
               <span className={`px-2.5 py-0.5 rounded-full text-xs font-semibold ${
@@ -137,15 +149,15 @@ export default function TestContent() {
                   ? 'bg-blue-100 text-blue-700'
                   : 'bg-green-100 text-green-700'
               }`}>
-                Version {session.version}
+                {tCommon('version')} {session.version === 'complète' ? tCommon('full') : tCommon('short')}
               </span>
             </div>
             <div className="text-right">
               <p className="text-sm font-semibold text-gray-700">
-                ⏱️ ~{timeRemaining} min restantes
+                ⏱️ ~{timeRemaining} {t('minutes')} {t('timeRemaining')}
               </p>
               <p className="text-xs text-gray-500">
-                Durée totale : ~{totalTestTime} min
+                {locale === 'fr' ? 'Durée totale' : 'Total duration'} : ~{totalTestTime} {t('minutes')}
               </p>
             </div>
           </div>
@@ -166,7 +178,7 @@ export default function TestContent() {
               onClick={previousQuestion}
               className="w-full"
             >
-              ← Question précédente
+              ← {t('previous')}
             </Button>
           </div>
         )}
