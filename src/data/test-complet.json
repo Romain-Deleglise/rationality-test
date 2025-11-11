@@ -1,7 +1,7 @@
 {
   "version": "complète",
-  "totalPoints": 99,
-  "estimatedTime": 64,
+  "totalPoints": 94,
+  "estimatedTime": 61,
   "modules": [
     {
       "id": "prob-stats",
@@ -1545,175 +1545,91 @@
     },
     {
       "id": "conspiracy",
-      "name": "Croyances Conspirationnistes (24 items)",
-      "points": 10,
-      "time": 6,
+      "name": "Croyances Conspirationnistes (12 items)",
+      "points": 5,
+      "time": 3,
       "questions": [
         {
           "id": "conspiracy-1",
-          "type": "likert",
-          "text": "Des hauts responsables du gouvernement américain savaient à l'avance que l'attaque du 11 septembre allait se produire.",
-          "reverse": false,
-          "points": 0.42
-        },
-        {
-          "id": "conspiracy-2",
           "type": "likert",
           "text": "Les preuves que certains vaccins infantiles peuvent causer l'autisme ont été cachées par des compagnies pharmaceutiques.",
           "reverse": false,
           "points": 0.42
         },
         {
-          "id": "conspiracy-3",
+          "id": "conspiracy-2",
           "type": "likert",
-          "text": "Le gouvernement américain a caché des preuves de l'existence des extraterrestres.",
+          "text": "Des gouvernements ont caché des preuves de l'existence des extraterrestres et d'OVNI.",
           "reverse": false,
           "points": 0.42
         },
         {
-          "id": "conspiracy-4",
+          "id": "conspiracy-3",
           "type": "likert",
           "text": "L'alunissage d'Apollo était une mise en scène filmée dans un studio.",
           "reverse": false,
           "points": 0.42
         },
         {
-          "id": "conspiracy-5",
-          "type": "likert",
-          "text": "Les grandes compagnies pétrolières ont délibérément supprimé des technologies énergétiques alternatives.",
-          "reverse": false,
-          "points": 0.42
-        },
-        {
-          "id": "conspiracy-6",
+          "id": "conspiracy-4",
           "type": "likert",
           "text": "Le changement climatique est un canular inventé pour contrôler l'économie mondiale.",
           "reverse": false,
           "points": 0.42
         },
         {
-          "id": "conspiracy-7",
+          "id": "conspiracy-5",
           "type": "likert",
           "text": "Les chemtrails (traînées d'avion) sont utilisés pour répandre des produits chimiques sur la population.",
           "reverse": false,
           "points": 0.42
         },
         {
-          "id": "conspiracy-8",
-          "type": "likert",
-          "text": "Un petit groupe de personnes contrôle secrètement les événements mondiaux.",
-          "reverse": false,
-          "points": 0.42
-        },
-        {
-          "id": "conspiracy-9",
-          "type": "likert",
-          "text": "L'assassinat de JFK était le résultat d'une conspiration, pas d'un tireur isolé.",
-          "reverse": false,
-          "points": 0.42
-        },
-        {
-          "id": "conspiracy-10",
-          "type": "likert",
-          "text": "La pandémie de COVID-19 a été délibérément créée en laboratoire.",
-          "reverse": false,
-          "points": 0.42
-        },
-        {
-          "id": "conspiracy-11",
-          "type": "likert",
-          "text": "Les médias mainstream sont contrôlés par une élite secrète.",
-          "reverse": false,
-          "points": 0.42
-        },
-        {
-          "id": "conspiracy-12",
+          "id": "conspiracy-6",
           "type": "likert",
           "text": "La Terre est plate, contrairement à ce que la science officielle prétend.",
           "reverse": false,
           "points": 0.42
         },
         {
-          "id": "conspiracy-13",
-          "type": "likert",
-          "text": "Les attentats terroristes sont souvent organisés par les gouvernements eux-mêmes.",
-          "reverse": false,
-          "points": 0.42
-        },
-        {
-          "id": "conspiracy-14",
-          "type": "likert",
-          "text": "Les banques centrales manipulent l'économie mondiale pour leur propre profit.",
-          "reverse": false,
-          "points": 0.42
-        },
-        {
-          "id": "conspiracy-15",
+          "id": "conspiracy-7",
           "type": "likert",
           "text": "Un 'Nouvel Ordre Mondial' tente d'établir un gouvernement mondial unique.",
           "reverse": false,
           "points": 0.42
         },
         {
-          "id": "conspiracy-16",
+          "id": "conspiracy-8",
           "type": "likert",
           "text": "Des technologies de contrôle mental sont utilisées sur la population.",
           "reverse": false,
           "points": 0.42
         },
         {
-          "id": "conspiracy-17",
-          "type": "likert",
-          "text": "La mort de la princesse Diana n'était pas un accident mais un assassinat planifié.",
-          "reverse": false,
-          "points": 0.42
-        },
-        {
-          "id": "conspiracy-18",
+          "id": "conspiracy-9",
           "type": "likert",
           "text": "Les grandes entreprises pharmaceutiques cachent des remèdes contre le cancer pour continuer à vendre des traitements.",
           "reverse": false,
           "points": 0.42
         },
         {
-          "id": "conspiracy-19",
-          "type": "likert",
-          "text": "La 5G est dangereuse pour la santé et son déploiement cache un agenda caché.",
-          "reverse": false,
-          "points": 0.42
-        },
-        {
-          "id": "conspiracy-20",
+          "id": "conspiracy-10",
           "type": "likert",
           "text": "Les Illuminati existent et contrôlent secrètement les affaires mondiales.",
           "reverse": false,
           "points": 0.42
         },
         {
-          "id": "conspiracy-21",
+          "id": "conspiracy-11",
           "type": "likert",
-          "text": "Les élections dans les démocraties occidentales sont régulièrement truquées.",
+          "text": "Des expérimentations médicales ou scientifiques secrètes sont menées sur les citoyens à leur insu.",
           "reverse": false,
           "points": 0.42
         },
         {
-          "id": "conspiracy-22",
+          "id": "conspiracy-12",
           "type": "likert",
-          "text": "Des expérimentations secrètes sont menées sur les citoyens à leur insu.",
-          "reverse": false,
-          "points": 0.42
-        },
-        {
-          "id": "conspiracy-23",
-          "type": "likert",
-          "text": "Le SIDA a été créé intentionnellement comme arme biologique.",
-          "reverse": false,
-          "points": 0.42
-        },
-        {
-          "id": "conspiracy-24",
-          "type": "likert",
-          "text": "Les gouvernements cachent des informations sur des événements catastrophiques à venir.",
+          "text": "Un petit groupe de personnes tire les ficelles et contrôle secrètement tous les événements mondiaux importants.",
           "reverse": false,
           "points": 0.42
         }
@@ -1784,7 +1700,7 @@
         {
           "id": "dysfunc-9",
           "type": "likert",
-          "text": "Mon passé détermine mon présent et je ne peux rien y changer.",
+          "text": "Si quelque chose m'a affecté dans le passé, cela continuera toujours à m'affecter de la même manière.",
           "reverse": false,
           "points": 0.56
         }
