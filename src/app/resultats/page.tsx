@@ -36,23 +36,23 @@ const AccordionItem = ({ title, children, defaultOpen = false, scorePercentage }
   };
 
   return (
-    <div className="border-2 border-gray-200 rounded-xl mb-4 overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+    <div className="border-2 border-gray-200 rounded-xl mb-4 overflow-hidden shadow-sm hover:shadow-md transition-shadow print:shadow-none print:border print:border-gray-300 print:break-inside-avoid">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full px-6 py-4 bg-gradient-to-r from-gray-50 to-white hover:from-gray-100 hover:to-gray-50 transition-colors"
+        className="w-full px-6 py-4 bg-gradient-to-r from-gray-50 to-white hover:from-gray-100 hover:to-gray-50 transition-colors print:bg-gray-50 print:cursor-default"
       >
         <div className="flex items-center gap-4">
           {/* Titre - largeur fixe pour alignement */}
           <span className="font-semibold text-left text-gray-900 flex-1 min-w-0">
             {title}
           </span>
-          
+
           {/* Jauge - largeur fixe pour alignement */}
           {scorePercentage !== undefined && (
             <div className="flex items-center gap-3 w-64 flex-shrink-0">
               <div className="flex-1">
                 <div className="w-full bg-gray-200 rounded-full h-2.5 overflow-hidden">
-                  <div 
+                  <div
                     className={`${getBarColor(scorePercentage)} h-2.5 rounded-full transition-all duration-500`}
                     style={{ width: `${scorePercentage}%` }}
                   />
@@ -63,21 +63,20 @@ const AccordionItem = ({ title, children, defaultOpen = false, scorePercentage }
               </span>
             </div>
           )}
-          
-          {/* Icône chevron */}
-          <div className="flex-shrink-0">
-            {isOpen ? 
-              <ChevronUp className="w-5 h-5 text-blue-600" /> : 
+
+          {/* Icône chevron - caché en print */}
+          <div className="flex-shrink-0 print:hidden">
+            {isOpen ?
+              <ChevronUp className="w-5 h-5 text-blue-600" /> :
               <ChevronDown className="w-5 h-5 text-gray-400" />
             }
           </div>
         </div>
       </button>
-      {isOpen && (
-        <div className="px-6 py-5 bg-white text-gray-700 leading-relaxed border-t-2 border-gray-100">
-          {children}
-        </div>
-      )}
+      {/* Toujours visible en mode impression */}
+      <div className={`${isOpen ? 'block' : 'hidden'} print:block px-6 py-5 bg-white text-gray-700 leading-relaxed border-t-2 border-gray-100 print:border-t print:border-gray-200`}>
+        {children}
+      </div>
     </div>
   );
 };
@@ -524,8 +523,70 @@ export default function ResultatsPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
-      <div className="max-w-4xl mx-auto px-4 py-12">
+    <>
+      {/* Styles CSS pour l'impression */}
+      <style jsx global>{`
+        @media print {
+          @page {
+            margin: 2cm;
+            size: A4;
+          }
+
+          body {
+            print-color-adjust: exact;
+            -webkit-print-color-adjust: exact;
+          }
+
+          /* Cacher les éléments non nécessaires à l'impression */
+          .print\\:hidden,
+          button:not(.print\\:block),
+          nav,
+          .no-print {
+            display: none !important;
+          }
+
+          /* Forcer les accordéons à être ouverts */
+          .print\\:block {
+            display: block !important;
+          }
+
+          /* Éviter les sauts de page à l'intérieur des éléments */
+          .print\\:break-inside-avoid {
+            break-inside: avoid;
+            page-break-inside: avoid;
+          }
+
+          /* Améliorer l'affichage des graphiques */
+          svg {
+            max-height: 400px !important;
+          }
+
+          /* Espacements pour print */
+          h1, h2, h3 {
+            page-break-after: avoid;
+            break-after: avoid;
+          }
+
+          /* Liens en texte visible */
+          a[href]:after {
+            content: none !important;
+          }
+
+          /* Fond blanc pour tout */
+          * {
+            background: white !important;
+          }
+
+          /* Garder les couleurs des barres de progression */
+          .bg-green-500, .bg-blue-500, .bg-yellow-500, .bg-red-500 {
+            print-color-adjust: exact !important;
+            -webkit-print-color-adjust: exact !important;
+          }
+        }
+      `}</style>
+
+      <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white print:bg-white">
+        <div className="max-w-4xl mx-auto px-4 py-12 print:px-6 print:py-8">
         
         {/* Header */}
         <div className="text-center mb-12">
@@ -594,33 +655,26 @@ export default function ResultatsPage() {
           {/* Lien de sauvegarde / partage */}
           {resultToken && (
             <div className="mt-6 bg-blue-50 border border-blue-200 rounded-lg p-4">
-              <div className="flex items-center justify-center gap-2 mb-2">
+              <div className="flex items-center justify-center gap-2 mb-3">
                 <Database className="w-5 h-5 text-blue-600" />
                 <p className="text-sm font-semibold text-gray-900">
                   Résultats sauvegardés !
                 </p>
               </div>
-              <p className="text-xs text-gray-600 mb-3">
-                Retrouvez vos résultats à tout moment avec ce lien :
+              <p className="text-sm text-gray-600 text-center mb-3">
+                Partagez ou retrouvez vos résultats à tout moment
               </p>
-              <div className="flex gap-2">
-                <input
-                  type="text"
-                  readOnly
-                  value={`${typeof window !== 'undefined' ? window.location.origin : ''}/resultats/${resultToken}`}
-                  className="flex-1 px-3 py-2 text-xs bg-white border border-gray-300 rounded font-mono"
-                  onClick={(e) => (e.target as HTMLInputElement).select()}
-                />
+              <div className="flex justify-center">
                 <button
                   onClick={() => {
                     navigator.clipboard.writeText(`${window.location.origin}/resultats/${resultToken}`);
                     setLinkCopied(true);
                     setTimeout(() => setLinkCopied(false), 2000);
                   }}
-                  className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded text-xs font-semibold flex items-center gap-1"
+                  className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold flex items-center gap-2 transition-colors shadow-md"
                 >
-                  <Share2 className="w-3 h-3" />
-                  {linkCopied ? 'Copié !' : 'Copier'}
+                  <Share2 className="w-5 h-5" />
+                  {linkCopied ? '✓ Lien copié !' : 'Copier le lien'}
                 </button>
               </div>
             </div>
@@ -972,7 +1026,7 @@ export default function ResultatsPage() {
         </AccordionItem>
 
         {/* Actions */}
-        <div className="bg-white rounded-xl shadow-lg p-8 text-center mb-8">
+        <div className="bg-white rounded-xl shadow-lg p-8 text-center mb-8 print:hidden">
           <h2 className="text-2xl font-bold text-gray-900 mb-6">Prochaines étapes</h2>
           
           {/* Recevoir par email */}
@@ -1051,7 +1105,7 @@ export default function ResultatsPage() {
         </div>
 
         {/* Footer */}
-        <div className="text-center mt-12 text-sm text-gray-500">
+        <div className="text-center mt-12 text-sm text-gray-500 print:hidden">
           <p>
             Ce test est un projet open-source, gratuit, et dans l'intérêt général.
           </p>
@@ -1061,5 +1115,6 @@ export default function ResultatsPage() {
         </div>
       </div>
     </div>
+    </>
   );
 }

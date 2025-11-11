@@ -1,0 +1,70 @@
+{
+  "nav": {
+    "home": "Home",
+    "test": "Take the Test",
+    "about": "About",
+    "results": "Results"
+  },
+  "home": {
+    "title": "Rationality Test",
+    "subtitle": "Assess your critical thinking with CART",
+    "description": "Test your ability to think rationally across 12 dimensions of critical thinking, based on scientific research by Stanovich, West, and Toplak.",
+    "startShort": "Short Test (20 min)",
+    "startFull": "Full Test (60 min)",
+    "learnMore": "Learn More"
+  },
+  "test": {
+    "loading": "Loading test...",
+    "question": "Question",
+    "of": "of",
+    "next": "Next",
+    "previous": "Previous",
+    "finish": "Finish",
+    "timeRemaining": "Time remaining",
+    "minutes": "minutes"
+  },
+  "results": {
+    "title": "Your Results",
+    "subtitle": "Rationality Test (CART adapted)",
+    "globalScore": "Global Score",
+    "rationality": "Rationality",
+    "points": "points",
+    "percentile": "Percentile",
+    "realPercentile": "Real percentile",
+    "estimatedPercentile": "Estimated percentile",
+    "basedOn": "based on",
+    "results": "real results",
+    "theoreticalDistribution": "based on theoretical distribution",
+    "savedResults": "Results saved!",
+    "shareLink": "Find your results anytime with this link:",
+    "copy": "Copy",
+    "copied": "Copied!",
+    "globalStats": "Global Statistics",
+    "testsCompleted": "Tests completed",
+    "averageScore": "Average score",
+    "median": "Median",
+    "bestScore": "Best score",
+    "interpretation": "Interpretation",
+    "moduleDetails": "Details by Module",
+    "yourPerformance": "Here is your performance on each dimension of rational thinking",
+    "strengths": "Your Strengths",
+    "weaknesses": "Areas for Improvement",
+    "nextSteps": "Next Steps",
+    "retakeTest": "Retake Test",
+    "backHome": "Back to Home",
+    "downloadPDF": "Download (PDF)",
+    "sendEmail": "Receive by email",
+    "email": "your@email.com",
+    "send": "Send",
+    "sending": "Sending...",
+    "emailSent": "Email sent successfully!"
+  },
+  "common": {
+    "version": "Version",
+    "short": "short",
+    "full": "full",
+    "loading": "Loading...",
+    "error": "Error",
+    "retry": "Retry"
+  }
+}
