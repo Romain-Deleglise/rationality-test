@@ -74,11 +74,15 @@ const CustomRadarTick = ({ payload, x, y, textAnchor, ...rest }: any) => {
 // Custom tick pour le bar chart avec retour à la ligne
 const CustomBarTick = ({ x, y, payload }: any) => {
   const lines = wrapText(payload.value, 25);
+  // Calculer l'offset vertical pour centrer le texte multi-lignes
+  const lineHeight = 12;
+  const totalHeight = lines.length * lineHeight;
+  const startOffset = -totalHeight / 2 + lineHeight / 2;
 
   return (
     <g transform={`translate(${x},${y})`}>
       <text
-        x={0}
+        x={-8}
         y={0}
         textAnchor="end"
         fill="#374151"
@@ -88,8 +92,8 @@ const CustomBarTick = ({ x, y, payload }: any) => {
         {lines.map((line, index) => (
           <tspan
             key={index}
-            x={-5}
-            dy={index === 0 ? -(lines.length - 1) * 6 : 12}
+            x={-8}
+            dy={index === 0 ? startOffset : lineHeight}
           >
             {line}
           </tspan>

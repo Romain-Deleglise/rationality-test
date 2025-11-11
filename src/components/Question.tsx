@@ -16,9 +16,12 @@ interface QuestionProps {
 
 export default function Question({ question, onAnswer, defaultValue }: QuestionProps) {
   const [value, setValue] = useState<any>(defaultValue || '');
+  const [isAnimating, setIsAnimating] = useState(false);
 
-  // Réinitialiser quand la question change
+  // Réinitialiser quand la question change avec animation
   useEffect(() => {
+    setIsAnimating(true);
+
     if (question.type === 'ranking') {
       setValue(question.options?.map((_: any, i: number) => i) || []);
     } else if (question.type === 'confidence-interval') {
@@ -28,6 +31,10 @@ export default function Question({ question, onAnswer, defaultValue }: QuestionP
     } else {
       setValue(defaultValue || '');
     }
+
+    // Supprimer la classe d'animation après 300ms
+    const timer = setTimeout(() => setIsAnimating(false), 300);
+    return () => clearTimeout(timer);
   }, [question.id]); // Se déclenche quand la question change
   
   const handleSubmit = () => {
@@ -89,7 +96,7 @@ export default function Question({ question, onAnswer, defaultValue }: QuestionP
             <div className="flex items-center gap-4">
               <Input
                 type="number"
-                placeholder="Min"
+                placeholder="Minimum"
                 value={value.min || ''}
                 onChange={(e) => setValue({ ...value, min: e.target.value })}
                 className="flex-1"
@@ -97,7 +104,7 @@ export default function Question({ question, onAnswer, defaultValue }: QuestionP
               <span className="text-gray-500">à</span>
               <Input
                 type="number"
-                placeholder="Max"
+                placeholder="Maximum"
                 value={value.max || ''}
                 onChange={(e) => setValue({ ...value, max: e.target.value })}
                 className="flex-1"
@@ -294,7 +301,9 @@ export default function Question({ question, onAnswer, defaultValue }: QuestionP
   };
 
   return (
-    <Card className="w-full max-w-3xl mx-auto">
+    <Card className={`w-full max-w-3xl mx-auto transition-opacity duration-300 ${
+      isAnimating ? 'opacity-0' : 'opacity-100'
+    }`}>
       <CardHeader>
         <CardTitle className="text-xl leading-relaxed">{question.text}</CardTitle>
       </CardHeader>
