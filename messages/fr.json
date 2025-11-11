@@ -7,11 +7,125 @@
   },
   "home": {
     "title": "Test de Rationalité",
-    "subtitle": "Évaluez votre pensée critique avec le CART",
-    "description": "Testez votre capacité à raisonner de manière rationnelle à travers 12 dimensions de la pensée critique, basé sur les recherches scientifiques de Stanovich, West et Toplak.",
-    "startShort": "Test Court (20 min)",
-    "startFull": "Test Complet (60 min)",
-    "learnMore": "En savoir plus"
+    "subtitle": "Évaluez votre pensée critique et identifiez vos biais cognitifs",
+    "duration": "20-60 minutes",
+    "detailedFeedback": "Feedback détaillé",
+    "scientificallyValidated": "Scientifiquement validé",
+    "features": {
+      "free": "Entièrement gratuit",
+      "openSource": "Open source",
+      "anonymous": "Anonyme",
+      "publicInterest": "Dans l'intérêt général"
+    },
+    "viewSource": "→ Voir le code source sur GitHub",
+
+    "whatIsRationality": {
+      "title": "Qu'est-ce que la rationalité ?",
+      "intro": "La rationalité, c'est la capacité à former des croyances qui reflètent fidèlement la réalité (<strong>rationalité épistémique</strong>) et à prendre des décisions qui maximisent vos objectifs (<strong>rationalité instrumentale</strong>).",
+      "improvable": "Les recherches montrent que la pensée rationnelle peut être significativement améliorée par l'entraînement et la pratique délibérée, indépendamment du QI (Stanovich, 2009). Alors que l'intelligence (QI) mesure la capacité cognitive, la rationalité mesure l'efficacité avec laquelle vous utilisez cette capacité.",
+      "testDescription": "Ce test évalue plusieurs dimensions clés de la pensée rationnelle : le raisonnement probabiliste, le raisonnement scientifique, la résistance aux",
+      "cognitiveBiases": "biais cognitifs",
+      "andUpdating": ", et la capacité à mettre à jour vos croyances face à de nouvelles preuves."
+    },
+
+    "whatIsTested": {
+      "title": "Ce que ce test mesure",
+      "probabilistic": {
+        "title": "🎲 Raisonnement probabiliste",
+        "description": "Votre capacité à raisonner correctement avec les probabilités et à éviter les erreurs classiques comme :",
+        "baseRateNeglect": "Négligence des taux de base",
+        "baseRateDesc": "Sous-estimer l'importance des statistiques générales",
+        "gamblersFallacy": "L'erreur du parieur",
+        "gamblersDesc": "Croire que les événements passés influencent les probabilités futures dans des situations aléatoires",
+        "conjunctionFallacy": "L'erreur de conjonction",
+        "conjunctionDesc": "Penser que deux événements ensemble sont plus probables qu'un seul",
+        "lindaProblem": "problème de Linda"
+      },
+      "scientific": {
+        "title": "🔬 Raisonnement scientifique",
+        "description": "Votre capacité à tester des hypothèses de manière rigoureuse :",
+        "falsification": "Falsification",
+        "falsificationDesc": "Chercher des preuves qui pourraient réfuter une hypothèse",
+        "popperCriterion": "critère de Popper",
+        "correlation": "Corrélation vs causation",
+        "correlationDesc": "Comprendre qu'une corrélation n'implique pas nécessairement une cause",
+        "controlGroup": "Groupe contrôle",
+        "controlDesc": "Reconnaître l'importance des comparaisons appropriées"
+      },
+      "reflection": {
+        "title": "🧠 Réflexion vs Intuition",
+        "description": "Votre capacité à surmonter les réponses intuitives immédiates (mais souvent incorrectes) pour engager une réflexion analytique plus approfondie. Basé sur le",
+        "crt": "Cognitive Reflection Test",
+        "exampleTitle": "Exemple :",
+        "exampleQuestion": "Une batte et une balle coûtent 1,10€ au total. La batte coûte 1€ de plus que la balle. Combien coûte la balle ?",
+        "intuitiveAnswer": "Réponse intuitive : 0,10€",
+        "correctAnswer": "Réponse correcte : 0,05€"
+      },
+      "biases": {
+        "title": "⚖️ Biais de raisonnement",
+        "description": "Votre résistance à plusieurs biais cognitifs importants :",
+        "beliefBias": "Biais de croyance",
+        "beliefDesc": "Laisser vos croyances préalables influencer votre évaluation de la logique",
+        "framingEffects": "Effets de cadrage",
+        "framingDesc": "Changer d'avis selon comment l'information est présentée",
+        "anchoring": "Ancrage",
+        "anchoringDesc": "Être trop influencé par la première information reçue"
+      },
+      "rational": {
+        "title": "🔮 Pensée rationnelle vs irrationnelle",
+        "description": "Votre capacité à rejeter les croyances infondées et à adopter une pensée scientifique rigoureuse."
+      }
+    },
+
+    "foundations": {
+      "title": "Fondements scientifiques",
+      "cart": "Ce test est inspiré du",
+      "cartFull": "CART (Comprehensive Assessment of Rational Thinking)",
+      "developedBy": "développé par les professeurs Keith E. Stanovich, Richard F. West et Maggie E. Toplak, publié par MIT Press en 2016.",
+      "researchBased": "Le CART s'appuie sur plus de 40 ans de recherche en psychologie cognitive sur les biais et heuristiques, notamment les travaux pionniers de",
+      "kahneman": "Daniel Kahneman",
+      "nobel": "(Prix Nobel d'Économie 2002) et Amos Tversky.",
+      "keyReferences": "Références clés :",
+      "ref1": "Stanovich, K. E. (2009). What Intelligence Tests Miss: The Psychology of Rational Thought. Yale University Press.",
+      "ref2": "Stanovich, K. E., West, R. F., & Toplak, M. E. (2016). The Rationality Quotient: Toward a Test of Rational Thinking. MIT Press.",
+      "ref3": "Kahneman, D. (2011). Thinking, Fast and Slow. Farrar, Straus and Giroux.",
+      "ref4": "Frederick, S. (2005). Cognitive Reflection and Decision Making. Journal of Economic Perspectives, 19(4), 25-42.",
+      "disclaimer": "Note : Ce test est une adaptation éducative libre et gratuite. Il utilise des questions du domaine public et des variantes originales inspirées de la littérature scientifique."
+    },
+
+    "privacy": {
+      "title": "🔒 Confidentialité et utilisation des données",
+      "anonymous": "Vos réponses sont anonymes par défaut. Nous collectons uniquement :",
+      "responses": "Vos réponses au test (pour calculer votre score)",
+      "stats": "Des statistiques agrégées (pour améliorer le test)",
+      "noPersonalData": "Aucune donnée personnelle identifiable n'est collectée. Conforme au",
+      "gdpr": "RGPD"
+    },
+
+    "chooseVersion": {
+      "title": "Choisissez votre version",
+      "express": {
+        "title": "Version Express",
+        "duration": "~20 min",
+        "modules": "6 modules essentiels",
+        "feature1": "Aperçu rapide de vos biais",
+        "feature2": "Feedback personnalisé",
+        "start": "Commencer →"
+      },
+      "full": {
+        "title": "Version Complète",
+        "recommended": "RECOMMANDÉ",
+        "duration": "~60 min",
+        "modules": "12 modules approfondis",
+        "feature1": "Évaluation approfondie",
+        "feature2": "Analyse détaillée + graphiques",
+        "start": "Commencer →"
+      },
+      "tip": "💡 Astuce :",
+      "tipText": "Choisissez un moment calme où vous êtes reposé"
+    },
+
+    "footer": "Ce test est un projet open-source et gratuit."
   },
   "test": {
     "loading": "Chargement du test...",

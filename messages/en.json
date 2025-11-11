@@ -7,11 +7,125 @@
   },
   "home": {
     "title": "Rationality Test",
-    "subtitle": "Assess your critical thinking with CART",
-    "description": "Test your ability to think rationally across 12 dimensions of critical thinking, based on scientific research by Stanovich, West, and Toplak.",
-    "startShort": "Short Test (20 min)",
-    "startFull": "Full Test (60 min)",
-    "learnMore": "Learn More"
+    "subtitle": "Assess your critical thinking and identify your cognitive biases",
+    "duration": "20-60 minutes",
+    "detailedFeedback": "Detailed feedback",
+    "scientificallyValidated": "Scientifically validated",
+    "features": {
+      "free": "Completely free",
+      "openSource": "Open source",
+      "anonymous": "Anonymous",
+      "publicInterest": "In the public interest"
+    },
+    "viewSource": "→ View source code on GitHub",
+
+    "whatIsRationality": {
+      "title": "What is rationality?",
+      "intro": "Rationality is the ability to form beliefs that accurately reflect reality (<strong>epistemic rationality</strong>) and make decisions that maximize your goals (<strong>instrumental rationality</strong>).",
+      "improvable": "Research shows that rational thinking can be significantly improved through training and deliberate practice, independently of IQ (Stanovich, 2009). While intelligence (IQ) measures cognitive capacity, rationality measures how effectively you use that capacity.",
+      "testDescription": "This test evaluates several key dimensions of rational thinking: probabilistic reasoning, scientific reasoning, resistance to",
+      "cognitiveBiases": "cognitive biases",
+      "andUpdating": ", and the ability to update your beliefs in light of new evidence."
+    },
+
+    "whatIsTested": {
+      "title": "What this test measures",
+      "probabilistic": {
+        "title": "🎲 Probabilistic Reasoning",
+        "description": "Your ability to reason correctly with probabilities and avoid classic errors such as:",
+        "baseRateNeglect": "Base rate neglect",
+        "baseRateDesc": "Underestimating the importance of general statistics",
+        "gamblersFallacy": "Gambler's fallacy",
+        "gamblersDesc": "Believing that past events influence future probabilities in random situations",
+        "conjunctionFallacy": "Conjunction fallacy",
+        "conjunctionDesc": "Thinking that two events together are more probable than one alone",
+        "lindaProblem": "Linda problem"
+      },
+      "scientific": {
+        "title": "🔬 Scientific Reasoning",
+        "description": "Your ability to test hypotheses rigorously:",
+        "falsification": "Falsification",
+        "falsificationDesc": "Seeking evidence that could refute a hypothesis",
+        "popperCriterion": "Popper's criterion",
+        "correlation": "Correlation vs causation",
+        "correlationDesc": "Understanding that correlation does not necessarily imply causation",
+        "controlGroup": "Control group",
+        "controlDesc": "Recognizing the importance of appropriate comparisons"
+      },
+      "reflection": {
+        "title": "🧠 Reflection vs Intuition",
+        "description": "Your ability to override immediate intuitive responses (which are often incorrect) to engage deeper analytical thinking. Based on the",
+        "crt": "Cognitive Reflection Test",
+        "exampleTitle": "Example:",
+        "exampleQuestion": "A bat and a ball cost $1.10 in total. The bat costs $1.00 more than the ball. How much does the ball cost?",
+        "intuitiveAnswer": "Intuitive answer: $0.10",
+        "correctAnswer": "Correct answer: $0.05"
+      },
+      "biases": {
+        "title": "⚖️ Reasoning Biases",
+        "description": "Your resistance to several important cognitive biases:",
+        "beliefBias": "Belief bias",
+        "beliefDesc": "Letting your prior beliefs influence your evaluation of logic",
+        "framingEffects": "Framing effects",
+        "framingDesc": "Changing your mind depending on how information is presented",
+        "anchoring": "Anchoring",
+        "anchoringDesc": "Being too influenced by the first piece of information received"
+      },
+      "rational": {
+        "title": "🔮 Rational vs Irrational Thinking",
+        "description": "Your ability to reject unfounded beliefs and adopt rigorous scientific thinking."
+      }
+    },
+
+    "foundations": {
+      "title": "Scientific Foundations",
+      "cart": "This test is inspired by the",
+      "cartFull": "CART (Comprehensive Assessment of Rational Thinking)",
+      "developedBy": "developed by Professors Keith E. Stanovich, Richard F. West, and Maggie E. Toplak, published by MIT Press in 2016.",
+      "researchBased": "CART is based on over 40 years of research in cognitive psychology on biases and heuristics, notably the pioneering work of",
+      "kahneman": "Daniel Kahneman",
+      "nobel": "(2002 Nobel Prize in Economics) and Amos Tversky.",
+      "keyReferences": "Key References:",
+      "ref1": "Stanovich, K. E. (2009). What Intelligence Tests Miss: The Psychology of Rational Thought. Yale University Press.",
+      "ref2": "Stanovich, K. E., West, R. F., & Toplak, M. E. (2016). The Rationality Quotient: Toward a Test of Rational Thinking. MIT Press.",
+      "ref3": "Kahneman, D. (2011). Thinking, Fast and Slow. Farrar, Straus and Giroux.",
+      "ref4": "Frederick, S. (2005). Cognitive Reflection and Decision Making. Journal of Economic Perspectives, 19(4), 25-42.",
+      "disclaimer": "Note: This test is a free educational adaptation. It uses public domain questions and original variants inspired by scientific literature."
+    },
+
+    "privacy": {
+      "title": "🔒 Privacy and Data Use",
+      "anonymous": "Your responses are anonymous by default. We only collect:",
+      "responses": "Your test responses (to calculate your score)",
+      "stats": "Aggregated statistics (to improve the test)",
+      "noPersonalData": "No personally identifiable data is collected. Compliant with",
+      "gdpr": "GDPR"
+    },
+
+    "chooseVersion": {
+      "title": "Choose your version",
+      "express": {
+        "title": "Express Version",
+        "duration": "~20 min",
+        "modules": "6 essential modules",
+        "feature1": "Quick overview of your biases",
+        "feature2": "Personalized feedback",
+        "start": "Start →"
+      },
+      "full": {
+        "title": "Full Version",
+        "recommended": "RECOMMENDED",
+        "duration": "~60 min",
+        "modules": "12 in-depth modules",
+        "feature1": "Comprehensive assessment",
+        "feature2": "Detailed analysis + charts",
+        "start": "Start →"
+      },
+      "tip": "💡 Tip:",
+      "tipText": "Choose a quiet time when you are well-rested"
+    },
+
+    "footer": "This test is a free and open-source project."
   },
   "test": {
     "loading": "Loading test...",
