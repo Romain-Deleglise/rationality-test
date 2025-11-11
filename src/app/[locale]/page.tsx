@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import { useParams } from 'next/navigation';
 import { ChevronDown, ChevronUp, BookOpen, Clock, BarChart3, CheckCircle } from 'lucide-react';
 
 const AccordionItem = ({ title, children, defaultOpen = false }: { 
@@ -34,6 +35,9 @@ const AccordionItem = ({ title, children, defaultOpen = false }: {
 };
 
 export default function Home() {
+  const params = useParams();
+  const locale = params.locale as string;
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
       <div className="max-w-4xl mx-auto px-4 py-12">
@@ -240,7 +244,7 @@ export default function Home() {
                 </li>
               </ul>
               <Link
-                href="/test?reset=true"
+                href={`/${locale}/test?reset=true`}
                 className="block w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-lg transition-all duration-300 text-center transform group-hover:scale-105"
               >
                 Commencer →
@@ -271,7 +275,7 @@ export default function Home() {
                 </li>
               </ul>
               <Link
-                href="/test?reset=true&version=full"
+                href={`/${locale}/test?reset=true&version=full`}
                 className="block w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-lg transition-all duration-300 text-center transform group-hover:scale-105 shadow-lg"
               >
                 Commencer →
