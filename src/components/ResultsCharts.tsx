@@ -23,27 +23,101 @@ interface ChartProps {
   moduleScores: ModuleScore[];
 }
 
+// Fonction utilitaire pour diviser un texte en plusieurs lignes
+function wrapText(text: string, maxLength: number): string[] {
+  const words = text.split(' ');
+  const lines: string[] = [];
+  let currentLine = '';
+
+  for (const word of words) {
+    const testLine = currentLine ? `${currentLine} ${word}` : word;
+    if (testLine.length <= maxLength) {
+      currentLine = testLine;
+    } else {
+      if (currentLine) lines.push(currentLine);
+      currentLine = word;
+    }
+  }
+  if (currentLine) lines.push(currentLine);
+
+  return lines;
+}
+
+// Custom tick pour le radar chart avec retour à la ligne
+const CustomRadarTick = ({ payload, x, y, textAnchor, ...rest }: any) => {
+  const lines = wrapText(payload.value, 20);
+
+  return (
+    <g transform={`translate(${x},${y})`}>
+      <text
+        x={0}
+        y={0}
+        textAnchor={textAnchor}
+        fill="#374151"
+        fontSize={11}
+        fontWeight={500}
+      >
+        {lines.map((line, index) => (
+          <tspan
+            key={index}
+            x={0}
+            dy={index === 0 ? 0 : 12}
+          >
+            {line}
+          </tspan>
+        ))}
+      </text>
+    </g>
+  );
+};
+
+// Custom tick pour le bar chart avec retour à la ligne
+const CustomBarTick = ({ x, y, payload }: any) => {
+  const lines = wrapText(payload.value, 25);
+
+  return (
+    <g transform={`translate(${x},${y})`}>
+      <text
+        x={0}
+        y={0}
+        textAnchor="end"
+        fill="#374151"
+        fontSize={11}
+        fontWeight={500}
+      >
+        {lines.map((line, index) => (
+          <tspan
+            key={index}
+            x={-5}
+            dy={index === 0 ? -(lines.length - 1) * 6 : 12}
+          >
+            {line}
+          </tspan>
+        ))}
+      </text>
+    </g>
+  );
+};
+
 export function RadarChartComponent({ moduleScores }: ChartProps) {
   const data = moduleScores
     .filter(m => m.possible > 0)
     .map((score) => {
-      // Raccourcir les noms pour éviter le chevauchement
       const name = score.moduleName.split(' (')[0];
-      const shortName = name.length > 18 ? name.substring(0, 15) + '...' : name;
       return {
-        module: shortName,
+        module: name,
         fullName: name,
         score: score.percentage,
       };
     });
 
   return (
-    <ResponsiveContainer width="100%" height={500}>
-      <RadarChart data={data} margin={{ top: 20, right: 30, bottom: 20, left: 30 }}>
+    <ResponsiveContainer width="100%" height={550}>
+      <RadarChart data={data} margin={{ top: 40, right: 80, bottom: 40, left: 80 }}>
         <PolarGrid stroke="#e5e7eb" strokeWidth={1.5} />
         <PolarAngleAxis
           dataKey="module"
-          tick={{ fill: '#374151', fontSize: 11, fontWeight: 500 }}
+          tick={<CustomRadarTick />}
           tickLine={false}
         />
         <PolarRadiusAxis
@@ -79,11 +153,9 @@ export function BarChartComponent({ moduleScores }: ChartProps) {
     .filter(m => m.possible > 0)
     .sort((a, b) => b.percentage - a.percentage)
     .map((score) => {
-      // Raccourcir les noms pour l'affichage
       const name = score.moduleName.split(' (')[0];
-      const shortName = name.length > 22 ? name.substring(0, 19) + '...' : name;
       return {
-        module: shortName,
+        module: name,
         fullName: name,
         score: score.percentage,
       };
@@ -96,16 +168,12 @@ export function BarChartComponent({ moduleScores }: ChartProps) {
     return '#ef4444'; // red
   };
 
-  // Calculer la marge gauche dynamiquement selon la longueur des labels
-  const maxLabelLength = Math.max(...data.map(d => d.module.length));
-  const leftMargin = Math.min(180, Math.max(120, maxLabelLength * 7));
-
   return (
-    <ResponsiveContainer width="100%" height={Math.max(400, data.length * 60)}>
+    <ResponsiveContainer width="100%" height={Math.max(500, data.length * 70)}>
       <BarChart
         data={data}
         layout="horizontal"
-        margin={{ top: 20, right: 30, left: leftMargin, bottom: 20 }}
+        margin={{ top: 20, right: 30, left: 200, bottom: 20 }}
       >
         <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
         <XAxis
@@ -117,15 +185,12 @@ export function BarChartComponent({ moduleScores }: ChartProps) {
         <YAxis
           type="category"
           dataKey="module"
-          tick={{ fill: '#374151', fontSize: 11, fontWeight: 500 }}
-          width={leftMargin - 30}
+          tick={<CustomBarTick />}
+          width={190}
           tickLine={false}
         />
         <Tooltip
-          formatter={(value: number, name: string, props: any) => [
-            `${value.toFixed(1)}%`,
-            props.payload.fullName || 'Score'
-          ]}
+          formatter={(value: number) => [`${value.toFixed(1)}%`, 'Score']}
           contentStyle={{
             backgroundColor: '#fff',
             border: '1px solid #e5e7eb',
