@@ -51,20 +51,25 @@
 - [x] 24 items Likert (théories du complot majeures)
 **Total : 24 items | 10 points CART | 6 min**
 
-**TOTAL TEST COMPLET : 89 points | ~55 minutes**
+### Module 10 : Raisonnement Disjonctif ✅
+- [x] 6 items raisonnement par cas
+- [x] Questions sur portes, cravates, pièces de monnaie, nombres
+**Total : 6 items | 6 points | 5 min**
 
-## 📋 MODULES À FAIRE (existants mais incomplets)
+### Module 11 : Ancrage ✅
+- [x] 8 items avec ancres hautes et basses
+- [x] Questions sur distances, populations, températures, histoire, biologie
+**Total : 8 items | 4 points | 5 min**
 
-### Module 10 : Raisonnement Disjonctif
-- Actuellement : 3 items
-- À ajouter : 3 items supplémentaires (total visé : 6 items)
+### Module 12 : Croyances Dysfonctionnelles ✅
+- [x] 9 items Likert (théorie REBT d'Ellis)
+- [x] Besoin d'approbation, perfectionnisme, blâme, catastrophisme
+- [x] Locus de contrôle externe, évitement, dépendance, impuissance
+**Total : 9 items | 5 points CART | 3 min**
 
-### Module 11 : Ancrage
-- Actuellement : 4 items
-- À ajouter : 4 items supplémentaires (total visé : 8 items)
+**TOTAL TEST COMPLET : 99 points | 64 minutes | 12 MODULES COMPLÉTÉS ✅**
 
-### Module 12 : Croyances Dysfonctionnelles (5 points)
-- À créer : 9 items Likert
+## 📋 MODULES À FAIRE
 
 ## MODULES VERSION LONGUE SEULEMENT
 
