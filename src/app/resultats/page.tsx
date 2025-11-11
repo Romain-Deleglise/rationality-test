@@ -9,6 +9,7 @@ import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { RadarChartComponent, BarChartComponent } from '@/components/ResultsCharts';
 import { ChevronDown, ChevronUp, BookOpen, TrendingUp, AlertCircle, Award, Brain, Mail } from 'lucide-react';
+import React from 'react';
 
 // Composant Accordéon avec jauge dans le titre
 const AccordionItem = ({ title, children, defaultOpen = false, scorePercentage }: {
@@ -39,11 +40,15 @@ const AccordionItem = ({ title, children, defaultOpen = false, scorePercentage }
         onClick={() => setIsOpen(!isOpen)}
         className="w-full px-6 py-4 bg-gradient-to-r from-gray-50 to-white hover:from-gray-100 hover:to-gray-50 transition-colors"
       >
-        <div className="flex items-center justify-between gap-4">
-          <span className="font-semibold text-left text-gray-900 flex-shrink-0">{title}</span>
+        <div className="flex items-center gap-4">
+          {/* Titre - largeur fixe pour alignement */}
+          <span className="font-semibold text-left text-gray-900 flex-1 min-w-0">
+            {title}
+          </span>
           
+          {/* Jauge - largeur fixe pour alignement */}
           {scorePercentage !== undefined && (
-            <div className="flex items-center gap-3 flex-1 max-w-md">
+            <div className="flex items-center gap-3 w-64 flex-shrink-0">
               <div className="flex-1">
                 <div className="w-full bg-gray-200 rounded-full h-2.5 overflow-hidden">
                   <div 
@@ -52,16 +57,19 @@ const AccordionItem = ({ title, children, defaultOpen = false, scorePercentage }
                   />
                 </div>
               </div>
-              <span className={`${getScoreColor(scorePercentage)} font-bold text-sm whitespace-nowrap`}>
+              <span className={`${getScoreColor(scorePercentage)} font-bold text-sm w-12 text-right`}>
                 {scorePercentage.toFixed(0)}%
               </span>
             </div>
           )}
           
-          {isOpen ? 
-            <ChevronUp className="w-5 h-5 text-blue-600 flex-shrink-0" /> : 
-            <ChevronDown className="w-5 h-5 text-gray-400 flex-shrink-0" />
-          }
+          {/* Icône chevron */}
+          <div className="flex-shrink-0">
+            {isOpen ? 
+              <ChevronUp className="w-5 h-5 text-blue-600" /> : 
+              <ChevronDown className="w-5 h-5 text-gray-400" />
+            }
+          </div>
         </div>
       </button>
       {isOpen && (
@@ -147,10 +155,10 @@ export default function ResultatsPage() {
 
   // Descriptions COMPLÈTES avec liens hypertextes
   const moduleDescriptions: Record<string, {
-    what: JSX.Element;
-    why: JSX.Element;
-    example: JSX.Element;
-    canImprove: JSX.Element;
+    what: React.ReactElement;
+    why: React.ReactElement;
+    example: React.ReactElement;
+    canImprove: React.ReactElement;
   }> = {
     'Raisonnement Probabiliste': {
       what: (
@@ -666,7 +674,7 @@ export default function ResultatsPage() {
             </li>
             <li className="flex items-start gap-2">
               <span className="text-green-600 font-bold">✓</span>
-              <span><strong>Ralentissement forcé :</strong> Règle des 24-48h pour les décisions +1000€</span>
+              <span><strong>Ralentissement forcé :</strong> Règle des 24-48h pour les décisions importantes (investissements, achats majeurs, changements de carrière)</span>
             </li>
             <li className="flex items-start gap-2">
               <span className="text-green-600 font-bold">✓</span>
