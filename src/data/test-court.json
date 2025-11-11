@@ -1,127 +1,137 @@
 {
   "version": "courte",
-  "totalPoints": 38,
+  "totalPoints": 25,
   "estimatedTime": 20,
   "modules": [
     {
       "id": "prob-stats",
       "name": "Raisonnement Probabiliste (10 items)",
       "points": 10,
-      "time": 3,
+      "time": 4,
       "questions": [
         {
-          "id": "crt-1",
-          "type": "number",
-          "text": "Une batte et une balle coûtent 1,10€ au total. La batte coûte 1€ de plus que la balle. Combien coûte la balle ?",
-          "unit": "centimes",
-          "correct": 5,
+          "id": "prob-match-1",
+          "type": "multiple-choice",
+          "text": "Imaginez un jeu de cartes avec 2 couleurs : A (60% des cartes) et B (40% des cartes). On tire 10 cartes au hasard. Quelle stratégie maximise vos chances de prédire correctement chaque tirage ?",
+          "options": [
+            "Toujours prédire A",
+            "Prédire A environ 6 fois sur 10 et B environ 4 fois sur 10",
+            "Alterner entre A et B de manière égale"
+          ],
+          "correct": 0,
           "points": 1,
-          "explanation": "La bonne réponse est 5 centimes. Si la balle coûte 5c, la batte coûte 1,05€ (1€ de plus), total = 1,10€. L'erreur intuitive est de répondre 10 centimes."
-        },
-        {
-          "id": "crt-2",
-          "type": "number",
-          "text": "Si 5 machines prennent 5 minutes pour faire 5 widgets, combien de temps prennent 100 machines pour faire 100 widgets ?",
-          "unit": "minutes",
-          "correct": 5,
-          "points": 1,
-          "explanation": "La réponse est 5 minutes. Chaque machine prend 5 minutes pour faire 1 widget. Donc 100 machines prennent aussi 5 minutes pour faire 100 widgets (en parallèle)."
+          "explanation": "La stratégie optimale est de toujours prédire A (60% de succès). L'erreur de 'probability matching' consiste à essayer de reproduire les proportions (60/40)."
         },
         {
           "id": "gambler-1",
           "type": "multiple-choice",
-          "text": "Imaginez que nous lançons une pièce équilibrée (50-50 pile ou face) et qu'elle vient de tomber sur pile cinq fois d'affilée. Pour le sixième lancer :",
+          "text": "Une pièce équilibrée (50-50 pile ou face) vient de tomber sur pile cinq fois d'affilée. Pour le sixième lancer :",
           "options": [
-            "Il est plus probable que face sorte plutôt que pile",
-            "Il est plus probable que pile sorte plutôt que face",
-            "Pile et face sont également probables au sixième lancer"
+            "Il est plus probable que face sorte",
+            "Il est plus probable que pile sorte",
+            "Pile et face sont également probables"
           ],
           "correct": 2,
           "points": 1,
-          "explanation": "Les lancers sont indépendants. La pièce n'a pas de mémoire. P(pile) = P(face) = 50% à chaque lancer."
+          "explanation": "Les lancers sont indépendants. La pièce n'a pas de mémoire. P(pile) = P(face) = 50% à chaque lancer, peu importe l'historique."
         },
         {
-          "id": "base-rate-1",
-          "type": "number",
-          "text": "Un test médical détecte une maladie rare (prévalence 0,5%). Le test a 95% de sensibilité et 5% de faux positifs. Votre test est positif. Quelle est la probabilité que vous ayez vraiment la maladie ?",
-          "unit": "%",
-          "correct": 9,
-          "tolerance": 5,
+          "id": "gambler-4",
+          "type": "multiple-choice",
+          "text": "Un couple a 4 filles. Ils veulent un cinquième enfant. Quelle est la probabilité que ce soit un garçon ?",
+          "options": [
+            "Plus de 50% (ils sont 'dus' pour un garçon)",
+            "Moins de 50% (ils ont tendance à faire des filles)",
+            "Environ 50% (indépendant des naissances précédentes)"
+          ],
+          "correct": 2,
           "points": 1,
-          "explanation": "Environ 9%. Sur 1000 personnes : 5 sont malades (4,75 détectées), 995 sont saines (49,75 faux positifs). Probabilité = 4,75 / (4,75 + 49,75) ≈ 8,7%."
+          "explanation": "Chaque naissance est indépendante. Les naissances précédentes n'affectent pas la probabilité du prochain enfant (~50% garçon/fille)."
         },
         {
-          "id": "linda-problem",
+          "id": "conjunction-3",
           "type": "ranking",
-          "text": "Linda a 31 ans, célibataire, franche et brillante. Elle a étudié la philosophie. Étudiante, elle était préoccupée par la discrimination et la justice sociale. Classez par probabilité (1 = plus probable) :",
+          "text": "Linda a 31 ans, célibataire, franche et brillante. Elle a étudié la philosophie. Étudiante, elle était préoccupée par la discrimination sociale. Classez par probabilité :",
           "options": [
             "Linda est enseignante",
-            "Linda est caissière de banque",
+            "Linda est caissière",
             "Linda est active dans le mouvement féministe",
-            "Linda est caissière de banque ET active dans le mouvement féministe"
+            "Linda est caissière ET active dans le mouvement féministe"
           ],
           "scoring": {
             "type": "conjunction-check",
             "rule": "option-1 > option-3"
           },
           "points": 1,
-          "explanation": "L'option 'caissière' doit être classée plus probable que 'caissière ET féministe' car P(A) > P(A ∩ B) toujours."
+          "explanation": "Malgré la description, P(caissière) > P(caissière ET féministe) mathématiquement. C'est le fameux 'Linda problem'."
+        },
+        {
+          "id": "conjunction-2",
+          "type": "ranking",
+          "text": "Marc aime les jeux vidéo et passe beaucoup de temps sur son ordinateur. Classez par probabilité :",
+          "options": [
+            "Marc travaille dans l'informatique",
+            "Marc est développeur de jeux vidéo",
+            "Marc est comptable",
+            "Marc travaille dans l'informatique ET joue dans une équipe e-sport"
+          ],
+          "scoring": {
+            "type": "conjunction-check",
+            "rule": "option-0 > option-3"
+          },
+          "points": 1,
+          "explanation": "P(informatique) doit être classé plus probable que P(informatique ET e-sport). La conjonction est toujours moins probable."
+        },
+        {
+          "id": "base-rate-1",
+          "type": "number",
+          "text": "Une maladie touche 1% de la population. Un test la détecte avec 90% de sensibilité (vrai positif) et a 9% de faux positifs. Votre test est positif. Quelle est votre probabilité d'être malade ?",
+          "unit": "%",
+          "correct": 9,
+          "tolerance": 3,
+          "points": 1,
+          "explanation": "Sur 10000 personnes : 100 malades (90 détectées), 9900 saines (891 faux positifs). P = 90/(90+891) ≈ 9,2%."
+        },
+        {
+          "id": "base-rate-2",
+          "type": "multiple-choice",
+          "text": "Dans une entreprise, 70% des employés sont ingénieurs et 30% sont managers. Jean est timide et aime les puzzles. Est-il plus probablement :",
+          "options": [
+            "Ingénieur",
+            "Manager",
+            "Impossible à déterminer avec ces infos"
+          ],
+          "correct": 0,
+          "points": 1,
+          "explanation": "Même si la description semble correspondre aux stéréotypes d'ingénieur, le taux de base (70%) est déjà un fort indicateur."
         },
         {
           "id": "sample-size",
           "type": "multiple-choice",
-          "text": "Une ville a 2 hôpitaux : le grand (45 bébés/jour) et le petit (15 bébés/jour). Environ 50% des bébés sont des garçons, mais le % varie d'un jour à l'autre. Sur un an, chaque hôpital a enregistré les jours où plus de 60% des bébés étaient des garçons. Quel hôpital a enregistré le plus de tels jours ?",
+          "text": "Une ville a 2 hôpitaux : le grand (45 naissances/jour) et le petit (15 naissances/jour). Environ 50% des bébés sont des garçons, mais ça varie quotidiennement. Sur un an, quel hôpital a enregistré le plus de jours avec >60% de garçons ?",
           "options": [
-            "Le plus grand hôpital",
-            "Le plus petit hôpital",
+            "Le grand hôpital",
+            "Le petit hôpital",
             "À peu près pareil"
           ],
           "correct": 1,
           "points": 1,
-          "explanation": "Le petit hôpital. Les petits échantillons ont plus de variance. Il est plus facile d'avoir 60%+ avec 15 bébés qu'avec 45."
+          "explanation": "Le petit hôpital. Les petits échantillons ont plus de variance. Il est plus facile d'obtenir des extrêmes avec 15 observations qu'avec 45."
         },
         {
           "id": "regression-mean",
           "type": "multiple-choice",
-          "text": "En baseball des jeunes à Toulouse, après 3 semaines, plusieurs batteurs ont des moyennes >0,500. Mais aucun n'a jamais fini la saison >0,500. Pourquoi ?",
+          "text": "En basketball universitaire, les joueurs qui excellent en première année ont tendance à moins bien performer en deuxième année. Quelle est la meilleure explication ?",
           "options": [
-            "Les lanceurs se concentrent plus sur les meilleurs batteurs",
-            "Les lanceurs s'améliorent au cours de la saison",
-            "Une moyenne élevée en début de saison peut être due à la chance. Une saison plus longue donne un test plus réaliste",
-            "Un batteur performant subit du stress qui affecte son jeu",
-            "Les entraîneurs développent des stratégies contre les meilleurs"
+            "Ils deviennent complaisants après leur succès",
+            "Les adversaires étudient leur jeu et s'adaptent",
+            "Les performances extrêmes incluent de la chance qui ne se répète pas",
+            "La pression des attentes affecte leur performance",
+            "Leur entraînement devient moins rigoureux"
           ],
           "correct": 2,
           "points": 1,
-          "explanation": "Régression vers la moyenne. Les performances extrêmes en début de saison incluent de la chance, qui disparaît sur le long terme."
-        },
-        {
-          "id": "prob-calc-1",
-          "type": "number",
-          "text": "Pour une personne de plus de 60 ans, les chances d'avoir un zona à un moment de leur vie sont de 0,06. Sur 30 000 personnes de plus de 60 ans, combien environ peut-on s'attendre à ce qu'elles aient un zona ?",
-          "unit": "personnes",
-          "correct": 1800,
-          "tolerance": 100,
-          "points": 1,
-          "explanation": "30 000 × 0,06 = 1 800 personnes."
-        },
-        {
-          "id": "prob-calc-2",
-          "type": "number",
-          "text": "Une personne non vaccinée a 10% de chances d'attraper la grippe. Le vaccin est efficace à 80%. Quelles sont les chances qu'une personne vaccinée attrape quand même la grippe ?",
-          "unit": "%",
-          "correct": 2,
-          "points": 1,
-          "explanation": "10% × (100% - 80%) = 10% × 20% = 2%."
-        },
-        {
-          "id": "calibration-1",
-          "type": "confidence-interval",
-          "text": "Donnez un intervalle de confiance à 90% : Quelle est la population du Canada ?",
-          "unit": "millions d'habitants",
-          "correct": 38,
-          "points": 1,
-          "explanation": "La population du Canada est d'environ 38 millions. Votre intervalle devrait contenir cette valeur pour être bien calibré."
+          "explanation": "Régression vers la moyenne. Les performances exceptionnelles combinent talent ET chance. La chance ne persiste pas, donc les performances reviennent vers la moyenne."
         }
       ]
     },
@@ -210,8 +220,26 @@
       "id": "crt",
       "name": "Réflexion vs Intuition (7 items)",
       "points": 7,
-      "time": 2,
+      "time": 3,
       "questions": [
+        {
+          "id": "crt-1",
+          "type": "number",
+          "text": "Une batte et une balle coûtent 1,10€ au total. La batte coûte 1€ de plus que la balle. Combien coûte la balle ?",
+          "unit": "centimes",
+          "correct": 5,
+          "points": 1,
+          "explanation": "5 centimes. Si la balle = 5c, la batte = 1,05€ (1€ de plus), total = 1,10€. L'intuition suggère 10c, mais cela donnerait un total de 1,20€."
+        },
+        {
+          "id": "crt-2",
+          "type": "number",
+          "text": "Si 5 machines prennent 5 minutes pour faire 5 widgets, combien de temps prennent 100 machines pour faire 100 widgets ?",
+          "unit": "minutes",
+          "correct": 5,
+          "points": 1,
+          "explanation": "5 minutes. Chaque machine fait 1 widget en 5 minutes. Donc 100 machines font 100 widgets en 5 minutes (en parallèle). L'intuition suggère 100 minutes."
+        },
         {
           "id": "crt-3",
           "type": "number",
@@ -219,7 +247,7 @@
           "unit": "jours",
           "correct": 47,
           "points": 1,
-          "explanation": "47 jours. Si le lac est couvert au jour 48 et que la taille double chaque jour, alors au jour 47 il est à moitié."
+          "explanation": "47 jours. Si le lac est plein au jour 48 et que la taille double chaque jour, alors au jour 47 il est à moitié couvert. L'intuition suggère 24 jours."
         },
         {
           "id": "crt-4",
@@ -228,16 +256,7 @@
           "unit": "minutes",
           "correct": 24,
           "points": 1,
-          "explanation": "24 minutes. Il faut 24 coupes pour obtenir 25 morceaux."
-        },
-        {
-          "id": "crt-5",
-          "type": "number",
-          "text": "Le nombre de bactéries dans un conteneur double chaque heure. S'il faut 32 heures pour remplir le conteneur, combien d'heures faut-il pour remplir la moitié ?",
-          "unit": "heures",
-          "correct": 31,
-          "points": 1,
-          "explanation": "31 heures. À l'heure 31, c'est la moitié. Ensuite ça double → plein à l'heure 32."
+          "explanation": "24 minutes. Il faut 24 coupes pour obtenir 25 morceaux (pas 25 coupes). L'intuition suggère 25 minutes."
         },
         {
           "id": "crt-6",
@@ -250,21 +269,25 @@
           ],
           "correct": 1,
           "points": 1,
-          "explanation": "Deuxième position. Vous prenez la place de celui qui était 2ème, donc vous êtes maintenant 2ème."
+          "explanation": "Deuxième position. Vous prenez la place de celui qui était 2ème. L'intuition suggère 1ère position."
         },
         {
           "id": "crt-7",
-          "type": "multiple-choice",
-          "text": "Dans un magasin, tous les articles sont réduits de moitié. Le dernier jour, il y a une remise supplémentaire de 10% sur le prix soldé. Si le prix initial était 100€, quel est le prix final ?",
-          "options": [
-            "40€",
-            "45€",
-            "50€",
-            "55€"
-          ],
+          "type": "number",
+          "text": "Un fermier a 15 moutons. Tous sauf 9 meurent. Combien en reste-t-il ?",
+          "unit": "moutons",
+          "correct": 9,
+          "points": 1,
+          "explanation": "9 moutons. 'Tous sauf 9' signifie que 9 survivent. L'intuition suggère souvent 6 (15-9)."
+        },
+        {
+          "id": "crt-10",
+          "type": "number",
+          "text": "Un livre et un stylo coûtent 12€. Le livre coûte 10€ de plus que le stylo. Combien coûte le stylo ?",
+          "unit": "euros",
           "correct": 1,
           "points": 1,
-          "explanation": "45€. Première remise : 50€. Puis 10% de réduction sur 50€ = 5€ → 45€."
+          "explanation": "1€. Si le stylo = 1€, le livre = 11€ (10€ de plus), total = 12€. L'intuition suggère 2€."
         }
       ]
     },
@@ -277,26 +300,98 @@
         {
           "id": "syllogism-1",
           "type": "multiple-choice",
-          "text": "Prémisse 1 : Toutes les fleurs sont des carbitops. Prémisse 2 : Toutes les tulipes sont des carbitops. Conclusion : Toutes les tulipes sont des fleurs.",
+          "text": "Prémisse 1 : Tous les mammifères peuvent marcher. Prémisse 2 : Les baleines sont des mammifères. Conclusion : Les baleines peuvent marcher.",
           "options": [
-            "La conclusion suit nécessairement des prémisses",
-            "La conclusion ne suit PAS nécessairement des prémisses"
-          ],
-          "correct": 1,
-          "points": 0.5,
-          "explanation": "Invalide logiquement (erreur AAA2). Même si la conclusion est vraie dans la réalité, elle ne suit pas logiquement des prémisses."
-        },
-        {
-          "id": "syllogism-2",
-          "type": "multiple-choice",
-          "text": "Prémisse 1 : Tous les poissons sont des bictodes. Prémisse 2 : Aucun requin n'est un bictode. Conclusion : Aucun requin n'est un poisson.",
-          "options": [
-            "La conclusion suit nécessairement des prémisses",
-            "La conclusion ne suit PAS nécessairement des prémisses"
+            "La conclusion suit logiquement des prémisses",
+            "La conclusion ne suit PAS logiquement des prémisses"
           ],
           "correct": 0,
           "points": 0.5,
-          "explanation": "Valide logiquement (AEE2). Même si la conclusion est fausse dans la réalité (les requins sont des poissons), elle suit logiquement des prémisses."
+          "explanation": "Valide logiquement (AAA1). Même si la conclusion est fausse dans la réalité, elle découle logiquement des prémisses. Syllogisme inconsistant (validité ≠ crédibilité)."
+        },
+        {
+          "id": "syllogism-3",
+          "type": "multiple-choice",
+          "text": "Prémisse 1 : Toutes les fleurs ont besoin d'eau. Prémisse 2 : Les roses ont besoin d'eau. Conclusion : Les roses sont des fleurs.",
+          "options": [
+            "La conclusion suit logiquement des prémisses",
+            "La conclusion ne suit PAS logiquement des prémisses"
+          ],
+          "correct": 1,
+          "points": 0.5,
+          "explanation": "Invalide logiquement (AAA2). Même si la conclusion est vraie, elle ne découle pas logiquement des prémisses. Syllogisme inconsistant."
+        },
+        {
+          "id": "syllogism-5",
+          "type": "multiple-choice",
+          "text": "Prémisse 1 : Aucun reptile n'a de fourrure. Prémisse 2 : Tous les serpents sont des reptiles. Conclusion : Aucun serpent n'a de fourrure.",
+          "options": [
+            "La conclusion suit logiquement des prémisses",
+            "La conclusion ne suit PAS logiquement des prémisses"
+          ],
+          "correct": 0,
+          "points": 0.5,
+          "explanation": "Valide logiquement (EAE1). La conclusion découle logiquement des prémisses et est vraie. Syllogisme consistant (validité = crédibilité)."
+        },
+        {
+          "id": "syllogism-6",
+          "type": "multiple-choice",
+          "text": "Prémisse 1 : Tous les oiseaux peuvent voler. Prémisse 2 : Les pingouins sont des oiseaux. Conclusion : Les pingouins peuvent voler.",
+          "options": [
+            "La conclusion suit logiquement des prémisses",
+            "La conclusion ne suit PAS logiquement des prémisses"
+          ],
+          "correct": 0,
+          "points": 0.5,
+          "explanation": "Valide logiquement (AAA1). La conclusion suit des prémisses, même si elle est fausse dans la réalité. Syllogisme inconsistant."
+        },
+        {
+          "id": "syllogism-9",
+          "type": "multiple-choice",
+          "text": "Prémisse 1 : Toutes les plantes sont des zarbons. Prémisse 2 : Toutes les fougères sont des zarbons. Conclusion : Toutes les fougères sont des plantes.",
+          "options": [
+            "La conclusion suit logiquement des prémisses",
+            "La conclusion ne suit PAS logiquement des prémisses"
+          ],
+          "correct": 1,
+          "points": 0.5,
+          "explanation": "Invalide logiquement (AAA2). Même si la conclusion est vraie, elle ne suit pas logiquement. Syllogisme consistant."
+        },
+        {
+          "id": "syllogism-11",
+          "type": "multiple-choice",
+          "text": "Prémisse 1 : Aucun mammifère ne pond d'œufs. Prémisse 2 : Les ornitorynques pondent des œufs. Conclusion : Les ornitorynques ne sont pas des mammifères.",
+          "options": [
+            "La conclusion suit logiquement des prémisses",
+            "La conclusion ne suit PAS logiquement des prémisses"
+          ],
+          "correct": 0,
+          "points": 0.5,
+          "explanation": "Valide logiquement (EAE2). La conclusion suit des prémisses, même si elle est fausse (les ornitorynques sont des mammifères). Syllogisme inconsistant."
+        },
+        {
+          "id": "syllogism-13",
+          "type": "multiple-choice",
+          "text": "Prémisse 1 : Tous les fruits contiennent des vitamines. Prémisse 2 : Les oranges sont des fruits. Conclusion : Les oranges contiennent des vitamines.",
+          "options": [
+            "La conclusion suit logiquement des prémisses",
+            "La conclusion ne suit PAS logiquement des prémisses"
+          ],
+          "correct": 0,
+          "points": 0.5,
+          "explanation": "Valide logiquement (AAA1). La conclusion découle des prémisses et est vraie. Syllogisme consistant."
+        },
+        {
+          "id": "syllogism-14",
+          "type": "multiple-choice",
+          "text": "Prémisse 1 : Tous les politiciens sont des menteurs. Prémisse 2 : Jean est un menteur. Conclusion : Jean est un politicien.",
+          "options": [
+            "La conclusion suit logiquement des prémisses",
+            "La conclusion ne suit PAS logiquement des prémisses"
+          ],
+          "correct": 1,
+          "points": 0.5,
+          "explanation": "Invalide logiquement (AAA2). La conclusion ne découle pas logiquement des prémisses (il peut y avoir des menteurs non-politiciens). Syllogisme consistant."
         }
       ]
     },
