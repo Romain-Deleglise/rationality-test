@@ -6,14 +6,15 @@ import { useTestStore } from '@/store/useTestStore';
 import { Progress } from '@/components/ui/progress';
 import { Button } from '@/components/ui/button';
 import Question from '@/components/Question';
-import testData from '@/data/test-court.json';
+import testCourtData from '@/data/test-court.json';
+import testCompletData from '@/data/test-complet.json';
 import { Module } from '@/types';
 
 export default function TestContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const [isInitialized, setIsInitialized] = useState(false);
-  
+
   const {
     session,
     modules,
@@ -38,20 +39,18 @@ export default function TestContent() {
       // Rediriger sans le paramètre pour éviter les boucles
       router.replace('/test');
     }
-    
+
     // Démarrer le test seulement s'il n'y a pas de session
     if (!session) {
       const version = searchParams.get('version');
-      const allModules = testData.modules as Module[];
-      
-      // Filtrer selon la version
-      const selectedModules = version === 'full' 
-        ? allModules 
-        : allModules.slice(0, 6); // Version courte : 6 premiers modules
-      
+
+      // Charger les bonnes données selon la version
+      const testData = version === 'full' ? testCompletData : testCourtData;
+      const selectedModules = testData.modules as Module[];
+
       startTest(selectedModules);
     }
-    
+
     setIsInitialized(true);
   }, []); // Dépendances vides = s'exécute une seule fois
 
