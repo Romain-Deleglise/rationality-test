@@ -309,6 +309,13 @@ export default function Home() {
             {t('footer')}
           </p>
         </div>
+
+        {/* Enjoy message */}
+        <div className="text-center mt-6 text-base text-gray-600 italic">
+          <p>
+            {t('enjoy')}
+          </p>
+        </div>
       </div>
     </div>
   );

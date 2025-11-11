@@ -2,9 +2,11 @@
 
 import { useEffect, useState } from 'react';
 import { useRouter, useParams } from 'next/navigation';
+import { useTranslations } from 'next-intl';
 import { useTestStore } from '@/store/useTestStore';
 import { scoreTest, calculatePercentile, TestScore } from '@/lib/scoring';
 import { saveTestResult, calculateRealPercentile, generateResultToken, getGlobalStats } from '@/lib/supabase';
+import { getModuleTranslationKey } from '@/lib/moduleMapping';
 import Link from 'next/link';
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -85,6 +87,8 @@ export default function ResultatsPage() {
   const router = useRouter();
   const params = useParams();
   const locale = params.locale as string;
+  const t = useTranslations('results');
+  const tCommon = useTranslations('common');
   const { session, modules, resetTest } = useTestStore();
   const [testScore, setTestScore] = useState<TestScore | null>(null);
   const [email, setEmail] = useState('');
@@ -153,7 +157,7 @@ export default function ResultatsPage() {
 
   const handleSendEmail = async () => {
     if (!email || !testScore) return;
-    
+
     setSendingEmail(true);
     try {
       const response = await fetch('/api/send-results', {
@@ -162,6 +166,7 @@ export default function ResultatsPage() {
         body: JSON.stringify({
           email,
           testScore,
+          locale,
         }),
       });
 
@@ -169,10 +174,10 @@ export default function ResultatsPage() {
         setEmailSent(true);
         setTimeout(() => setEmailSent(false), 5000);
       } else {
-        alert('Erreur lors de l\'envoi. Veuillez réessayer.');
+        alert(t('errorSending'));
       }
     } catch (error) {
-      alert('Erreur lors de l\'envoi. Veuillez réessayer.');
+      alert(t('errorSending'));
     } finally {
       setSendingEmail(false);
     }
@@ -183,7 +188,7 @@ export default function ResultatsPage() {
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">
           <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4"></div>
-          <p className="text-gray-600">Calcul des résultats...</p>
+          <p className="text-gray-600">{t('loading')}</p>
         </div>
       </div>
     );
@@ -197,11 +202,11 @@ export default function ResultatsPage() {
   };
 
   const getScoreLabel = (score: number) => {
-    if (score >= 85) return 'Très Élevée';
-    if (score >= 70) return 'Élevée';
-    if (score >= 55) return 'Moyenne';
-    if (score >= 40) return 'Sous la Moyenne';
-    return 'Limitée';
+    if (score >= 85) return t('scoreLabels.veryHigh');
+    if (score >= 70) return t('scoreLabels.high');
+    if (score >= 55) return t('scoreLabels.average');
+    if (score >= 40) return t('scoreLabels.belowAverage');
+    return t('scoreLabels.limited');
   };
 
   // Descriptions COMPLÈTES avec liens hypertextes
@@ -593,14 +598,14 @@ export default function ResultatsPage() {
         {/* Header */}
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">
-            Vos Résultats
+            {t('title')}
           </h1>
           <p className="text-xl text-gray-600">
-            Test de Rationalité (CART adapté)
+            {t('subtitle')}
           </p>
           <div className="flex items-center justify-center gap-2 mt-2">
             <p className="text-sm text-gray-500">
-              Complété le {new Date(session!.completedAt!).toLocaleDateString('fr-FR', {
+              {t('completedOn')} {new Date(session!.completedAt!).toLocaleDateString(locale === 'fr' ? 'fr-FR' : 'en-US', {
                 day: 'numeric',
                 month: 'long',
                 year: 'numeric',
@@ -612,23 +617,23 @@ export default function ResultatsPage() {
                 ? 'bg-blue-100 text-blue-700'
                 : 'bg-green-100 text-green-700'
             }`}>
-              Version {version}
+              {tCommon('version')} {version === 'complète' ? tCommon('full') : tCommon('short')}
             </span>
           </div>
         </div>
 
         {/* Score Global */}
         <div className="bg-white rounded-xl shadow-lg p-8 mb-8 text-center border-t-4 border-blue-600">
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">Score Global</h2>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">{t('globalScore')}</h2>
           <div className="mb-6">
             <div className={`text-6xl font-bold mb-2 ${getScoreColor(testScore.percentage)}`}>
               {testScore.percentage.toFixed(1)}%
             </div>
             <div className={`text-2xl font-semibold mb-2 ${getScoreColor(testScore.percentage)}`}>
-              Rationalité {getScoreLabel(testScore.percentage)}
+              {t('rationality')} {getScoreLabel(testScore.percentage)}
             </div>
             <div className="text-lg text-gray-600">
-              {testScore.totalEarned.toFixed(1)} / {testScore.totalPossible.toFixed(1)} points
+              {testScore.totalEarned.toFixed(1)} / {testScore.totalPossible.toFixed(1)} {t('points')}
             </div>
           </div>
           {/* Percentile - afficher le vrai si disponible */}
@@ -636,18 +641,18 @@ export default function ResultatsPage() {
             <p className="text-gray-700">
               {realPercentile !== null ? (
                 <>
-                  Percentile réel : <strong className="text-blue-600">{realPercentile}e</strong>
+                  {t('realPercentile')} : <strong className="text-blue-600">{realPercentile}e</strong>
                   <br />
                   <span className="text-xs text-gray-500 mt-1">
-                    (basé sur {globalStats?.count || '...'} résultats réels)
+                    ({t('basedOn')} {globalStats?.count || '...'} {t('results')})
                   </span>
                 </>
               ) : (
                 <>
-                  Percentile estimé : <strong className="text-blue-600">{testScore.percentile}e</strong>
+                  {t('estimatedPercentile')} : <strong className="text-blue-600">{testScore.percentile}e</strong>
                   <br />
                   <span className="text-xs text-gray-500 mt-1">
-                    {savingToDb ? '(calcul du vrai percentile...)' : '(basé sur une distribution théorique)'}
+                    {savingToDb ? `(${t('calculatingRealPercentile')})` : `(${t('theoreticalDistribution')})`}
                   </span>
                 </>
               )}
@@ -660,23 +665,23 @@ export default function ResultatsPage() {
               <div className="flex items-center justify-center gap-2 mb-3">
                 <Database className="w-5 h-5 text-blue-600" />
                 <p className="text-sm font-semibold text-gray-900">
-                  Résultats sauvegardés !
+                  {t('savedResults')}
                 </p>
               </div>
               <p className="text-sm text-gray-600 text-center mb-3">
-                Partagez ou retrouvez vos résultats à tout moment
+                {t('shareDescription')}
               </p>
               <div className="flex justify-center">
                 <button
                   onClick={() => {
-                    navigator.clipboard.writeText(`${window.location.origin}/resultats/${resultToken}`);
+                    navigator.clipboard.writeText(`${window.location.origin}/${locale}/resultats/${resultToken}`);
                     setLinkCopied(true);
                     setTimeout(() => setLinkCopied(false), 2000);
                   }}
                   className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold flex items-center gap-2 transition-colors shadow-md"
                 >
                   <Share2 className="w-5 h-5" />
-                  {linkCopied ? '✓ Lien copié !' : 'Copier le lien'}
+                  {linkCopied ? t('linkCopied') : t('copyLink')}
                 </button>
               </div>
             </div>
@@ -685,22 +690,22 @@ export default function ResultatsPage() {
           {/* Statistiques globales */}
           {globalStats && globalStats.count > 10 && (
             <div className="mt-6 bg-gray-50 rounded-lg p-4 text-left">
-              <h3 className="text-sm font-bold text-gray-900 mb-3">📊 Statistiques globales (version {version})</h3>
+              <h3 className="text-sm font-bold text-gray-900 mb-3">📊 {t('globalStatsVersion')} {version})</h3>
               <div className="grid grid-cols-2 gap-3 text-xs">
                 <div>
-                  <span className="text-gray-600">Tests complétés :</span>
+                  <span className="text-gray-600">{t('testsCompleted')} :</span>
                   <span className="font-semibold text-gray-900 ml-1">{globalStats.count}</span>
                 </div>
                 <div>
-                  <span className="text-gray-600">Score moyen :</span>
+                  <span className="text-gray-600">{t('averageScore')} :</span>
                   <span className="font-semibold text-gray-900 ml-1">{globalStats.average.toFixed(1)}%</span>
                 </div>
                 <div>
-                  <span className="text-gray-600">Médiane :</span>
+                  <span className="text-gray-600">{t('median')} :</span>
                   <span className="font-semibold text-gray-900 ml-1">{globalStats.median.toFixed(1)}%</span>
                 </div>
                 <div>
-                  <span className="text-gray-600">Meilleur score :</span>
+                  <span className="text-gray-600">{t('bestScore')} :</span>
                   <span className="font-semibold text-gray-900 ml-1">{globalStats.max.toFixed(1)}%</span>
                 </div>
               </div>
@@ -713,16 +718,12 @@ export default function ResultatsPage() {
           <div className="flex items-start gap-3">
             <AlertCircle className="w-6 h-6 text-yellow-600 mt-1 flex-shrink-0" />
             <div>
-              <h3 className="font-bold text-gray-900 mb-2">Interprétation</h3>
+              <h3 className="font-bold text-gray-900 mb-2">{t('interpretation')}</h3>
               <p className="text-gray-700 text-justify mb-3">
                 {testScore.interpretation}
               </p>
               <p className="text-gray-600 text-sm text-justify italic">
-                <strong>Note critique :</strong> Connaître vos biais ne les élimine pas. 
-                Même Daniel Kahneman (Prix Nobel 2002 pour ses travaux sur les biais) admettait : 
-                <em>"J'ai énormément appris sur les biais cognitifs, mais je ne suis pas sûr d'être 
-                devenu moins susceptible à ces biais."</em> La vraie solution ? Changer votre environnement 
-                de décision (checklists, protocoles, consultation de tiers), pas juste vous-même.
+                <strong>{t('criticalNote')}</strong> {t('criticalNoteText')}
               </p>
             </div>
           </div>
@@ -798,7 +799,7 @@ export default function ResultatsPage() {
         <div className="space-y-6 mb-8">
           <Card>
             <CardHeader>
-              <CardTitle>Profil de Rationalité</CardTitle>
+              <CardTitle>{t('radarChart')}</CardTitle>
             </CardHeader>
             <CardContent>
               <RadarChartComponent moduleScores={testScore.modules} />
@@ -807,7 +808,7 @@ export default function ResultatsPage() {
 
           <Card>
             <CardHeader>
-              <CardTitle>Classement par Module</CardTitle>
+              <CardTitle>{t('barChart')}</CardTitle>
             </CardHeader>
             <CardContent>
               <BarChartComponent moduleScores={testScore.modules} />
@@ -818,11 +819,10 @@ export default function ResultatsPage() {
         {/* Détail par Module avec Jauges */}
         <div className="bg-white rounded-xl shadow-lg p-8 mb-8 border-t-4 border-blue-500">
           <h2 className="text-2xl font-bold text-gray-900 mb-2">
-            Analyse Détaillée par Module
+            {t('moduleDetails')}
           </h2>
           <p className="text-gray-600 mb-6">
-            Cliquez sur chaque module pour comprendre ce qui est mesuré, pourquoi c'est important, 
-            et si c'est améliorable.
+            {t('moduleDetailsDescription')}
           </p>
 
           <div className="space-y-3">
@@ -847,35 +847,35 @@ export default function ResultatsPage() {
                       <div className="space-y-4">
                         <div>
                           <h4 className="font-bold text-gray-900 mb-2">
-                            🎯 Ce qui est mesuré
+                            🎯 {t('whatIsMeasured')}
                           </h4>
                           <div className="text-justify">{desc.what}</div>
                         </div>
 
                         <div>
                           <h4 className="font-bold text-gray-900 mb-2">
-                            💡 Pourquoi c'est important
+                            💡 {t('whyImportant')}
                           </h4>
                           <div className="text-justify">{desc.why}</div>
                         </div>
 
                         <div className="bg-blue-50 p-4 rounded-lg">
                           <h4 className="font-bold text-gray-900 mb-2">
-                            📌 Exemple classique
+                            📌 {t('classicExample')}
                           </h4>
                           <div className="text-sm text-justify">{desc.example}</div>
                         </div>
 
                         <div className="bg-yellow-50 p-4 rounded-lg border-l-4 border-yellow-500">
                           <h4 className="font-bold text-gray-900 mb-2">
-                            📈 Peut-on s'améliorer ?
+                            📈 {t('canImprove')}
                           </h4>
                           <div className="text-sm text-justify">{desc.canImprove}</div>
                         </div>
                       </div>
                     ) : (
                       <p className="text-gray-500 italic">
-                        Description en cours de rédaction...
+                        {t('descriptionInProgress')}
                       </p>
                     )}
                   </AccordionItem>
@@ -1029,19 +1029,19 @@ export default function ResultatsPage() {
 
         {/* Actions */}
         <div className="bg-white rounded-xl shadow-lg p-8 text-center mb-8 print:hidden">
-          <h2 className="text-2xl font-bold text-gray-900 mb-6">Prochaines étapes</h2>
-          
+          <h2 className="text-2xl font-bold text-gray-900 mb-6">{t('nextSteps')}</h2>
+
           {/* Recevoir par email */}
           <div className="mb-6 max-w-md mx-auto">
             <h3 className="text-lg font-semibold text-gray-900 mb-3">
-              📧 Recevoir vos résultats par email
+              {t('sendEmail')}
             </h3>
             <div className="flex gap-2">
               <input
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="votre@email.com"
+                placeholder={t('email')}
                 className="flex-1 px-4 py-2 border-2 border-gray-300 rounded-lg focus:border-blue-500 focus:outline-none"
               />
               <button
@@ -1052,18 +1052,18 @@ export default function ResultatsPage() {
                 {sendingEmail ? (
                   <>
                     <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white"></div>
-                    Envoi...
+                    {t('sending')}
                   </>
                 ) : (
                   <>
                     <Mail className="w-4 h-4" />
-                    Envoyer
+                    {t('send')}
                   </>
                 )}
               </button>
             </div>
             {emailSent && (
-              <p className="text-green-600 text-sm mt-2">✓ Email envoyé avec succès !</p>
+              <p className="text-green-600 text-sm mt-2">{t('emailSent')}</p>
             )}
           </div>
 
@@ -1072,7 +1072,7 @@ export default function ResultatsPage() {
               onClick={() => window.print()}
               className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-lg transition-colors shadow-md"
             >
-              📄 Télécharger (PDF)
+              {t('downloadPDF')}
             </button>
             <button
               onClick={() => {
@@ -1082,27 +1082,26 @@ export default function ResultatsPage() {
               }}
               className="bg-gray-200 hover:bg-gray-300 text-gray-900 font-semibold px-6 py-3 rounded-lg transition-colors"
             >
-              🔄 Refaire le test
+              {t('retakeTest')}
             </button>
             <Link href={`/${locale}`}>
               <button className="bg-gray-200 hover:bg-gray-300 text-gray-900 font-semibold px-6 py-3 rounded-lg transition-colors">
-                🏠 Retour à l'accueil
+                {t('backHome')}
               </button>
             </Link>
           </div>
 
           <div className="mt-6 text-center">
             <a
-              href="mailto:rom.deleglise@orange.fr?subject=Feedback sur le Test de Rationalité&body=Bonjour,%0D%0A%0D%0AJe vous contacte pour partager mon feedback sur le test de rationalité :%0D%0A%0D%0A"
+              href={`mailto:rom.deleglise@orange.fr?subject=${locale === 'fr' ? 'Feedback sur le Test de Rationalité' : 'Feedback on Rationality Test'}&body=${locale === 'fr' ? 'Bonjour,%0D%0A%0D%0AJe vous contacte pour partager mon feedback sur le test de rationalité :%0D%0A%0D%0A' : 'Hello,%0D%0A%0D%0AI am contacting you to share my feedback on the rationality test:%0D%0A%0D%0A'}`}
               className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 hover:underline font-medium"
             >
-              💬 Envoyer un feedback sur le test
+              {t('sendFeedback')}
             </a>
           </div>
 
           <p className="text-sm text-gray-600 mt-4">
-            💡 Conseil : Pour mesurer de vrais progrès, repassez le test dans 6-12 mois
-            (pas avant, sinon c'est juste de la mémorisation)
+            {t('retestAdvice')}
           </p>
         </div>
 
