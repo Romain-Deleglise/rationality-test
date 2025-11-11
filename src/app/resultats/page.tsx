@@ -284,7 +284,7 @@ export default function ResultatsPage() {
           faire évaluer la logique par quelqu'un sans connaître le sujet.</p>
       )
     },
-    'Calibration': {
+    'Calibration des Connaissances': {
       what: (
         <p>Votre capacité à estimer avec précision votre niveau de certitude. Une personne bien{' '}
           <a href="https://www.lesswrong.com/tag/calibration" target="_blank" rel="noopener" className="text-blue-600 hover:underline">
@@ -359,7 +359,7 @@ export default function ResultatsPage() {
           (biais évolutif de détection de patterns).</p>
       )
     },
-    'Théories du Complot': {
+    'Croyances Conspirationnistes': {
       what: (
         <p>Votre résistance aux{' '}
           <a href="https://fr.wikipedia.org/wiki/Th%C3%A9orie_du_complot" target="_blank" rel="noopener" className="text-blue-600 hover:underline">
@@ -426,8 +426,52 @@ export default function ResultatsPage() {
           les sentences suivent les dés ! L'anchor (même absurde) influence.</p>
       ),
       canImprove: (
-        <p>Amélioration : très difficile (&lt;5%). L'ancrage agit inconsciemment. Solution : générer plusieurs estimations 
+        <p>Amélioration : très difficile (&lt;5%). L'ancrage agit inconsciemment. Solution : générer plusieurs estimations
           indépendantes avant de voir des chiffres externes.</p>
+      )
+    },
+    'Numératie Probabiliste': {
+      what: (
+        <p>Votre capacité à manipuler et comprendre les nombres dans des contextes probabilistes :
+          calculs de probabilités, transformations entre fractions/pourcentages/fréquences,
+          compréhension des grands nombres.</p>
+      ),
+      why: (
+        <p>La numératie probabiliste est fondamentale pour interpréter correctement les statistiques médicales,
+          financières, et scientifiques. Sans elle, on est vulnérable aux manipulations statistiques et aux
+          mauvaises décisions basées sur des chiffres mal compris.</p>
+      ),
+      example: (
+        <p>Question typique : "Si 1 personne sur 1000 a une maladie, et un test détecte la maladie avec
+          95% de précision, quelle est la probabilité qu'une personne avec un test positif soit vraiment malade ?"
+          Beaucoup répondent 95%, mais c'est environ 2% (à cause des faux positifs).</p>
+      ),
+      canImprove: (
+        <p>Amélioration : modérée (15-30%). La pratique avec des exercices de probabilités aide,
+          surtout en utilisant des fréquences naturelles plutôt que des pourcentages.
+          Mais les erreurs persistent sous pression ou avec des nombres complexes.</p>
+      )
+    },
+    'Attitudes Anti-Science': {
+      what: (
+        <p>Votre résistance aux attitudes de rejet de la science et de la méthode scientifique :
+          croire que l'intuition personnelle vaut mieux que les études scientifiques, rejeter
+          le consensus scientifique, ou penser que la science est "juste une opinion".</p>
+      ),
+      why: (
+        <p>Les attitudes anti-science mènent au rejet des vaccins, du changement climatique, de l'évolution,
+          et d'autres faits scientifiques bien établis. Elles créent une vulnérabilité aux pseudosciences
+          et aux théories du complot.</p>
+      ),
+      example: (
+        <p>Attitude anti-science typique : "Les scientifiques changent constamment d'avis, donc on ne peut
+          pas leur faire confiance." Cette incompréhension du processus scientifique (qui progresse par
+          raffinements successifs) conduit au rejet de découvertes bien établies.</p>
+      ),
+      canImprove: (
+        <p>Amélioration : difficile (&lt;15%). Les attitudes anti-science sont souvent liées à l'identité
+          sociale et aux croyances politiques/religieuses. L'éducation scientifique aide, mais insuffisant
+          sans adresser les facteurs sociaux et émotionnels.</p>
       )
     }
   };
