@@ -8,7 +8,7 @@ export default function LanguageSwitcher() {
   const pathname = usePathname();
   const router = useRouter();
 
-  const currentLocale = (params?.locale as string) || 'fr';
+  const currentLocale = (params?.locale as string) || 'en';
 
   const switchLocale = (newLocale: 'fr' | 'en') => {
     if (newLocale === currentLocale) return;
