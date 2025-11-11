@@ -7,7 +7,7 @@
       "id": "prob-stats",
       "name": "Raisonnement Probabiliste (10 items)",
       "points": 10,
-      "time": 8,
+      "time": 5,
       "questions": [
         {
           "id": "crt-1",
@@ -129,7 +129,7 @@
       "id": "sci-reasoning",
       "name": "Raisonnement Scientifique (12 items)",
       "points": 12,
-      "time": 15,
+      "time": 9,
       "questions": [
         {
           "id": "wason-1",
@@ -210,7 +210,7 @@
       "id": "crt",
       "name": "Réflexion vs Intuition (7 items)",
       "points": 7,
-      "time": 5,
+      "time": 3,
       "questions": [
         {
           "id": "crt-3",
@@ -272,7 +272,7 @@
       "id": "belief-bias",
       "name": "Biais de Croyance (8 items)",
       "points": 4,
-      "time": 8,
+      "time": 5,
       "questions": [
         {
           "id": "syllogism-1",
@@ -304,7 +304,7 @@
       "id": "disjunctive",
       "name": "Raisonnement Disjonctif (3 items)",
       "points": 3,
-      "time": 5,
+      "time": 3,
       "questions": [
         {
           "id": "disj-1",
@@ -338,7 +338,7 @@
       "id": "anchoring",
       "name": "Ancrage (4 items)",
       "points": 2,
-      "time": 5,
+      "time": 3,
       "questions": [
         {
           "id": "anchor-1",
@@ -366,7 +366,7 @@
       "id": "calibration-full",
       "name": "Calibration des Connaissances (26 items)",
       "points": 3,
-      "time": 10,
+      "time": 6,
       "questions": [
         {
           "id": "calib-mc-1",
@@ -402,7 +402,7 @@
       "id": "numeracy",
       "name": "Numératie Probabiliste (5 items)",
       "points": 5,
-      "time": 6,
+      "time": 4,
       "questions": [
         {
           "id": "num-3",
@@ -428,7 +428,7 @@
       "id": "superstition",
       "name": "Pensée Superstitieuse (12 items)",
       "points": 5,
-      "time": 5,
+      "time": 4,
       "questions": [
         {
           "id": "super-1",
@@ -457,7 +457,7 @@
       "id": "anti-science",
       "name": "Attitudes Anti-Science (13 items)",
       "points": 5,
-      "time": 5,
+      "time": 4,
       "questions": [
         {
           "id": "science-1",
@@ -479,7 +479,7 @@
       "id": "conspiracy",
       "name": "Croyances Conspirationnistes (24 items)",
       "points": 10,
-      "time": 8,
+      "time": 4,
       "questions": [
         {
           "id": "conspiracy-1",

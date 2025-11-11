@@ -89,6 +89,9 @@ export default function ResultatsPage() {
   const [sendingEmail, setSendingEmail] = useState(false);
   const [emailSent, setEmailSent] = useState(false);
 
+  // Déduire la version si elle n'est pas définie (pour les anciennes sessions)
+  const version = session?.version || (modules.length > 6 ? 'complète' : 'courte');
+
   useEffect(() => {
     if (!session?.completedAt || !modules.length) {
       router.push('/test');
@@ -451,11 +454,11 @@ export default function ResultatsPage() {
             </p>
             <span className="text-gray-400">•</span>
             <span className={`px-2.5 py-0.5 rounded-full text-xs font-semibold ${
-              session!.version === 'complète'
+              version === 'complète'
                 ? 'bg-blue-100 text-blue-700'
                 : 'bg-green-100 text-green-700'
             }`}>
-              Version {session!.version}
+              Version {version}
             </span>
           </div>
         </div>
@@ -867,8 +870,18 @@ export default function ResultatsPage() {
               </button>
             </Link>
           </div>
-          <p className="text-sm text-gray-600 mt-6">
-            💡 Conseil : Pour mesurer de vrais progrès, repassez le test dans 6-12 mois 
+
+          <div className="mt-6 text-center">
+            <a
+              href="mailto:rom.deleglise@orange.fr?subject=Feedback sur le Test de Rationalité&body=Bonjour,%0D%0A%0D%0AJe vous contacte pour partager mon feedback sur le test de rationalité :%0D%0A%0D%0A"
+              className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 hover:underline font-medium"
+            >
+              💬 Envoyer un feedback sur le test
+            </a>
+          </div>
+
+          <p className="text-sm text-gray-600 mt-4">
+            💡 Conseil : Pour mesurer de vrais progrès, repassez le test dans 6-12 mois
             (pas avant, sinon c'est juste de la mémorisation)
           </p>
         </div>
