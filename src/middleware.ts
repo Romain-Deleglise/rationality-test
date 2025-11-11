@@ -1,28 +1,20 @@
-// Middleware i18n temporairement désactivé
-// Sera réactivé une fois l'app restructurée avec [locale]
-
-import { NextResponse } from 'next/server';
-import type { NextRequest } from 'next/server';
-
-export function middleware(request: NextRequest) {
-  // Pass through all requests for now
-  return NextResponse.next();
-}
-
-export const config = {
-  matcher: '/:path*'
-};
-
-/*
 import createMiddleware from 'next-intl/middleware';
 
 export default createMiddleware({
+  // A list of all locales that are supported
   locales: ['fr', 'en'],
+
+  // Used when no locale matches
   defaultLocale: 'fr',
-  localeDetection: true,
+
+  // Always use prefix for locale
+  localePrefix: 'always'
 });
 
 export const config = {
-  matcher: ['/', '/(fr|en)/:path*']
+  // Match all pathnames except for
+  // - API routes
+  // - _next (Next.js internals)
+  // - files with extensions (e.g. favicon.ico)
+  matcher: ['/((?!api|_next|.*\\..*).*)']
 };
-*/

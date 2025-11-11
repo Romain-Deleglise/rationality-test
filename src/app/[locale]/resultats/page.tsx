@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { useRouter } from 'next/navigation';
+import { useRouter, useParams } from 'next/navigation';
 import { useTestStore } from '@/store/useTestStore';
 import { scoreTest, calculatePercentile, TestScore } from '@/lib/scoring';
 import { saveTestResult, calculateRealPercentile, generateResultToken, getGlobalStats } from '@/lib/supabase';
@@ -83,6 +83,8 @@ const AccordionItem = ({ title, children, defaultOpen = false, scorePercentage }
 
 export default function ResultatsPage() {
   const router = useRouter();
+  const params = useParams();
+  const locale = params.locale as string;
   const { session, modules, resetTest } = useTestStore();
   const [testScore, setTestScore] = useState<TestScore | null>(null);
   const [email, setEmail] = useState('');
@@ -102,7 +104,7 @@ export default function ResultatsPage() {
 
   useEffect(() => {
     if (!session?.completedAt || !modules.length) {
-      router.push('/test');
+      router.push(`/${locale}/test`);
       return;
     }
 
@@ -1076,13 +1078,13 @@ export default function ResultatsPage() {
               onClick={() => {
                 resetTest();
                 const versionParam = version === 'complète' ? 'version=full' : '';
-                router.push(`/test?reset=true${versionParam ? '&' + versionParam : ''}`);
+                router.push(`/${locale}/test?reset=true${versionParam ? '&' + versionParam : ''}`);
               }}
               className="bg-gray-200 hover:bg-gray-300 text-gray-900 font-semibold px-6 py-3 rounded-lg transition-colors"
             >
               🔄 Refaire le test
             </button>
-            <Link href="/">
+            <Link href={`/${locale}`}>
               <button className="bg-gray-200 hover:bg-gray-300 text-gray-900 font-semibold px-6 py-3 rounded-lg transition-colors">
                 🏠 Retour à l'accueil
               </button>

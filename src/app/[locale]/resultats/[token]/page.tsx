@@ -8,11 +8,12 @@ import Link from 'next/link';
 import { RadarChartComponent, BarChartComponent } from '@/components/ResultsCharts';
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
 
-export default function SavedResultsPage({ params }: { params: { token: string } }) {
+export default function SavedResultsPage({ params }: { params: { token: string; locale: string } }) {
   const router = useRouter();
   const [result, setResult] = useState<any>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const { locale } = params;
 
   useEffect(() => {
     const loadResult = async () => {
@@ -68,7 +69,7 @@ export default function SavedResultsPage({ params }: { params: { token: string }
           <p className="text-gray-600 mb-6">
             Ce lien de résultats n'existe pas ou a expiré.
           </p>
-          <Link href="/">
+          <Link href={`/${locale}`}>
             <button className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-lg transition-colors flex items-center gap-2 mx-auto">
               <Home className="w-5 h-5" />
               Retour à l'accueil
@@ -195,7 +196,7 @@ export default function SavedResultsPage({ params }: { params: { token: string }
 
         {/* Actions */}
         <div className="text-center">
-          <Link href="/">
+          <Link href={`/${locale}`}>
             <button className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-lg transition-colors flex items-center gap-2 mx-auto">
               <Home className="w-5 h-5" />
               Retour à l'accueil

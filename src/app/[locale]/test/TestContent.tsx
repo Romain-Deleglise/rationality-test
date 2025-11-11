@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { useRouter, useSearchParams } from 'next/navigation';
+import { useRouter, useSearchParams, useParams } from 'next/navigation';
 import { useTestStore } from '@/store/useTestStore';
 import { Progress } from '@/components/ui/progress';
 import { Button } from '@/components/ui/button';
@@ -13,6 +13,8 @@ import { Module } from '@/types';
 export default function TestContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
+  const params = useParams();
+  const locale = params.locale as string;
   const [isInitialized, setIsInitialized] = useState(false);
 
   const {
@@ -38,7 +40,7 @@ export default function TestContent() {
       resetTest();
 
       // Construire l'URL de redirection en préservant la version
-      const redirectUrl = version === 'full' ? '/test?version=full' : '/test';
+      const redirectUrl = version === 'full' ? `/${locale}/test?version=full` : `/${locale}/test`;
       router.replace(redirectUrl);
       return;
     }
@@ -90,7 +92,7 @@ export default function TestContent() {
 
     if (isLastQuestion && isLastModule) {
       completeTest();
-      router.push('/resultats');
+      router.push(`/${locale}/resultats`);
     } else {
       nextQuestion();
     }
