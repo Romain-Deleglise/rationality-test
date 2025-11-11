@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   },
 };
 
-const locales = ['fr', 'en'] as const;
+const locales = ['en', 'fr'] as const;
 type Locale = 'fr' | 'en';
 
 export default async function LocaleLayout({
