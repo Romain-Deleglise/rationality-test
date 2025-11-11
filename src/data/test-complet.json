@@ -1,7 +1,7 @@
 {
-  "version": "courte",
-  "totalPoints": 38,
-  "estimatedTime": 18,
+  "version": "complète",
+  "totalPoints": 55,
+  "estimatedTime": 50,
   "modules": [
     {
       "id": "prob-stats",
@@ -359,6 +359,141 @@
           "anchorType": "high",
           "points": 0.5,
           "explanation": "La durée réelle est 687 jours. Si votre estimation est >1000, vous avez été influencé par l'ancre haute (1500)."
+        }
+      ]
+    },
+    {
+      "id": "calibration-full",
+      "name": "Calibration des Connaissances (26 items)",
+      "points": 3,
+      "time": 10,
+      "questions": [
+        {
+          "id": "calib-mc-1",
+          "type": "multiple-choice-confidence",
+          "text": "La Politique de la Porte Ouverte exigeait que :",
+          "options": [
+            "Aucune nation ne puisse revendiquer des droits commerciaux exclusifs en Chine",
+            "Les journalistes doivent être autorisés à observer les effets de la Révolution culturelle"
+          ],
+          "correct": 0,
+          "points": 0.1,
+          "confidenceLevels": [
+            50,
+            60,
+            70,
+            80,
+            90,
+            100
+          ]
+        },
+        {
+          "id": "calib-interval-1",
+          "type": "confidence-interval",
+          "text": "Quelle est la hauteur de la Tour Eiffel ?",
+          "unit": "mètres",
+          "correct": 330,
+          "points": 0.1,
+          "explanation": "La Tour Eiffel mesure 330 mètres (avec antenne)."
+        }
+      ]
+    },
+    {
+      "id": "numeracy",
+      "name": "Numératie Probabiliste (5 items)",
+      "points": 5,
+      "time": 6,
+      "questions": [
+        {
+          "id": "num-3",
+          "type": "number",
+          "text": "Dans une loterie, la probabilité de gagner est de 1 sur 500. Si 5000 personnes jouent, combien environ peut-on s'attendre à ce qu'elles gagnent ?",
+          "unit": "personnes",
+          "correct": 10,
+          "points": 1,
+          "explanation": "5000 / 500 = 10 personnes."
+        },
+        {
+          "id": "num-4",
+          "type": "number",
+          "text": "Un test médical a un taux de faux positifs de 3%. Si 10 000 personnes saines passent le test, combien environ recevront un résultat faussement positif ?",
+          "unit": "personnes",
+          "correct": 300,
+          "points": 1,
+          "explanation": "10 000 × 0,03 = 300 personnes."
+        }
+      ]
+    },
+    {
+      "id": "superstition",
+      "name": "Pensée Superstitieuse (12 items)",
+      "points": 5,
+      "time": 5,
+      "questions": [
+        {
+          "id": "super-1",
+          "type": "likert",
+          "text": "Les pensées d'une personne peuvent influencer le mouvement d'un objet physique.",
+          "reverse": false,
+          "points": 0.42
+        },
+        {
+          "id": "super-2",
+          "type": "likert",
+          "text": "L'astrologie peut être utile pour juger de la personnalité.",
+          "reverse": false,
+          "points": 0.42
+        },
+        {
+          "id": "super-3",
+          "type": "likert",
+          "text": "La lecture de la pensée n'est pas possible.",
+          "reverse": true,
+          "points": 0.42
+        }
+      ]
+    },
+    {
+      "id": "anti-science",
+      "name": "Attitudes Anti-Science (13 items)",
+      "points": 5,
+      "time": 5,
+      "questions": [
+        {
+          "id": "science-1",
+          "type": "likert",
+          "text": "Le fait que les scientifiques ne soient souvent pas d'accord montre que la science implique plus d'opinions personnelles que de preuves réelles.",
+          "reverse": false,
+          "points": 0.38
+        },
+        {
+          "id": "science-2",
+          "type": "likert",
+          "text": "Quand la science entre en conflit avec la sagesse conventionnelle, c'est généralement la science qui a raison.",
+          "reverse": true,
+          "points": 0.38
+        }
+      ]
+    },
+    {
+      "id": "conspiracy",
+      "name": "Croyances Conspirationnistes (24 items)",
+      "points": 10,
+      "time": 8,
+      "questions": [
+        {
+          "id": "conspiracy-1",
+          "type": "likert",
+          "text": "Des hauts responsables du gouvernement américain savaient à l'avance que l'attaque du 11 septembre allait se produire.",
+          "reverse": false,
+          "points": 0.42
+        },
+        {
+          "id": "conspiracy-2",
+          "type": "likert",
+          "text": "Les preuves que certains vaccins infantiles peuvent causer l'autisme ont été cachées par des compagnies pharmaceutiques.",
+          "reverse": false,
+          "points": 0.42
         }
       ]
     }
