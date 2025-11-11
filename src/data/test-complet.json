@@ -1,7 +1,7 @@
 {
   "version": "complète",
-  "totalPoints": 89,
-  "estimatedTime": 55,
+  "totalPoints": 99,
+  "estimatedTime": 64,
   "modules": [
     {
       "id": "prob-stats",
@@ -854,9 +854,9 @@
     },
     {
       "id": "disjunctive",
-      "name": "Raisonnement Disjonctif (3 items)",
-      "points": 3,
-      "time": 3,
+      "name": "Raisonnement Disjonctif (6 items)",
+      "points": 6,
+      "time": 5,
       "questions": [
         {
           "id": "disj-1",
@@ -883,14 +883,66 @@
           "correct": 0,
           "points": 1,
           "explanation": "Oui. Si Paul est marié, il regarde Marie (non mariée). Si Paul n'est pas marié, Anne (mariée) le regarde. Dans les deux cas : oui."
+        },
+        {
+          "id": "disj-3",
+          "type": "multiple-choice",
+          "text": "Trois portes alignées : [Porte A : ouverte], [Porte B : ?], [Porte C : fermée]. Au moins deux portes consécutives doivent être dans le même état. La porte B est-elle ouverte ou fermée ?",
+          "options": [
+            "Ouverte",
+            "Fermée",
+            "On ne peut pas déterminer"
+          ],
+          "correct": 2,
+          "explanation": "On ne peut pas déterminer. Si B est ouverte : A-B sont consécutives et ouvertes (OK). Si B est fermée : B-C sont consécutives et fermées (OK). Les deux sont possibles."
+        },
+        {
+          "id": "disj-4",
+          "type": "multiple-choice",
+          "text": "Trois personnes : Jean (cravate), Marc (?), Sophie (pas de cravate). Règle : Si quelqu'un porte une cravate, son voisin immédiat n'en porte pas. Marc porte-t-il une cravate ?",
+          "options": [
+            "Oui",
+            "Non",
+            "On ne peut pas déterminer"
+          ],
+          "correct": 1,
+          "explanation": "Non. Si Marc porte une cravate, alors Jean (son voisin) ne devrait pas en porter (contradiction). Donc Marc ne porte pas de cravate."
+        },
+        {
+          "id": "disj-5",
+          "type": "multiple-choice",
+          "text": "Une pièce est lancée deux fois. On sait que : au moins un lancer donne Pile. Quelle est la probabilité que les deux lancers donnent Pile ?",
+          "options": [
+            "1/4",
+            "1/3",
+            "1/2",
+            "2/3",
+            "On ne peut pas déterminer"
+          ],
+          "correct": 1,
+          "points": 1,
+          "explanation": "1/3. Cas possibles sachant qu'au moins un Pile : (P,P), (P,F), (F,P). Seul (P,P) satisfait 'deux Pile' → 1 cas sur 3."
+        },
+        {
+          "id": "disj-6",
+          "type": "multiple-choice",
+          "text": "Trois nombres consécutifs dont la somme est 18. Le nombre du milieu est pair ou impair ?",
+          "options": [
+            "Pair",
+            "Impair",
+            "On ne peut pas déterminer"
+          ],
+          "correct": 0,
+          "points": 1,
+          "explanation": "Pair. Si les nombres sont n, n+1, n+2, leur somme = 3n+3 = 18, donc n=5. Les nombres sont 5, 6, 7. Le milieu (6) est pair."
         }
       ]
     },
     {
       "id": "anchoring",
-      "name": "Ancrage (4 items)",
-      "points": 2,
-      "time": 3,
+      "name": "Ancrage (8 items)",
+      "points": 4,
+      "time": 5,
       "questions": [
         {
           "id": "anchor-1",
@@ -911,6 +963,66 @@
           "anchorType": "high",
           "points": 0.5,
           "explanation": "La durée réelle est 687 jours. Si votre estimation est >1000, vous avez été influencé par l'ancre haute (1500)."
+        },
+        {
+          "id": "anchor-3",
+          "type": "number",
+          "text": "La population de l'Australie est-elle supérieure à 10 millions d'habitants ? Quelle est selon vous la population exacte ?",
+          "unit": "millions d'habitants",
+          "correct": 26,
+          "anchorType": "low",
+          "points": 0.5,
+          "explanation": "L'Australie compte environ 26 millions d'habitants. Si votre estimation est <20M, vous avez été influencé par l'ancre basse (10M)."
+        },
+        {
+          "id": "anchor-4",
+          "type": "number",
+          "text": "La température la plus chaude jamais enregistrée sur Terre est-elle supérieure à 70°C ? Quelle est selon vous cette température ?",
+          "unit": "°C",
+          "correct": 56.7,
+          "anchorType": "high",
+          "points": 0.5,
+          "explanation": "Le record est de 56,7°C (Vallée de la Mort, 1913). Si votre estimation est >60°C, vous avez été influencé par l'ancre haute (70°C)."
+        },
+        {
+          "id": "anchor-5",
+          "type": "number",
+          "text": "Le Burj Khalifa à Dubaï mesure-t-il plus de 500 mètres ? Quelle est selon vous sa hauteur exacte ?",
+          "unit": "mètres",
+          "correct": 828,
+          "anchorType": "low",
+          "points": 0.5,
+          "explanation": "Le Burj Khalifa mesure 828 mètres. Si votre estimation est <700m, vous avez été influencé par l'ancre basse (500m)."
+        },
+        {
+          "id": "anchor-6",
+          "type": "number",
+          "text": "La bataille de Waterloo a-t-elle eu lieu avant 1750 ? En quelle année exactement ?",
+          "unit": "année",
+          "correct": 1815,
+          "anchorType": "low",
+          "points": 0.5,
+          "explanation": "La bataille de Waterloo date de 1815. Si votre estimation est <1800, vous avez été influencé par l'ancre basse (1750)."
+        },
+        {
+          "id": "anchor-7",
+          "type": "number",
+          "text": "Le nombre d'os dans le corps humain adulte est-il supérieur à 300 ? Combien y en a-t-il exactement ?",
+          "unit": "os",
+          "correct": 206,
+          "anchorType": "high",
+          "points": 0.5,
+          "explanation": "Un adulte possède 206 os. Si votre estimation est >250, vous avez été influencé par l'ancre haute (300)."
+        },
+        {
+          "id": "anchor-8",
+          "type": "number",
+          "text": "Le Nil mesure-t-il plus de 4000 km de longueur ? Quelle est selon vous sa longueur exacte ?",
+          "unit": "km",
+          "correct": 6650,
+          "anchorType": "low",
+          "points": 0.5,
+          "explanation": "Le Nil mesure environ 6650 km. Si votre estimation est <5500km, vous avez été influencé par l'ancre basse (4000km)."
         }
       ]
     },
@@ -1604,6 +1716,77 @@
           "text": "Les gouvernements cachent des informations sur des événements catastrophiques à venir.",
           "reverse": false,
           "points": 0.42
+        }
+      ]
+    },
+    {
+      "id": "dysfunctional-beliefs",
+      "name": "Croyances Dysfonctionnelles (9 items)",
+      "points": 5,
+      "time": 3,
+      "questions": [
+        {
+          "id": "dysfunc-1",
+          "type": "likert",
+          "text": "Je dois être aimé et approuvé par toutes les personnes importantes de ma vie.",
+          "reverse": false,
+          "points": 0.56
+        },
+        {
+          "id": "dysfunc-2",
+          "type": "likert",
+          "text": "Je dois être parfaitement compétent dans tout ce que j'entreprends.",
+          "reverse": false,
+          "points": 0.56
+        },
+        {
+          "id": "dysfunc-3",
+          "type": "likert",
+          "text": "Les gens qui se comportent mal méritent d'être blâmés et punis sévèrement.",
+          "reverse": false,
+          "points": 0.56
+        },
+        {
+          "id": "dysfunc-4",
+          "type": "likert",
+          "text": "C'est catastrophique quand les choses ne se passent pas comme je le voudrais.",
+          "reverse": false,
+          "points": 0.56
+        },
+        {
+          "id": "dysfunc-5",
+          "type": "likert",
+          "text": "Le malheur vient de circonstances extérieures sur lesquelles je n'ai aucun contrôle.",
+          "reverse": false,
+          "points": 0.56
+        },
+        {
+          "id": "dysfunc-6",
+          "type": "likert",
+          "text": "Je dois constamment m'inquiéter des choses dangereuses ou effrayantes qui pourraient arriver.",
+          "reverse": false,
+          "points": 0.56
+        },
+        {
+          "id": "dysfunc-7",
+          "type": "likert",
+          "text": "Il est plus facile d'éviter les difficultés que d'y faire face.",
+          "reverse": false,
+          "points": 0.56
+        },
+        {
+          "id": "dysfunc-8",
+          "type": "likert",
+          "text": "J'ai besoin de quelqu'un de plus fort que moi sur qui m'appuyer.",
+          "reverse": false,
+          "points": 0.56
+        },
+        {
+          "id": "dysfunc-9",
+          "type": "likert",
+          "text": "Mon passé détermine mon présent et je ne peux rien y changer.",
+          "reverse": false,
+          "points": 0.56
         }
       ]
     }
