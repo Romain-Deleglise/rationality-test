@@ -1266,6 +1266,69 @@
           "text": "La lecture de la pensée n'est pas possible.",
           "reverse": true,
           "points": 0.42
+        },
+        {
+          "id": "super-4",
+          "type": "likert",
+          "text": "Certaines personnes peuvent prédire l'avenir avec précision.",
+          "reverse": false,
+          "points": 0.42
+        },
+        {
+          "id": "super-5",
+          "type": "likert",
+          "text": "Les fantômes ou esprits n'existent pas.",
+          "reverse": true,
+          "points": 0.42
+        },
+        {
+          "id": "super-6",
+          "type": "likert",
+          "text": "Certains porte-bonheur peuvent vraiment influencer les événements.",
+          "reverse": false,
+          "points": 0.42
+        },
+        {
+          "id": "super-7",
+          "type": "likert",
+          "text": "Il est possible de communiquer avec les morts.",
+          "reverse": false,
+          "points": 0.42
+        },
+        {
+          "id": "super-8",
+          "type": "likert",
+          "text": "Les rêves prémonitoires sont de simples coïncidences.",
+          "reverse": true,
+          "points": 0.42
+        },
+        {
+          "id": "super-9",
+          "type": "likert",
+          "text": "Certaines personnes possèdent des pouvoirs psychiques réels.",
+          "reverse": false,
+          "points": 0.42
+        },
+        {
+          "id": "super-10",
+          "type": "likert",
+          "text": "Les cristaux et pierres n'ont aucun pouvoir de guérison.",
+          "reverse": true,
+          "points": 0.42
+        },
+        {
+          "id": "super-11",
+          "type": "likert",
+          "text": "La malchance peut être causée par certaines actions (briser un miroir, passer sous une échelle).",
+          "reverse": false,
+          "points": 0.42
+        },
+        {
+          "id": "super-12",
+          "type": "likert",
+          "text": "La télékinésie (bouger des objets par la pensée) n'existe pas.",
+          "reverse": true,
+          "points": 0.42
         }
       ]
     },
@@ -1288,6 +1351,83 @@
           "text": "Quand la science entre en conflit avec la sagesse conventionnelle, c'est généralement la science qui a raison.",
           "reverse": true,
           "points": 0.38
+        },
+        {
+          "id": "science-3",
+          "type": "likert",
+          "text": "La science change trop souvent d'avis pour qu'on puisse lui faire confiance.",
+          "reverse": false,
+          "points": 0.38
+        },
+        {
+          "id": "science-4",
+          "type": "likert",
+          "text": "Les scientifiques sont généralement plus fiables que les sources d'information non scientifiques.",
+          "reverse": true,
+          "points": 0.38
+        },
+        {
+          "id": "science-5",
+          "type": "likert",
+          "text": "Les découvertes scientifiques qui contredisent le bon sens sont probablement fausses.",
+          "reverse": false,
+          "points": 0.38
+        },
+        {
+          "id": "science-6",
+          "type": "likert",
+          "text": "La méthode scientifique est le meilleur moyen d'obtenir des connaissances fiables.",
+          "reverse": true,
+          "points": 0.38
+        },
+        {
+          "id": "science-7",
+          "type": "likert",
+          "text": "Les études scientifiques sont souvent biaisées par les intérêts financiers de ceux qui les financent.",
+          "reverse": false,
+          "points": 0.38
+        },
+        {
+          "id": "science-8",
+          "type": "likert",
+          "text": "La science ne peut pas expliquer les choses vraiment importantes de la vie.",
+          "reverse": false,
+          "points": 0.38
+        },
+        {
+          "id": "science-9",
+          "type": "likert",
+          "text": "Les preuves scientifiques devraient avoir plus de poids que les témoignages personnels.",
+          "reverse": true,
+          "points": 0.38
+        },
+        {
+          "id": "science-10",
+          "type": "likert",
+          "text": "L'intuition personnelle est souvent plus fiable que les résultats d'études scientifiques.",
+          "reverse": false,
+          "points": 0.38
+        },
+        {
+          "id": "science-11",
+          "type": "likert",
+          "text": "La science a créé plus de problèmes qu'elle n'en a résolu.",
+          "reverse": false,
+          "points": 0.38
+        },
+        {
+          "id": "science-12",
+          "type": "likert",
+          "text": "Les scientifiques ont généralement une meilleure compréhension des faits que le grand public.",
+          "reverse": true,
+          "points": 0.38
+        },
+        {
+          "id": "science-13",
+          "type": "likert",
+          "text": "On peut faire autant confiance aux remèdes traditionnels qu'aux traitements médicaux scientifiques.",
+          "reverse": false,
+          "points": 0.38
         }
       ]
     },
@@ -1295,7 +1435,7 @@
       "id": "conspiracy",
       "name": "Croyances Conspirationnistes (24 items)",
       "points": 10,
-      "time": 4,
+      "time": 6,
       "questions": [
         {
           "id": "conspiracy-1",
@@ -1308,6 +1448,160 @@
           "id": "conspiracy-2",
           "type": "likert",
           "text": "Les preuves que certains vaccins infantiles peuvent causer l'autisme ont été cachées par des compagnies pharmaceutiques.",
+          "reverse": false,
+          "points": 0.42
+        },
+        {
+          "id": "conspiracy-3",
+          "type": "likert",
+          "text": "Le gouvernement américain a caché des preuves de l'existence des extraterrestres.",
+          "reverse": false,
+          "points": 0.42
+        },
+        {
+          "id": "conspiracy-4",
+          "type": "likert",
+          "text": "L'alunissage d'Apollo était une mise en scène filmée dans un studio.",
+          "reverse": false,
+          "points": 0.42
+        },
+        {
+          "id": "conspiracy-5",
+          "type": "likert",
+          "text": "Les grandes compagnies pétrolières ont délibérément supprimé des technologies énergétiques alternatives.",
+          "reverse": false,
+          "points": 0.42
+        },
+        {
+          "id": "conspiracy-6",
+          "type": "likert",
+          "text": "Le changement climatique est un canular inventé pour contrôler l'économie mondiale.",
+          "reverse": false,
+          "points": 0.42
+        },
+        {
+          "id": "conspiracy-7",
+          "type": "likert",
+          "text": "Les chemtrails (traînées d'avion) sont utilisés pour répandre des produits chimiques sur la population.",
+          "reverse": false,
+          "points": 0.42
+        },
+        {
+          "id": "conspiracy-8",
+          "type": "likert",
+          "text": "Un petit groupe de personnes contrôle secrètement les événements mondiaux.",
+          "reverse": false,
+          "points": 0.42
+        },
+        {
+          "id": "conspiracy-9",
+          "type": "likert",
+          "text": "L'assassinat de JFK était le résultat d'une conspiration, pas d'un tireur isolé.",
+          "reverse": false,
+          "points": 0.42
+        },
+        {
+          "id": "conspiracy-10",
+          "type": "likert",
+          "text": "La pandémie de COVID-19 a été délibérément créée en laboratoire.",
+          "reverse": false,
+          "points": 0.42
+        },
+        {
+          "id": "conspiracy-11",
+          "type": "likert",
+          "text": "Les médias mainstream sont contrôlés par une élite secrète.",
+          "reverse": false,
+          "points": 0.42
+        },
+        {
+          "id": "conspiracy-12",
+          "type": "likert",
+          "text": "La Terre est plate, contrairement à ce que la science officielle prétend.",
+          "reverse": false,
+          "points": 0.42
+        },
+        {
+          "id": "conspiracy-13",
+          "type": "likert",
+          "text": "Les attentats terroristes sont souvent organisés par les gouvernements eux-mêmes.",
+          "reverse": false,
+          "points": 0.42
+        },
+        {
+          "id": "conspiracy-14",
+          "type": "likert",
+          "text": "Les banques centrales manipulent l'économie mondiale pour leur propre profit.",
+          "reverse": false,
+          "points": 0.42
+        },
+        {
+          "id": "conspiracy-15",
+          "type": "likert",
+          "text": "Un 'Nouvel Ordre Mondial' tente d'établir un gouvernement mondial unique.",
+          "reverse": false,
+          "points": 0.42
+        },
+        {
+          "id": "conspiracy-16",
+          "type": "likert",
+          "text": "Des technologies de contrôle mental sont utilisées sur la population.",
+          "reverse": false,
+          "points": 0.42
+        },
+        {
+          "id": "conspiracy-17",
+          "type": "likert",
+          "text": "La mort de la princesse Diana n'était pas un accident mais un assassinat planifié.",
+          "reverse": false,
+          "points": 0.42
+        },
+        {
+          "id": "conspiracy-18",
+          "type": "likert",
+          "text": "Les grandes entreprises pharmaceutiques cachent des remèdes contre le cancer pour continuer à vendre des traitements.",
+          "reverse": false,
+          "points": 0.42
+        },
+        {
+          "id": "conspiracy-19",
+          "type": "likert",
+          "text": "La 5G est dangereuse pour la santé et son déploiement cache un agenda caché.",
+          "reverse": false,
+          "points": 0.42
+        },
+        {
+          "id": "conspiracy-20",
+          "type": "likert",
+          "text": "Les Illuminati existent et contrôlent secrètement les affaires mondiales.",
+          "reverse": false,
+          "points": 0.42
+        },
+        {
+          "id": "conspiracy-21",
+          "type": "likert",
+          "text": "Les élections dans les démocraties occidentales sont régulièrement truquées.",
+          "reverse": false,
+          "points": 0.42
+        },
+        {
+          "id": "conspiracy-22",
+          "type": "likert",
+          "text": "Des expérimentations secrètes sont menées sur les citoyens à leur insu.",
+          "reverse": false,
+          "points": 0.42
+        },
+        {
+          "id": "conspiracy-23",
+          "type": "likert",
+          "text": "Le SIDA a été créé intentionnellement comme arme biologique.",
+          "reverse": false,
+          "points": 0.42
+        },
+        {
+          "id": "conspiracy-24",
+          "type": "likert",
+          "text": "Les gouvernements cachent des informations sur des événements catastrophiques à venir.",
           "reverse": false,
           "points": 0.42
         }
