@@ -1,0 +1,70 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "test": "Passer le test",
+    "about": "À propos",
+    "results": "Résultats"
+  },
+  "home": {
+    "title": "Test de Rationalité",
+    "subtitle": "Évaluez votre pensée critique avec le CART",
+    "description": "Testez votre capacité à raisonner de manière rationnelle à travers 12 dimensions de la pensée critique, basé sur les recherches scientifiques de Stanovich, West et Toplak.",
+    "startShort": "Test Court (20 min)",
+    "startFull": "Test Complet (60 min)",
+    "learnMore": "En savoir plus"
+  },
+  "test": {
+    "loading": "Chargement du test...",
+    "question": "Question",
+    "of": "sur",
+    "next": "Suivant",
+    "previous": "Précédent",
+    "finish": "Terminer",
+    "timeRemaining": "Temps restant",
+    "minutes": "minutes"
+  },
+  "results": {
+    "title": "Vos Résultats",
+    "subtitle": "Test de Rationalité (CART adapté)",
+    "globalScore": "Score Global",
+    "rationality": "Rationalité",
+    "points": "points",
+    "percentile": "Percentile",
+    "realPercentile": "Percentile réel",
+    "estimatedPercentile": "Percentile estimé",
+    "basedOn": "basé sur",
+    "results": "résultats réels",
+    "theoreticalDistribution": "basé sur une distribution théorique",
+    "savedResults": "Résultats sauvegardés !",
+    "shareLink": "Retrouvez vos résultats à tout moment avec ce lien :",
+    "copy": "Copier",
+    "copied": "Copié !",
+    "globalStats": "Statistiques globales",
+    "testsCompleted": "Tests complétés",
+    "averageScore": "Score moyen",
+    "median": "Médiane",
+    "bestScore": "Meilleur score",
+    "interpretation": "Interprétation",
+    "moduleDetails": "Détail par Module",
+    "yourPerformance": "Voici votre performance sur chaque dimension de la pensée rationnelle",
+    "strengths": "Vos Forces",
+    "weaknesses": "Points à améliorer",
+    "nextSteps": "Prochaines étapes",
+    "retakeTest": "Refaire le test",
+    "backHome": "Retour à l'accueil",
+    "downloadPDF": "Télécharger (PDF)",
+    "sendEmail": "Recevoir par email",
+    "email": "votre@email.com",
+    "send": "Envoyer",
+    "sending": "Envoi...",
+    "emailSent": "Email envoyé avec succès !"
+  },
+  "common": {
+    "version": "Version",
+    "short": "courte",
+    "full": "complète",
+    "loading": "Chargement...",
+    "error": "Erreur",
+    "retry": "Réessayer"
+  }
+}
