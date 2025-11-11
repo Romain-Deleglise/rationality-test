@@ -441,13 +441,23 @@ export default function ResultatsPage() {
           <p className="text-xl text-gray-600">
             Test de Rationalité (CART adapté)
           </p>
-          <p className="text-sm text-gray-500 mt-2">
-            Complété le {new Date(session!.completedAt!).toLocaleDateString('fr-FR', {
-              day: 'numeric',
-              month: 'long',
-              year: 'numeric',
-            })}
-          </p>
+          <div className="flex items-center justify-center gap-2 mt-2">
+            <p className="text-sm text-gray-500">
+              Complété le {new Date(session!.completedAt!).toLocaleDateString('fr-FR', {
+                day: 'numeric',
+                month: 'long',
+                year: 'numeric',
+              })}
+            </p>
+            <span className="text-gray-400">•</span>
+            <span className={`px-2.5 py-0.5 rounded-full text-xs font-semibold ${
+              session!.version === 'complète'
+                ? 'bg-blue-100 text-blue-700'
+                : 'bg-green-100 text-green-700'
+            }`}>
+              Version {session!.version}
+            </span>
+          </div>
         </div>
 
         {/* Score Global */}

@@ -5,15 +5,15 @@ import { TestSession, Answer, Module } from '@/types';
 interface TestStore {
   session: TestSession | null;
   modules: Module[];
-  
+
   // Actions
-  startTest: (modules: Module[]) => void;
+  startTest: (modules: Module[], version: 'courte' | 'complète') => void;
   saveAnswer: (answer: Answer) => void;
   nextQuestion: () => void;
   previousQuestion: () => void;
   completeTest: () => void;
   resetTest: () => void;
-  
+
   // Getters
   getCurrentModule: () => Module | null;
   getCurrentQuestion: () => any;
@@ -26,9 +26,10 @@ export const useTestStore = create<TestStore>()(
       session: null,
       modules: [],
 
-      startTest: (modules) => {
+      startTest: (modules, version) => {
         const newSession: TestSession = {
           id: crypto.randomUUID(),
+          version: version,
           startedAt: new Date(),
           answers: [],
           currentModuleIndex: 0,

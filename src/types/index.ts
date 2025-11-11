@@ -46,6 +46,7 @@ export interface Answer {
 
 export interface TestSession {
   id: string;
+  version: 'courte' | 'complète';
   startedAt: Date;
   completedAt?: Date;
   answers: Answer[];
