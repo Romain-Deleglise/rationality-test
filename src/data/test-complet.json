@@ -1,7 +1,7 @@
 {
   "version": "complète",
-  "totalPoints": 68,
-  "estimatedTime": 50,
+  "totalPoints": 89,
+  "estimatedTime": 55,
   "modules": [
     {
       "id": "prob-stats",
@@ -259,9 +259,9 @@
     },
     {
       "id": "sci-reasoning",
-      "name": "Raisonnement Scientifique (12 items)",
-      "points": 12,
-      "time": 9,
+      "name": "Raisonnement Scientifique (20 items)",
+      "points": 20,
+      "time": 10,
       "questions": [
         {
           "id": "wason-1",
@@ -294,6 +294,36 @@
           "explanation": "Vérifier [Bière] (âge ≥18?) et [16 ans] (boit de l'alcool?). Les autres ne peuvent pas violer la règle."
         },
         {
+          "id": "wason-3",
+          "type": "multiple-choice",
+          "text": "Règle : 'Si un produit est bio, il doit avoir une certification.' 4 produits : [Étiqueté bio], [Étiqueté conventionnel], [Avec certification], [Sans certification]. Lesquels vérifier ?",
+          "options": [
+            "Étiqueté bio seulement",
+            "Étiqueté bio et Avec certification",
+            "Étiqueté bio et Sans certification",
+            "Tous les produits",
+            "Étiqueté bio, Étiqueté conventionnel et Sans certification"
+          ],
+          "correct": 2,
+          "points": 1,
+          "explanation": "Vérifier [Bio] (a-t-il certification?) et [Sans certification] (est-il bio?). Les autres ne peuvent pas violer la règle."
+        },
+        {
+          "id": "wason-4",
+          "type": "multiple-choice",
+          "text": "Règle d'entreprise : 'Si un projet dépasse 50 000€, il nécessite l'approbation du directeur.' 4 dossiers : [Budget: 75 000€], [Budget: 30 000€], [Approuvé par directeur], [Non approuvé]. Lesquels vérifier ?",
+          "options": [
+            "Budget 75 000€ seulement",
+            "Budget 75 000€ et Approuvé",
+            "Budget 75 000€ et Non approuvé",
+            "Tous les dossiers",
+            "Budget 30 000€ et Non approuvé"
+          ],
+          "correct": 2,
+          "points": 1,
+          "explanation": "Vérifier [75 000€] (approuvé?) et [Non approuvé] (budget >50 000€?). Structure logique du Wason."
+        },
+        {
           "id": "correlation-1",
           "type": "multiple-choice",
           "text": "Des chercheurs ont découvert que les adolescents qui fument ont tendance à avoir des scores de QI plus faibles. Cela signifie-t-il qu'empêcher les ados de fumer augmenterait leur QI ?",
@@ -305,6 +335,32 @@
           "correct": 2,
           "points": 1,
           "explanation": "Corrélation ≠ causalité. Il peut y avoir une variable confondante (stress, environnement socio-économique, etc.)."
+        },
+        {
+          "id": "correlation-2",
+          "type": "multiple-choice",
+          "text": "Une étude montre que les personnes qui boivent du café ont moins de maladies cardiaques. Devrait-on recommander le café pour la santé cardiaque ?",
+          "options": [
+            "Oui, la corrélation prouve l'effet protecteur",
+            "Non, il faut une étude randomisée contrôlée",
+            "Oui, si la corrélation est forte"
+          ],
+          "correct": 1,
+          "points": 1,
+          "explanation": "Une corrélation ne prouve pas la causalité. Les buveurs de café peuvent avoir d'autres habitudes saines (exercice, alimentation)."
+        },
+        {
+          "id": "correlation-3",
+          "type": "multiple-choice",
+          "text": "On observe que les villes avec plus de pompiers ont plus d'incendies graves. Faut-il réduire le nombre de pompiers ?",
+          "options": [
+            "Oui, ils semblent causer les incendies",
+            "Non, la causalité est inversée",
+            "Oui, s'il y a une vraie corrélation"
+          ],
+          "correct": 1,
+          "points": 1,
+          "explanation": "Causalité inversée : les grandes villes ont plus d'incendies, donc embauchent plus de pompiers. Les pompiers ne causent pas les incendies."
         },
         {
           "id": "control-group-1",
@@ -321,6 +377,34 @@
           "explanation": "La comparaison avec un groupe contrôle (villes similaires) montre que la baisse est générale, pas due à la directrice."
         },
         {
+          "id": "control-group-2",
+          "type": "multiple-choice",
+          "text": "Une nouvelle technique pédagogique montre +15% de réussite aux examens. Comment vérifier son efficacité ?",
+          "options": [
+            "Comparer avec les résultats de l'année dernière",
+            "Demander l'avis des professeurs",
+            "Comparer avec un groupe témoin qui n'a pas eu la nouvelle technique",
+            "Vérifier si les élèves sont satisfaits"
+          ],
+          "correct": 2,
+          "points": 1,
+          "explanation": "Un groupe contrôle est essentiel. Les résultats peuvent avoir augmenté pour d'autres raisons (difficulté de l'examen, motivation, etc.)."
+        },
+        {
+          "id": "control-group-3",
+          "type": "multiple-choice",
+          "text": "Un quartier installe de nouveaux lampadaires et le crime baisse de 20%. Peut-on conclure que l'éclairage réduit le crime ?",
+          "options": [
+            "Oui, 20% est une baisse significative",
+            "Non, il faut comparer avec des quartiers similaires sans nouveaux lampadaires",
+            "Oui, si la baisse se maintient dans le temps",
+            "Oui, l'éclairage dissuade logiquement les criminels"
+          ],
+          "correct": 1,
+          "points": 1,
+          "explanation": "Sans groupe contrôle, on ne peut pas savoir si la baisse est due aux lampadaires ou à une tendance générale de baisse du crime."
+        },
+        {
           "id": "likelihood-1",
           "type": "multiple-choice",
           "text": "Talia a un épaississement des doigts. Quelles infos sont nécessaires pour estimer P(Syndrome de Fustis Digitus | épaississement) ?",
@@ -335,6 +419,120 @@
           "correct": 4,
           "points": 1,
           "explanation": "Il faut P(symptôme|maladie) et P(symptôme|pas maladie) pour calculer P(maladie|symptôme) via Bayes."
+        },
+        {
+          "id": "likelihood-2",
+          "type": "multiple-choice",
+          "text": "Pour évaluer P(Défaillance mécanique | Vibrations anormales), de quoi avez-vous besoin ?",
+          "options": [
+            "Seulement P(Vibrations | Défaillance)",
+            "P(Vibrations | Défaillance) et P(Vibrations | Pas de défaillance)",
+            "Seulement le taux de base des défaillances",
+            "L'avis d'un expert mécanicien"
+          ],
+          "correct": 1,
+          "points": 1,
+          "explanation": "Pour Bayes, il faut le rapport de vraisemblance : P(preuve|H) et P(preuve|non-H)."
+        },
+        {
+          "id": "hypothesis-test-1",
+          "type": "multiple-choice",
+          "text": "Pour tester si un nouveau médicament réduit la fièvre, quelle expérience est la meilleure ?",
+          "options": [
+            "Donner le médicament à des patients fiévreux et mesurer la température 2h après",
+            "Donner le médicament à un groupe et un placebo à un groupe contrôle, en double aveugle",
+            "Demander aux patients s'ils se sentent mieux après le médicament",
+            "Comparer avec d'autres médicaments existants"
+          ],
+          "correct": 1,
+          "points": 1,
+          "explanation": "Essai randomisé contrôlé en double aveugle : gold standard pour tester l'efficacité causale."
+        },
+        {
+          "id": "hypothesis-test-2",
+          "type": "multiple-choice",
+          "text": "Un agriculteur veut savoir si un nouvel engrais améliore le rendement. Quelle méthode est la plus rigoureuse ?",
+          "options": [
+            "L'utiliser sur tous ses champs et comparer avec l'année dernière",
+            "L'utiliser sur la moitié de chaque champ (assignée aléatoirement) et comparer",
+            "L'utiliser sur ses meilleurs champs pour maximiser le test",
+            "Demander à d'autres agriculteurs qui l'ont utilisé"
+          ],
+          "correct": 1,
+          "points": 1,
+          "explanation": "Randomisation au sein des mêmes champs contrôle les variables confondantes (sol, eau, ensoleillement)."
+        },
+        {
+          "id": "covariation-1",
+          "type": "multiple-choice",
+          "text": "Table de données : Pluie+Embouteillages=80 cas, Pluie+Pas d'embouteillages=20, Beau temps+Embouteillages=40, Beau temps+Pas d'embouteillages=60. La pluie cause-t-elle les embouteillages ?",
+          "options": [
+            "Oui, 80 cas de pluie avec embouteillages",
+            "Oui, P(Embouteillages|Pluie) = 80% > P(Embouteillages|Beau) = 40%",
+            "Non, pas de relation claire",
+            "Impossible à dire"
+          ],
+          "correct": 1,
+          "points": 1,
+          "explanation": "Covariation : P(E|Pluie) = 80/100 = 80% vs P(E|Beau) = 40/100 = 40%. La pluie augmente la probabilité d'embouteillages."
+        },
+        {
+          "id": "covariation-2",
+          "type": "multiple-choice",
+          "text": "Données : Étudier+Réussir=60, Étudier+Échouer=40, Pas étudier+Réussir=30, Pas étudier+Échouer=70. Étudier aide-t-il à réussir ?",
+          "options": [
+            "Oui, 60 cas de réussite avec étude",
+            "Non, 40 ont échoué malgré l'étude",
+            "Oui, P(Réussir|Étudier) = 60% > P(Réussir|Pas étudier) = 30%",
+            "Impossible à déterminer"
+          ],
+          "correct": 2,
+          "points": 1,
+          "explanation": "Covariation : taux de réussite 60% avec étude vs 30% sans étude. L'étude double les chances de réussite."
+        },
+        {
+          "id": "falsification-1",
+          "type": "multiple-choice",
+          "text": "Hypothèse : 'Tous les cygnes sont blancs.' Quelle observation est la plus informative ?",
+          "options": [
+            "Observer 100 cygnes blancs",
+            "Observer 1 cygne noir",
+            "Observer 1000 cygnes blancs",
+            "Demander à des experts ornithologues"
+          ],
+          "correct": 1,
+          "points": 1,
+          "explanation": "Principe de falsification de Popper : un seul contre-exemple réfute l'hypothèse. Mille confirmations ne la prouvent pas."
+        },
+        {
+          "id": "falsification-2",
+          "type": "multiple-choice",
+          "text": "Théorie : 'Le stress cause toujours des ulcères.' Comment la tester rigoureusement ?",
+          "options": [
+            "Chercher des gens stressés avec des ulcères",
+            "Chercher des gens stressés SANS ulcères ou des gens avec ulcères SANS stress",
+            "Mesurer le stress de gens avec ulcères",
+            "Faire un sondage sur le stress"
+          ],
+          "correct": 1,
+          "points": 1,
+          "explanation": "Pour falsifier, chercher des contre-exemples : stress sans ulcère, ou ulcère sans stress. Confirmer n'est pas tester."
+        },
+        {
+          "id": "argument-eval-1",
+          "type": "likert",
+          "text": "Argument : 'Les vaccins contiennent des produits chimiques. Les produits chimiques sont dangereux. Donc les vaccins sont dangereux.' Cet argument est :",
+          "reverse": false,
+          "points": 1,
+          "explanation": "Argument faible : équivocation sur 'produits chimiques'. L'eau est un produit chimique. La dose et le contexte déterminent la toxicité."
+        },
+        {
+          "id": "argument-eval-2",
+          "type": "likert",
+          "text": "Argument : '90% des accidents arrivent à moins de 30 km de chez soi. Donc conduire loin de chez soi est plus sûr.' Cet argument est :",
+          "reverse": false,
+          "points": 1,
+          "explanation": "Argument faible : ignore le taux de base. On conduit beaucoup plus souvent près de chez soi, donc plus d'accidents y surviennent."
         }
       ]
     },
@@ -720,7 +918,7 @@
       "id": "calibration-full",
       "name": "Calibration des Connaissances (26 items)",
       "points": 3,
-      "time": 6,
+      "time": 8,
       "questions": [
         {
           "id": "calib-mc-1",
@@ -731,24 +929,260 @@
             "Les journalistes doivent être autorisés à observer les effets de la Révolution culturelle"
           ],
           "correct": 0,
-          "points": 0.1,
-          "confidenceLevels": [
-            50,
-            60,
-            70,
-            80,
-            90,
-            100
-          ]
+          "points": 0.12,
+          "confidenceLevels": [50, 60, 70, 80, 90, 100]
+        },
+        {
+          "id": "calib-mc-2",
+          "type": "multiple-choice-confidence",
+          "text": "Le traité de Westphalie a mis fin à :",
+          "options": [
+            "La Guerre de Trente Ans",
+            "La Guerre de Sept Ans"
+          ],
+          "correct": 0,
+          "points": 0.12,
+          "confidenceLevels": [50, 60, 70, 80, 90, 100]
+        },
+        {
+          "id": "calib-mc-3",
+          "type": "multiple-choice-confidence",
+          "text": "Le canal de Suez relie :",
+          "options": [
+            "La Méditerranée et la mer Rouge",
+            "L'océan Atlantique et l'océan Pacifique"
+          ],
+          "correct": 0,
+          "points": 0.12,
+          "confidenceLevels": [50, 60, 70, 80, 90, 100]
+        },
+        {
+          "id": "calib-mc-4",
+          "type": "multiple-choice-confidence",
+          "text": "Martin Luther a publié ses 95 thèses en :",
+          "options": [
+            "1517",
+            "1648"
+          ],
+          "correct": 0,
+          "points": 0.12,
+          "confidenceLevels": [50, 60, 70, 80, 90, 100]
+        },
+        {
+          "id": "calib-mc-5",
+          "type": "multiple-choice-confidence",
+          "text": "La bataille de Waterloo a eu lieu en :",
+          "options": [
+            "1815",
+            "1789"
+          ],
+          "correct": 0,
+          "points": 0.12,
+          "confidenceLevels": [50, 60, 70, 80, 90, 100]
+        },
+        {
+          "id": "calib-mc-6",
+          "type": "multiple-choice-confidence",
+          "text": "Le mont Everest se trouve dans :",
+          "options": [
+            "L'Himalaya",
+            "Les Andes"
+          ],
+          "correct": 0,
+          "points": 0.12,
+          "confidenceLevels": [50, 60, 70, 80, 90, 100]
+        },
+        {
+          "id": "calib-mc-7",
+          "type": "multiple-choice-confidence",
+          "text": "La première guerre mondiale a commencé en :",
+          "options": [
+            "1914",
+            "1917"
+          ],
+          "correct": 0,
+          "points": 0.12,
+          "confidenceLevels": [50, 60, 70, 80, 90, 100]
+        },
+        {
+          "id": "calib-mc-8",
+          "type": "multiple-choice-confidence",
+          "text": "L'Australie est :",
+          "options": [
+            "Plus grande que le Groenland",
+            "Plus petite que le Groenland"
+          ],
+          "correct": 0,
+          "points": 0.12,
+          "confidenceLevels": [50, 60, 70, 80, 90, 100]
+        },
+        {
+          "id": "calib-mc-9",
+          "type": "multiple-choice-confidence",
+          "text": "La déclaration d'indépendance des États-Unis date de :",
+          "options": [
+            "1776",
+            "1789"
+          ],
+          "correct": 0,
+          "points": 0.12,
+          "confidenceLevels": [50, 60, 70, 80, 90, 100]
+        },
+        {
+          "id": "calib-mc-10",
+          "type": "multiple-choice-confidence",
+          "text": "La Grande Muraille de Chine mesure environ :",
+          "options": [
+            "Plus de 20 000 km",
+            "Moins de 5 000 km"
+          ],
+          "correct": 0,
+          "points": 0.12,
+          "confidenceLevels": [50, 60, 70, 80, 90, 100]
         },
         {
           "id": "calib-interval-1",
           "type": "confidence-interval",
-          "text": "Quelle est la hauteur de la Tour Eiffel ?",
+          "text": "Donnez un intervalle à 90% : Quelle est la hauteur de la Tour Eiffel ?",
           "unit": "mètres",
           "correct": 330,
-          "points": 0.1,
+          "points": 0.12,
           "explanation": "La Tour Eiffel mesure 330 mètres (avec antenne)."
+        },
+        {
+          "id": "calib-interval-2",
+          "type": "confidence-interval",
+          "text": "Donnez un intervalle à 90% : Quelle est la population du Japon ?",
+          "unit": "millions d'habitants",
+          "correct": 125,
+          "points": 0.12,
+          "explanation": "Le Japon a environ 125 millions d'habitants."
+        },
+        {
+          "id": "calib-interval-3",
+          "type": "confidence-interval",
+          "text": "Donnez un intervalle à 90% : En quelle année Christophe Colomb a-t-il découvert l'Amérique ?",
+          "unit": "année",
+          "correct": 1492,
+          "points": 0.12,
+          "explanation": "Christophe Colomb a découvert l'Amérique en 1492."
+        },
+        {
+          "id": "calib-interval-4",
+          "type": "confidence-interval",
+          "text": "Donnez un intervalle à 90% : Quelle est la longueur du fleuve Amazone ?",
+          "unit": "kilomètres",
+          "correct": 6400,
+          "points": 0.12,
+          "explanation": "L'Amazone mesure environ 6 400 km de long."
+        },
+        {
+          "id": "calib-interval-5",
+          "type": "confidence-interval",
+          "text": "Donnez un intervalle à 90% : Combien d'éléments contient le tableau périodique ?",
+          "unit": "éléments",
+          "correct": 118,
+          "points": 0.12,
+          "explanation": "Le tableau périodique contient 118 éléments."
+        },
+        {
+          "id": "calib-interval-6",
+          "type": "confidence-interval",
+          "text": "Donnez un intervalle à 90% : Quelle est la vitesse de la lumière ?",
+          "unit": "km/s",
+          "correct": 300000,
+          "points": 0.12,
+          "explanation": "La vitesse de la lumière est d'environ 300 000 km/s."
+        },
+        {
+          "id": "calib-interval-7",
+          "type": "confidence-interval",
+          "text": "Donnez un intervalle à 90% : Quelle est la température d'ébullition de l'eau au niveau de la mer ?",
+          "unit": "degrés Celsius",
+          "correct": 100,
+          "points": 0.12,
+          "explanation": "L'eau bout à 100°C au niveau de la mer."
+        },
+        {
+          "id": "calib-interval-8",
+          "type": "confidence-interval",
+          "text": "Donnez un intervalle à 90% : Combien de pays sont membres des Nations Unies ?",
+          "unit": "pays",
+          "correct": 193,
+          "points": 0.12,
+          "explanation": "L'ONU compte 193 États membres."
+        },
+        {
+          "id": "calib-interval-9",
+          "type": "confidence-interval",
+          "text": "Donnez un intervalle à 90% : Quelle est la distance Terre-Lune ?",
+          "unit": "milliers de km",
+          "correct": 384,
+          "points": 0.12,
+          "explanation": "La distance moyenne Terre-Lune est de 384 400 km."
+        },
+        {
+          "id": "calib-interval-10",
+          "type": "confidence-interval",
+          "text": "Donnez un intervalle à 90% : En quelle année a eu lieu la Révolution française ?",
+          "unit": "année",
+          "correct": 1789,
+          "points": 0.12,
+          "explanation": "La Révolution française a commencé en 1789."
+        },
+        {
+          "id": "calib-interval-11",
+          "type": "confidence-interval",
+          "text": "Donnez un intervalle à 90% : Quelle est la superficie du Sahara ?",
+          "unit": "millions de km²",
+          "correct": 9,
+          "points": 0.12,
+          "explanation": "Le Sahara couvre environ 9 millions de km²."
+        },
+        {
+          "id": "calib-interval-12",
+          "type": "confidence-interval",
+          "text": "Donnez un intervalle à 90% : Combien de continents y a-t-il sur Terre ?",
+          "unit": "continents",
+          "correct": 7,
+          "points": 0.12,
+          "explanation": "Il y a 7 continents : Afrique, Antarctique, Asie, Europe, Amérique du Nord, Océanie, Amérique du Sud."
+        },
+        {
+          "id": "calib-interval-13",
+          "type": "confidence-interval",
+          "text": "Donnez un intervalle à 90% : Quelle est la population de la France ?",
+          "unit": "millions d'habitants",
+          "correct": 67,
+          "points": 0.12,
+          "explanation": "La France compte environ 67 millions d'habitants."
+        },
+        {
+          "id": "calib-interval-14",
+          "type": "confidence-interval",
+          "text": "Donnez un intervalle à 90% : En quelle année est tombé le mur de Berlin ?",
+          "unit": "année",
+          "correct": 1989,
+          "points": 0.12,
+          "explanation": "Le mur de Berlin est tombé en 1989."
+        },
+        {
+          "id": "calib-interval-15",
+          "type": "confidence-interval",
+          "text": "Donnez un intervalle à 90% : Quelle est l'altitude du Mont Blanc ?",
+          "unit": "mètres",
+          "correct": 4809,
+          "points": 0.12,
+          "explanation": "Le Mont Blanc culmine à 4 809 mètres."
+        },
+        {
+          "id": "calib-interval-16",
+          "type": "confidence-interval",
+          "text": "Donnez un intervalle à 90% : Combien de fuseaux horaires couvre la Russie ?",
+          "unit": "fuseaux",
+          "correct": 11,
+          "points": 0.12,
+          "explanation": "La Russie s'étend sur 11 fuseaux horaires."
         }
       ]
     },
@@ -756,8 +1190,26 @@
       "id": "numeracy",
       "name": "Numératie Probabiliste (5 items)",
       "points": 5,
-      "time": 4,
+      "time": 3,
       "questions": [
+        {
+          "id": "num-1",
+          "type": "number",
+          "text": "Un médicament réduit le risque d'infection de 40% à 20%. De combien de points de pourcentage le risque diminue-t-il ?",
+          "unit": "points de %",
+          "correct": 20,
+          "points": 1,
+          "explanation": "40% - 20% = 20 points de pourcentage. Ne pas confondre avec la réduction relative (50%)."
+        },
+        {
+          "id": "num-2",
+          "type": "number",
+          "text": "Dans un groupe de 800 personnes, 3 sur 10 portent des lunettes. Combien de personnes portent des lunettes ?",
+          "unit": "personnes",
+          "correct": 240,
+          "points": 1,
+          "explanation": "800 × (3/10) = 800 × 0,3 = 240 personnes."
+        },
         {
           "id": "num-3",
           "type": "number",
@@ -775,6 +1227,16 @@
           "correct": 300,
           "points": 1,
           "explanation": "10 000 × 0,03 = 300 personnes."
+        },
+        {
+          "id": "num-5",
+          "type": "number",
+          "text": "Un traitement augmente le taux de survie de 80% à 92%. Quel est le pourcentage de réduction du risque de décès ?",
+          "unit": "%",
+          "correct": 60,
+          "tolerance": 5,
+          "points": 1,
+          "explanation": "Risque initial : 20% (100-80). Risque final : 8% (100-92). Réduction : (20-8)/20 = 12/20 = 60%."
         }
       ]
     },
@@ -804,6 +1266,69 @@
           "text": "La lecture de la pensée n'est pas possible.",
           "reverse": true,
           "points": 0.42
+        },
+        {
+          "id": "super-4",
+          "type": "likert",
+          "text": "Certaines personnes peuvent prédire l'avenir avec précision.",
+          "reverse": false,
+          "points": 0.42
+        },
+        {
+          "id": "super-5",
+          "type": "likert",
+          "text": "Les fantômes ou esprits n'existent pas.",
+          "reverse": true,
+          "points": 0.42
+        },
+        {
+          "id": "super-6",
+          "type": "likert",
+          "text": "Certains porte-bonheur peuvent vraiment influencer les événements.",
+          "reverse": false,
+          "points": 0.42
+        },
+        {
+          "id": "super-7",
+          "type": "likert",
+          "text": "Il est possible de communiquer avec les morts.",
+          "reverse": false,
+          "points": 0.42
+        },
+        {
+          "id": "super-8",
+          "type": "likert",
+          "text": "Les rêves prémonitoires sont de simples coïncidences.",
+          "reverse": true,
+          "points": 0.42
+        },
+        {
+          "id": "super-9",
+          "type": "likert",
+          "text": "Certaines personnes possèdent des pouvoirs psychiques réels.",
+          "reverse": false,
+          "points": 0.42
+        },
+        {
+          "id": "super-10",
+          "type": "likert",
+          "text": "Les cristaux et pierres n'ont aucun pouvoir de guérison.",
+          "reverse": true,
+          "points": 0.42
+        },
+        {
+          "id": "super-11",
+          "type": "likert",
+          "text": "La malchance peut être causée par certaines actions (briser un miroir, passer sous une échelle).",
+          "reverse": false,
+          "points": 0.42
+        },
+        {
+          "id": "super-12",
+          "type": "likert",
+          "text": "La télékinésie (bouger des objets par la pensée) n'existe pas.",
+          "reverse": true,
+          "points": 0.42
         }
       ]
     },
@@ -826,6 +1351,83 @@
           "text": "Quand la science entre en conflit avec la sagesse conventionnelle, c'est généralement la science qui a raison.",
           "reverse": true,
           "points": 0.38
+        },
+        {
+          "id": "science-3",
+          "type": "likert",
+          "text": "La science change trop souvent d'avis pour qu'on puisse lui faire confiance.",
+          "reverse": false,
+          "points": 0.38
+        },
+        {
+          "id": "science-4",
+          "type": "likert",
+          "text": "Les scientifiques sont généralement plus fiables que les sources d'information non scientifiques.",
+          "reverse": true,
+          "points": 0.38
+        },
+        {
+          "id": "science-5",
+          "type": "likert",
+          "text": "Les découvertes scientifiques qui contredisent le bon sens sont probablement fausses.",
+          "reverse": false,
+          "points": 0.38
+        },
+        {
+          "id": "science-6",
+          "type": "likert",
+          "text": "La méthode scientifique est le meilleur moyen d'obtenir des connaissances fiables.",
+          "reverse": true,
+          "points": 0.38
+        },
+        {
+          "id": "science-7",
+          "type": "likert",
+          "text": "Les études scientifiques sont souvent biaisées par les intérêts financiers de ceux qui les financent.",
+          "reverse": false,
+          "points": 0.38
+        },
+        {
+          "id": "science-8",
+          "type": "likert",
+          "text": "La science ne peut pas expliquer les choses vraiment importantes de la vie.",
+          "reverse": false,
+          "points": 0.38
+        },
+        {
+          "id": "science-9",
+          "type": "likert",
+          "text": "Les preuves scientifiques devraient avoir plus de poids que les témoignages personnels.",
+          "reverse": true,
+          "points": 0.38
+        },
+        {
+          "id": "science-10",
+          "type": "likert",
+          "text": "L'intuition personnelle est souvent plus fiable que les résultats d'études scientifiques.",
+          "reverse": false,
+          "points": 0.38
+        },
+        {
+          "id": "science-11",
+          "type": "likert",
+          "text": "La science a créé plus de problèmes qu'elle n'en a résolu.",
+          "reverse": false,
+          "points": 0.38
+        },
+        {
+          "id": "science-12",
+          "type": "likert",
+          "text": "Les scientifiques ont généralement une meilleure compréhension des faits que le grand public.",
+          "reverse": true,
+          "points": 0.38
+        },
+        {
+          "id": "science-13",
+          "type": "likert",
+          "text": "On peut faire autant confiance aux remèdes traditionnels qu'aux traitements médicaux scientifiques.",
+          "reverse": false,
+          "points": 0.38
         }
       ]
     },
@@ -833,7 +1435,7 @@
       "id": "conspiracy",
       "name": "Croyances Conspirationnistes (24 items)",
       "points": 10,
-      "time": 4,
+      "time": 6,
       "questions": [
         {
           "id": "conspiracy-1",
@@ -846,6 +1448,160 @@
           "id": "conspiracy-2",
           "type": "likert",
           "text": "Les preuves que certains vaccins infantiles peuvent causer l'autisme ont été cachées par des compagnies pharmaceutiques.",
+          "reverse": false,
+          "points": 0.42
+        },
+        {
+          "id": "conspiracy-3",
+          "type": "likert",
+          "text": "Le gouvernement américain a caché des preuves de l'existence des extraterrestres.",
+          "reverse": false,
+          "points": 0.42
+        },
+        {
+          "id": "conspiracy-4",
+          "type": "likert",
+          "text": "L'alunissage d'Apollo était une mise en scène filmée dans un studio.",
+          "reverse": false,
+          "points": 0.42
+        },
+        {
+          "id": "conspiracy-5",
+          "type": "likert",
+          "text": "Les grandes compagnies pétrolières ont délibérément supprimé des technologies énergétiques alternatives.",
+          "reverse": false,
+          "points": 0.42
+        },
+        {
+          "id": "conspiracy-6",
+          "type": "likert",
+          "text": "Le changement climatique est un canular inventé pour contrôler l'économie mondiale.",
+          "reverse": false,
+          "points": 0.42
+        },
+        {
+          "id": "conspiracy-7",
+          "type": "likert",
+          "text": "Les chemtrails (traînées d'avion) sont utilisés pour répandre des produits chimiques sur la population.",
+          "reverse": false,
+          "points": 0.42
+        },
+        {
+          "id": "conspiracy-8",
+          "type": "likert",
+          "text": "Un petit groupe de personnes contrôle secrètement les événements mondiaux.",
+          "reverse": false,
+          "points": 0.42
+        },
+        {
+          "id": "conspiracy-9",
+          "type": "likert",
+          "text": "L'assassinat de JFK était le résultat d'une conspiration, pas d'un tireur isolé.",
+          "reverse": false,
+          "points": 0.42
+        },
+        {
+          "id": "conspiracy-10",
+          "type": "likert",
+          "text": "La pandémie de COVID-19 a été délibérément créée en laboratoire.",
+          "reverse": false,
+          "points": 0.42
+        },
+        {
+          "id": "conspiracy-11",
+          "type": "likert",
+          "text": "Les médias mainstream sont contrôlés par une élite secrète.",
+          "reverse": false,
+          "points": 0.42
+        },
+        {
+          "id": "conspiracy-12",
+          "type": "likert",
+          "text": "La Terre est plate, contrairement à ce que la science officielle prétend.",
+          "reverse": false,
+          "points": 0.42
+        },
+        {
+          "id": "conspiracy-13",
+          "type": "likert",
+          "text": "Les attentats terroristes sont souvent organisés par les gouvernements eux-mêmes.",
+          "reverse": false,
+          "points": 0.42
+        },
+        {
+          "id": "conspiracy-14",
+          "type": "likert",
+          "text": "Les banques centrales manipulent l'économie mondiale pour leur propre profit.",
+          "reverse": false,
+          "points": 0.42
+        },
+        {
+          "id": "conspiracy-15",
+          "type": "likert",
+          "text": "Un 'Nouvel Ordre Mondial' tente d'établir un gouvernement mondial unique.",
+          "reverse": false,
+          "points": 0.42
+        },
+        {
+          "id": "conspiracy-16",
+          "type": "likert",
+          "text": "Des technologies de contrôle mental sont utilisées sur la population.",
+          "reverse": false,
+          "points": 0.42
+        },
+        {
+          "id": "conspiracy-17",
+          "type": "likert",
+          "text": "La mort de la princesse Diana n'était pas un accident mais un assassinat planifié.",
+          "reverse": false,
+          "points": 0.42
+        },
+        {
+          "id": "conspiracy-18",
+          "type": "likert",
+          "text": "Les grandes entreprises pharmaceutiques cachent des remèdes contre le cancer pour continuer à vendre des traitements.",
+          "reverse": false,
+          "points": 0.42
+        },
+        {
+          "id": "conspiracy-19",
+          "type": "likert",
+          "text": "La 5G est dangereuse pour la santé et son déploiement cache un agenda caché.",
+          "reverse": false,
+          "points": 0.42
+        },
+        {
+          "id": "conspiracy-20",
+          "type": "likert",
+          "text": "Les Illuminati existent et contrôlent secrètement les affaires mondiales.",
+          "reverse": false,
+          "points": 0.42
+        },
+        {
+          "id": "conspiracy-21",
+          "type": "likert",
+          "text": "Les élections dans les démocraties occidentales sont régulièrement truquées.",
+          "reverse": false,
+          "points": 0.42
+        },
+        {
+          "id": "conspiracy-22",
+          "type": "likert",
+          "text": "Des expérimentations secrètes sont menées sur les citoyens à leur insu.",
+          "reverse": false,
+          "points": 0.42
+        },
+        {
+          "id": "conspiracy-23",
+          "type": "likert",
+          "text": "Le SIDA a été créé intentionnellement comme arme biologique.",
+          "reverse": false,
+          "points": 0.42
+        },
+        {
+          "id": "conspiracy-24",
+          "type": "likert",
+          "text": "Les gouvernements cachent des informations sur des événements catastrophiques à venir.",
           "reverse": false,
           "points": 0.42
         }
