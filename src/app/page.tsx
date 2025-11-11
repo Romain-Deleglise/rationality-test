@@ -101,7 +101,7 @@ export default function Home() {
         <div className="mb-8">
           <h2 className="text-2xl font-bold text-gray-900 mb-4">Ce que ce test mesure</h2>
           
-          <AccordionItem title="🎲 Raisonnement probabiliste" defaultOpen={true}>
+          <AccordionItem title="🎲 Raisonnement probabiliste">
             <p className="mb-3">
               Votre capacité à raisonner correctement avec les probabilités et à éviter les erreurs classiques comme :
             </p>

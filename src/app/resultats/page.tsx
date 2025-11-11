@@ -89,6 +89,9 @@ export default function ResultatsPage() {
   const [sendingEmail, setSendingEmail] = useState(false);
   const [emailSent, setEmailSent] = useState(false);
 
+  // Déduire la version si elle n'est pas définie (pour les anciennes sessions)
+  const version = session?.version || (modules.length > 6 ? 'complète' : 'courte');
+
   useEffect(() => {
     if (!session?.completedAt || !modules.length) {
       router.push('/test');
@@ -281,7 +284,7 @@ export default function ResultatsPage() {
           faire évaluer la logique par quelqu'un sans connaître le sujet.</p>
       )
     },
-    'Calibration': {
+    'Calibration des Connaissances': {
       what: (
         <p>Votre capacité à estimer avec précision votre niveau de certitude. Une personne bien{' '}
           <a href="https://www.lesswrong.com/tag/calibration" target="_blank" rel="noopener" className="text-blue-600 hover:underline">
@@ -356,7 +359,7 @@ export default function ResultatsPage() {
           (biais évolutif de détection de patterns).</p>
       )
     },
-    'Théories du Complot': {
+    'Croyances Conspirationnistes': {
       what: (
         <p>Votre résistance aux{' '}
           <a href="https://fr.wikipedia.org/wiki/Th%C3%A9orie_du_complot" target="_blank" rel="noopener" className="text-blue-600 hover:underline">
@@ -423,8 +426,52 @@ export default function ResultatsPage() {
           les sentences suivent les dés ! L'anchor (même absurde) influence.</p>
       ),
       canImprove: (
-        <p>Amélioration : très difficile (&lt;5%). L'ancrage agit inconsciemment. Solution : générer plusieurs estimations 
+        <p>Amélioration : très difficile (&lt;5%). L'ancrage agit inconsciemment. Solution : générer plusieurs estimations
           indépendantes avant de voir des chiffres externes.</p>
+      )
+    },
+    'Numératie Probabiliste': {
+      what: (
+        <p>Votre capacité à manipuler et comprendre les nombres dans des contextes probabilistes :
+          calculs de probabilités, transformations entre fractions/pourcentages/fréquences,
+          compréhension des grands nombres.</p>
+      ),
+      why: (
+        <p>La numératie probabiliste est fondamentale pour interpréter correctement les statistiques médicales,
+          financières, et scientifiques. Sans elle, on est vulnérable aux manipulations statistiques et aux
+          mauvaises décisions basées sur des chiffres mal compris.</p>
+      ),
+      example: (
+        <p>Question typique : "Si 1 personne sur 1000 a une maladie, et un test détecte la maladie avec
+          95% de précision, quelle est la probabilité qu'une personne avec un test positif soit vraiment malade ?"
+          Beaucoup répondent 95%, mais c'est environ 2% (à cause des faux positifs).</p>
+      ),
+      canImprove: (
+        <p>Amélioration : modérée (15-30%). La pratique avec des exercices de probabilités aide,
+          surtout en utilisant des fréquences naturelles plutôt que des pourcentages.
+          Mais les erreurs persistent sous pression ou avec des nombres complexes.</p>
+      )
+    },
+    'Attitudes Anti-Science': {
+      what: (
+        <p>Votre résistance aux attitudes de rejet de la science et de la méthode scientifique :
+          croire que l'intuition personnelle vaut mieux que les études scientifiques, rejeter
+          le consensus scientifique, ou penser que la science est "juste une opinion".</p>
+      ),
+      why: (
+        <p>Les attitudes anti-science mènent au rejet des vaccins, du changement climatique, de l'évolution,
+          et d'autres faits scientifiques bien établis. Elles créent une vulnérabilité aux pseudosciences
+          et aux théories du complot.</p>
+      ),
+      example: (
+        <p>Attitude anti-science typique : "Les scientifiques changent constamment d'avis, donc on ne peut
+          pas leur faire confiance." Cette incompréhension du processus scientifique (qui progresse par
+          raffinements successifs) conduit au rejet de découvertes bien établies.</p>
+      ),
+      canImprove: (
+        <p>Amélioration : difficile (&lt;15%). Les attitudes anti-science sont souvent liées à l'identité
+          sociale et aux croyances politiques/religieuses. L'éducation scientifique aide, mais insuffisant
+          sans adresser les facteurs sociaux et émotionnels.</p>
       )
     }
   };
@@ -451,11 +498,11 @@ export default function ResultatsPage() {
             </p>
             <span className="text-gray-400">•</span>
             <span className={`px-2.5 py-0.5 rounded-full text-xs font-semibold ${
-              session!.version === 'complète'
+              version === 'complète'
                 ? 'bg-blue-100 text-blue-700'
                 : 'bg-green-100 text-green-700'
             }`}>
-              Version {session!.version}
+              Version {version}
             </span>
           </div>
         </div>
@@ -867,8 +914,18 @@ export default function ResultatsPage() {
               </button>
             </Link>
           </div>
-          <p className="text-sm text-gray-600 mt-6">
-            💡 Conseil : Pour mesurer de vrais progrès, repassez le test dans 6-12 mois 
+
+          <div className="mt-6 text-center">
+            <a
+              href="mailto:rom.deleglise@orange.fr?subject=Feedback sur le Test de Rationalité&body=Bonjour,%0D%0A%0D%0AJe vous contacte pour partager mon feedback sur le test de rationalité :%0D%0A%0D%0A"
+              className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 hover:underline font-medium"
+            >
+              💬 Envoyer un feedback sur le test
+            </a>
+          </div>
+
+          <p className="text-sm text-gray-600 mt-4">
+            💡 Conseil : Pour mesurer de vrais progrès, repassez le test dans 6-12 mois
             (pas avant, sinon c'est juste de la mémorisation)
           </p>
         </div>

@@ -16,10 +16,11 @@ interface QuestionProps {
 
 export default function Question({ question, onAnswer, defaultValue }: QuestionProps) {
   const [value, setValue] = useState<any>(defaultValue || '');
-  const [isAnimating, setIsAnimating] = useState(false);
+  const [isAnimating, setIsAnimating] = useState(true);
 
   // Réinitialiser quand la question change avec animation
   useEffect(() => {
+    // Déclencher l'animation d'entrée
     setIsAnimating(true);
 
     if (question.type === 'ranking') {
@@ -32,8 +33,8 @@ export default function Question({ question, onAnswer, defaultValue }: QuestionP
       setValue(defaultValue || '');
     }
 
-    // Supprimer la classe d'animation après 300ms
-    const timer = setTimeout(() => setIsAnimating(false), 300);
+    // Supprimer la classe d'animation après un court délai
+    const timer = setTimeout(() => setIsAnimating(false), 50);
     return () => clearTimeout(timer);
   }, [question.id]); // Se déclenche quand la question change
   
@@ -301,8 +302,8 @@ export default function Question({ question, onAnswer, defaultValue }: QuestionP
   };
 
   return (
-    <Card className={`w-full max-w-3xl mx-auto transition-opacity duration-300 ${
-      isAnimating ? 'opacity-0' : 'opacity-100'
+    <Card className={`w-full max-w-3xl mx-auto transition-all duration-500 ease-out ${
+      isAnimating ? 'opacity-0 translate-y-4' : 'opacity-100 translate-y-0'
     }`}>
       <CardHeader>
         <CardTitle className="text-xl leading-relaxed">{question.text}</CardTitle>

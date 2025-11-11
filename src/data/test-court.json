@@ -1,13 +1,13 @@
 {
   "version": "courte",
   "totalPoints": 38,
-  "estimatedTime": 18,
+  "estimatedTime": 20,
   "modules": [
     {
       "id": "prob-stats",
       "name": "Raisonnement Probabiliste (10 items)",
       "points": 10,
-      "time": 8,
+      "time": 3,
       "questions": [
         {
           "id": "crt-1",
@@ -129,7 +129,7 @@
       "id": "sci-reasoning",
       "name": "Raisonnement Scientifique (12 items)",
       "points": 12,
-      "time": 15,
+      "time": 7,
       "questions": [
         {
           "id": "wason-1",
@@ -210,7 +210,7 @@
       "id": "crt",
       "name": "Réflexion vs Intuition (7 items)",
       "points": 7,
-      "time": 5,
+      "time": 2,
       "questions": [
         {
           "id": "crt-3",
@@ -272,7 +272,7 @@
       "id": "belief-bias",
       "name": "Biais de Croyance (8 items)",
       "points": 4,
-      "time": 8,
+      "time": 3,
       "questions": [
         {
           "id": "syllogism-1",
@@ -304,7 +304,7 @@
       "id": "disjunctive",
       "name": "Raisonnement Disjonctif (3 items)",
       "points": 3,
-      "time": 5,
+      "time": 2,
       "questions": [
         {
           "id": "disj-1",
@@ -338,7 +338,7 @@
       "id": "anchoring",
       "name": "Ancrage (4 items)",
       "points": 2,
-      "time": 5,
+      "time": 3,
       "questions": [
         {
           "id": "anchor-1",
