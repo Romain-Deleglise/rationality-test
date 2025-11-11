@@ -176,7 +176,7 @@ export function BarChartComponent({ moduleScores }: ChartProps) {
     <ResponsiveContainer width="100%" height={Math.max(500, data.length * 70)}>
       <BarChart
         data={data}
-        layout="horizontal"
+        layout="vertical"
         margin={{ top: 20, right: 30, left: 200, bottom: 20 }}
       >
         <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />

@@ -902,7 +902,8 @@ export default function ResultatsPage() {
             <button
               onClick={() => {
                 resetTest();
-                router.push('/test?reset=true');
+                const versionParam = version === 'complète' ? 'version=full' : '';
+                router.push(`/test?reset=true${versionParam ? '&' + versionParam : ''}`);
               }}
               className="bg-gray-200 hover:bg-gray-300 text-gray-900 font-semibold px-6 py-3 rounded-lg transition-colors"
             >
