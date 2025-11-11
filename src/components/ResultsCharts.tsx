@@ -1,11 +1,13 @@
+// Remplacer src/components/ResultsCharts.tsx
+
 'use client';
 
 import {
-  Radar,
   RadarChart,
   PolarGrid,
   PolarAngleAxis,
   PolarRadiusAxis,
+  Radar,
   ResponsiveContainer,
   BarChart,
   Bar,
@@ -17,89 +19,95 @@ import {
 } from 'recharts';
 import { ModuleScore } from '@/lib/scoring';
 
-interface ResultsChartsProps {
+interface ChartProps {
   moduleScores: ModuleScore[];
 }
 
-export function RadarChartComponent({ moduleScores }: ResultsChartsProps) {
+export function RadarChartComponent({ moduleScores }: ChartProps) {
   const data = moduleScores
     .filter(m => m.possible > 0)
-    .map((module) => ({
-      module: module.moduleName.split(' (')[0].substring(0, 18), // Limiter à 18 caractères
-      score: Math.round(module.percentage),
-      fullMark: 100,
+    .map((score) => ({
+      module: score.moduleName.split(' (')[0].substring(0, 20), // Tronquer si trop long
+      score: score.percentage,
     }));
 
   return (
     <ResponsiveContainer width="100%" height={450}>
-      <RadarChart data={data} margin={{ top: 20, right: 30, bottom: 20, left: 30 }}>
+      <RadarChart data={data}>
         <PolarGrid stroke="#e5e7eb" />
         <PolarAngleAxis 
           dataKey="module" 
-          tick={{ fill: '#4b5563', fontSize: 10 }}
+          tick={{ fill: '#374151', fontSize: 13, fontWeight: 500 }}
+          tickLine={false}
         />
-        <PolarRadiusAxis angle={90} domain={[0, 100]} tick={{ fill: '#9ca3af' }} />
+        <PolarRadiusAxis 
+          angle={90} 
+          domain={[0, 100]}
+          tick={{ fill: '#6b7280', fontSize: 12 }}
+          tickFormatter={(value) => `${value}%`}
+        />
         <Radar
           name="Score"
           dataKey="score"
-          stroke="#3b82f6"
+          stroke="#2563eb"
           fill="#3b82f6"
           fillOpacity={0.5}
-        />
-        <Tooltip
-          contentStyle={{
-            backgroundColor: 'white',
-            border: '1px solid #e5e7eb',
-            borderRadius: '8px',
-          }}
-          formatter={(value: number) => `${value}%`}
+          strokeWidth={2}
         />
       </RadarChart>
     </ResponsiveContainer>
   );
 }
 
-export function BarChartComponent({ moduleScores }: ResultsChartsProps) {
+export function BarChartComponent({ moduleScores }: ChartProps) {
   const data = moduleScores
     .filter(m => m.possible > 0)
-    .map((module) => ({
-      name: module.moduleName.split(' (')[0].substring(0, 20), // Limiter la longueur
-      score: Math.round(module.percentage),
-    }))
-    .sort((a, b) => b.score - a.score);
+    .sort((a, b) => b.percentage - a.percentage)
+    .map((score) => ({
+      module: score.moduleName.split(' (')[0],
+      score: score.percentage,
+    }));
 
-  const getBarColor = (score: number) => {
-    if (score >= 75) return '#10b981';
-    if (score >= 50) return '#f59e0b';
-    return '#ef4444';
+  const getColor = (score: number) => {
+    if (score >= 75) return '#10b981'; // green
+    if (score >= 50) return '#3b82f6'; // blue
+    if (score >= 35) return '#f59e0b'; // yellow
+    return '#ef4444'; // red
   };
 
   return (
-    <ResponsiveContainer width="100%" height={400}>
-      <BarChart data={data}>
+    <ResponsiveContainer width="100%" height={450}>
+      <BarChart 
+        data={data}
+        layout="horizontal"
+        margin={{ top: 20, right: 30, left: 120, bottom: 20 }}
+      >
         <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
         <XAxis 
-          dataKey="name" 
-          angle={-45}
-          textAnchor="end"
-          height={100}
-          tick={{ fill: '#4b5563', fontSize: 11 }}
+          type="number"
+          domain={[0, 100]}
+          tick={{ fill: '#6b7280', fontSize: 13 }}
+          tickFormatter={(value) => `${value}%`}
         />
         <YAxis 
-          domain={[0, 100]}
-          tick={{ fill: '#6b7280' }}
+          type="category"
+          dataKey="module" 
+          tick={{ fill: '#374151', fontSize: 13, fontWeight: 500 }}
+          width={110}
+          tickLine={false}
         />
-        <Tooltip
-          contentStyle={{
-            backgroundColor: 'white',
+        <Tooltip 
+          formatter={(value: number) => `${value.toFixed(1)}%`}
+          contentStyle={{ 
+            backgroundColor: '#fff', 
             border: '1px solid #e5e7eb',
             borderRadius: '8px',
+            fontSize: '14px'
           }}
-          formatter={(value: number) => `${value}%`}
         />
-        <Bar dataKey="score" radius={[8, 8, 0, 0]}>
+        <Bar dataKey="score" radius={[0, 8, 8, 0]}>
           {data.map((entry, index) => (
-            <Cell key={`cell-${index}`} fill={getBarColor(entry.score)} />
+            <Cell key={`cell-${index}`} fill={getColor(entry.score)} />
           ))}
         </Bar>
       </BarChart>

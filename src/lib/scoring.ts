@@ -265,15 +265,17 @@ export function scoreTest(
  */
 function getInterpretation(percentage: number): string {
   if (percentage >= 90) {
-    return 'Excellent - Raisonnement hautement rationnel avec très peu de biais cognitifs détectés.';
+    return 'Score très élevé. Vous démontrez une excellente maîtrise des principes de raisonnement rationnel. Cependant, gardez à l\'esprit que connaître les biais ne garantit pas d\'y résister en situation réelle (fatigue, stress, émotions).';
   } else if (percentage >= 75) {
-    return 'Très bon - Bon niveau de raisonnement rationnel avec quelques biais mineurs.';
+    return 'Score élevé. Vous avez acquis une bonne compréhension des erreurs de raisonnement courantes. Attention toutefois : les biais persistent même chez les experts. L\'utilisation de protocoles décisionnels reste recommandée pour les choix importants.';
   } else if (percentage >= 60) {
-    return 'Bon - Raisonnement généralement rationnel mais avec des domaines à améliorer.';
+    return 'Score dans la moyenne. Vous identifiez correctement certains biais, mais d\'autres vous échappent encore. C\'est normal : la rationalité n\'est pas intuitive. Concentrez-vous sur vos faiblesses spécifiques plutôt que d\'essayer de tout améliorer à la fois.';
   } else if (percentage >= 45) {
-    return 'Moyen - Présence de plusieurs biais cognitifs importants. Formation recommandée.';
+    return 'Score sous la moyenne. Plusieurs biais cognitifs importants affectent votre raisonnement. L\'amélioration est possible mais modeste (10-25% sur 6-12 mois avec pratique intensive). Privilégiez l\'usage d\'outils externes (checklists, consultations) plutôt que de compter sur votre intuition améliorée.';
+  } else if (percentage >= 30) {
+    return 'Score limité. Vos résultats suggèrent une forte susceptibilité aux biais cognitifs courants. Ne vous découragez pas : même des personnes très intelligentes obtiennent des scores similaires. La rationalité se travaille différemment de l\'intelligence générale. Commencez par comprendre les concepts de base avant d\'attendre une amélioration mesurable.';
   } else {
-    return 'Faible - Nombreux biais cognitifs détectés. Une formation approfondie est fortement recommandée.';
+    return 'Score très limité. Votre raisonnement est fortement affecté par de nombreux biais cognitifs. Cela ne reflète pas votre intelligence, mais plutôt un manque de familiarité avec ces concepts. Considérez ce test comme un point de départ éducatif plutôt qu\'un jugement. L\'amélioration nécessitera du temps et de la patience.';
   }
 }
 
