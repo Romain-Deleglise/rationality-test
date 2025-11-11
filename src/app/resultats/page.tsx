@@ -4,11 +4,12 @@ import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { useTestStore } from '@/store/useTestStore';
 import { scoreTest, calculatePercentile, TestScore } from '@/lib/scoring';
+import { saveTestResult, calculateRealPercentile, generateResultToken, getGlobalStats } from '@/lib/supabase';
 import Link from 'next/link';
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { RadarChartComponent, BarChartComponent } from '@/components/ResultsCharts';
-import { ChevronDown, ChevronUp, BookOpen, TrendingUp, AlertCircle, Award, Brain, Mail } from 'lucide-react';
+import { ChevronDown, ChevronUp, BookOpen, TrendingUp, AlertCircle, Award, Brain, Mail, Share2, Database } from 'lucide-react';
 import React from 'react';
 
 // Composant Accordéon avec jauge dans le titre
@@ -89,6 +90,14 @@ export default function ResultatsPage() {
   const [sendingEmail, setSendingEmail] = useState(false);
   const [emailSent, setEmailSent] = useState(false);
 
+  // Nouveaux états pour Supabase
+  const [resultToken, setResultToken] = useState<string | null>(null);
+  const [realPercentile, setRealPercentile] = useState<number | null>(null);
+  const [globalStats, setGlobalStats] = useState<any>(null);
+  const [savingToDb, setSavingToDb] = useState(false);
+  const [savedToDb, setSavedToDb] = useState(false);
+  const [linkCopied, setLinkCopied] = useState(false);
+
   // Déduire la version si elle n'est pas définie (pour les anciennes sessions)
   const version = session?.version || (modules.length > 6 ? 'complète' : 'courte');
 
@@ -101,7 +110,45 @@ export default function ResultatsPage() {
     const scores = scoreTest(modules, session.answers);
     const percentile = calculatePercentile(scores.percentage);
     setTestScore({ ...scores, percentile });
-  }, [session, modules, router]);
+
+    // Sauvegarder automatiquement dans Supabase
+    const saveToSupabase = async () => {
+      try {
+        setSavingToDb(true);
+        const token = generateResultToken();
+
+        await saveTestResult({
+          result_token: token,
+          test_version: version,
+          total_points: scores.totalEarned,
+          total_possible: scores.totalPossible,
+          percentage: scores.percentage,
+          module_scores: scores.modules,
+          answers: session.answers,
+          user_agent: typeof navigator !== 'undefined' ? navigator.userAgent : undefined,
+        });
+
+        setResultToken(token);
+        setSavedToDb(true);
+
+        // Calculer le vrai percentile basé sur toutes les données
+        const realPerc = await calculateRealPercentile(scores.percentage, version);
+        setRealPercentile(realPerc);
+
+        // Charger les stats globales
+        const stats = await getGlobalStats(version);
+        setGlobalStats(stats);
+
+      } catch (error) {
+        console.error('Error saving to Supabase:', error);
+        // On continue même si la sauvegarde échoue
+      } finally {
+        setSavingToDb(false);
+      }
+    };
+
+    saveToSupabase();
+  }, [session, modules, router, version]);
 
   const handleSendEmail = async () => {
     if (!email || !testScore) return;
@@ -521,14 +568,86 @@ export default function ResultatsPage() {
               {testScore.totalEarned.toFixed(1)} / {testScore.totalPossible.toFixed(1)} points
             </div>
           </div>
-          {testScore.percentile && (
-            <div className="bg-gray-100 rounded-lg p-4 inline-block">
-              <p className="text-gray-700">
-                Percentile estimé : <strong className="text-blue-600">{testScore.percentile}e</strong>
+          {/* Percentile - afficher le vrai si disponible */}
+          <div className="bg-gray-100 rounded-lg p-4 inline-block">
+            <p className="text-gray-700">
+              {realPercentile !== null ? (
+                <>
+                  Percentile réel : <strong className="text-blue-600">{realPercentile}e</strong>
+                  <br />
+                  <span className="text-xs text-gray-500 mt-1">
+                    (basé sur {globalStats?.count || '...'} résultats réels)
+                  </span>
+                </>
+              ) : (
+                <>
+                  Percentile estimé : <strong className="text-blue-600">{testScore.percentile}e</strong>
+                  <br />
+                  <span className="text-xs text-gray-500 mt-1">
+                    {savingToDb ? '(calcul du vrai percentile...)' : '(basé sur une distribution théorique)'}
+                  </span>
+                </>
+              )}
+            </p>
+          </div>
+
+          {/* Lien de sauvegarde / partage */}
+          {resultToken && (
+            <div className="mt-6 bg-blue-50 border border-blue-200 rounded-lg p-4">
+              <div className="flex items-center justify-center gap-2 mb-2">
+                <Database className="w-5 h-5 text-blue-600" />
+                <p className="text-sm font-semibold text-gray-900">
+                  Résultats sauvegardés !
+                </p>
+              </div>
+              <p className="text-xs text-gray-600 mb-3">
+                Retrouvez vos résultats à tout moment avec ce lien :
               </p>
-              <p className="text-xs text-gray-500 mt-1">
-                (basé sur une distribution théorique, pas encore sur des données réelles)
-              </p>
+              <div className="flex gap-2">
+                <input
+                  type="text"
+                  readOnly
+                  value={`${typeof window !== 'undefined' ? window.location.origin : ''}/resultats/${resultToken}`}
+                  className="flex-1 px-3 py-2 text-xs bg-white border border-gray-300 rounded font-mono"
+                  onClick={(e) => (e.target as HTMLInputElement).select()}
+                />
+                <button
+                  onClick={() => {
+                    navigator.clipboard.writeText(`${window.location.origin}/resultats/${resultToken}`);
+                    setLinkCopied(true);
+                    setTimeout(() => setLinkCopied(false), 2000);
+                  }}
+                  className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded text-xs font-semibold flex items-center gap-1"
+                >
+                  <Share2 className="w-3 h-3" />
+                  {linkCopied ? 'Copié !' : 'Copier'}
+                </button>
+              </div>
+            </div>
+          )}
+
+          {/* Statistiques globales */}
+          {globalStats && globalStats.count > 10 && (
+            <div className="mt-6 bg-gray-50 rounded-lg p-4 text-left">
+              <h3 className="text-sm font-bold text-gray-900 mb-3">📊 Statistiques globales (version {version})</h3>
+              <div className="grid grid-cols-2 gap-3 text-xs">
+                <div>
+                  <span className="text-gray-600">Tests complétés :</span>
+                  <span className="font-semibold text-gray-900 ml-1">{globalStats.count}</span>
+                </div>
+                <div>
+                  <span className="text-gray-600">Score moyen :</span>
+                  <span className="font-semibold text-gray-900 ml-1">{globalStats.average.toFixed(1)}%</span>
+                </div>
+                <div>
+                  <span className="text-gray-600">Médiane :</span>
+                  <span className="font-semibold text-gray-900 ml-1">{globalStats.median.toFixed(1)}%</span>
+                </div>
+                <div>
+                  <span className="text-gray-600">Meilleur score :</span>
+                  <span className="font-semibold text-gray-900 ml-1">{globalStats.max.toFixed(1)}%</span>
+                </div>
+              </div>
             </div>
           )}
         </div>
