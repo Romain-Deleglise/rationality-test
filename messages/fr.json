@@ -36,9 +36,9 @@
     "results": "résultats réels",
     "theoreticalDistribution": "basé sur une distribution théorique",
     "savedResults": "Résultats sauvegardés !",
-    "shareLink": "Retrouvez vos résultats à tout moment avec ce lien :",
-    "copy": "Copier",
-    "copied": "Copié !",
+    "shareDescription": "Partagez ou retrouvez vos résultats à tout moment",
+    "copyLink": "Copier le lien",
+    "linkCopied": "✓ Lien copié !",
     "globalStats": "Statistiques globales",
     "testsCompleted": "Tests complétés",
     "averageScore": "Score moyen",
@@ -57,7 +57,41 @@
     "email": "votre@email.com",
     "send": "Envoyer",
     "sending": "Envoi...",
-    "emailSent": "Email envoyé avec succès !"
+    "emailSent": "Email envoyé avec succès !",
+    "radarChart": "Profil de compétences",
+    "barChart": "Classement par Module",
+    "notFound": "Résultats introuvables",
+    "notFoundDescription": "Ce lien de résultats n'existe pas ou a expiré.",
+    "loading": "Chargement des résultats...",
+
+    "interpretations": {
+      "excellent": "Excellent niveau de rationalité. Vous démontrez de solides compétences en pensée critique sur la plupart des dimensions. Vous êtes capable de résister aux biais cognitifs courants et de raisonner rigoureusement.",
+      "good": "Bon niveau de rationalité. Vous avez des compétences de raisonnement solides mais il y a des marges d'amélioration dans certains domaines. Certains biais cognitifs influencent encore vos jugements.",
+      "average": "Niveau de rationalité moyen. Vous avez une marge d'amélioration significative. Plusieurs biais cognitifs affectent régulièrement votre raisonnement.",
+      "belowAverage": "Niveau de rationalité en dessous de la moyenne. Vous avez des difficultés à résister aux biais cognitifs. Un travail important est nécessaire pour améliorer votre pensée critique.",
+      "weak": "Niveau de rationalité faible. Vous êtes très vulnérable aux biais cognitifs et aux erreurs de raisonnement. Votre pensée critique nécessite un développement substantiel."
+    },
+
+    "nextStepsContent": {
+      "item1": "Consultez vos résultats détaillés avec explications scientifiques complètes",
+      "item2": "Découvrez les ressources recommandées pour chaque dimension",
+      "item3": "Repassez le test dans 6-12 mois pour mesurer vos progrès réels (pas avant, pour éviter l'effet de mémorisation)"
+    },
+
+    "moduleDescriptions": {
+      "Raisonnement Probabiliste": "Votre capacité à raisonner avec les probabilités et éviter les erreurs classiques (erreur du parieur, négligence des taux de base, erreur de conjonction).",
+      "Raisonnement Scientifique": "Votre capacité à tester rigoureusement des hypothèses, falsifier plutôt que confirmer, et distinguer corrélation et causation.",
+      "Réflexion vs Intuition": "Votre capacité à inhiber la réponse intuitive immédiate et engager une réflexion analytique (CRT).",
+      "Biais de Croyance": "Votre capacité à évaluer la validité logique indépendamment de vos croyances sur la conclusion.",
+      "Calibration des Connaissances": "Votre capacité à estimer avec précision votre niveau de certitude (éviter l'overconfidence).",
+      "Numératie Probabiliste": "Votre capacité à manipuler les nombres dans des contextes probabilistes et comprendre les statistiques.",
+      "Pensée Superstitieuse": "Votre résistance aux croyances paranormales/surnaturelles et respect du principe 'croyance proportionnée aux preuves'.",
+      "Attitudes Anti-Science": "Votre résistance au rejet de la science et de la méthode scientifique.",
+      "Croyances Conspirationnistes": "Votre résistance aux explications complotistes et capacité à appliquer le Rasoir d'Occam.",
+      "Raisonnement Disjonctif": "Votre capacité à raisonner correctement avec des énoncés 'OU'.",
+      "Ancrage": "Votre résistance à l'ancrage (être trop influencé par la première information reçue).",
+      "Croyances Dysfonctionnelles": "Votre capacité à éviter les croyances irrationnelles qui causent de la détresse émotionnelle inutile."
+    }
   },
   "common": {
     "version": "Version",

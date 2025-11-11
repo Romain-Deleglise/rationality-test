@@ -1,0 +1,558 @@
+{
+  "version": "short",
+  "totalPoints": 25,
+  "estimatedTime": 20,
+  "modules": [
+    {
+      "id": "prob-stats",
+      "name": "Probabilistic Reasoning (10 items)",
+      "points": 10,
+      "time": 4,
+      "questions": [
+        {
+          "id": "prob-match-1",
+          "type": "multiple-choice",
+          "text": "Imagine a card game with 2 colors: A (60% of cards) and B (40% of cards). You draw 10 cards at random. Which strategy maximizes your chances of correctly predicting each draw?",
+          "options": [
+            "Always predict A",
+            "Predict A about 6 times out of 10 and B about 4 times out of 10",
+            "Alternate between A and B equally"
+          ],
+          "correct": 0,
+          "points": 1,
+          "explanation": "The optimal strategy is to always predict A (60% success rate). The 'probability matching' error consists of trying to reproduce the proportions (60/40)."
+        },
+        {
+          "id": "gambler-1",
+          "type": "multiple-choice",
+          "text": "A fair coin (50-50 heads or tails) has just landed on heads five times in a row. For the sixth toss:",
+          "options": [
+            "Tails is more likely to come up",
+            "Heads is more likely to come up",
+            "Heads and tails are equally probable"
+          ],
+          "correct": 2,
+          "points": 1,
+          "explanation": "The tosses are independent. The coin has no memory. P(heads) = P(tails) = 50% on each toss, regardless of history."
+        },
+        {
+          "id": "gambler-4",
+          "type": "multiple-choice",
+          "text": "A couple has 4 daughters. They want a fifth child. What is the probability that it will be a boy?",
+          "options": [
+            "More than 50% (they are 'due' for a boy)",
+            "Less than 50% (they tend to have girls)",
+            "About 50% (independent of previous births)"
+          ],
+          "correct": 2,
+          "points": 1,
+          "explanation": "Each birth is independent. Previous births do not affect the probability of the next child (~50% boy/girl)."
+        },
+        {
+          "id": "conjunction-3",
+          "type": "ranking",
+          "text": "Linda is 31 years old, single, outspoken, and very bright. She majored in philosophy. As a student, she was concerned with social discrimination. Rank by probability:",
+          "options": [
+            "Linda is a teacher",
+            "Linda is a bank teller",
+            "Linda is active in the feminist movement",
+            "Linda is a bank teller AND active in the feminist movement"
+          ],
+          "scoring": {
+            "type": "conjunction-check",
+            "rule": "option-1 > option-3"
+          },
+          "points": 1,
+          "explanation": "Despite the description, P(bank teller) > P(bank teller AND feminist) mathematically. This is the famous 'Linda problem'."
+        },
+        {
+          "id": "conjunction-2",
+          "type": "ranking",
+          "text": "Mark likes video games and spends a lot of time on his computer. Rank by probability:",
+          "options": [
+            "Mark works in IT",
+            "Mark is a video game developer",
+            "Mark is an accountant",
+            "Mark works in IT AND plays on an e-sports team"
+          ],
+          "scoring": {
+            "type": "conjunction-check",
+            "rule": "option-0 > option-3"
+          },
+          "points": 1,
+          "explanation": "P(IT) must be ranked as more probable than P(IT AND e-sports). The conjunction is always less probable."
+        },
+        {
+          "id": "base-rate-1",
+          "type": "number",
+          "text": "A disease affects 1% of the population. A test detects it with 90% sensitivity (true positive) and has a 9% false positive rate. Your test is positive. What is your probability of being sick?",
+          "unit": "%",
+          "correct": 9,
+          "tolerance": 3,
+          "points": 1,
+          "explanation": "Out of 10,000 people: 100 sick (90 detected), 9,900 healthy (891 false positives). P = 90/(90+891) ≈ 9.2%."
+        },
+        {
+          "id": "base-rate-2",
+          "type": "multiple-choice",
+          "text": "In a company, 70% of employees are engineers and 30% are managers. John is shy and likes puzzles. Is he more likely:",
+          "options": [
+            "Engineer",
+            "Manager",
+            "Impossible to determine with this info"
+          ],
+          "correct": 0,
+          "points": 1,
+          "explanation": "Even if the description seems to match engineer stereotypes, the base rate (70%) is already a strong indicator."
+        },
+        {
+          "id": "sample-size",
+          "type": "multiple-choice",
+          "text": "A city has 2 hospitals: the large one (45 births/day) and the small one (15 births/day). About 50% of babies are boys, but it varies daily. Over a year, which hospital recorded the most days with >60% boys?",
+          "options": [
+            "The large hospital",
+            "The small hospital",
+            "About the same"
+          ],
+          "correct": 1,
+          "points": 1,
+          "explanation": "The small hospital. Small samples have more variance. It's easier to get extremes with 15 observations than with 45."
+        },
+        {
+          "id": "regression-mean",
+          "type": "multiple-choice",
+          "text": "In college basketball, players who excel in their first year tend to perform less well in their second year. What is the best explanation?",
+          "options": [
+            "They become complacent after their success",
+            "Opponents study their game and adapt",
+            "Extreme performances include luck that doesn't repeat",
+            "The pressure of expectations affects their performance",
+            "Their training becomes less rigorous"
+          ],
+          "correct": 2,
+          "points": 1,
+          "explanation": "Regression to the mean. Exceptional performances combine talent AND luck. Luck doesn't persist, so performances return toward the mean."
+        }
+      ]
+    },
+    {
+      "id": "sci-reasoning",
+      "name": "Scientific Reasoning (12 items)",
+      "points": 12,
+      "time": 6,
+      "questions": [
+        {
+          "id": "wason-1",
+          "type": "multiple-choice",
+          "text": "Rule to test: 'If Lyon is on one side of the ticket, then train is on the other side.' You have 4 tickets: [Lyon], [Paris], [Car], [Train]. Which ones should you flip to verify the rule?",
+          "options": [
+            "Lyon only",
+            "Lyon and Train",
+            "Lyon and Car",
+            "All",
+            "Lyon, Paris and Car"
+          ],
+          "correct": 2,
+          "points": 1,
+          "explanation": "Lyon (verify the other side = train) and Car (verify the other side ≠ Lyon). Train and Paris cannot violate the rule."
+        },
+        {
+          "id": "wason-2",
+          "type": "multiple-choice",
+          "text": "You're checking the law: 'If a person drinks alcohol, they must be 18 years or older.' 4 people: [Drinks beer], [Drinks juice], [Is 25 years old], [Is 16 years old]. Who to check?",
+          "options": [
+            "Drinks beer only",
+            "Drinks beer and Is 16 years old",
+            "Drinks beer and Is 25 years old",
+            "All",
+            "Drinks beer, Drinks juice and Is 16 years old"
+          ],
+          "correct": 1,
+          "points": 1,
+          "explanation": "Check [Beer] (age ≥18?) and [16 years old] (drinks alcohol?). The others cannot violate the rule."
+        },
+        {
+          "id": "correlation-1",
+          "type": "multiple-choice",
+          "text": "Researchers found that teenagers who smoke tend to have lower IQ scores. Does this mean that preventing teens from smoking would increase their IQ?",
+          "options": [
+            "Yes",
+            "No",
+            "Cannot tell"
+          ],
+          "correct": 2,
+          "points": 1,
+          "explanation": "Correlation ≠ causation. There may be a confounding variable (stress, socioeconomic environment, etc.)."
+        },
+        {
+          "id": "control-group-1",
+          "type": "multiple-choice",
+          "text": "An unpopular school principal is defended because absenteeism dropped 12% since her appointment. What evidence would best refute this claim?",
+          "options": [
+            "40% more absences are reported in surveys than in official records",
+            "Common sense says a principal has little impact on absenteeism",
+            "Absenteeism rates in two neighboring cities dropped 18% during the same period",
+            "The superintendent had questionable business contacts"
+          ],
+          "correct": 2,
+          "points": 1,
+          "explanation": "Comparison with a control group (similar cities) shows the decrease is general, not due to the principal."
+        },
+        {
+          "id": "likelihood-1",
+          "type": "multiple-choice",
+          "text": "Talia has finger thickening. What information is needed to estimate P(Fustis Digitus Syndrome | thickening)?",
+          "options": [
+            "% of people WITHOUT syndrome who have thickening",
+            "% of people WITH syndrome",
+            "% of people WITHOUT syndrome",
+            "% of people WITH syndrome who have thickening",
+            "a and d",
+            "b and c"
+          ],
+          "correct": 4,
+          "points": 1,
+          "explanation": "You need P(symptom|disease) and P(symptom|no disease) to calculate P(disease|symptom) via Bayes."
+        },
+        {
+          "id": "wason-3",
+          "type": "multiple-choice",
+          "text": "Rule: 'If a product is organic, it must have certification.' 4 products: [Labeled organic], [Labeled conventional], [With certification], [Without certification]. Which ones to check?",
+          "options": [
+            "Labeled organic only",
+            "Labeled organic and With certification",
+            "Labeled organic and Without certification",
+            "All products",
+            "Labeled organic, Labeled conventional and Without certification"
+          ],
+          "correct": 2,
+          "points": 1,
+          "explanation": "Check [Organic] (does it have certification?) and [Without certification] (is it organic?). The others cannot violate the rule."
+        },
+        {
+          "id": "correlation-2",
+          "type": "multiple-choice",
+          "text": "A study shows that people who drink coffee have less heart disease. Should we recommend coffee for heart health?",
+          "options": [
+            "Yes, the correlation proves the protective effect",
+            "No, we need a randomized controlled trial",
+            "Yes, if the correlation is strong"
+          ],
+          "correct": 1,
+          "points": 1,
+          "explanation": "A correlation does not prove causation. Coffee drinkers may have other healthy habits (exercise, diet)."
+        },
+        {
+          "id": "correlation-3",
+          "type": "multiple-choice",
+          "text": "We observe that cities with more firefighters have more serious fires. Should we reduce the number of firefighters?",
+          "options": [
+            "Yes, they seem to cause fires",
+            "No, the causality is reversed",
+            "Yes, if there is a real correlation"
+          ],
+          "correct": 1,
+          "points": 1,
+          "explanation": "Reverse causality: large cities have more fires, so they hire more firefighters. Firefighters don't cause fires."
+        },
+        {
+          "id": "control-group-2",
+          "type": "multiple-choice",
+          "text": "A new teaching technique shows +15% exam success. How to verify its effectiveness?",
+          "options": [
+            "Compare with last year's results",
+            "Ask teachers' opinions",
+            "Compare with a control group that didn't get the new technique",
+            "Check if students are satisfied"
+          ],
+          "correct": 2,
+          "points": 1,
+          "explanation": "A control group is essential. Results may have increased for other reasons (exam difficulty, motivation, etc.)."
+        },
+        {
+          "id": "hypothesis-test-1",
+          "type": "multiple-choice",
+          "text": "To test if a new drug reduces fever, which experiment is best?",
+          "options": [
+            "Give the drug to feverish patients and measure temperature 2h later",
+            "Give the drug to one group and a placebo to a control group, double-blind",
+            "Ask patients if they feel better after the drug",
+            "Compare with other existing drugs"
+          ],
+          "correct": 1,
+          "points": 1,
+          "explanation": "Randomized controlled double-blind trial: gold standard for testing causal efficacy."
+        },
+        {
+          "id": "covariation-1",
+          "type": "multiple-choice",
+          "text": "Data table: Rain+Traffic=80 cases, Rain+No traffic=20, Sunny+Traffic=40, Sunny+No traffic=60. Does rain cause traffic?",
+          "options": [
+            "Yes, 80 cases of rain with traffic",
+            "Yes, P(Traffic|Rain) = 80% > P(Traffic|Sunny) = 40%",
+            "No, no clear relationship",
+            "Impossible to say"
+          ],
+          "correct": 1,
+          "points": 1,
+          "explanation": "Covariation: P(T|Rain) = 80/100 = 80% vs P(T|Sunny) = 40/100 = 40%. Rain increases the probability of traffic."
+        },
+        {
+          "id": "falsification-1",
+          "type": "multiple-choice",
+          "text": "Hypothesis: 'All swans are white.' Which observation is most informative?",
+          "options": [
+            "Observe 100 white swans",
+            "Observe 1 black swan",
+            "Observe 1000 white swans",
+            "Ask ornithology experts"
+          ],
+          "correct": 1,
+          "points": 1,
+          "explanation": "Popper's falsification principle: a single counterexample refutes the hypothesis. A thousand confirmations don't prove it."
+        }
+      ]
+    },
+    {
+      "id": "crt",
+      "name": "Reflection vs Intuition (7 items)",
+      "points": 7,
+      "time": 3,
+      "questions": [
+        {
+          "id": "crt-1",
+          "type": "number",
+          "text": "A bat and a ball cost $1.10 in total. The bat costs $1.00 more than the ball. How much does the ball cost?",
+          "unit": "cents",
+          "correct": 5,
+          "points": 1,
+          "explanation": "5 cents. If ball = 5c, bat = $1.05 ($1 more), total = $1.10. Intuition suggests 10c, but that would give a total of $1.20."
+        },
+        {
+          "id": "crt-2",
+          "type": "number",
+          "text": "If 5 machines take 5 minutes to make 5 widgets, how long do 100 machines take to make 100 widgets?",
+          "unit": "minutes",
+          "correct": 5,
+          "points": 1,
+          "explanation": "5 minutes. Each machine makes 1 widget in 5 minutes. So 100 machines make 100 widgets in 5 minutes (in parallel). Intuition suggests 100 minutes."
+        },
+        {
+          "id": "crt-3",
+          "type": "number",
+          "text": "In a lake, there is a water lily. Each day, its size doubles. It takes 48 days to cover the entire lake. In how many days does it cover half the lake?",
+          "unit": "days",
+          "correct": 47,
+          "points": 1,
+          "explanation": "47 days. If the lake is full on day 48 and the size doubles each day, then on day 47 it is half covered. Intuition suggests 24 days."
+        },
+        {
+          "id": "crt-4",
+          "type": "number",
+          "text": "If it takes one minute to make each cut, how long will it take to cut a 25-foot plank into 25 equal pieces?",
+          "unit": "minutes",
+          "correct": 24,
+          "points": 1,
+          "explanation": "24 minutes. It takes 24 cuts to get 25 pieces (not 25 cuts). Intuition suggests 25 minutes."
+        },
+        {
+          "id": "crt-6",
+          "type": "multiple-choice",
+          "text": "If you are in a race and you pass the runner in second position, what position are you in now?",
+          "options": [
+            "First position",
+            "Second position",
+            "Third position"
+          ],
+          "correct": 1,
+          "points": 1,
+          "explanation": "Second position. You take the place of the one who was 2nd. Intuition suggests 1st position."
+        },
+        {
+          "id": "crt-7",
+          "type": "number",
+          "text": "A farmer has 15 sheep. All but 9 die. How many are left?",
+          "unit": "sheep",
+          "correct": 9,
+          "points": 1,
+          "explanation": "9 sheep. 'All but 9' means that 9 survive. Intuition often suggests 6 (15-9)."
+        },
+        {
+          "id": "crt-10",
+          "type": "number",
+          "text": "A book and a pen cost $12. The book costs $10 more than the pen. How much does the pen cost?",
+          "unit": "dollars",
+          "correct": 1,
+          "points": 1,
+          "explanation": "$1. If pen = $1, book = $11 ($10 more), total = $12. Intuition suggests $2."
+        }
+      ]
+    },
+    {
+      "id": "belief-bias",
+      "name": "Belief Bias (8 items)",
+      "points": 4,
+      "time": 3,
+      "questions": [
+        {
+          "id": "syllogism-1",
+          "type": "multiple-choice",
+          "text": "Premise 1: All mammals can walk. Premise 2: Whales are mammals. Conclusion: Whales can walk.",
+          "options": [
+            "The conclusion follows logically from the premises",
+            "The conclusion does NOT follow logically from the premises"
+          ],
+          "correct": 0,
+          "points": 0.5,
+          "explanation": "Logically valid (AAA1). Even if the conclusion is false in reality, it follows logically from the premises. Inconsistent syllogism (validity ≠ believability)."
+        },
+        {
+          "id": "syllogism-3",
+          "type": "multiple-choice",
+          "text": "Premise 1: All flowers need water. Premise 2: Roses need water. Conclusion: Roses are flowers.",
+          "options": [
+            "The conclusion follows logically from the premises",
+            "The conclusion does NOT follow logically from the premises"
+          ],
+          "correct": 1,
+          "points": 0.5,
+          "explanation": "Logically invalid (AAA2). Even if the conclusion is true, it doesn't follow logically from the premises. Inconsistent syllogism."
+        },
+        {
+          "id": "syllogism-5",
+          "type": "multiple-choice",
+          "text": "Premise 1: No reptile has fur. Premise 2: All snakes are reptiles. Conclusion: No snake has fur.",
+          "options": [
+            "The conclusion follows logically from the premises",
+            "The conclusion does NOT follow logically from the premises"
+          ],
+          "correct": 0,
+          "points": 0.5,
+          "explanation": "Logically valid (EAE1). The conclusion follows logically from the premises and is true. Consistent syllogism (validity = believability)."
+        },
+        {
+          "id": "syllogism-6",
+          "type": "multiple-choice",
+          "text": "Premise 1: All birds can fly. Premise 2: Penguins are birds. Conclusion: Penguins can fly.",
+          "options": [
+            "The conclusion follows logically from the premises",
+            "The conclusion does NOT follow logically from the premises"
+          ],
+          "correct": 0,
+          "points": 0.5,
+          "explanation": "Logically valid (AAA1). The conclusion follows from the premises, even if it is false in reality. Inconsistent syllogism."
+        },
+        {
+          "id": "syllogism-9",
+          "type": "multiple-choice",
+          "text": "Premise 1: All plants are zarbons. Premise 2: All ferns are zarbons. Conclusion: All ferns are plants.",
+          "options": [
+            "The conclusion follows logically from the premises",
+            "The conclusion does NOT follow logically from the premises"
+          ],
+          "correct": 1,
+          "points": 0.5,
+          "explanation": "Logically invalid (AAA2). Even if the conclusion is true, it doesn't follow logically. Consistent syllogism."
+        },
+        {
+          "id": "syllogism-11",
+          "type": "multiple-choice",
+          "text": "Premise 1: No mammal lays eggs. Premise 2: Platypuses lay eggs. Conclusion: Platypuses are not mammals.",
+          "options": [
+            "The conclusion follows logically from the premises",
+            "The conclusion does NOT follow logically from the premises"
+          ],
+          "correct": 0,
+          "points": 0.5,
+          "explanation": "Logically valid (EAE2). The conclusion follows from the premises, even if it is false (platypuses are mammals). Inconsistent syllogism."
+        },
+        {
+          "id": "syllogism-13",
+          "type": "multiple-choice",
+          "text": "Premise 1: All fruits contain vitamins. Premise 2: Oranges are fruits. Conclusion: Oranges contain vitamins.",
+          "options": [
+            "The conclusion follows logically from the premises",
+            "The conclusion does NOT follow logically from the premises"
+          ],
+          "correct": 0,
+          "points": 0.5,
+          "explanation": "Logically valid (AAA1). The conclusion follows from the premises and is true. Consistent syllogism."
+        },
+        {
+          "id": "syllogism-14",
+          "type": "multiple-choice",
+          "text": "Premise 1: All politicians are liars. Premise 2: John is a liar. Conclusion: John is a politician.",
+          "options": [
+            "The conclusion follows logically from the premises",
+            "The conclusion does NOT follow logically from the premises"
+          ],
+          "correct": 1,
+          "points": 0.5,
+          "explanation": "Logically invalid (AAA2). The conclusion doesn't follow logically from the premises (there can be non-politician liars). Consistent syllogism."
+        }
+      ]
+    },
+    {
+      "id": "disjunctive",
+      "name": "Disjunctive Reasoning (3 items)",
+      "points": 3,
+      "time": 2,
+      "questions": [
+        {
+          "id": "disj-1",
+          "type": "multiple-choice",
+          "text": "Three stacked boxes: [Top: fresh strawberries], [Middle: ?], [Bottom: frozen strawberries]. Fresh strawberries must NOT touch frozen ones. Does a box of fresh strawberries touch a box of frozen strawberries?",
+          "options": [
+            "Yes",
+            "No",
+            "Cannot determine"
+          ],
+          "correct": 0,
+          "points": 1,
+          "explanation": "Yes. If Middle = fresh, then Middle touches Bottom (frozen). If Middle = frozen, then Top (fresh) touches Middle. Either way: violation."
+        },
+        {
+          "id": "disj-2",
+          "type": "multiple-choice",
+          "text": "Anne is looking at Paul. Paul is looking at Mary. Anne is married. Mary is not married. We don't know if Paul is married. Is a married person looking at an unmarried person?",
+          "options": [
+            "Yes",
+            "No",
+            "Cannot determine"
+          ],
+          "correct": 0,
+          "points": 1,
+          "explanation": "Yes. If Paul is married, he's looking at Mary (unmarried). If Paul is not married, Anne (married) is looking at him. Either way: yes."
+        }
+      ]
+    },
+    {
+      "id": "anchoring",
+      "name": "Anchoring (4 items)",
+      "points": 2,
+      "time": 3,
+      "questions": [
+        {
+          "id": "anchor-1",
+          "type": "number",
+          "text": "Is the distance from San Francisco to Hawaii greater than 500 miles? What do you think is the exact distance?",
+          "unit": "miles",
+          "correct": 2387,
+          "anchorType": "low",
+          "points": 0.5,
+          "explanation": "The actual distance is ~2387 miles. If your estimate is <1000, you were influenced by the low anchor (500)."
+        },
+        {
+          "id": "anchor-2",
+          "type": "number",
+          "text": "Is the duration of Mars' orbit around the Sun greater than 1500 days? What do you think is the exact duration?",
+          "unit": "days",
+          "correct": 687,
+          "anchorType": "high",
+          "points": 0.5,
+          "explanation": "The actual duration is 687 days. If your estimate is >1000, you were influenced by the high anchor (1500)."
+        }
+      ]
+    }
+  ]
+}

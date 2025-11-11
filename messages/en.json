@@ -36,9 +36,9 @@
     "results": "real results",
     "theoreticalDistribution": "based on theoretical distribution",
     "savedResults": "Results saved!",
-    "shareLink": "Find your results anytime with this link:",
-    "copy": "Copy",
-    "copied": "Copied!",
+    "shareDescription": "Share or find your results anytime",
+    "copyLink": "Copy link",
+    "linkCopied": "✓ Link copied!",
     "globalStats": "Global Statistics",
     "testsCompleted": "Tests completed",
     "averageScore": "Average score",
@@ -57,7 +57,41 @@
     "email": "your@email.com",
     "send": "Send",
     "sending": "Sending...",
-    "emailSent": "Email sent successfully!"
+    "emailSent": "Email sent successfully!",
+    "radarChart": "Skill Profile",
+    "barChart": "Ranking by Module",
+    "notFound": "Results not found",
+    "notFoundDescription": "This results link does not exist or has expired.",
+    "loading": "Loading results...",
+
+    "interpretations": {
+      "excellent": "Excellent level of rationality. You demonstrate strong critical thinking skills across most dimensions. You are able to resist common cognitive biases and reason rigorously.",
+      "good": "Good level of rationality. You have solid reasoning skills but there is room for improvement in certain areas. Some cognitive biases still influence your judgments.",
+      "average": "Average level of rationality. You have significant room for improvement. Several cognitive biases regularly affect your reasoning.",
+      "belowAverage": "Below average rationality level. You have difficulty resisting cognitive biases. Significant work is needed to improve your critical thinking.",
+      "weak": "Weak rationality level. You are very vulnerable to cognitive biases and reasoning errors. Your critical thinking requires substantial development."
+    },
+
+    "nextStepsContent": {
+      "item1": "Consult your detailed results with complete scientific explanations",
+      "item2": "Explore the recommended resources for each dimension",
+      "item3": "Retake the test in 6-12 months to measure your real progress (not before, to avoid the memorization effect)"
+    },
+
+    "moduleDescriptions": {
+      "Raisonnement Probabiliste": "Your ability to reason with probabilities and avoid classic errors (gambler's fallacy, base rate neglect, conjunction error).",
+      "Raisonnement Scientifique": "Your ability to rigorously test hypotheses, falsify rather than confirm, and distinguish correlation from causation.",
+      "Réflexion vs Intuition": "Your ability to inhibit the immediate intuitive response and engage analytical reflection (CRT).",
+      "Biais de Croyance": "Your ability to evaluate logical validity independently of your beliefs about the conclusion.",
+      "Calibration des Connaissances": "Your ability to accurately estimate your level of certainty (avoid overconfidence).",
+      "Numératie Probabiliste": "Your ability to manipulate numbers in probabilistic contexts and understand statistics.",
+      "Pensée Superstitieuse": "Your resistance to paranormal/supernatural beliefs and respect for the principle 'belief proportional to evidence'.",
+      "Attitudes Anti-Science": "Your resistance to rejecting science and the scientific method.",
+      "Croyances Conspirationnistes": "Your resistance to conspiracy explanations and ability to apply Occam's Razor.",
+      "Raisonnement Disjonctif": "Your ability to reason correctly with 'OR' statements.",
+      "Ancrage": "Your resistance to anchoring (being too influenced by the first piece of information received).",
+      "Croyances Dysfonctionnelles": "Your ability to avoid irrational beliefs that cause unnecessary emotional distress."
+    }
   },
   "common": {
     "version": "Version",
