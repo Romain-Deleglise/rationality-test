@@ -2,6 +2,7 @@
 
 import { NextRequest, NextResponse } from 'next/server';
 import { Resend } from 'resend';
+import { translateModuleName } from '@/lib/moduleMapping';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -106,32 +107,16 @@ export async function POST(request: NextRequest) {
 
     const t = translations[locale as keyof typeof translations] || translations.en;
 
-    // Module name mapping FR -> EN
-    const moduleNameMapping: Record<string, string> = {
-      'Raisonnement Probabiliste': 'Probabilistic Reasoning',
-      'Raisonnement Scientifique': 'Scientific Reasoning',
-      'Réflexion vs Intuition': 'Reflection vs Intuition',
-      'Biais de Croyance': 'Belief Bias',
-      'Calibration des Connaissances': 'Knowledge Calibration',
-      'Numératie Probabiliste': 'Probabilistic Numeracy',
-      'Pensée Superstitieuse': 'Superstitious Thinking',
-      'Attitudes Anti-Science': 'Anti-Science Attitudes',
-      'Croyances Conspirationnistes': 'Conspiracy Beliefs',
-      'Raisonnement Disjonctif': 'Disjunctive Reasoning',
-      'Ancrage': 'Anchoring',
-      'Croyances Dysfonctionnelles': 'Dysfunctional Beliefs'
-    };
-
     // Helper function to get translated module name
     const getModuleName = (frName: string): string => {
       const cleanName = frName.split(' (')[0];
-      return locale === 'en' ? (moduleNameMapping[cleanName] || cleanName) : cleanName;
+      return translateModuleName(cleanName, locale as 'en' | 'fr');
     };
 
     // Helper function to get module description
     const getModuleDesc = (frName: string): string => {
       const cleanName = frName.split(' (')[0];
-      const translatedName = locale === 'en' ? (moduleNameMapping[cleanName] || cleanName) : cleanName;
+      const translatedName = translateModuleName(cleanName, locale as 'en' | 'fr');
       return t.moduleDescriptions[translatedName as keyof typeof t.moduleDescriptions] || '';
     };
 
