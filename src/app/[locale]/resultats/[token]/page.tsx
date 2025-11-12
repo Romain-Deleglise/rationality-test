@@ -10,25 +10,38 @@ import { RadarChartComponent, BarChartComponent } from '@/components/ResultsChar
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
 import SocialShare from '@/components/SocialShare';
 
-export default function SavedResultsPage({ params }: { params: { token: string; locale: string } }) {
+export default function SavedResultsPage({ params }: { params: Promise<{ token: string; locale: string }> }) {
   const router = useRouter();
   const t = useTranslations('results');
   const tCommon = useTranslations('common');
   const [result, setResult] = useState<any>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const { locale } = params;
+  const [token, setToken] = useState<string>('');
+  const [locale, setLocale] = useState<string>('fr');
 
   useEffect(() => {
+    params.then(({ token: t, locale: l }) => {
+      setToken(t);
+      setLocale(l);
+    });
+  }, [params]);
+
+  useEffect(() => {
+    if (!token) return;
+
     const loadResult = async () => {
       try {
-        const data = await getTestResultByToken(params.token);
+        console.log('Loading result for token:', token);
+        const data = await getTestResultByToken(token);
+        console.log('Result data:', data);
         if (!data) {
           setError(t('notFound'));
           return;
         }
         setResult(data);
       } catch (err) {
+        console.error('Error loading result:', err);
         setError(tCommon('error'));
       } finally {
         setLoading(false);
@@ -36,7 +49,7 @@ export default function SavedResultsPage({ params }: { params: { token: string; 
     };
 
     loadResult();
-  }, [params.token]);
+  }, [token]);
 
   const getScoreColor = (score: number) => {
     if (score >= 85) return 'text-green-600';

@@ -527,6 +527,27 @@ export default function ResultatsPage() {
           sociale et aux croyances politiques/religieuses. L'éducation scientifique aide, mais insuffisant
           sans adresser les facteurs sociaux et émotionnels.</p>
       )
+    },
+    'Croyances Dysfonctionnelles': {
+      what: (
+        <p>Adhésion à des croyances irrationnelles qui peuvent nuire à la prise de décision et au bien-être :
+          pensée magique, croyances paranormales, affirmations de santé non fondées, pratiques pseudoscientifiques.</p>
+      ),
+      why: (
+        <p>Les croyances dysfonctionnelles conduisent à de mauvaises décisions : argent gaspillé sur des traitements
+          inefficaces, rejet de solutions fondées sur des preuves, vulnérabilité aux arnaques, et comportements
+          potentiellement dangereux.</p>
+      ),
+      example: (
+        <p>Croire que les cristaux guérissent les maladies, que l'astrologie prédit la personnalité, ou que les
+          régimes détox éliminent les "toxines". Ces croyances persistent malgré l'absence de preuves et peuvent
+          empêcher les gens de chercher un traitement efficace.</p>
+      ),
+      canImprove: (
+        <p>Amélioration : modeste (10-20%). L'éducation à la pensée critique aide, mais ces croyances remplissent
+          souvent des besoins émotionnels (contrôle, sens, communauté). Adresser les besoins sous-jacents est plus
+          efficace que la logique pure.</p>
+      )
     }
   };
 
@@ -1012,7 +1033,7 @@ export default function ResultatsPage() {
         <AccordionItem title="📖 D'où vient ce test ? Histoire du CART" defaultOpen={false}>
           <div className="space-y-4">
             <div>
-              <h4 className="font-bold text-gray-900 mb-2 flex items-center gap-2">
+              <h4 className="font-bold text-gray-900 dark:text-white mb-2 flex items-center gap-2">
                 <Brain className="w-5 h-5" />
                 40 ans de recherche
               </h4>
@@ -1035,7 +1056,7 @@ export default function ResultatsPage() {
             </div>
 
             <div>
-              <h4 className="font-bold text-gray-900 mb-2">Le problème : Intelligence ≠ Rationalité</h4>
+              <h4 className="font-bold text-gray-900 dark:text-white mb-2">Le problème : Intelligence ≠ Rationalité</h4>
               <p className="text-justify mb-3">
                 Pendant des décennies, on a supposé que les tests de QI mesuraient "la bonne pensée". 
                 Mais <strong>Keith E. Stanovich</strong> (Université de Toronto) a remarqué quelque chose 
@@ -1050,7 +1071,7 @@ export default function ResultatsPage() {
             </div>
 
             <div>
-              <h4 className="font-bold text-gray-900 mb-2 flex items-center gap-2">
+              <h4 className="font-bold text-gray-900 dark:text-white mb-2 flex items-center gap-2">
                 <Award className="w-5 h-5" />
                 La naissance du CART (2013-2016)
               </h4>
@@ -1064,7 +1085,7 @@ export default function ResultatsPage() {
                 Le projet, financé par la John Templeton Foundation, a impliqué plus de 1000 participants, 
                 20 sous-tests différents, et une validation statistique rigoureuse.
               </p>
-              <p className="text-justify text-sm bg-blue-50 p-3 rounded">
+              <p className="text-justify text-sm bg-blue-50 dark:bg-blue-900/20 text-gray-700 dark:text-gray-300 p-3 rounded">
                 <strong>Ce test en ligne</strong> est une adaptation éducative libre du CART original. 
                 Il utilise des questions du domaine public et des variantes inspirées de la littérature 
                 scientifique. Ce n'est PAS le CART officiel (qui nécessite une administration contrôlée), 
@@ -1266,7 +1287,7 @@ export default function ResultatsPage() {
         <AccordionItem title="📖 Sources scientifiques complètes">
           <div className="space-y-4 text-sm">
             <div>
-              <h4 className="font-bold text-gray-900 mb-2">Fondements principaux</h4>
+              <h4 className="font-bold text-gray-900 dark:text-white mb-2">Fondements principaux</h4>
               <ul className="space-y-2">
                 <li>
                   <strong>Stanovich, K. E., West, R. F., & Toplak, M. E. (2016).</strong><br />
@@ -1284,7 +1305,7 @@ export default function ResultatsPage() {
             </div>
 
             <div>
-              <h4 className="font-bold text-gray-900 mb-2">Sur l'amélioration (ou non) des biais</h4>
+              <h4 className="font-bold text-gray-900 dark:text-white mb-2">Sur l'amélioration (ou non) des biais</h4>
               <ul className="space-y-2">
                 <li>
                   <strong>Morewedge et al. (2015).</strong><br />
@@ -1301,9 +1322,9 @@ export default function ResultatsPage() {
               </ul>
             </div>
 
-            <div className="bg-yellow-50 p-3 rounded">
-              <h4 className="font-bold text-gray-900 mb-2">Limites de ce test</h4>
-              <ul className="list-disc pl-6 space-y-1 text-gray-700">
+            <div className="bg-yellow-50 dark:bg-yellow-900/20 p-3 rounded">
+              <h4 className="font-bold text-gray-900 dark:text-white mb-2">Limites de ce test</h4>
+              <ul className="list-disc pl-6 space-y-1 text-gray-700 dark:text-gray-300">
                 <li>Mesure certains aspects de la rationalité, pas tous (créativité, sagesse pratique, etc.)</li>
                 <li>Score peut varier selon fatigue, stress, contexte</li>
                 <li>Amélioration modeste et difficile à maintenir</li>
