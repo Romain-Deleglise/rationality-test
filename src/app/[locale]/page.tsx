@@ -44,14 +44,14 @@ export default function Home() {
   const wikipediaUrl = locale === 'fr' ? 'https://fr.wikipedia.org' : 'https://en.wikipedia.org';
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
+    <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white dark:from-gray-900 dark:to-gray-800 transition-colors">
       <div className="max-w-4xl mx-auto px-4 py-12">
         {/* Header */}
         <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
             {t('title')}
           </h1>
-          <p className="text-xl text-gray-600 mb-8">
+          <p className="text-xl text-gray-600 dark:text-gray-300 mb-8">
             {t('subtitle')}
           </p>
           <div className="flex flex-wrap justify-center gap-4 text-sm text-gray-600 mb-4">
@@ -87,19 +87,19 @@ export default function Home() {
         </div>
 
         {/* Intro Card */}
-        <div className="bg-white rounded-xl shadow-lg p-8 mb-8">
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">
+        <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8 mb-8">
+          <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
             {t('whatIsRationality.title')}
           </h2>
           <p
-            className="text-gray-700 leading-relaxed mb-4 text-justify"
+            className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4 text-justify"
             dangerouslySetInnerHTML={{ __html: t('whatIsRationality.intro') }}
           />
           <p
-            className="text-gray-700 leading-relaxed mb-4 text-justify"
+            className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4 text-justify"
             dangerouslySetInnerHTML={{ __html: t('whatIsRationality.improvable') }}
           />
-          <p className="text-gray-700 leading-relaxed text-justify">
+          <p className="text-gray-700 dark:text-gray-300 leading-relaxed text-justify">
             {t('whatIsRationality.testDescription')}{' '}
             <a href={`${wikipediaUrl}/wiki/Cognitive_bias`} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
               {t('whatIsRationality.cognitiveBiases')}
