@@ -135,7 +135,9 @@
     "previous": "Précédent",
     "finish": "Terminer",
     "timeRemaining": "Temps restant",
-    "minutes": "minutes"
+    "minutes": "minutes",
+    "rankingInstructions": "✋ Glissez-déposez ou utilisez les flèches ▲▼ pour réordonner.",
+    "rankingMostLikely": "1 = le plus probable."
   },
   "results": {
     "title": "Vos Résultats",
@@ -245,6 +247,16 @@
       "belowAverage": "Score sous la moyenne. Plusieurs biais cognitifs importants affectent votre raisonnement. L'amélioration est possible mais modeste (10-25% sur 6-12 mois avec pratique intensive). Privilégiez l'usage d'outils externes (checklists, consultations) plutôt que de compter sur votre intuition améliorée.",
       "limited": "Score limité. Vos résultats suggèrent une forte susceptibilité aux biais cognitifs courants. Ne vous découragez pas : même des personnes très intelligentes obtiennent des scores similaires. La rationalité se travaille différemment de l'intelligence générale. Commencez par comprendre les concepts de base avant d'attendre une amélioration mesurable.",
       "veryLimited": "Score très limité. Votre raisonnement est fortement affecté par de nombreux biais cognitifs. Cela ne reflète pas votre intelligence, mais plutôt un manque de familiarité avec ces concepts. Considérez ce test comme un point de départ éducatif plutôt qu'un jugement. L'amélioration nécessitera du temps et de la patience."
+    },
+
+    "testOrigin": {
+      "title": "📖 À propos de ce test",
+      "whatIsCart": "Qu'est-ce que le CART ?",
+      "cartDescription": "Le CART (Comprehensive Assessment of Rational Thinking) est le premier test scientifiquement validé de la pensée rationnelle, développé par les Professeurs Keith E. Stanovich, Richard F. West et Maggie E. Toplak, publié par MIT Press en 2016.",
+      "basedOnResearch": "Basé sur 40 ans de recherche en psychologie cognitive sur les biais et heuristiques, notamment les travaux pionniers de Daniel Kahneman et Amos Tversky (Kahneman a reçu le Prix Nobel d'Économie en 2002 pour ces travaux).",
+      "thisAdaptation": "Ce test en ligne",
+      "adaptationDescription": "Ce test est une adaptation éducative libre du CART. Il utilise des questions du domaine public et des variantes inspirées de la littérature scientifique. Ce n'est PAS le CART officiel (qui nécessite une administration contrôlée), mais une approximation pédagogique gratuite.",
+      "keyDifference": "Différence clé : L'intelligence (QI) mesure votre capacité cognitive, mais la rationalité mesure l'efficacité avec laquelle vous utilisez cette capacité. On peut être intelligent mais peu rationnel."
     }
   },
   "common": {

@@ -169,6 +169,39 @@ export default function SavedResultsPage({ params }: { params: Promise<{ token: 
           </Card>
         </div>
 
+        {/* Test Origin Section */}
+        <div className="bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-gray-800 dark:to-gray-700 rounded-xl shadow-lg p-8 mb-8 border-t-4 border-indigo-600">
+          <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
+            {t('testOrigin.title')}
+          </h2>
+
+          <div className="space-y-4">
+            <div>
+              <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+                {t('testOrigin.whatIsCart')}
+              </h3>
+              <p className="text-gray-700 dark:text-gray-300 mb-3">
+                {t('testOrigin.cartDescription')}
+              </p>
+              <p className="text-gray-700 dark:text-gray-300">
+                {t('testOrigin.basedOnResearch')}
+              </p>
+            </div>
+
+            <div className="bg-white dark:bg-gray-800 rounded-lg p-4 border-l-4 border-blue-500">
+              <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+                {t('testOrigin.thisAdaptation')}
+              </h3>
+              <p className="text-gray-700 dark:text-gray-300 mb-3">
+                {t('testOrigin.adaptationDescription')}
+              </p>
+              <p className="text-gray-700 dark:text-gray-300 font-semibold">
+                💡 {t('testOrigin.keyDifference')}
+              </p>
+            </div>
+          </div>
+        </div>
+
         {/* Détail par Module */}
         <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8 mb-8 border-t-4 border-blue-500">
           <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
@@ -188,6 +221,8 @@ export default function SavedResultsPage({ params }: { params: Promise<{ token: 
                   return 'bg-red-500';
                 };
 
+                const description = t(`moduleDescriptions.${moduleName}`);
+
                 return (
                   <div key={moduleScore.moduleId} className="border-2 border-gray-200 dark:border-gray-700 rounded-xl p-4">
                     <div className="flex items-center justify-between mb-2">
@@ -202,9 +237,14 @@ export default function SavedResultsPage({ params }: { params: Promise<{ token: 
                         style={{ width: `${moduleScore.percentage}%` }}
                       />
                     </div>
-                    <div className="text-sm text-gray-600 dark:text-gray-400">
+                    <div className="text-sm text-gray-600 dark:text-gray-400 mb-2">
                       {moduleScore.earned.toFixed(1)} / {moduleScore.possible.toFixed(1)} points
                     </div>
+                    {description && (
+                      <div className="text-sm text-gray-600 dark:text-gray-400 italic mt-2 pt-2 border-t border-gray-200 dark:border-gray-600">
+                        {description}
+                      </div>
+                    )}
                   </div>
                 );
               })}
