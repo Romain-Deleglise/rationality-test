@@ -74,10 +74,10 @@ export default function TestContent() {
 
   if (!isInitialized || !session || !modules.length) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
+      <div className="min-h-screen flex items-center justify-center bg-white dark:bg-gray-950">
         <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4"></div>
-          <p className="text-gray-600">{t('loading')}</p>
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 dark:border-blue-400 mx-auto mb-4"></div>
+          <p className="text-gray-600 dark:text-gray-400">{t('loading')}</p>
         </div>
       </div>
     );
@@ -129,34 +129,34 @@ export default function TestContent() {
   const timeRemaining = Math.ceil(timePerQuestion * questionsRemaining);
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-950">
       {/* Barre de progression */}
-      <div className="bg-white border-b sticky top-0 z-10 shadow-sm">
+      <div className="bg-white dark:bg-gray-900 border-b dark:border-gray-800 sticky top-0 z-10 shadow-sm">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between mb-3">
             <div className="flex items-center gap-3">
               <div>
-                <p className="text-sm font-medium text-gray-700">
+                <p className="text-sm font-medium text-gray-700 dark:text-gray-300">
                   Module {session.currentModuleIndex + 1}/{modules.length}:{' '}
                   {currentModule.name}
                 </p>
-                <p className="text-xs text-gray-500">
+                <p className="text-xs text-gray-500 dark:text-gray-400">
                   {t('question')} {questionNumber} {t('of')} {totalQuestions}
                 </p>
               </div>
               <span className={`px-2.5 py-0.5 rounded-full text-xs font-semibold ${
                 session.version === 'complète'
-                  ? 'bg-blue-100 text-blue-700'
-                  : 'bg-green-100 text-green-700'
+                  ? 'bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300'
+                  : 'bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-300'
               }`}>
                 {tCommon('version')} {session.version === 'complète' ? tCommon('full') : tCommon('short')}
               </span>
             </div>
             <div className="text-right">
-              <p className="text-sm font-semibold text-gray-700">
+              <p className="text-sm font-semibold text-gray-700 dark:text-gray-300">
                 ⏱️ ~{timeRemaining} {t('minutes')} {t('timeRemaining')}
               </p>
-              <p className="text-xs text-gray-500">
+              <p className="text-xs text-gray-500 dark:text-gray-400">
                 {locale === 'fr' ? 'Durée totale' : 'Total duration'} : ~{totalTestTime} {t('minutes')}
               </p>
             </div>

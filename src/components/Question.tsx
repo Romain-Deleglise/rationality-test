@@ -53,12 +53,12 @@ export default function Question({ question, onAnswer, defaultValue }: QuestionP
               {question.options?.map((option, index) => (
                 <div
                   key={index}
-                  className="flex items-center space-x-3 p-4 rounded-lg border-2 hover:border-blue-200 transition"
+                  className="flex items-center space-x-3 p-4 rounded-lg border-2 border-gray-200 dark:border-gray-700 hover:border-blue-200 dark:hover:border-blue-400 transition bg-white dark:bg-gray-900"
                 >
                   <RadioGroupItem value={String(index)} id={`option-${index}`} />
                   <Label
                     htmlFor={`option-${index}`}
-                    className="flex-1 cursor-pointer text-base"
+                    className="flex-1 cursor-pointer text-base text-gray-900 dark:text-gray-100"
                   >
                     {option}
                   </Label>
@@ -79,18 +79,18 @@ export default function Question({ question, onAnswer, defaultValue }: QuestionP
               className="text-lg p-4"
             />
             {question.unit && (
-              <p className="text-sm text-gray-500">Unité : {question.unit}</p>
+              <p className="text-sm text-gray-500 dark:text-gray-400">Unité : {question.unit}</p>
             )}
           </div>
         );
 
       case 'confidence-interval':
-        const intervalValue = (typeof value === 'object' && value !== null) 
-          ? value 
+        const intervalValue = (typeof value === 'object' && value !== null)
+          ? value
           : { min: '', max: '' };
         return (
           <div className="space-y-4">
-            <p className="text-sm text-gray-600 bg-blue-50 p-3 rounded">
+            <p className="text-sm text-gray-600 dark:text-gray-400 bg-blue-50 dark:bg-blue-900/30 p-3 rounded">
               Donnez un intervalle de confiance à 90% : vous êtes 90% certain que la
               vraie réponse se trouve dans cet intervalle.
             </p>
@@ -102,7 +102,7 @@ export default function Question({ question, onAnswer, defaultValue }: QuestionP
                 onChange={(e) => setValue({ ...value, min: e.target.value })}
                 className="flex-1"
               />
-              <span className="text-gray-500">à</span>
+              <span className="text-gray-500 dark:text-gray-400">à</span>
               <Input
                 type="number"
                 placeholder="Maximum"
@@ -110,7 +110,7 @@ export default function Question({ question, onAnswer, defaultValue }: QuestionP
                 onChange={(e) => setValue({ ...value, max: e.target.value })}
                 className="flex-1"
               />
-              {question.unit && <span className="text-gray-500">{question.unit}</span>}
+              {question.unit && <span className="text-gray-500 dark:text-gray-400">{question.unit}</span>}
             </div>
           </div>
         );
@@ -130,10 +130,10 @@ export default function Question({ question, onAnswer, defaultValue }: QuestionP
               {likertLabels.map((label, index) => (
                 <div
                   key={index}
-                  className="flex items-center space-x-3 p-3 rounded border hover:bg-gray-50"
+                  className="flex items-center space-x-3 p-3 rounded border border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800 bg-white dark:bg-gray-900"
                 >
                   <RadioGroupItem value={String(index + 1)} id={`likert-${index}`} />
-                  <Label htmlFor={`likert-${index}`} className="flex-1 cursor-pointer">
+                  <Label htmlFor={`likert-${index}`} className="flex-1 cursor-pointer text-gray-900 dark:text-gray-100">
                     {label}
                   </Label>
                 </div>
@@ -155,8 +155,8 @@ export default function Question({ question, onAnswer, defaultValue }: QuestionP
 
         return (
           <div className="space-y-4">
-            <p className="text-sm text-gray-600 bg-blue-50 p-3 rounded mb-4">
-              ✋ Glissez-déposez ou utilisez les flèches ▲▼ pour réordonner. 
+            <p className="text-sm text-gray-600 dark:text-gray-400 bg-blue-50 dark:bg-blue-900/30 p-3 rounded mb-4">
+              ✋ Glissez-déposez ou utilisez les flèches ▲▼ pour réordonner.
               <br/>
               1 = le plus probable.
             </p>
@@ -180,21 +180,21 @@ export default function Question({ question, onAnswer, defaultValue }: QuestionP
                       moveItem(draggedPosition, position);
                     }
                   }}
-                  className="flex items-center gap-3 p-4 bg-white border-2 rounded-lg 
-                           hover:border-blue-200 cursor-move transition"
+                  className="flex items-center gap-3 p-4 bg-white dark:bg-gray-900 border-2 border-gray-200 dark:border-gray-700 rounded-lg
+                           hover:border-blue-200 dark:hover:border-blue-400 cursor-move transition"
                 >
                   {/* Icône de drag */}
-                  <span className="text-gray-400 cursor-grab active:cursor-grabbing">
+                  <span className="text-gray-400 dark:text-gray-500 cursor-grab active:cursor-grabbing">
                     ⋮⋮
                   </span>
 
                   {/* Numéro */}
-                  <span className="font-bold text-lg text-blue-600 w-8">
+                  <span className="font-bold text-lg text-blue-600 dark:text-blue-400 w-8">
                     {position + 1}.
                   </span>
 
                   {/* Texte */}
-                  <span className="flex-1 text-base">
+                  <span className="flex-1 text-base text-gray-900 dark:text-gray-100">
                     {question.options?.[optionIndex]}
                   </span>
 
@@ -203,7 +203,7 @@ export default function Question({ question, onAnswer, defaultValue }: QuestionP
                     <button
                       onClick={() => moveItem(position, position - 1)}
                       disabled={position === 0}
-                      className="px-2 py-1 text-gray-500 hover:text-blue-600 hover:bg-blue-50 
+                      className="px-2 py-1 text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/30
                                rounded disabled:opacity-30 disabled:cursor-not-allowed transition"
                       type="button"
                     >
@@ -212,7 +212,7 @@ export default function Question({ question, onAnswer, defaultValue }: QuestionP
                     <button
                       onClick={() => moveItem(position, position + 1)}
                       disabled={position === ranking.length - 1}
-                      className="px-2 py-1 text-gray-500 hover:text-blue-600 hover:bg-blue-50 
+                      className="px-2 py-1 text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/30
                                rounded disabled:opacity-30 disabled:cursor-not-allowed transition"
                       type="button"
                     >
@@ -229,20 +229,20 @@ export default function Question({ question, onAnswer, defaultValue }: QuestionP
       case 'multiple-choice-confidence':
         return (
           <div className="space-y-6">
-            <RadioGroup 
-              value={value.choice !== undefined ? String(value.choice) : ''} 
+            <RadioGroup
+              value={value.choice !== undefined ? String(value.choice) : ''}
               onValueChange={(v: string) => setValue({ ...value, choice: Number(v) })}
             >
               <div className="space-y-3">
                 {question.options?.map((option: string, index: number) => (
                   <div
                     key={index}
-                    className="flex items-center space-x-3 p-4 rounded-lg border-2 hover:border-blue-200 transition"
+                    className="flex items-center space-x-3 p-4 rounded-lg border-2 border-gray-200 dark:border-gray-700 hover:border-blue-200 dark:hover:border-blue-400 transition bg-white dark:bg-gray-900"
                   >
                     <RadioGroupItem value={String(index)} id={`option-${index}`} />
                     <Label
                       htmlFor={`option-${index}`}
-                      className="flex-1 cursor-pointer text-base"
+                      className="flex-1 cursor-pointer text-base text-gray-900 dark:text-gray-100"
                     >
                       {option}
                     </Label>
@@ -253,21 +253,21 @@ export default function Question({ question, onAnswer, defaultValue }: QuestionP
 
             {value.choice !== undefined && (
               <div className="mt-6">
-                <p className="text-sm font-medium text-gray-700 mb-3">
+                <p className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-3">
                   Quel est votre niveau de confiance dans cette réponse ?
                 </p>
-                <RadioGroup 
-                  value={value.confidence ? String(value.confidence) : ''} 
+                <RadioGroup
+                  value={value.confidence ? String(value.confidence) : ''}
                   onValueChange={(v: string) => setValue({ ...value, confidence: Number(v) })}
                 >
                   <div className="space-y-2">
                     {(question.confidenceLevels || [50, 60, 70, 80, 90, 100]).map((level: number) => (
                       <div
                         key={level}
-                        className="flex items-center space-x-3 p-3 rounded border hover:bg-gray-50"
+                        className="flex items-center space-x-3 p-3 rounded border border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800 bg-white dark:bg-gray-900"
                       >
                         <RadioGroupItem value={String(level)} id={`conf-${level}`} />
-                        <Label htmlFor={`conf-${level}`} className="flex-1 cursor-pointer">
+                        <Label htmlFor={`conf-${level}`} className="flex-1 cursor-pointer text-gray-900 dark:text-gray-100">
                           {level}% de confiance {level === 50 && '(je devine)'}
                           {level === 100 && '(je suis certain)'}
                         </Label>
@@ -280,7 +280,7 @@ export default function Question({ question, onAnswer, defaultValue }: QuestionP
           </div>
         );
       default:
-        return <p className="text-red-500">Type de question non supporté</p>;
+        return <p className="text-red-500 dark:text-red-400">Type de question non supporté</p>;
     }
   };
 
