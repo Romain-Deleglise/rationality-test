@@ -637,26 +637,14 @@ export default function ResultatsPage() {
               {testScore.totalEarned.toFixed(1)} / {testScore.totalPossible.toFixed(1)} {t('points')}
             </div>
           </div>
-          {/* Percentile - afficher le vrai si disponible */}
+          {/* Percentile - toujours afficher l'estimé */}
           <div className="bg-gray-100 dark:bg-gray-700 rounded-lg p-4 inline-block">
             <p className="text-gray-700 dark:text-gray-300">
-              {realPercentile !== null ? (
-                <>
-                  {t('realPercentile')} : <strong className="text-blue-600 dark:text-blue-400">{realPercentile}e</strong>
-                  <br />
-                  <span className="text-xs text-gray-500 dark:text-gray-400 mt-1">
-                    ({t('basedOn')} {globalStats?.count || '...'} {t('results')})
-                  </span>
-                </>
-              ) : (
-                <>
-                  {t('estimatedPercentile')} : <strong className="text-blue-600 dark:text-blue-400">{testScore.percentile}e</strong>
-                  <br />
-                  <span className="text-xs text-gray-500 dark:text-gray-400 mt-1">
-                    {savingToDb ? `(${t('calculatingRealPercentile')})` : `(${t('theoreticalDistribution')})`}
-                  </span>
-                </>
-              )}
+              {t('percentile')} : <strong className="text-blue-600 dark:text-blue-400">{testScore.percentile}e</strong>
+              <br />
+              <span className="text-xs text-gray-500 dark:text-gray-400 mt-1">
+                ({t('theoreticalDistribution')})
+              </span>
             </p>
           </div>
 
@@ -832,7 +820,9 @@ export default function ResultatsPage() {
               .sort((a, b) => b.percentage - a.percentage)
               .map((moduleScore) => {
                 const moduleName = moduleScore.moduleName.split(' (')[0];
-                const desc = moduleDescriptions[moduleName];
+                // Pour l'instant, les descriptions détaillées sont en français uniquement
+                // Essayer de trouver la description (FR) ou utiliser le texte de base des messages JSON
+                const desc = locale === 'fr' ? moduleDescriptions[moduleName] : null;
 
                 return (
                   <AccordionItem 
