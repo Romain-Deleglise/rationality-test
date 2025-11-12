@@ -69,7 +69,8 @@ Créer un test de rationalité scientifiquement validé, accessible gratuitement
 - 🌐 **Site bilingue FR/EN** avec sélecteur de langue en temps réel
 - 📱 **Responsive design** (mobile, tablette, desktop)
 - 🎨 **UI moderne** avec Tailwind CSS et shadcn/ui
-- 💾 **Persistance automatique** des réponses (localStorage)
+- 💾 **Sauvegarde automatique** des réponses (localStorage) - **Vous pouvez quitter le test à tout moment et y revenir plus tard !**
+- 🔄 **Reprise du test** - Vos réponses sont automatiquement restaurées si vous fermez le navigateur
 - 📊 **Barre de progression** avec estimation du temps restant
 - ♿ **Accessible** et optimisé pour l'impression
 
@@ -79,6 +80,13 @@ Créer un test de rationalité scientifiquement validé, accessible gratuitement
 - ✅ **Ranking** (classement par ordre de probabilité)
 - ✅ **Intervalles de confiance** (90% confidence intervals)
 - ✅ **Échelles de Likert** (7 points, accord/désaccord)
+
+#### 🎲 **Randomisation Anti-Mémorisation** (NOUVEAU !)
+- **Valeurs numériques randomisées** dans les questions à chaque nouveau test
+- **Cohérence préservée** - Les valeurs sont liées logiquement (ex: pourcentages complémentaires)
+- **Scoring adaptatif** - Les bonnes réponses sont automatiquement ajustées
+- **Système flexible** - Support de règles simples, paires de pourcentages, valeurs calculées, et séquences
+- **Prévient la mémorisation** tout en conservant la validité psychométrique du test
 
 #### Résultats & Analyses
 - 📈 **Score global** avec interprétation détaillée
@@ -93,8 +101,14 @@ Créer un test de rationalité scientifiquement validé, accessible gratuitement
 #### Base de Données & Analytics
 - 💾 **Supabase** pour la persistance des résultats
 - 📊 **Statistiques globales** (moyenne, médiane, meilleur score)
-- 📈 **Percentile réel** basé sur tous les tests complétés
+- 📈 **Percentile réel** basé sur tous les tests complétés (données réelles des utilisateurs)
+- 📊 **Percentile synthétique** basé sur la littérature CART (moyenne ~60%, écart-type ~15%)
 - 🔄 **Anonyme par défaut** (RGPD compliant)
+
+**Note sur les données normatives CART** : Les données normatives officielles du CART (testées sur 4000+ participants) sont publiées dans le livre "The Rationality Quotient" (Stanovich et al., 2016, MIT Press) mais ne sont pas disponibles publiquement en ligne. Le projet utilise actuellement :
+- Des percentiles basés sur les statistiques publiées dans la littérature scientifique
+- Des percentiles réels calculés depuis la base de données Supabase des utilisateurs du test
+- **Objectif futur** : Intégrer les données normatives officielles si accessibles ou via partenariat académique
 
 #### Internationalisation
 - 🇫🇷 **Français** : Version complète
@@ -312,6 +326,115 @@ rationality-test/
 
 ---
 
+## 🎲 Système de Randomisation des Questions
+
+### Vue d'ensemble
+
+Le système de randomisation permet de varier les valeurs numériques dans les questions pour prévenir la mémorisation, tout en maintenant la cohérence logique et la validité du test.
+
+### Comment ça fonctionne
+
+1. **Définition des règles** : Chaque question peut avoir un objet `randomization` avec des règles de génération
+2. **Génération au démarrage** : Les valeurs sont générées une fois au début du test et stockées dans la session
+3. **Application automatique** : Les templates sont appliqués pour remplacer les placeholders par les valeurs générées
+4. **Scoring adaptatif** : Les bonnes réponses sont automatiquement calculées avec les nouvelles valeurs
+
+### Types de randomisation supportés
+
+#### 1. **Simple** - Valeur aléatoire dans un intervalle
+```json
+{
+  "variables": {
+    "age": {
+      "type": "simple",
+      "min": 25,
+      "max": 35,
+      "step": 1
+    }
+  }
+}
+```
+
+#### 2. **Percentage Pair** - Paires de pourcentages complémentaires
+```json
+{
+  "variables": {
+    "prob_high": {
+      "type": "percentage_pair",
+      "percentageOptions": [[60, 40], [70, 30], [80, 20]]
+    }
+  }
+}
+```
+Génère `prob_high` et `prob_high_complement` qui somment à 100%.
+
+#### 3. **Calculated** - Valeur calculée depuis d'autres variables
+```json
+{
+  "variables": {
+    "total": { "type": "simple", "min": 100, "max": 200 },
+    "difference": { "type": "simple", "min": 50, "max": 100 },
+    "answer": {
+      "type": "calculated",
+      "formula": "(total - difference) / 2",
+      "dependencies": ["total", "difference"]
+    }
+  }
+}
+```
+
+#### 4. **Sequence** - Nombre de répétitions
+```json
+{
+  "variables": {
+    "count": {
+      "type": "sequence",
+      "sequenceMin": 3,
+      "sequenceMax": 10
+    }
+  }
+}
+```
+
+### Exemple complet
+
+```json
+{
+  "id": "prob-match-1",
+  "type": "multiple-choice",
+  "text": "Imaginez un jeu de cartes avec 2 couleurs : A ({{prob_high}}% des cartes) et B ({{prob_high_complement}}% des cartes).",
+  "options": [
+    "Toujours prédire A",
+    "Prédire A environ {{prob_high}} fois sur 100 et B environ {{prob_high_complement}} fois sur 100"
+  ],
+  "correct": 0,
+  "points": 1,
+  "randomization": {
+    "variables": {
+      "prob_high": {
+        "type": "percentage_pair",
+        "percentageOptions": [[60, 40], [70, 30], [75, 25], [80, 20]]
+      }
+    },
+    "textTemplate": "Imaginez un jeu de cartes avec 2 couleurs : A ({{prob_high}}% des cartes) et B ({{prob_high_complement}}% des cartes).",
+    "optionsTemplates": [
+      "Toujours prédire A",
+      "Prédire A environ {{prob_high}} fois sur 100 et B environ {{prob_high_complement}} fois sur 100"
+    ],
+    "explanationTemplate": "La stratégie optimale est de toujours prédire A ({{prob_high}}% de succès)."
+  }
+}
+```
+
+### Fichiers concernés
+
+- `/src/lib/randomization.ts` - Logique de génération et application
+- `/src/types/index.ts` - Types TypeScript
+- `/src/store/useTestStore.ts` - Génération au démarrage du test
+- `/src/lib/scoring.ts` - Utilisation des valeurs randomisées pour le scoring
+
+---
+
 ## 🔮 Améliorations à Venir
 
 ### 🚨 **Obligatoires** (À faire en priorité)
@@ -374,9 +497,13 @@ rationality-test/
 - [ ] **Partage social** (Twitter, LinkedIn)
   - Génération d'image OG avec score
   - Boutons de partage
-- [ ] **Variantes de questions** (anti-mémorisation)
-  - Pool de questions aléatoires par module
-  - Valeurs numériques randomisées
+- [x] **Randomisation des valeurs numériques** (anti-mémorisation) ✅ **FAIT !**
+  - Système flexible de randomisation
+  - Cohérence logique préservée
+  - Scoring adaptatif automatique
+- [ ] **Appliquer la randomisation à plus de questions**
+  - Ajouter les règles de randomisation aux questions existantes
+  - Tester la validité psychométrique
 - [ ] **Système de badges** (gamification)
   - "Maître du raisonnement probabiliste"
   - "Champion de la falsification"
