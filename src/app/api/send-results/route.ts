@@ -169,7 +169,7 @@ ${t.basedOn}
 ${t.projectDesc}
     `.trim();
 
-    // Générer le contenu HTML
+    // Générer le contenu HTML avec design moderne et élégant
     const htmlContent = `
       <!DOCTYPE html>
       <html>
@@ -177,31 +177,46 @@ ${t.projectDesc}
           <meta charset="utf-8">
           <meta name="viewport" content="width=device-width, initial-scale=1.0">
           <style>
-            body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; background-color: #f5f5f5; }
-            .container { max-width: 600px; margin: 0 auto; background-color: #ffffff; }
-            .header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 40px 30px; text-align: center; }
-            .header h1 { margin: 0 0 10px 0; font-size: 28px; font-weight: 700; }
-            .score { font-size: 56px; font-weight: bold; margin: 15px 0; }
-            .score-label { font-size: 18px; opacity: 0.95; }
-            .content { background: #ffffff; padding: 30px; }
-            .interpretation { background: #fef3c7; border-left: 4px solid #f59e0b; padding: 15px; margin: 20px 0; border-radius: 4px; font-size: 14px; }
-            .module { background: #f9fafb; padding: 16px; margin: 16px 0; border-radius: 8px; border-left: 4px solid #3b82f6; }
-            .module-name { font-weight: 700; color: #1f2937; font-size: 16px; margin-bottom: 6px; }
-            .module-desc { font-size: 13px; color: #6b7280; margin-bottom: 12px; line-height: 1.5; }
-            .score-bar-container { background: #e5e7eb; height: 28px; border-radius: 14px; overflow: hidden; margin: 10px 0; position: relative; }
-            .score-fill { height: 100%; display: flex; align-items: center; justify-content: flex-end; padding-right: 12px; font-weight: 700; font-size: 14px; color: white; }
-            .score-fill.green { background: linear-gradient(90deg, #10b981 0%, #059669 100%); }
-            .score-fill.blue { background: linear-gradient(90deg, #3b82f6 0%, #2563eb 100%); }
-            .score-fill.yellow { background: linear-gradient(90deg, #f59e0b 0%, #d97706 100%); }
-            .score-fill.red { background: linear-gradient(90deg, #ef4444 0%, #dc2626 100%); }
-            .score-detail { font-size: 13px; color: #6b7280; margin-top: 6px; }
-            .cta-button { display: inline-block; background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%); color: white !important; padding: 16px 32px; text-decoration: none; border-radius: 8px; font-weight: 700; margin: 24px 0; box-shadow: 0 4px 6px rgba(59, 130, 246, 0.3); }
-            .footer { text-align: center; padding: 30px; color: #6b7280; font-size: 14px; background: #f9fafb; border-top: 1px solid #e5e7eb; }
-            .tips { background: #d1fae5; border-left: 4px solid #10b981; padding: 15px; margin: 20px 0; border-radius: 4px; }
+            body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; color: #1f2937; margin: 0; padding: 20px 0; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+            .container { max-width: 600px; margin: 0 auto; background-color: #ffffff; border-radius: 16px; overflow: hidden; box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3); }
+            .header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 50px 30px; text-align: center; position: relative; }
+            .header::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="40" fill="white" opacity="0.05"/></svg>') repeat; }
+            .header h1 { margin: 0 0 10px 0; font-size: 32px; font-weight: 800; text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); position: relative; }
+            .score-circle { width: 140px; height: 140px; margin: 20px auto; background: white; border-radius: 50%; display: flex; align-items: center; justify-center; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); position: relative; }
+            .score { font-size: 42px; font-weight: 900; color: #667eea; margin: 0; }
+            .score-label { font-size: 16px; opacity: 0.95; margin-top: 10px; position: relative; }
+            .content { background: #ffffff; padding: 40px 30px; }
+            .interpretation { background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); border-left: 5px solid #f59e0b; padding: 20px; margin: 25px 0; border-radius: 12px; font-size: 15px; box-shadow: 0 4px 12px rgba(245, 158, 11, 0.1); }
+            .interpretation strong { color: #92400e; }
+            .section-title { color: #1f2937; margin-top: 40px; margin-bottom: 20px; font-size: 24px; font-weight: 800; display: flex; align-items: center; gap: 10px; }
+            .section-title::before { content: ''; width: 4px; height: 24px; background: linear-gradient(180deg, #667eea, #764ba2); border-radius: 2px; }
+            .module { background: linear-gradient(135deg, #f9fafb 0%, #f3f4f6 100%); padding: 20px; margin: 20px 0; border-radius: 12px; border: 2px solid transparent; transition: all 0.3s; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); }
+            .module:hover { border-color: #3b82f6; box-shadow: 0 8px 20px rgba(59, 130, 246, 0.1); }
+            .module-name { font-weight: 800; color: #1f2937; font-size: 18px; margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
+            .module-desc { font-size: 14px; color: #6b7280; margin-bottom: 16px; line-height: 1.6; font-style: italic; }
+            .score-bar-container { background: #e5e7eb; height: 32px; border-radius: 16px; overflow: hidden; margin: 12px 0; position: relative; box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1); }
+            .score-fill { height: 100%; display: flex; align-items: center; justify-content: flex-end; padding-right: 14px; font-weight: 800; font-size: 15px; color: white; text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2); transition: width 1s ease; }
+            .score-fill.green { background: linear-gradient(90deg, #10b981 0%, #059669 100%); box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2); }
+            .score-fill.blue { background: linear-gradient(90deg, #3b82f6 0%, #2563eb 100%); box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2); }
+            .score-fill.yellow { background: linear-gradient(90deg, #f59e0b 0%, #d97706 100%); box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2); }
+            .score-fill.red { background: linear-gradient(90deg, #ef4444 0%, #dc2626 100%); box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2); }
+            .score-detail { font-size: 13px; color: #6b7280; margin-top: 8px; font-weight: 600; }
+            .cta-button { display: inline-block; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white !important; padding: 18px 40px; text-decoration: none; border-radius: 12px; font-weight: 800; font-size: 16px; margin: 30px 0; box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4); transition: all 0.3s; }
+            .cta-button:hover { box-shadow: 0 12px 30px rgba(102, 126, 234, 0.5); transform: translateY(-2px); }
+            .footer { text-align: center; padding: 40px; color: #6b7280; font-size: 14px; background: linear-gradient(180deg, #f9fafb 0%, #f3f4f6 100%); border-top: 2px solid #e5e7eb; }
+            .tips { background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%); border-left: 5px solid #10b981; padding: 20px; margin: 25px 0; border-radius: 12px; box-shadow: 0 4px 12px rgba(16, 185, 129, 0.1); }
+            .tips strong { color: #065f46; }
+            .warning { background: linear-gradient(135deg, #fef2f2 0%, #fecaca 100%); border-left: 5px solid #ef4444; padding: 20px; margin: 25px 0; border-radius: 12px; box-shadow: 0 4px 12px rgba(239, 68, 68, 0.1); }
+            .warning strong { color: #991b1b; }
+            .info-box { background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%); border: 2px solid #3b82f6; border-radius: 12px; padding: 20px; margin-top: 30px; box-shadow: 0 4px 12px rgba(59, 130, 246, 0.1); }
+            .info-box strong { color: #1e40af; }
             @media only screen and (max-width: 600px) {
-              .header h1 { font-size: 24px; }
-              .score { font-size: 42px; }
-              .content { padding: 20px; }
+              body { padding: 10px 0; }
+              .header h1 { font-size: 26px; }
+              .score { font-size: 36px; }
+              .content { padding: 25px 20px; }
+              .module { padding: 16px; }
+              .section-title { font-size: 20px; }
             }
           </style>
         </head>
@@ -209,20 +224,20 @@ ${t.projectDesc}
           <div class="container">
             <div class="header">
               <h1>🧠 ${t.title}</h1>
-              <div class="score">${testScore.percentage.toFixed(1)}%</div>
+              <div class="score-circle">
+                <div class="score">${testScore.percentage.toFixed(1)}%</div>
+              </div>
               <div class="score-label">${testScore.totalEarned.toFixed(1)} / ${testScore.totalPossible.toFixed(1)} ${t.points}</div>
             </div>
 
             <div class="content">
-              <h2 style="color: #1f2937; margin-top: 0; font-size: 24px; font-weight: 700;">${t.yourResults}</h2>
-
               <div class="interpretation">
-                <strong style="font-weight: 700;">${t.interpretation} :</strong><br>
+                <strong>${t.interpretation}</strong><br><br>
                 ${testScore.interpretation}
               </div>
 
-              <h3 style="color: #1f2937; margin-top: 32px; font-size: 20px; font-weight: 700;">${t.detailByModule}</h3>
-              <p style="color: #6b7280; font-size: 14px; margin-bottom: 20px;">
+              <h3 class="section-title">${t.detailByModule}</h3>
+              <p style="color: #6b7280; font-size: 15px; margin-bottom: 25px; line-height: 1.7;">
                 ${t.performanceDesc}
               </p>
 
@@ -262,39 +277,42 @@ ${t.projectDesc}
               ` : ''}
 
               ${testScore.weaknesses.length > 0 ? `
-                <div style="background: #fef2f2; border-left: 4px solid #ef4444; padding: 15px; margin: 20px 0; border-radius: 4px;">
-                  <strong style="font-weight: 700;">⚠ ${t.areasToImprove} :</strong><br>
-                  <ul style="margin: 10px 0 0 0; padding-left: 20px;">
-                    ${testScore.weaknesses.map((w: string) => `<li>${getModuleName(w)}</li>`).join('')}
+                <div class="warning">
+                  <strong>⚠️ ${t.areasToImprove}</strong><br>
+                  <ul style="margin: 12px 0 0 0; padding-left: 20px; line-height: 1.7;">
+                    ${testScore.weaknesses.map((w: string) => `<li style="margin: 6px 0;">${getModuleName(w)}</li>`).join('')}
                   </ul>
                 </div>
               ` : ''}
 
-              <h3 style="color: #1f2937; margin-top: 32px; font-size: 20px; font-weight: 700;">${t.nextSteps}</h3>
-              <ul style="color: #4b5563; line-height: 1.8;">
-                ${t.nextStepsItems.map(item => `<li>${item}</li>`).join('')}
+              <h3 class="section-title">${t.nextSteps}</h3>
+              <ul style="color: #4b5563; line-height: 2; font-size: 15px; padding-left: 24px;">
+                ${t.nextStepsItems.map(item => `<li style="margin: 10px 0;">${item}</li>`).join('')}
               </ul>
 
-              <div style="text-align: center; margin-top: 32px;">
-                <a href="${process.env.NEXT_PUBLIC_URL || 'https://votre-site.com'}/${locale}/resultats" class="cta-button">
+              <div style="text-align: center; margin-top: 40px;">
+                <a href="${process.env.NEXT_PUBLIC_URL || 'https://rationality-test.com'}/${locale}/resultats" class="cta-button">
                   📊 ${t.viewFullResults}
                 </a>
               </div>
 
-              <div style="background: #f0f9ff; border: 1px solid #bfdbfe; border-radius: 8px; padding: 16px; margin-top: 24px;">
-                <p style="margin: 0; font-size: 14px; color: #1e40af; line-height: 1.6;">
-                  <strong>💡 ${t.importantNote}</strong> ${t.importantNoteText}
+              <div class="info-box">
+                <p style="margin: 0; font-size: 15px; line-height: 1.7;">
+                  <strong>💡 ${t.importantNote}:</strong><br><br>
+                  ${t.importantNoteText}
                 </p>
               </div>
             </div>
 
             <div class="footer">
-              <p style="margin: 5px 0; font-weight: 700; color: #1f2937;">${t.title}</p>
-              <p style="margin: 5px 0;">${t.basedOn}</p>
-              <p style="margin: 5px 0;">${t.projectDesc}</p>
-              <p style="margin: 20px 0 5px 0; font-size: 12px; color: #9ca3af;">
-                ${t.emailReason}
-              </p>
+              <p style="margin: 8px 0; font-weight: 800; color: #1f2937; font-size: 16px;">🧠 ${t.title}</p>
+              <p style="margin: 6px 0; font-size: 13px;">${t.basedOn}</p>
+              <p style="margin: 6px 0; font-size: 13px; color: #3b82f6; font-weight: 600;">${t.projectDesc}</p>
+              <div style="margin: 25px 0 0 0; padding-top: 20px; border-top: 1px solid #d1d5db;">
+                <p style="margin: 0; font-size: 12px; color: #9ca3af; font-style: italic;">
+                  ${t.emailReason}
+                </p>
+              </div>
             </div>
           </div>
         </body>
