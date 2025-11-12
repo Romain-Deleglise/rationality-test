@@ -247,6 +247,16 @@
       "belowAverage": "Below average score. Several important cognitive biases affect your reasoning. Improvement is possible but modest (10-25% over 6-12 months with intensive practice). Prioritize the use of external tools (checklists, consultations) rather than relying on improved intuition.",
       "limited": "Limited score. Your results suggest strong susceptibility to common cognitive biases. Don't be discouraged: even very intelligent people get similar scores. Rationality works differently from general intelligence. Start by understanding the basic concepts before expecting measurable improvement.",
       "veryLimited": "Very limited score. Your reasoning is strongly affected by many cognitive biases. This does not reflect your intelligence, but rather a lack of familiarity with these concepts. Consider this test as an educational starting point rather than a judgment. Improvement will require time and patience."
+    },
+
+    "testOrigin": {
+      "title": "📖 About This Test",
+      "whatIsCart": "What is CART?",
+      "cartDescription": "The Comprehensive Assessment of Rational Thinking (CART) is the first scientifically validated test of rational thinking, developed by Professors Keith E. Stanovich, Richard F. West, and Maggie E. Toplak, published by MIT Press in 2016.",
+      "basedOnResearch": "Based on 40 years of research in cognitive psychology on biases and heuristics, notably the pioneering work of Daniel Kahneman and Amos Tversky (Kahneman received the Nobel Prize in Economics in 2002 for this work).",
+      "thisAdaptation": "This Online Test",
+      "adaptationDescription": "This test is a free educational adaptation of CART. It uses public domain questions and variants inspired by the scientific literature. This is NOT the official CART (which requires controlled administration), but a free pedagogical approximation.",
+      "keyDifference": "Key difference: Intelligence (IQ) measures your cognitive capacity, but rationality measures how effectively you use that capacity. You can be intelligent but not very rational."
     }
   },
   "common": {
