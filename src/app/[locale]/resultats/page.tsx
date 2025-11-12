@@ -1196,7 +1196,7 @@ export default function ResultatsPage() {
               <CardTitle>{t('radarChart')}</CardTitle>
             </CardHeader>
             <CardContent>
-              <RadarChartComponent moduleScores={testScore.modules} />
+              <RadarChartComponent moduleScores={testScore.modules} locale={locale} />
             </CardContent>
           </Card>
 
@@ -1205,7 +1205,7 @@ export default function ResultatsPage() {
               <CardTitle>{t('barChart')}</CardTitle>
             </CardHeader>
             <CardContent>
-              <BarChartComponent moduleScores={testScore.modules} />
+              <BarChartComponent moduleScores={testScore.modules} locale={locale} />
             </CardContent>
           </Card>
         </div>
@@ -1416,6 +1416,103 @@ export default function ResultatsPage() {
           </div>
         </AccordionItem>
 
+        {/* State of Research */}
+        <AccordionItem title={t('stateOfResearch.title')} defaultOpen={false}>
+          <div className="space-y-6">
+            <p className="text-gray-700 dark:text-gray-300 italic text-justify">
+              {t('stateOfResearch.intro')}
+            </p>
+
+            {/* What We Know */}
+            <div>
+              <h4 className="font-bold text-gray-900 dark:text-white mb-3 flex items-center gap-2">
+                <span className="text-green-600 dark:text-green-400">✅</span>
+                {t('stateOfResearch.whatWeKnow')}
+              </h4>
+              <div className="space-y-3 pl-4">
+                <div className="bg-green-50 dark:bg-green-900/20 p-3 rounded">
+                  <strong className="text-gray-900 dark:text-white">{t('stateOfResearch.finding1')}</strong>
+                  <p className="text-gray-700 dark:text-gray-300 text-sm mt-1">{t('stateOfResearch.finding1Text')}</p>
+                </div>
+                <div className="bg-green-50 dark:bg-green-900/20 p-3 rounded">
+                  <strong className="text-gray-900 dark:text-white">{t('stateOfResearch.finding2')}</strong>
+                  <p className="text-gray-700 dark:text-gray-300 text-sm mt-1">{t('stateOfResearch.finding2Text')}</p>
+                </div>
+                <div className="bg-green-50 dark:bg-green-900/20 p-3 rounded">
+                  <strong className="text-gray-900 dark:text-white">{t('stateOfResearch.finding3')}</strong>
+                  <p className="text-gray-700 dark:text-gray-300 text-sm mt-1">{t('stateOfResearch.finding3Text')}</p>
+                </div>
+              </div>
+            </div>
+
+            {/* What We Don't Know */}
+            <div>
+              <h4 className="font-bold text-gray-900 dark:text-white mb-3 flex items-center gap-2">
+                <span className="text-yellow-600 dark:text-yellow-400">❓</span>
+                {t('stateOfResearch.whatWeDontKnow')}
+              </h4>
+              <div className="space-y-3 pl-4">
+                <div className="bg-yellow-50 dark:bg-yellow-900/20 p-3 rounded">
+                  <strong className="text-gray-900 dark:text-white">{t('stateOfResearch.question1')}</strong>
+                  <p className="text-gray-700 dark:text-gray-300 text-sm mt-1">{t('stateOfResearch.question1Text')}</p>
+                </div>
+                <div className="bg-yellow-50 dark:bg-yellow-900/20 p-3 rounded">
+                  <strong className="text-gray-900 dark:text-white">{t('stateOfResearch.question2')}</strong>
+                  <p className="text-gray-700 dark:text-gray-300 text-sm mt-1">{t('stateOfResearch.question2Text')}</p>
+                </div>
+                <div className="bg-yellow-50 dark:bg-yellow-900/20 p-3 rounded">
+                  <strong className="text-gray-900 dark:text-white">{t('stateOfResearch.question3')}</strong>
+                  <p className="text-gray-700 dark:text-gray-300 text-sm mt-1">{t('stateOfResearch.question3Text')}</p>
+                </div>
+                <div className="bg-yellow-50 dark:bg-yellow-900/20 p-3 rounded">
+                  <strong className="text-gray-900 dark:text-white">{t('stateOfResearch.question4')}</strong>
+                  <p className="text-gray-700 dark:text-gray-300 text-sm mt-1">{t('stateOfResearch.question4Text')}</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Active Controversies */}
+            <div>
+              <h4 className="font-bold text-gray-900 dark:text-white mb-3 flex items-center gap-2">
+                <span className="text-red-600 dark:text-red-400">⚡</span>
+                {t('stateOfResearch.activeControversies')}
+              </h4>
+              <div className="space-y-3 pl-4">
+                <div className="bg-red-50 dark:bg-red-900/20 p-3 rounded">
+                  <strong className="text-gray-900 dark:text-white">{t('stateOfResearch.controversy1')}</strong>
+                  <p className="text-gray-700 dark:text-gray-300 text-sm mt-1">{t('stateOfResearch.controversy1Text')}</p>
+                </div>
+                <div className="bg-red-50 dark:bg-red-900/20 p-3 rounded">
+                  <strong className="text-gray-900 dark:text-white">{t('stateOfResearch.controversy2')}</strong>
+                  <p className="text-gray-700 dark:text-gray-300 text-sm mt-1">{t('stateOfResearch.controversy2Text')}</p>
+                </div>
+                <div className="bg-red-50 dark:bg-red-900/20 p-3 rounded">
+                  <strong className="text-gray-900 dark:text-white">{t('stateOfResearch.controversy3')}</strong>
+                  <p className="text-gray-700 dark:text-gray-300 text-sm mt-1">{t('stateOfResearch.controversy3Text')}</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Bottom Line */}
+            <div className="bg-blue-50 dark:bg-blue-900/20 border-l-4 border-blue-500 dark:border-blue-600 p-4 rounded">
+              <h4 className="font-bold text-gray-900 dark:text-white mb-3">{t('stateOfResearch.honestBottomLine')}</h4>
+              <ul className="space-y-2 text-gray-700 dark:text-gray-300 text-sm">
+                <li>{t('stateOfResearch.bottomLine1')}</li>
+                <li>{t('stateOfResearch.bottomLine2')}</li>
+                <li>{t('stateOfResearch.bottomLine3')}</li>
+                <li>{t('stateOfResearch.bottomLine4')}</li>
+                <li>{t('stateOfResearch.bottomLine5')}</li>
+              </ul>
+            </div>
+
+            {/* Recent Work */}
+            <div className="bg-gray-50 dark:bg-gray-700 p-3 rounded">
+              <strong className="text-gray-900 dark:text-white">{t('stateOfResearch.recentWork')}</strong>
+              <p className="text-gray-700 dark:text-gray-300 text-sm mt-1">{t('stateOfResearch.recentWorkText')}</p>
+            </div>
+          </div>
+        </AccordionItem>
+
         {/* Actions */}
         <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8 text-center mb-8 print:hidden">
           <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">{t('nextSteps')}</h2>
@@ -1463,11 +1560,8 @@ export default function ResultatsPage() {
             >
               {t('downloadPDF')}
             </button>
-            <Link href={`/${locale}/test`}>
-              <button
-                onClick={() => resetTest()}
-                className="bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-900 dark:text-white font-semibold px-6 py-3 rounded-lg transition-colors"
-              >
+            <Link href={`/${locale}/test?reset=true${version === 'complète' ? '&version=full' : ''}`}>
+              <button className="bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-900 dark:text-white font-semibold px-6 py-3 rounded-lg transition-colors">
                 {t('retakeTest')}
               </button>
             </Link>
