@@ -77,11 +77,11 @@ export default function Question({ question, onAnswer, defaultValue }: QuestionP
               type="number"
               value={value}
               onChange={(e) => setValue(e.target.value)}
-              placeholder="Votre réponse"
+              placeholder={t('yourAnswer')}
               className="text-lg p-4"
             />
             {question.unit && (
-              <p className="text-sm text-gray-500 dark:text-gray-400">Unité : {question.unit}</p>
+              <p className="text-sm text-gray-500 dark:text-gray-400">{t('unit')} : {question.unit}</p>
             )}
           </div>
         );
@@ -93,21 +93,20 @@ export default function Question({ question, onAnswer, defaultValue }: QuestionP
         return (
           <div className="space-y-4">
             <p className="text-sm text-gray-600 dark:text-gray-400 bg-blue-50 dark:bg-blue-900/30 p-3 rounded">
-              Donnez un intervalle de confiance à 90% : vous êtes 90% certain que la
-              vraie réponse se trouve dans cet intervalle.
+              {t('confidenceInterval')}
             </p>
             <div className="flex items-center gap-4">
               <Input
                 type="number"
-                placeholder="Minimum"
+                placeholder={t('minimum')}
                 value={value.min || ''}
                 onChange={(e) => setValue({ ...value, min: e.target.value })}
                 className="flex-1"
               />
-              <span className="text-gray-500 dark:text-gray-400">à</span>
+              <span className="text-gray-500 dark:text-gray-400">{t('to')}</span>
               <Input
                 type="number"
-                placeholder="Maximum"
+                placeholder={t('maximum')}
                 value={value.max || ''}
                 onChange={(e) => setValue({ ...value, max: e.target.value })}
                 className="flex-1"
@@ -119,12 +118,12 @@ export default function Question({ question, onAnswer, defaultValue }: QuestionP
 
       case 'likert':
         const likertLabels = [
-          'Fortement en désaccord',
-          'Modérément en désaccord',
-          'Légèrement en désaccord',
-          "Légèrement d'accord",
-          "Modérément d'accord",
-          "Fortement d'accord",
+          t('likertStronglyDisagree'),
+          t('likertModeratelyDisagree'),
+          t('likertSlightlyDisagree'),
+          t('likertSlightlyAgree'),
+          t('likertModeratelyAgree'),
+          t('likertStronglyAgree'),
         ];
         return (
           <RadioGroup value={String(value)} onValueChange={(v) => setValue(Number(v))}>
@@ -256,7 +255,7 @@ export default function Question({ question, onAnswer, defaultValue }: QuestionP
             {value.choice !== undefined && (
               <div className="mt-6">
                 <p className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-3">
-                  Quel est votre niveau de confiance dans cette réponse ?
+                  {t('confidenceQuestion')}
                 </p>
                 <RadioGroup
                   value={value.confidence ? String(value.confidence) : ''}
@@ -270,8 +269,8 @@ export default function Question({ question, onAnswer, defaultValue }: QuestionP
                       >
                         <RadioGroupItem value={String(level)} id={`conf-${level}`} />
                         <Label htmlFor={`conf-${level}`} className="flex-1 cursor-pointer text-gray-900 dark:text-gray-100">
-                          {level}% de confiance {level === 50 && '(je devine)'}
-                          {level === 100 && '(je suis certain)'}
+                          {level}{t('confidencePercent')} {level === 50 && t('guessing')}
+                          {level === 100 && t('certain')}
                         </Label>
                       </div>
                     ))}
@@ -282,7 +281,7 @@ export default function Question({ question, onAnswer, defaultValue }: QuestionP
           </div>
         );
       default:
-        return <p className="text-red-500 dark:text-red-400">Type de question non supporté</p>;
+        return <p className="text-red-500 dark:text-red-400">{t('unsupportedQuestionType')}</p>;
     }
   };
 
@@ -320,7 +319,7 @@ export default function Question({ question, onAnswer, defaultValue }: QuestionP
           className="w-full"
           size="lg"
         >
-          Suivant →
+          {t('next')}
         </Button>
       </CardContent>
     </Card>

@@ -162,6 +162,10 @@ export function RadarChartComponent({ moduleScores, locale = 'fr' }: ChartProps)
             color: isDark ? '#f3f4f6' : '#111827'
           }}
           labelStyle={{
+            color: isDark ? '#f3f4f6' : '#111827',
+            fontWeight: 600
+          }}
+          itemStyle={{
             color: isDark ? '#f3f4f6' : '#111827'
           }}
         />
@@ -232,6 +236,10 @@ export function BarChartComponent({ moduleScores, locale = 'fr' }: ChartProps) {
             color: isDark ? '#f3f4f6' : '#111827'
           }}
           labelStyle={{
+            color: isDark ? '#f3f4f6' : '#111827',
+            fontWeight: 600
+          }}
+          itemStyle={{
             color: isDark ? '#f3f4f6' : '#111827'
           }}
         />
