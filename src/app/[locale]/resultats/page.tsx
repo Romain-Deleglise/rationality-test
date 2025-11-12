@@ -168,6 +168,7 @@ export default function ResultatsPage() {
           email,
           testScore,
           locale,
+          resultToken,
         }),
       });
 

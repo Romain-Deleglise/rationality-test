@@ -7,7 +7,7 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(request: NextRequest) {
   try {
-    const { email, testScore, locale = 'en' } = await request.json();
+    const { email, testScore, locale = 'en', resultToken } = await request.json();
 
     // Validation
     if (!email || !testScore) {
@@ -51,18 +51,18 @@ export async function POST(request: NextRequest) {
         emailReason: 'You are receiving this email because you requested your rationality test results.',
         emailSubject: 'Your Results - Rationality Test',
         moduleDescriptions: {
-          'Probabilistic Reasoning': 'Your ability to reason with probabilities and avoid classic errors (gambler\'s fallacy, base rate neglect, conjunction error).',
-          'Scientific Reasoning': 'Your ability to rigorously test hypotheses, falsify rather than confirm, and distinguish correlation from causation.',
-          'Reflection vs Intuition': 'Your ability to inhibit the immediate intuitive response and engage analytical reflection (CRT).',
-          'Belief Bias': 'Your ability to evaluate logical validity independently of your beliefs about the conclusion.',
-          'Knowledge Calibration': 'Your ability to accurately estimate your level of certainty (avoid overconfidence).',
-          'Probabilistic Numeracy': 'Your ability to manipulate numbers in probabilistic contexts and understand statistics.',
-          'Superstitious Thinking': 'Your resistance to paranormal/supernatural beliefs and respect for the principle "belief proportional to evidence".',
-          'Anti-Science Attitudes': 'Your resistance to rejecting science and the scientific method.',
-          'Conspiracy Beliefs': 'Your resistance to conspiracy explanations and ability to apply Occam\'s Razor.',
-          'Disjunctive Reasoning': 'Your ability to reason correctly with "OR" statements.',
-          'Anchoring': 'Your resistance to anchoring (being too influenced by the first piece of information received).',
-          'Dysfunctional Beliefs': 'Your ability to avoid irrational beliefs that cause unnecessary emotional distress.'
+          'Probabilistic Reasoning': '📊 Measures your ability to reason with probabilities and avoid classic errors like the gambler\'s fallacy (believing past results influence future odds), base rate neglect (ignoring statistical frequencies), and conjunction fallacy (thinking A+B is more likely than A alone). Essential for medical diagnosis, financial decisions, and risk assessment.',
+          'Scientific Reasoning': '🔬 Evaluates how rigorously you test hypotheses - seeking to falsify rather than just confirm, understanding the difference between correlation and causation, and designing valid experiments. Critical for distinguishing real effects from coincidence.',
+          'Reflection vs Intuition': '🤔 Tests your ability to override intuitive but incorrect responses by engaging analytical thinking (CRT - Cognitive Reflection Test). Measures whether you pause to reflect or rush to the first answer that "feels right".',
+          'Belief Bias': '⚖️ Assesses whether you can evaluate logical arguments based solely on their structure, independent of whether you agree with the conclusion. Can you accept that a valid argument might lead to a conclusion you dislike?',
+          'Knowledge Calibration': '🎯 Measures how accurately you estimate your own certainty. Are you overconfident (too sure of wrong answers) or well-calibrated (your confidence matches your actual knowledge)?',
+          'Probabilistic Numeracy': '🔢 Tests your ability to work with numbers in probabilistic contexts - understanding percentages, frequencies, expected values, and statistical reasoning. Foundation for interpreting medical tests, polls, and research data.',
+          'Superstitious Thinking': '🔮 Evaluates your resistance to paranormal/supernatural beliefs and adherence to the principle of "proportional belief" - believing claims in proportion to the evidence supporting them.',
+          'Anti-Science Attitudes': '🧪 Measures your trust in the scientific method and scientific institutions. Do you respect evidence-based reasoning even when results contradict intuitions or traditional beliefs?',
+          'Conspiracy Beliefs': '🕵️ Tests your resistance to conspiracy thinking and ability to apply Occam\'s Razor (prefer simpler explanations). Can you distinguish between healthy skepticism and unfounded conspiratorial thinking?',
+          'Disjunctive Reasoning': '🔀 Evaluates your ability to reason correctly with "OR" statements and disjunctive syllogisms - a fundamental logical skill often misunderstood.',
+          'Anchoring': '⚓ Measures how much irrelevant initial information (anchors) influences your subsequent judgments and estimates. Strong anchoring makes you vulnerable to manipulation in negotiations and decision-making.',
+          'Dysfunctional Beliefs': '🧠 Assesses tendencies toward irrational beliefs that generate unnecessary anxiety, stress, or emotional suffering (catastrophizing, all-or-nothing thinking, excessive need for approval).'
         }
       },
       fr: {
@@ -88,18 +88,18 @@ export async function POST(request: NextRequest) {
         emailReason: 'Vous recevez cet email car vous avez demandé vos résultats du test de rationalité.',
         emailSubject: 'Vos résultats - Test de Rationalité',
         moduleDescriptions: {
-          'Raisonnement Probabiliste': 'Votre capacité à raisonner avec les probabilités et éviter les erreurs classiques (erreur du parieur, négligence des taux de base, erreur de conjonction).',
-          'Raisonnement Scientifique': 'Votre capacité à tester rigoureusement des hypothèses, falsifier plutôt que confirmer, et distinguer corrélation et causation.',
-          'Réflexion vs Intuition': 'Votre capacité à inhiber la réponse intuitive immédiate et engager une réflexion analytique (CRT).',
-          'Biais de Croyance': 'Votre capacité à évaluer la validité logique indépendamment de vos croyances sur la conclusion.',
-          'Calibration des Connaissances': 'Votre capacité à estimer avec précision votre niveau de certitude (éviter l\'overconfidence).',
-          'Numératie Probabiliste': 'Votre capacité à manipuler les nombres dans des contextes probabilistes et comprendre les statistiques.',
-          'Pensée Superstitieuse': 'Votre résistance aux croyances paranormales/surnaturelles et respect du principe "croyance proportionnée aux preuves".',
-          'Attitudes Anti-Science': 'Votre résistance au rejet de la science et de la méthode scientifique.',
-          'Croyances Conspirationnistes': 'Votre résistance aux explications complotistes et capacité à appliquer le Rasoir d\'Occam.',
-          'Raisonnement Disjonctif': 'Votre capacité à raisonner correctement avec des énoncés "OU".',
-          'Ancrage': 'Votre résistance à l\'ancrage (être trop influencé par la première information reçue).',
-          'Croyances Dysfonctionnelles': 'Votre capacité à éviter les croyances irrationnelles qui causent de la détresse émotionnelle inutile.'
+          'Raisonnement Probabiliste': '📊 Mesure votre capacité à raisonner avec les probabilités et éviter les erreurs classiques comme l\'erreur du parieur (croire que les résultats passés influencent les chances futures), la négligence des taux de base (ignorer les fréquences statistiques), et l\'erreur de conjonction (penser que A+B est plus probable que A seul). Essentiel pour les diagnostics médicaux, les décisions financières et l\'évaluation des risques.',
+          'Raisonnement Scientifique': '🔬 Évalue la rigueur avec laquelle vous testez des hypothèses - chercher à réfuter plutôt que confirmer, comprendre la différence entre corrélation et causation, et concevoir des expériences valides. Critique pour distinguer les effets réels des coïncidences.',
+          'Réflexion vs Intuition': '🤔 Teste votre capacité à surmonter les réponses intuitives incorrectes en engageant la pensée analytique (CRT - Test de Réflexion Cognitive). Mesure si vous prenez le temps de réfléchir ou si vous vous précipitez vers la première réponse qui "semble juste".',
+          'Biais de Croyance': '⚖️ Évalue si vous pouvez juger les arguments logiques uniquement sur leur structure, indépendamment de votre accord avec la conclusion. Pouvez-vous accepter qu\'un argument valide mène à une conclusion qui vous déplaît ?',
+          'Calibration des Connaissances': '🎯 Mesure la précision avec laquelle vous estimez votre propre certitude. Êtes-vous surconfiant (trop sûr de réponses erronées) ou bien calibré (votre confiance correspond à vos connaissances réelles) ?',
+          'Numératie Probabiliste': '🔢 Teste votre capacité à manipuler les nombres dans des contextes probabilistes - comprendre les pourcentages, fréquences, valeurs attendues et raisonnement statistique. Base pour interpréter les tests médicaux, sondages et données de recherche.',
+          'Pensée Superstitieuse': '🔮 Évalue votre résistance aux croyances paranormales/surnaturelles et votre adhésion au principe de "croyance proportionnelle" - croire aux affirmations proportionnellement aux preuves qui les soutiennent.',
+          'Attitudes Anti-Science': '🧪 Mesure votre confiance dans la méthode scientifique et les institutions scientifiques. Respectez-vous le raisonnement basé sur les preuves même quand les résultats contredisent les intuitions ou croyances traditionnelles ?',
+          'Croyances Conspirationnistes': '🕵️ Teste votre résistance à la pensée complotiste et votre capacité à appliquer le Rasoir d\'Occam (privilégier les explications simples). Pouvez-vous distinguer scepticisme sain et pensée conspirationniste infondée ?',
+          'Raisonnement Disjonctif': '🔀 Évalue votre capacité à raisonner correctement avec les énoncés "OU" et les syllogismes disjonctifs - une compétence logique fondamentale souvent mal comprise.',
+          'Ancrage': '⚓ Mesure à quel point des informations initiales non pertinentes (ancres) influencent vos jugements et estimations ultérieurs. Un fort ancrage vous rend vulnérable à la manipulation dans les négociations et prises de décision.',
+          'Croyances Dysfonctionnelles': '🧠 Évalue les tendances vers des croyances irrationnelles qui génèrent anxiété, stress ou souffrance émotionnelle inutiles (catastrophisme, pensée tout-ou-rien, besoin excessif d\'approbation).'
         }
       }
     };
@@ -184,20 +184,30 @@ ${t.projectDesc}
               <td align="center">
                 <table width="600" cellpadding="0" cellspacing="0" border="0" style="background-color: #ffffff; max-width: 600px;">
 
-                  <!-- Header -->
+                  <!-- Header with Gradient -->
                   <tr>
-                    <td style="background-color: #667eea; padding: 40px 20px; text-align: center;">
-                      <h1 style="margin: 0 0 20px 0; color: #ffffff; font-size: 28px; font-weight: bold;">
+                    <td style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 50px 20px; text-align: center;">
+                      <h1 style="margin: 0 0 10px 0; color: #ffffff; font-size: 32px; font-weight: bold; text-shadow: 0 2px 4px rgba(0,0,0,0.2);">
                         🧠 ${t.title}
                       </h1>
-                      <div style="background-color: #ffffff; width: 120px; height: 120px; margin: 20px auto; border-radius: 60px; display: table;">
-                        <div style="display: table-cell; vertical-align: middle; text-align: center;">
-                          <span style="font-size: 36px; font-weight: bold; color: #667eea;">${testScore.percentage.toFixed(1)}%</span>
-                        </div>
-                      </div>
-                      <p style="margin: 10px 0 0 0; color: #ffffff; font-size: 14px;">
-                        ${testScore.totalEarned.toFixed(1)} / ${testScore.totalPossible.toFixed(1)} ${t.points}
+                      <p style="margin: 0 0 25px 0; color: #f3f4f6; font-size: 15px;">
+                        ${t.basedOn}
                       </p>
+                      <!-- Score Badge -->
+                      <table cellpadding="0" cellspacing="0" border="0" style="margin: 0 auto;">
+                        <tr>
+                          <td style="background-color: #ffffff; padding: 25px 30px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);">
+                            <div style="text-align: center;">
+                              <div style="font-size: 48px; font-weight: bold; color: #667eea; margin-bottom: 5px;">
+                                ${testScore.percentage.toFixed(1)}%
+                              </div>
+                              <div style="font-size: 14px; color: #6b7280; font-weight: 600;">
+                                ${testScore.totalEarned.toFixed(1)} / ${testScore.totalPossible.toFixed(1)} ${t.points}
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                      </table>
                     </td>
                   </tr>
 
@@ -206,11 +216,11 @@ ${t.projectDesc}
                     <td style="padding: 30px 20px;">
 
                       <!-- Interpretation -->
-                      <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color: #fef3c7; border-left: 4px solid #f59e0b; margin-bottom: 25px;">
+                      <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); border-left: 5px solid #f59e0b; margin-bottom: 30px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
                         <tr>
-                          <td style="padding: 15px;">
-                            <p style="margin: 0; color: #1f2937; font-size: 14px; line-height: 1.6;">
-                              <strong style="color: #92400e;">${t.interpretation}</strong><br><br>
+                          <td style="padding: 20px;">
+                            <p style="margin: 0; color: #1f2937; font-size: 14px; line-height: 1.7;">
+                              <strong style="color: #92400e; font-size: 16px;">📝 ${t.interpretation}</strong><br><br>
                               ${testScore.interpretation}
                             </p>
                           </td>
@@ -235,28 +245,45 @@ ${t.projectDesc}
                             module.percentage >= 75 ? '#10b981' :
                             module.percentage >= 50 ? '#3b82f6' :
                             module.percentage >= 35 ? '#f59e0b' : '#ef4444';
+                          const lightBgColor =
+                            module.percentage >= 75 ? '#d1fae5' :
+                            module.percentage >= 50 ? '#dbeafe' :
+                            module.percentage >= 35 ? '#fef3c7' : '#fee2e2';
 
                           return `
-                            <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color: #f9fafb; margin: 15px 0; border: 1px solid #e5e7eb;">
+                            <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color: ${lightBgColor}; margin: 18px 0; border-radius: 8px; border-left: 5px solid ${bgColor}; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
                               <tr>
-                                <td style="padding: 15px;">
-                                  <div style="margin-bottom: 8px;">
-                                    <strong style="color: #1f2937; font-size: 16px;">${moduleName}</strong>
-                                    <span style="float: right; color: ${bgColor}; font-weight: bold; font-size: 16px;">
-                                      ${module.percentage.toFixed(0)}%
-                                    </span>
-                                  </div>
-                                  ${desc ? `<p style="margin: 0 0 12px 0; color: #6b7280; font-size: 13px; font-style: italic; line-height: 1.5;">${desc}</p>` : ''}
-                                  <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color: #e5e7eb; height: 24px; margin: 8px 0;">
+                                <td style="padding: 18px;">
+                                  <!-- Module Header -->
+                                  <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom: 10px;">
                                     <tr>
-                                      <td style="background-color: ${bgColor}; width: ${module.percentage}%; color: #ffffff; text-align: right; padding-right: 8px; font-size: 13px; font-weight: bold;">
-                                        ${module.percentage >= 15 ? module.percentage.toFixed(0) + '%' : ''}
+                                      <td style="vertical-align: middle;">
+                                        <strong style="color: #1f2937; font-size: 17px;">${moduleName}</strong>
+                                      </td>
+                                      <td style="text-align: right; vertical-align: middle;">
+                                        <span style="background-color: ${bgColor}; color: #ffffff; padding: 6px 14px; border-radius: 20px; font-weight: bold; font-size: 15px; display: inline-block;">
+                                          ${module.percentage.toFixed(0)}%
+                                        </span>
+                                      </td>
+                                    </tr>
+                                  </table>
+
+                                  <!-- Description -->
+                                  ${desc ? `<p style="margin: 0 0 14px 0; color: #374151; font-size: 13px; line-height: 1.6;">${desc}</p>` : ''}
+
+                                  <!-- Progress Bar -->
+                                  <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color: #e5e7eb; height: 28px; margin: 10px 0; border-radius: 14px; overflow: hidden;">
+                                    <tr>
+                                      <td style="background-color: ${bgColor}; width: ${module.percentage}%; color: #ffffff; text-align: right; padding-right: 10px; font-size: 13px; font-weight: bold; border-radius: 14px;">
+                                        ${module.percentage >= 20 ? module.percentage.toFixed(0) + '%' : ''}
                                       </td>
                                       <td style="width: ${100 - module.percentage}%;"></td>
                                     </tr>
                                   </table>
-                                  <p style="margin: 5px 0 0 0; color: #6b7280; font-size: 12px;">
-                                    ${module.earned.toFixed(1)} / ${module.possible.toFixed(1)} ${t.points}
+
+                                  <!-- Points -->
+                                  <p style="margin: 8px 0 0 0; color: #6b7280; font-size: 13px; font-weight: 600;">
+                                    📊 ${module.earned.toFixed(1)} / ${module.possible.toFixed(1)} ${t.points}
                                   </p>
                                 </td>
                               </tr>
@@ -265,12 +292,12 @@ ${t.projectDesc}
                         }).join('')}
 
                       ${testScore.strengths.length > 0 ? `
-                        <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color: #d1fae5; border-left: 4px solid #10b981; margin: 25px 0;">
+                        <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%); border-left: 5px solid #10b981; margin: 30px 0; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
                           <tr>
-                            <td style="padding: 15px;">
-                              <p style="margin: 0 0 10px 0; color: #065f46; font-weight: bold;">✓ ${t.yourStrengths}:</p>
-                              <ul style="margin: 0; padding-left: 20px; color: #1f2937;">
-                                ${testScore.strengths.map((s: string) => `<li style="margin: 4px 0;">${getModuleName(s)}</li>`).join('')}
+                            <td style="padding: 20px;">
+                              <p style="margin: 0 0 12px 0; color: #065f46; font-weight: bold; font-size: 17px;">✓ ${t.yourStrengths}</p>
+                              <ul style="margin: 0; padding-left: 25px; color: #1f2937;">
+                                ${testScore.strengths.map((s: string) => `<li style="margin: 6px 0; font-size: 14px; line-height: 1.5;"><strong>${getModuleName(s)}</strong></li>`).join('')}
                               </ul>
                             </td>
                           </tr>
@@ -278,12 +305,12 @@ ${t.projectDesc}
                       ` : ''}
 
                       ${testScore.weaknesses.length > 0 ? `
-                        <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color: #fef2f2; border-left: 4px solid #ef4444; margin: 25px 0;">
+                        <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%); border-left: 5px solid #ef4444; margin: 30px 0; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
                           <tr>
-                            <td style="padding: 15px;">
-                              <p style="margin: 0 0 10px 0; color: #991b1b; font-weight: bold;">⚠️ ${t.areasToImprove}:</p>
-                              <ul style="margin: 0; padding-left: 20px; color: #1f2937;">
-                                ${testScore.weaknesses.map((w: string) => `<li style="margin: 4px 0;">${getModuleName(w)}</li>`).join('')}
+                            <td style="padding: 20px;">
+                              <p style="margin: 0 0 12px 0; color: #991b1b; font-weight: bold; font-size: 17px;">⚠️ ${t.areasToImprove}</p>
+                              <ul style="margin: 0; padding-left: 25px; color: #1f2937;">
+                                ${testScore.weaknesses.map((w: string) => `<li style="margin: 6px 0; font-size: 14px; line-height: 1.5;"><strong>${getModuleName(w)}</strong></li>`).join('')}
                               </ul>
                             </td>
                           </tr>
@@ -299,11 +326,11 @@ ${t.projectDesc}
                       </ul>
 
                       <!-- CTA Button -->
-                      <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin: 30px 0;">
+                      <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin: 35px 0;">
                         <tr>
                           <td align="center">
-                            <a href="${process.env.NEXT_PUBLIC_URL || 'https://rationality-test.com'}/${locale}/resultats"
-                               style="display: inline-block; background-color: #667eea; color: #ffffff; padding: 15px 40px; text-decoration: none; font-weight: bold; font-size: 15px; border-radius: 6px;">
+                            <a href="${process.env.NEXT_PUBLIC_URL || 'https://rationality-test.com'}/${locale}/resultats${resultToken ? '/' + resultToken : ''}"
+                               style="display: inline-block; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: #ffffff; padding: 18px 45px; text-decoration: none; font-weight: bold; font-size: 16px; border-radius: 30px; box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);">
                               📊 ${t.viewFullResults}
                             </a>
                           </td>
@@ -311,11 +338,11 @@ ${t.projectDesc}
                       </table>
 
                       <!-- Important Note -->
-                      <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color: #dbeafe; border: 2px solid #3b82f6; margin: 25px 0;">
+                      <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%); border: 2px solid #3b82f6; border-radius: 8px; margin: 30px 0; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
                         <tr>
-                          <td style="padding: 15px;">
-                            <p style="margin: 0; color: #1f2937; font-size: 14px; line-height: 1.6;">
-                              <strong style="color: #1e40af;">💡 ${t.importantNote}:</strong><br><br>
+                          <td style="padding: 20px;">
+                            <p style="margin: 0; color: #1f2937; font-size: 14px; line-height: 1.7;">
+                              <strong style="color: #1e40af; font-size: 16px;">💡 ${t.importantNote}</strong><br><br>
                               ${t.importantNoteText}
                             </p>
                           </td>

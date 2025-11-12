@@ -40,6 +40,12 @@ export default function TestContent() {
     const reset = searchParams.get('reset');
     const version = searchParams.get('version');
 
+    // Si le test est déjà complété, rediriger vers les résultats
+    if (session?.completedAt && !reset) {
+      router.replace(`/${locale}/resultats`);
+      return;
+    }
+
     // Si paramètre reset=true, on reset et redirige
     if (reset === 'true') {
       resetTest();
