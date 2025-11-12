@@ -18,6 +18,8 @@ import {
   Cell,
 } from 'recharts';
 import { ModuleScore } from '@/lib/scoring';
+import { useTheme } from 'next-themes';
+import { useEffect, useState } from 'react';
 
 interface ChartProps {
   moduleScores: ModuleScore[];
@@ -44,7 +46,7 @@ function wrapText(text: string, maxLength: number): string[] {
 }
 
 // Custom tick pour le radar chart avec retour à la ligne
-const CustomRadarTick = ({ payload, x, y, textAnchor, ...rest }: any) => {
+const CustomRadarTick = ({ payload, x, y, textAnchor, isDark, ...rest }: any) => {
   const lines = wrapText(payload.value, 20);
 
   return (
@@ -53,7 +55,7 @@ const CustomRadarTick = ({ payload, x, y, textAnchor, ...rest }: any) => {
         x={0}
         y={0}
         textAnchor={textAnchor}
-        fill="#374151"
+        fill={isDark ? "#d1d5db" : "#374151"}
         fontSize={11}
         fontWeight={500}
       >
@@ -72,7 +74,7 @@ const CustomRadarTick = ({ payload, x, y, textAnchor, ...rest }: any) => {
 };
 
 // Custom tick pour le bar chart avec retour à la ligne
-const CustomBarTick = ({ x, y, payload }: any) => {
+const CustomBarTick = ({ x, y, payload, isDark }: any) => {
   const lines = wrapText(payload.value, 25);
   // Calculer l'offset vertical pour centrer le texte multi-lignes
   const lineHeight = 12;
@@ -85,7 +87,7 @@ const CustomBarTick = ({ x, y, payload }: any) => {
         x={-8}
         y={0}
         textAnchor="end"
-        fill="#374151"
+        fill={isDark ? "#d1d5db" : "#374151"}
         fontSize={11}
         fontWeight={500}
       >
@@ -104,6 +106,15 @@ const CustomBarTick = ({ x, y, payload }: any) => {
 };
 
 export function RadarChartComponent({ moduleScores }: ChartProps) {
+  const { theme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  const isDark = mounted && theme === 'dark';
+
   const data = moduleScores
     .filter(m => m.possible > 0)
     .map((score) => {
@@ -118,33 +129,37 @@ export function RadarChartComponent({ moduleScores }: ChartProps) {
   return (
     <ResponsiveContainer width="100%" height={550}>
       <RadarChart data={data} margin={{ top: 40, right: 80, bottom: 40, left: 80 }}>
-        <PolarGrid stroke="#e5e7eb" strokeWidth={1.5} />
+        <PolarGrid stroke={isDark ? "#374151" : "#e5e7eb"} strokeWidth={1.5} />
         <PolarAngleAxis
           dataKey="module"
-          tick={<CustomRadarTick />}
+          tick={<CustomRadarTick isDark={isDark} />}
           tickLine={false}
         />
         <PolarRadiusAxis
           angle={90}
           domain={[0, 100]}
-          tick={{ fill: '#6b7280', fontSize: 11 }}
+          tick={{ fill: isDark ? '#9ca3af' : '#6b7280', fontSize: 11 }}
           tickFormatter={(value) => `${value}%`}
         />
         <Radar
           name="Score"
           dataKey="score"
-          stroke="#2563eb"
-          fill="#3b82f6"
-          fillOpacity={0.5}
+          stroke={isDark ? "#60a5fa" : "#2563eb"}
+          fill={isDark ? "#3b82f6" : "#3b82f6"}
+          fillOpacity={isDark ? 0.3 : 0.5}
           strokeWidth={2}
         />
         <Tooltip
           formatter={(value: number) => [`${value.toFixed(1)}%`, 'Score']}
           contentStyle={{
-            backgroundColor: '#fff',
-            border: '1px solid #e5e7eb',
+            backgroundColor: isDark ? '#1f2937' : '#fff',
+            border: isDark ? '1px solid #374151' : '1px solid #e5e7eb',
             borderRadius: '8px',
-            fontSize: '14px'
+            fontSize: '14px',
+            color: isDark ? '#f3f4f6' : '#111827'
+          }}
+          labelStyle={{
+            color: isDark ? '#f3f4f6' : '#111827'
           }}
         />
       </RadarChart>
@@ -153,6 +168,15 @@ export function RadarChartComponent({ moduleScores }: ChartProps) {
 }
 
 export function BarChartComponent({ moduleScores }: ChartProps) {
+  const { theme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  const isDark = mounted && theme === 'dark';
+
   const data = moduleScores
     .filter(m => m.possible > 0)
     .sort((a, b) => b.percentage - a.percentage)
@@ -179,28 +203,32 @@ export function BarChartComponent({ moduleScores }: ChartProps) {
         layout="vertical"
         margin={{ top: 20, right: 30, left: 200, bottom: 20 }}
       >
-        <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
+        <CartesianGrid strokeDasharray="3 3" stroke={isDark ? "#374151" : "#e5e7eb"} />
         <XAxis
           type="number"
           domain={[0, 100]}
-          tick={{ fill: '#6b7280', fontSize: 12 }}
+          tick={{ fill: isDark ? '#9ca3af' : '#6b7280', fontSize: 12 }}
           tickFormatter={(value) => `${value}%`}
         />
         <YAxis
           type="category"
           dataKey="module"
-          tick={<CustomBarTick />}
+          tick={<CustomBarTick isDark={isDark} />}
           width={190}
           tickLine={false}
         />
         <Tooltip
           formatter={(value: number) => [`${value.toFixed(1)}%`, 'Score']}
           contentStyle={{
-            backgroundColor: '#fff',
-            border: '1px solid #e5e7eb',
+            backgroundColor: isDark ? '#1f2937' : '#fff',
+            border: isDark ? '1px solid #374151' : '1px solid #e5e7eb',
             borderRadius: '8px',
             fontSize: '13px',
-            padding: '8px 12px'
+            padding: '8px 12px',
+            color: isDark ? '#f3f4f6' : '#111827'
+          }}
+          labelStyle={{
+            color: isDark ? '#f3f4f6' : '#111827'
           }}
         />
         <Bar dataKey="score" radius={[0, 8, 8, 0]}>

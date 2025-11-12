@@ -325,7 +325,7 @@ ${t.projectDesc}
       to: [email],
       subject: `${t.emailSubject} (${testScore.percentage.toFixed(1)}%)`,
       html: htmlContent,
-      text: textContent, // Version texte brut pour fallback
+      // Don't send text version - let Resend generate it from HTML
     });
 
     return NextResponse.json({ success: true, data });
