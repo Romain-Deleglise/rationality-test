@@ -106,8 +106,8 @@ export default async function LocaleLayout({
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
           <NextIntlClientProvider messages={messages} locale={locale}>
-            {/* Language and theme controls - fixed top right */}
-            <div className="fixed top-4 right-4 z-50 print:hidden flex gap-2">
+            {/* Language and theme controls - fixed bottom right */}
+            <div className="fixed bottom-6 right-6 z-50 print:hidden flex gap-2 shadow-lg">
               <ThemeToggle />
               <LanguageSwitcher />
             </div>
