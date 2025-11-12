@@ -227,13 +227,14 @@ export function scoreModule(
 
 export function scoreTest(
   modules: Module[],
-  answers: Answer[]
+  answers: Answer[],
+  locale: string = 'fr'
 ): TestScore {
   const moduleScores = modules.map((module) => scoreModule(module, answers));
 
   const totalEarned = moduleScores.reduce((sum, ms) => sum + (ms.earned || 0), 0);
   const totalPossible = moduleScores.reduce((sum, ms) => sum + (ms.possible || 0), 0);
-  
+
   // Protection contre division par zéro
   const percentage = totalPossible > 0 ? (totalEarned / totalPossible) * 100 : 0;
 
@@ -247,7 +248,7 @@ export function scoreTest(
     .map((ms) => ms.moduleName);
 
   // Interprétation du score
-  const interpretation = getInterpretation(percentage);
+  const interpretation = getInterpretation(percentage, locale);
 
   return {
     totalEarned: isNaN(totalEarned) ? 0 : totalEarned,
@@ -263,19 +264,41 @@ export function scoreTest(
 /**
  * Interprétation du score global
  */
-function getInterpretation(percentage: number): string {
+function getInterpretation(percentage: number, locale: string = 'fr'): string {
+  const interpretations = {
+    fr: {
+      veryHigh: 'Score très élevé. Vous démontrez une excellente maîtrise des principes de raisonnement rationnel. Cependant, gardez à l\'esprit que connaître les biais ne garantit pas d\'y résister en situation réelle (fatigue, stress, émotions).',
+      high: 'Score élevé. Vous avez acquis une bonne compréhension des erreurs de raisonnement courantes. Attention toutefois : les biais persistent même chez les experts. L\'utilisation de protocoles décisionnels reste recommandée pour les choix importants.',
+      average: 'Score dans la moyenne. Vous identifiez correctement certains biais, mais d\'autres vous échappent encore. C\'est normal : la rationalité n\'est pas intuitive. Concentrez-vous sur vos faiblesses spécifiques plutôt que d\'essayer de tout améliorer à la fois.',
+      belowAverage: 'Score sous la moyenne. Plusieurs biais cognitifs importants affectent votre raisonnement. L\'amélioration est possible mais modeste (10-25% sur 6-12 mois avec pratique intensive). Privilégiez l\'usage d\'outils externes (checklists, consultations) plutôt que de compter sur votre intuition améliorée.',
+      limited: 'Score limité. Vos résultats suggèrent une forte susceptibilité aux biais cognitifs courants. Ne vous découragez pas : même des personnes très intelligentes obtiennent des scores similaires. La rationalité se travaille différemment de l\'intelligence générale. Commencez par comprendre les concepts de base avant d\'attendre une amélioration mesurable.',
+      veryLimited: 'Score très limité. Votre raisonnement est fortement affecté par de nombreux biais cognitifs. Cela ne reflète pas votre intelligence, mais plutôt un manque de familiarité avec ces concepts. Considérez ce test comme un point de départ éducatif plutôt qu\'un jugement. L\'amélioration nécessitera du temps et de la patience.'
+    },
+    en: {
+      veryHigh: 'Very high score. You demonstrate excellent mastery of rational reasoning principles. However, keep in mind that knowing biases does not guarantee resistance to them in real situations (fatigue, stress, emotions).',
+      high: 'High score. You have gained a good understanding of common reasoning errors. However, note that biases persist even among experts. The use of decision-making protocols remains recommended for important choices.',
+      average: 'Average score. You correctly identify some biases, but others still escape you. This is normal: rationality is not intuitive. Focus on your specific weaknesses rather than trying to improve everything at once.',
+      belowAverage: 'Below average score. Several important cognitive biases affect your reasoning. Improvement is possible but modest (10-25% over 6-12 months with intensive practice). Prioritize the use of external tools (checklists, consultations) rather than relying on improved intuition.',
+      limited: 'Limited score. Your results suggest strong susceptibility to common cognitive biases. Don\'t be discouraged: even very intelligent people get similar scores. Rationality works differently from general intelligence. Start by understanding the basic concepts before expecting measurable improvement.',
+      veryLimited: 'Very limited score. Your reasoning is strongly affected by many cognitive biases. This does not reflect your intelligence, but rather a lack of familiarity with these concepts. Consider this test as an educational starting point rather than a judgment. Improvement will require time and patience.'
+    }
+  };
+
+  const lang = (locale === 'en' ? 'en' : 'fr') as 'fr' | 'en';
+  const texts = interpretations[lang];
+
   if (percentage >= 90) {
-    return 'Score très élevé. Vous démontrez une excellente maîtrise des principes de raisonnement rationnel. Cependant, gardez à l\'esprit que connaître les biais ne garantit pas d\'y résister en situation réelle (fatigue, stress, émotions).';
+    return texts.veryHigh;
   } else if (percentage >= 75) {
-    return 'Score élevé. Vous avez acquis une bonne compréhension des erreurs de raisonnement courantes. Attention toutefois : les biais persistent même chez les experts. L\'utilisation de protocoles décisionnels reste recommandée pour les choix importants.';
+    return texts.high;
   } else if (percentage >= 60) {
-    return 'Score dans la moyenne. Vous identifiez correctement certains biais, mais d\'autres vous échappent encore. C\'est normal : la rationalité n\'est pas intuitive. Concentrez-vous sur vos faiblesses spécifiques plutôt que d\'essayer de tout améliorer à la fois.';
+    return texts.average;
   } else if (percentage >= 45) {
-    return 'Score sous la moyenne. Plusieurs biais cognitifs importants affectent votre raisonnement. L\'amélioration est possible mais modeste (10-25% sur 6-12 mois avec pratique intensive). Privilégiez l\'usage d\'outils externes (checklists, consultations) plutôt que de compter sur votre intuition améliorée.';
+    return texts.belowAverage;
   } else if (percentage >= 30) {
-    return 'Score limité. Vos résultats suggèrent une forte susceptibilité aux biais cognitifs courants. Ne vous découragez pas : même des personnes très intelligentes obtiennent des scores similaires. La rationalité se travaille différemment de l\'intelligence générale. Commencez par comprendre les concepts de base avant d\'attendre une amélioration mesurable.';
+    return texts.limited;
   } else {
-    return 'Score très limité. Votre raisonnement est fortement affecté par de nombreux biais cognitifs. Cela ne reflète pas votre intelligence, mais plutôt un manque de familiarité avec ces concepts. Considérez ce test comme un point de départ éducatif plutôt qu\'un jugement. L\'amélioration nécessitera du temps et de la patience.';
+    return texts.veryLimited;
   }
 }
 
