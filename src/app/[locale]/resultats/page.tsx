@@ -846,13 +846,14 @@ export default function ResultatsPage() {
       <style jsx global>{`
         @media print {
           @page {
-            margin: 2cm;
+            margin: 1.5cm 2cm;
             size: A4;
           }
 
           body {
             print-color-adjust: exact;
             -webkit-print-color-adjust: exact;
+            color: #000 !important;
           }
 
           /* Cacher les éléments non nécessaires à l'impression */
@@ -869,20 +870,43 @@ export default function ResultatsPage() {
           }
 
           /* Éviter les sauts de page à l'intérieur des éléments */
-          .print\\:break-inside-avoid {
+          .print\\:break-inside-avoid,
+          .border-2 {
             break-inside: avoid;
             page-break-inside: avoid;
           }
 
           /* Améliorer l'affichage des graphiques */
           svg {
-            max-height: 400px !important;
+            max-height: 350px !important;
           }
 
           /* Espacements pour print */
-          h1, h2, h3 {
+          h1 {
+            font-size: 28px !important;
+            margin-bottom: 8px !important;
+            color: #000 !important;
+          }
+
+          h2 {
+            font-size: 20px !important;
+            margin-top: 20px !important;
+            margin-bottom: 12px !important;
             page-break-after: avoid;
             break-after: avoid;
+            color: #000 !important;
+            border-left: 4px solid #667eea !important;
+            padding-left: 8px !important;
+          }
+
+          h3, h4 {
+            page-break-after: avoid;
+            break-after: avoid;
+            color: #000 !important;
+          }
+
+          p {
+            color: #000 !important;
           }
 
           /* Liens en texte visible */
@@ -890,15 +914,104 @@ export default function ResultatsPage() {
             content: none !important;
           }
 
-          /* Fond blanc pour tout */
+          /* Fond blanc par défaut */
           * {
             background: white !important;
+            color: #000 !important;
           }
 
-          /* Garder les couleurs des barres de progression */
+          /* Garder les couleurs importantes */
           .bg-green-500, .bg-blue-500, .bg-yellow-500, .bg-red-500 {
             print-color-adjust: exact !important;
             -webkit-print-color-adjust: exact !important;
+            color: white !important;
+          }
+
+          /* Score global avec fond bleu */
+          .border-t-4.border-blue-600 {
+            background: #eff6ff !important;
+            print-color-adjust: exact !important;
+            -webkit-print-color-adjust: exact !important;
+            border-top: 4px solid #667eea !important;
+          }
+
+          /* Score display */
+          .text-6xl {
+            color: #667eea !important;
+            font-size: 48px !important;
+          }
+
+          .text-2xl {
+            color: #667eea !important;
+          }
+
+          /* Interprétation avec fond jaune */
+          .bg-yellow-50 {
+            background: #fef3c7 !important;
+            print-color-adjust: exact !important;
+            -webkit-print-color-adjust: exact !important;
+          }
+
+          .border-yellow-500 {
+            border-color: #f59e0b !important;
+          }
+
+          /* Note critique avec fond vert */
+          .bg-green-50 {
+            background: #d1fae5 !important;
+            print-color-adjust: exact !important;
+            -webkit-print-color-adjust: exact !important;
+          }
+
+          .border-green-500 {
+            border-color: #10b981 !important;
+          }
+
+          /* Box bleu */
+          .bg-blue-50 {
+            background: #dbeafe !important;
+            print-color-adjust: exact !important;
+            -webkit-print-color-adjust: exact !important;
+          }
+
+          .border-blue-500 {
+            border-color: #3b82f6 !important;
+          }
+
+          /* Modules */
+          .rounded-xl, .rounded-lg {
+            border: 1px solid #e5e7eb !important;
+            margin-bottom: 12px !important;
+          }
+
+          /* Améliorer les barres de progression */
+          .bg-gray-200 {
+            background: #e5e7eb !important;
+            border: 1px solid #d1d5db !important;
+          }
+
+          /* Gris texte lisible */
+          .text-gray-600, .text-gray-500, .text-gray-700 {
+            color: #4b5563 !important;
+          }
+
+          /* Titres de sections */
+          .font-bold {
+            font-weight: 700 !important;
+            color: #000 !important;
+          }
+
+          /* Espacements réduits pour PDF */
+          .mb-8 {
+            margin-bottom: 16px !important;
+          }
+
+          .mb-12 {
+            margin-bottom: 20px !important;
+          }
+
+          .space-y-6 > * + * {
+            margin-top: 12px !important;
           }
         }
       `}</style>
@@ -1347,16 +1460,14 @@ export default function ResultatsPage() {
             >
               {t('downloadPDF')}
             </button>
-            <button
-              onClick={() => {
-                resetTest();
-                const versionParam = version === 'complète' ? 'version=full' : '';
-                router.push(`/${locale}/test?reset=true${versionParam ? '&' + versionParam : ''}`);
-              }}
-              className="bg-gray-200 hover:bg-gray-300 text-gray-900 font-semibold px-6 py-3 rounded-lg transition-colors"
-            >
-              {t('retakeTest')}
-            </button>
+            <Link href={`/${locale}/test`}>
+              <button
+                onClick={() => resetTest()}
+                className="bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-900 dark:text-white font-semibold px-6 py-3 rounded-lg transition-colors"
+              >
+                {t('retakeTest')}
+              </button>
+            </Link>
             <Link href={`/${locale}`}>
               <button className="bg-gray-200 hover:bg-gray-300 text-gray-900 font-semibold px-6 py-3 rounded-lg transition-colors">
                 {t('backHome')}

@@ -169,152 +169,179 @@ ${t.basedOn}
 ${t.projectDesc}
     `.trim();
 
-    // Générer le contenu HTML avec design moderne et élégant
+    // Générer le contenu HTML SIMPLIFIÉ pour compatibilité email maximale
     const htmlContent = `
-      <!DOCTYPE html>
-      <html>
+      <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+      <html xmlns="http://www.w3.org/1999/xhtml">
         <head>
-          <meta charset="utf-8">
-          <meta name="viewport" content="width=device-width, initial-scale=1.0">
-          <style>
-            body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; color: #1f2937; margin: 0; padding: 20px 0; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
-            .container { max-width: 600px; margin: 0 auto; background-color: #ffffff; border-radius: 16px; overflow: hidden; box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3); }
-            .header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 50px 30px; text-align: center; position: relative; }
-            .header::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="40" fill="white" opacity="0.05"/></svg>') repeat; }
-            .header h1 { margin: 0 0 10px 0; font-size: 32px; font-weight: 800; text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); position: relative; }
-            .score-circle { width: 140px; height: 140px; margin: 20px auto; background: white; border-radius: 50%; display: flex; align-items: center; justify-center; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); position: relative; }
-            .score { font-size: 42px; font-weight: 900; color: #667eea; margin: 0; }
-            .score-label { font-size: 16px; opacity: 0.95; margin-top: 10px; position: relative; }
-            .content { background: #ffffff; padding: 40px 30px; }
-            .interpretation { background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); border-left: 5px solid #f59e0b; padding: 20px; margin: 25px 0; border-radius: 12px; font-size: 15px; box-shadow: 0 4px 12px rgba(245, 158, 11, 0.1); }
-            .interpretation strong { color: #92400e; }
-            .section-title { color: #1f2937; margin-top: 40px; margin-bottom: 20px; font-size: 24px; font-weight: 800; display: flex; align-items: center; gap: 10px; }
-            .section-title::before { content: ''; width: 4px; height: 24px; background: linear-gradient(180deg, #667eea, #764ba2); border-radius: 2px; }
-            .module { background: linear-gradient(135deg, #f9fafb 0%, #f3f4f6 100%); padding: 20px; margin: 20px 0; border-radius: 12px; border: 2px solid transparent; transition: all 0.3s; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); }
-            .module:hover { border-color: #3b82f6; box-shadow: 0 8px 20px rgba(59, 130, 246, 0.1); }
-            .module-name { font-weight: 800; color: #1f2937; font-size: 18px; margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
-            .module-desc { font-size: 14px; color: #6b7280; margin-bottom: 16px; line-height: 1.6; font-style: italic; }
-            .score-bar-container { background: #e5e7eb; height: 32px; border-radius: 16px; overflow: hidden; margin: 12px 0; position: relative; box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1); }
-            .score-fill { height: 100%; display: flex; align-items: center; justify-content: flex-end; padding-right: 14px; font-weight: 800; font-size: 15px; color: white; text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2); transition: width 1s ease; }
-            .score-fill.green { background: linear-gradient(90deg, #10b981 0%, #059669 100%); box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2); }
-            .score-fill.blue { background: linear-gradient(90deg, #3b82f6 0%, #2563eb 100%); box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2); }
-            .score-fill.yellow { background: linear-gradient(90deg, #f59e0b 0%, #d97706 100%); box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2); }
-            .score-fill.red { background: linear-gradient(90deg, #ef4444 0%, #dc2626 100%); box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2); }
-            .score-detail { font-size: 13px; color: #6b7280; margin-top: 8px; font-weight: 600; }
-            .cta-button { display: inline-block; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white !important; padding: 18px 40px; text-decoration: none; border-radius: 12px; font-weight: 800; font-size: 16px; margin: 30px 0; box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4); transition: all 0.3s; }
-            .cta-button:hover { box-shadow: 0 12px 30px rgba(102, 126, 234, 0.5); transform: translateY(-2px); }
-            .footer { text-align: center; padding: 40px; color: #6b7280; font-size: 14px; background: linear-gradient(180deg, #f9fafb 0%, #f3f4f6 100%); border-top: 2px solid #e5e7eb; }
-            .tips { background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%); border-left: 5px solid #10b981; padding: 20px; margin: 25px 0; border-radius: 12px; box-shadow: 0 4px 12px rgba(16, 185, 129, 0.1); }
-            .tips strong { color: #065f46; }
-            .warning { background: linear-gradient(135deg, #fef2f2 0%, #fecaca 100%); border-left: 5px solid #ef4444; padding: 20px; margin: 25px 0; border-radius: 12px; box-shadow: 0 4px 12px rgba(239, 68, 68, 0.1); }
-            .warning strong { color: #991b1b; }
-            .info-box { background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%); border: 2px solid #3b82f6; border-radius: 12px; padding: 20px; margin-top: 30px; box-shadow: 0 4px 12px rgba(59, 130, 246, 0.1); }
-            .info-box strong { color: #1e40af; }
-            @media only screen and (max-width: 600px) {
-              body { padding: 10px 0; }
-              .header h1 { font-size: 26px; }
-              .score { font-size: 36px; }
-              .content { padding: 25px 20px; }
-              .module { padding: 16px; }
-              .section-title { font-size: 20px; }
-            }
-          </style>
+          <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+          <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+          <title>${t.emailSubject}</title>
         </head>
-        <body>
-          <div class="container">
-            <div class="header">
-              <h1>🧠 ${t.title}</h1>
-              <div class="score-circle">
-                <div class="score">${testScore.percentage.toFixed(1)}%</div>
-              </div>
-              <div class="score-label">${testScore.totalEarned.toFixed(1)} / ${testScore.totalPossible.toFixed(1)} ${t.points}</div>
-            </div>
+        <body style="margin: 0; padding: 0; font-family: Arial, Helvetica, sans-serif; background-color: #f3f4f6;">
+          <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color: #f3f4f6; padding: 20px 0;">
+            <tr>
+              <td align="center">
+                <table width="600" cellpadding="0" cellspacing="0" border="0" style="background-color: #ffffff; max-width: 600px;">
 
-            <div class="content">
-              <div class="interpretation">
-                <strong>${t.interpretation}</strong><br><br>
-                ${testScore.interpretation}
-              </div>
-
-              <h3 class="section-title">${t.detailByModule}</h3>
-              <p style="color: #6b7280; font-size: 15px; margin-bottom: 25px; line-height: 1.7;">
-                ${t.performanceDesc}
-              </p>
-
-              ${testScore.modules
-                .filter((m: any) => m.possible > 0)
-                .sort((a: any, b: any) => b.percentage - a.percentage)
-                .map((module: any) => {
-                  const moduleName = getModuleName(module.moduleName);
-                  const desc = getModuleDesc(module.moduleName);
-                  const color =
-                    module.percentage >= 75 ? 'green' :
-                    module.percentage >= 50 ? 'blue' :
-                    module.percentage >= 35 ? 'yellow' : 'red';
-                  return `
-                    <div class="module">
-                      <div class="module-name">${moduleName}</div>
-                      ${desc ? `<div class="module-desc">${desc}</div>` : ''}
-                      <div class="score-bar-container">
-                        <div class="score-fill ${color}" style="width: ${module.percentage}%">
-                          ${module.percentage.toFixed(0)}%
+                  <!-- Header -->
+                  <tr>
+                    <td style="background-color: #667eea; padding: 40px 20px; text-align: center;">
+                      <h1 style="margin: 0 0 20px 0; color: #ffffff; font-size: 28px; font-weight: bold;">
+                        🧠 ${t.title}
+                      </h1>
+                      <div style="background-color: #ffffff; width: 120px; height: 120px; margin: 20px auto; border-radius: 60px; display: table;">
+                        <div style="display: table-cell; vertical-align: middle; text-align: center;">
+                          <span style="font-size: 36px; font-weight: bold; color: #667eea;">${testScore.percentage.toFixed(1)}%</span>
                         </div>
                       </div>
-                      <div class="score-detail">
-                        ${module.earned.toFixed(1)} / ${module.possible.toFixed(1)} ${t.points}
-                      </div>
-                    </div>
-                  `;
-                }).join('')}
+                      <p style="margin: 10px 0 0 0; color: #ffffff; font-size: 14px;">
+                        ${testScore.totalEarned.toFixed(1)} / ${testScore.totalPossible.toFixed(1)} ${t.points}
+                      </p>
+                    </td>
+                  </tr>
 
-              ${testScore.strengths.length > 0 ? `
-                <div class="tips">
-                  <strong style="font-weight: 700;">✓ ${t.yourStrengths} :</strong><br>
-                  <ul style="margin: 10px 0 0 0; padding-left: 20px;">
-                    ${testScore.strengths.map((s: string) => `<li>${getModuleName(s)}</li>`).join('')}
-                  </ul>
-                </div>
-              ` : ''}
+                  <!-- Content -->
+                  <tr>
+                    <td style="padding: 30px 20px;">
 
-              ${testScore.weaknesses.length > 0 ? `
-                <div class="warning">
-                  <strong>⚠️ ${t.areasToImprove}</strong><br>
-                  <ul style="margin: 12px 0 0 0; padding-left: 20px; line-height: 1.7;">
-                    ${testScore.weaknesses.map((w: string) => `<li style="margin: 6px 0;">${getModuleName(w)}</li>`).join('')}
-                  </ul>
-                </div>
-              ` : ''}
+                      <!-- Interpretation -->
+                      <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color: #fef3c7; border-left: 4px solid #f59e0b; margin-bottom: 25px;">
+                        <tr>
+                          <td style="padding: 15px;">
+                            <p style="margin: 0; color: #1f2937; font-size: 14px; line-height: 1.6;">
+                              <strong style="color: #92400e;">${t.interpretation}</strong><br><br>
+                              ${testScore.interpretation}
+                            </p>
+                          </td>
+                        </tr>
+                      </table>
 
-              <h3 class="section-title">${t.nextSteps}</h3>
-              <ul style="color: #4b5563; line-height: 2; font-size: 15px; padding-left: 24px;">
-                ${t.nextStepsItems.map(item => `<li style="margin: 10px 0;">${item}</li>`).join('')}
-              </ul>
+                      <!-- Modules Section -->
+                      <h2 style="color: #1f2937; font-size: 20px; margin: 30px 0 15px 0; padding-left: 8px; border-left: 4px solid #667eea;">
+                        ${t.detailByModule}
+                      </h2>
+                      <p style="color: #6b7280; font-size: 14px; margin-bottom: 20px;">
+                        ${t.performanceDesc}
+                      </p>
 
-              <div style="text-align: center; margin-top: 40px;">
-                <a href="${process.env.NEXT_PUBLIC_URL || 'https://rationality-test.com'}/${locale}/resultats" class="cta-button">
-                  📊 ${t.viewFullResults}
-                </a>
-              </div>
+                      ${testScore.modules
+                        .filter((m: any) => m.possible > 0)
+                        .sort((a: any, b: any) => b.percentage - a.percentage)
+                        .map((module: any) => {
+                          const moduleName = getModuleName(module.moduleName);
+                          const desc = getModuleDesc(module.moduleName);
+                          const bgColor =
+                            module.percentage >= 75 ? '#10b981' :
+                            module.percentage >= 50 ? '#3b82f6' :
+                            module.percentage >= 35 ? '#f59e0b' : '#ef4444';
 
-              <div class="info-box">
-                <p style="margin: 0; font-size: 15px; line-height: 1.7;">
-                  <strong>💡 ${t.importantNote}:</strong><br><br>
-                  ${t.importantNoteText}
-                </p>
-              </div>
-            </div>
+                          return `
+                            <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color: #f9fafb; margin: 15px 0; border: 1px solid #e5e7eb;">
+                              <tr>
+                                <td style="padding: 15px;">
+                                  <div style="margin-bottom: 8px;">
+                                    <strong style="color: #1f2937; font-size: 16px;">${moduleName}</strong>
+                                    <span style="float: right; color: ${bgColor}; font-weight: bold; font-size: 16px;">
+                                      ${module.percentage.toFixed(0)}%
+                                    </span>
+                                  </div>
+                                  ${desc ? `<p style="margin: 0 0 12px 0; color: #6b7280; font-size: 13px; font-style: italic; line-height: 1.5;">${desc}</p>` : ''}
+                                  <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color: #e5e7eb; height: 24px; margin: 8px 0;">
+                                    <tr>
+                                      <td style="background-color: ${bgColor}; width: ${module.percentage}%; color: #ffffff; text-align: right; padding-right: 8px; font-size: 13px; font-weight: bold;">
+                                        ${module.percentage >= 15 ? module.percentage.toFixed(0) + '%' : ''}
+                                      </td>
+                                      <td style="width: ${100 - module.percentage}%;"></td>
+                                    </tr>
+                                  </table>
+                                  <p style="margin: 5px 0 0 0; color: #6b7280; font-size: 12px;">
+                                    ${module.earned.toFixed(1)} / ${module.possible.toFixed(1)} ${t.points}
+                                  </p>
+                                </td>
+                              </tr>
+                            </table>
+                          `;
+                        }).join('')}
 
-            <div class="footer">
-              <p style="margin: 8px 0; font-weight: 800; color: #1f2937; font-size: 16px;">🧠 ${t.title}</p>
-              <p style="margin: 6px 0; font-size: 13px;">${t.basedOn}</p>
-              <p style="margin: 6px 0; font-size: 13px; color: #3b82f6; font-weight: 600;">${t.projectDesc}</p>
-              <div style="margin: 25px 0 0 0; padding-top: 20px; border-top: 1px solid #d1d5db;">
-                <p style="margin: 0; font-size: 12px; color: #9ca3af; font-style: italic;">
-                  ${t.emailReason}
-                </p>
-              </div>
-            </div>
-          </div>
+                      ${testScore.strengths.length > 0 ? `
+                        <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color: #d1fae5; border-left: 4px solid #10b981; margin: 25px 0;">
+                          <tr>
+                            <td style="padding: 15px;">
+                              <p style="margin: 0 0 10px 0; color: #065f46; font-weight: bold;">✓ ${t.yourStrengths}:</p>
+                              <ul style="margin: 0; padding-left: 20px; color: #1f2937;">
+                                ${testScore.strengths.map((s: string) => `<li style="margin: 4px 0;">${getModuleName(s)}</li>`).join('')}
+                              </ul>
+                            </td>
+                          </tr>
+                        </table>
+                      ` : ''}
+
+                      ${testScore.weaknesses.length > 0 ? `
+                        <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color: #fef2f2; border-left: 4px solid #ef4444; margin: 25px 0;">
+                          <tr>
+                            <td style="padding: 15px;">
+                              <p style="margin: 0 0 10px 0; color: #991b1b; font-weight: bold;">⚠️ ${t.areasToImprove}:</p>
+                              <ul style="margin: 0; padding-left: 20px; color: #1f2937;">
+                                ${testScore.weaknesses.map((w: string) => `<li style="margin: 4px 0;">${getModuleName(w)}</li>`).join('')}
+                              </ul>
+                            </td>
+                          </tr>
+                        </table>
+                      ` : ''}
+
+                      <!-- Next Steps -->
+                      <h2 style="color: #1f2937; font-size: 20px; margin: 30px 0 15px 0; padding-left: 8px; border-left: 4px solid #667eea;">
+                        ${t.nextSteps}
+                      </h2>
+                      <ul style="color: #4b5563; line-height: 1.8; font-size: 14px; padding-left: 20px;">
+                        ${t.nextStepsItems.map(item => `<li style="margin: 8px 0;">${item}</li>`).join('')}
+                      </ul>
+
+                      <!-- CTA Button -->
+                      <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin: 30px 0;">
+                        <tr>
+                          <td align="center">
+                            <a href="${process.env.NEXT_PUBLIC_URL || 'https://rationality-test.com'}/${locale}/resultats"
+                               style="display: inline-block; background-color: #667eea; color: #ffffff; padding: 15px 40px; text-decoration: none; font-weight: bold; font-size: 15px; border-radius: 6px;">
+                              📊 ${t.viewFullResults}
+                            </a>
+                          </td>
+                        </tr>
+                      </table>
+
+                      <!-- Important Note -->
+                      <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color: #dbeafe; border: 2px solid #3b82f6; margin: 25px 0;">
+                        <tr>
+                          <td style="padding: 15px;">
+                            <p style="margin: 0; color: #1f2937; font-size: 14px; line-height: 1.6;">
+                              <strong style="color: #1e40af;">💡 ${t.importantNote}:</strong><br><br>
+                              ${t.importantNoteText}
+                            </p>
+                          </td>
+                        </tr>
+                      </table>
+
+                    </td>
+                  </tr>
+
+                  <!-- Footer -->
+                  <tr>
+                    <td style="background-color: #f9fafb; padding: 30px 20px; text-align: center; border-top: 2px solid #e5e7eb;">
+                      <p style="margin: 0 0 10px 0; font-weight: bold; color: #1f2937; font-size: 15px;">🧠 ${t.title}</p>
+                      <p style="margin: 5px 0; font-size: 12px; color: #6b7280;">${t.basedOn}</p>
+                      <p style="margin: 5px 0; font-size: 12px; color: #3b82f6; font-weight: 600;">${t.projectDesc}</p>
+                      <hr style="border: none; border-top: 1px solid #d1d5db; margin: 20px 0;" />
+                      <p style="margin: 0; font-size: 11px; color: #9ca3af; font-style: italic;">
+                        ${t.emailReason}
+                      </p>
+                    </td>
+                  </tr>
+
+                </table>
+              </td>
+            </tr>
+          </table>
         </body>
       </html>
     `;
