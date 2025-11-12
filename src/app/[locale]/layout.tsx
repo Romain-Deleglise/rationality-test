@@ -42,12 +42,12 @@ export default async function LocaleLayout({
   }
 
   // Fetch messages for the current locale
-  const messages = await getMessages();
+  const messages = await getMessages({ locale });
 
   return (
     <html lang={locale}>
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <NextIntlClientProvider messages={messages}>
+        <NextIntlClientProvider messages={messages} locale={locale}>
           {/* Language switcher - fixed top right */}
           <div className="fixed top-4 right-4 z-50 print:hidden">
             <LanguageSwitcher />
