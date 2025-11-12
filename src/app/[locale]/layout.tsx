@@ -4,6 +4,8 @@ import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import LanguageSwitcher from '@/components/LanguageSwitcher';
+import { ThemeProvider } from '@/components/ThemeProvider';
+import { ThemeToggle } from '@/components/ThemeToggle';
 import "../globals.css";
 
 const geistSans = Geist({
@@ -45,15 +47,18 @@ export default async function LocaleLayout({
   const messages = await getMessages();
 
   return (
-    <html lang={locale}>
+    <html lang={locale} suppressHydrationWarning>
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <NextIntlClientProvider messages={messages}>
-          {/* Language switcher - fixed top right */}
-          <div className="fixed top-4 right-4 z-50 print:hidden">
-            <LanguageSwitcher />
-          </div>
-          {children}
-        </NextIntlClientProvider>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <NextIntlClientProvider messages={messages}>
+            {/* Language switcher and theme toggle - fixed top right */}
+            <div className="fixed top-4 right-4 z-50 print:hidden flex gap-2">
+              <ThemeToggle />
+              <LanguageSwitcher />
+            </div>
+            {children}
+          </NextIntlClientProvider>
+        </ThemeProvider>
       </body>
     </html>
   );
