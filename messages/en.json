@@ -135,7 +135,9 @@
     "previous": "Previous",
     "finish": "Finish",
     "timeRemaining": "Time remaining",
-    "minutes": "minutes"
+    "minutes": "minutes",
+    "rankingInstructions": "✋ Drag-and-drop or use arrows ▲▼ to reorder.",
+    "rankingMostLikely": "1 = most likely."
   },
   "results": {
     "title": "Your Results",

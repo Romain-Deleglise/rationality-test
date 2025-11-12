@@ -7,6 +7,7 @@ import { Label } from '@/components/ui/label';
 import { Input } from '@/components/ui/input';
 import { Question as QuestionType } from '@/types';
 import { useState, useEffect } from 'react';
+import { useTranslations } from 'next-intl';
 
 interface QuestionProps {
   question: QuestionType;
@@ -15,6 +16,7 @@ interface QuestionProps {
 }
 
 export default function Question({ question, onAnswer, defaultValue }: QuestionProps) {
+  const t = useTranslations('test');
   const [value, setValue] = useState<any>(defaultValue || '');
   const [isAnimating, setIsAnimating] = useState(true);
 
@@ -156,9 +158,9 @@ export default function Question({ question, onAnswer, defaultValue }: QuestionP
         return (
           <div className="space-y-4">
             <p className="text-sm text-gray-600 dark:text-gray-400 bg-blue-50 dark:bg-blue-900/30 p-3 rounded mb-4">
-              ✋ Glissez-déposez ou utilisez les flèches ▲▼ pour réordonner.
+              {t('rankingInstructions')}
               <br/>
-              1 = le plus probable.
+              {t('rankingMostLikely')}
             </p>
             <div className="space-y-2">
               {ranking.map((optionIndex: number, position: number) => (
