@@ -257,6 +257,68 @@
       "thisAdaptation": "This Online Test",
       "adaptationDescription": "This test is a free educational adaptation of CART. It uses public domain questions and variants inspired by the scientific literature. This is NOT the official CART (which requires controlled administration), but a free pedagogical approximation.",
       "keyDifference": "Key difference: Intelligence (IQ) measures your cognitive capacity, but rationality measures how effectively you use that capacity. You can be intelligent but not very rational."
+    },
+
+    "cartHistory": {
+      "title": "📖 Where Does This Test Come From? CART History",
+      "fortyYears": "40 Years of Research",
+      "fortyYearsP1": "In the 1970s, two Israeli psychologists, Daniel Kahneman and Amos Tversky (Hebrew University of Jerusalem), began documenting something troubling: intelligent, educated people regularly made decisions that violated basic principles of logic and probability.",
+      "fortyYearsP2": "Their most surprising discovery? These errors were not random accidents, but systematic patterns. Humans seemed to use mental shortcuts (heuristics) which, although useful in some contexts, led to predictable and repeated errors.",
+      "fortyYearsP3": "For this pioneering work, Kahneman received the Nobel Prize in Economics in 2002 (Tversky had died in 1996, otherwise he would have shared it).",
+      "theProblem": "The Problem: Intelligence ≠ Rationality",
+      "theProblemP1": "For decades, it was assumed that IQ tests measured \"good thinking\". But Keith E. Stanovich (University of Toronto) noticed something strange in the 1990s: people with very high IQs still made systematic reasoning errors.",
+      "theProblemP2": "Stanovich realized that IQ measures the brain's processing power, but not necessarily the wisdom of its use. It's like having a Ferrari (high IQ) but not knowing how to drive (low rationality).",
+      "birthOfCart": "The Birth of CART (2013-2016)",
+      "birthOfCartP1": "Stanovich, along with his colleagues Richard F. West (James Madison University) and Maggie E. Toplak (York University), spent 3 years developing the CART (Comprehensive Assessment of Rational Thinking) - the first comprehensive test of rational thinking.",
+      "birthOfCartP2": "The project, funded by the John Templeton Foundation, involved over 1000 participants, 20 different subtests, and rigorous statistical validation.",
+      "birthOfCartP3": "This online test is a free educational adaptation of the original CART. It uses public domain questions and variants inspired by the scientific literature. This is NOT the official CART (which requires controlled administration), but a free pedagogical approximation."
+    },
+
+    "pragmaticSolution": {
+      "title": "🛠️ The Pragmatic Solution (Recommended by Kahneman)",
+      "intro": "Rather than trying to change your brain (difficult, uncertain), change your decision-making environment:",
+      "checklist": "Pre-decision checklists: \"What is the base rate? Am I anchored? What could prove me wrong?\"",
+      "consultation": "Structured consultations: Before any major decision, get input from 2-3 people with different perspectives",
+      "slowdown": "Forced slowdown: 24-48h rule for important decisions (investments, major purchases, career changes)",
+      "premortem": "Pre-mortem: Before launching a project, imagine it failed in 1 year. Why?",
+      "journal": "Decision journal: Write down predictions + confidence + reasoning. Monthly review.",
+      "example": "Concrete example: In surgery, enforcing a mandatory checklist reduced complications by 47% (Haynes et al., 2009) - much more effective than \"training surgeons to be less overconfident\"."
+    },
+
+    "resources": {
+      "title": "📚 Resources to Go Deeper",
+      "essentialReading": "Essential Reading",
+      "thinkingFastSlow": "Thinking, Fast and Slow",
+      "thinkingFastSlowDesc": "THE foundational book (2002 Nobel Prize)",
+      "rationalityQuotient": "The Rationality Quotient",
+      "rationalityQuotientDesc": "The academic book on CART",
+      "superforecasting": "Superforecasting",
+      "superforecastingDesc": "How to improve your calibration (with evidence)",
+      "scoutMindset": "The Scout Mindset",
+      "scoutMindsetDesc": "Seeking truth rather than being right",
+      "calibrationPractice": "Calibration Practice",
+      "metaculus": "Metaculus.com",
+      "metaculusDesc": "Prediction platform (proven calibration improvement)",
+      "lesswrong": "LessWrong.com",
+      "lesswrongDesc": "Community and articles on rationality"
+    },
+
+    "scientificSources": {
+      "title": "📖 Complete Scientific Sources",
+      "mainFoundations": "Main Foundations",
+      "stanovich2016": "The Rationality Quotient: Toward a Test of Rational Thinking. MIT Press.",
+      "kahneman1974": "Judgment under Uncertainty: Heuristics and Biases. Science, 185(4157), 1124-1131.",
+      "frederick2005": "Cognitive Reflection and Decision Making. Journal of Economic Perspectives, 19(4), 25-42.",
+      "onImprovement": "On Improvement (or Not) of Biases",
+      "morewedge2015": "Debiasing Decisions. Policy Insights from Behavioral and Brain Sciences.",
+      "morewedge2015Desc": "Meta-analysis: average bias reduction of ~29%, but decline without practice",
+      "kahneman2011": "Thinking, Fast and Slow. Quote p. 417:",
+      "kahneman2011Quote": "\"The way to block errors that originate in System 1 is simple in principle: recognize the signs that you are in a cognitive minefield, slow down, and ask for reinforcement from System 2.\"",
+      "testLimitations": "Limitations of This Test",
+      "limitation1": "Measures some aspects of rationality, not all (creativity, practical wisdom, etc.)",
+      "limitation2": "Score can vary depending on fatigue, stress, context",
+      "limitation3": "Modest improvement and difficult to maintain",
+      "limitation4": "Percentile based on theoretical distribution, not yet real data"
     }
   },
   "common": {

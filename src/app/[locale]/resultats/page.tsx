@@ -1028,73 +1028,52 @@ export default function ResultatsPage() {
           </div>
         </div>
 
-        {/* Histoire du CART - FR only */}
-        {locale === 'fr' && (
-        <AccordionItem title="📖 D'où vient ce test ? Histoire du CART" defaultOpen={false}>
+        {/* Histoire du CART */}
+        <AccordionItem title={t('cartHistory.title')} defaultOpen={false}>
           <div className="space-y-4">
             <div>
               <h4 className="font-bold text-gray-900 dark:text-white mb-2 flex items-center gap-2">
                 <Brain className="w-5 h-5" />
-                40 ans de recherche
+                {t('cartHistory.fortyYears')}
               </h4>
               <p className="text-justify mb-3">
-                Dans les années 1970, deux psychologues israéliens, <strong>Daniel Kahneman</strong> et 
-                <strong> Amos Tversky</strong> (Université Hébraïque de Jérusalem), ont commencé à documenter 
-                quelque chose de troublant : des gens intelligents, éduqués, prenaient régulièrement des 
-                décisions qui violaient les principes de base de la logique et des probabilités.
+                {t('cartHistory.fortyYearsP1')}
               </p>
               <p className="text-justify mb-3">
-                Leur découverte la plus surprenante ? <strong>Ces erreurs n'étaient pas des accidents 
-                aléatoires, mais des patterns systématiques.</strong> Les humains semblaient utiliser des 
-                "raccourcis mentaux" (heuristiques) qui, bien qu'utiles dans certains contextes, menaient 
-                à des erreurs prévisibles et répétées.
+                {t('cartHistory.fortyYearsP2')}
               </p>
               <p className="text-justify">
-                Pour ce travail pionnier, Kahneman a reçu le <strong>Prix Nobel d'Économie en 2002</strong> 
-                (Tversky était décédé en 1996, sinon il l'aurait partagé).
+                {t('cartHistory.fortyYearsP3')}
               </p>
             </div>
 
             <div>
-              <h4 className="font-bold text-gray-900 dark:text-white mb-2">Le problème : Intelligence ≠ Rationalité</h4>
+              <h4 className="font-bold text-gray-900 dark:text-white mb-2">{t('cartHistory.theProblem')}</h4>
               <p className="text-justify mb-3">
-                Pendant des décennies, on a supposé que les tests de QI mesuraient "la bonne pensée". 
-                Mais <strong>Keith E. Stanovich</strong> (Université de Toronto) a remarqué quelque chose 
-                d'étrange dans les années 1990 : <strong>des personnes avec des QI très élevés commettaient 
-                quand même des erreurs de raisonnement systématiques.</strong>
+                {t('cartHistory.theProblemP1')}
               </p>
               <p className="text-justify">
-                Stanovich a réalisé que le QI mesure la puissance de calcul du cerveau, mais pas 
-                nécessairement la sagesse de son utilisation. C'est comme avoir une Ferrari (QI élevé) 
-                mais ne pas savoir conduire (faible rationalité).
+                {t('cartHistory.theProblemP2')}
               </p>
             </div>
 
             <div>
               <h4 className="font-bold text-gray-900 dark:text-white mb-2 flex items-center gap-2">
                 <Award className="w-5 h-5" />
-                La naissance du CART (2013-2016)
+                {t('cartHistory.birthOfCart')}
               </h4>
               <p className="text-justify mb-3">
-                Stanovich, avec ses collègues <strong>Richard F. West</strong> (James Madison University) 
-                et <strong>Maggie E. Toplak</strong> (York University), ont passé 3 ans à développer le 
-                <strong> CART (Comprehensive Assessment of Rational Thinking)</strong> - le premier test 
-                complet de pensée rationnelle.
+                {t('cartHistory.birthOfCartP1')}
               </p>
               <p className="text-justify mb-3">
-                Le projet, financé par la John Templeton Foundation, a impliqué plus de 1000 participants, 
-                20 sous-tests différents, et une validation statistique rigoureuse.
+                {t('cartHistory.birthOfCartP2')}
               </p>
               <p className="text-justify text-sm bg-blue-50 dark:bg-blue-900/20 text-gray-700 dark:text-gray-300 p-3 rounded">
-                <strong>Ce test en ligne</strong> est une adaptation éducative libre du CART original. 
-                Il utilise des questions du domaine public et des variantes inspirées de la littérature 
-                scientifique. Ce n'est PAS le CART officiel (qui nécessite une administration contrôlée), 
-                mais une approximation pédagogique gratuite.
+                {t('cartHistory.birthOfCartP3')}
               </p>
             </div>
           </div>
         </AccordionItem>
-        )}
 
         {/* Graphiques (VERTICAUX) */}
         <div className="space-y-6 mb-8">
@@ -1186,154 +1165,140 @@ export default function ResultatsPage() {
           </div>
         </div>
 
-        {/* Approche de Kahneman : Outils Externes - FR only */}
-        {locale === 'fr' && (
+        {/* Approche de Kahneman : Outils Externes */}
         <div className="bg-green-50 dark:bg-green-900/20 border-l-4 border-green-500 dark:border-green-600 rounded-r-xl p-6 mb-8">
           <h3 className="font-bold text-gray-900 dark:text-white mb-3 text-xl">
-            🛠️ La Solution Pragmatique (Recommandée par Kahneman)
+            {t('pragmaticSolution.title')}
           </h3>
           <p className="text-gray-700 dark:text-gray-300 mb-4 text-justify">
-            Plutôt que d'essayer de changer votre cerveau (difficile, incertain),
-            <strong> changez votre environnement de décision :</strong>
+            {t('pragmaticSolution.intro')}
           </p>
           <ul className="space-y-2 text-gray-700 dark:text-gray-300">
             <li className="flex items-start gap-2">
-              <span className="text-green-600 font-bold">✓</span>
-              <span><strong>Checklists pré-décision :</strong> "Quel est le taux de base ? Suis-je ancré ? 
-              Qu'est-ce qui pourrait prouver que j'ai tort ?"</span>
+              <span className="text-green-600 dark:text-green-400 font-bold">✓</span>
+              <span>{t('pragmaticSolution.checklist')}</span>
             </li>
             <li className="flex items-start gap-2">
-              <span className="text-green-600 font-bold">✓</span>
-              <span><strong>Consultations structurées :</strong> Avant toute décision majeure, 
-              demander l'avis de 2-3 personnes avec perspectives différentes</span>
+              <span className="text-green-600 dark:text-green-400 font-bold">✓</span>
+              <span>{t('pragmaticSolution.consultation')}</span>
             </li>
             <li className="flex items-start gap-2">
-              <span className="text-green-600 font-bold">✓</span>
-              <span><strong>Ralentissement forcé :</strong> Règle des 24-48h pour les décisions importantes (investissements, achats majeurs, changements de carrière)</span>
+              <span className="text-green-600 dark:text-green-400 font-bold">✓</span>
+              <span>{t('pragmaticSolution.slowdown')}</span>
             </li>
             <li className="flex items-start gap-2">
-              <span className="text-green-600 font-bold">✓</span>
-              <span><strong>Pré-mortem :</strong> Avant de lancer un projet, imaginer qu'il a échoué 
-              dans 1 an. Pourquoi ?</span>
+              <span className="text-green-600 dark:text-green-400 font-bold">✓</span>
+              <span>{t('pragmaticSolution.premortem')}</span>
             </li>
             <li className="flex items-start gap-2">
-              <span className="text-green-600 font-bold">✓</span>
-              <span><strong>Journal de décision :</strong> Noter prédictions + confiance + raisonnement. 
-              Revue mensuelle.</span>
+              <span className="text-green-600 dark:text-green-400 font-bold">✓</span>
+              <span>{t('pragmaticSolution.journal')}</span>
             </li>
           </ul>
           <p className="text-sm text-gray-600 dark:text-gray-400 mt-4 italic">
-            Exemple concret : En chirurgie, imposer une checklist obligatoire a réduit les complications
-            de 47% (Haynes et al., 2009) - bien plus efficace que "former les chirurgiens à être moins overconfidents".
+            {t('pragmaticSolution.example')}
           </p>
         </div>
-        )}
 
-        {/* Ressources - FR only */}
-        {locale === 'fr' && (
+        {/* Ressources */}
         <div className="bg-blue-50 dark:bg-blue-900/20 rounded-xl p-8 mb-8">
           <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-            📚 Ressources pour approfondir
+            {t('resources.title')}
           </h2>
 
-          <AccordionItem title="Lectures essentielles">
+          <AccordionItem title={t('resources.essentialReading')}>
             <ul className="space-y-3">
               <li>
-                <a href="https://www.goodreads.com/book/show/11468377" target="_blank" rel="noopener" className="text-blue-600 hover:underline font-semibold">
-                  Thinking, Fast and Slow
+                <a href="https://www.goodreads.com/book/show/11468377" target="_blank" rel="noopener" className="text-blue-600 dark:text-blue-400 hover:underline font-semibold">
+                  {t('resources.thinkingFastSlow')}
                 </a> - Daniel Kahneman<br />
-                <span className="text-sm text-gray-600">LE livre fondateur (Prix Nobel 2002)</span>
+                <span className="text-sm text-gray-600 dark:text-gray-400">{t('resources.thinkingFastSlowDesc')}</span>
               </li>
               <li>
-                <a href="https://mitpress.mit.edu/9780262034845/" target="_blank" rel="noopener" className="text-blue-600 hover:underline font-semibold">
-                  The Rationality Quotient
+                <a href="https://mitpress.mit.edu/9780262034845/" target="_blank" rel="noopener" className="text-blue-600 dark:text-blue-400 hover:underline font-semibold">
+                  {t('resources.rationalityQuotient')}
                 </a> - Stanovich, West & Toplak<br />
-                <span className="text-sm text-gray-600">Le livre académique sur le CART</span>
+                <span className="text-sm text-gray-600 dark:text-gray-400">{t('resources.rationalityQuotientDesc')}</span>
               </li>
               <li>
-                <a href="https://www.goodreads.com/book/show/23995360" target="_blank" rel="noopener" className="text-blue-600 hover:underline font-semibold">
-                  Superforecasting
+                <a href="https://www.goodreads.com/book/show/23995360" target="_blank" rel="noopener" className="text-blue-600 dark:text-blue-400 hover:underline font-semibold">
+                  {t('resources.superforecasting')}
                 </a> - Philip Tetlock<br />
-                <span className="text-sm text-gray-600">Comment améliorer votre calibration (avec preuves)</span>
+                <span className="text-sm text-gray-600 dark:text-gray-400">{t('resources.superforecastingDesc')}</span>
               </li>
               <li>
-                <a href="https://www.goodreads.com/book/show/42041926" target="_blank" rel="noopener" className="text-blue-600 hover:underline font-semibold">
-                  The Scout Mindset
+                <a href="https://www.goodreads.com/book/show/42041926" target="_blank" rel="noopener" className="text-blue-600 dark:text-blue-400 hover:underline font-semibold">
+                  {t('resources.scoutMindset')}
                 </a> - Julia Galef<br />
-                <span className="text-sm text-gray-600">Chercher la vérité plutôt qu'avoir raison</span>
+                <span className="text-sm text-gray-600 dark:text-gray-400">{t('resources.scoutMindsetDesc')}</span>
               </li>
             </ul>
           </AccordionItem>
 
-          <AccordionItem title="Pratique calibration">
+          <AccordionItem title={t('resources.calibrationPractice')}>
             <ul className="space-y-2">
               <li>
-                <a href="https://www.metaculus.com" target="_blank" rel="noopener" className="text-blue-600 hover:underline font-semibold">
-                  Metaculus.com
-                </a> - Plateforme de prédictions (amélioration prouvée de la calibration)
+                <a href="https://www.metaculus.com" target="_blank" rel="noopener" className="text-blue-600 dark:text-blue-400 hover:underline font-semibold">
+                  {t('resources.metaculus')}
+                </a> - {t('resources.metaculusDesc')}
               </li>
               <li>
-                <a href="https://www.lesswrong.com" target="_blank" rel="noopener" className="text-blue-600 hover:underline font-semibold">
-                  LessWrong.com
-                </a> - Communauté et articles sur la rationalité
+                <a href="https://www.lesswrong.com" target="_blank" rel="noopener" className="text-blue-600 dark:text-blue-400 hover:underline font-semibold">
+                  {t('resources.lesswrong')}
+                </a> - {t('resources.lesswrongDesc')}
               </li>
             </ul>
           </AccordionItem>
         </div>
-        )}
 
-        {/* Sources scientifiques - FR only */}
-        {locale === 'fr' && (
-        <AccordionItem title="📖 Sources scientifiques complètes">
+        {/* Sources scientifiques */}
+        <AccordionItem title={t('scientificSources.title')}>
           <div className="space-y-4 text-sm">
             <div>
-              <h4 className="font-bold text-gray-900 dark:text-white mb-2">Fondements principaux</h4>
+              <h4 className="font-bold text-gray-900 dark:text-white mb-2">{t('scientificSources.mainFoundations')}</h4>
               <ul className="space-y-2">
                 <li>
                   <strong>Stanovich, K. E., West, R. F., & Toplak, M. E. (2016).</strong><br />
-                  <em>The Rationality Quotient: Toward a Test of Rational Thinking.</em> MIT Press.
+                  <em>{t('scientificSources.stanovich2016')}</em>
                 </li>
                 <li>
                   <strong>Kahneman, D., & Tversky, A. (1974).</strong><br />
-                  <em>Judgment under Uncertainty: Heuristics and Biases.</em> Science, 185(4157), 1124-1131.
+                  <em>{t('scientificSources.kahneman1974')}</em>
                 </li>
                 <li>
                   <strong>Frederick, S. (2005).</strong><br />
-                  <em>Cognitive Reflection and Decision Making.</em> Journal of Economic Perspectives, 19(4), 25-42.
+                  <em>{t('scientificSources.frederick2005')}</em>
                 </li>
               </ul>
             </div>
 
             <div>
-              <h4 className="font-bold text-gray-900 dark:text-white mb-2">Sur l'amélioration (ou non) des biais</h4>
+              <h4 className="font-bold text-gray-900 dark:text-white mb-2">{t('scientificSources.onImprovement')}</h4>
               <ul className="space-y-2">
                 <li>
                   <strong>Morewedge et al. (2015).</strong><br />
-                  <em>Debiasing Decisions.</em> Policy Insights from Behavioral and Brain Sciences.<br />
-                  <span className="text-gray-600">Méta-analyse : réduction moyenne des biais de ~29%, mais déclin sans pratique</span>
+                  <em>{t('scientificSources.morewedge2015')}</em><br />
+                  <span className="text-gray-600 dark:text-gray-400">{t('scientificSources.morewedge2015Desc')}</span>
                 </li>
                 <li>
                   <strong>Kahneman, D. (2011).</strong><br />
-                  <em>Thinking, Fast and Slow.</em> Citation p. 417 :<br />
-                  <span className="text-gray-600 italic">"The way to block errors that originate in System 1 is 
-                  simple in principle: recognize the signs that you are in a cognitive minefield, slow down, 
-                  and ask for reinforcement from System 2."</span>
+                  <em>{t('scientificSources.kahneman2011')}</em><br />
+                  <span className="text-gray-600 dark:text-gray-400 italic">{t('scientificSources.kahneman2011Quote')}</span>
                 </li>
               </ul>
             </div>
 
             <div className="bg-yellow-50 dark:bg-yellow-900/20 p-3 rounded">
-              <h4 className="font-bold text-gray-900 dark:text-white mb-2">Limites de ce test</h4>
+              <h4 className="font-bold text-gray-900 dark:text-white mb-2">{t('scientificSources.testLimitations')}</h4>
               <ul className="list-disc pl-6 space-y-1 text-gray-700 dark:text-gray-300">
-                <li>Mesure certains aspects de la rationalité, pas tous (créativité, sagesse pratique, etc.)</li>
-                <li>Score peut varier selon fatigue, stress, contexte</li>
-                <li>Amélioration modeste et difficile à maintenir</li>
-                <li>Percentile basé sur distribution théorique, pas encore données réelles</li>
+                <li>{t('scientificSources.limitation1')}</li>
+                <li>{t('scientificSources.limitation2')}</li>
+                <li>{t('scientificSources.limitation3')}</li>
+                <li>{t('scientificSources.limitation4')}</li>
               </ul>
             </div>
           </div>
         </AccordionItem>
-        )}
 
         {/* Actions */}
         <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8 text-center mb-8 print:hidden">

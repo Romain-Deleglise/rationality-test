@@ -257,6 +257,68 @@
       "thisAdaptation": "Ce test en ligne",
       "adaptationDescription": "Ce test est une adaptation éducative libre du CART. Il utilise des questions du domaine public et des variantes inspirées de la littérature scientifique. Ce n'est PAS le CART officiel (qui nécessite une administration contrôlée), mais une approximation pédagogique gratuite.",
       "keyDifference": "Différence clé : L'intelligence (QI) mesure votre capacité cognitive, mais la rationalité mesure l'efficacité avec laquelle vous utilisez cette capacité. On peut être intelligent mais peu rationnel."
+    },
+
+    "cartHistory": {
+      "title": "📖 D'où vient ce test ? Histoire du CART",
+      "fortyYears": "40 ans de recherche",
+      "fortyYearsP1": "Dans les années 1970, deux psychologues israéliens, Daniel Kahneman et Amos Tversky (Université Hébraïque de Jérusalem), ont commencé à documenter quelque chose de troublant : des gens intelligents, éduqués, prenaient régulièrement des décisions qui violaient les principes de base de la logique et des probabilités.",
+      "fortyYearsP2": "Leur découverte la plus surprenante ? Ces erreurs n'étaient pas des accidents aléatoires, mais des patterns systématiques. Les humains semblaient utiliser des \"raccourcis mentaux\" (heuristiques) qui, bien qu'utiles dans certains contextes, menaient à des erreurs prévisibles et répétées.",
+      "fortyYearsP3": "Pour ce travail pionnier, Kahneman a reçu le Prix Nobel d'Économie en 2002 (Tversky était décédé en 1996, sinon il l'aurait partagé).",
+      "theProblem": "Le problème : Intelligence ≠ Rationalité",
+      "theProblemP1": "Pendant des décennies, on a supposé que les tests de QI mesuraient \"la bonne pensée\". Mais Keith E. Stanovich (Université de Toronto) a remarqué quelque chose d'étrange dans les années 1990 : des personnes avec des QI très élevés commettaient quand même des erreurs de raisonnement systématiques.",
+      "theProblemP2": "Stanovich a réalisé que le QI mesure la puissance de calcul du cerveau, mais pas nécessairement la sagesse de son utilisation. C'est comme avoir une Ferrari (QI élevé) mais ne pas savoir conduire (faible rationalité).",
+      "birthOfCart": "La naissance du CART (2013-2016)",
+      "birthOfCartP1": "Stanovich, avec ses collègues Richard F. West (James Madison University) et Maggie E. Toplak (York University), ont passé 3 ans à développer le CART (Comprehensive Assessment of Rational Thinking) - le premier test complet de pensée rationnelle.",
+      "birthOfCartP2": "Le projet, financé par la John Templeton Foundation, a impliqué plus de 1000 participants, 20 sous-tests différents, et une validation statistique rigoureuse.",
+      "birthOfCartP3": "Ce test en ligne est une adaptation éducative libre du CART original. Il utilise des questions du domaine public et des variantes inspirées de la littérature scientifique. Ce n'est PAS le CART officiel (qui nécessite une administration contrôlée), mais une approximation pédagogique gratuite."
+    },
+
+    "pragmaticSolution": {
+      "title": "🛠️ La Solution Pragmatique (Recommandée par Kahneman)",
+      "intro": "Plutôt que d'essayer de changer votre cerveau (difficile, incertain), changez votre environnement de décision :",
+      "checklist": "Checklists pré-décision : \"Quel est le taux de base ? Suis-je ancré ? Qu'est-ce qui pourrait prouver que j'ai tort ?\"",
+      "consultation": "Consultations structurées : Avant toute décision majeure, demander l'avis de 2-3 personnes avec perspectives différentes",
+      "slowdown": "Ralentissement forcé : Règle des 24-48h pour les décisions importantes (investissements, achats majeurs, changements de carrière)",
+      "premortem": "Pré-mortem : Avant de lancer un projet, imaginer qu'il a échoué dans 1 an. Pourquoi ?",
+      "journal": "Journal de décision : Noter prédictions + confiance + raisonnement. Revue mensuelle.",
+      "example": "Exemple concret : En chirurgie, imposer une checklist obligatoire a réduit les complications de 47% (Haynes et al., 2009) - bien plus efficace que \"former les chirurgiens à être moins overconfidents\"."
+    },
+
+    "resources": {
+      "title": "📚 Ressources pour approfondir",
+      "essentialReading": "Lectures essentielles",
+      "thinkingFastSlow": "Thinking, Fast and Slow",
+      "thinkingFastSlowDesc": "LE livre fondateur (Prix Nobel 2002)",
+      "rationalityQuotient": "The Rationality Quotient",
+      "rationalityQuotientDesc": "Le livre académique sur le CART",
+      "superforecasting": "Superforecasting",
+      "superforecastingDesc": "Comment améliorer votre calibration (avec preuves)",
+      "scoutMindset": "The Scout Mindset",
+      "scoutMindsetDesc": "Chercher la vérité plutôt qu'avoir raison",
+      "calibrationPractice": "Pratique calibration",
+      "metaculus": "Metaculus.com",
+      "metaculusDesc": "Plateforme de prédictions (amélioration prouvée de la calibration)",
+      "lesswrong": "LessWrong.com",
+      "lesswrongDesc": "Communauté et articles sur la rationalité"
+    },
+
+    "scientificSources": {
+      "title": "📖 Sources scientifiques complètes",
+      "mainFoundations": "Fondements principaux",
+      "stanovich2016": "The Rationality Quotient: Toward a Test of Rational Thinking. MIT Press.",
+      "kahneman1974": "Judgment under Uncertainty: Heuristics and Biases. Science, 185(4157), 1124-1131.",
+      "frederick2005": "Cognitive Reflection and Decision Making. Journal of Economic Perspectives, 19(4), 25-42.",
+      "onImprovement": "Sur l'amélioration (ou non) des biais",
+      "morewedge2015": "Debiasing Decisions. Policy Insights from Behavioral and Brain Sciences.",
+      "morewedge2015Desc": "Méta-analyse : réduction moyenne des biais de ~29%, mais déclin sans pratique",
+      "kahneman2011": "Thinking, Fast and Slow. Citation p. 417 :",
+      "kahneman2011Quote": "\"The way to block errors that originate in System 1 is simple in principle: recognize the signs that you are in a cognitive minefield, slow down, and ask for reinforcement from System 2.\"",
+      "testLimitations": "Limites de ce test",
+      "limitation1": "Mesure certains aspects de la rationalité, pas tous (créativité, sagesse pratique, etc.)",
+      "limitation2": "Score peut varier selon fatigue, stress, contexte",
+      "limitation3": "Amélioration modeste et difficile à maintenir",
+      "limitation4": "Percentile basé sur distribution théorique, pas encore données réelles"
     }
   },
   "common": {
