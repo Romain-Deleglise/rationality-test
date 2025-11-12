@@ -210,8 +210,8 @@ export default function ResultatsPage() {
     return t('scoreLabels.limited');
   };
 
-  // Descriptions COMPLÈTES avec liens hypertextes
-  const moduleDescriptions: Record<string, {
+  // Descriptions COMPLÈTES avec liens hypertextes - FRANÇAIS
+  const moduleDescriptionsFR: Record<string, {
     what: React.ReactElement;
     why: React.ReactElement;
     example: React.ReactElement;
@@ -530,6 +530,295 @@ export default function ResultatsPage() {
     }
   };
 
+  // English module descriptions - COMPLETE
+  const moduleDescriptionsEN: Record<string, {
+    what: React.ReactElement;
+    why: React.ReactElement;
+    example: React.ReactElement;
+    canImprove: React.ReactElement;
+  }> = {
+    'Probabilistic Reasoning': {
+      what: (
+        <p>This module assesses your ability to reason with probabilities: understanding{' '}
+          <a href="https://en.wikipedia.org/wiki/Base_rate_fallacy" target="_blank" rel="noopener" className="text-blue-600 dark:text-blue-400 hover:underline">
+            base rates
+          </a>, avoiding the{' '}
+          <a href="https://en.wikipedia.org/wiki/Gambler%27s_fallacy" target="_blank" rel="noopener" className="text-blue-600 dark:text-blue-400 hover:underline">
+            gambler's fallacy
+          </a>{' '}
+          (believing past random outcomes influence future ones), and the{' '}
+          <a href="https://en.wikipedia.org/wiki/Conjunction_fallacy" target="_blank" rel="noopener" className="text-blue-600 dark:text-blue-400 hover:underline">
+            conjunction fallacy
+          </a>{' '}
+          (thinking A+B is more probable than A alone).
+        </p>
+      ),
+      why: (
+        <p>In the 1970s,{' '}
+          <a href="https://en.wikipedia.org/wiki/Daniel_Kahneman" target="_blank" rel="noopener" className="text-blue-600 dark:text-blue-400 hover:underline">
+            Kahneman
+          </a>{' '}
+          and{' '}
+          <a href="https://en.wikipedia.org/wiki/Amos_Tversky" target="_blank" rel="noopener" className="text-blue-600 dark:text-blue-400 hover:underline">
+            Tversky
+          </a>{' '}
+          discovered that even statistics experts regularly violate basic principles of probability.
+          These errors have real consequences: misdiagnoses, financial bubbles, poor risk assessment.
+        </p>
+      ),
+      example: (
+        <p>Classic medical problem: A test detects a disease with 95% accuracy. The disease affects 1% of the population.
+          Your test is positive. Probability of being sick? Most say 95%, but it's ~9% (due to numerous false positives
+          in a population where the disease is rare).</p>
+      ),
+      canImprove: (
+        <p>Improvement potential: moderate (10-25%). Practice with natural frequencies rather than percentages.
+          However, even after training, errors persist under pressure or fatigue.</p>
+      )
+    },
+    'Scientific Reasoning': {
+      what: (
+        <p>Your ability to rigorously test hypotheses: seeking to{' '}
+          <a href="https://en.wikipedia.org/wiki/Falsifiability" target="_blank" rel="noopener" className="text-blue-600 dark:text-blue-400 hover:underline">
+            falsify
+          </a>{' '}
+          rather than confirm, distinguishing{' '}
+          <a href="https://en.wikipedia.org/wiki/Correlation_does_not_imply_causation" target="_blank" rel="noopener" className="text-blue-600 dark:text-blue-400 hover:underline">
+            correlation from causation
+          </a>, understanding the importance of control groups.
+        </p>
+      ),
+      why: (
+        <p>The{' '}
+          <a href="https://en.wikipedia.org/wiki/Confirmation_bias" target="_blank" rel="noopener" className="text-blue-600 dark:text-blue-400 hover:underline">
+            confirmation bias
+          </a>{' '}
+          (seeking only what confirms our beliefs) is one of the most robust. It explains why intelligent people
+          believe false things and why debates go in circles.
+        </p>
+      ),
+      example: (
+        <p>
+          <a href="https://en.wikipedia.org/wiki/Wason_selection_task" target="_blank" rel="noopener" className="text-blue-600 dark:text-blue-400 hover:underline">
+            Wason's test
+          </a>{' '}
+          (1966): Cards E, K, 4, 7. Rule: "If vowel, then even number". Which cards to turn?
+          Intuitive answer: E and 4 (confirmation). Correct: E and 7 (falsification). Only ~10% succeed,
+          even among scientists.
+        </p>
+      ),
+      canImprove: (
+        <p>Improvement potential: moderate (15-30%). Falsification can be learned, but our instinct remains
+          to seek confirmation. Use systematic protocols rather than your intuition.</p>
+      )
+    },
+    'Reflection vs Intuition': {
+      what: (
+        <p>Measured by the{' '}
+          <a href="https://en.wikipedia.org/wiki/Cognitive_Reflection_Test" target="_blank" rel="noopener" className="text-blue-600 dark:text-blue-400 hover:underline">
+            Cognitive Reflection Test
+          </a>{' '}
+          (Frederick, 2005): your ability to inhibit the immediate intuitive response and engage analytical thinking.
+        </p>
+      ),
+      why: (
+        <p>Our{' '}
+          <a href="https://www.lesswrong.com/tag/system-1" target="_blank" rel="noopener" className="text-blue-600 dark:text-blue-400 hover:underline">
+            System 1
+          </a>{' '}
+          (intuitive) responds instantly but predictably errs on non-trivial problems.
+          System 2 (analytical) can correct, but it's lazy and cognitively expensive.
+        </p>
+      ),
+      example: (
+        <p>Bat and ball = $1.10. Bat costs $1 more than ball. How much is the ball? System 1 shouts "10 cents!"
+          System 2 calculates: 5 cents. 50% of MIT students fail.</p>
+      ),
+      canImprove: (
+        <p><strong>WARNING</strong>: CRT improvements are often due to memorizing questions,
+          not genuine reflection improvement. Real gain is probably &lt;20%.</p>
+      )
+    },
+    'Belief Bias': {
+      what: (
+        <p>Your ability to evaluate logical validity of reasoning independently of your beliefs about the conclusion
+          (avoiding content interference with logic).</p>
+      ),
+      why: (
+        <p>We accept logically invalid arguments if we like the conclusion, and reject valid arguments
+          if we dislike it. This prevents rational debate.</p>
+      ),
+      example: (
+        <p>Syllogism: "All rare things are expensive. Diamonds are rare. Therefore diamonds are expensive."
+          Logically valid. But "All rare things are expensive. Cheap water is rare. Therefore cheap water
+          is expensive" - same structure, rejected because absurd.</p>
+      ),
+      canImprove: (
+        <p>Improvement: difficult (&lt;10%). This is a deep bias. Better to use protocols:
+          have someone evaluate logic without knowing the subject.</p>
+      )
+    },
+    'Knowledge Calibration': {
+      what: (
+        <p>Your ability to accurately estimate your level of certainty. A well-{' '}
+          <a href="https://www.lesswrong.com/tag/calibration" target="_blank" rel="noopener" className="text-blue-600 dark:text-blue-400 hover:underline">
+            calibrated
+          </a>{' '}
+          person who says "70% certain" is right ~70% of the time.
+        </p>
+      ),
+      why: (
+        <p>The{' '}
+          <a href="https://en.wikipedia.org/wiki/Overconfidence_effect" target="_blank" rel="noopener" className="text-blue-600 dark:text-blue-400 hover:underline">
+            overconfidence bias
+          </a>{' '}
+          is one of the most universal and dangerous: projects exceeding budget/deadlines, risky investments,
+          medical misdiagnoses.
+        </p>
+      ),
+      example: (
+        <p>When people say they're "99% certain" of general knowledge facts, they're wrong ~40% of the time.
+          Experts are particularly vulnerable: 80% of doctors overestimate their diagnostic accuracy.</p>
+      ),
+      canImprove: (
+        <p><strong>Promising</strong>: Calibration is one of the FEW biases that improves with practice (20-40%).
+          Philip Tetlock's superforecasters show sustained improvement through systematic feedback.</p>
+      )
+    },
+    'Superstitious Thinking': {
+      what: (
+        <p>Tendency to see patterns, causes, or relationships where none exist: lucky numbers, rituals,
+          "hot streaks" in random games, post hoc ergo propter hoc fallacy.</p>
+      ),
+      why: (
+        <p>Our brain is a pattern-detection machine optimized for survival, not truth. Better to see 10 false
+          patterns than miss 1 real predator. Result: we see faces in clouds, causes in coincidences.</p>
+      ),
+      example: (
+        <p>Basketball "hot hand": players and fans are convinced a shooter who's made several shots is more likely
+          to make the next one. Statistical analyses show it's an illusion - past successes don't predict future ones.</p>
+      ),
+      canImprove: (
+        <p>Improvement: difficult (&lt;15%). Superstitious thinking is deeply rooted in our need for control
+          and meaning. Education about randomness helps, but emotional appeal of patterns persists.</p>
+      )
+    },
+    'Conspiracy Beliefs': {
+      what: (
+        <p>Tendency to accept conspiratorial explanations: distrust of official narratives, preference for
+          secret plots, seeing connections between unrelated events, rejection of contradictory evidence.</p>
+      ),
+      why: (
+        <p>Conspiracism provides simple explanations for complex events, restores sense of control ("it's not
+          chaos, someone's in control"), and reinforces group identity. Extremely resistant to evidence.</p>
+      ),
+      example: (
+        <p>Classic conspiracy: "Moon landing was faked." Every debunking (shadows, flags, rocks) generates new
+          theories ("that's what THEY want you to believe"). Unfalsifiable = unscientific.</p>
+      ),
+      canImprove: (
+        <p>Improvement: very difficult (&lt;10%). Conspiracism is often linked to anxiety, loss of control, distrust
+          of institutions. Pure logic rarely helps. Need to address underlying emotional and social factors.</p>
+      )
+    },
+    'Disjunctive Reasoning': {
+      what: (
+        <p>Ability to correctly reason with "OR" statements and understand that disproving one alternative
+          doesn't prove another. Avoiding false dilemmas ("either A or B" when C, D, E exist).</p>
+      ),
+      why: (
+        <p>Disjunctive reasoning errors enable manipulation through false choices. Politics and advertising
+          constantly present false dilemmas: "Either you're with us or against us."</p>
+      ),
+      example: (
+        <p>Statement: "John went to beach OR mountains." Learning he didn't go to beach doesn't mean he went
+          to mountains (could have stayed home, gone elsewhere). Yet people confidently conclude "then mountains!"</p>
+      ),
+      canImprove: (
+        <p>Improvement: moderate (15-25%). Systematic training in formal logic helps. Key: always ask
+          "What other options exist?" before concluding.</p>
+      )
+    },
+    'Anchoring': {
+      what: (
+        <p>The{' '}
+          <a href="https://en.wikipedia.org/wiki/Anchoring_(cognitive_bias)" target="_blank" rel="noopener" className="text-blue-600 dark:text-blue-400 hover:underline">
+            anchoring effect
+          </a>: being influenced by an initial number, even if completely arbitrary and irrelevant, when making
+          numerical estimates.</p>
+      ),
+      why: (
+        <p>Anchoring is exploited in negotiations, sales, justice (sentencing). Initial "suggested price" heavily
+          influences final price, even for experts. One of the most robust and hardest to resist biases.</p>
+      ),
+      example: (
+        <p>Kahneman & Tversky: Spin a wheel (1-100), then estimate % of African countries in UN. Wheel shows 10:
+          average estimate 25%. Wheel shows 65: average 45%. The random number influenced the estimate!</p>
+      ),
+      canImprove: (
+        <p><strong>Very difficult</strong> (&lt;5%). Even experts aware of anchoring remain affected. Best strategy:
+          refuse initial numbers, deliberately consider opposite extremes before estimating.</p>
+      )
+    },
+    'Probabilistic Numeracy': {
+      what: (
+        <p>Basic understanding of probabilities, percentages, frequencies: calculating odds, comparing risks,
+          understanding concepts like independence, conditional probability, expected value.</p>
+      ),
+      why: (
+        <p>Modern life requires probability decisions: medical tests, insurance, investments, everyday risks.
+          Without basic numeracy, you're vulnerable to manipulation and poor decisions.</p>
+      ),
+      example: (
+        <p>Which kills more: sharks or falling airplane parts? Intuition says sharks (dramatic, memorized).
+          Reality: airplane parts cause more deaths. We systematically misjudge familiar vs rare risks.</p>
+      ),
+      canImprove: (
+        <p>Improvement: <strong>good</strong> (30-50%). Unlike other biases, basic numeracy improves well with
+          education and practice. Concrete exercises with feedback are effective.</p>
+      )
+    },
+    'Anti-Science Attitudes': {
+      what: (
+        <p>Distrust of scientific method, preference for intuition/tradition over evidence, rejection of
+          scientific consensus on climate, vaccines, evolution, etc.</p>
+      ),
+      why: (
+        <p>Anti-science attitudes are often linked to values conflicts (science appears to threaten identity,
+          religion, politics). It's not usually an intelligence problem, but values problem.</p>
+      ),
+      example: (
+        <p>Climate change: 97% of climate scientists agree human activities cause warming. Yet 30-40% of public
+          rejects it. Not due to lack of evidence, but identity ("environmentalism = left-wing") and mistrust.</p>
+      ),
+      canImprove: (
+        <p>Improvement: difficult (&lt;15%). Anti-science attitudes are often linked to social identity
+          and political/religious beliefs. Science education helps, but insufficient without addressing
+          social and emotional factors.</p>
+      )
+    },
+    'Dysfunctional Beliefs': {
+      what: (
+        <p>Adherence to irrational beliefs that can negatively impact decision-making and well-being: magical thinking,
+          paranormal beliefs, unfounded health claims, pseudoscientific practices.</p>
+      ),
+      why: (
+        <p>Dysfunctional beliefs lead to poor decisions: wasted money on ineffective treatments, rejection of
+          evidence-based solutions, vulnerability to scams, and potentially harmful behaviors.</p>
+      ),
+      example: (
+        <p>Believing crystals cure diseases, astrology predicts personality, or detox diets eliminate "toxins."
+          These beliefs persist despite lack of evidence and can prevent people from seeking effective treatment.</p>
+      ),
+      canImprove: (
+        <p>Improvement: modest (10-20%). Critical thinking education helps, but these beliefs often fulfill
+          emotional needs (control, meaning, community). Addressing underlying needs is more effective than pure logic.</p>
+      )
+    }
+  };
+
+  const moduleDescriptions = locale === 'fr' ? moduleDescriptionsFR : moduleDescriptionsEN;
+
   return (
     <>
       {/* Styles CSS pour l'impression */}
@@ -822,9 +1111,8 @@ export default function ResultatsPage() {
               .sort((a, b) => b.percentage - a.percentage)
               .map((moduleScore) => {
                 const moduleName = moduleScore.moduleName.split(' (')[0];
-                // Pour l'instant, les descriptions détaillées sont en français uniquement
-                // Essayer de trouver la description (FR) ou utiliser le texte de base des messages JSON
-                const desc = locale === 'fr' ? moduleDescriptions[moduleName] : null;
+                // Get description in current locale
+                const desc = moduleDescriptions[moduleName];
 
                 return (
                   <AccordionItem 
