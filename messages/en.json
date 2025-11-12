@@ -231,6 +231,20 @@
       "Disjunctive Reasoning": "Your ability to reason correctly with 'OR' statements.",
       "Anchoring": "Your resistance to anchoring (being too influenced by the first piece of information received).",
       "Dysfunctional Beliefs": "Your ability to avoid irrational beliefs that cause unnecessary emotional distress."
+    },
+
+    "footer": {
+      "openSourceProject": "This test is a free, open-source project, in the public interest.",
+      "basedOnResearch": "Based on scientific research in cognitive psychology (1970-2024)."
+    },
+
+    "scoreInterpretations": {
+      "veryHigh": "Very high score. You demonstrate excellent mastery of rational reasoning principles. However, keep in mind that knowing biases does not guarantee resistance to them in real situations (fatigue, stress, emotions).",
+      "high": "High score. You have gained a good understanding of common reasoning errors. However, note that biases persist even among experts. The use of decision-making protocols remains recommended for important choices.",
+      "average": "Average score. You correctly identify some biases, but others still escape you. This is normal: rationality is not intuitive. Focus on your specific weaknesses rather than trying to improve everything at once.",
+      "belowAverage": "Below average score. Several important cognitive biases affect your reasoning. Improvement is possible but modest (10-25% over 6-12 months with intensive practice). Prioritize the use of external tools (checklists, consultations) rather than relying on improved intuition.",
+      "limited": "Limited score. Your results suggest strong susceptibility to common cognitive biases. Don't be discouraged: even very intelligent people get similar scores. Rationality works differently from general intelligence. Start by understanding the basic concepts before expecting measurable improvement.",
+      "veryLimited": "Very limited score. Your reasoning is strongly affected by many cognitive biases. This does not reflect your intelligence, but rather a lack of familiarity with these concepts. Consider this test as an educational starting point rather than a judgment. Improvement will require time and patience."
     }
   },
   "common": {

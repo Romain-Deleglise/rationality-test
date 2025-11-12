@@ -113,7 +113,7 @@ export default function ResultatsPage() {
       return;
     }
 
-    const scores = scoreTest(modules, session.answers);
+    const scores = scoreTest(modules, session.answers, locale);
     const percentile = calculatePercentile(scores.percentage);
     setTestScore({ ...scores, percentile });
 
@@ -1433,10 +1433,10 @@ export default function ResultatsPage() {
         {/* Footer */}
         <div className="text-center mt-12 text-sm text-gray-500 dark:text-gray-400 print:hidden">
           <p>
-            Ce test est un projet open-source, gratuit, et dans l'intérêt général.
+            {t('footer.openSourceProject')}
           </p>
           <p className="mt-1">
-            Basé sur la recherche scientifique en psychologie cognitive (1970-2024).
+            {t('footer.basedOnResearch')}
           </p>
         </div>
       </div>

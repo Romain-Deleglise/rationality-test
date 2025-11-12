@@ -231,6 +231,20 @@
       "Raisonnement Disjonctif": "Votre capacité à raisonner correctement avec des énoncés 'OU'.",
       "Ancrage": "Votre résistance à l'ancrage (être trop influencé par la première information reçue).",
       "Croyances Dysfonctionnelles": "Votre capacité à éviter les croyances irrationnelles qui causent de la détresse émotionnelle inutile."
+    },
+
+    "footer": {
+      "openSourceProject": "Ce test est un projet open-source, gratuit, et dans l'intérêt général.",
+      "basedOnResearch": "Basé sur la recherche scientifique en psychologie cognitive (1970-2024)."
+    },
+
+    "scoreInterpretations": {
+      "veryHigh": "Score très élevé. Vous démontrez une excellente maîtrise des principes de raisonnement rationnel. Cependant, gardez à l'esprit que connaître les biais ne garantit pas d'y résister en situation réelle (fatigue, stress, émotions).",
+      "high": "Score élevé. Vous avez acquis une bonne compréhension des erreurs de raisonnement courantes. Attention toutefois : les biais persistent même chez les experts. L'utilisation de protocoles décisionnels reste recommandée pour les choix importants.",
+      "average": "Score dans la moyenne. Vous identifiez correctement certains biais, mais d'autres vous échappent encore. C'est normal : la rationalité n'est pas intuitive. Concentrez-vous sur vos faiblesses spécifiques plutôt que d'essayer de tout améliorer à la fois.",
+      "belowAverage": "Score sous la moyenne. Plusieurs biais cognitifs importants affectent votre raisonnement. L'amélioration est possible mais modeste (10-25% sur 6-12 mois avec pratique intensive). Privilégiez l'usage d'outils externes (checklists, consultations) plutôt que de compter sur votre intuition améliorée.",
+      "limited": "Score limité. Vos résultats suggèrent une forte susceptibilité aux biais cognitifs courants. Ne vous découragez pas : même des personnes très intelligentes obtiennent des scores similaires. La rationalité se travaille différemment de l'intelligence générale. Commencez par comprendre les concepts de base avant d'attendre une amélioration mesurable.",
+      "veryLimited": "Score très limité. Votre raisonnement est fortement affecté par de nombreux biais cognitifs. Cela ne reflète pas votre intelligence, mais plutôt un manque de familiarité avec ces concepts. Considérez ce test comme un point de départ éducatif plutôt qu'un jugement. L'amélioration nécessitera du temps et de la patience."
     }
   },
   "common": {
