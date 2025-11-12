@@ -8,6 +8,7 @@ import { ChevronDown, ChevronUp, Database, Home } from 'lucide-react';
 import Link from 'next/link';
 import { RadarChartComponent, BarChartComponent } from '@/components/ResultsCharts';
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
+import SocialShare from '@/components/SocialShare';
 
 export default function SavedResultsPage({ params }: { params: { token: string; locale: string } }) {
   const router = useRouter();
@@ -54,10 +55,10 @@ export default function SavedResultsPage({ params }: { params: { token: string; 
 
   if (loading) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
+      <div className="min-h-screen flex items-center justify-center bg-gradient-to-b from-blue-50 to-white dark:from-gray-900 dark:to-gray-800">
         <div className="text-center">
           <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4"></div>
-          <p className="text-gray-600">{t('loadingResults')}</p>
+          <p className="text-gray-600 dark:text-gray-300">{t('loadingResults')}</p>
         </div>
       </div>
     );
@@ -65,11 +66,11 @@ export default function SavedResultsPage({ params }: { params: { token: string; 
 
   if (error || !result) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-gradient-to-b from-blue-50 to-white">
+      <div className="min-h-screen flex items-center justify-center bg-gradient-to-b from-blue-50 to-white dark:from-gray-900 dark:to-gray-800">
         <div className="text-center max-w-md p-8">
           <div className="text-6xl mb-4">😕</div>
-          <h1 className="text-2xl font-bold text-gray-900 mb-2">{t('notFound')}</h1>
-          <p className="text-gray-600 mb-6">
+          <h1 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">{t('notFound')}</h1>
+          <p className="text-gray-600 dark:text-gray-300 mb-6">
             {t('notFoundDescription')}
           </p>
           <Link href={`/${locale}`}>
@@ -86,28 +87,28 @@ export default function SavedResultsPage({ params }: { params: { token: string; 
   const moduleScores = result.module_scores;
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
+    <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white dark:from-gray-900 dark:to-gray-800 transition-colors">
       <div className="max-w-4xl mx-auto px-4 py-12">
         {/* Header */}
         <div className="text-center mb-12">
           <div className="flex items-center justify-center gap-2 mb-4">
-            <Database className="w-8 h-8 text-blue-600" />
-            <h1 className="text-4xl font-bold text-gray-900">
+            <Database className="w-8 h-8 text-blue-600 dark:text-blue-400" />
+            <h1 className="text-4xl font-bold text-gray-900 dark:text-white">
               {t('savedResultsTitle')}
             </h1>
           </div>
-          <p className="text-xl text-gray-600">
+          <p className="text-xl text-gray-600 dark:text-gray-300">
             {t('subtitle')}
           </p>
           <div className="flex items-center justify-center gap-2 mt-2">
-            <p className="text-sm text-gray-500">
+            <p className="text-sm text-gray-500 dark:text-gray-400">
               {t('completedOn')} {new Date(result.created_at).toLocaleDateString(locale === 'fr' ? 'fr-FR' : 'en-US', {
                 day: 'numeric',
                 month: 'long',
                 year: 'numeric',
               })}
             </p>
-            <span className="text-gray-400">•</span>
+            <span className="text-gray-400 dark:text-gray-500">•</span>
             <span className={`px-2.5 py-0.5 rounded-full text-xs font-semibold ${
               result.test_version === 'complète'
                 ? 'bg-blue-100 text-blue-700'
@@ -119,8 +120,8 @@ export default function SavedResultsPage({ params }: { params: { token: string; 
         </div>
 
         {/* Score Global */}
-        <div className="bg-white rounded-xl shadow-lg p-8 mb-8 text-center border-t-4 border-blue-600">
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">{t('globalScore')}</h2>
+        <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8 mb-8 text-center border-t-4 border-blue-600">
+          <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">{t('globalScore')}</h2>
           <div className="mb-6">
             <div className={`text-6xl font-bold mb-2 ${getScoreColor(result.percentage)}`}>
               {result.percentage.toFixed(1)}%
@@ -128,7 +129,7 @@ export default function SavedResultsPage({ params }: { params: { token: string; 
             <div className={`text-2xl font-semibold mb-2 ${getScoreColor(result.percentage)}`}>
               {t('rationality')} {getScoreLabel(result.percentage)}
             </div>
-            <div className="text-lg text-gray-600">
+            <div className="text-lg text-gray-600 dark:text-gray-300">
               {result.total_points.toFixed(1)} / {result.total_possible.toFixed(1)} {t('points')}
             </div>
           </div>
@@ -156,8 +157,8 @@ export default function SavedResultsPage({ params }: { params: { token: string; 
         </div>
 
         {/* Détail par Module */}
-        <div className="bg-white rounded-xl shadow-lg p-8 mb-8 border-t-4 border-blue-500">
-          <h2 className="text-2xl font-bold text-gray-900 mb-6">
+        <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8 mb-8 border-t-4 border-blue-500">
+          <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
             {t('moduleDetails')}
           </h2>
 
@@ -175,26 +176,41 @@ export default function SavedResultsPage({ params }: { params: { token: string; 
                 };
 
                 return (
-                  <div key={moduleScore.moduleId} className="border-2 border-gray-200 rounded-xl p-4">
+                  <div key={moduleScore.moduleId} className="border-2 border-gray-200 dark:border-gray-700 rounded-xl p-4">
                     <div className="flex items-center justify-between mb-2">
-                      <span className="font-semibold text-gray-900">{moduleName}</span>
+                      <span className="font-semibold text-gray-900 dark:text-white">{moduleName}</span>
                       <span className={`font-bold ${getScoreColor(moduleScore.percentage)}`}>
                         {moduleScore.percentage.toFixed(0)}%
                       </span>
                     </div>
-                    <div className="w-full bg-gray-200 rounded-full h-2.5 mb-2">
+                    <div className="w-full bg-gray-200 dark:bg-gray-600 rounded-full h-2.5 mb-2">
                       <div
                         className={`${getBarColor(moduleScore.percentage)} h-2.5 rounded-full transition-all duration-500`}
                         style={{ width: `${moduleScore.percentage}%` }}
                       />
                     </div>
-                    <div className="text-sm text-gray-600">
+                    <div className="text-sm text-gray-600 dark:text-gray-400">
                       {moduleScore.earned.toFixed(1)} / {moduleScore.possible.toFixed(1)} points
                     </div>
                   </div>
                 );
               })}
           </div>
+        </div>
+
+        {/* Social Share */}
+        <div className="flex flex-col items-center gap-3 mb-8">
+          <h3 className="text-lg font-semibold text-gray-900 dark:text-white">{locale === 'fr' ? 'Partager ces résultats' : 'Share these results'}</h3>
+          <SocialShare
+            url={`${typeof window !== 'undefined' ? window.location.href : ''}`}
+            title={locale === 'fr'
+              ? `Résultats du test de rationalité - ${result?.global_percentage?.toFixed(1)}%`
+              : `Rationality test results - ${result?.global_percentage?.toFixed(1)}%`}
+            description={locale === 'fr'
+              ? 'Découvrez les résultats de ce test de rationalité basé sur CART'
+              : 'Check out these rationality test results based on CART'}
+            locale={locale}
+          />
         </div>
 
         {/* Actions */}
@@ -205,7 +221,7 @@ export default function SavedResultsPage({ params }: { params: { token: string; 
               {t('backHome')}
             </button>
           </Link>
-          <p className="text-sm text-gray-500 mt-4">
+          <p className="text-sm text-gray-500 dark:text-gray-400 mt-4">
             {t('wantToTest')}
           </p>
         </div>

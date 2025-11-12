@@ -2,7 +2,7 @@
   "nav": {
     "home": "Accueil",
     "test": "Passer le test",
-    "about": "À propos",
+    "methodology": "Méthodologie",
     "results": "Résultats"
   },
   "home": {
@@ -240,5 +240,85 @@
     "loading": "Chargement...",
     "error": "Erreur",
     "retry": "Réessayer"
+  },
+  "methodology": {
+    "title": "Méthodologie & Validation Scientifique",
+    "subtitle": "Comprendre les fondements scientifiques de ce test de rationalité",
+
+    "cartSection": {
+      "title": "Qu'est-ce que le CART ?",
+      "description": "Le CART (Comprehensive Assessment of Rational Thinking) est une batterie de tests scientifiquement validée développée par les psychologues cognitivistes Keith E. Stanovich, Richard F. West et Maggie E. Toplak. Publié par MIT Press en 2016, il représente plus de 40 ans de recherche sur la pensée rationnelle et les biais cognitifs.",
+      "purpose": "Objectif du CART",
+      "purposeText": "Contrairement aux tests de QI qui mesurent la capacité cognitive, le CART évalue l'efficacité avec laquelle les individus utilisent leurs capacités de raisonnement dans des situations réelles. Il évalue la susceptibilité aux biais cognitifs, le raisonnement probabiliste, la pensée scientifique et la mise à jour des croyances.",
+      "components": "Composantes Clés",
+      "component1": "Raisonnement probabiliste et statistique",
+      "component2": "Test d'hypothèses scientifiques",
+      "component3": "Résistance aux biais cognitifs",
+      "component4": "Calibration et mise à jour des croyances"
+    },
+
+    "validationSection": {
+      "title": "Validation Scientifique",
+      "psychometric": "Propriétés Psychométriques",
+      "psychometricText": "Le CART a été rigoureusement validé dans de multiples études avec des milliers de participants. Il démontre une forte fiabilité (corrélation test-retest > 0,80) et une validité dans la prédiction des résultats de prise de décision dans le monde réel.",
+      "independence": "Indépendance du QI",
+      "independenceText": "La recherche montre que le CART mesure des capacités distinctes de l'intelligence générale (QI). Bien que le QI et la rationalité soient modérément corrélés (r ≈ 0,30-0,40), la pensée rationnelle explique une variance unique dans les résultats de vie au-delà de ce que prédit le QI.",
+      "realWorld": "Prédictions du Monde Réel",
+      "realWorldText": "Les scores CART prédisent des résultats de vie importants incluant :",
+      "outcome1": "Meilleures décisions financières",
+      "outcome2": "Réduction de la susceptibilité aux arnaques et manipulations",
+      "outcome3": "Croyances plus précises sur des sujets importants",
+      "outcome4": "Meilleure évaluation et gestion des risques"
+    },
+
+    "adaptationSection": {
+      "title": "Notre Adaptation",
+      "description": "Ce test est une adaptation éducative des principes du CART. Nous utilisons :",
+      "item1": "Questions du domaine public de la littérature en psychologie cognitive",
+      "item2": "Variantes originales inspirées de recherches publiées",
+      "item3": "Types de questions validés provenant de plusieurs études",
+      "differences": "Différences Clés",
+      "difference1": "Format plus court (20-60 min vs. 3+ heures pour le CART complet)",
+      "difference2": "Notation simplifiée (pourcentage vs. normalisation complexe)",
+      "difference3": "Focus éducatif (outil d'apprentissage vs. instrument de recherche)",
+      "difference4": "Gratuit et open-source (vs. licence commerciale)"
+    },
+
+    "limitationsSection": {
+      "title": "Limites & Critiques",
+      "important": "Mises en Garde Importantes",
+      "limitation1": "Paradoxe de la Conscience de Soi",
+      "limitation1Text": "La recherche montre que connaître les biais cognitifs ne les élimine pas automatiquement. Même les experts restent susceptibles aux biais qu'ils étudient.",
+      "limitation2": "Dépendance au Contexte",
+      "limitation2Text": "La performance en pensée rationnelle varie selon le domaine et le contexte. Quelqu'un peut bien raisonner sur les décisions de santé mais mal sur les décisions financières.",
+      "limitation3": "Biais Culturel",
+      "limitation3Text": "De nombreuses évaluations de la rationalité reflètent des hypothèses culturelles occidentales, éduquées, industrialisées, riches et démocratiques (WEIRD) sur le raisonnement 'correct'.",
+      "limitation4": "Motivation & Effort",
+      "limitation4Text": "Les scores aux tests dépendent fortement de la motivation et de l'effort cognitif. Un score faible peut refléter un faible engagement plutôt qu'une faible capacité.",
+      "limitation5": "Non Diagnostique",
+      "limitation5Text": "Ce test est éducatif, pas diagnostique. Il ne peut pas identifier de conditions cliniques ou mesurer définitivement votre 'quotient de rationalité'."
+    },
+
+    "improvementSection": {
+      "title": "La Rationalité Peut-elle Être Améliorée ?",
+      "answer": "Oui, avec des qualifications importantes :",
+      "method1": "Pratique Délibérée",
+      "method1Text": "L'entraînement au raisonnement probabiliste, à la pensée scientifique et à la conscience des biais peut améliorer la performance aux tests de rationalité.",
+      "method2": "Protocoles Externes",
+      "method2Text": "Les améliorations les plus efficaces proviennent de l'utilisation de checklists, de protocoles de décision et de processus de consultation—pas de la volonté seule.",
+      "method3": "Apprentissage Spécifique au Domaine",
+      "method3Text": "Les compétences ne se transfèrent souvent pas automatiquement entre les domaines. Pratiquer le raisonnement statistique n'améliorera pas nécessairement le jugement social.",
+      "realistic": "Attentes Réalistes",
+      "realisticText": "L'amélioration est possible mais généralement modeste. N'attendez pas de changements dramatiques. L'objectif est un progrès incrémental et de meilleurs outils de prise de décision, pas une transformation cognitive."
+    },
+
+    "referencesSection": {
+      "title": "Références Clés",
+      "ref1": "Stanovich, K. E., West, R. F., & Toplak, M. E. (2016). The Rationality Quotient: Toward a Test of Rational Thinking. MIT Press.",
+      "ref2": "Stanovich, K. E. (2009). What Intelligence Tests Miss: The Psychology of Rational Thought. Yale University Press.",
+      "ref3": "Kahneman, D. (2011). Thinking, Fast and Slow. Farrar, Straus and Giroux.",
+      "ref4": "Frederick, S. (2005). Cognitive Reflection and Decision Making. Journal of Economic Perspectives, 19(4), 25-42.",
+      "ref5": "Baron, J. (2008). Thinking and Deciding (4th ed.). Cambridge University Press."
+    }
   }
 }

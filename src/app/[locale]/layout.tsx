@@ -5,7 +5,7 @@ import { getMessages } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import LanguageSwitcher from '@/components/LanguageSwitcher';
 import { ThemeProvider } from '@/components/ThemeProvider';
-import { ThemeToggle } from '@/components/ThemeToggle';
+import ThemeToggle from '@/components/ThemeToggle';
 import "../globals.css";
 
 const geistSans = Geist({
@@ -18,16 +18,71 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-  title: 'Test de Rationalite | CART',
-  description: 'Evaluez votre pensee rationnelle et identifiez vos biais cognitifs',
-  icons: {
-    icon: '/favicon.ico',
-  },
-};
-
 const locales = ['en', 'fr'] as const;
 type Locale = 'fr' | 'en';
+
+const baseUrl = process.env.NEXT_PUBLIC_URL || 'https://rationality-test.com';
+
+// Dynamic metadata based on locale
+export async function generateMetadata({
+  params
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+
+  const metadata = {
+    en: {
+      title: 'Rationality Test | CART Adapted',
+      description: 'Assess your critical thinking and identify your cognitive biases with this scientifically validated rationality test based on CART.',
+      keywords: 'rationality test, cognitive biases, critical thinking, CART, cognitive reflection test, probabilistic reasoning',
+    },
+    fr: {
+      title: 'Test de Rationalité | CART Adapté',
+      description: 'Évaluez votre pensée critique et identifiez vos biais cognitifs avec ce test de rationalité scientifiquement validé basé sur le CART.',
+      keywords: 'test de rationalité, biais cognitifs, pensée critique, CART, test de réflexion cognitive, raisonnement probabiliste',
+    },
+  };
+
+  const currentMetadata = metadata[locale as keyof typeof metadata] || metadata.en;
+
+  return {
+    title: currentMetadata.title,
+    description: currentMetadata.description,
+    keywords: currentMetadata.keywords,
+    icons: {
+      icon: '/favicon.ico',
+    },
+    alternates: {
+      canonical: `${baseUrl}/${locale}`,
+      languages: {
+        en: `${baseUrl}/en`,
+        fr: `${baseUrl}/fr`,
+      },
+    },
+    openGraph: {
+      title: currentMetadata.title,
+      description: currentMetadata.description,
+      url: `${baseUrl}/${locale}`,
+      siteName: 'Rationality Test',
+      locale: locale,
+      type: 'website',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: currentMetadata.title,
+      description: currentMetadata.description,
+    },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+      },
+    },
+  };
+}
 
 export default async function LocaleLayout({
   children,
@@ -44,14 +99,14 @@ export default async function LocaleLayout({
   }
 
   // Fetch messages for the current locale
-  const messages = await getMessages();
+  const messages = await getMessages({ locale });
 
   return (
     <html lang={locale} suppressHydrationWarning>
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <NextIntlClientProvider messages={messages}>
-            {/* Language switcher and theme toggle - fixed top right */}
+        <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
+          <NextIntlClientProvider messages={messages} locale={locale}>
+            {/* Language and theme controls - fixed top right */}
             <div className="fixed top-4 right-4 z-50 print:hidden flex gap-2">
               <ThemeToggle />
               <LanguageSwitcher />

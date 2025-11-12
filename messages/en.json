@@ -2,7 +2,7 @@
   "nav": {
     "home": "Home",
     "test": "Take the Test",
-    "about": "About",
+    "methodology": "Methodology",
     "results": "Results"
   },
   "home": {
@@ -125,7 +125,7 @@
       "tipText": "Choose a quiet time when you are well-rested"
     },
 
-    "footer": "This test is a free and open-source project."
+    "footer": "This test is a free and open-source project :)"
   },
   "test": {
     "loading": "Loading test...",
@@ -240,5 +240,85 @@
     "loading": "Loading...",
     "error": "Error",
     "retry": "Retry"
+  },
+  "methodology": {
+    "title": "Methodology & Scientific Validation",
+    "subtitle": "Understanding the scientific foundations of this rationality test",
+
+    "cartSection": {
+      "title": "What is CART?",
+      "description": "The Comprehensive Assessment of Rational Thinking (CART) is a scientifically validated test battery developed by cognitive psychologists Keith E. Stanovich, Richard F. West, and Maggie E. Toplak. Published by MIT Press in 2016, it represents over 40 years of research on rational thinking and cognitive biases.",
+      "purpose": "Purpose of CART",
+      "purposeText": "Unlike IQ tests that measure cognitive capacity, CART evaluates how effectively individuals use their reasoning abilities in real-world situations. It assesses susceptibility to cognitive biases, probabilistic reasoning, scientific thinking, and belief updating.",
+      "components": "Key Components",
+      "component1": "Probabilistic and statistical reasoning",
+      "component2": "Scientific hypothesis testing",
+      "component3": "Resistance to cognitive biases",
+      "component4": "Belief calibration and updating"
+    },
+
+    "validationSection": {
+      "title": "Scientific Validation",
+      "psychometric": "Psychometric Properties",
+      "psychometricText": "CART has been rigorously validated across multiple studies with thousands of participants. It demonstrates strong reliability (test-retest correlation > 0.80) and validity in predicting real-world decision-making outcomes.",
+      "independence": "Independence from IQ",
+      "independenceText": "Research shows that CART measures abilities distinct from general intelligence (IQ). While IQ and rationality are modestly correlated (r ≈ 0.30-0.40), rational thinking explains unique variance in life outcomes beyond what IQ predicts.",
+      "realWorld": "Real-World Predictions",
+      "realWorldText": "CART scores predict important life outcomes including:",
+      "outcome1": "Better financial decision-making",
+      "outcome2": "Reduced susceptibility to scams and manipulation",
+      "outcome3": "More accurate beliefs about important topics",
+      "outcome4": "Better risk assessment and management"
+    },
+
+    "adaptationSection": {
+      "title": "Our Adaptation",
+      "description": "This test is an educational adaptation of CART principles. We use:",
+      "item1": "Public domain questions from the cognitive psychology literature",
+      "item2": "Original variants inspired by published research",
+      "item3": "Validated question types from multiple studies",
+      "differences": "Key Differences",
+      "difference1": "Shorter format (20-60 min vs. 3+ hours for full CART)",
+      "difference2": "Simplified scoring (percentage vs. complex normalization)",
+      "difference3": "Educational focus (learning tool vs. research instrument)",
+      "difference4": "Free and open-source (vs. commercial licensing)"
+    },
+
+    "limitationsSection": {
+      "title": "Limitations & Critiques",
+      "important": "Important Caveats",
+      "limitation1": "Self-Awareness Paradox",
+      "limitation1Text": "Research shows that knowing about cognitive biases doesn't automatically eliminate them. Even experts remain susceptible to the biases they study.",
+      "limitation2": "Context Dependency",
+      "limitation2Text": "Rational thinking performance varies by domain and context. Someone might reason well about health decisions but poorly about financial ones.",
+      "limitation3": "Cultural Bias",
+      "limitation3Text": "Many rationality assessments reflect Western, educated, industrialized, rich, and democratic (WEIRD) cultural assumptions about 'correct' reasoning.",
+      "limitation4": "Motivation & Effort",
+      "limitation4Text": "Test scores depend heavily on motivation and cognitive effort. A low score might reflect low engagement rather than low ability.",
+      "limitation5": "Not Diagnostic",
+      "limitation5Text": "This test is educational, not diagnostic. It cannot identify clinical conditions or definitively measure your 'rationality quotient'."
+    },
+
+    "improvementSection": {
+      "title": "Can Rationality Be Improved?",
+      "answer": "Yes, with important qualifications:",
+      "method1": "Deliberate Practice",
+      "method1Text": "Training in probabilistic reasoning, scientific thinking, and bias awareness can improve performance on rationality tests.",
+      "method2": "External Protocols",
+      "method2Text": "The most effective improvements come from using checklists, decision protocols, and consultation processes—not from willpower alone.",
+      "method3": "Domain-Specific Learning",
+      "method3Text": "Skills often don't transfer automatically across domains. Practice reasoning about statistics won't necessarily improve social judgment.",
+      "realistic": "Realistic Expectations",
+      "realisticText": "Improvement is possible but typically modest. Don't expect dramatic changes. The goal is incremental progress and better decision-making tools, not cognitive transformation."
+    },
+
+    "referencesSection": {
+      "title": "Key References",
+      "ref1": "Stanovich, K. E., West, R. F., & Toplak, M. E. (2016). The Rationality Quotient: Toward a Test of Rational Thinking. MIT Press.",
+      "ref2": "Stanovich, K. E. (2009). What Intelligence Tests Miss: The Psychology of Rational Thought. Yale University Press.",
+      "ref3": "Kahneman, D. (2011). Thinking, Fast and Slow. Farrar, Straus and Giroux.",
+      "ref4": "Frederick, S. (2005). Cognitive Reflection and Decision Making. Journal of Economic Perspectives, 19(4), 25-42.",
+      "ref5": "Baron, J. (2008). Thinking and Deciding (4th ed.). Cambridge University Press."
+    }
   }
 }
