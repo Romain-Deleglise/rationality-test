@@ -718,7 +718,8 @@ export default function ResultatsPage() {
           </div>
         </div>
 
-        {/* Histoire du CART */}
+        {/* Histoire du CART - FR only */}
+        {locale === 'fr' && (
         <AccordionItem title="📖 D'où vient ce test ? Histoire du CART" defaultOpen={false}>
           <div className="space-y-4">
             <div>
@@ -783,6 +784,7 @@ export default function ResultatsPage() {
             </div>
           </div>
         </AccordionItem>
+        )}
 
         {/* Graphiques (VERTICAUX) */}
         <div className="space-y-6 mb-8">
@@ -875,7 +877,8 @@ export default function ResultatsPage() {
           </div>
         </div>
 
-        {/* Approche de Kahneman : Outils Externes */}
+        {/* Approche de Kahneman : Outils Externes - FR only */}
+        {locale === 'fr' && (
         <div className="bg-green-50 dark:bg-green-900/20 border-l-4 border-green-500 dark:border-green-600 rounded-r-xl p-6 mb-8">
           <h3 className="font-bold text-gray-900 dark:text-white mb-3 text-xl">
             🛠️ La Solution Pragmatique (Recommandée par Kahneman)
@@ -915,8 +918,10 @@ export default function ResultatsPage() {
             de 47% (Haynes et al., 2009) - bien plus efficace que "former les chirurgiens à être moins overconfidents".
           </p>
         </div>
+        )}
 
-        {/* Ressources */}
+        {/* Ressources - FR only */}
+        {locale === 'fr' && (
         <div className="bg-blue-50 dark:bg-blue-900/20 rounded-xl p-8 mb-8">
           <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
             📚 Ressources pour approfondir
@@ -966,8 +971,10 @@ export default function ResultatsPage() {
             </ul>
           </AccordionItem>
         </div>
+        )}
 
-        {/* Sources scientifiques */}
+        {/* Sources scientifiques - FR only */}
+        {locale === 'fr' && (
         <AccordionItem title="📖 Sources scientifiques complètes">
           <div className="space-y-4 text-sm">
             <div>
@@ -1017,6 +1024,7 @@ export default function ResultatsPage() {
             </div>
           </div>
         </AccordionItem>
+        )}
 
         {/* Actions */}
         <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8 text-center mb-8 print:hidden">
