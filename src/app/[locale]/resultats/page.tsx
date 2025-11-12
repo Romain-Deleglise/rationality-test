@@ -6,7 +6,7 @@ import { useTranslations } from 'next-intl';
 import { useTestStore } from '@/store/useTestStore';
 import { scoreTest, calculatePercentile, TestScore } from '@/lib/scoring';
 import { saveTestResult, calculateRealPercentile, generateResultToken, getGlobalStats } from '@/lib/supabase';
-import { getModuleTranslationKey } from '@/lib/moduleMapping';
+import { getModuleTranslationKey, translateModuleName } from '@/lib/moduleMapping';
 import Link from 'next/link';
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -1223,14 +1223,16 @@ export default function ResultatsPage() {
               .filter(m => m.possible > 0)
               .sort((a, b) => b.percentage - a.percentage)
               .map((moduleScore) => {
-                const moduleName = moduleScore.moduleName.split(' (')[0];
-                // Get description in current locale
-                const desc = moduleDescriptions[moduleName];
+                const rawModuleName = moduleScore.moduleName.split(' (')[0];
+                // Translate module name to current locale for display
+                const displayName = translateModuleName(rawModuleName, locale as 'en' | 'fr');
+                // Get description using translated name (which matches keys in moduleDescriptions)
+                const desc = moduleDescriptions[displayName];
 
                 return (
-                  <AccordionItem 
-                    key={moduleScore.moduleId} 
-                    title={moduleName}
+                  <AccordionItem
+                    key={moduleScore.moduleId}
+                    title={displayName}
                     scorePercentage={moduleScore.percentage}
                   >
                     <div className="mb-4 text-sm text-gray-600 dark:text-gray-400">

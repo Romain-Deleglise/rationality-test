@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { useTranslations } from 'next-intl';
 import { getTestResultByToken } from '@/lib/supabase';
+import { translateModuleName } from '@/lib/moduleMapping';
 import { ChevronDown, ChevronUp, Database, Home } from 'lucide-react';
 import Link from 'next/link';
 import { RadarChartComponent, BarChartComponent } from '@/components/ResultsCharts';
@@ -213,7 +214,9 @@ export default function SavedResultsPage({ params }: { params: Promise<{ token: 
               .filter((m: any) => m.possible > 0)
               .sort((a: any, b: any) => b.percentage - a.percentage)
               .map((moduleScore: any) => {
-                const moduleName = moduleScore.moduleName.split(' (')[0];
+                const rawModuleName = moduleScore.moduleName.split(' (')[0];
+                // Translate module name to current locale for display
+                const displayName = translateModuleName(rawModuleName, locale as 'en' | 'fr');
                 const getBarColor = (score: number) => {
                   if (score >= 75) return 'bg-green-500';
                   if (score >= 50) return 'bg-blue-500';
@@ -221,12 +224,12 @@ export default function SavedResultsPage({ params }: { params: Promise<{ token: 
                   return 'bg-red-500';
                 };
 
-                const description = t(`moduleDescriptions.${moduleName}`);
+                const description = t(`moduleDescriptions.${displayName}`);
 
                 return (
                   <div key={moduleScore.moduleId} className="border-2 border-gray-200 dark:border-gray-700 rounded-xl p-4">
                     <div className="flex items-center justify-between mb-2">
-                      <span className="font-semibold text-gray-900 dark:text-white">{moduleName}</span>
+                      <span className="font-semibold text-gray-900 dark:text-white">{displayName}</span>
                       <span className={`font-bold ${getScoreColor(moduleScore.percentage)}`}>
                         {moduleScore.percentage.toFixed(0)}%
                       </span>
