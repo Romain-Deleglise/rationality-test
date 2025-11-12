@@ -8,6 +8,7 @@ interface TestStore {
 
   // Actions
   startTest: (modules: Module[], version: 'courte' | 'complète') => void;
+  updateModules: (modules: Module[]) => void;
   saveAnswer: (answer: Answer) => void;
   nextQuestion: () => void;
   previousQuestion: () => void;
@@ -36,6 +37,10 @@ export const useTestStore = create<TestStore>()(
           currentQuestionIndex: 0,
         };
         set({ session: newSession, modules });
+      },
+
+      updateModules: (modules) => {
+        set({ modules });
       },
 
       saveAnswer: (answer) => {

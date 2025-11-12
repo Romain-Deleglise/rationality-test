@@ -26,6 +26,7 @@ export default function TestContent() {
     session,
     modules,
     startTest,
+    updateModules,
     saveAnswer,
     nextQuestion,
     previousQuestion,
@@ -75,8 +76,19 @@ export default function TestContent() {
     } else if (session && !isInitialized) {
       // Si une session existe déjà (depuis localStorage), marquer comme initialisé
       setIsInitialized(true);
+
+      // Mettre à jour les modules pour correspondre à la langue actuelle
+      const versionParam = searchParams.get('version');
+      let testData;
+      if (locale === 'en') {
+        testData = versionParam === 'full' ? testCompletDataEn : testCourtDataEn;
+      } else {
+        testData = versionParam === 'full' ? testCompletDataFr : testCourtDataFr;
+      }
+      const selectedModules = testData.modules as Module[];
+      updateModules(selectedModules);
     }
-  }, [searchParams, session, isInitialized, resetTest, startTest, router, locale]);
+  }, [searchParams, session, isInitialized, resetTest, startTest, updateModules, router, locale]);
 
   if (!isInitialized || !session || !modules.length) {
     return (

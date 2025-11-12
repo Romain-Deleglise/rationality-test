@@ -18,11 +18,13 @@ import {
   Cell,
 } from 'recharts';
 import { ModuleScore } from '@/lib/scoring';
+import { translateModuleName } from '@/lib/moduleMapping';
 import { useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
 
 interface ChartProps {
   moduleScores: ModuleScore[];
+  locale?: string;
 }
 
 // Fonction utilitaire pour diviser un texte en plusieurs lignes
@@ -105,7 +107,7 @@ const CustomBarTick = ({ x, y, payload, isDark }: any) => {
   );
 };
 
-export function RadarChartComponent({ moduleScores }: ChartProps) {
+export function RadarChartComponent({ moduleScores, locale = 'fr' }: ChartProps) {
   const { theme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
@@ -118,10 +120,11 @@ export function RadarChartComponent({ moduleScores }: ChartProps) {
   const data = moduleScores
     .filter(m => m.possible > 0)
     .map((score) => {
-      const name = score.moduleName.split(' (')[0];
+      const rawName = score.moduleName.split(' (')[0];
+      const translatedName = translateModuleName(rawName, locale as 'en' | 'fr');
       return {
-        module: name,
-        fullName: name,
+        module: translatedName,
+        fullName: translatedName,
         score: score.percentage,
       };
     });
@@ -167,7 +170,7 @@ export function RadarChartComponent({ moduleScores }: ChartProps) {
   );
 }
 
-export function BarChartComponent({ moduleScores }: ChartProps) {
+export function BarChartComponent({ moduleScores, locale = 'fr' }: ChartProps) {
   const { theme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
@@ -181,10 +184,11 @@ export function BarChartComponent({ moduleScores }: ChartProps) {
     .filter(m => m.possible > 0)
     .sort((a, b) => b.percentage - a.percentage)
     .map((score) => {
-      const name = score.moduleName.split(' (')[0];
+      const rawName = score.moduleName.split(' (')[0];
+      const translatedName = translateModuleName(rawName, locale as 'en' | 'fr');
       return {
-        module: name,
-        fullName: name,
+        module: translatedName,
+        fullName: translatedName,
         score: score.percentage,
       };
     });
