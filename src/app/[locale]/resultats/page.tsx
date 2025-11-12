@@ -12,6 +12,7 @@ import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { RadarChartComponent, BarChartComponent } from '@/components/ResultsCharts';
 import { ChevronDown, ChevronUp, BookOpen, TrendingUp, AlertCircle, Award, Brain, Mail, Share2, Database } from 'lucide-react';
+import SocialShare from '@/components/SocialShare';
 import React from 'react';
 
 // Composant Accordéon avec jauge dans le titre
@@ -38,14 +39,14 @@ const AccordionItem = ({ title, children, defaultOpen = false, scorePercentage }
   };
 
   return (
-    <div className="border-2 border-gray-200 rounded-xl mb-4 overflow-hidden shadow-sm hover:shadow-md transition-shadow print:shadow-none print:border print:border-gray-300 print:break-inside-avoid">
+    <div className="border-2 border-gray-200 dark:border-gray-700 rounded-xl mb-4 overflow-hidden shadow-sm hover:shadow-md transition-shadow print:shadow-none print:border print:border-gray-300 print:break-inside-avoid">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full px-6 py-4 bg-gradient-to-r from-gray-50 to-white hover:from-gray-100 hover:to-gray-50 transition-colors print:bg-gray-50 print:cursor-default"
+        className="w-full px-6 py-4 bg-gradient-to-r from-gray-50 to-white dark:from-gray-800 dark:to-gray-800 hover:from-gray-100 hover:to-gray-50 dark:hover:from-gray-700 dark:hover:to-gray-700 transition-colors print:bg-gray-50 print:cursor-default"
       >
         <div className="flex items-center gap-4">
           {/* Titre - largeur fixe pour alignement */}
-          <span className="font-semibold text-left text-gray-900 flex-1 min-w-0">
+          <span className="font-semibold text-left text-gray-900 dark:text-white flex-1 min-w-0">
             {title}
           </span>
 
@@ -53,7 +54,7 @@ const AccordionItem = ({ title, children, defaultOpen = false, scorePercentage }
           {scorePercentage !== undefined && (
             <div className="flex items-center gap-3 w-64 flex-shrink-0">
               <div className="flex-1">
-                <div className="w-full bg-gray-200 rounded-full h-2.5 overflow-hidden">
+                <div className="w-full bg-gray-200 dark:bg-gray-600 rounded-full h-2.5 overflow-hidden">
                   <div
                     className={`${getBarColor(scorePercentage)} h-2.5 rounded-full transition-all duration-500`}
                     style={{ width: `${scorePercentage}%` }}
@@ -76,7 +77,7 @@ const AccordionItem = ({ title, children, defaultOpen = false, scorePercentage }
         </div>
       </button>
       {/* Toujours visible en mode impression */}
-      <div className={`${isOpen ? 'block' : 'hidden'} print:block px-6 py-5 bg-white text-gray-700 leading-relaxed border-t-2 border-gray-100 print:border-t print:border-gray-200`}>
+      <div className={`${isOpen ? 'block' : 'hidden'} print:block px-6 py-5 bg-white dark:bg-gray-900 text-gray-700 dark:text-gray-300 leading-relaxed border-t-2 border-gray-100 dark:border-gray-700 print:border-t print:border-gray-200`}>
         {children}
       </div>
     </div>
@@ -592,26 +593,26 @@ export default function ResultatsPage() {
         }
       `}</style>
 
-      <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white print:bg-white">
+      <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white dark:from-gray-900 dark:to-gray-800 print:bg-white transition-colors">
         <div className="max-w-4xl mx-auto px-4 py-12 print:px-6 print:py-8">
-        
+
         {/* Header */}
         <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">
+          <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
             {t('title')}
           </h1>
-          <p className="text-xl text-gray-600">
+          <p className="text-xl text-gray-600 dark:text-gray-300">
             {t('subtitle')}
           </p>
           <div className="flex items-center justify-center gap-2 mt-2">
-            <p className="text-sm text-gray-500">
+            <p className="text-sm text-gray-500 dark:text-gray-400">
               {t('completedOn')} {new Date(session!.completedAt!).toLocaleDateString(locale === 'fr' ? 'fr-FR' : 'en-US', {
                 day: 'numeric',
                 month: 'long',
                 year: 'numeric',
               })}
             </p>
-            <span className="text-gray-400">•</span>
+            <span className="text-gray-400 dark:text-gray-500">•</span>
             <span className={`px-2.5 py-0.5 rounded-full text-xs font-semibold ${
               version === 'complète'
                 ? 'bg-blue-100 text-blue-700'
@@ -623,8 +624,8 @@ export default function ResultatsPage() {
         </div>
 
         {/* Score Global */}
-        <div className="bg-white rounded-xl shadow-lg p-8 mb-8 text-center border-t-4 border-blue-600">
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">{t('globalScore')}</h2>
+        <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8 mb-8 text-center border-t-4 border-blue-600">
+          <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">{t('globalScore')}</h2>
           <div className="mb-6">
             <div className={`text-6xl font-bold mb-2 ${getScoreColor(testScore.percentage)}`}>
               {testScore.percentage.toFixed(1)}%
@@ -632,26 +633,26 @@ export default function ResultatsPage() {
             <div className={`text-2xl font-semibold mb-2 ${getScoreColor(testScore.percentage)}`}>
               {t('rationality')} {getScoreLabel(testScore.percentage)}
             </div>
-            <div className="text-lg text-gray-600">
+            <div className="text-lg text-gray-600 dark:text-gray-300">
               {testScore.totalEarned.toFixed(1)} / {testScore.totalPossible.toFixed(1)} {t('points')}
             </div>
           </div>
           {/* Percentile - afficher le vrai si disponible */}
-          <div className="bg-gray-100 rounded-lg p-4 inline-block">
-            <p className="text-gray-700">
+          <div className="bg-gray-100 dark:bg-gray-700 rounded-lg p-4 inline-block">
+            <p className="text-gray-700 dark:text-gray-300">
               {realPercentile !== null ? (
                 <>
-                  {t('realPercentile')} : <strong className="text-blue-600">{realPercentile}e</strong>
+                  {t('realPercentile')} : <strong className="text-blue-600 dark:text-blue-400">{realPercentile}e</strong>
                   <br />
-                  <span className="text-xs text-gray-500 mt-1">
+                  <span className="text-xs text-gray-500 dark:text-gray-400 mt-1">
                     ({t('basedOn')} {globalStats?.count || '...'} {t('results')})
                   </span>
                 </>
               ) : (
                 <>
-                  {t('estimatedPercentile')} : <strong className="text-blue-600">{testScore.percentile}e</strong>
+                  {t('estimatedPercentile')} : <strong className="text-blue-600 dark:text-blue-400">{testScore.percentile}e</strong>
                   <br />
-                  <span className="text-xs text-gray-500 mt-1">
+                  <span className="text-xs text-gray-500 dark:text-gray-400 mt-1">
                     {savingToDb ? `(${t('calculatingRealPercentile')})` : `(${t('theoreticalDistribution')})`}
                   </span>
                 </>
@@ -661,14 +662,14 @@ export default function ResultatsPage() {
 
           {/* Lien de sauvegarde / partage */}
           {resultToken && (
-            <div className="mt-6 bg-blue-50 border border-blue-200 rounded-lg p-4">
+            <div className="mt-6 bg-blue-50 dark:bg-blue-900/30 border border-blue-200 dark:border-blue-800 rounded-lg p-4">
               <div className="flex items-center justify-center gap-2 mb-3">
-                <Database className="w-5 h-5 text-blue-600" />
-                <p className="text-sm font-semibold text-gray-900">
+                <Database className="w-5 h-5 text-blue-600 dark:text-blue-400" />
+                <p className="text-sm font-semibold text-gray-900 dark:text-white">
                   {t('savedResults')}
                 </p>
               </div>
-              <p className="text-sm text-gray-600 text-center mb-3">
+              <p className="text-sm text-gray-600 dark:text-gray-300 text-center mb-3">
                 {t('shareDescription')}
               </p>
               <div className="flex justify-center">
@@ -689,24 +690,24 @@ export default function ResultatsPage() {
 
           {/* Statistiques globales */}
           {globalStats && globalStats.count > 10 && (
-            <div className="mt-6 bg-gray-50 rounded-lg p-4 text-left">
-              <h3 className="text-sm font-bold text-gray-900 mb-3">📊 {t('globalStatsVersion')} {version})</h3>
+            <div className="mt-6 bg-gray-50 dark:bg-gray-700 rounded-lg p-4 text-left">
+              <h3 className="text-sm font-bold text-gray-900 dark:text-white mb-3">📊 {t('globalStatsVersion')} {version})</h3>
               <div className="grid grid-cols-2 gap-3 text-xs">
                 <div>
-                  <span className="text-gray-600">{t('testsCompleted')} :</span>
-                  <span className="font-semibold text-gray-900 ml-1">{globalStats.count}</span>
+                  <span className="text-gray-600 dark:text-gray-300">{t('testsCompleted')} :</span>
+                  <span className="font-semibold text-gray-900 dark:text-white ml-1">{globalStats.count}</span>
                 </div>
                 <div>
-                  <span className="text-gray-600">{t('averageScore')} :</span>
-                  <span className="font-semibold text-gray-900 ml-1">{globalStats.average.toFixed(1)}%</span>
+                  <span className="text-gray-600 dark:text-gray-300">{t('averageScore')} :</span>
+                  <span className="font-semibold text-gray-900 dark:text-white ml-1">{globalStats.average.toFixed(1)}%</span>
                 </div>
                 <div>
-                  <span className="text-gray-600">{t('median')} :</span>
-                  <span className="font-semibold text-gray-900 ml-1">{globalStats.median.toFixed(1)}%</span>
+                  <span className="text-gray-600 dark:text-gray-300">{t('median')} :</span>
+                  <span className="font-semibold text-gray-900 dark:text-white ml-1">{globalStats.median.toFixed(1)}%</span>
                 </div>
                 <div>
-                  <span className="text-gray-600">{t('bestScore')} :</span>
-                  <span className="font-semibold text-gray-900 ml-1">{globalStats.max.toFixed(1)}%</span>
+                  <span className="text-gray-600 dark:text-gray-300">{t('bestScore')} :</span>
+                  <span className="font-semibold text-gray-900 dark:text-white ml-1">{globalStats.max.toFixed(1)}%</span>
                 </div>
               </div>
             </div>
@@ -714,15 +715,15 @@ export default function ResultatsPage() {
         </div>
 
         {/* Interprétation Réaliste */}
-        <div className="bg-yellow-50 border-l-4 border-yellow-500 rounded-r-xl p-6 mb-8">
+        <div className="bg-yellow-50 dark:bg-yellow-900/20 border-l-4 border-yellow-500 dark:border-yellow-600 rounded-r-xl p-6 mb-8">
           <div className="flex items-start gap-3">
-            <AlertCircle className="w-6 h-6 text-yellow-600 mt-1 flex-shrink-0" />
+            <AlertCircle className="w-6 h-6 text-yellow-600 dark:text-yellow-500 mt-1 flex-shrink-0" />
             <div>
-              <h3 className="font-bold text-gray-900 mb-2">{t('interpretation')}</h3>
-              <p className="text-gray-700 text-justify mb-3">
+              <h3 className="font-bold text-gray-900 dark:text-white mb-2">{t('interpretation')}</h3>
+              <p className="text-gray-700 dark:text-gray-300 text-justify mb-3">
                 {testScore.interpretation}
               </p>
-              <p className="text-gray-600 text-sm text-justify italic">
+              <p className="text-gray-600 dark:text-gray-400 text-sm text-justify italic">
                 <strong>{t('criticalNote')}</strong> {t('criticalNoteText')}
               </p>
             </div>
@@ -817,11 +818,11 @@ export default function ResultatsPage() {
         </div>
 
         {/* Détail par Module avec Jauges */}
-        <div className="bg-white rounded-xl shadow-lg p-8 mb-8 border-t-4 border-blue-500">
-          <h2 className="text-2xl font-bold text-gray-900 mb-2">
+        <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8 mb-8 border-t-4 border-blue-500">
+          <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
             {t('moduleDetails')}
           </h2>
-          <p className="text-gray-600 mb-6">
+          <p className="text-gray-600 dark:text-gray-300 mb-6">
             {t('moduleDetailsDescription')}
           </p>
 
@@ -839,42 +840,42 @@ export default function ResultatsPage() {
                     title={moduleName}
                     scorePercentage={moduleScore.percentage}
                   >
-                    <div className="mb-4 text-sm text-gray-600">
+                    <div className="mb-4 text-sm text-gray-600 dark:text-gray-400">
                       <strong>{moduleScore.earned.toFixed(1)}</strong> / {moduleScore.possible.toFixed(1)} points
                     </div>
-                    
+
                     {desc ? (
                       <div className="space-y-4">
                         <div>
-                          <h4 className="font-bold text-gray-900 mb-2">
+                          <h4 className="font-bold text-gray-900 dark:text-white mb-2">
                             🎯 {t('whatIsMeasured')}
                           </h4>
                           <div className="text-justify">{desc.what}</div>
                         </div>
 
                         <div>
-                          <h4 className="font-bold text-gray-900 mb-2">
+                          <h4 className="font-bold text-gray-900 dark:text-white mb-2">
                             💡 {t('whyImportant')}
                           </h4>
                           <div className="text-justify">{desc.why}</div>
                         </div>
 
-                        <div className="bg-blue-50 p-4 rounded-lg">
-                          <h4 className="font-bold text-gray-900 mb-2">
+                        <div className="bg-blue-50 dark:bg-blue-900/20 p-4 rounded-lg">
+                          <h4 className="font-bold text-gray-900 dark:text-white mb-2">
                             📌 {t('classicExample')}
                           </h4>
                           <div className="text-sm text-justify">{desc.example}</div>
                         </div>
 
-                        <div className="bg-yellow-50 p-4 rounded-lg border-l-4 border-yellow-500">
-                          <h4 className="font-bold text-gray-900 mb-2">
+                        <div className="bg-yellow-50 dark:bg-yellow-900/20 p-4 rounded-lg border-l-4 border-yellow-500 dark:border-yellow-600">
+                          <h4 className="font-bold text-gray-900 dark:text-white mb-2">
                             📈 {t('canImprove')}
                           </h4>
                           <div className="text-sm text-justify">{desc.canImprove}</div>
                         </div>
                       </div>
                     ) : (
-                      <p className="text-gray-500 italic">
+                      <p className="text-gray-500 dark:text-gray-400 italic">
                         {t('descriptionInProgress')}
                       </p>
                     )}
@@ -885,15 +886,15 @@ export default function ResultatsPage() {
         </div>
 
         {/* Approche de Kahneman : Outils Externes */}
-        <div className="bg-green-50 border-l-4 border-green-500 rounded-r-xl p-6 mb-8">
-          <h3 className="font-bold text-gray-900 mb-3 text-xl">
+        <div className="bg-green-50 dark:bg-green-900/20 border-l-4 border-green-500 dark:border-green-600 rounded-r-xl p-6 mb-8">
+          <h3 className="font-bold text-gray-900 dark:text-white mb-3 text-xl">
             🛠️ La Solution Pragmatique (Recommandée par Kahneman)
           </h3>
-          <p className="text-gray-700 mb-4 text-justify">
-            Plutôt que d'essayer de changer votre cerveau (difficile, incertain), 
+          <p className="text-gray-700 dark:text-gray-300 mb-4 text-justify">
+            Plutôt que d'essayer de changer votre cerveau (difficile, incertain),
             <strong> changez votre environnement de décision :</strong>
           </p>
-          <ul className="space-y-2 text-gray-700">
+          <ul className="space-y-2 text-gray-700 dark:text-gray-300">
             <li className="flex items-start gap-2">
               <span className="text-green-600 font-bold">✓</span>
               <span><strong>Checklists pré-décision :</strong> "Quel est le taux de base ? Suis-je ancré ? 
@@ -919,15 +920,15 @@ export default function ResultatsPage() {
               Revue mensuelle.</span>
             </li>
           </ul>
-          <p className="text-sm text-gray-600 mt-4 italic">
-            Exemple concret : En chirurgie, imposer une checklist obligatoire a réduit les complications 
+          <p className="text-sm text-gray-600 dark:text-gray-400 mt-4 italic">
+            Exemple concret : En chirurgie, imposer une checklist obligatoire a réduit les complications
             de 47% (Haynes et al., 2009) - bien plus efficace que "former les chirurgiens à être moins overconfidents".
           </p>
         </div>
 
         {/* Ressources */}
-        <div className="bg-blue-50 rounded-xl p-8 mb-8">
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">
+        <div className="bg-blue-50 dark:bg-blue-900/20 rounded-xl p-8 mb-8">
+          <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
             📚 Ressources pour approfondir
           </h2>
 
@@ -1028,12 +1029,12 @@ export default function ResultatsPage() {
         </AccordionItem>
 
         {/* Actions */}
-        <div className="bg-white rounded-xl shadow-lg p-8 text-center mb-8 print:hidden">
-          <h2 className="text-2xl font-bold text-gray-900 mb-6">{t('nextSteps')}</h2>
+        <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8 text-center mb-8 print:hidden">
+          <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">{t('nextSteps')}</h2>
 
           {/* Recevoir par email */}
           <div className="mb-6 max-w-md mx-auto">
-            <h3 className="text-lg font-semibold text-gray-900 mb-3">
+            <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
               {t('sendEmail')}
             </h3>
             <div className="flex gap-2">
@@ -1042,7 +1043,7 @@ export default function ResultatsPage() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder={t('email')}
-                className="flex-1 px-4 py-2 border-2 border-gray-300 rounded-lg focus:border-blue-500 focus:outline-none"
+                className="flex-1 px-4 py-2 border-2 border-gray-300 dark:border-gray-600 rounded-lg focus:border-blue-500 focus:outline-none bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
               />
               <button
                 onClick={handleSendEmail}
@@ -1067,7 +1068,7 @@ export default function ResultatsPage() {
             )}
           </div>
 
-          <div className="flex flex-wrap justify-center gap-4">
+          <div className="flex flex-wrap justify-center gap-4 mb-6">
             <button
               onClick={() => window.print()}
               className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-lg transition-colors shadow-md"
@@ -1091,6 +1092,23 @@ export default function ResultatsPage() {
             </Link>
           </div>
 
+          {/* Social Share */}
+          {resultToken && (
+            <div className="flex flex-col items-center gap-3 print:hidden">
+              <h3 className="text-lg font-semibold text-gray-900 dark:text-white">{locale === 'fr' ? 'Partager vos résultats' : 'Share your results'}</h3>
+              <SocialShare
+                url={`${typeof window !== 'undefined' ? window.location.origin : ''}/${locale}/resultats/${resultToken}`}
+                title={locale === 'fr'
+                  ? `J'ai obtenu ${testScore?.percentage.toFixed(1)}% au test de rationalité !`
+                  : `I scored ${testScore?.percentage.toFixed(1)}% on the rationality test!`}
+                description={locale === 'fr'
+                  ? 'Testez votre pensée critique et identifiez vos biais cognitifs'
+                  : 'Test your critical thinking and identify your cognitive biases'}
+                locale={locale}
+              />
+            </div>
+          )}
+
           <div className="mt-6 text-center">
             <a
               href={`mailto:rom.deleglise@orange.fr?subject=${locale === 'fr' ? 'Feedback sur le Test de Rationalité' : 'Feedback on Rationality Test'}&body=${locale === 'fr' ? 'Bonjour,%0D%0A%0D%0AJe vous contacte pour partager mon feedback sur le test de rationalité :%0D%0A%0D%0A' : 'Hello,%0D%0A%0D%0AI am contacting you to share my feedback on the rationality test:%0D%0A%0D%0A'}`}
@@ -1100,13 +1118,13 @@ export default function ResultatsPage() {
             </a>
           </div>
 
-          <p className="text-sm text-gray-600 mt-4">
+          <p className="text-sm text-gray-600 dark:text-gray-400 mt-4">
             {t('retestAdvice')}
           </p>
         </div>
 
         {/* Footer */}
-        <div className="text-center mt-12 text-sm text-gray-500 print:hidden">
+        <div className="text-center mt-12 text-sm text-gray-500 dark:text-gray-400 print:hidden">
           <p>
             Ce test est un projet open-source, gratuit, et dans l'intérêt général.
           </p>

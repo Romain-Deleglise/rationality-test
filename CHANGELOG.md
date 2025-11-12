@@ -1,5 +1,233 @@
 # Changelog - Test de Rationalité
 
+## [2025-11-12] - Multilingual fixes + SEO + Dark Mode + Methodology
+
+### ✅ Fixes Critiques
+
+#### 1. Problème de changement de langue
+**Problème :** La page d'accueil restait toujours en français ou toujours en anglais, même après sélection de l'autre langue.
+
+**Solution :**
+- ✅ Passer `locale` explicitement à `getMessages({ locale })` dans layout
+- ✅ Ajouter prop `locale` au `NextIntlClientProvider`
+- ✅ Corriger les fallbacks dans `i18n.ts`, `LanguageSwitcher.tsx`, et `layout.tsx`
+
+**Fichiers modifiés :**
+- `src/app/[locale]/layout.tsx`
+- `src/i18n.ts`
+- `src/components/LanguageSwitcher.tsx`
+
+#### 2. Message "enjoy" supprimé
+- ✅ Supprimé de `messages/en.json` et `messages/fr.json`
+- ✅ Supprimé du composant de la page d'accueil
+- ✅ Ajouté ":)" au footer anglais comme demandé
+
+---
+
+### 🔍 SEO Multilingue
+
+#### Fichiers créés
+- ✅ `public/robots.txt` : Permet tous les crawlers, référence le sitemap
+- ✅ `src/app/sitemap.ts` : Génère dynamiquement un sitemap avec alternates EN/FR
+
+#### Metadata dynamiques par locale
+- ✅ Fonction `generateMetadata` avec contenu spécifique à chaque langue
+- ✅ Balises hreflang via `alternates.languages`
+- ✅ Metadata OpenGraph pour Twitter/LinkedIn
+- ✅ Twitter Card metadata
+- ✅ URLs canoniques
+- ✅ Keywords SEO par langue
+
+**Impact :** Meilleur référencement sur Google, Bing, etc. pour les deux langues
+
+---
+
+### 🌙 Mode Sombre (Dark Mode)
+
+#### Dépendances installées
+- `next-themes`: ^0.2.1
+
+#### Fichiers créés
+- ✅ `src/components/ThemeProvider.tsx` : Wrapper next-themes
+- ✅ `src/components/ThemeToggle.tsx` : Bouton de bascule thème
+- ✅ `tailwind.config.ts` : Configuration Tailwind avec `darkMode: 'class'`
+
+#### Intégration
+- ✅ ThemeProvider dans le layout principal
+- ✅ Bouton de bascule à côté du sélecteur de langue
+- ✅ Classes dark: sur la page d'accueil
+- ✅ Support de la préférence système
+- ✅ Transitions fluides
+
+**Fichiers modifiés :**
+- `src/app/[locale]/layout.tsx`
+- `src/app/[locale]/page.tsx`
+
+---
+
+### 📚 Page Méthodologie
+
+#### Route créée : `/[locale]/methodologie`
+
+**Contenu complet (bilingue FR/EN) :**
+- ✅ Qu'est-ce que le CART ?
+- ✅ Validation scientifique
+  - Propriétés psychométriques
+  - Indépendance du QI
+  - Prédictions réelles
+- ✅ Notre adaptation
+  - Différences avec le CART original
+  - Questions du domaine public
+- ✅ **Limites & Critiques** (section importante)
+  - Paradoxe de la conscience de soi
+  - Dépendance au contexte
+  - Biais culturel (WEIRD)
+  - Motivation et effort
+  - Non-diagnostique
+- ✅ La rationalité peut-elle être améliorée ?
+  - Pratique délibérée
+  - Protocoles externes
+  - Attentes réalistes
+- ✅ Références scientifiques (5 sources clés)
+
+**Fichiers créés :**
+- `src/app/[locale]/methodologie/page.tsx`
+
+**Traductions ajoutées :**
+- `messages/en.json` : Objet complet "methodology"
+- `messages/fr.json` : Objet complet "methodology"
+- Ajout dans `nav.methodology` pour les deux langues
+
+---
+
+### 📱 Partage Social
+
+#### Composant créé
+- ✅ `src/components/SocialShare.tsx`
+  - Bouton Twitter
+  - Bouton LinkedIn
+  - Support bilingue
+  - Ouvre dans nouvelle fenêtre
+
+**Note :** Le composant est créé mais pas encore intégré dans les pages de résultats.
+
+---
+
+### 📦 Dépendances Installées
+
+```json
+{
+  "next-themes": "^0.2.1",         // Dark mode
+  "framer-motion": "^11.x",        // Animations (installé mais non intégré)
+  "@react-pdf/renderer": "^3.x"    // PDF professionnel (installé mais non intégré)
+}
+```
+
+---
+
+### 🔧 Fichiers Modifiés
+
+**Configuration :**
+- `package.json` : Nouvelles dépendances
+- `package-lock.json` : Lock file mis à jour
+- `tailwind.config.ts` : Créé avec dark mode
+
+**Layout & i18n :**
+- `src/app/[locale]/layout.tsx` : ThemeProvider, metadata dynamiques, locale explicite
+- `src/i18n.ts` : Fallback corrigé à 'en'
+- `src/components/LanguageSwitcher.tsx` : Fallback corrigé
+- `src/middleware.ts` : Déjà correct (defaultLocale: 'en')
+
+**Traductions :**
+- `messages/en.json` : +90 lignes (methodology, nav update, footer smiley)
+- `messages/fr.json` : +90 lignes (methodology, nav update)
+
+**Pages :**
+- `src/app/[locale]/page.tsx` : Classes dark mode, suppression "enjoy"
+
+**Nouveaux fichiers :**
+- `public/robots.txt`
+- `src/app/sitemap.ts`
+- `src/components/ThemeProvider.tsx`
+- `src/components/ThemeToggle.tsx`
+- `src/components/SocialShare.tsx`
+- `src/app/[locale]/methodologie/page.tsx`
+- `tailwind.config.ts`
+
+---
+
+### ⏳ Tâches Restantes (Optionnelles)
+
+#### À terminer
+1. **Intégrer SocialShare** dans `/resultats/page.tsx` et `/resultats/[token]/page.tsx`
+   - Composant créé, besoin de l'importer et l'utiliser
+2. **Export PDF professionnel**
+   - `@react-pdf/renderer` installé
+   - Créer un composant PDF stylé avec graphiques
+3. **Animations Framer Motion**
+   - `framer-motion` installé
+   - Ajouter transitions de page
+   - Animer les cartes et accordéons
+
+#### Améliorations futures
+- Ajouter classes dark: aux autres pages (test, résultats)
+- Optimiser les images pour le dark mode
+- Ajouter plus de réseaux sociaux (Facebook, Email)
+- Analytics
+
+---
+
+### 📝 Commits de cette session
+
+1. **fix: Pass locale explicitly to getMessages and Provider**
+   - Correction du bug de langue
+   - Ajout smiley au footer EN
+
+2. **feat: Add comprehensive multilingual SEO**
+   - robots.txt, sitemap.xml, metadata dynamiques
+   - hreflang, OpenGraph, Twitter Cards
+
+3. **feat: Add dark mode support**
+   - next-themes, ThemeProvider, ThemeToggle
+   - Configuration Tailwind
+   - Classes dark sur home page
+
+4. **feat: Add comprehensive Methodology page**
+   - Page complète bilingue
+   - CART, validation, limites, critiques
+   - Références scientifiques
+
+5. **feat: Add social sharing buttons**
+   - Composant SocialShare (Twitter, LinkedIn)
+   - Bilingue, prêt à intégrer
+
+**Branch :** `claude/incomplete-description-011CV22eLUMFpf9smJ4taRv1`
+**Pushed :** ✅ Tous les commits poussés
+
+---
+
+### ✅ Résumé de la Session
+
+**Problèmes résolus :**
+- ✅ Langue bloquée (FR ou EN) → Maintenant fonctionnel
+- ✅ Message "enjoy" → Supprimé
+- ✅ Footer anglais → Smiley ajouté
+
+**Nouvelles fonctionnalités :**
+- ✅ SEO multilingue complet
+- ✅ Mode sombre fonctionnel
+- ✅ Page Méthodologie complète et scientifique
+- ✅ Boutons de partage social créés
+
+**État du projet :**
+- ✅ Site entièrement bilingue (FR/EN)
+- ✅ SEO optimisé pour les moteurs de recherche
+- ✅ Dark mode avec transition fluide
+- ✅ Transparence scientifique complète
+- ⚠️ PDF & animations : bibliothèques installées, intégration à faire
+
+---
+
 ## [2025-11-11] - Corrections bugs critiques + Architecture DB
 
 ### ✅ Bugs corrigés
