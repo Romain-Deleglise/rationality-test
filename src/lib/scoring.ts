@@ -1,4 +1,5 @@
 import { Module, Question, Answer } from '@/types';
+import { getRandomizedQuestion } from './randomization';
 
 // Types de scores
 export interface QuestionScore {
@@ -30,14 +31,17 @@ export interface TestScore {
 
 /**
  * Calcule le score pour une question
- */
-/**
- * Calcule le score pour une question
+ * @param question The question to score
+ * @param answer The user's answer
+ * @param randomizedValues Optional randomized values from session (for questions with randomization)
  */
 export function scoreQuestion(
   question: Question,
-  answer: Answer
+  answer: Answer,
+  randomizedValues?: { [questionId: string]: { [key: string]: number | string } }
 ): QuestionScore {
+  // Apply randomization if available
+  const effectiveQuestion = getRandomizedQuestion(question, randomizedValues);
   let earned = 0;
   const possible = question.points || 1; // Défaut à 1 si pas défini
   let correct = false;
@@ -53,7 +57,7 @@ export function scoreQuestion(
   }
 
   // Si pas de correction définie, on ne peut pas scorer
-  if (question.correct === undefined || question.correct === null) {
+  if (effectiveQuestion.correct === undefined || effectiveQuestion.correct === null) {
     console.warn(`Question ${question.id} n'a pas de correction définie`);
     return {
       questionId: question.id,
@@ -66,20 +70,20 @@ export function scoreQuestion(
   try {
     switch (question.type) {
       case 'multiple-choice':
-        correct = answer.value === question.correct;
+        correct = answer.value === effectiveQuestion.correct;
         earned = correct ? possible : 0;
         break;
 
       case 'number':
         const userAnswer = Number(answer.value);
-        const correctAnswer = Number(question.correct);
-        
+        const correctAnswer = Number(effectiveQuestion.correct);
+
         if (isNaN(userAnswer) || isNaN(correctAnswer)) {
           console.warn(`Question ${question.id}: réponse ou correction invalide`);
           break;
         }
-        
-        const tolerance = question.tolerance || 0;
+
+        const tolerance = effectiveQuestion.tolerance || 0;
         correct = Math.abs(userAnswer - correctAnswer) <= tolerance;
         earned = correct ? possible : 0;
         break;
@@ -89,20 +93,20 @@ export function scoreQuestion(
         if (!interval || !interval.min || !interval.max) {
           break;
         }
-        
+
         const min = Number(interval.min);
         const max = Number(interval.max);
-        const target = Number(question.correct);
-        
+        const target = Number(effectiveQuestion.correct);
+
         if (isNaN(min) || isNaN(max) || isNaN(target)) {
           break;
         }
-        
+
         const contains = min <= target && target <= max;
-        
+
         if (contains) {
           const width = max - min;
-          const expectedWidth = Number(question.tolerance || 100);
+          const expectedWidth = Number(effectiveQuestion.tolerance || 100);
           const wellCalibrated = width <= expectedWidth * 2;
           earned = wellCalibrated ? possible : possible * 0.5;
           correct = true;
@@ -112,14 +116,14 @@ export function scoreQuestion(
       case 'ranking':
         const userRanking = answer.value as number[];
         // Corriger le cast pour gérer string | number
-        const correctRanking = Array.isArray(question.correct) 
-          ? question.correct as number[]
+        const correctRanking = Array.isArray(effectiveQuestion.correct)
+          ? effectiveQuestion.correct as number[]
           : [];
-        
+
         if (!Array.isArray(userRanking) || !Array.isArray(correctRanking) || correctRanking.length === 0) {
           break;
         }
-        
+
         let matches = 0;
         for (let i = 0; i < Math.min(userRanking.length, correctRanking.length); i++) {
           if (userRanking[i] === correctRanking[i]) matches++;
@@ -131,7 +135,7 @@ export function scoreQuestion(
 
       case 'likert':
         const likertAnswer = Number(answer.value);
-        const correctLikert = Number(question.correct);
+        const correctLikert = Number(effectiveQuestion.correct);
         
         if (isNaN(likertAnswer) || isNaN(correctLikert)) {
           break;
@@ -152,12 +156,12 @@ export function scoreQuestion(
       case 'multiple-choice-confidence':
         const choice = answer.value?.choice;
         const confidence = answer.value?.confidence;
-        
+
         if (choice === undefined || confidence === undefined) {
           break;
         }
-        
-        const choiceCorrect = choice === question.correct;
+
+        const choiceCorrect = choice === effectiveQuestion.correct;
         
         if (choiceCorrect) {
           const confidenceBonus = confidence >= 80 ? 0.2 : 0;
@@ -191,7 +195,8 @@ export function scoreQuestion(
 
 export function scoreModule(
   module: Module,
-  answers: Answer[]
+  answers: Answer[],
+  randomizedValues?: { [questionId: string]: { [key: string]: number | string } }
 ): ModuleScore {
   const questionScores = module.questions.map((question) => {
     const answer = answers.find((a) => a.questionId === question.id);
@@ -203,7 +208,7 @@ export function scoreModule(
         correct: false,
       };
     }
-    return scoreQuestion(question, answer);
+    return scoreQuestion(question, answer, randomizedValues);
   });
 
   const earned = questionScores.reduce((sum, qs) => sum + (qs.earned || 0), 0);
@@ -228,9 +233,10 @@ export function scoreModule(
 export function scoreTest(
   modules: Module[],
   answers: Answer[],
-  locale: string = 'fr'
+  locale: string = 'fr',
+  randomizedValues?: { [questionId: string]: { [key: string]: number | string } }
 ): TestScore {
-  const moduleScores = modules.map((module) => scoreModule(module, answers));
+  const moduleScores = modules.map((module) => scoreModule(module, answers, randomizedValues));
 
   const totalEarned = moduleScores.reduce((sum, ms) => sum + (ms.earned || 0), 0);
   const totalPossible = moduleScores.reduce((sum, ms) => sum + (ms.possible || 0), 0);

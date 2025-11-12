@@ -113,7 +113,7 @@ export default function ResultatsPage() {
       return;
     }
 
-    const scores = scoreTest(modules, session.answers, locale);
+    const scores = scoreTest(modules, session.answers, locale, session.randomizedValues);
     const percentile = calculatePercentile(scores.percentage);
     setTestScore({ ...scores, percentile });
 
