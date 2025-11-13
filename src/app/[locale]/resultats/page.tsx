@@ -557,6 +557,94 @@ export default function ResultatsPage() {
           souvent des besoins émotionnels (contrôle, sens, communauté). Adresser les besoins sous-jacents est plus
           efficace que la logique pure.</p>
       )
+    },
+    'Évaluation d\'Arguments': {
+      what: (
+        <p>Votre capacité à évaluer la force logique d'un argument indépendamment de vos opinions personnelles sur
+          la conclusion. Savoir distinguer un argument valide d'un argument faible, même quand la conclusion vous déplaît.</p>
+      ),
+      why: (
+        <p>Dans les débats publics, nous acceptons facilement des arguments faibles qui soutiennent nos positions,
+          et rejetons des arguments solides qui les contredisent. Cette incapacité à séparer logique et opinion
+          empêche tout progrès intellectuel honnête.</p>
+      ),
+      example: (
+        <p>"Les riches devraient payer plus d'impôts car l'inégalité augmente." C'est un argument faible
+          (l'inégalité croissante ne justifie pas logiquement une hausse d'impôts). Mais selon vos convictions
+          politiques, vous le jugerez probablement "convaincant" ou "absurde".</p>
+      ),
+      canImprove: (
+        <p>Amélioration : modérée (15-25%). L'entraînement à l'analyse formelle d'arguments aide, surtout si on
+          pratique délibérément sur des sujets qui nous touchent émotionnellement. La clé : forcer la séparation
+          "suis-je d'accord ?" vs "l'argument est-il logiquement solide ?"</p>
+      )
+    },
+    'Raisonnement Causal': {
+      what: (
+        <p>Votre capacité à distinguer corrélation et causation, et à reconnaître l'importance des groupes contrôles
+          dans les expériences. Éviter de conclure qu'une variable cause une autre uniquement parce qu'elles varient ensemble.</p>
+      ),
+      why: (
+        <p>La confusion corrélation/causation produit des croyances fausses massives : "les vaccins causent l'autisme"
+          (corrélation temporelle ≠ cause), "le bio est plus sain" (oubli du biais de sélection), "cette thérapie
+          fonctionne" (régression vers la moyenne ignorée).</p>
+      ),
+      example: (
+        <p>Les villes avec plus de pompiers ont plus d'incendies. Faut-il réduire le nombre de pompiers ? Non :
+          la taille de la ville cause les deux. Ou : "J'ai pris de l'homéopathie et je vais mieux" — oubli que
+          la plupart des maladies guérissent spontanément (pas de groupe contrôle).</p>
+      ),
+      canImprove: (
+        <p>Amélioration : bonne (20-35%). L'enseignement explicite de la logique causale et des designs expérimentaux
+          améliore significativement les jugements causaux. Mais le transfert hors contexte éducatif reste limité
+          — les gens continuent à confondre corrélation et causation dans leur vie quotidienne.</p>
+      )
+    },
+    'Sensibilité à la Valeur Espérée': {
+      what: (
+        <p>Votre capacité à choisir rationnellement entre des paris en maximisant la valeur espérée mathématique
+          (probabilité × gain) plutôt que de suivre vos intuitions sur les "bons" ou "mauvais" paris.</p>
+      ),
+      why: (
+        <p>L'insensibilité à la valeur espérée coûte cher : acheter des billets de loterie (valeur espérée négative),
+          refuser des investissements rentables par aversion au risque, sous-assurer des risques catastrophiques,
+          sur-assurer des risques mineurs.</p>
+      ),
+      example: (
+        <p>Préférez-vous : A) gagner 100€ à coup sûr, ou B) 50% de gagner 300€ ? Beaucoup choisissent A (gain certain),
+          mais B a une valeur espérée supérieure (150€ vs 100€). Cette aversion irrationnelle au risque fait perdre
+          de l'argent sur le long terme.</p>
+      ),
+      canImprove: (
+        <p>Amélioration : limitée (10-20%). Même après formation, les gens restent fortement influencés par l'aversion
+          aux pertes et le cadrage probabiliste. L'amélioration se voit surtout quand on force un calcul explicite
+          de la valeur espérée — mais l'intuition ne change pas durablement.</p>
+      )
+    },
+    'Coûts Irrécupérables': {
+      what: (
+        <p>Votre résistance à la{' '}
+          <a href="https://fr.wikipedia.org/wiki/Co%C3%BBt_irr%C3%A9cup%C3%A9rable" target="_blank" rel="noopener" className="text-blue-600 dark:text-blue-400 hover:underline">
+            fallacy des coûts irrécupérables
+          </a>{' '}
+          (sunk cost fallacy) : ne pas laisser les investissements passés (temps, argent, effort) influencer
+          les décisions futures quand ils ne sont pas récupérables.</p>
+      ),
+      why: (
+        <p>Le raisonnement rationnel exige d'ignorer les coûts irrécupérables et de ne considérer que les coûts/bénéfices
+          futurs. Mais notre psychologie nous pousse à "ne pas gaspiller" l'investissement passé, conduisant à
+          persister dans des projets voués à l'échec.</p>
+      ),
+      example: (
+        <p>"J'ai déjà payé 50€ pour ce film au cinéma, je dois rester jusqu'à la fin même s'il est horrible."
+          Rationnel : partir maintenant (les 50€ sont perdus de toute façon, pourquoi perdre aussi 2h de votre vie ?).
+          Ou continuer un projet de recherche raté "parce que j'y ai mis 3 ans".</p>
+      ),
+      canImprove: (
+        <p>Amélioration : faible (5-15%). La fallacy des coûts irrécupérables est extrêmement résistante à l'intervention.
+          Même les économistes et décideurs formés y succombent régulièrement. La meilleure stratégie : externaliser
+          les décisions (demander l'avis de quelqu'un qui n'a pas investi dans le projet).</p>
+      )
     }
   };
 
@@ -843,6 +931,91 @@ export default function ResultatsPage() {
       canImprove: (
         <p>Improvement: modest (10-20%). Critical thinking education helps, but these beliefs often fulfill
           emotional needs (control, meaning, community). Addressing underlying needs is more effective than pure logic.</p>
+      )
+    },
+    'Argument Evaluation': {
+      what: (
+        <p>Your ability to evaluate the logical strength of an argument independently of your personal opinions
+          about the conclusion. Distinguishing a valid argument from a weak one, even when you dislike the conclusion.</p>
+      ),
+      why: (
+        <p>In public debates, we easily accept weak arguments that support our positions and reject strong arguments
+          that contradict them. This inability to separate logic from opinion prevents any honest intellectual progress.</p>
+      ),
+      example: (
+        <p>"The rich should pay more taxes because inequality is rising." This is a weak argument (rising inequality
+          doesn't logically justify higher taxes). But depending on your political beliefs, you'll likely judge it
+          as either "compelling" or "absurd."</p>
+      ),
+      canImprove: (
+        <p>Improvement: moderate (15-25%). Training in formal argument analysis helps, especially when deliberately
+          practicing on emotionally charged topics. The key: forcing separation between "do I agree?" vs.
+          "is the argument logically sound?"</p>
+      )
+    },
+    'Causal Reasoning': {
+      what: (
+        <p>Your ability to distinguish correlation from causation, and recognize the importance of control groups
+          in experiments. Avoiding the conclusion that one variable causes another merely because they vary together.</p>
+      ),
+      why: (
+        <p>The confusion between correlation and causation produces massive false beliefs: "vaccines cause autism"
+          (temporal correlation ≠ cause), "organic food is healthier" (selection bias forgotten), "this therapy works"
+          (regression to the mean ignored).</p>
+      ),
+      example: (
+        <p>Cities with more firefighters have more fires. Should we reduce the number of firefighters? No:
+          city size causes both. Or: "I took homeopathy and got better" — forgetting that most illnesses heal
+          spontaneously (no control group).</p>
+      ),
+      canImprove: (
+        <p>Improvement: good (20-35%). Explicit teaching of causal logic and experimental designs significantly
+          improves causal judgments. But transfer outside educational contexts remains limited — people continue
+          to confuse correlation and causation in daily life.</p>
+      )
+    },
+    'Sensitivity to Expected Value': {
+      what: (
+        <p>Your ability to rationally choose between gambles by maximizing expected mathematical value
+          (probability × payoff) rather than following your intuitions about "good" or "bad" bets.</p>
+      ),
+      why: (
+        <p>Insensitivity to expected value is costly: buying lottery tickets (negative expected value),
+          refusing profitable investments due to risk aversion, under-insuring catastrophic risks,
+          over-insuring minor risks.</p>
+      ),
+      example: (
+        <p>Would you prefer: A) win $100 for sure, or B) 50% chance to win $300? Many choose A (certain gain),
+          but B has higher expected value ($150 vs $100). This irrational risk aversion loses money in the long run.</p>
+      ),
+      canImprove: (
+        <p>Improvement: limited (10-20%). Even after training, people remain strongly influenced by loss aversion
+          and probability framing. Improvement mainly shows when forcing explicit expected value calculation —
+          but intuition doesn't change durably.</p>
+      )
+    },
+    'Sunk Cost Fallacy': {
+      what: (
+        <p>Your resistance to the{' '}
+          <a href="https://en.wikipedia.org/wiki/Sunk_cost" target="_blank" rel="noopener" className="text-blue-600 dark:text-blue-400 hover:underline">
+            sunk cost fallacy
+          </a>
+          : not letting past investments (time, money, effort) influence future decisions when they cannot
+          be recovered.</p>
+      ),
+      why: (
+        <p>Rational reasoning requires ignoring sunk costs and considering only future costs/benefits. But our
+          psychology pushes us to "not waste" past investment, leading to persistence in doomed projects.</p>
+      ),
+      example: (
+        <p>"I already paid $50 for this movie ticket, I must stay until the end even if it's horrible."
+          Rational: leave now (the $50 is lost anyway, why also lose 2 hours of your life?).
+          Or continuing a failed research project "because I've already put 3 years into it."</p>
+      ),
+      canImprove: (
+        <p>Improvement: weak (5-15%). The sunk cost fallacy is extremely resistant to intervention. Even trained
+          economists and decision-makers regularly succumb to it. Best strategy: externalize decisions (ask advice
+          from someone who hasn't invested in the project).</p>
       )
     }
   };
