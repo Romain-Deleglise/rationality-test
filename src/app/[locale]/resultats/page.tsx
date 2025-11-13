@@ -1240,7 +1240,7 @@ export default function ResultatsPage() {
                     <TrendingUp className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />
                     {locale === 'fr' ? 'Distribution des scores CART' : 'CART Score Distribution'}
                   </h4>
-                  <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
+                  <p className="text-sm text-gray-600 dark:text-gray-400 mb-4 text-justify">
                     {locale === 'fr'
                       ? `Distribution des scores de l'étude ${cartNorms.study} (N=${cartNorms.sampleSize}) avec votre position marquée.`
                       : `Score distribution from ${cartNorms.study} study (N=${cartNorms.sampleSize}) with your position marked.`}
@@ -1481,8 +1481,8 @@ export default function ResultatsPage() {
                       <span className="text-yellow-600 dark:text-yellow-400 mt-0.5">•</span>
                       <span>
                         {locale === 'fr'
-                          ? <><strong>Couverture partielle :</strong> Notre test couvre environ 60% des modules du CART complet (12/20 modules). Les modules manquants incluent : Analyse d'arguments, Raisonnement causal, Effets de cadrage, Sensibilité à la valeur attendue, Coûts irrécupérables, entre autres.</>
-                          : <><strong>Partial coverage:</strong> Our test covers approximately 60% of the full CART modules (12/20 modules). Missing modules include: Argument Analysis, Causal Reasoning, Framing Effects, Sensitivity to Expected Value, Sunk Cost, among others.</>
+                          ? <><strong>Couverture partielle :</strong> Notre test couvre environ 85% des modules du CART complet (17/20 modules). Les modules manquants incluent : Gambler's Fallacy Task, Covariation Detection, et Property Verification.</>
+                          : <><strong>Partial coverage:</strong> Our test covers approximately 85% of the full CART modules (17/20 modules). Missing modules include: Gambler's Fallacy Task, Covariation Detection, and Property Verification.</>
                         }
                       </span>
                     </li>
@@ -1499,8 +1499,8 @@ export default function ResultatsPage() {
                       <span className="text-yellow-600 dark:text-yellow-400 mt-0.5">•</span>
                       <span>
                         {locale === 'fr'
-                          ? <><strong>Durée et profondeur :</strong> Le CART complet prend environ 3 heures (148 points), notre version complète environ 1 heure (94 points). Cette différence de durée peut affecter la mesure de certains biais cognitifs.</>
-                          : <><strong>Duration and depth:</strong> The full CART takes approximately 3 hours (148 points), our full version takes about 1 hour (94 points). This duration difference may affect the measurement of certain cognitive biases.</>
+                          ? <><strong>Durée et profondeur :</strong> Le CART complet prend environ 3 heures (148 points), notre version complète environ 1.5 heures (119 points). Cette différence de durée peut affecter la mesure de certains biais cognitifs.</>
+                          : <><strong>Duration and depth:</strong> The full CART takes approximately 3 hours (148 points), our full version takes about 1.5 hours (119 points). This duration difference may affect the measurement of certain cognitive biases.</>
                         }
                       </span>
                     </li>
@@ -1512,13 +1512,13 @@ export default function ResultatsPage() {
                   <h4 className="font-bold text-gray-900 dark:text-white mb-2">
                     ✓ {locale === 'fr' ? 'Conclusion sur la comparabilité' : 'Conclusion on Comparability'}
                   </h4>
-                  <p className="text-sm text-gray-700 dark:text-gray-300 mb-2">
+                  <p className="text-sm text-gray-700 dark:text-gray-300 mb-2 text-justify">
                     {locale === 'fr'
                       ? "Notre test fournit une estimation approximative mais informative de votre position par rapport aux normes CART. Bien qu'il ne soit pas un substitut complet au CART officiel, il offre une évaluation utile de vos capacités de raisonnement rationnel dans les domaines couverts."
                       : "Our test provides an approximate but informative estimate of your position relative to CART norms. While not a complete substitute for the official CART, it offers a useful assessment of your rational thinking abilities in the covered domains."
                     }
                   </p>
-                  <p className="text-sm text-gray-700 dark:text-gray-300">
+                  <p className="text-sm text-gray-700 dark:text-gray-300 text-justify">
                     {locale === 'fr'
                       ? <><strong>Recommandation :</strong> Utilisez cette comparaison comme un point de référence général plutôt que comme un diagnostic précis. Pour une évaluation complète et officielle, consultez le CART complet administré par des chercheurs qualifiés.</>
                       : <><strong>Recommendation:</strong> Use this comparison as a general reference point rather than a precise diagnosis. For a complete and official assessment, consult the full CART administered by qualified researchers.</>
