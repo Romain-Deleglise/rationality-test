@@ -241,7 +241,6 @@
       "Raisonnement Probabiliste": "Votre capacité à raisonner avec les probabilités et éviter les erreurs classiques (erreur du parieur, négligence des taux de base, erreur de conjonction).",
       "Raisonnement Scientifique": "Votre capacité à tester rigoureusement des hypothèses, falsifier plutôt que confirmer, et distinguer corrélation et causation.",
       "Réflexion vs Intuition": "Votre capacité à inhiber la réponse intuitive immédiate et engager une réflexion analytique (CRT).",
-      "Résistance au Traitement Avare": "Votre capacité à inhiber la réponse intuitive immédiate et engager une réflexion analytique approfondie (Cognitive Reflection Test).",
       "Biais de Croyance": "Votre capacité à évaluer la validité logique indépendamment de vos croyances sur la conclusion.",
       "Calibration des Connaissances": "Votre capacité à estimer avec précision votre niveau de certitude (éviter l'overconfidence).",
       "Numératie Probabiliste": "Votre capacité à manipuler les nombres dans des contextes probabilistes et comprendre les statistiques.",
@@ -340,8 +339,7 @@
       "testLimitations": "Limites de ce test",
       "limitation1": "Mesure certains aspects de la rationalité, pas tous (créativité, sagesse pratique, etc.)",
       "limitation2": "Score peut varier selon fatigue, stress, contexte",
-      "limitation3": "Amélioration modeste et difficile à maintenir",
-      "limitation4": "Percentile basé sur distribution théorique, pas encore données réelles"
+      "limitation3": "Amélioration modeste et difficile à maintenir"
     },
 
     "stateOfResearch": {
