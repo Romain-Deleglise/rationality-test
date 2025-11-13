@@ -10,6 +10,8 @@ import { getModuleTranslationKey, translateModuleName } from '@/lib/moduleMappin
 import {
   CART_FULL_FORM_NORMS,
   CART_SHORT_FORM_NORMS,
+  CART_MODULE_NORMS,
+  MODULE_NAME_MAPPING,
   calculatePercentile as calculateCARTPercentile,
   getPercentileInterpretation,
 } from '@/data/cart-reference-data';
@@ -1106,98 +1108,6 @@ export default function ResultatsPage() {
             </div>
           )}
 
-          {/* Statistiques globales */}
-          {globalStats && globalStats.count > 10 && (
-            <div className="mt-6 bg-gray-50 dark:bg-gray-700 rounded-lg p-4 text-left">
-              <h3 className="text-sm font-bold text-gray-900 dark:text-white mb-3">📊 {t('globalStatsVersion')} {version})</h3>
-              <div className="grid grid-cols-2 gap-3 text-xs">
-                <div>
-                  <span className="text-gray-600 dark:text-gray-300">{t('testsCompleted')} :</span>
-                  <span className="font-semibold text-gray-900 dark:text-white ml-1">{globalStats.count}</span>
-                </div>
-                <div>
-                  <span className="text-gray-600 dark:text-gray-300">{t('averageScore')} :</span>
-                  <span className="font-semibold text-gray-900 dark:text-white ml-1">{globalStats.average.toFixed(1)}%</span>
-                </div>
-                <div>
-                  <span className="text-gray-600 dark:text-gray-300">{t('median')} :</span>
-                  <span className="font-semibold text-gray-900 dark:text-white ml-1">{globalStats.median.toFixed(1)}%</span>
-                </div>
-                <div>
-                  <span className="text-gray-600 dark:text-gray-300">{t('bestScore')} :</span>
-                  <span className="font-semibold text-gray-900 dark:text-white ml-1">{globalStats.max.toFixed(1)}%</span>
-                </div>
-              </div>
-            </div>
-          )}
-
-          {/* CART Comparison */}
-          {(() => {
-            // Choose appropriate CART norms based on test version
-            const cartNorms = version === 'complète' ? CART_FULL_FORM_NORMS : CART_SHORT_FORM_NORMS;
-            const cartPercentile = calculateCARTPercentile(
-              testScore.totalEarned,
-              testScore.totalPossible,
-              cartNorms
-            );
-            const interpretation = getPercentileInterpretation(cartPercentile, locale as 'en' | 'fr');
-
-            return (
-              <div className="mt-6 bg-purple-50 dark:bg-purple-900/20 border-2 border-purple-300 dark:border-purple-700 rounded-lg p-4 text-left">
-                <div className="flex items-start gap-3 mb-3">
-                  <Award className="w-6 h-6 text-purple-600 dark:text-purple-400 flex-shrink-0 mt-1" />
-                  <div className="flex-1">
-                    <h3 className="text-sm font-bold text-gray-900 dark:text-white mb-1">
-                      {locale === 'fr' ? '🎓 Comparaison avec la recherche officielle CART' : '🎓 Comparison with Official CART Research'}
-                    </h3>
-                    <p className="text-xs text-gray-600 dark:text-gray-300 mb-3">
-                      {locale === 'fr'
-                        ? `Basé sur l'étude ${cartNorms.study} (N=${cartNorms.sampleSize}, ${cartNorms.sampleDescription})`
-                        : `Based on study ${cartNorms.study} (N=${cartNorms.sampleSize}, ${cartNorms.sampleDescription})`
-                      }
-                    </p>
-                    <div className="bg-white dark:bg-gray-800 rounded p-3 mb-2">
-                      <div className="flex items-center justify-between mb-2">
-                        <span className="text-xs text-gray-600 dark:text-gray-300">
-                          {locale === 'fr' ? 'Votre percentile CART :' : 'Your CART percentile:'}
-                        </span>
-                        <span className="text-lg font-bold text-purple-600 dark:text-purple-400">
-                          {cartPercentile}e
-                        </span>
-                      </div>
-                      <p className="text-xs text-gray-700 dark:text-gray-300 italic">
-                        {interpretation}
-                      </p>
-                    </div>
-                    <div className="grid grid-cols-2 gap-2 text-xs">
-                      <div className="bg-white dark:bg-gray-800 rounded p-2">
-                        <div className="text-gray-600 dark:text-gray-400">
-                          {locale === 'fr' ? 'Moyenne CART' : 'CART Mean'}
-                        </div>
-                        <div className="font-bold text-gray-900 dark:text-white">
-                          {((cartNorms.mean / cartNorms.totalPoints) * 100).toFixed(1)}%
-                        </div>
-                      </div>
-                      <div className="bg-white dark:bg-gray-800 rounded p-2">
-                        <div className="text-gray-600 dark:text-gray-400">
-                          {locale === 'fr' ? 'Votre score' : 'Your score'}
-                        </div>
-                        <div className="font-bold text-gray-900 dark:text-white">
-                          {testScore.percentage.toFixed(1)}%
-                        </div>
-                      </div>
-                    </div>
-                    <p className="text-xs text-gray-500 dark:text-gray-400 mt-3 italic">
-                      {locale === 'fr'
-                        ? '* Comparaison approximative basée sur les normes publiées du test CART. Les différences de format et de contenu peuvent affecter la comparabilité directe.'
-                        : '* Approximate comparison based on published CART test norms. Differences in format and content may affect direct comparability.'
-                      }
-                    </p>
-                  </div>
-                </div>
-              </div>
-            );
-          })()}
         </div>
 
         {/* Interprétation Réaliste */}
@@ -1215,6 +1125,309 @@ export default function ResultatsPage() {
             </div>
           </div>
         </div>
+
+        {/* CART Comparison Section - Comprehensive */}
+        <AccordionItem
+          title={locale === 'fr' ? '📊 Comparaison avec les normes CART officielles' : '📊 Comparison with Official CART Norms'}
+          defaultOpen={true}
+        >
+          {(() => {
+            const cartNorms = version === 'complète' ? CART_FULL_FORM_NORMS : CART_SHORT_FORM_NORMS;
+            const cartPercentile = calculateCARTPercentile(
+              testScore.totalEarned,
+              testScore.totalPossible,
+              cartNorms
+            );
+
+            // Map our module scores to CART module names for comparison
+            const moduleComparisons = testScore.modules
+              .map(m => {
+                const moduleName = m.moduleName.split(' (')[0];
+                const translatedName = translateModuleName(moduleName, 'en' as 'en' | 'fr');
+                const cartModule = CART_MODULE_NORMS.find(cm =>
+                  cm.moduleName === translatedName ||
+                  Object.entries(MODULE_NAME_MAPPING).find(([k, v]) =>
+                    (k === moduleName || k === translatedName) && v === cm.moduleName
+                  )
+                );
+
+                if (!cartModule) return null;
+
+                // Normalize our score to CART scale
+                const ourPercentage = m.percentage;
+                const cartPercentage = (cartModule.mean / cartModule.points) * 100;
+
+                return {
+                  name: translatedName,
+                  ourScore: ourPercentage,
+                  cartMean: cartPercentage,
+                  cartSD: (cartModule.sd / cartModule.points) * 100,
+                  reliability: cartModule.alpha,
+                };
+              })
+              .filter(Boolean);
+
+            return (
+              <div className="space-y-6">
+                {/* Introduction */}
+                <div className="bg-blue-50 dark:bg-blue-900/20 border-l-4 border-blue-500 dark:border-blue-600 rounded-r-lg p-4">
+                  <h4 className="font-bold text-gray-900 dark:text-white mb-2 flex items-center gap-2">
+                    <Award className="w-5 h-5 text-blue-600 dark:text-blue-400" />
+                    {locale === 'fr' ? 'À propos du CART' : 'About CART'}
+                  </h4>
+                  <p className="text-sm text-gray-700 dark:text-gray-300 mb-3 text-justify">
+                    {locale === 'fr'
+                      ? "Le CART (Comprehensive Assessment of Rational Thinking) est le test de référence scientifique pour mesurer la pensée rationnelle, développé par Keith Stanovich et ses collègues (Université de Toronto). Il a été validé à travers de multiples études empiriques avec des milliers de participants."
+                      : "CART (Comprehensive Assessment of Rational Thinking) is the gold-standard scientific test for measuring rational thinking, developed by Keith Stanovich and colleagues (University of Toronto). It has been validated through multiple empirical studies with thousands of participants."
+                    }
+                  </p>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs">
+                    <div className="bg-white dark:bg-gray-800 rounded p-3">
+                      <div className="font-semibold text-gray-900 dark:text-white mb-1">
+                        📚 {locale === 'fr' ? 'Étude RT59 (Version courte)' : 'RT59 Study (Short-Form)'}
+                      </div>
+                      <div className="text-gray-600 dark:text-gray-400">
+                        • N = 372 {locale === 'fr' ? 'étudiants universitaires' : 'university students'}<br />
+                        • 100 {locale === 'fr' ? 'points maximum' : 'points maximum'}<br />
+                        • {locale === 'fr' ? 'Moyenne' : 'Mean'}: 43.6/100 (43.6%)<br />
+                        • {locale === 'fr' ? 'Écart-type' : 'Standard deviation'}: 13.0
+                      </div>
+                    </div>
+                    <div className="bg-white dark:bg-gray-800 rounded p-3">
+                      <div className="font-semibold text-gray-900 dark:text-white mb-1">
+                        📚 {locale === 'fr' ? 'Étude RT60 (Version complète)' : 'RT60 Study (Full-Form)'}
+                      </div>
+                      <div className="text-gray-600 dark:text-gray-400">
+                        • N = 747 {locale === 'fr' ? '(échantillon mixte)' : '(mixed sample)'}<br />
+                        • 148 {locale === 'fr' ? 'points maximum' : 'points maximum'}<br />
+                        • {locale === 'fr' ? 'Moyenne' : 'Mean'}: 75.6/148 (51.1%)<br />
+                        • {locale === 'fr' ? 'Écart-type' : 'Standard deviation'}: 23.2
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Global Score Comparison */}
+                <div>
+                  <h4 className="font-bold text-gray-900 dark:text-white mb-3 flex items-center gap-2">
+                    <TrendingUp className="w-5 h-5 text-purple-600 dark:text-purple-400" />
+                    {locale === 'fr' ? 'Votre position par rapport aux normes CART' : 'Your Position Relative to CART Norms'}
+                  </h4>
+
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+                    <div className="bg-gradient-to-br from-purple-50 to-purple-100 dark:from-purple-900/30 dark:to-purple-800/30 rounded-lg p-4 border-2 border-purple-200 dark:border-purple-700">
+                      <div className="text-xs text-gray-600 dark:text-gray-400 mb-1">
+                        {locale === 'fr' ? 'Votre score' : 'Your score'}
+                      </div>
+                      <div className="text-3xl font-bold text-purple-600 dark:text-purple-400 mb-1">
+                        {testScore.percentage.toFixed(1)}%
+                      </div>
+                      <div className="text-xs text-gray-600 dark:text-gray-400">
+                        {testScore.totalEarned.toFixed(1)}/{testScore.totalPossible.toFixed(1)} {locale === 'fr' ? 'points' : 'points'}
+                      </div>
+                    </div>
+
+                    <div className="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/30 dark:to-blue-800/30 rounded-lg p-4 border-2 border-blue-200 dark:border-blue-700">
+                      <div className="text-xs text-gray-600 dark:text-gray-400 mb-1">
+                        {locale === 'fr' ? 'Moyenne CART' : 'CART Mean'}
+                      </div>
+                      <div className="text-3xl font-bold text-blue-600 dark:text-blue-400 mb-1">
+                        {((cartNorms.mean / cartNorms.totalPoints) * 100).toFixed(1)}%
+                      </div>
+                      <div className="text-xs text-gray-600 dark:text-gray-400">
+                        {cartNorms.study} (N={cartNorms.sampleSize})
+                      </div>
+                    </div>
+
+                    <div className="bg-gradient-to-br from-green-50 to-green-100 dark:from-green-900/30 dark:to-green-800/30 rounded-lg p-4 border-2 border-green-200 dark:border-green-700">
+                      <div className="text-xs text-gray-600 dark:text-gray-400 mb-1">
+                        {locale === 'fr' ? 'Votre percentile' : 'Your percentile'}
+                      </div>
+                      <div className="text-3xl font-bold text-green-600 dark:text-green-400 mb-1">
+                        {cartPercentile}e
+                      </div>
+                      <div className="text-xs text-gray-600 dark:text-gray-400">
+                        {getPercentileInterpretation(cartPercentile, locale as 'en' | 'fr')}
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Percentile Distribution Visualization */}
+                  <div className="bg-gray-50 dark:bg-gray-800 rounded-lg p-4 mb-4">
+                    <div className="text-sm font-semibold text-gray-900 dark:text-white mb-3">
+                      {locale === 'fr' ? 'Distribution percentile (basée sur les normes CART)' : 'Percentile Distribution (based on CART norms)'}
+                    </div>
+                    <div className="relative h-16 bg-gradient-to-r from-red-200 via-yellow-200 via-green-200 to-blue-200 dark:from-red-900/50 dark:via-yellow-900/50 dark:via-green-900/50 dark:to-blue-900/50 rounded-lg overflow-hidden">
+                      {/* Percentile markers */}
+                      <div className="absolute inset-0 flex justify-between items-center px-2 text-xs text-gray-700 dark:text-gray-300">
+                        <span>0%</span>
+                        <span>25%</span>
+                        <span>50%</span>
+                        <span>75%</span>
+                        <span>100%</span>
+                      </div>
+                      {/* User position marker */}
+                      <div
+                        className="absolute top-0 bottom-0 w-1 bg-purple-600 dark:bg-purple-400"
+                        style={{ left: `${cartPercentile}%` }}
+                      >
+                        <div className="absolute -top-6 left-1/2 -translate-x-1/2 bg-purple-600 dark:bg-purple-400 text-white text-xs px-2 py-1 rounded whitespace-nowrap font-bold">
+                          {locale === 'fr' ? 'Vous' : 'You'}: {cartPercentile}e
+                        </div>
+                      </div>
+                    </div>
+                    <p className="text-xs text-gray-600 dark:text-gray-400 mt-2 italic">
+                      {locale === 'fr'
+                        ? `Votre score de ${testScore.percentage.toFixed(1)}% vous place au ${cartPercentile}e percentile, ce qui signifie que vous avez obtenu un score supérieur à environ ${cartPercentile}% des participants de l'étude ${cartNorms.study}.`
+                        : `Your score of ${testScore.percentage.toFixed(1)}% places you at the ${cartPercentile}th percentile, meaning you scored higher than approximately ${cartPercentile}% of participants in the ${cartNorms.study} study.`
+                      }
+                    </p>
+                  </div>
+                </div>
+
+                {/* Module-by-Module Comparison */}
+                {moduleComparisons.length > 0 && (
+                  <div>
+                    <h4 className="font-bold text-gray-900 dark:text-white mb-3">
+                      {locale === 'fr' ? 'Comparaison par module' : 'Module-by-Module Comparison'}
+                    </h4>
+                    <p className="text-sm text-gray-600 dark:text-gray-400 mb-3">
+                      {locale === 'fr'
+                        ? 'Comparaison de vos scores avec les moyennes CART pour les modules équivalents :'
+                        : 'Comparison of your scores with CART means for equivalent modules:'}
+                    </p>
+                    <div className="overflow-x-auto">
+                      <table className="w-full text-sm border-collapse">
+                        <thead>
+                          <tr className="bg-gray-100 dark:bg-gray-700">
+                            <th className="text-left p-3 border border-gray-300 dark:border-gray-600">
+                              {locale === 'fr' ? 'Module' : 'Module'}
+                            </th>
+                            <th className="text-center p-3 border border-gray-300 dark:border-gray-600">
+                              {locale === 'fr' ? 'Votre score' : 'Your score'}
+                            </th>
+                            <th className="text-center p-3 border border-gray-300 dark:border-gray-600">
+                              {locale === 'fr' ? 'Moyenne CART' : 'CART Mean'}
+                            </th>
+                            <th className="text-center p-3 border border-gray-300 dark:border-gray-600">
+                              {locale === 'fr' ? 'Écart-type CART' : 'CART SD'}
+                            </th>
+                            <th className="text-center p-3 border border-gray-300 dark:border-gray-600">
+                              {locale === 'fr' ? 'Fiabilité (α)' : 'Reliability (α)'}
+                            </th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {moduleComparisons.map((comp: any, idx: number) => {
+                            const diff = comp.ourScore - comp.cartMean;
+                            const diffColor = diff > 0 ? 'text-green-600 dark:text-green-400' : diff < 0 ? 'text-red-600 dark:text-red-400' : 'text-gray-600 dark:text-gray-400';
+
+                            return (
+                              <tr key={idx} className="hover:bg-gray-50 dark:hover:bg-gray-700/50">
+                                <td className="p-3 border border-gray-300 dark:border-gray-600 font-medium">
+                                  {comp.name}
+                                </td>
+                                <td className="text-center p-3 border border-gray-300 dark:border-gray-600">
+                                  <span className={`font-bold ${diffColor}`}>
+                                    {comp.ourScore.toFixed(1)}%
+                                  </span>
+                                  {diff !== 0 && (
+                                    <span className={`text-xs ml-1 ${diffColor}`}>
+                                      ({diff > 0 ? '+' : ''}{diff.toFixed(1)}%)
+                                    </span>
+                                  )}
+                                </td>
+                                <td className="text-center p-3 border border-gray-300 dark:border-gray-600">
+                                  {comp.cartMean.toFixed(1)}%
+                                </td>
+                                <td className="text-center p-3 border border-gray-300 dark:border-gray-600 text-gray-600 dark:text-gray-400">
+                                  ±{comp.cartSD.toFixed(1)}%
+                                </td>
+                                <td className="text-center p-3 border border-gray-300 dark:border-gray-600 text-gray-600 dark:text-gray-400">
+                                  {comp.reliability ? comp.reliability.toFixed(2) : 'N/A'}
+                                </td>
+                              </tr>
+                            );
+                          })}
+                        </tbody>
+                      </table>
+                    </div>
+                    <p className="text-xs text-gray-500 dark:text-gray-400 mt-2 italic">
+                      {locale === 'fr'
+                        ? "* La fiabilité (coefficient α de Cronbach) mesure la cohérence interne du module. Un α > 0.70 est considéré comme bon, α > 0.80 comme excellent."
+                        : "* Reliability (Cronbach's α coefficient) measures the internal consistency of the module. An α > 0.70 is considered good, α > 0.80 as excellent."
+                      }
+                    </p>
+                  </div>
+                )}
+
+                {/* Methodological Limitations */}
+                <div className="bg-yellow-50 dark:bg-yellow-900/20 border-l-4 border-yellow-500 dark:border-yellow-600 rounded-r-lg p-4">
+                  <h4 className="font-bold text-gray-900 dark:text-white mb-2">
+                    ⚠️ {locale === 'fr' ? 'Limites méthodologiques et différences' : 'Methodological Limitations and Differences'}
+                  </h4>
+                  <ul className="space-y-2 text-sm text-gray-700 dark:text-gray-300">
+                    <li className="flex items-start gap-2">
+                      <span className="text-yellow-600 dark:text-yellow-400 mt-0.5">•</span>
+                      <span>
+                        {locale === 'fr'
+                          ? <><strong>Couverture partielle :</strong> Notre test couvre environ 60% des modules du CART complet (12/20 modules). Les modules manquants incluent : Analyse d'arguments, Raisonnement causal, Effets de cadrage, Sensibilité à la valeur attendue, Coûts irrécupérables, entre autres.</>
+                          : <><strong>Partial coverage:</strong> Our test covers approximately 60% of the full CART modules (12/20 modules). Missing modules include: Argument Analysis, Causal Reasoning, Framing Effects, Sensitivity to Expected Value, Sunk Cost, among others.</>
+                        }
+                      </span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-yellow-600 dark:text-yellow-400 mt-0.5">•</span>
+                      <span>
+                        {locale === 'fr'
+                          ? <><strong>Différences de format :</strong> Notre test utilise un format en ligne avec notation automatique, tandis que le CART original combine questions à choix multiples et réponses ouvertes nécessitant une notation manuelle par des experts.</>
+                          : <><strong>Format differences:</strong> Our test uses an online format with automatic scoring, while the original CART combines multiple-choice and open-ended questions requiring manual scoring by experts.</>
+                        }
+                      </span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-yellow-600 dark:text-yellow-400 mt-0.5">•</span>
+                      <span>
+                        {locale === 'fr'
+                          ? <><strong>Échantillons différents :</strong> Les normes CART proviennent d'échantillons spécifiques (étudiants universitaires pour RT59, échantillon mixte pour RT60). Votre comparaison suppose une distribution similaire, ce qui peut ne pas être exact.</>
+                          : <><strong>Different samples:</strong> CART norms come from specific samples (university students for RT59, mixed sample for RT60). Your comparison assumes a similar distribution, which may not be exact.</>
+                        }
+                      </span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-yellow-600 dark:text-yellow-400 mt-0.5">•</span>
+                      <span>
+                        {locale === 'fr'
+                          ? <><strong>Durée et profondeur :</strong> Le CART complet prend environ 3 heures (148 points), notre version complète environ 1 heure (94 points). Cette différence de durée peut affecter la mesure de certains biais cognitifs.</>
+                          : <><strong>Duration and depth:</strong> The full CART takes approximately 3 hours (148 points), our full version takes about 1 hour (94 points). This duration difference may affect the measurement of certain cognitive biases.</>
+                        }
+                      </span>
+                    </li>
+                  </ul>
+                </div>
+
+                {/* Conclusion */}
+                <div className="bg-green-50 dark:bg-green-900/20 border-l-4 border-green-500 dark:border-green-600 rounded-r-lg p-4">
+                  <h4 className="font-bold text-gray-900 dark:text-white mb-2">
+                    ✓ {locale === 'fr' ? 'Conclusion sur la comparabilité' : 'Conclusion on Comparability'}
+                  </h4>
+                  <p className="text-sm text-gray-700 dark:text-gray-300 mb-2">
+                    {locale === 'fr'
+                      ? "Notre test fournit une estimation approximative mais informative de votre position par rapport aux normes CART. Bien qu'il ne soit pas un substitut complet au CART officiel, il offre une évaluation utile de vos capacités de raisonnement rationnel dans les domaines couverts."
+                      : "Our test provides an approximate but informative estimate of your position relative to CART norms. While not a complete substitute for the official CART, it offers a useful assessment of your rational thinking abilities in the covered domains."
+                    }
+                  </p>
+                  <p className="text-sm text-gray-700 dark:text-gray-300">
+                    {locale === 'fr'
+                      ? <><strong>Recommandation :</strong> Utilisez cette comparaison comme un point de référence général plutôt que comme un diagnostic précis. Pour une évaluation complète et officielle, consultez le CART complet administré par des chercheurs qualifiés.</>
+                      : <><strong>Recommendation:</strong> Use this comparison as a general reference point rather than a precise diagnosis. For a complete and official assessment, consult the full CART administered by qualified researchers.</>
+                    }
+                  </p>
+                </div>
+              </div>
+            );
+          })()}
+        </AccordionItem>
 
         {/* Histoire du CART */}
         <AccordionItem title={t('cartHistory.title')} defaultOpen={false}>
