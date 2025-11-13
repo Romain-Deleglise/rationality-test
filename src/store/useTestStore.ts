@@ -1,6 +1,7 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
-import { TestSession, Answer, Module } from '@/types';
+import { TestSession, Answer, Module, Question } from '@/types';
+import { generateRandomizedValues, hasRandomization, getRandomizedQuestion } from '@/lib/randomization';
 
 interface TestStore {
   session: TestSession | null;
@@ -8,6 +9,7 @@ interface TestStore {
 
   // Actions
   startTest: (modules: Module[], version: 'courte' | 'complète') => void;
+  updateModules: (modules: Module[]) => void;
   saveAnswer: (answer: Answer) => void;
   nextQuestion: () => void;
   previousQuestion: () => void;
@@ -27,6 +29,19 @@ export const useTestStore = create<TestStore>()(
       modules: [],
 
       startTest: (modules, version) => {
+        // Generate randomized values for all questions with randomization rules
+        const randomizedValues: TestSession['randomizedValues'] = {};
+
+        modules.forEach((module) => {
+          module.questions.forEach((question: Question) => {
+            if (question.randomization && hasRandomization(question)) {
+              randomizedValues[question.id] = generateRandomizedValues(
+                question.randomization
+              );
+            }
+          });
+        });
+
         const newSession: TestSession = {
           id: crypto.randomUUID(),
           version: version,
@@ -34,8 +49,13 @@ export const useTestStore = create<TestStore>()(
           answers: [],
           currentModuleIndex: 0,
           currentQuestionIndex: 0,
+          randomizedValues,
         };
         set({ session: newSession, modules });
+      },
+
+      updateModules: (modules) => {
+        set({ modules });
       },
 
       saveAnswer: (answer) => {
@@ -139,7 +159,9 @@ export const useTestStore = create<TestStore>()(
         const { session } = get();
         const currentModule = get().getCurrentModule();
         if (!session || !currentModule) return null;
-        return currentModule.questions[session.currentQuestionIndex];
+        const question = currentModule.questions[session.currentQuestionIndex];
+        // Apply randomization if available
+        return getRandomizedQuestion(question, session.randomizedValues);
       },
 
       getProgress: () => {

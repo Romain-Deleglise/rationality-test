@@ -7,14 +7,6 @@ import { useTestStore } from '@/store/useTestStore';
 import { scoreTest, calculatePercentile, TestScore } from '@/lib/scoring';
 import { saveTestResult, calculateRealPercentile, generateResultToken, getGlobalStats } from '@/lib/supabase';
 import { getModuleTranslationKey, translateModuleName } from '@/lib/moduleMapping';
-import {
-  CART_FULL_FORM_NORMS,
-  CART_SHORT_FORM_NORMS,
-  calculatePercentile as calculateCARTPercentile,
-  getPercentileInterpretation,
-  CART_MODULE_NORMS,
-  MODULE_NAME_MAPPING
-} from '@/data/cart-reference-data';
 import Link from 'next/link';
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -121,7 +113,7 @@ export default function ResultatsPage() {
       return;
     }
 
-    const scores = scoreTest(modules, session.answers);
+    const scores = scoreTest(modules, session.answers, locale, session.randomizedValues);
     const percentile = calculatePercentile(scores.percentage);
     setTestScore({ ...scores, percentile });
 
@@ -176,6 +168,7 @@ export default function ResultatsPage() {
           email,
           testScore,
           locale,
+          resultToken,
         }),
       });
 
@@ -218,8 +211,8 @@ export default function ResultatsPage() {
     return t('scoreLabels.limited');
   };
 
-  // Descriptions COMPLÈTES avec liens hypertextes
-  const moduleDescriptions: Record<string, {
+  // Descriptions COMPLÈTES avec liens hypertextes - FRANÇAIS
+  const moduleDescriptionsFR: Record<string, {
     what: React.ReactElement;
     why: React.ReactElement;
     example: React.ReactElement;
@@ -535,8 +528,318 @@ export default function ResultatsPage() {
           sociale et aux croyances politiques/religieuses. L'éducation scientifique aide, mais insuffisant
           sans adresser les facteurs sociaux et émotionnels.</p>
       )
+    },
+    'Croyances Dysfonctionnelles': {
+      what: (
+        <p>Adhésion à des croyances irrationnelles qui peuvent nuire à la prise de décision et au bien-être :
+          pensée magique, croyances paranormales, affirmations de santé non fondées, pratiques pseudoscientifiques.</p>
+      ),
+      why: (
+        <p>Les croyances dysfonctionnelles conduisent à de mauvaises décisions : argent gaspillé sur des traitements
+          inefficaces, rejet de solutions fondées sur des preuves, vulnérabilité aux arnaques, et comportements
+          potentiellement dangereux.</p>
+      ),
+      example: (
+        <p>Croire que les cristaux guérissent les maladies, que l'astrologie prédit la personnalité, ou que les
+          régimes détox éliminent les "toxines". Ces croyances persistent malgré l'absence de preuves et peuvent
+          empêcher les gens de chercher un traitement efficace.</p>
+      ),
+      canImprove: (
+        <p>Amélioration : modeste (10-20%). L'éducation à la pensée critique aide, mais ces croyances remplissent
+          souvent des besoins émotionnels (contrôle, sens, communauté). Adresser les besoins sous-jacents est plus
+          efficace que la logique pure.</p>
+      )
     }
   };
+
+  // English module descriptions - COMPLETE
+  const moduleDescriptionsEN: Record<string, {
+    what: React.ReactElement;
+    why: React.ReactElement;
+    example: React.ReactElement;
+    canImprove: React.ReactElement;
+  }> = {
+    'Probabilistic Reasoning': {
+      what: (
+        <p>This module assesses your ability to reason with probabilities: understanding{' '}
+          <a href="https://en.wikipedia.org/wiki/Base_rate_fallacy" target="_blank" rel="noopener" className="text-blue-600 dark:text-blue-400 hover:underline">
+            base rates
+          </a>, avoiding the{' '}
+          <a href="https://en.wikipedia.org/wiki/Gambler%27s_fallacy" target="_blank" rel="noopener" className="text-blue-600 dark:text-blue-400 hover:underline">
+            gambler's fallacy
+          </a>{' '}
+          (believing past random outcomes influence future ones), and the{' '}
+          <a href="https://en.wikipedia.org/wiki/Conjunction_fallacy" target="_blank" rel="noopener" className="text-blue-600 dark:text-blue-400 hover:underline">
+            conjunction fallacy
+          </a>{' '}
+          (thinking A+B is more probable than A alone).
+        </p>
+      ),
+      why: (
+        <p>In the 1970s,{' '}
+          <a href="https://en.wikipedia.org/wiki/Daniel_Kahneman" target="_blank" rel="noopener" className="text-blue-600 dark:text-blue-400 hover:underline">
+            Kahneman
+          </a>{' '}
+          and{' '}
+          <a href="https://en.wikipedia.org/wiki/Amos_Tversky" target="_blank" rel="noopener" className="text-blue-600 dark:text-blue-400 hover:underline">
+            Tversky
+          </a>{' '}
+          discovered that even statistics experts regularly violate basic principles of probability.
+          These errors have real consequences: misdiagnoses, financial bubbles, poor risk assessment.
+        </p>
+      ),
+      example: (
+        <p>Classic medical problem: A test detects a disease with 95% accuracy. The disease affects 1% of the population.
+          Your test is positive. Probability of being sick? Most say 95%, but it's ~9% (due to numerous false positives
+          in a population where the disease is rare).</p>
+      ),
+      canImprove: (
+        <p>Improvement potential: moderate (10-25%). Practice with natural frequencies rather than percentages.
+          However, even after training, errors persist under pressure or fatigue.</p>
+      )
+    },
+    'Scientific Reasoning': {
+      what: (
+        <p>Your ability to rigorously test hypotheses: seeking to{' '}
+          <a href="https://en.wikipedia.org/wiki/Falsifiability" target="_blank" rel="noopener" className="text-blue-600 dark:text-blue-400 hover:underline">
+            falsify
+          </a>{' '}
+          rather than confirm, distinguishing{' '}
+          <a href="https://en.wikipedia.org/wiki/Correlation_does_not_imply_causation" target="_blank" rel="noopener" className="text-blue-600 dark:text-blue-400 hover:underline">
+            correlation from causation
+          </a>, understanding the importance of control groups.
+        </p>
+      ),
+      why: (
+        <p>The{' '}
+          <a href="https://en.wikipedia.org/wiki/Confirmation_bias" target="_blank" rel="noopener" className="text-blue-600 dark:text-blue-400 hover:underline">
+            confirmation bias
+          </a>{' '}
+          (seeking only what confirms our beliefs) is one of the most robust. It explains why intelligent people
+          believe false things and why debates go in circles.
+        </p>
+      ),
+      example: (
+        <p>
+          <a href="https://en.wikipedia.org/wiki/Wason_selection_task" target="_blank" rel="noopener" className="text-blue-600 dark:text-blue-400 hover:underline">
+            Wason's test
+          </a>{' '}
+          (1966): Cards E, K, 4, 7. Rule: "If vowel, then even number". Which cards to turn?
+          Intuitive answer: E and 4 (confirmation). Correct: E and 7 (falsification). Only ~10% succeed,
+          even among scientists.
+        </p>
+      ),
+      canImprove: (
+        <p>Improvement potential: moderate (15-30%). Falsification can be learned, but our instinct remains
+          to seek confirmation. Use systematic protocols rather than your intuition.</p>
+      )
+    },
+    'Reflection vs Intuition': {
+      what: (
+        <p>Measured by the{' '}
+          <a href="https://en.wikipedia.org/wiki/Cognitive_Reflection_Test" target="_blank" rel="noopener" className="text-blue-600 dark:text-blue-400 hover:underline">
+            Cognitive Reflection Test
+          </a>{' '}
+          (Frederick, 2005): your ability to inhibit the immediate intuitive response and engage analytical thinking.
+        </p>
+      ),
+      why: (
+        <p>Our{' '}
+          <a href="https://www.lesswrong.com/tag/system-1" target="_blank" rel="noopener" className="text-blue-600 dark:text-blue-400 hover:underline">
+            System 1
+          </a>{' '}
+          (intuitive) responds instantly but predictably errs on non-trivial problems.
+          System 2 (analytical) can correct, but it's lazy and cognitively expensive.
+        </p>
+      ),
+      example: (
+        <p>Bat and ball = $1.10. Bat costs $1 more than ball. How much is the ball? System 1 shouts "10 cents!"
+          System 2 calculates: 5 cents. 50% of MIT students fail.</p>
+      ),
+      canImprove: (
+        <p><strong>WARNING</strong>: CRT improvements are often due to memorizing questions,
+          not genuine reflection improvement. Real gain is probably &lt;20%.</p>
+      )
+    },
+    'Belief Bias': {
+      what: (
+        <p>Your ability to evaluate logical validity of reasoning independently of your beliefs about the conclusion
+          (avoiding content interference with logic).</p>
+      ),
+      why: (
+        <p>We accept logically invalid arguments if we like the conclusion, and reject valid arguments
+          if we dislike it. This prevents rational debate.</p>
+      ),
+      example: (
+        <p>Syllogism: "All rare things are expensive. Diamonds are rare. Therefore diamonds are expensive."
+          Logically valid. But "All rare things are expensive. Cheap water is rare. Therefore cheap water
+          is expensive" - same structure, rejected because absurd.</p>
+      ),
+      canImprove: (
+        <p>Improvement: difficult (&lt;10%). This is a deep bias. Better to use protocols:
+          have someone evaluate logic without knowing the subject.</p>
+      )
+    },
+    'Knowledge Calibration': {
+      what: (
+        <p>Your ability to accurately estimate your level of certainty. A well-{' '}
+          <a href="https://www.lesswrong.com/tag/calibration" target="_blank" rel="noopener" className="text-blue-600 dark:text-blue-400 hover:underline">
+            calibrated
+          </a>{' '}
+          person who says "70% certain" is right ~70% of the time.
+        </p>
+      ),
+      why: (
+        <p>The{' '}
+          <a href="https://en.wikipedia.org/wiki/Overconfidence_effect" target="_blank" rel="noopener" className="text-blue-600 dark:text-blue-400 hover:underline">
+            overconfidence bias
+          </a>{' '}
+          is one of the most universal and dangerous: projects exceeding budget/deadlines, risky investments,
+          medical misdiagnoses.
+        </p>
+      ),
+      example: (
+        <p>When people say they're "99% certain" of general knowledge facts, they're wrong ~40% of the time.
+          Experts are particularly vulnerable: 80% of doctors overestimate their diagnostic accuracy.</p>
+      ),
+      canImprove: (
+        <p><strong>Promising</strong>: Calibration is one of the FEW biases that improves with practice (20-40%).
+          Philip Tetlock's superforecasters show sustained improvement through systematic feedback.</p>
+      )
+    },
+    'Superstitious Thinking': {
+      what: (
+        <p>Tendency to see patterns, causes, or relationships where none exist: lucky numbers, rituals,
+          "hot streaks" in random games, post hoc ergo propter hoc fallacy.</p>
+      ),
+      why: (
+        <p>Our brain is a pattern-detection machine optimized for survival, not truth. Better to see 10 false
+          patterns than miss 1 real predator. Result: we see faces in clouds, causes in coincidences.</p>
+      ),
+      example: (
+        <p>Basketball "hot hand": players and fans are convinced a shooter who's made several shots is more likely
+          to make the next one. Statistical analyses show it's an illusion - past successes don't predict future ones.</p>
+      ),
+      canImprove: (
+        <p>Improvement: difficult (&lt;15%). Superstitious thinking is deeply rooted in our need for control
+          and meaning. Education about randomness helps, but emotional appeal of patterns persists.</p>
+      )
+    },
+    'Conspiracy Beliefs': {
+      what: (
+        <p>Tendency to accept conspiratorial explanations: distrust of official narratives, preference for
+          secret plots, seeing connections between unrelated events, rejection of contradictory evidence.</p>
+      ),
+      why: (
+        <p>Conspiracism provides simple explanations for complex events, restores sense of control ("it's not
+          chaos, someone's in control"), and reinforces group identity. Extremely resistant to evidence.</p>
+      ),
+      example: (
+        <p>Classic conspiracy: "Moon landing was faked." Every debunking (shadows, flags, rocks) generates new
+          theories ("that's what THEY want you to believe"). Unfalsifiable = unscientific.</p>
+      ),
+      canImprove: (
+        <p>Improvement: very difficult (&lt;10%). Conspiracism is often linked to anxiety, loss of control, distrust
+          of institutions. Pure logic rarely helps. Need to address underlying emotional and social factors.</p>
+      )
+    },
+    'Disjunctive Reasoning': {
+      what: (
+        <p>Ability to correctly reason with "OR" statements and understand that disproving one alternative
+          doesn't prove another. Avoiding false dilemmas ("either A or B" when C, D, E exist).</p>
+      ),
+      why: (
+        <p>Disjunctive reasoning errors enable manipulation through false choices. Politics and advertising
+          constantly present false dilemmas: "Either you're with us or against us."</p>
+      ),
+      example: (
+        <p>Statement: "John went to beach OR mountains." Learning he didn't go to beach doesn't mean he went
+          to mountains (could have stayed home, gone elsewhere). Yet people confidently conclude "then mountains!"</p>
+      ),
+      canImprove: (
+        <p>Improvement: moderate (15-25%). Systematic training in formal logic helps. Key: always ask
+          "What other options exist?" before concluding.</p>
+      )
+    },
+    'Anchoring': {
+      what: (
+        <p>The{' '}
+          <a href="https://en.wikipedia.org/wiki/Anchoring_(cognitive_bias)" target="_blank" rel="noopener" className="text-blue-600 dark:text-blue-400 hover:underline">
+            anchoring effect
+          </a>: being influenced by an initial number, even if completely arbitrary and irrelevant, when making
+          numerical estimates.</p>
+      ),
+      why: (
+        <p>Anchoring is exploited in negotiations, sales, justice (sentencing). Initial "suggested price" heavily
+          influences final price, even for experts. One of the most robust and hardest to resist biases.</p>
+      ),
+      example: (
+        <p>Kahneman & Tversky: Spin a wheel (1-100), then estimate % of African countries in UN. Wheel shows 10:
+          average estimate 25%. Wheel shows 65: average 45%. The random number influenced the estimate!</p>
+      ),
+      canImprove: (
+        <p><strong>Very difficult</strong> (&lt;5%). Even experts aware of anchoring remain affected. Best strategy:
+          refuse initial numbers, deliberately consider opposite extremes before estimating.</p>
+      )
+    },
+    'Probabilistic Numeracy': {
+      what: (
+        <p>Basic understanding of probabilities, percentages, frequencies: calculating odds, comparing risks,
+          understanding concepts like independence, conditional probability, expected value.</p>
+      ),
+      why: (
+        <p>Modern life requires probability decisions: medical tests, insurance, investments, everyday risks.
+          Without basic numeracy, you're vulnerable to manipulation and poor decisions.</p>
+      ),
+      example: (
+        <p>Which kills more: sharks or falling airplane parts? Intuition says sharks (dramatic, memorized).
+          Reality: airplane parts cause more deaths. We systematically misjudge familiar vs rare risks.</p>
+      ),
+      canImprove: (
+        <p>Improvement: <strong>good</strong> (30-50%). Unlike other biases, basic numeracy improves well with
+          education and practice. Concrete exercises with feedback are effective.</p>
+      )
+    },
+    'Anti-Science Attitudes': {
+      what: (
+        <p>Distrust of scientific method, preference for intuition/tradition over evidence, rejection of
+          scientific consensus on climate, vaccines, evolution, etc.</p>
+      ),
+      why: (
+        <p>Anti-science attitudes are often linked to values conflicts (science appears to threaten identity,
+          religion, politics). It's not usually an intelligence problem, but values problem.</p>
+      ),
+      example: (
+        <p>Climate change: 97% of climate scientists agree human activities cause warming. Yet 30-40% of public
+          rejects it. Not due to lack of evidence, but identity ("environmentalism = left-wing") and mistrust.</p>
+      ),
+      canImprove: (
+        <p>Improvement: difficult (&lt;15%). Anti-science attitudes are often linked to social identity
+          and political/religious beliefs. Science education helps, but insufficient without addressing
+          social and emotional factors.</p>
+      )
+    },
+    'Dysfunctional Beliefs': {
+      what: (
+        <p>Adherence to irrational beliefs that can negatively impact decision-making and well-being: magical thinking,
+          paranormal beliefs, unfounded health claims, pseudoscientific practices.</p>
+      ),
+      why: (
+        <p>Dysfunctional beliefs lead to poor decisions: wasted money on ineffective treatments, rejection of
+          evidence-based solutions, vulnerability to scams, and potentially harmful behaviors.</p>
+      ),
+      example: (
+        <p>Believing crystals cure diseases, astrology predicts personality, or detox diets eliminate "toxins."
+          These beliefs persist despite lack of evidence and can prevent people from seeking effective treatment.</p>
+      ),
+      canImprove: (
+        <p>Improvement: modest (10-20%). Critical thinking education helps, but these beliefs often fulfill
+          emotional needs (control, meaning, community). Addressing underlying needs is more effective than pure logic.</p>
+      )
+    }
+  };
+
+  const moduleDescriptions = locale === 'fr' ? moduleDescriptionsFR : moduleDescriptionsEN;
 
   return (
     <>
@@ -544,13 +847,14 @@ export default function ResultatsPage() {
       <style jsx global>{`
         @media print {
           @page {
-            margin: 2cm;
+            margin: 1.5cm 2cm;
             size: A4;
           }
 
           body {
             print-color-adjust: exact;
             -webkit-print-color-adjust: exact;
+            color: #000 !important;
           }
 
           /* Cacher les éléments non nécessaires à l'impression */
@@ -567,20 +871,43 @@ export default function ResultatsPage() {
           }
 
           /* Éviter les sauts de page à l'intérieur des éléments */
-          .print\\:break-inside-avoid {
+          .print\\:break-inside-avoid,
+          .border-2 {
             break-inside: avoid;
             page-break-inside: avoid;
           }
 
           /* Améliorer l'affichage des graphiques */
           svg {
-            max-height: 400px !important;
+            max-height: 350px !important;
           }
 
           /* Espacements pour print */
-          h1, h2, h3 {
+          h1 {
+            font-size: 28px !important;
+            margin-bottom: 8px !important;
+            color: #000 !important;
+          }
+
+          h2 {
+            font-size: 20px !important;
+            margin-top: 20px !important;
+            margin-bottom: 12px !important;
             page-break-after: avoid;
             break-after: avoid;
+            color: #000 !important;
+            border-left: 4px solid #667eea !important;
+            padding-left: 8px !important;
+          }
+
+          h3, h4 {
+            page-break-after: avoid;
+            break-after: avoid;
+            color: #000 !important;
+          }
+
+          p {
+            color: #000 !important;
           }
 
           /* Liens en texte visible */
@@ -588,15 +915,104 @@ export default function ResultatsPage() {
             content: none !important;
           }
 
-          /* Fond blanc pour tout */
+          /* Fond blanc par défaut */
           * {
             background: white !important;
+            color: #000 !important;
           }
 
-          /* Garder les couleurs des barres de progression */
+          /* Garder les couleurs importantes */
           .bg-green-500, .bg-blue-500, .bg-yellow-500, .bg-red-500 {
             print-color-adjust: exact !important;
             -webkit-print-color-adjust: exact !important;
+            color: white !important;
+          }
+
+          /* Score global avec fond bleu */
+          .border-t-4.border-blue-600 {
+            background: #eff6ff !important;
+            print-color-adjust: exact !important;
+            -webkit-print-color-adjust: exact !important;
+            border-top: 4px solid #667eea !important;
+          }
+
+          /* Score display */
+          .text-6xl {
+            color: #667eea !important;
+            font-size: 48px !important;
+          }
+
+          .text-2xl {
+            color: #667eea !important;
+          }
+
+          /* Interprétation avec fond jaune */
+          .bg-yellow-50 {
+            background: #fef3c7 !important;
+            print-color-adjust: exact !important;
+            -webkit-print-color-adjust: exact !important;
+          }
+
+          .border-yellow-500 {
+            border-color: #f59e0b !important;
+          }
+
+          /* Note critique avec fond vert */
+          .bg-green-50 {
+            background: #d1fae5 !important;
+            print-color-adjust: exact !important;
+            -webkit-print-color-adjust: exact !important;
+          }
+
+          .border-green-500 {
+            border-color: #10b981 !important;
+          }
+
+          /* Box bleu */
+          .bg-blue-50 {
+            background: #dbeafe !important;
+            print-color-adjust: exact !important;
+            -webkit-print-color-adjust: exact !important;
+          }
+
+          .border-blue-500 {
+            border-color: #3b82f6 !important;
+          }
+
+          /* Modules */
+          .rounded-xl, .rounded-lg {
+            border: 1px solid #e5e7eb !important;
+            margin-bottom: 12px !important;
+          }
+
+          /* Améliorer les barres de progression */
+          .bg-gray-200 {
+            background: #e5e7eb !important;
+            border: 1px solid #d1d5db !important;
+          }
+
+          /* Gris texte lisible */
+          .text-gray-600, .text-gray-500, .text-gray-700 {
+            color: #4b5563 !important;
+          }
+
+          /* Titres de sections */
+          .font-bold {
+            font-weight: 700 !important;
+            color: #000 !important;
+          }
+
+          /* Espacements réduits pour PDF */
+          .mb-8 {
+            margin-bottom: 16px !important;
+          }
+
+          .mb-12 {
+            margin-bottom: 20px !important;
+          }
+
+          .space-y-6 > * + * {
+            margin-top: 12px !important;
           }
         }
       `}</style>
@@ -645,26 +1061,14 @@ export default function ResultatsPage() {
               {testScore.totalEarned.toFixed(1)} / {testScore.totalPossible.toFixed(1)} {t('points')}
             </div>
           </div>
-          {/* Percentile - afficher le vrai si disponible */}
+          {/* Percentile - toujours afficher l'estimé */}
           <div className="bg-gray-100 dark:bg-gray-700 rounded-lg p-4 inline-block">
             <p className="text-gray-700 dark:text-gray-300">
-              {realPercentile !== null ? (
-                <>
-                  {t('realPercentile')} : <strong className="text-blue-600 dark:text-blue-400">{realPercentile}e</strong>
-                  <br />
-                  <span className="text-xs text-gray-500 dark:text-gray-400 mt-1">
-                    ({t('basedOn')} {globalStats?.count || '...'} {t('results')})
-                  </span>
-                </>
-              ) : (
-                <>
-                  {t('estimatedPercentile')} : <strong className="text-blue-600 dark:text-blue-400">{testScore.percentile}e</strong>
-                  <br />
-                  <span className="text-xs text-gray-500 dark:text-gray-400 mt-1">
-                    {savingToDb ? `(${t('calculatingRealPercentile')})` : `(${t('theoreticalDistribution')})`}
-                  </span>
-                </>
-              )}
+              {t('percentile')} : <strong className="text-blue-600 dark:text-blue-400">{testScore.percentile}e</strong>
+              <br />
+              <span className="text-xs text-gray-500 dark:text-gray-400 mt-1">
+                ({t('theoreticalDistribution')})
+              </span>
             </p>
           </div>
 
@@ -807,66 +1211,47 @@ export default function ResultatsPage() {
         </div>
 
         {/* Histoire du CART */}
-        <AccordionItem title="📖 D'où vient ce test ? Histoire du CART" defaultOpen={false}>
+        <AccordionItem title={t('cartHistory.title')} defaultOpen={false}>
           <div className="space-y-4">
             <div>
-              <h4 className="font-bold text-gray-900 mb-2 flex items-center gap-2">
+              <h4 className="font-bold text-gray-900 dark:text-white mb-2 flex items-center gap-2">
                 <Brain className="w-5 h-5" />
-                40 ans de recherche
+                {t('cartHistory.fortyYears')}
               </h4>
               <p className="text-justify mb-3">
-                Dans les années 1970, deux psychologues israéliens, <strong>Daniel Kahneman</strong> et 
-                <strong> Amos Tversky</strong> (Université Hébraïque de Jérusalem), ont commencé à documenter 
-                quelque chose de troublant : des gens intelligents, éduqués, prenaient régulièrement des 
-                décisions qui violaient les principes de base de la logique et des probabilités.
+                {t('cartHistory.fortyYearsP1')}
               </p>
               <p className="text-justify mb-3">
-                Leur découverte la plus surprenante ? <strong>Ces erreurs n'étaient pas des accidents 
-                aléatoires, mais des patterns systématiques.</strong> Les humains semblaient utiliser des 
-                "raccourcis mentaux" (heuristiques) qui, bien qu'utiles dans certains contextes, menaient 
-                à des erreurs prévisibles et répétées.
+                {t('cartHistory.fortyYearsP2')}
               </p>
               <p className="text-justify">
-                Pour ce travail pionnier, Kahneman a reçu le <strong>Prix Nobel d'Économie en 2002</strong> 
-                (Tversky était décédé en 1996, sinon il l'aurait partagé).
+                {t('cartHistory.fortyYearsP3')}
               </p>
             </div>
 
             <div>
-              <h4 className="font-bold text-gray-900 mb-2">Le problème : Intelligence ≠ Rationalité</h4>
+              <h4 className="font-bold text-gray-900 dark:text-white mb-2">{t('cartHistory.theProblem')}</h4>
               <p className="text-justify mb-3">
-                Pendant des décennies, on a supposé que les tests de QI mesuraient "la bonne pensée". 
-                Mais <strong>Keith E. Stanovich</strong> (Université de Toronto) a remarqué quelque chose 
-                d'étrange dans les années 1990 : <strong>des personnes avec des QI très élevés commettaient 
-                quand même des erreurs de raisonnement systématiques.</strong>
+                {t('cartHistory.theProblemP1')}
               </p>
               <p className="text-justify">
-                Stanovich a réalisé que le QI mesure la puissance de calcul du cerveau, mais pas 
-                nécessairement la sagesse de son utilisation. C'est comme avoir une Ferrari (QI élevé) 
-                mais ne pas savoir conduire (faible rationalité).
+                {t('cartHistory.theProblemP2')}
               </p>
             </div>
 
             <div>
-              <h4 className="font-bold text-gray-900 mb-2 flex items-center gap-2">
+              <h4 className="font-bold text-gray-900 dark:text-white mb-2 flex items-center gap-2">
                 <Award className="w-5 h-5" />
-                La naissance du CART (2013-2016)
+                {t('cartHistory.birthOfCart')}
               </h4>
               <p className="text-justify mb-3">
-                Stanovich, avec ses collègues <strong>Richard F. West</strong> (James Madison University) 
-                et <strong>Maggie E. Toplak</strong> (York University), ont passé 3 ans à développer le 
-                <strong> CART (Comprehensive Assessment of Rational Thinking)</strong> - le premier test 
-                complet de pensée rationnelle.
+                {t('cartHistory.birthOfCartP1')}
               </p>
               <p className="text-justify mb-3">
-                Le projet, financé par la John Templeton Foundation, a impliqué plus de 1000 participants, 
-                20 sous-tests différents, et une validation statistique rigoureuse.
+                {t('cartHistory.birthOfCartP2')}
               </p>
-              <p className="text-justify text-sm bg-blue-50 p-3 rounded">
-                <strong>Ce test en ligne</strong> est une adaptation éducative libre du CART original. 
-                Il utilise des questions du domaine public et des variantes inspirées de la littérature 
-                scientifique. Ce n'est PAS le CART officiel (qui nécessite une administration contrôlée), 
-                mais une approximation pédagogique gratuite.
+              <p className="text-justify text-sm bg-blue-50 dark:bg-blue-900/20 text-gray-700 dark:text-gray-300 p-3 rounded">
+                {t('cartHistory.birthOfCartP3')}
               </p>
             </div>
           </div>
@@ -879,7 +1264,7 @@ export default function ResultatsPage() {
               <CardTitle>{t('radarChart')}</CardTitle>
             </CardHeader>
             <CardContent>
-              <RadarChartComponent moduleScores={testScore.modules} />
+              <RadarChartComponent moduleScores={testScore.modules} locale={locale} />
             </CardContent>
           </Card>
 
@@ -888,7 +1273,7 @@ export default function ResultatsPage() {
               <CardTitle>{t('barChart')}</CardTitle>
             </CardHeader>
             <CardContent>
-              <BarChartComponent moduleScores={testScore.modules} />
+              <BarChartComponent moduleScores={testScore.modules} locale={locale} />
             </CardContent>
           </Card>
         </div>
@@ -907,13 +1292,16 @@ export default function ResultatsPage() {
               .filter(m => m.possible > 0)
               .sort((a, b) => b.percentage - a.percentage)
               .map((moduleScore) => {
-                const moduleName = moduleScore.moduleName.split(' (')[0];
-                const desc = moduleDescriptions[moduleName];
+                const rawModuleName = moduleScore.moduleName.split(' (')[0];
+                // Translate module name to current locale for display
+                const displayName = translateModuleName(rawModuleName, locale as 'en' | 'fr');
+                // Get description using translated name (which matches keys in moduleDescriptions)
+                const desc = moduleDescriptions[displayName];
 
                 return (
-                  <AccordionItem 
-                    key={moduleScore.moduleId} 
-                    title={moduleName}
+                  <AccordionItem
+                    key={moduleScore.moduleId}
+                    title={displayName}
                     scorePercentage={moduleScore.percentage}
                   >
                     <div className="mb-4 text-sm text-gray-600 dark:text-gray-400">
@@ -964,142 +1352,231 @@ export default function ResultatsPage() {
         {/* Approche de Kahneman : Outils Externes */}
         <div className="bg-green-50 dark:bg-green-900/20 border-l-4 border-green-500 dark:border-green-600 rounded-r-xl p-6 mb-8">
           <h3 className="font-bold text-gray-900 dark:text-white mb-3 text-xl">
-            🛠️ La Solution Pragmatique (Recommandée par Kahneman)
+            {t('pragmaticSolution.title')}
           </h3>
           <p className="text-gray-700 dark:text-gray-300 mb-4 text-justify">
-            Plutôt que d'essayer de changer votre cerveau (difficile, incertain),
-            <strong> changez votre environnement de décision :</strong>
+            {t('pragmaticSolution.intro')}
           </p>
           <ul className="space-y-2 text-gray-700 dark:text-gray-300">
             <li className="flex items-start gap-2">
-              <span className="text-green-600 font-bold">✓</span>
-              <span><strong>Checklists pré-décision :</strong> "Quel est le taux de base ? Suis-je ancré ? 
-              Qu'est-ce qui pourrait prouver que j'ai tort ?"</span>
+              <span className="text-green-600 dark:text-green-400 font-bold">✓</span>
+              <span>{t('pragmaticSolution.checklist')}</span>
             </li>
             <li className="flex items-start gap-2">
-              <span className="text-green-600 font-bold">✓</span>
-              <span><strong>Consultations structurées :</strong> Avant toute décision majeure, 
-              demander l'avis de 2-3 personnes avec perspectives différentes</span>
+              <span className="text-green-600 dark:text-green-400 font-bold">✓</span>
+              <span>{t('pragmaticSolution.consultation')}</span>
             </li>
             <li className="flex items-start gap-2">
-              <span className="text-green-600 font-bold">✓</span>
-              <span><strong>Ralentissement forcé :</strong> Règle des 24-48h pour les décisions importantes (investissements, achats majeurs, changements de carrière)</span>
+              <span className="text-green-600 dark:text-green-400 font-bold">✓</span>
+              <span>{t('pragmaticSolution.slowdown')}</span>
             </li>
             <li className="flex items-start gap-2">
-              <span className="text-green-600 font-bold">✓</span>
-              <span><strong>Pré-mortem :</strong> Avant de lancer un projet, imaginer qu'il a échoué 
-              dans 1 an. Pourquoi ?</span>
+              <span className="text-green-600 dark:text-green-400 font-bold">✓</span>
+              <span>{t('pragmaticSolution.premortem')}</span>
             </li>
             <li className="flex items-start gap-2">
-              <span className="text-green-600 font-bold">✓</span>
-              <span><strong>Journal de décision :</strong> Noter prédictions + confiance + raisonnement. 
-              Revue mensuelle.</span>
+              <span className="text-green-600 dark:text-green-400 font-bold">✓</span>
+              <span>{t('pragmaticSolution.journal')}</span>
             </li>
           </ul>
           <p className="text-sm text-gray-600 dark:text-gray-400 mt-4 italic">
-            Exemple concret : En chirurgie, imposer une checklist obligatoire a réduit les complications
-            de 47% (Haynes et al., 2009) - bien plus efficace que "former les chirurgiens à être moins overconfidents".
+            {t('pragmaticSolution.example')}
           </p>
         </div>
 
         {/* Ressources */}
         <div className="bg-blue-50 dark:bg-blue-900/20 rounded-xl p-8 mb-8">
           <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-            📚 Ressources pour approfondir
+            {t('resources.title')}
           </h2>
 
-          <AccordionItem title="Lectures essentielles">
+          <AccordionItem title={t('resources.essentialReading')}>
             <ul className="space-y-3">
               <li>
-                <a href="https://www.goodreads.com/book/show/11468377" target="_blank" rel="noopener" className="text-blue-600 hover:underline font-semibold">
-                  Thinking, Fast and Slow
+                <a href="https://www.goodreads.com/book/show/11468377" target="_blank" rel="noopener" className="text-blue-600 dark:text-blue-400 hover:underline font-semibold">
+                  {t('resources.thinkingFastSlow')}
                 </a> - Daniel Kahneman<br />
-                <span className="text-sm text-gray-600">LE livre fondateur (Prix Nobel 2002)</span>
+                <span className="text-sm text-gray-600 dark:text-gray-400">{t('resources.thinkingFastSlowDesc')}</span>
               </li>
               <li>
-                <a href="https://mitpress.mit.edu/9780262034845/" target="_blank" rel="noopener" className="text-blue-600 hover:underline font-semibold">
-                  The Rationality Quotient
+                <a href="https://mitpress.mit.edu/9780262034845/" target="_blank" rel="noopener" className="text-blue-600 dark:text-blue-400 hover:underline font-semibold">
+                  {t('resources.rationalityQuotient')}
                 </a> - Stanovich, West & Toplak<br />
-                <span className="text-sm text-gray-600">Le livre académique sur le CART</span>
+                <span className="text-sm text-gray-600 dark:text-gray-400">{t('resources.rationalityQuotientDesc')}</span>
               </li>
               <li>
-                <a href="https://www.goodreads.com/book/show/23995360" target="_blank" rel="noopener" className="text-blue-600 hover:underline font-semibold">
-                  Superforecasting
+                <a href="https://www.goodreads.com/book/show/23995360" target="_blank" rel="noopener" className="text-blue-600 dark:text-blue-400 hover:underline font-semibold">
+                  {t('resources.superforecasting')}
                 </a> - Philip Tetlock<br />
-                <span className="text-sm text-gray-600">Comment améliorer votre calibration (avec preuves)</span>
+                <span className="text-sm text-gray-600 dark:text-gray-400">{t('resources.superforecastingDesc')}</span>
               </li>
               <li>
-                <a href="https://www.goodreads.com/book/show/42041926" target="_blank" rel="noopener" className="text-blue-600 hover:underline font-semibold">
-                  The Scout Mindset
+                <a href="https://www.goodreads.com/book/show/42041926" target="_blank" rel="noopener" className="text-blue-600 dark:text-blue-400 hover:underline font-semibold">
+                  {t('resources.scoutMindset')}
                 </a> - Julia Galef<br />
-                <span className="text-sm text-gray-600">Chercher la vérité plutôt qu'avoir raison</span>
+                <span className="text-sm text-gray-600 dark:text-gray-400">{t('resources.scoutMindsetDesc')}</span>
               </li>
             </ul>
           </AccordionItem>
 
-          <AccordionItem title="Pratique calibration">
+          <AccordionItem title={t('resources.calibrationPractice')}>
             <ul className="space-y-2">
               <li>
-                <a href="https://www.metaculus.com" target="_blank" rel="noopener" className="text-blue-600 hover:underline font-semibold">
-                  Metaculus.com
-                </a> - Plateforme de prédictions (amélioration prouvée de la calibration)
+                <a href="https://www.metaculus.com" target="_blank" rel="noopener" className="text-blue-600 dark:text-blue-400 hover:underline font-semibold">
+                  {t('resources.metaculus')}
+                </a> - {t('resources.metaculusDesc')}
               </li>
               <li>
-                <a href="https://www.lesswrong.com" target="_blank" rel="noopener" className="text-blue-600 hover:underline font-semibold">
-                  LessWrong.com
-                </a> - Communauté et articles sur la rationalité
+                <a href="https://www.lesswrong.com" target="_blank" rel="noopener" className="text-blue-600 dark:text-blue-400 hover:underline font-semibold">
+                  {t('resources.lesswrong')}
+                </a> - {t('resources.lesswrongDesc')}
               </li>
             </ul>
           </AccordionItem>
         </div>
 
         {/* Sources scientifiques */}
-        <AccordionItem title="📖 Sources scientifiques complètes">
+        <AccordionItem title={t('scientificSources.title')}>
           <div className="space-y-4 text-sm">
             <div>
-              <h4 className="font-bold text-gray-900 mb-2">Fondements principaux</h4>
+              <h4 className="font-bold text-gray-900 dark:text-white mb-2">{t('scientificSources.mainFoundations')}</h4>
               <ul className="space-y-2">
                 <li>
                   <strong>Stanovich, K. E., West, R. F., & Toplak, M. E. (2016).</strong><br />
-                  <em>The Rationality Quotient: Toward a Test of Rational Thinking.</em> MIT Press.
+                  <em>{t('scientificSources.stanovich2016')}</em>
                 </li>
                 <li>
                   <strong>Kahneman, D., & Tversky, A. (1974).</strong><br />
-                  <em>Judgment under Uncertainty: Heuristics and Biases.</em> Science, 185(4157), 1124-1131.
+                  <em>{t('scientificSources.kahneman1974')}</em>
                 </li>
                 <li>
                   <strong>Frederick, S. (2005).</strong><br />
-                  <em>Cognitive Reflection and Decision Making.</em> Journal of Economic Perspectives, 19(4), 25-42.
+                  <em>{t('scientificSources.frederick2005')}</em>
                 </li>
               </ul>
             </div>
 
             <div>
-              <h4 className="font-bold text-gray-900 mb-2">Sur l'amélioration (ou non) des biais</h4>
+              <h4 className="font-bold text-gray-900 dark:text-white mb-2">{t('scientificSources.onImprovement')}</h4>
               <ul className="space-y-2">
                 <li>
                   <strong>Morewedge et al. (2015).</strong><br />
-                  <em>Debiasing Decisions.</em> Policy Insights from Behavioral and Brain Sciences.<br />
-                  <span className="text-gray-600">Méta-analyse : réduction moyenne des biais de ~29%, mais déclin sans pratique</span>
+                  <em>{t('scientificSources.morewedge2015')}</em><br />
+                  <span className="text-gray-600 dark:text-gray-400">{t('scientificSources.morewedge2015Desc')}</span>
                 </li>
                 <li>
                   <strong>Kahneman, D. (2011).</strong><br />
-                  <em>Thinking, Fast and Slow.</em> Citation p. 417 :<br />
-                  <span className="text-gray-600 italic">"The way to block errors that originate in System 1 is 
-                  simple in principle: recognize the signs that you are in a cognitive minefield, slow down, 
-                  and ask for reinforcement from System 2."</span>
+                  <em>{t('scientificSources.kahneman2011')}</em><br />
+                  <span className="text-gray-600 dark:text-gray-400 italic">{t('scientificSources.kahneman2011Quote')}</span>
                 </li>
               </ul>
             </div>
 
-            <div className="bg-yellow-50 p-3 rounded">
-              <h4 className="font-bold text-gray-900 mb-2">Limites de ce test</h4>
-              <ul className="list-disc pl-6 space-y-1 text-gray-700">
-                <li>Mesure certains aspects de la rationalité, pas tous (créativité, sagesse pratique, etc.)</li>
-                <li>Score peut varier selon fatigue, stress, contexte</li>
-                <li>Amélioration modeste et difficile à maintenir</li>
-                <li>Percentile basé sur distribution théorique, pas encore données réelles</li>
+            <div className="bg-yellow-50 dark:bg-yellow-900/20 p-3 rounded">
+              <h4 className="font-bold text-gray-900 dark:text-white mb-2">{t('scientificSources.testLimitations')}</h4>
+              <ul className="list-disc pl-6 space-y-1 text-gray-700 dark:text-gray-300">
+                <li>{t('scientificSources.limitation1')}</li>
+                <li>{t('scientificSources.limitation2')}</li>
+                <li>{t('scientificSources.limitation3')}</li>
+                <li>{t('scientificSources.limitation4')}</li>
               </ul>
+            </div>
+          </div>
+        </AccordionItem>
+
+        {/* State of Research */}
+        <AccordionItem title={t('stateOfResearch.title')} defaultOpen={false}>
+          <div className="space-y-6">
+            <p className="text-gray-700 dark:text-gray-300 italic text-justify">
+              {t('stateOfResearch.intro')}
+            </p>
+
+            {/* What We Know */}
+            <div>
+              <h4 className="font-bold text-gray-900 dark:text-white mb-3 flex items-center gap-2">
+                <span className="text-green-600 dark:text-green-400">✅</span>
+                {t('stateOfResearch.whatWeKnow')}
+              </h4>
+              <div className="space-y-3 pl-4">
+                <div className="bg-green-50 dark:bg-green-900/20 p-3 rounded">
+                  <strong className="text-gray-900 dark:text-white">{t('stateOfResearch.finding1')}</strong>
+                  <p className="text-gray-700 dark:text-gray-300 text-sm mt-1">{t('stateOfResearch.finding1Text')}</p>
+                </div>
+                <div className="bg-green-50 dark:bg-green-900/20 p-3 rounded">
+                  <strong className="text-gray-900 dark:text-white">{t('stateOfResearch.finding2')}</strong>
+                  <p className="text-gray-700 dark:text-gray-300 text-sm mt-1">{t('stateOfResearch.finding2Text')}</p>
+                </div>
+                <div className="bg-green-50 dark:bg-green-900/20 p-3 rounded">
+                  <strong className="text-gray-900 dark:text-white">{t('stateOfResearch.finding3')}</strong>
+                  <p className="text-gray-700 dark:text-gray-300 text-sm mt-1">{t('stateOfResearch.finding3Text')}</p>
+                </div>
+              </div>
+            </div>
+
+            {/* What We Don't Know */}
+            <div>
+              <h4 className="font-bold text-gray-900 dark:text-white mb-3 flex items-center gap-2">
+                <span className="text-yellow-600 dark:text-yellow-400">❓</span>
+                {t('stateOfResearch.whatWeDontKnow')}
+              </h4>
+              <div className="space-y-3 pl-4">
+                <div className="bg-yellow-50 dark:bg-yellow-900/20 p-3 rounded">
+                  <strong className="text-gray-900 dark:text-white">{t('stateOfResearch.question1')}</strong>
+                  <p className="text-gray-700 dark:text-gray-300 text-sm mt-1">{t('stateOfResearch.question1Text')}</p>
+                </div>
+                <div className="bg-yellow-50 dark:bg-yellow-900/20 p-3 rounded">
+                  <strong className="text-gray-900 dark:text-white">{t('stateOfResearch.question2')}</strong>
+                  <p className="text-gray-700 dark:text-gray-300 text-sm mt-1">{t('stateOfResearch.question2Text')}</p>
+                </div>
+                <div className="bg-yellow-50 dark:bg-yellow-900/20 p-3 rounded">
+                  <strong className="text-gray-900 dark:text-white">{t('stateOfResearch.question3')}</strong>
+                  <p className="text-gray-700 dark:text-gray-300 text-sm mt-1">{t('stateOfResearch.question3Text')}</p>
+                </div>
+                <div className="bg-yellow-50 dark:bg-yellow-900/20 p-3 rounded">
+                  <strong className="text-gray-900 dark:text-white">{t('stateOfResearch.question4')}</strong>
+                  <p className="text-gray-700 dark:text-gray-300 text-sm mt-1">{t('stateOfResearch.question4Text')}</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Active Controversies */}
+            <div>
+              <h4 className="font-bold text-gray-900 dark:text-white mb-3 flex items-center gap-2">
+                <span className="text-red-600 dark:text-red-400">⚡</span>
+                {t('stateOfResearch.activeControversies')}
+              </h4>
+              <div className="space-y-3 pl-4">
+                <div className="bg-red-50 dark:bg-red-900/20 p-3 rounded">
+                  <strong className="text-gray-900 dark:text-white">{t('stateOfResearch.controversy1')}</strong>
+                  <p className="text-gray-700 dark:text-gray-300 text-sm mt-1">{t('stateOfResearch.controversy1Text')}</p>
+                </div>
+                <div className="bg-red-50 dark:bg-red-900/20 p-3 rounded">
+                  <strong className="text-gray-900 dark:text-white">{t('stateOfResearch.controversy2')}</strong>
+                  <p className="text-gray-700 dark:text-gray-300 text-sm mt-1">{t('stateOfResearch.controversy2Text')}</p>
+                </div>
+                <div className="bg-red-50 dark:bg-red-900/20 p-3 rounded">
+                  <strong className="text-gray-900 dark:text-white">{t('stateOfResearch.controversy3')}</strong>
+                  <p className="text-gray-700 dark:text-gray-300 text-sm mt-1">{t('stateOfResearch.controversy3Text')}</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Bottom Line */}
+            <div className="bg-blue-50 dark:bg-blue-900/20 border-l-4 border-blue-500 dark:border-blue-600 p-4 rounded">
+              <h4 className="font-bold text-gray-900 dark:text-white mb-3">{t('stateOfResearch.honestBottomLine')}</h4>
+              <ul className="space-y-2 text-gray-700 dark:text-gray-300 text-sm">
+                <li>{t('stateOfResearch.bottomLine1')}</li>
+                <li>{t('stateOfResearch.bottomLine2')}</li>
+                <li>{t('stateOfResearch.bottomLine3')}</li>
+                <li>{t('stateOfResearch.bottomLine4')}</li>
+                <li>{t('stateOfResearch.bottomLine5')}</li>
+              </ul>
+            </div>
+
+            {/* Recent Work */}
+            <div className="bg-gray-50 dark:bg-gray-700 p-3 rounded">
+              <strong className="text-gray-900 dark:text-white">{t('stateOfResearch.recentWork')}</strong>
+              <p className="text-gray-700 dark:text-gray-300 text-sm mt-1">{t('stateOfResearch.recentWorkText')}</p>
             </div>
           </div>
         </AccordionItem>
@@ -1151,16 +1628,11 @@ export default function ResultatsPage() {
             >
               {t('downloadPDF')}
             </button>
-            <button
-              onClick={() => {
-                resetTest();
-                const versionParam = version === 'complète' ? 'version=full' : '';
-                router.push(`/${locale}/test?reset=true${versionParam ? '&' + versionParam : ''}`);
-              }}
-              className="bg-gray-200 hover:bg-gray-300 text-gray-900 font-semibold px-6 py-3 rounded-lg transition-colors"
-            >
-              {t('retakeTest')}
-            </button>
+            <Link href={`/${locale}/test?reset=true${version === 'complète' ? '&version=full' : ''}`}>
+              <button className="bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-900 dark:text-white font-semibold px-6 py-3 rounded-lg transition-colors">
+                {t('retakeTest')}
+              </button>
+            </Link>
             <Link href={`/${locale}`}>
               <button className="bg-gray-200 hover:bg-gray-300 text-gray-900 font-semibold px-6 py-3 rounded-lg transition-colors">
                 {t('backHome')}
@@ -1202,10 +1674,10 @@ export default function ResultatsPage() {
         {/* Footer */}
         <div className="text-center mt-12 text-sm text-gray-500 dark:text-gray-400 print:hidden">
           <p>
-            Ce test est un projet open-source, gratuit, et dans l'intérêt général.
+            {t('footer.openSourceProject')}
           </p>
           <p className="mt-1">
-            Basé sur la recherche scientifique en psychologie cognitive (1970-2024).
+            {t('footer.basedOnResearch')}
           </p>
         </div>
       </div>

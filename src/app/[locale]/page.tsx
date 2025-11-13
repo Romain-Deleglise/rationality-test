@@ -244,7 +244,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="group border-2 border-gray-200 rounded-xl p-6 hover:border-blue-500 hover:shadow-xl transition-all duration-300 cursor-pointer transform hover:-translate-y-1"
+              className="group border-2 border-gray-200 dark:border-gray-700 rounded-xl p-6 hover:border-blue-500 dark:hover:border-blue-400 hover:shadow-xl transition-all duration-300 cursor-pointer transform hover:-translate-y-1 bg-white dark:bg-gray-900"
             >
               <div className="text-center mb-4">
                 <div className="inline-flex items-center justify-center w-12 h-12 bg-blue-100 dark:bg-blue-900 rounded-full mb-3 group-hover:bg-blue-200 dark:group-hover:bg-blue-800 transition-colors">
@@ -277,7 +277,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="group border-2 border-blue-500 rounded-xl p-6 hover:border-blue-600 hover:shadow-2xl transition-all duration-300 cursor-pointer relative transform hover:-translate-y-1 bg-gradient-to-br from-white to-blue-50"
+              className="group border-2 border-blue-500 dark:border-blue-400 rounded-xl p-6 hover:border-blue-600 dark:hover:border-blue-300 hover:shadow-2xl transition-all duration-300 cursor-pointer relative transform hover:-translate-y-1 bg-gradient-to-br from-white to-blue-50 dark:from-gray-900 dark:to-gray-800"
             >
               <div className="absolute top-0 right-0 bg-blue-500 text-white text-xs font-bold px-3 py-1 rounded-bl-lg rounded-tr-lg">
                 {t('chooseVersion.full.recommended')}

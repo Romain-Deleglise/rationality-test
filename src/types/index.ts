@@ -1,11 +1,31 @@
 // Types pour les questions
-export type QuestionType = 
+export type QuestionType =
   | 'multiple-choice'
   | 'number'
   | 'confidence-interval'
   | 'ranking'
   | 'likert'
   | 'multiple-choice-confidence';
+
+export interface QuestionRandomization {
+  variables: {
+    [key: string]: {
+      type: 'simple' | 'percentage_pair' | 'calculated' | 'sequence';
+      min?: number;
+      max?: number;
+      step?: number;
+      percentageOptions?: number[][];
+      formula?: string;
+      dependencies?: string[];
+      sequenceMin?: number;
+      sequenceMax?: number;
+    };
+  };
+  textTemplate?: string;
+  correctTemplate?: string;
+  explanationTemplate?: string;
+  optionsTemplates?: string[];
+}
 
 export interface Question {
   id: string;
@@ -20,6 +40,7 @@ export interface Question {
   confidenceLevels?: number[];
   reverse?: boolean;
   anchorType?: 'low' | 'high';
+  randomization?: QuestionRandomization;
 }
 
 export interface Module {
@@ -52,6 +73,11 @@ export interface TestSession {
   answers: Answer[];
   currentModuleIndex: number;
   currentQuestionIndex: number;
+  randomizedValues?: {
+    [questionId: string]: {
+      [variable: string]: number | string;
+    };
+  };
 }
 
 export interface TestResult {

@@ -1,10 +1,16 @@
 import { createClient } from '@supabase/supabase-js';
 
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
-const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || '';
+const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || '';
+
+// Vérifier si Supabase est configuré
+export const isSupabaseConfigured = !!(supabaseUrl && supabaseAnonKey);
 
 // Client pour le browser (utilise la clé anon)
-export const supabase = createClient(supabaseUrl, supabaseAnonKey);
+// Si non configuré, créer un client dummy pour éviter les erreurs
+export const supabase = isSupabaseConfigured
+  ? createClient(supabaseUrl, supabaseAnonKey)
+  : createClient('https://dummy.supabase.co', 'dummy-key');
 
 // Types pour la base de données
 export interface TestResult {
@@ -30,6 +36,11 @@ export function generateResultToken(): string {
 
 // Fonction pour sauvegarder un résultat
 export async function saveTestResult(result: Omit<TestResult, 'id' | 'created_at'>) {
+  if (!isSupabaseConfigured) {
+    console.warn('Supabase is not configured. Skipping result save.');
+    return null;
+  }
+
   const { data, error } = await supabase
     .from('test_results')
     .insert([result])
@@ -46,6 +57,11 @@ export async function saveTestResult(result: Omit<TestResult, 'id' | 'created_at
 
 // Fonction pour récupérer un résultat par token
 export async function getTestResultByToken(token: string) {
+  if (!isSupabaseConfigured) {
+    console.warn('Supabase is not configured. Cannot fetch result.');
+    return null;
+  }
+
   const { data, error } = await supabase
     .from('test_results')
     .select('*')
@@ -65,6 +81,10 @@ export async function calculateRealPercentile(
   percentage: number,
   testVersion: 'courte' | 'complète'
 ): Promise<number> {
+  if (!isSupabaseConfigured) {
+    return 50; // Valeur par défaut si Supabase non configuré
+  }
+
   // Compter combien de résultats sont inférieurs à ce score
   const { count: lowerCount, error: lowerError } = await supabase
     .from('test_results')
@@ -89,6 +109,10 @@ export async function calculateRealPercentile(
 
 // Fonction pour obtenir les statistiques globales
 export async function getGlobalStats(testVersion: 'courte' | 'complète') {
+  if (!isSupabaseConfigured) {
+    return null;
+  }
+
   const { data, error } = await supabase
     .from('test_results')
     .select('percentage')

@@ -131,11 +131,30 @@
     "loading": "Loading test...",
     "question": "Question",
     "of": "of",
-    "next": "Next",
+    "next": "Next →",
     "previous": "Previous",
     "finish": "Finish",
     "timeRemaining": "Time remaining",
-    "minutes": "minutes"
+    "minutes": "minutes",
+    "rankingInstructions": "✋ Drag-and-drop or use arrows ▲▼ to reorder.",
+    "rankingMostLikely": "1 = most likely.",
+    "yourAnswer": "Your answer",
+    "unit": "Unit",
+    "confidenceInterval": "Give a 90% confidence interval: you are 90% certain that the true answer is within this range.",
+    "to": "to",
+    "minimum": "Minimum",
+    "maximum": "Maximum",
+    "confidenceQuestion": "What is your confidence level in this answer?",
+    "confidencePercent": "% confidence",
+    "guessing": "(I'm guessing)",
+    "certain": "(I'm certain)",
+    "likertStronglyDisagree": "Strongly disagree",
+    "likertModeratelyDisagree": "Moderately disagree",
+    "likertSlightlyDisagree": "Slightly disagree",
+    "likertSlightlyAgree": "Slightly agree",
+    "likertModeratelyAgree": "Moderately agree",
+    "likertStronglyAgree": "Strongly agree",
+    "unsupportedQuestionType": "Unsupported question type"
   },
   "results": {
     "title": "Your Results",
@@ -231,6 +250,128 @@
       "Disjunctive Reasoning": "Your ability to reason correctly with 'OR' statements.",
       "Anchoring": "Your resistance to anchoring (being too influenced by the first piece of information received).",
       "Dysfunctional Beliefs": "Your ability to avoid irrational beliefs that cause unnecessary emotional distress."
+    },
+
+    "footer": {
+      "openSourceProject": "This test is a free, open-source project, in the public interest :)",
+      "basedOnResearch": "Based on scientific research in cognitive psychology (1970-2024)."
+    },
+
+    "scoreInterpretations": {
+      "veryHigh": "Very high score. You demonstrate excellent mastery of rational reasoning principles. However, keep in mind that knowing biases does not guarantee resistance to them in real situations (fatigue, stress, emotions).",
+      "high": "High score. You have gained a good understanding of common reasoning errors. However, note that biases persist even among experts. The use of decision-making protocols remains recommended for important choices.",
+      "average": "Average score. You correctly identify some biases, but others still escape you. This is normal: rationality is not intuitive. Focus on your specific weaknesses rather than trying to improve everything at once.",
+      "belowAverage": "Below average score. Several important cognitive biases affect your reasoning. Improvement is possible but modest (10-25% over 6-12 months with intensive practice). Prioritize the use of external tools (checklists, consultations) rather than relying on improved intuition.",
+      "limited": "Limited score. Your results suggest strong susceptibility to common cognitive biases. Don't be discouraged: even very intelligent people get similar scores. Rationality works differently from general intelligence. Start by understanding the basic concepts before expecting measurable improvement.",
+      "veryLimited": "Very limited score. Your reasoning is strongly affected by many cognitive biases. This does not reflect your intelligence, but rather a lack of familiarity with these concepts. Consider this test as an educational starting point rather than a judgment. Improvement will require time and patience."
+    },
+
+    "testOrigin": {
+      "title": "📖 About This Test",
+      "whatIsCart": "What is CART?",
+      "cartDescription": "The Comprehensive Assessment of Rational Thinking (CART) is the first scientifically validated test of rational thinking, developed by Professors Keith E. Stanovich, Richard F. West, and Maggie E. Toplak, published by MIT Press in 2016.",
+      "basedOnResearch": "Based on 40 years of research in cognitive psychology on biases and heuristics, notably the pioneering work of Daniel Kahneman and Amos Tversky (Kahneman received the Nobel Prize in Economics in 2002 for this work).",
+      "thisAdaptation": "This Online Test",
+      "adaptationDescription": "This test is a free educational adaptation of CART. It uses public domain questions and variants inspired by the scientific literature. This is NOT the official CART (which requires controlled administration), but a free pedagogical approximation.",
+      "keyDifference": "Key difference: Intelligence (IQ) measures your cognitive capacity, but rationality measures how effectively you use that capacity. You can be intelligent but not very rational."
+    },
+
+    "cartHistory": {
+      "title": "📖 Where Does This Test Come From? CART History",
+      "fortyYears": "40 Years of Research",
+      "fortyYearsP1": "In the 1970s, two Israeli psychologists, Daniel Kahneman and Amos Tversky (Hebrew University of Jerusalem), began documenting something troubling: intelligent, educated people regularly made decisions that violated basic principles of logic and probability.",
+      "fortyYearsP2": "Their most surprising discovery? These errors were not random accidents, but systematic patterns. Humans seemed to use mental shortcuts (heuristics) which, although useful in some contexts, led to predictable and repeated errors.",
+      "fortyYearsP3": "For this pioneering work, Kahneman received the Nobel Prize in Economics in 2002 (Tversky had died in 1996, otherwise he would have shared it).",
+      "theProblem": "The Problem: Intelligence ≠ Rationality",
+      "theProblemP1": "For decades, it was assumed that IQ tests measured \"good thinking\". But Keith E. Stanovich (University of Toronto) noticed something strange in the 1990s: people with very high IQs still made systematic reasoning errors.",
+      "theProblemP2": "Stanovich realized that IQ measures the brain's processing power, but not necessarily the wisdom of its use. It's like having a Ferrari (high IQ) but not knowing how to drive (low rationality).",
+      "birthOfCart": "The Birth of CART (2013-2016)",
+      "birthOfCartP1": "Stanovich, along with his colleagues Richard F. West (James Madison University) and Maggie E. Toplak (York University), spent 3 years developing the CART (Comprehensive Assessment of Rational Thinking) - the first comprehensive test of rational thinking.",
+      "birthOfCartP2": "The project, funded by the John Templeton Foundation, involved over 1000 participants, 20 different subtests, and rigorous statistical validation.",
+      "birthOfCartP3": "This online test is a free educational adaptation of the original CART. It uses public domain questions and variants inspired by the scientific literature. This is NOT the official CART (which requires controlled administration), but a free pedagogical approximation."
+    },
+
+    "pragmaticSolution": {
+      "title": "🛠️ The Pragmatic Solution (Recommended by Kahneman)",
+      "intro": "Rather than trying to change your brain (difficult, uncertain), change your decision-making environment:",
+      "checklist": "Pre-decision checklists: \"What is the base rate? Am I anchored? What could prove me wrong?\"",
+      "consultation": "Structured consultations: Before any major decision, get input from 2-3 people with different perspectives",
+      "slowdown": "Forced slowdown: 24-48h rule for important decisions (investments, major purchases, career changes)",
+      "premortem": "Pre-mortem: Before launching a project, imagine it failed in 1 year. Why?",
+      "journal": "Decision journal: Write down predictions + confidence + reasoning. Monthly review.",
+      "example": "Concrete example: In surgery, enforcing a mandatory checklist reduced complications by 47% (Haynes et al., 2009) - much more effective than \"training surgeons to be less overconfident\"."
+    },
+
+    "resources": {
+      "title": "📚 Resources to Go Deeper",
+      "essentialReading": "Essential Reading",
+      "thinkingFastSlow": "Thinking, Fast and Slow",
+      "thinkingFastSlowDesc": "THE foundational book (2002 Nobel Prize)",
+      "rationalityQuotient": "The Rationality Quotient",
+      "rationalityQuotientDesc": "The academic book on CART",
+      "superforecasting": "Superforecasting",
+      "superforecastingDesc": "How to improve your calibration (with evidence)",
+      "scoutMindset": "The Scout Mindset",
+      "scoutMindsetDesc": "Seeking truth rather than being right",
+      "calibrationPractice": "Calibration Practice",
+      "metaculus": "Metaculus.com",
+      "metaculusDesc": "Prediction platform (proven calibration improvement)",
+      "lesswrong": "LessWrong.com",
+      "lesswrongDesc": "Community and articles on rationality"
+    },
+
+    "scientificSources": {
+      "title": "📖 Complete Scientific Sources",
+      "mainFoundations": "Main Foundations",
+      "stanovich2016": "The Rationality Quotient: Toward a Test of Rational Thinking. MIT Press.",
+      "kahneman1974": "Judgment under Uncertainty: Heuristics and Biases. Science, 185(4157), 1124-1131.",
+      "frederick2005": "Cognitive Reflection and Decision Making. Journal of Economic Perspectives, 19(4), 25-42.",
+      "onImprovement": "On Improvement (or Not) of Biases",
+      "morewedge2015": "Debiasing Decisions. Policy Insights from Behavioral and Brain Sciences.",
+      "morewedge2015Desc": "Meta-analysis: average bias reduction of ~29%, but decline without practice",
+      "kahneman2011": "Thinking, Fast and Slow. Quote p. 417:",
+      "kahneman2011Quote": "\"The way to block errors that originate in System 1 is simple in principle: recognize the signs that you are in a cognitive minefield, slow down, and ask for reinforcement from System 2.\"",
+      "testLimitations": "Limitations of This Test",
+      "limitation1": "Measures some aspects of rationality, not all (creativity, practical wisdom, etc.)",
+      "limitation2": "Score can vary depending on fatigue, stress, context",
+      "limitation3": "Modest improvement and difficult to maintain",
+      "limitation4": "Percentile based on theoretical distribution, not yet real data"
+    },
+
+    "stateOfResearch": {
+      "title": "🔬 Where Are We Now? Current State of Rationality Research",
+      "intro": "An honest assessment of what we know, what we don't know, and what remains contentious:",
+      "whatWeKnow": "What We Know (Established Findings)",
+      "finding1": "Cognitive Biases Are Real and Robust",
+      "finding1Text": "Hundreds of studies confirm systematic reasoning errors across populations. These are not laboratory artifacts—they manifest in medical decisions, financial choices, legal judgments, and everyday reasoning.",
+      "finding2": "Rationality ≠ Intelligence",
+      "finding2Text": "IQ and rational thinking are only modestly correlated (r ≈ 0.30-0.40). High-IQ individuals frequently exhibit severe cognitive biases. CART successfully measures reasoning abilities distinct from traditional intelligence tests.",
+      "finding3": "Some Debiasing Works (Modestly)",
+      "finding3Text": "A 2025 meta-analysis of 54 randomized controlled trials found small but significant improvements from educational interventions (g = 0.26). Even brief training (videos, games) can reduce biases like anchoring and confirmation bias—but effects are modest and require reinforcement.",
+      "whatWeDontKnow": "Major Open Questions",
+      "question1": "Why Is Transfer So Limited?",
+      "question1Text": "Training improves performance on specific tasks but rarely generalizes to novel contexts. Why don't debiasing skills transfer? We lack a clear theoretical account. Most interventions fail outside laboratory conditions.",
+      "question2": "How Do System 1 and System 2 Actually Interact?",
+      "question2Text": "The dual-process framework (intuitive vs. analytical thinking) faces serious criticisms: oversimplification, unfalsifiability, vague definitions. Critics argue it's too simplistic and can't explain the complex interplay between intuitive and deliberate processes. The field lacks consensus.",
+      "question3": "What Makes Debiasing Stick?",
+      "question3Text": "Effects often dissipate within days without practice. We don't know how to achieve lasting behavioral change at acceptable cost. Real-world evidence of sustained improvement remains scarce.",
+      "question4": "Does Bias Awareness Translate to Better Decisions?",
+      "question4Text": "A troubling gap: reducing measured bias doesn't consistently improve real-world outcomes. Meta-analyses find weak or zero effects on actual discrimination and decision quality. Awareness ≠ behavioral change.",
+      "activeControversies": "Active Controversies",
+      "controversy1": "Cultural Bias in Rationality Assessment",
+      "controversy1Text": "Critics argue CART and similar tests reflect WEIRD (Western, Educated, Industrialized, Rich, Democratic) assumptions. Is probabilistic reasoning \"more rational\" than other cultural reasoning styles, or just different? No resolution yet.",
+      "controversy2": "Can Expertise Backfire?",
+      "controversy2Text": "Some studies find experts more susceptible to certain biases (motivated reasoning, overconfidence in their domain). Others find expertise protective. Context dependency makes generalizations risky.",
+      "controversy3": "Psychometric Validity of Short-Form Tests",
+      "controversy3Text": "A 2021 study found serious dimensionality issues with short-form CART: many subtests failed to form coherent scales. Abbreviated versions (like this test) sacrifice validity for accessibility.",
+      "honestBottomLine": "The Honest Bottom Line",
+      "bottomLine1": "✅ Rationality research has produced robust findings about systematic reasoning errors and ways to measure them.",
+      "bottomLine2": "⚠️ We have limited understanding of how to produce lasting, generalizable improvements in rational thinking.",
+      "bottomLine3": "❌ Many fundamental questions remain unresolved—especially about real-world transfer and the mechanisms underlying rational thought.",
+      "bottomLine4": "🔬 Active area of research with a 2024 adolescent assessment tool (ART-Y) and ongoing meta-analyses, but no breakthroughs solving the transfer problem.",
+      "bottomLine5": "🎯 Practical recommendation: Use external decision protocols (checklists, consultations, systematic review processes) rather than relying on internalized debiasing.",
+      "recentWork": "Recent Developments (2023-2025)",
+      "recentWorkText": "New measurement tools for youth (ART-Y, 2024), meta-analyses on educational interventions showing modest effects, but fundamental challenges—transfer, durability, real-world impact—remain largely unsolved."
     }
   },
   "common": {
