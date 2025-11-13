@@ -7,6 +7,12 @@ import { useTestStore } from '@/store/useTestStore';
 import { scoreTest, calculatePercentile, TestScore } from '@/lib/scoring';
 import { saveTestResult, calculateRealPercentile, generateResultToken, getGlobalStats } from '@/lib/supabase';
 import { getModuleTranslationKey, translateModuleName } from '@/lib/moduleMapping';
+import {
+  CART_FULL_FORM_NORMS,
+  CART_SHORT_FORM_NORMS,
+  calculatePercentile as calculateCARTPercentile,
+  getPercentileInterpretation,
+} from '@/data/cart-reference-data';
 import Link from 'next/link';
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
