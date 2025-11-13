@@ -241,7 +241,6 @@
       "Probabilistic Reasoning": "Your ability to reason with probabilities and avoid classic errors (gambler's fallacy, base rate neglect, conjunction error).",
       "Scientific Reasoning": "Your ability to rigorously test hypotheses, falsify rather than confirm, and distinguish correlation from causation.",
       "Reflection vs Intuition": "Your ability to inhibit the immediate intuitive response and engage analytical reflection (CRT).",
-      "Resistance to Miserly Processing": "Your ability to inhibit immediate intuitive responses and engage deeper analytical reflection (Cognitive Reflection Test).",
       "Belief Bias": "Your ability to evaluate logical validity independently of your beliefs about the conclusion.",
       "Knowledge Calibration": "Your ability to accurately estimate your level of certainty (avoid overconfidence).",
       "Probabilistic Numeracy": "Your ability to manipulate numbers in probabilistic contexts and understand statistics.",
@@ -340,8 +339,7 @@
       "testLimitations": "Limitations of This Test",
       "limitation1": "Measures some aspects of rationality, not all (creativity, practical wisdom, etc.)",
       "limitation2": "Score can vary depending on fatigue, stress, context",
-      "limitation3": "Modest improvement and difficult to maintain",
-      "limitation4": "Percentile based on theoretical distribution, not yet real data"
+      "limitation3": "Modest improvement and difficult to maintain"
     },
 
     "stateOfResearch": {
