@@ -1177,8 +1177,8 @@ export default function ResultatsPage() {
                   </h4>
                   <p className="text-sm text-gray-700 dark:text-gray-300 mb-3 text-justify">
                     {locale === 'fr'
-                      ? "Le CART (Comprehensive Assessment of Rational Thinking) est le test de référence scientifique pour mesurer la pensée rationnelle, développé par Keith Stanovich et ses collègues (Université de Toronto). Il a été validé à travers de multiples études empiriques avec des milliers de participants."
-                      : "CART (Comprehensive Assessment of Rational Thinking) is the gold-standard scientific test for measuring rational thinking, developed by Keith Stanovich and colleagues (University of Toronto). It has been validated through multiple empirical studies with thousands of participants."
+                      ? "Le CART (Comprehensive Assessment of Rational Thinking) est une batterie de tests développée par Keith E. Stanovich et ses collègues (Université de Toronto) pour mesurer la pensée rationnelle. C'est une base solide pour l'évaluation de la rationalité, bien que l'expérience avec ces tests reste limitée."
+                      : "CART (Comprehensive Assessment of Rational Thinking) is a test battery developed by Keith E. Stanovich and colleagues (University of Toronto) to measure rational thinking. It provides a solid foundation for assessing rationality, although experience with these tests remains limited."
                     }
                   </p>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs">
@@ -1214,7 +1214,7 @@ export default function ResultatsPage() {
                     {locale === 'fr' ? 'Votre position par rapport aux normes CART' : 'Your Position Relative to CART Norms'}
                   </h4>
 
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                     <div className="bg-gradient-to-br from-purple-50 to-purple-100 dark:from-purple-900/30 dark:to-purple-800/30 rounded-lg p-4 border-2 border-purple-200 dark:border-purple-700">
                       <div className="text-xs text-gray-600 dark:text-gray-400 mb-1">
                         {locale === 'fr' ? 'Votre score' : 'Your score'}
@@ -1238,50 +1238,6 @@ export default function ResultatsPage() {
                         {cartNorms.study} (N={cartNorms.sampleSize})
                       </div>
                     </div>
-
-                    <div className="bg-gradient-to-br from-green-50 to-green-100 dark:from-green-900/30 dark:to-green-800/30 rounded-lg p-4 border-2 border-green-200 dark:border-green-700">
-                      <div className="text-xs text-gray-600 dark:text-gray-400 mb-1">
-                        {locale === 'fr' ? 'Votre percentile' : 'Your percentile'}
-                      </div>
-                      <div className="text-3xl font-bold text-green-600 dark:text-green-400 mb-1">
-                        {cartPercentile}e
-                      </div>
-                      <div className="text-xs text-gray-600 dark:text-gray-400">
-                        {getPercentileInterpretation(cartPercentile, locale as 'en' | 'fr')}
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Percentile Distribution Visualization */}
-                  <div className="bg-gray-50 dark:bg-gray-800 rounded-lg p-4 mb-4">
-                    <div className="text-sm font-semibold text-gray-900 dark:text-white mb-3">
-                      {locale === 'fr' ? 'Distribution percentile (basée sur les normes CART)' : 'Percentile Distribution (based on CART norms)'}
-                    </div>
-                    <div className="relative h-16 bg-gradient-to-r from-red-200 via-yellow-200 via-green-200 to-blue-200 dark:from-red-900/50 dark:via-yellow-900/50 dark:via-green-900/50 dark:to-blue-900/50 rounded-lg overflow-hidden">
-                      {/* Percentile markers */}
-                      <div className="absolute inset-0 flex justify-between items-center px-2 text-xs text-gray-700 dark:text-gray-300">
-                        <span>0%</span>
-                        <span>25%</span>
-                        <span>50%</span>
-                        <span>75%</span>
-                        <span>100%</span>
-                      </div>
-                      {/* User position marker */}
-                      <div
-                        className="absolute top-0 bottom-0 w-1 bg-purple-600 dark:bg-purple-400"
-                        style={{ left: `${cartPercentile}%` }}
-                      >
-                        <div className="absolute -top-6 left-1/2 -translate-x-1/2 bg-purple-600 dark:bg-purple-400 text-white text-xs px-2 py-1 rounded whitespace-nowrap font-bold">
-                          {locale === 'fr' ? 'Vous' : 'You'}: {cartPercentile}e
-                        </div>
-                      </div>
-                    </div>
-                    <p className="text-xs text-gray-600 dark:text-gray-400 mt-2 italic">
-                      {locale === 'fr'
-                        ? `Votre score de ${testScore.percentage.toFixed(1)}% vous place au ${cartPercentile}e percentile, ce qui signifie que vous avez obtenu un score supérieur à environ ${cartPercentile}% des participants de l'étude ${cartNorms.study}.`
-                        : `Your score of ${testScore.percentage.toFixed(1)}% places you at the ${cartPercentile}th percentile, meaning you scored higher than approximately ${cartPercentile}% of participants in the ${cartNorms.study} study.`
-                      }
-                    </p>
                   </div>
                 </div>
 
@@ -1349,6 +1305,40 @@ export default function ResultatsPage() {
                               </tr>
                             );
                           })}
+                          {/* Total/Average row */}
+                          {(() => {
+                            const avgOurScore = moduleComparisons.reduce((sum: number, c: any) => sum + c.ourScore, 0) / moduleComparisons.length;
+                            const avgCartMean = moduleComparisons.reduce((sum: number, c: any) => sum + c.cartMean, 0) / moduleComparisons.length;
+                            const diff = avgOurScore - avgCartMean;
+                            const diffColor = diff > 0 ? 'text-green-600 dark:text-green-400' : diff < 0 ? 'text-red-600 dark:text-red-400' : 'text-gray-600 dark:text-gray-400';
+
+                            return (
+                              <tr className="bg-gray-100 dark:bg-gray-700 font-bold border-t-2 border-gray-400 dark:border-gray-500">
+                                <td className="p-3 border border-gray-300 dark:border-gray-600">
+                                  {locale === 'fr' ? 'Moyenne' : 'Average'}
+                                </td>
+                                <td className="text-center p-3 border border-gray-300 dark:border-gray-600">
+                                  <span className={diffColor}>
+                                    {avgOurScore.toFixed(1)}%
+                                  </span>
+                                  {diff !== 0 && (
+                                    <span className={`text-xs ml-1 ${diffColor}`}>
+                                      ({diff > 0 ? '+' : ''}{diff.toFixed(1)}%)
+                                    </span>
+                                  )}
+                                </td>
+                                <td className="text-center p-3 border border-gray-300 dark:border-gray-600">
+                                  {avgCartMean.toFixed(1)}%
+                                </td>
+                                <td className="text-center p-3 border border-gray-300 dark:border-gray-600 text-gray-600 dark:text-gray-400">
+                                  -
+                                </td>
+                                <td className="text-center p-3 border border-gray-300 dark:border-gray-600 text-gray-600 dark:text-gray-400">
+                                  -
+                                </td>
+                              </tr>
+                            );
+                          })()}
                         </tbody>
                       </table>
                     </div>

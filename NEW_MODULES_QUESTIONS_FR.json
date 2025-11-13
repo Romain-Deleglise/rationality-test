@@ -1,0 +1,186 @@
+{
+  "nouveaux_modules": [
+    {
+      "id": "argument-eval",
+      "name": "Évaluation d'Arguments (8 items)",
+      "points": 5,
+      "time": 10,
+      "description": "Module Argument Evaluation - version adaptée du CART",
+      "questions": [
+        {
+          "id": "arg-eval-1a",
+          "type": "likert",
+          "text": "**Partie A - Votre opinion** : Les étudiants devraient avoir une voix plus forte que le grand public dans la définition des politiques universitaires.",
+          "points": 0,
+          "explanation": "Cette question mesure votre opinion préalable pour détecter le biais de croyance dans l'évaluation d'arguments."
+        },
+        {
+          "id": "arg-eval-1b",
+          "type": "multiple-choice",
+          "text": "**Partie B - Évaluation** :\n\n**Opinion de Marc** : Les étudiants devraient avoir une voix plus forte que le grand public dans la définition des politiques universitaires.\n\n**Justification de Marc** : Puisque ce sont les étudiants qui doivent finalement payer les coûts de fonctionnement de l'université par leurs frais de scolarité, ils devraient avoir une voix plus forte dans les politiques universitaires.\n\n**Contre-argument du critique** : Les frais de scolarité couvrent moins de la moitié du coût d'une éducation dans la plupart des universités publiques (supposez que c'est factuellement correct), donc les contribuables devraient avoir leur mot à dire plus important dans les politiques.\n\n**Réponse de Marc** : Puisque ce sont les étudiants qui sont directement influencés par les politiques universitaires (supposez que c'est factuellement correct), ce sont eux qui devraient avoir la voix la plus forte.\n\n**Évaluez la force de la réponse de Marc** :",
+          "options": [
+            "1 - Très faible",
+            "2 - Faible",
+            "3 - Fort",
+            "4 - Très fort"
+          ],
+          "correct": 0,
+          "points": 0.625,
+          "explanation": "La réponse de Marc est très faible car il change d'argument sans répondre au contre-argument sur le financement."
+        },
+        {
+          "id": "arg-eval-2a",
+          "type": "likert",
+          "text": "**Partie A - Votre opinion** : Le tabac devrait être interdit dans tous les lieux publics fermés.",
+          "points": 0,
+          "explanation": "Opinion préalable sur le tabagisme."
+        },
+        {
+          "id": "arg-eval-2b",
+          "type": "multiple-choice",
+          "text": "**Partie B - Évaluation** :\n\n**Opinion de Marc** : Le tabac devrait être interdit dans tous les lieux publics fermés.\n\n**Justification de Marc** : Le tabac devrait être interdit dans tous les lieux publics fermés car même le tabagisme passif pose un risque sanitaire significatif pour les non-fumeurs.\n\n**Contre-argument du critique** : Puisque de nombreux fumeurs s'abstiennent déjà de fumer dans des endroits où leur fumée secondaire pose un risque pour d'autres (supposez que c'est factuellement correct), il est inutile de restreindre sévèrement les lieux de tabagisme.\n\n**Réponse de Marc** : Bien qu'il soit vrai que de nombreux fumeurs sont prévenants, il est également vrai que de nombreux fumeurs ne le sont pas (supposez que c'est factuellement correct). Interdire le tabac serait un moyen efficace de garantir que beaucoup d'entre nous ne seront pas exposés aux risques posés par la fumée secondaire.\n\n**Évaluez la force de la réponse de Marc** :",
+          "options": [
+            "1 - Très faible",
+            "2 - Faible",
+            "3 - Fort",
+            "4 - Très fort"
+          ],
+          "correct": 3,
+          "points": 0.625,
+          "explanation": "La réponse de Marc est très forte car il reconnaît le point du critique et explique pourquoi l'interdiction reste nécessaire."
+        },
+        {
+          "id": "arg-eval-3a",
+          "type": "likert",
+          "text": "**Partie A - Votre opinion** : L'énergie nucléaire devrait être développée comme source principale d'énergie pour l'avenir.",
+          "points": 0,
+          "explanation": "Opinion préalable sur l'énergie nucléaire."
+        },
+        {
+          "id": "arg-eval-3b",
+          "type": "multiple-choice",
+          "text": "**Partie B - Évaluation** :\n\n**Opinion de Marc** : L'énergie nucléaire devrait être développée comme source principale d'énergie pour l'avenir.\n\n**Justification de Marc** : L'énergie nucléaire est plus propre que les combustibles fossiles et peut fournir une énergie stable et abondante pour répondre à nos besoins croissants.\n\n**Contre-argument du critique** : Les accidents nucléaires comme Tchernobyl et Fukushima montrent que l'énergie nucléaire comporte des risques catastrophiques (supposez que c'est factuellement correct).\n\n**Réponse de Marc** : Ces accidents étaient dus à des technologies anciennes et des erreurs humaines. Les nouvelles technologies nucléaires de quatrième génération sont conçues pour être beaucoup plus sûres (supposez que c'est factuellement correct).\n\n**Évaluez la force de la réponse de Marc** :",
+          "options": [
+            "1 - Très faible",
+            "2 - Faible",
+            "3 - Fort",
+            "4 - Très fort"
+          ],
+          "correct": 2,
+          "points": 0.625,
+          "explanation": "La réponse de Marc est moyennement forte : il répond au contre-argument mais ne quantifie pas vraiment les risques."
+        },
+        {
+          "id": "arg-eval-4a",
+          "type": "likert",
+          "text": "**Partie A - Votre opinion** : Les entreprises de réseaux sociaux devraient être légalement responsables du contenu publié par leurs utilisateurs.",
+          "points": 0,
+          "explanation": "Opinion préalable sur la responsabilité des réseaux sociaux."
+        },
+        {
+          "id": "arg-eval-4b",
+          "type": "multiple-choice",
+          "text": "**Partie B - Évaluation** :\n\n**Opinion de Marc** : Les entreprises de réseaux sociaux devraient être légalement responsables du contenu publié par leurs utilisateurs.\n\n**Justification de Marc** : Les plateformes profitent du contenu généré par les utilisateurs, donc elles devraient être responsables de ce contenu.\n\n**Contre-argument du critique** : Il est impossible techniquement de modérer des milliards de publications en temps réel (supposez que c'est factuellement correct).\n\n**Réponse de Marc** : C'est vrai, mais elles peuvent investir davantage dans des systèmes de modération automatiques et humains (supposez que c'est factuellement correct).\n\n**Évaluez la force de la réponse de Marc** :",
+          "options": [
+            "1 - Très faible",
+            "2 - Faible",
+            "3 - Fort",
+            "4 - Très fort"
+          ],
+          "correct": 1,
+          "points": 0.625,
+          "explanation": "La réponse de Marc est faible : il ne répond pas vraiment à l'argument sur l'impossibilité technique."
+        }
+      ]
+    },
+    {
+      "id": "causal-reasoning",
+      "name": "Raisonnement Causal (6 items)",
+      "points": 6,
+      "time": 8,
+      "questions": [
+        {
+          "id": "causal-1",
+          "type": "multiple-choice",
+          "text": "Des chercheurs ont découvert que les enfants qui regardent beaucoup de télévision ont tendance à obtenir de moins bons résultats scolaires que les enfants qui regardent peu de télévision.\n\nCette découverte signifie-t-elle qu'interdire la télévision aux enfants améliorerait leurs résultats scolaires ?",
+          "options": [
+            "Oui, certainement",
+            "Non, pas nécessairement",
+            "On ne peut pas le déterminer avec ces informations seules"
+          ],
+          "correct": 1,
+          "points": 1,
+          "explanation": "Non nécessairement. La corrélation n'implique pas la causation. D'autres facteurs (niveau socio-économique, éducation des parents) pourraient expliquer à la fois plus de TV et de moins bons résultats."
+        },
+        {
+          "id": "causal-2",
+          "type": "multiple-choice",
+          "text": "Une étude montre que les personnes qui prennent des vitamines quotidiennement vivent en moyenne plus longtemps que celles qui n'en prennent pas.\n\nPeut-on conclure que prendre des vitamines augmente l'espérance de vie ?",
+          "options": [
+            "Oui",
+            "Non",
+            "Impossible à déterminer"
+          ],
+          "correct": 1,
+          "points": 1,
+          "explanation": "Non. Les personnes qui prennent des vitamines ont peut-être déjà un mode de vie plus sain (exercice, alimentation équilibrée), ce qui explique leur longévité."
+        },
+        {
+          "id": "causal-3",
+          "type": "multiple-choice",
+          "text": "On observe que les villes avec plus de pompiers ont plus d'incendies graves.\n\nDevrait-on réduire le nombre de pompiers pour diminuer les incendies graves ?",
+          "options": [
+            "Oui",
+            "Non",
+            "Peut-être, selon d'autres facteurs"
+          ],
+          "correct": 1,
+          "points": 1,
+          "explanation": "Non. C'est une confusion de causalité inversée : les villes ont plus de pompiers PARCE QU'elles ont plus d'incendies (grandes villes), pas l'inverse."
+        },
+        {
+          "id": "causal-4",
+          "type": "multiple-choice",
+          "text": "Une école primaire a mis en place un nouveau programme de lecture. Le directeur annonce fièrement qu'après un an, les scores de lecture des élèves ont augmenté de 15%.\n\nQuelle information supplémentaire serait la plus utile pour évaluer l'efficacité réelle de ce programme ?",
+          "options": [
+            "Le coût du programme par élève",
+            "L'évolution des scores de lecture dans des écoles similaires sans le programme",
+            "Le nombre d'heures de formation des enseignants",
+            "Les opinions des parents sur le programme"
+          ],
+          "correct": 1,
+          "points": 1,
+          "explanation": "Un groupe contrôle est essentiel. Les scores auraient peut-être augmenté de toute façon (maturation, autres facteurs). Comparer avec des écoles similaires permet d'isoler l'effet du programme."
+        },
+        {
+          "id": "causal-5",
+          "type": "multiple-choice",
+          "text": "Une entreprise affirme que son nouveau complément alimentaire améliore la mémoire. Dans leur étude, 80% des participants qui ont pris le complément pendant 3 mois ont déclaré avoir une meilleure mémoire.\n\nQuel serait le meilleur moyen de vérifier cette affirmation ?",
+          "options": [
+            "Augmenter le nombre de participants",
+            "Comparer avec un groupe qui a pris un placebo",
+            "Prolonger l'étude à 6 mois",
+            "Demander aux participants de tenir un journal"
+          ],
+          "correct": 1,
+          "points": 1,
+          "explanation": "Un groupe placebo est essentiel pour contrôler l'effet placebo (amélioration subjective due aux attentes). Sans contrôle, impossible de savoir si c'est le complément ou les attentes qui améliorent la mémoire perçue."
+        },
+        {
+          "id": "causal-6",
+          "type": "multiple-choice",
+          "text": "Un médecin prescrit un traitement à un patient. Après 2 semaines, le patient se sent mieux et le médecin conclut que le traitement fonctionne.\n\nQuelle est la principale limite de cette conclusion ?",
+          "options": [
+            "2 semaines, c'est trop court",
+            "On ne sait pas si le patient aurait guéri spontanément",
+            "Un seul patient n'est pas suffisant",
+            "Le patient pourrait mentir"
+          ],
+          "correct": 1,
+          "points": 1,
+          "explanation": "La principale limite est l'absence de groupe contrôle. Beaucoup de conditions s'améliorent spontanément (régression vers la moyenne). Impossible de savoir si c'est le traitement ou la guérison naturelle."
+        }
+      ]
+    }
+  ]
+}
