@@ -6,7 +6,15 @@ import { useTranslations } from 'next-intl';
 import { useTestStore } from '@/store/useTestStore';
 import { scoreTest, calculatePercentile, TestScore } from '@/lib/scoring';
 import { saveTestResult, calculateRealPercentile, generateResultToken, getGlobalStats } from '@/lib/supabase';
-import { getModuleTranslationKey } from '@/lib/moduleMapping';
+import { getModuleTranslationKey, translateModuleName } from '@/lib/moduleMapping';
+import {
+  CART_FULL_FORM_NORMS,
+  CART_SHORT_FORM_NORMS,
+  calculatePercentile as calculateCARTPercentile,
+  getPercentileInterpretation,
+  CART_MODULE_NORMS,
+  MODULE_NAME_MAPPING
+} from '@/data/cart-reference-data';
 import Link from 'next/link';
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -712,6 +720,74 @@ export default function ResultatsPage() {
               </div>
             </div>
           )}
+
+          {/* CART Comparison */}
+          {(() => {
+            // Choose appropriate CART norms based on test version
+            const cartNorms = version === 'complète' ? CART_FULL_FORM_NORMS : CART_SHORT_FORM_NORMS;
+            const cartPercentile = calculateCARTPercentile(
+              testScore.totalEarned,
+              testScore.totalPossible,
+              cartNorms
+            );
+            const interpretation = getPercentileInterpretation(cartPercentile, locale as 'en' | 'fr');
+
+            return (
+              <div className="mt-6 bg-purple-50 dark:bg-purple-900/20 border-2 border-purple-300 dark:border-purple-700 rounded-lg p-4 text-left">
+                <div className="flex items-start gap-3 mb-3">
+                  <Award className="w-6 h-6 text-purple-600 dark:text-purple-400 flex-shrink-0 mt-1" />
+                  <div className="flex-1">
+                    <h3 className="text-sm font-bold text-gray-900 dark:text-white mb-1">
+                      {locale === 'fr' ? '🎓 Comparaison avec la recherche officielle CART' : '🎓 Comparison with Official CART Research'}
+                    </h3>
+                    <p className="text-xs text-gray-600 dark:text-gray-300 mb-3">
+                      {locale === 'fr'
+                        ? `Basé sur l'étude ${cartNorms.study} (N=${cartNorms.sampleSize}, ${cartNorms.sampleDescription})`
+                        : `Based on study ${cartNorms.study} (N=${cartNorms.sampleSize}, ${cartNorms.sampleDescription})`
+                      }
+                    </p>
+                    <div className="bg-white dark:bg-gray-800 rounded p-3 mb-2">
+                      <div className="flex items-center justify-between mb-2">
+                        <span className="text-xs text-gray-600 dark:text-gray-300">
+                          {locale === 'fr' ? 'Votre percentile CART :' : 'Your CART percentile:'}
+                        </span>
+                        <span className="text-lg font-bold text-purple-600 dark:text-purple-400">
+                          {cartPercentile}e
+                        </span>
+                      </div>
+                      <p className="text-xs text-gray-700 dark:text-gray-300 italic">
+                        {interpretation}
+                      </p>
+                    </div>
+                    <div className="grid grid-cols-2 gap-2 text-xs">
+                      <div className="bg-white dark:bg-gray-800 rounded p-2">
+                        <div className="text-gray-600 dark:text-gray-400">
+                          {locale === 'fr' ? 'Moyenne CART' : 'CART Mean'}
+                        </div>
+                        <div className="font-bold text-gray-900 dark:text-white">
+                          {((cartNorms.mean / cartNorms.totalPoints) * 100).toFixed(1)}%
+                        </div>
+                      </div>
+                      <div className="bg-white dark:bg-gray-800 rounded p-2">
+                        <div className="text-gray-600 dark:text-gray-400">
+                          {locale === 'fr' ? 'Votre score' : 'Your score'}
+                        </div>
+                        <div className="font-bold text-gray-900 dark:text-white">
+                          {testScore.percentage.toFixed(1)}%
+                        </div>
+                      </div>
+                    </div>
+                    <p className="text-xs text-gray-500 dark:text-gray-400 mt-3 italic">
+                      {locale === 'fr'
+                        ? '* Comparaison approximative basée sur les normes publiées du test CART. Les différences de format et de contenu peuvent affecter la comparabilité directe.'
+                        : '* Approximate comparison based on published CART test norms. Differences in format and content may affect direct comparability.'
+                      }
+                    </p>
+                  </div>
+                </div>
+              </div>
+            );
+          })()}
         </div>
 
         {/* Interprétation Réaliste */}
