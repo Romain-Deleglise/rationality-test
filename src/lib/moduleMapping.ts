@@ -8,6 +8,7 @@ export const MODULE_NAME_MAP_FR_TO_EN: Record<string, string> = {
   'Raisonnement Probabiliste': 'Probabilistic Reasoning',
   'Raisonnement Scientifique': 'Scientific Reasoning',
   'Réflexion vs Intuition': 'Reflection vs Intuition',
+  'Résistance au Traitement Avare': 'Resistance to Miserly Processing',
   'Biais de Croyance': 'Belief Bias',
   'Raisonnement Disjonctif': 'Disjunctive Reasoning',
   'Ancrage': 'Anchoring',
@@ -17,6 +18,11 @@ export const MODULE_NAME_MAP_FR_TO_EN: Record<string, string> = {
   'Attitudes Anti-Science': 'Anti-Science Attitudes',
   'Croyances Conspirationnistes': 'Conspiracy Beliefs',
   'Croyances Dysfonctionnelles': 'Dysfunctional Beliefs',
+  'Évaluation d\'Arguments': 'Argument Evaluation',
+  'Raisonnement Causal': 'Causal Reasoning',
+  'Effets de Cadrage': 'Framing Effects',
+  'Sensibilité à la Valeur Espérée': 'Sensitivity to Expected Value',
+  'Coûts Irrécupérables': 'Sunk Cost Fallacy',
 };
 
 // Map from English module names to French module names (without item counts)
@@ -24,6 +30,7 @@ export const MODULE_NAME_MAP_EN_TO_FR: Record<string, string> = {
   'Probabilistic Reasoning': 'Raisonnement Probabiliste',
   'Scientific Reasoning': 'Raisonnement Scientifique',
   'Reflection vs Intuition': 'Réflexion vs Intuition',
+  'Resistance to Miserly Processing': 'Résistance au Traitement Avare',
   'Belief Bias': 'Biais de Croyance',
   'Disjunctive Reasoning': 'Raisonnement Disjonctif',
   'Anchoring': 'Ancrage',
@@ -33,6 +40,11 @@ export const MODULE_NAME_MAP_EN_TO_FR: Record<string, string> = {
   'Anti-Science Attitudes': 'Attitudes Anti-Science',
   'Conspiracy Beliefs': 'Croyances Conspirationnistes',
   'Dysfunctional Beliefs': 'Croyances Dysfonctionnelles',
+  'Argument Evaluation': 'Évaluation d\'Arguments',
+  'Causal Reasoning': 'Raisonnement Causal',
+  'Framing Effects': 'Effets de Cadrage',
+  'Sensitivity to Expected Value': 'Sensibilité à la Valeur Espérée',
+  'Sunk Cost Fallacy': 'Coûts Irrécupérables',
 };
 
 /**

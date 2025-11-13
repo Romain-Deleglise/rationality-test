@@ -229,6 +229,8 @@ export const MODULE_NAME_MAPPING: Record<string, string> = {
   'Scientific Reasoning': 'Scientific Reasoning',
   'Réflexion vs Intuition': 'Reflection vs. Intuition (CRT-7)',
   'Reflection vs Intuition': 'Reflection vs. Intuition (CRT-7)',
+  'Résistance au Traitement Avare': 'Resistance to Miserly Information Processing',
+  'Resistance to Miserly Processing': 'Resistance to Miserly Information Processing',
   'Biais de Croyance': 'Belief Bias Syllogisms',
   'Belief Bias': 'Belief Bias Syllogisms',
   'Raisonnement Disjonctif': 'Disjunctive Reasoning',
@@ -247,6 +249,16 @@ export const MODULE_NAME_MAPPING: Record<string, string> = {
   'Conspiracist Beliefs': 'Conspiracist Ideation',
   'Croyances Dysfonctionnelles': 'Dysfunctional Personal Beliefs',
   'Dysfunctional Beliefs': 'Dysfunctional Personal Beliefs',
+  'Évaluation d\'Arguments': 'Argument Analysis',
+  'Argument Evaluation': 'Argument Analysis',
+  'Raisonnement Causal': 'Causal Reasoning',
+  'Causal Reasoning': 'Causal Reasoning',
+  'Effets de Cadrage': 'Framing',
+  'Framing Effects': 'Framing',
+  'Sensibilité à la Valeur Espérée': 'Sensitivity to Expected Value',
+  'Sensitivity to Expected Value': 'Sensitivity to Expected Value',
+  'Coûts Irrécupérables': 'Sunk Cost',
+  'Sunk Cost Fallacy': 'Sunk Cost',
 };
 
 /**

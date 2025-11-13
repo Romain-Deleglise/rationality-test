@@ -1,0 +1,384 @@
+{
+  "framing_effects": {
+    "id": "framing",
+    "name": "Effets de Cadrage (10 items)",
+    "points": 6,
+    "time": 10,
+    "questions": [
+      {
+        "id": "frame-1a",
+        "type": "multiple-choice",
+        "text": "Vous consultez les statistiques d'emploi d'une région. Vous apprenez que dans cette région, **92% de la population active a un emploi**.\n\nComment évaluez-vous la situation de l'emploi dans cette région ?",
+        "options": [
+          "Très favorable",
+          "Favorable",
+          "Légèrement favorable",
+          "Légèrement défavorable",
+          "Défavorable",
+          "Très défavorable"
+        ],
+        "correct": 1,
+        "points": 0,
+        "pairId": "frame-pair-1",
+        "framingType": "positive"
+      },
+      {
+        "id": "frame-1b",
+        "type": "multiple-choice",
+        "text": "Vous consultez les statistiques d'emploi d'une région. Vous apprenez que dans cette région, **8% de la population active est au chômage**.\n\nComment évaluez-vous la situation de l'emploi dans cette région ?",
+        "options": [
+          "Très favorable",
+          "Favorable",
+          "Légèrement favorable",
+          "Légèrement défavorable",
+          "Défavorable",
+          "Très défavorable"
+        ],
+        "correct": 1,
+        "points": 0.6,
+        "pairId": "frame-pair-1",
+        "framingType": "negative"
+      },
+      {
+        "id": "frame-2a",
+        "type": "multiple-choice",
+        "text": "Imaginez qu'une nouvelle maladie menace 600 personnes. Deux traitements sont proposés :\n\n**Traitement A** : 200 personnes seront sauvées avec certitude\n**Traitement B** : 1/3 de chances de sauver les 600 personnes, 2/3 de chances de ne sauver personne\n\nQuel traitement choisissez-vous ?",
+        "options": [
+          "Traitement A",
+          "Traitement B"
+        ],
+        "correct": null,
+        "points": 0,
+        "pairId": "frame-pair-2",
+        "framingType": "gain"
+      },
+      {
+        "id": "frame-2b",
+        "type": "multiple-choice",
+        "text": "Imaginez qu'une nouvelle maladie menace 600 personnes. Deux traitements sont proposés :\n\n**Traitement A** : 400 personnes mourront avec certitude\n**Traitement B** : 1/3 de chances que personne ne meure, 2/3 de chances que 600 personnes meurent\n\nQuel traitement choisissez-vous ?",
+        "options": [
+          "Traitement A",
+          "Traitement B"
+        ],
+        "correct": null,
+        "points": 0.6,
+        "pairId": "frame-pair-2",
+        "framingType": "loss"
+      },
+      {
+        "id": "frame-3a",
+        "type": "multiple-choice",
+        "text": "Un nouveau modèle de voiture a été testé. Le rapport indique que le véhicule **fonctionne correctement 94% du temps**.\n\nQuelle est votre impression de la fiabilité de ce véhicule ?",
+        "options": [
+          "Très favorable",
+          "Favorable",
+          "Légèrement favorable",
+          "Légèrement défavorable",
+          "Défavorable",
+          "Très défavorable"
+        ],
+        "correct": 1,
+        "points": 0,
+        "pairId": "frame-pair-3",
+        "framingType": "positive"
+      },
+      {
+        "id": "frame-3b",
+        "type": "multiple-choice",
+        "text": "Un nouveau modèle de voiture a été testé. Le rapport indique que le véhicule **présente des dysfonctionnements 6% du temps**.\n\nQuelle est votre impression de la fiabilité de ce véhicule ?",
+        "options": [
+          "Très favorable",
+          "Favorable",
+          "Légèrement favorable",
+          "Légèrement défavorable",
+          "Défavorable",
+          "Très défavorable"
+        ],
+        "correct": 1,
+        "points": 0.6,
+        "pairId": "frame-pair-3",
+        "framingType": "negative"
+      },
+      {
+        "id": "frame-4a",
+        "type": "multiple-choice",
+        "text": "Une compagnie aérienne annonce que **99,7% de ses vols arrivent sans incident de sécurité**.\n\nQue pensez-vous de la sécurité de cette compagnie ?",
+        "options": [
+          "Très sûre",
+          "Sûre",
+          "Légèrement sûre",
+          "Légèrement risquée",
+          "Risquée",
+          "Très risquée"
+        ],
+        "correct": 1,
+        "points": 0,
+        "pairId": "frame-pair-4",
+        "framingType": "positive"
+      },
+      {
+        "id": "frame-4b",
+        "type": "multiple-choice",
+        "text": "Une compagnie aérienne annonce que **0,3% de ses vols connaissent un incident de sécurité**.\n\nQue pensez-vous de la sécurité de cette compagnie ?",
+        "options": [
+          "Très sûre",
+          "Sûre",
+          "Légèrement sûre",
+          "Légèrement risquée",
+          "Risquée",
+          "Très risquée"
+        ],
+        "correct": 1,
+        "points": 0.6,
+        "pairId": "frame-pair-4",
+        "framingType": "negative"
+      },
+      {
+        "id": "frame-5a",
+        "type": "multiple-choice",
+        "text": "Un nouveau médicament est testé. Les résultats montrent que **85% des patients voient leur état s'améliorer**.\n\nQue pensez-vous de l'efficacité de ce médicament ?",
+        "options": [
+          "Très efficace",
+          "Efficace",
+          "Moyennement efficace",
+          "Peu efficace",
+          "Inefficace",
+          "Totalement inefficace"
+        ],
+        "correct": 1,
+        "points": 0,
+        "pairId": "frame-pair-5",
+        "framingType": "positive"
+      },
+      {
+        "id": "frame-5b",
+        "type": "multiple-choice",
+        "text": "Un nouveau médicament est testé. Les résultats montrent que **15% des patients ne voient aucune amélioration**.\n\nQue pensez-vous de l'efficacité de ce médicament ?",
+        "options": [
+          "Très efficace",
+          "Efficace",
+          "Moyennement efficace",
+          "Peu efficace",
+          "Inefficace",
+          "Totalement inefficace"
+        ],
+        "correct": 1,
+        "points": 0.6,
+        "pairId": "frame-pair-5",
+        "framingType": "negative"
+      }
+    ]
+  },
+  "expected_value": {
+    "id": "expected-value",
+    "name": "Sensibilité à la Valeur Espérée (12 items)",
+    "points": 5,
+    "time": 8,
+    "questions": [
+      {
+        "id": "ev-1",
+        "type": "multiple-choice",
+        "text": "Quel pari préférez-vous ?\n\n**Pari A** : 25% de chances de gagner 2 500€ et 75% de chances de gagner 100€\n**Pari B** : 25% de chances de gagner 500€ et 75% de chances de gagner 1 200€",
+        "options": [
+          "Pari A",
+          "Pari B"
+        ],
+        "correct": 1,
+        "points": 0.42,
+        "explanation": "VE(A) = 0.25×2500 + 0.75×100 = 700€. VE(B) = 0.25×500 + 0.75×1200 = 1025€. Pari B est optimal."
+      },
+      {
+        "id": "ev-2",
+        "type": "multiple-choice",
+        "text": "Quel pari préférez-vous ?\n\n**Pari A** : 15% de chances de gagner 150€ et 85% de chances de gagner 8€\n**Pari B** : 15% de chances de gagner 40€ et 85% de chances de gagner 10€",
+        "options": [
+          "Pari A",
+          "Pari B"
+        ],
+        "correct": 0,
+        "points": 0.42,
+        "explanation": "VE(A) = 0.15×150 + 0.85×8 = 29€. VE(B) = 0.15×40 + 0.85×10 = 14,50€. Pari A est optimal."
+      },
+      {
+        "id": "ev-3",
+        "type": "multiple-choice",
+        "text": "Quel pari préférez-vous ?\n\n**Pari A** : 10% de chances de gagner 200€ et 90% de chances de gagner 12€\n**Pari B** : 10% de chances de gagner 60€ et 90% de chances de gagner 15€",
+        "options": [
+          "Pari A",
+          "Pari B"
+        ],
+        "correct": 0,
+        "points": 0.42,
+        "explanation": "VE(A) = 0.10×200 + 0.90×12 = 30,80€. VE(B) = 0.10×60 + 0.90×15 = 19,50€. Pari A est optimal."
+      },
+      {
+        "id": "ev-4",
+        "type": "multiple-choice",
+        "text": "Quel pari préférez-vous ?\n\n**Pari A** : 100% de chances de gagner 0,75€\n**Pari B** : 40% de chances de gagner 2,50€ et 60% de chances de ne rien gagner",
+        "options": [
+          "Pari A",
+          "Pari B"
+        ],
+        "correct": 1,
+        "points": 0.42,
+        "explanation": "VE(A) = 0,75€. VE(B) = 0.40×2,50 = 1,00€. Pari B est optimal."
+      },
+      {
+        "id": "ev-5",
+        "type": "multiple-choice",
+        "text": "Quel pari préférez-vous ?\n\n**Pari A** : 35% de chances de gagner 800€ et 65% de chances de gagner 50€\n**Pari B** : 35% de chances de gagner 200€ et 65% de chances de gagner 400€",
+        "options": [
+          "Pari A",
+          "Pari B"
+        ],
+        "correct": 1,
+        "points": 0.42,
+        "explanation": "VE(A) = 0.35×800 + 0.65×50 = 312,50€. VE(B) = 0.35×200 + 0.65×400 = 330€. Pari B est légèrement meilleur."
+      },
+      {
+        "id": "ev-6",
+        "type": "multiple-choice",
+        "text": "Quel pari préférez-vous ?\n\n**Pari A** : 20% de chances de gagner 500€ et 80% de chances de gagner 20€\n**Pari B** : 20% de chances de gagner 100€ et 80% de chances de gagner 80€",
+        "options": [
+          "Pari A",
+          "Pari B"
+        ],
+        "correct": 0,
+        "points": 0.42,
+        "explanation": "VE(A) = 0.20×500 + 0.80×20 = 116€. VE(B) = 0.20×100 + 0.80×80 = 84€. Pari A est optimal."
+      },
+      {
+        "id": "ev-7",
+        "type": "multiple-choice",
+        "text": "Quel pari préférez-vous ?\n\n**Pari A** : 50% de chances de gagner 300€ et 50% de chances de gagner 100€\n**Pari B** : 50% de chances de gagner 250€ et 50% de chances de gagner 150€",
+        "options": [
+          "Pari A",
+          "Pari B"
+        ],
+        "correct": 1,
+        "points": 0.42,
+        "explanation": "VE(A) = 0.50×300 + 0.50×100 = 200€. VE(B) = 0.50×250 + 0.50×150 = 200€. Égalité, mais B a moins de variance."
+      },
+      {
+        "id": "ev-8",
+        "type": "multiple-choice",
+        "text": "Quel pari préférez-vous ?\n\n**Pari A** : 30% de chances de gagner 1 000€ et 70% de chances de gagner 50€\n**Pari B** : 30% de chances de gagner 400€ et 70% de chances de gagner 200€",
+        "options": [
+          "Pari A",
+          "Pari B"
+        ],
+        "correct": 0,
+        "points": 0.42,
+        "explanation": "VE(A) = 0.30×1000 + 0.70×50 = 335€. VE(B) = 0.30×400 + 0.70×200 = 260€. Pari A est optimal."
+      },
+      {
+        "id": "ev-9",
+        "type": "multiple-choice",
+        "text": "Quel pari préférez-vous ?\n\n**Pari A** : 5% de chances de gagner 1 000€ et 95% de chances de gagner 10€\n**Pari B** : 5% de chances de gagner 200€ et 95% de chances de gagner 20€",
+        "options": [
+          "Pari A",
+          "Pari B"
+        ],
+        "correct": 0,
+        "points": 0.42,
+        "explanation": "VE(A) = 0.05×1000 + 0.95×10 = 59,50€. VE(B) = 0.05×200 + 0.95×20 = 29€. Pari A est optimal."
+      },
+      {
+        "id": "ev-10",
+        "type": "multiple-choice",
+        "text": "Quel pari préférez-vous ?\n\n**Pari A** : 60% de chances de gagner 200€ et 40% de chances de gagner 50€\n**Pari B** : 60% de chances de gagner 150€ et 40% de chances de gagner 100€",
+        "options": [
+          "Pari A",
+          "Pari B"
+        ],
+        "correct": 0,
+        "points": 0.42,
+        "explanation": "VE(A) = 0.60×200 + 0.40×50 = 140€. VE(B) = 0.60×150 + 0.40×100 = 130€. Pari A est optimal."
+      },
+      {
+        "id": "ev-11",
+        "type": "multiple-choice",
+        "text": "Quel pari préférez-vous ?\n\n**Pari A** : 80% de chances de gagner 100€ et 20% de chances de gagner 10€\n**Pari B** : 80% de chances de gagner 90€ et 20% de chances de gagner 30€",
+        "options": [
+          "Pari A",
+          "Pari B"
+        ],
+        "correct": 1,
+        "points": 0.42,
+        "explanation": "VE(A) = 0.80×100 + 0.20×10 = 82€. VE(B) = 0.80×90 + 0.20×30 = 78€. Pari A est légèrement meilleur."
+      },
+      {
+        "id": "ev-12",
+        "type": "multiple-choice",
+        "text": "Quel pari préférez-vous ?\n\n**Pari A** : 45% de chances de gagner 600€ et 55% de chances de gagner 100€\n**Pari B** : 45% de chances de gagner 300€ et 55% de chances de gagner 250€",
+        "options": [
+          "Pari A",
+          "Pari B"
+        ],
+        "correct": 0,
+        "points": 0.42,
+        "explanation": "VE(A) = 0.45×600 + 0.55×100 = 325€. VE(B) = 0.45×300 + 0.55×250 = 272,50€. Pari A est optimal."
+      }
+    ]
+  },
+  "sunk_cost": {
+    "id": "sunk-cost",
+    "name": "Coûts Irrécupérables (4 items)",
+    "points": 3,
+    "time": 5,
+    "questions": [
+      {
+        "id": "sunk-1",
+        "type": "multiple-choice",
+        "text": "Vous avez acheté un billet de concert à 80€. Le jour du concert, vous tombez malade (fièvre, fatigue). Le concert ne vous remboursera pas.\n\nQue devriez-vous faire ?",
+        "options": [
+          "Aller au concert quand même pour ne pas perdre les 80€",
+          "Rester chez vous vous reposer, les 80€ sont déjà perdus",
+          "Essayer de vendre le billet"
+        ],
+        "correct": 1,
+        "points": 0.75,
+        "explanation": "Les 80€ sont un coût irrécupérable (sunk cost). La décision rationnelle considère uniquement le futur : aller malade vs rester et guérir. Le passé ne doit pas influencer."
+      },
+      {
+        "id": "sunk-2",
+        "type": "multiple-choice",
+        "text": "Vous avez investi 10 000€ dans un projet depuis 6 mois. Après analyse, vous réalisez que le projet ne sera jamais rentable. Vous pouvez soit :\n- Continuer et perdre 5 000€ de plus avant l'échec\n- Arrêter maintenant et perdre seulement les 10 000€ déjà investis\n\nQue faire ?",
+        "options": [
+          "Continuer, sinon les 10 000€ auront été gaspillés pour rien",
+          "Arrêter immédiatement pour limiter les pertes",
+          "Continuer encore 3 mois pour être sûr"
+        ],
+        "correct": 1,
+        "points": 0.75,
+        "explanation": "Arrêter est rationnel. Les 10 000€ sont perdus quoi qu'il arrive (sunk cost). Continuer signifie perdre 15 000€ au total au lieu de 10 000€."
+      },
+      {
+        "id": "sunk-3",
+        "type": "multiple-choice",
+        "text": "Vous avez passé 3 heures à cuisiner un plat élaboré. En le goûtant, vous réalisez qu'il est raté (trop salé, immangeable). Vous pourriez commander à manger (15€, délicieux) ou forcer à manger votre plat raté.\n\nQue faire ?",
+        "options": [
+          "Manger le plat raté pour ne pas gâcher les 3 heures de travail",
+          "Commander à manger, les 3 heures sont déjà perdues",
+          "Essayer de corriger le plat"
+        ],
+        "correct": 1,
+        "points": 0.75,
+        "explanation": "Commander est rationnel. Les 3 heures sont un sunk cost. Le choix est maintenant : manger quelque chose d'immangeable vs payer 15€ pour un bon repas."
+      },
+      {
+        "id": "sunk-4",
+        "type": "multiple-choice",
+        "text": "Vous avez acheté un abonnement de gym annuel (600€, non remboursable). Après 2 mois, vous réalisez que vous détestez cette salle (loin, équipement médiocre). Une nouvelle salle a ouvert près de chez vous (50€/mois).\n\nQue faire ?",
+        "options": [
+          "Continuer avec l'ancienne salle pour rentabiliser les 600€",
+          "Changer pour la nouvelle salle, les 600€ sont déjà perdus",
+          "Alterner entre les deux salles"
+        ],
+        "correct": 1,
+        "points": 0.75,
+        "explanation": "Changer est rationnel. Les 600€ sont perdus (sunk cost). Le choix est : continuer à détester pendant 10 mois vs payer 500€ supplémentaires pour 10 mois agréables."
+      }
+    ]
+  }
+}

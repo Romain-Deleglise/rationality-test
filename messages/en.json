@@ -241,6 +241,7 @@
       "Probabilistic Reasoning": "Your ability to reason with probabilities and avoid classic errors (gambler's fallacy, base rate neglect, conjunction error).",
       "Scientific Reasoning": "Your ability to rigorously test hypotheses, falsify rather than confirm, and distinguish correlation from causation.",
       "Reflection vs Intuition": "Your ability to inhibit the immediate intuitive response and engage analytical reflection (CRT).",
+      "Resistance to Miserly Processing": "Your ability to inhibit immediate intuitive responses and engage deeper analytical reflection (Cognitive Reflection Test).",
       "Belief Bias": "Your ability to evaluate logical validity independently of your beliefs about the conclusion.",
       "Knowledge Calibration": "Your ability to accurately estimate your level of certainty (avoid overconfidence).",
       "Probabilistic Numeracy": "Your ability to manipulate numbers in probabilistic contexts and understand statistics.",
@@ -249,7 +250,12 @@
       "Conspiracy Beliefs": "Your resistance to conspiracy explanations and ability to apply Occam's Razor.",
       "Disjunctive Reasoning": "Your ability to reason correctly with 'OR' statements.",
       "Anchoring": "Your resistance to anchoring (being too influenced by the first piece of information received).",
-      "Dysfunctional Beliefs": "Your ability to avoid irrational beliefs that cause unnecessary emotional distress."
+      "Dysfunctional Beliefs": "Your ability to avoid irrational beliefs that cause unnecessary emotional distress.",
+      "Argument Evaluation": "Your ability to evaluate argument strength independently of your personal opinions (resistance to belief bias in argumentation).",
+      "Causal Reasoning": "Your ability to distinguish correlation from causation and recognize the importance of control groups in experiments.",
+      "Framing Effects": "Your resistance to framing effects: giving consistent answers regardless of how information is presented (positive vs negative framing).",
+      "Sensitivity to Expected Value": "Your ability to rationally choose between bets by maximizing expected value rather than following intuitions.",
+      "Sunk Cost Fallacy": "Your resistance to the sunk cost fallacy: not letting past investments influence future decisions."
     },
 
     "footer": {

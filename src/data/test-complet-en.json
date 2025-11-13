@@ -1,13 +1,13 @@
 {
   "version": "full",
-  "totalPoints": 94,
-  "estimatedTime": 61,
+  "totalPoints": 119,
+  "estimatedTime": 86,
   "modules": [
     {
       "id": "prob-stats",
-      "name": "Probabilistic Reasoning (18 items)",
+      "name": "Probabilistic Reasoning (15 items)",
       "points": 18,
-      "time": 6,
+      "time": 5,
       "questions": [
         {
           "id": "prob-match-1",
@@ -216,52 +216,14 @@
           "correct": 0,
           "points": 1,
           "explanation": "Even if the description seems to match engineer stereotypes, the base rate (70%) is already a strong indicator."
-        },
-        {
-          "id": "base-rate-3",
-          "type": "number",
-          "text": "A lie detector is correct 80% of the time (true+ and true-). In a group where 5% of people lie, the detector indicates 'lie' for someone. What is the probability that this person is actually lying?",
-          "unit": "%",
-          "correct": 17,
-          "tolerance": 5,
-          "points": 1,
-          "explanation": "Out of 1,000 people: 50 liars (40 detected), 950 honest (190 false positives). P = 40/(40+190) ≈ 17.4%."
-        },
-        {
-          "id": "sample-size",
-          "type": "multiple-choice",
-          "text": "A city has 2 hospitals: the large one (45 births/day) and the small one (15 births/day). About 50% of babies are boys, but this varies daily. Over a year, which hospital recorded the most days with >60% boys?",
-          "options": [
-            "The large hospital",
-            "The small hospital",
-            "About the same"
-          ],
-          "correct": 1,
-          "points": 1,
-          "explanation": "The small hospital. Small samples have more variance. It's easier to get extremes with 15 observations than with 45."
-        },
-        {
-          "id": "regression-mean",
-          "type": "multiple-choice",
-          "text": "In college basketball, players who excel in their first year tend to perform less well in their second year. What is the best explanation?",
-          "options": [
-            "They become complacent after their success",
-            "Opponents study their game and adapt",
-            "Extreme performances include luck that doesn't repeat",
-            "The pressure of expectations affects their performance",
-            "Their training becomes less rigorous"
-          ],
-          "correct": 2,
-          "points": 1,
-          "explanation": "Regression to the mean. Exceptional performances combine talent AND luck. Luck doesn't persist, so performances return toward the mean."
         }
       ]
     },
     {
       "id": "sci-reasoning",
-      "name": "Scientific Reasoning (20 items)",
+      "name": "Scientific Reasoning (14 items)",
       "points": 20,
-      "time": 10,
+      "time": 8,
       "questions": [
         {
           "id": "wason-1",
@@ -461,84 +423,12 @@
           "correct": 1,
           "points": 1,
           "explanation": "Randomization within the same fields controls for confounding variables (soil, water, sunlight)."
-        },
-        {
-          "id": "covariation-1",
-          "type": "multiple-choice",
-          "text": "Data table: Rain+Traffic jams=80 cases, Rain+No traffic jams=20, Nice weather+Traffic jams=40, Nice weather+No traffic jams=60. Does rain cause traffic jams?",
-          "options": [
-            "Yes, 80 cases of rain with traffic jams",
-            "Yes, P(Traffic jams|Rain) = 80% > P(Traffic jams|Nice) = 40%",
-            "No, no clear relationship",
-            "Impossible to say"
-          ],
-          "correct": 1,
-          "points": 1,
-          "explanation": "Covariation: P(TJ|Rain) = 80/100 = 80% vs P(TJ|Nice) = 40/100 = 40%. Rain increases the probability of traffic jams."
-        },
-        {
-          "id": "covariation-2",
-          "type": "multiple-choice",
-          "text": "Data: Study+Pass=60, Study+Fail=40, Don't study+Pass=30, Don't study+Fail=70. Does studying help to pass?",
-          "options": [
-            "Yes, 60 cases of passing with study",
-            "No, 40 failed despite study",
-            "Yes, P(Pass|Study) = 60% > P(Pass|Don't study) = 30%",
-            "Impossible to determine"
-          ],
-          "correct": 2,
-          "points": 1,
-          "explanation": "Covariation: success rate 60% with study vs 30% without study. Studying doubles the chances of success."
-        },
-        {
-          "id": "falsification-1",
-          "type": "multiple-choice",
-          "text": "Hypothesis: 'All swans are white.' Which observation is most informative?",
-          "options": [
-            "Observe 100 white swans",
-            "Observe 1 black swan",
-            "Observe 1000 white swans",
-            "Ask ornithology experts"
-          ],
-          "correct": 1,
-          "points": 1,
-          "explanation": "Popper's principle of falsification: a single counterexample refutes the hypothesis. A thousand confirmations don't prove it."
-        },
-        {
-          "id": "falsification-2",
-          "type": "multiple-choice",
-          "text": "Theory: 'Stress always causes ulcers.' How to rigorously test it?",
-          "options": [
-            "Look for stressed people with ulcers",
-            "Look for stressed people WITHOUT ulcers or people with ulcers WITHOUT stress",
-            "Measure stress in people with ulcers",
-            "Conduct a survey on stress"
-          ],
-          "correct": 1,
-          "points": 1,
-          "explanation": "To falsify, look for counterexamples: stress without ulcer, or ulcer without stress. Confirming is not testing."
-        },
-        {
-          "id": "argument-eval-1",
-          "type": "likert",
-          "text": "Argument: 'Vaccines contain chemicals. Chemicals are dangerous. Therefore vaccines are dangerous.' This argument is:",
-          "reverse": false,
-          "points": 1,
-          "explanation": "Weak argument: equivocation on 'chemicals'. Water is a chemical. Dose and context determine toxicity."
-        },
-        {
-          "id": "argument-eval-2",
-          "type": "likert",
-          "text": "Argument: '90% of accidents happen within 30 km of home. Therefore driving far from home is safer.' This argument is:",
-          "reverse": false,
-          "points": 1,
-          "explanation": "Weak argument: ignores base rate. We drive much more often near home, so more accidents occur there."
         }
       ]
     },
     {
-      "id": "crt",
-      "name": "Reflection vs Intuition (11 items)",
+      "id": "miserly-processing",
+      "name": "Resistance to Miserly Processing (8 items)",
       "points": 10,
       "time": 4,
       "questions": [
@@ -617,46 +507,14 @@
           "correct": 126,
           "points": 1,
           "explanation": "126 matches. Each match eliminates exactly 1 player. To go from 127 to 1 player, you must eliminate 126 players = 126 matches."
-        },
-        {
-          "id": "crt-9",
-          "type": "multiple-choice",
-          "text": "In a store, an item costs €100. It is reduced by 50%. The next day, there is an additional 20% discount on the sale price. What is the final price?",
-          "options": [
-            "€30",
-            "€40",
-            "€50",
-            "€70"
-          ],
-          "correct": 1,
-          "points": 1,
-          "explanation": "€40. First reduction: €50. Then 20% of €50 = €10 discount → €40. Intuition suggests €30 (50%+20%=70% discount)."
-        },
-        {
-          "id": "crt-10",
-          "type": "number",
-          "text": "A book and a pen cost €12. The book costs €10 more than the pen. How much does the pen cost?",
-          "unit": "euros",
-          "correct": 1,
-          "points": 1,
-          "explanation": "€1. If the pen = €1, the book = €11 (€10 more), total = €12. Intuition suggests €2."
-        },
-        {
-          "id": "crt-11",
-          "type": "number",
-          "text": "If 3 cats catch 3 mice in 3 minutes, how long does it take 100 cats to catch 100 mice?",
-          "unit": "minutes",
-          "correct": 3,
-          "points": 1,
-          "explanation": "3 minutes. Each cat catches 1 mouse in 3 minutes. So 100 cats catch 100 mice in 3 minutes (in parallel). Intuition suggests 100 minutes."
         }
       ]
     },
     {
       "id": "belief-bias",
-      "name": "Belief Bias (16 items)",
+      "name": "Belief Bias (12 items)",
       "points": 8,
-      "time": 6,
+      "time": 5,
       "questions": [
         {
           "id": "syllogism-1",
@@ -801,62 +659,14 @@
           "correct": 1,
           "points": 0.5,
           "explanation": "Logically invalid (AAA2). Although true, the conclusion does not follow logically from the premises. Consistent syllogism."
-        },
-        {
-          "id": "syllogism-13",
-          "type": "multiple-choice",
-          "text": "Premise 1: All fruits contain vitamins. Premise 2: Oranges are fruits. Conclusion: Oranges contain vitamins.",
-          "options": [
-            "The conclusion follows logically from the premises",
-            "The conclusion does NOT follow logically from the premises"
-          ],
-          "correct": 0,
-          "points": 0.5,
-          "explanation": "Logically valid (AAA1). The conclusion follows from the premises and is true. Consistent syllogism."
-        },
-        {
-          "id": "syllogism-14",
-          "type": "multiple-choice",
-          "text": "Premise 1: All politicians are liars. Premise 2: John is a liar. Conclusion: John is a politician.",
-          "options": [
-            "The conclusion follows logically from the premises",
-            "The conclusion does NOT follow logically from the premises"
-          ],
-          "correct": 1,
-          "points": 0.5,
-          "explanation": "Logically invalid (AAA2). The conclusion does not follow logically from the premises (there can be liars who are not politicians). Consistent syllogism."
-        },
-        {
-          "id": "syllogism-15",
-          "type": "multiple-choice",
-          "text": "Premise 1: No airplane can swim. Premise 2: Helicopters cannot swim. Conclusion: Helicopters are airplanes.",
-          "options": [
-            "The conclusion follows logically from the premises",
-            "The conclusion does NOT follow logically from the premises"
-          ],
-          "correct": 1,
-          "points": 0.5,
-          "explanation": "Logically invalid (EEE2). The conclusion does not follow from the premises. Consistent syllogism."
-        },
-        {
-          "id": "syllogism-16",
-          "type": "multiple-choice",
-          "text": "Premise 1: No reptile is warm-blooded. Premise 2: All dinosaurs were warm-blooded. Conclusion: No dinosaur was a reptile.",
-          "options": [
-            "The conclusion follows logically from the premises",
-            "The conclusion does NOT follow logically from the premises"
-          ],
-          "correct": 0,
-          "points": 0.5,
-          "explanation": "Logically valid (EAE2). The conclusion follows from the premises, even if it is scientifically debated. Inconsistent syllogism."
         }
       ]
     },
     {
       "id": "disjunctive",
-      "name": "Disjunctive Reasoning (6 items)",
+      "name": "Disjunctive Reasoning (5 items)",
       "points": 6,
-      "time": 5,
+      "time": 4,
       "questions": [
         {
           "id": "disj-1",
@@ -924,27 +734,14 @@
           "correct": 1,
           "points": 1,
           "explanation": "1/3. Possible cases knowing at least one Heads: (H,H), (H,T), (T,H). Only (H,H) satisfies 'both Heads' → 1 case out of 3."
-        },
-        {
-          "id": "disj-6",
-          "type": "multiple-choice",
-          "text": "Three consecutive numbers whose sum is 18. Is the middle number even or odd?",
-          "options": [
-            "Even",
-            "Odd",
-            "Cannot determine"
-          ],
-          "correct": 0,
-          "points": 1,
-          "explanation": "Even. If the numbers are n, n+1, n+2, their sum = 3n+3 = 18, so n=5. The numbers are 5, 6, 7. The middle (6) is even."
         }
       ]
     },
     {
       "id": "anchoring",
-      "name": "Anchoring (8 items)",
+      "name": "Anchoring (6 items)",
       "points": 4,
-      "time": 5,
+      "time": 4,
       "questions": [
         {
           "id": "anchor-1",
@@ -1005,34 +802,14 @@
           "anchorType": "low",
           "points": 0.5,
           "explanation": "The Battle of Waterloo dates from 1815. If your estimate is <1800, you were influenced by the low anchor (1750)."
-        },
-        {
-          "id": "anchor-7",
-          "type": "number",
-          "text": "Is the number of bones in the adult human body greater than 300? Exactly how many are there?",
-          "unit": "bones",
-          "correct": 206,
-          "anchorType": "high",
-          "points": 0.5,
-          "explanation": "An adult has 206 bones. If your estimate is >250, you were influenced by the high anchor (300)."
-        },
-        {
-          "id": "anchor-8",
-          "type": "number",
-          "text": "Is the Nile more than 4000 km long? In your opinion, what is its exact length?",
-          "unit": "km",
-          "correct": 6650,
-          "anchorType": "low",
-          "points": 0.5,
-          "explanation": "The Nile is about 6650 km long. If your estimate is <5500km, you were influenced by the low anchor (4000km)."
         }
       ]
     },
     {
       "id": "calibration-full",
-      "name": "Knowledge Calibration (26 items)",
+      "name": "Knowledge Calibration (20 items)",
       "points": 3,
-      "time": 8,
+      "time": 7,
       "questions": [
         {
           "id": "calib-mc-1",
@@ -1044,7 +821,14 @@
           ],
           "correct": 0,
           "points": 0.12,
-          "confidenceLevels": [50, 60, 70, 80, 90, 100]
+          "confidenceLevels": [
+            50,
+            60,
+            70,
+            80,
+            90,
+            100
+          ]
         },
         {
           "id": "calib-mc-2",
@@ -1056,7 +840,14 @@
           ],
           "correct": 0,
           "points": 0.12,
-          "confidenceLevels": [50, 60, 70, 80, 90, 100]
+          "confidenceLevels": [
+            50,
+            60,
+            70,
+            80,
+            90,
+            100
+          ]
         },
         {
           "id": "calib-mc-3",
@@ -1068,7 +859,14 @@
           ],
           "correct": 0,
           "points": 0.12,
-          "confidenceLevels": [50, 60, 70, 80, 90, 100]
+          "confidenceLevels": [
+            50,
+            60,
+            70,
+            80,
+            90,
+            100
+          ]
         },
         {
           "id": "calib-mc-4",
@@ -1080,7 +878,14 @@
           ],
           "correct": 0,
           "points": 0.12,
-          "confidenceLevels": [50, 60, 70, 80, 90, 100]
+          "confidenceLevels": [
+            50,
+            60,
+            70,
+            80,
+            90,
+            100
+          ]
         },
         {
           "id": "calib-mc-5",
@@ -1092,7 +897,14 @@
           ],
           "correct": 0,
           "points": 0.12,
-          "confidenceLevels": [50, 60, 70, 80, 90, 100]
+          "confidenceLevels": [
+            50,
+            60,
+            70,
+            80,
+            90,
+            100
+          ]
         },
         {
           "id": "calib-mc-6",
@@ -1104,7 +916,14 @@
           ],
           "correct": 0,
           "points": 0.12,
-          "confidenceLevels": [50, 60, 70, 80, 90, 100]
+          "confidenceLevels": [
+            50,
+            60,
+            70,
+            80,
+            90,
+            100
+          ]
         },
         {
           "id": "calib-mc-7",
@@ -1116,7 +935,14 @@
           ],
           "correct": 0,
           "points": 0.12,
-          "confidenceLevels": [50, 60, 70, 80, 90, 100]
+          "confidenceLevels": [
+            50,
+            60,
+            70,
+            80,
+            90,
+            100
+          ]
         },
         {
           "id": "calib-mc-8",
@@ -1128,7 +954,14 @@
           ],
           "correct": 0,
           "points": 0.12,
-          "confidenceLevels": [50, 60, 70, 80, 90, 100]
+          "confidenceLevels": [
+            50,
+            60,
+            70,
+            80,
+            90,
+            100
+          ]
         },
         {
           "id": "calib-mc-9",
@@ -1140,7 +973,14 @@
           ],
           "correct": 0,
           "points": 0.12,
-          "confidenceLevels": [50, 60, 70, 80, 90, 100]
+          "confidenceLevels": [
+            50,
+            60,
+            70,
+            80,
+            90,
+            100
+          ]
         },
         {
           "id": "calib-mc-10",
@@ -1152,7 +992,14 @@
           ],
           "correct": 0,
           "points": 0.12,
-          "confidenceLevels": [50, 60, 70, 80, 90, 100]
+          "confidenceLevels": [
+            50,
+            60,
+            70,
+            80,
+            90,
+            100
+          ]
         },
         {
           "id": "calib-interval-1",
@@ -1243,60 +1090,6 @@
           "correct": 1789,
           "points": 0.12,
           "explanation": "The French Revolution began in 1789."
-        },
-        {
-          "id": "calib-interval-11",
-          "type": "confidence-interval",
-          "text": "Give a 90% confidence interval: What is the area of the Sahara?",
-          "unit": "million km²",
-          "correct": 9,
-          "points": 0.12,
-          "explanation": "The Sahara covers about 9 million km²."
-        },
-        {
-          "id": "calib-interval-12",
-          "type": "confidence-interval",
-          "text": "Give a 90% confidence interval: How many continents are there on Earth?",
-          "unit": "continents",
-          "correct": 7,
-          "points": 0.12,
-          "explanation": "There are 7 continents: Africa, Antarctica, Asia, Europe, North America, Oceania, South America."
-        },
-        {
-          "id": "calib-interval-13",
-          "type": "confidence-interval",
-          "text": "Give a 90% confidence interval: What is the population of France?",
-          "unit": "million inhabitants",
-          "correct": 67,
-          "points": 0.12,
-          "explanation": "France has about 67 million inhabitants."
-        },
-        {
-          "id": "calib-interval-14",
-          "type": "confidence-interval",
-          "text": "Give a 90% confidence interval: In what year did the Berlin Wall fall?",
-          "unit": "year",
-          "correct": 1989,
-          "points": 0.12,
-          "explanation": "The Berlin Wall fell in 1989."
-        },
-        {
-          "id": "calib-interval-15",
-          "type": "confidence-interval",
-          "text": "Give a 90% confidence interval: What is the altitude of Mont Blanc?",
-          "unit": "meters",
-          "correct": 4809,
-          "points": 0.12,
-          "explanation": "Mont Blanc peaks at 4,809 meters."
-        },
-        {
-          "id": "calib-interval-16",
-          "type": "confidence-interval",
-          "text": "Give a 90% confidence interval: How many time zones does Russia cover?",
-          "unit": "time zones",
-          "correct": 11,
-          "points": 0.12,
-          "explanation": "Russia spans 11 time zones."
         }
       ]
     },
@@ -1356,7 +1149,7 @@
     },
     {
       "id": "superstition",
-      "name": "Superstitious Thinking (12 items)",
+      "name": "Superstitious Thinking (10 items)",
       "points": 5,
       "time": 4,
       "questions": [
@@ -1429,26 +1222,12 @@
           "text": "Crystals and stones have no healing powers.",
           "reverse": true,
           "points": 0.42
-        },
-        {
-          "id": "super-11",
-          "type": "likert",
-          "text": "Bad luck can be caused by certain actions (breaking a mirror, walking under a ladder).",
-          "reverse": false,
-          "points": 0.42
-        },
-        {
-          "id": "super-12",
-          "type": "likert",
-          "text": "Telekinesis (moving objects with the mind) does not exist.",
-          "reverse": true,
-          "points": 0.42
         }
       ]
     },
     {
       "id": "anti-science",
-      "name": "Anti-Science Attitudes (13 items)",
+      "name": "Anti-Science Attitudes (11 items)",
       "points": 5,
       "time": 4,
       "questions": [
@@ -1528,26 +1307,12 @@
           "text": "Science has created more problems than it has solved.",
           "reverse": false,
           "points": 0.38
-        },
-        {
-          "id": "science-12",
-          "type": "likert",
-          "text": "Scientists generally have a better understanding of facts than the general public.",
-          "reverse": true,
-          "points": 0.38
-        },
-        {
-          "id": "science-13",
-          "type": "likert",
-          "text": "Traditional remedies can be trusted as much as scientific medical treatments.",
-          "reverse": false,
-          "points": 0.38
         }
       ]
     },
     {
       "id": "conspiracy",
-      "name": "Conspiracy Beliefs (12 items)",
+      "name": "Conspiracy Beliefs (11 items)",
       "points": 5,
       "time": 3,
       "questions": [
@@ -1627,13 +1392,6 @@
           "text": "Secret medical or scientific experiments are conducted on citizens without their knowledge.",
           "reverse": false,
           "points": 0.42
-        },
-        {
-          "id": "conspiracy-12",
-          "type": "likert",
-          "text": "A small group of people pulls the strings and secretly controls all major world events.",
-          "reverse": false,
-          "points": 0.42
         }
       ]
     },
@@ -1705,6 +1463,539 @@
           "text": "If something affected me in the past, it will always continue to affect me in the same way.",
           "reverse": false,
           "points": 0.56
+        }
+      ]
+    },
+    {
+      "id": "argument-eval",
+      "name": "Argument Evaluation (8 items)",
+      "points": 5,
+      "time": 8,
+      "questions": [
+        {
+          "id": "arg-eval-1a",
+          "type": "likert",
+          "text": "**Part A - Your opinion**: Students should have a stronger voice than the general public in defining university policies.",
+          "points": 0
+        },
+        {
+          "id": "arg-eval-1b",
+          "type": "multiple-choice",
+          "text": "**Part B - Evaluation**:\n\n**Marc's opinion**: Students should have a stronger voice than the general public in defining university policies.\n\n**Marc's justification**: Since students ultimately pay the operating costs of the university through tuition fees, they should have a stronger voice in university policies.\n\n**Critic's counter-argument**: Tuition fees cover less than half the cost of education at most public universities (assume this is factually correct), so taxpayers should have a more important say in policies.\n\n**Marc's response**: Since students are the ones directly affected by university policies (assume this is factually correct), they should have the strongest voice.\n\n**Evaluate the strength of Marc's response**:",
+          "options": [
+            "1 - Very weak",
+            "2 - Weak",
+            "3 - Strong",
+            "4 - Very strong"
+          ],
+          "correct": 0,
+          "points": 0.625
+        },
+        {
+          "id": "arg-eval-2a",
+          "type": "likert",
+          "text": "**Part A - Your opinion**: Smoking should be banned in all enclosed public places.",
+          "points": 0
+        },
+        {
+          "id": "arg-eval-2b",
+          "type": "multiple-choice",
+          "text": "**Part B - Evaluation**:\n\n**Marc's opinion**: Smoking should be banned in all enclosed public places.\n\n**Marc's justification**: Smoking should be banned in all enclosed public places because even secondhand smoke poses a significant health risk to non-smokers.\n\n**Critic's counter-argument**: Since many smokers already refrain from smoking in places where their secondhand smoke poses a risk to others (assume this is factually correct), it is unnecessary to severely restrict smoking locations.\n\n**Marc's response**: While it is true that many smokers are considerate, it is also true that many smokers are not (assume this is factually correct). Banning smoking would be an effective way to ensure that many of us will not be exposed to the risks posed by secondhand smoke.\n\n**Evaluate the strength of Marc's response**:",
+          "options": [
+            "1 - Very weak",
+            "2 - Weak",
+            "3 - Strong",
+            "4 - Very strong"
+          ],
+          "correct": 3,
+          "points": 0.625
+        },
+        {
+          "id": "arg-eval-3a",
+          "type": "likert",
+          "text": "**Part A - Your opinion**: Nuclear energy should be developed as the main energy source for the future.",
+          "points": 0
+        },
+        {
+          "id": "arg-eval-3b",
+          "type": "multiple-choice",
+          "text": "**Part B - Evaluation**:\n\n**Marc's opinion**: Nuclear energy should be developed as the main energy source for the future.\n\n**Marc's justification**: Nuclear energy is cleaner than fossil fuels and can provide stable and abundant energy to meet our growing needs.\n\n**Critic's counter-argument**: Nuclear accidents like Chernobyl and Fukushima show that nuclear energy carries catastrophic risks (assume this is factually correct).\n\n**Marc's response**: These accidents were due to old technologies and human errors. New fourth-generation nuclear technologies are designed to be much safer (assume this is factually correct).\n\n**Evaluate the strength of Marc's response**:",
+          "options": [
+            "1 - Very weak",
+            "2 - Weak",
+            "3 - Strong",
+            "4 - Very strong"
+          ],
+          "correct": 2,
+          "points": 0.625
+        },
+        {
+          "id": "arg-eval-4a",
+          "type": "likert",
+          "text": "**Part A - Your opinion**: Social media companies should be legally responsible for content posted by their users.",
+          "points": 0
+        },
+        {
+          "id": "arg-eval-4b",
+          "type": "multiple-choice",
+          "text": "**Part B - Evaluation**:\n\n**Marc's opinion**: Social media companies should be legally responsible for content posted by their users.\n\n**Marc's justification**: Platforms profit from user-generated content, so they should be responsible for that content.\n\n**Critic's counter-argument**: It is technically impossible to moderate billions of posts in real time (assume this is factually correct).\n\n**Marc's response**: That's true, but they can invest more in automatic and human moderation systems (assume this is factually correct).\n\n**Evaluate the strength of Marc's response**:",
+          "options": [
+            "1 - Very weak",
+            "2 - Weak",
+            "3 - Strong",
+            "4 - Very strong"
+          ],
+          "correct": 1,
+          "points": 0.625
+        }
+      ]
+    },
+    {
+      "id": "causal-reasoning",
+      "name": "Causal Reasoning (6 items)",
+      "points": 6,
+      "time": 6,
+      "questions": [
+        {
+          "id": "causal-1",
+          "type": "multiple-choice",
+          "text": "Researchers found that children who watch a lot of television tend to have poorer academic results than children who watch little television.\n\nDoes this finding mean that banning television from children would improve their academic results?",
+          "options": [
+            "Yes, certainly",
+            "No, not necessarily",
+            "Cannot be determined from this information alone"
+          ],
+          "correct": 1,
+          "points": 1
+        },
+        {
+          "id": "causal-2",
+          "type": "multiple-choice",
+          "text": "A study shows that people who take vitamins daily live longer on average than those who don't.\n\nCan we conclude that taking vitamins increases life expectancy?",
+          "options": [
+            "Yes",
+            "No",
+            "Impossible to determine"
+          ],
+          "correct": 1,
+          "points": 1
+        },
+        {
+          "id": "causal-3",
+          "type": "multiple-choice",
+          "text": "It is observed that cities with more firefighters have more serious fires.\n\nShould we reduce the number of firefighters to decrease serious fires?",
+          "options": [
+            "Yes",
+            "No",
+            "Maybe, depending on other factors"
+          ],
+          "correct": 1,
+          "points": 1
+        },
+        {
+          "id": "causal-4",
+          "type": "multiple-choice",
+          "text": "An elementary school implemented a new reading program. The principal proudly announces that after one year, students' reading scores increased by 15%.\n\nWhat additional information would be most useful to evaluate the actual effectiveness of this program?",
+          "options": [
+            "The cost of the program per student",
+            "The evolution of reading scores in similar schools without the program",
+            "The number of hours of teacher training",
+            "Parents' opinions on the program"
+          ],
+          "correct": 1,
+          "points": 1
+        },
+        {
+          "id": "causal-5",
+          "type": "multiple-choice",
+          "text": "A company claims their new dietary supplement improves memory. In their study, 80% of participants who took the supplement for 3 months reported having better memory.\n\nWhat would be the best way to verify this claim?",
+          "options": [
+            "Increase the number of participants",
+            "Compare with a group that took a placebo",
+            "Extend the study to 6 months",
+            "Ask participants to keep a journal"
+          ],
+          "correct": 1,
+          "points": 1
+        },
+        {
+          "id": "causal-6",
+          "type": "multiple-choice",
+          "text": "A doctor prescribes a treatment to a patient. After 2 weeks, the patient feels better and the doctor concludes the treatment works.\n\nWhat is the main limitation of this conclusion?",
+          "options": [
+            "2 weeks is too short",
+            "We don't know if the patient would have recovered spontaneously",
+            "One patient is not sufficient",
+            "The patient could be lying"
+          ],
+          "correct": 1,
+          "points": 1
+        }
+      ]
+    },
+    {
+      "id": "framing",
+      "name": "Framing Effects (10 items)",
+      "points": 6,
+      "time": 8,
+      "questions": [
+        {
+          "id": "frame-1a",
+          "type": "multiple-choice",
+          "text": "You consult employment statistics for a region. You learn that in this region, **92% of the active population is employed**.\n\nHow do you evaluate the employment situation in this region?",
+          "options": [
+            "Very favorable",
+            "Favorable",
+            "Slightly favorable",
+            "Slightly unfavorable",
+            "Unfavorable",
+            "Very unfavorable"
+          ],
+          "correct": 1,
+          "points": 0,
+          "pairId": "frame-pair-1",
+          "framingType": "positive"
+        },
+        {
+          "id": "frame-1b",
+          "type": "multiple-choice",
+          "text": "You consult employment statistics for a region. You learn that in this region, **8% of the active population is unemployed**.\n\nHow do you evaluate the employment situation in this region?",
+          "options": [
+            "Very favorable",
+            "Favorable",
+            "Slightly favorable",
+            "Slightly unfavorable",
+            "Unfavorable",
+            "Very unfavorable"
+          ],
+          "correct": 1,
+          "points": 0.6,
+          "pairId": "frame-pair-1",
+          "framingType": "negative"
+        },
+        {
+          "id": "frame-2a",
+          "type": "multiple-choice",
+          "text": "Imagine a new disease threatens 600 people. Two treatments are proposed:\n\n**Treatment A**: 200 people will be saved with certainty\n**Treatment B**: 1/3 chance of saving all 600 people, 2/3 chance of saving no one\n\nWhich treatment do you choose?",
+          "options": [
+            "Treatment A",
+            "Treatment B"
+          ],
+          "correct": null,
+          "points": 0,
+          "pairId": "frame-pair-2",
+          "framingType": "gain"
+        },
+        {
+          "id": "frame-2b",
+          "type": "multiple-choice",
+          "text": "Imagine a new disease threatens 600 people. Two treatments are proposed:\n\n**Treatment A**: 400 people will die with certainty\n**Treatment B**: 1/3 chance that no one dies, 2/3 chance that 600 people die\n\nWhich treatment do you choose?",
+          "options": [
+            "Treatment A",
+            "Treatment B"
+          ],
+          "correct": null,
+          "points": 0.6,
+          "pairId": "frame-pair-2",
+          "framingType": "loss"
+        },
+        {
+          "id": "frame-3a",
+          "type": "multiple-choice",
+          "text": "A new car model has been tested. The report indicates the vehicle **functions correctly 94% of the time**.\n\nWhat is your impression of the reliability of this vehicle?",
+          "options": [
+            "Very favorable",
+            "Favorable",
+            "Slightly favorable",
+            "Slightly unfavorable",
+            "Unfavorable",
+            "Very unfavorable"
+          ],
+          "correct": 1,
+          "points": 0,
+          "pairId": "frame-pair-3",
+          "framingType": "positive"
+        },
+        {
+          "id": "frame-3b",
+          "type": "multiple-choice",
+          "text": "A new car model has been tested. The report indicates the vehicle **experiences malfunctions 6% of the time**.\n\nWhat is your impression of the reliability of this vehicle?",
+          "options": [
+            "Very favorable",
+            "Favorable",
+            "Slightly favorable",
+            "Slightly unfavorable",
+            "Unfavorable",
+            "Very unfavorable"
+          ],
+          "correct": 1,
+          "points": 0.6,
+          "pairId": "frame-pair-3",
+          "framingType": "negative"
+        },
+        {
+          "id": "frame-4a",
+          "type": "multiple-choice",
+          "text": "An airline announces that **99.7% of its flights arrive without safety incidents**.\n\nWhat do you think about this airline's safety?",
+          "options": [
+            "Very safe",
+            "Safe",
+            "Slightly safe",
+            "Slightly risky",
+            "Risky",
+            "Very risky"
+          ],
+          "correct": 1,
+          "points": 0,
+          "pairId": "frame-pair-4",
+          "framingType": "positive"
+        },
+        {
+          "id": "frame-4b",
+          "type": "multiple-choice",
+          "text": "An airline announces that **0.3% of its flights experience a safety incident**.\n\nWhat do you think about this airline's safety?",
+          "options": [
+            "Very safe",
+            "Safe",
+            "Slightly safe",
+            "Slightly risky",
+            "Risky",
+            "Very risky"
+          ],
+          "correct": 1,
+          "points": 0.6,
+          "pairId": "frame-pair-4",
+          "framingType": "negative"
+        },
+        {
+          "id": "frame-5a",
+          "type": "multiple-choice",
+          "text": "A new medication is tested. Results show that **85% of patients see their condition improve**.\n\nWhat do you think about the effectiveness of this medication?",
+          "options": [
+            "Very effective",
+            "Effective",
+            "Moderately effective",
+            "Slightly effective",
+            "Ineffective",
+            "Totally ineffective"
+          ],
+          "correct": 1,
+          "points": 0,
+          "pairId": "frame-pair-5",
+          "framingType": "positive"
+        },
+        {
+          "id": "frame-5b",
+          "type": "multiple-choice",
+          "text": "A new medication is tested. Results show that **15% of patients see no improvement**.\n\nWhat do you think about the effectiveness of this medication?",
+          "options": [
+            "Very effective",
+            "Effective",
+            "Moderately effective",
+            "Slightly effective",
+            "Ineffective",
+            "Totally ineffective"
+          ],
+          "correct": 1,
+          "points": 0.6,
+          "pairId": "frame-pair-5",
+          "framingType": "negative"
+        }
+      ]
+    },
+    {
+      "id": "expected-value",
+      "name": "Sensitivity to Expected Value (12 items)",
+      "points": 5,
+      "time": 6,
+      "questions": [
+        {
+          "id": "ev-1",
+          "type": "multiple-choice",
+          "text": "Which bet do you prefer?\n\n**Bet A**: 25% chance of winning €2,500 and 75% chance of winning €100\n**Bet B**: 25% chance of winning €500 and 75% chance of winning €1,200",
+          "options": [
+            "Bet A",
+            "Bet B"
+          ],
+          "correct": 1,
+          "points": 0.42
+        },
+        {
+          "id": "ev-2",
+          "type": "multiple-choice",
+          "text": "Which bet do you prefer?\n\n**Bet A**: 15% chance of winning €150 and 85% chance of winning €8\n**Bet B**: 15% chance of winning €40 and 85% chance of winning €10",
+          "options": [
+            "Bet A",
+            "Bet B"
+          ],
+          "correct": 0,
+          "points": 0.42
+        },
+        {
+          "id": "ev-3",
+          "type": "multiple-choice",
+          "text": "Which bet do you prefer?\n\n**Bet A**: 10% chance of winning €200 and 90% chance of winning €12\n**Bet B**: 10% chance of winning €60 and 90% chance of winning €15",
+          "options": [
+            "Bet A",
+            "Bet B"
+          ],
+          "correct": 0,
+          "points": 0.42
+        },
+        {
+          "id": "ev-4",
+          "type": "multiple-choice",
+          "text": "Which bet do you prefer?\n\n**Bet A**: 100% chance of winning €0.75\n**Bet B**: 40% chance of winning €2.50 and 60% chance of winning nothing",
+          "options": [
+            "Bet A",
+            "Bet B"
+          ],
+          "correct": 1,
+          "points": 0.42
+        },
+        {
+          "id": "ev-5",
+          "type": "multiple-choice",
+          "text": "Which bet do you prefer?\n\n**Bet A**: 35% chance of winning €800 and 65% chance of winning €50\n**Bet B**: 35% chance of winning €200 and 65% chance of winning €400",
+          "options": [
+            "Bet A",
+            "Bet B"
+          ],
+          "correct": 1,
+          "points": 0.42
+        },
+        {
+          "id": "ev-6",
+          "type": "multiple-choice",
+          "text": "Which bet do you prefer?\n\n**Bet A**: 20% chance of winning €500 and 80% chance of winning €20\n**Bet B**: 20% chance of winning €100 and 80% chance of winning €80",
+          "options": [
+            "Bet A",
+            "Bet B"
+          ],
+          "correct": 0,
+          "points": 0.42
+        },
+        {
+          "id": "ev-7",
+          "type": "multiple-choice",
+          "text": "Which bet do you prefer?\n\n**Bet A**: 50% chance of winning €300 and 50% chance of winning €100\n**Bet B**: 50% chance of winning €250 and 50% chance of winning €150",
+          "options": [
+            "Bet A",
+            "Bet B"
+          ],
+          "correct": 1,
+          "points": 0.42
+        },
+        {
+          "id": "ev-8",
+          "type": "multiple-choice",
+          "text": "Which bet do you prefer?\n\n**Bet A**: 30% chance of winning €1,000 and 70% chance of winning €50\n**Bet B**: 30% chance of winning €400 and 70% chance of winning €200",
+          "options": [
+            "Bet A",
+            "Bet B"
+          ],
+          "correct": 0,
+          "points": 0.42
+        },
+        {
+          "id": "ev-9",
+          "type": "multiple-choice",
+          "text": "Which bet do you prefer?\n\n**Bet A**: 5% chance of winning €1,000 and 95% chance of winning €10\n**Bet B**: 5% chance of winning €200 and 95% chance of winning €20",
+          "options": [
+            "Bet A",
+            "Bet B"
+          ],
+          "correct": 0,
+          "points": 0.42
+        },
+        {
+          "id": "ev-10",
+          "type": "multiple-choice",
+          "text": "Which bet do you prefer?\n\n**Bet A**: 60% chance of winning €200 and 40% chance of winning €50\n**Bet B**: 60% chance of winning €150 and 40% chance of winning €100",
+          "options": [
+            "Bet A",
+            "Bet B"
+          ],
+          "correct": 0,
+          "points": 0.42
+        },
+        {
+          "id": "ev-11",
+          "type": "multiple-choice",
+          "text": "Which bet do you prefer?\n\n**Bet A**: 80% chance of winning €100 and 20% chance of winning €10\n**Bet B**: 80% chance of winning €90 and 20% chance of winning €30",
+          "options": [
+            "Bet A",
+            "Bet B"
+          ],
+          "correct": 1,
+          "points": 0.42
+        },
+        {
+          "id": "ev-12",
+          "type": "multiple-choice",
+          "text": "Which bet do you prefer?\n\n**Bet A**: 45% chance of winning €600 and 55% chance of winning €100\n**Bet B**: 45% chance of winning €300 and 55% chance of winning €250",
+          "options": [
+            "Bet A",
+            "Bet B"
+          ],
+          "correct": 0,
+          "points": 0.42
+        }
+      ]
+    },
+    {
+      "id": "sunk-cost",
+      "name": "Sunk Cost Fallacy (4 items)",
+      "points": 3,
+      "time": 4,
+      "questions": [
+        {
+          "id": "sunk-1",
+          "type": "multiple-choice",
+          "text": "You bought a concert ticket for €80. On the day of the concert, you fall ill (fever, fatigue). The concert won't refund you.\n\nWhat should you do?",
+          "options": [
+            "Go to the concert anyway to not waste the €80",
+            "Stay home and rest, the €80 is already lost",
+            "Try to sell the ticket"
+          ],
+          "correct": 1,
+          "points": 0.75
+        },
+        {
+          "id": "sunk-2",
+          "type": "multiple-choice",
+          "text": "You've invested €10,000 in a project for 6 months. After analysis, you realize the project will never be profitable. You can either:\n- Continue and lose €5,000 more before failure\n- Stop now and only lose the €10,000 already invested\n\nWhat to do?",
+          "options": [
+            "Continue, otherwise the €10,000 will have been wasted for nothing",
+            "Stop immediately to limit losses",
+            "Continue for 3 more months to be sure"
+          ],
+          "correct": 1,
+          "points": 0.75
+        },
+        {
+          "id": "sunk-3",
+          "type": "multiple-choice",
+          "text": "You spent 3 hours cooking an elaborate dish. When tasting it, you realize it's ruined (too salty, inedible). You could order food (€15, delicious) or force yourself to eat your ruined dish.\n\nWhat to do?",
+          "options": [
+            "Eat the ruined dish to not waste the 3 hours of work",
+            "Order food, the 3 hours are already lost",
+            "Try to fix the dish"
+          ],
+          "correct": 1,
+          "points": 0.75
+        },
+        {
+          "id": "sunk-4",
+          "type": "multiple-choice",
+          "text": "You bought an annual gym membership (€600, non-refundable). After 2 months, you realize you hate this gym (far, mediocre equipment). A new gym opened near you (€50/month).\n\nWhat to do?",
+          "options": [
+            "Continue with the old gym to make the €600 worthwhile",
+            "Switch to the new gym, the €600 is already lost",
+            "Alternate between the two gyms"
+          ],
+          "correct": 1,
+          "points": 0.75
         }
       ]
     }
