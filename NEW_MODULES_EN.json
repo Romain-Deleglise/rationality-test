@@ -1,0 +1,409 @@
+{
+  "argument_evaluation": {
+    "id": "argument-eval",
+    "name": "Argument Evaluation (8 items)",
+    "points": 5,
+    "time": 8,
+    "questions": [
+      {
+        "id": "arg-eval-1a",
+        "type": "likert",
+        "text": "**Part A - Your opinion**: Students should have a stronger voice than the general public in defining university policies.",
+        "points": 0
+      },
+      {
+        "id": "arg-eval-1b",
+        "type": "multiple-choice",
+        "text": "**Part B - Evaluation**:\n\n**Marc's opinion**: Students should have a stronger voice than the general public in defining university policies.\n\n**Marc's justification**: Since students ultimately pay the operating costs of the university through tuition fees, they should have a stronger voice in university policies.\n\n**Critic's counter-argument**: Tuition fees cover less than half the cost of education at most public universities (assume this is factually correct), so taxpayers should have a more important say in policies.\n\n**Marc's response**: Since students are the ones directly affected by university policies (assume this is factually correct), they should have the strongest voice.\n\n**Evaluate the strength of Marc's response**:",
+        "options": ["1 - Very weak", "2 - Weak", "3 - Strong", "4 - Very strong"],
+        "correct": 0,
+        "points": 0.625
+      },
+      {
+        "id": "arg-eval-2a",
+        "type": "likert",
+        "text": "**Part A - Your opinion**: Smoking should be banned in all enclosed public places.",
+        "points": 0
+      },
+      {
+        "id": "arg-eval-2b",
+        "type": "multiple-choice",
+        "text": "**Part B - Evaluation**:\n\n**Marc's opinion**: Smoking should be banned in all enclosed public places.\n\n**Marc's justification**: Smoking should be banned in all enclosed public places because even secondhand smoke poses a significant health risk to non-smokers.\n\n**Critic's counter-argument**: Since many smokers already refrain from smoking in places where their secondhand smoke poses a risk to others (assume this is factually correct), it is unnecessary to severely restrict smoking locations.\n\n**Marc's response**: While it is true that many smokers are considerate, it is also true that many smokers are not (assume this is factually correct). Banning smoking would be an effective way to ensure that many of us will not be exposed to the risks posed by secondhand smoke.\n\n**Evaluate the strength of Marc's response**:",
+        "options": ["1 - Very weak", "2 - Weak", "3 - Strong", "4 - Very strong"],
+        "correct": 3,
+        "points": 0.625
+      },
+      {
+        "id": "arg-eval-3a",
+        "type": "likert",
+        "text": "**Part A - Your opinion**: Nuclear energy should be developed as the main energy source for the future.",
+        "points": 0
+      },
+      {
+        "id": "arg-eval-3b",
+        "type": "multiple-choice",
+        "text": "**Part B - Evaluation**:\n\n**Marc's opinion**: Nuclear energy should be developed as the main energy source for the future.\n\n**Marc's justification**: Nuclear energy is cleaner than fossil fuels and can provide stable and abundant energy to meet our growing needs.\n\n**Critic's counter-argument**: Nuclear accidents like Chernobyl and Fukushima show that nuclear energy carries catastrophic risks (assume this is factually correct).\n\n**Marc's response**: These accidents were due to old technologies and human errors. New fourth-generation nuclear technologies are designed to be much safer (assume this is factually correct).\n\n**Evaluate the strength of Marc's response**:",
+        "options": ["1 - Very weak", "2 - Weak", "3 - Strong", "4 - Very strong"],
+        "correct": 2,
+        "points": 0.625
+      },
+      {
+        "id": "arg-eval-4a",
+        "type": "likert",
+        "text": "**Part A - Your opinion**: Social media companies should be legally responsible for content posted by their users.",
+        "points": 0
+      },
+      {
+        "id": "arg-eval-4b",
+        "type": "multiple-choice",
+        "text": "**Part B - Evaluation**:\n\n**Marc's opinion**: Social media companies should be legally responsible for content posted by their users.\n\n**Marc's justification**: Platforms profit from user-generated content, so they should be responsible for that content.\n\n**Critic's counter-argument**: It is technically impossible to moderate billions of posts in real time (assume this is factually correct).\n\n**Marc's response**: That's true, but they can invest more in automatic and human moderation systems (assume this is factually correct).\n\n**Evaluate the strength of Marc's response**:",
+        "options": ["1 - Very weak", "2 - Weak", "3 - Strong", "4 - Very strong"],
+        "correct": 1,
+        "points": 0.625
+      }
+    ]
+  },
+  "causal_reasoning": {
+    "id": "causal-reasoning",
+    "name": "Causal Reasoning (6 items)",
+    "points": 6,
+    "time": 6,
+    "questions": [
+      {
+        "id": "causal-1",
+        "type": "multiple-choice",
+        "text": "Researchers found that children who watch a lot of television tend to have poorer academic results than children who watch little television.\n\nDoes this finding mean that banning television from children would improve their academic results?",
+        "options": [
+          "Yes, certainly",
+          "No, not necessarily",
+          "Cannot be determined from this information alone"
+        ],
+        "correct": 1,
+        "points": 1
+      },
+      {
+        "id": "causal-2",
+        "type": "multiple-choice",
+        "text": "A study shows that people who take vitamins daily live longer on average than those who don't.\n\nCan we conclude that taking vitamins increases life expectancy?",
+        "options": ["Yes", "No", "Impossible to determine"],
+        "correct": 1,
+        "points": 1
+      },
+      {
+        "id": "causal-3",
+        "type": "multiple-choice",
+        "text": "It is observed that cities with more firefighters have more serious fires.\n\nShould we reduce the number of firefighters to decrease serious fires?",
+        "options": ["Yes", "No", "Maybe, depending on other factors"],
+        "correct": 1,
+        "points": 1
+      },
+      {
+        "id": "causal-4",
+        "type": "multiple-choice",
+        "text": "An elementary school implemented a new reading program. The principal proudly announces that after one year, students' reading scores increased by 15%.\n\nWhat additional information would be most useful to evaluate the actual effectiveness of this program?",
+        "options": [
+          "The cost of the program per student",
+          "The evolution of reading scores in similar schools without the program",
+          "The number of hours of teacher training",
+          "Parents' opinions on the program"
+        ],
+        "correct": 1,
+        "points": 1
+      },
+      {
+        "id": "causal-5",
+        "type": "multiple-choice",
+        "text": "A company claims their new dietary supplement improves memory. In their study, 80% of participants who took the supplement for 3 months reported having better memory.\n\nWhat would be the best way to verify this claim?",
+        "options": [
+          "Increase the number of participants",
+          "Compare with a group that took a placebo",
+          "Extend the study to 6 months",
+          "Ask participants to keep a journal"
+        ],
+        "correct": 1,
+        "points": 1
+      },
+      {
+        "id": "causal-6",
+        "type": "multiple-choice",
+        "text": "A doctor prescribes a treatment to a patient. After 2 weeks, the patient feels better and the doctor concludes the treatment works.\n\nWhat is the main limitation of this conclusion?",
+        "options": [
+          "2 weeks is too short",
+          "We don't know if the patient would have recovered spontaneously",
+          "One patient is not sufficient",
+          "The patient could be lying"
+        ],
+        "correct": 1,
+        "points": 1
+      }
+    ]
+  },
+  "framing_effects": {
+    "id": "framing",
+    "name": "Framing Effects (10 items)",
+    "points": 6,
+    "time": 8,
+    "questions": [
+      {
+        "id": "frame-1a",
+        "type": "multiple-choice",
+        "text": "You consult employment statistics for a region. You learn that in this region, **92% of the active population is employed**.\n\nHow do you evaluate the employment situation in this region?",
+        "options": ["Very favorable", "Favorable", "Slightly favorable", "Slightly unfavorable", "Unfavorable", "Very unfavorable"],
+        "correct": 1,
+        "points": 0,
+        "pairId": "frame-pair-1",
+        "framingType": "positive"
+      },
+      {
+        "id": "frame-1b",
+        "type": "multiple-choice",
+        "text": "You consult employment statistics for a region. You learn that in this region, **8% of the active population is unemployed**.\n\nHow do you evaluate the employment situation in this region?",
+        "options": ["Very favorable", "Favorable", "Slightly favorable", "Slightly unfavorable", "Unfavorable", "Very unfavorable"],
+        "correct": 1,
+        "points": 0.6,
+        "pairId": "frame-pair-1",
+        "framingType": "negative"
+      },
+      {
+        "id": "frame-2a",
+        "type": "multiple-choice",
+        "text": "Imagine a new disease threatens 600 people. Two treatments are proposed:\n\n**Treatment A**: 200 people will be saved with certainty\n**Treatment B**: 1/3 chance of saving all 600 people, 2/3 chance of saving no one\n\nWhich treatment do you choose?",
+        "options": ["Treatment A", "Treatment B"],
+        "correct": null,
+        "points": 0,
+        "pairId": "frame-pair-2",
+        "framingType": "gain"
+      },
+      {
+        "id": "frame-2b",
+        "type": "multiple-choice",
+        "text": "Imagine a new disease threatens 600 people. Two treatments are proposed:\n\n**Treatment A**: 400 people will die with certainty\n**Treatment B**: 1/3 chance that no one dies, 2/3 chance that 600 people die\n\nWhich treatment do you choose?",
+        "options": ["Treatment A", "Treatment B"],
+        "correct": null,
+        "points": 0.6,
+        "pairId": "frame-pair-2",
+        "framingType": "loss"
+      },
+      {
+        "id": "frame-3a",
+        "type": "multiple-choice",
+        "text": "A new car model has been tested. The report indicates the vehicle **functions correctly 94% of the time**.\n\nWhat is your impression of the reliability of this vehicle?",
+        "options": ["Very favorable", "Favorable", "Slightly favorable", "Slightly unfavorable", "Unfavorable", "Very unfavorable"],
+        "correct": 1,
+        "points": 0,
+        "pairId": "frame-pair-3",
+        "framingType": "positive"
+      },
+      {
+        "id": "frame-3b",
+        "type": "multiple-choice",
+        "text": "A new car model has been tested. The report indicates the vehicle **experiences malfunctions 6% of the time**.\n\nWhat is your impression of the reliability of this vehicle?",
+        "options": ["Very favorable", "Favorable", "Slightly favorable", "Slightly unfavorable", "Unfavorable", "Very unfavorable"],
+        "correct": 1,
+        "points": 0.6,
+        "pairId": "frame-pair-3",
+        "framingType": "negative"
+      },
+      {
+        "id": "frame-4a",
+        "type": "multiple-choice",
+        "text": "An airline announces that **99.7% of its flights arrive without safety incidents**.\n\nWhat do you think about this airline's safety?",
+        "options": ["Very safe", "Safe", "Slightly safe", "Slightly risky", "Risky", "Very risky"],
+        "correct": 1,
+        "points": 0,
+        "pairId": "frame-pair-4",
+        "framingType": "positive"
+      },
+      {
+        "id": "frame-4b",
+        "type": "multiple-choice",
+        "text": "An airline announces that **0.3% of its flights experience a safety incident**.\n\nWhat do you think about this airline's safety?",
+        "options": ["Very safe", "Safe", "Slightly safe", "Slightly risky", "Risky", "Very risky"],
+        "correct": 1,
+        "points": 0.6,
+        "pairId": "frame-pair-4",
+        "framingType": "negative"
+      },
+      {
+        "id": "frame-5a",
+        "type": "multiple-choice",
+        "text": "A new medication is tested. Results show that **85% of patients see their condition improve**.\n\nWhat do you think about the effectiveness of this medication?",
+        "options": ["Very effective", "Effective", "Moderately effective", "Slightly effective", "Ineffective", "Totally ineffective"],
+        "correct": 1,
+        "points": 0,
+        "pairId": "frame-pair-5",
+        "framingType": "positive"
+      },
+      {
+        "id": "frame-5b",
+        "type": "multiple-choice",
+        "text": "A new medication is tested. Results show that **15% of patients see no improvement**.\n\nWhat do you think about the effectiveness of this medication?",
+        "options": ["Very effective", "Effective", "Moderately effective", "Slightly effective", "Ineffective", "Totally ineffective"],
+        "correct": 1,
+        "points": 0.6,
+        "pairId": "frame-pair-5",
+        "framingType": "negative"
+      }
+    ]
+  },
+  "expected_value": {
+    "id": "expected-value",
+    "name": "Sensitivity to Expected Value (12 items)",
+    "points": 5,
+    "time": 6,
+    "questions": [
+      {
+        "id": "ev-1",
+        "type": "multiple-choice",
+        "text": "Which bet do you prefer?\n\n**Bet A**: 25% chance of winning €2,500 and 75% chance of winning €100\n**Bet B**: 25% chance of winning €500 and 75% chance of winning €1,200",
+        "options": ["Bet A", "Bet B"],
+        "correct": 1,
+        "points": 0.42
+      },
+      {
+        "id": "ev-2",
+        "type": "multiple-choice",
+        "text": "Which bet do you prefer?\n\n**Bet A**: 15% chance of winning €150 and 85% chance of winning €8\n**Bet B**: 15% chance of winning €40 and 85% chance of winning €10",
+        "options": ["Bet A", "Bet B"],
+        "correct": 0,
+        "points": 0.42
+      },
+      {
+        "id": "ev-3",
+        "type": "multiple-choice",
+        "text": "Which bet do you prefer?\n\n**Bet A**: 10% chance of winning €200 and 90% chance of winning €12\n**Bet B**: 10% chance of winning €60 and 90% chance of winning €15",
+        "options": ["Bet A", "Bet B"],
+        "correct": 0,
+        "points": 0.42
+      },
+      {
+        "id": "ev-4",
+        "type": "multiple-choice",
+        "text": "Which bet do you prefer?\n\n**Bet A**: 100% chance of winning €0.75\n**Bet B**: 40% chance of winning €2.50 and 60% chance of winning nothing",
+        "options": ["Bet A", "Bet B"],
+        "correct": 1,
+        "points": 0.42
+      },
+      {
+        "id": "ev-5",
+        "type": "multiple-choice",
+        "text": "Which bet do you prefer?\n\n**Bet A**: 35% chance of winning €800 and 65% chance of winning €50\n**Bet B**: 35% chance of winning €200 and 65% chance of winning €400",
+        "options": ["Bet A", "Bet B"],
+        "correct": 1,
+        "points": 0.42
+      },
+      {
+        "id": "ev-6",
+        "type": "multiple-choice",
+        "text": "Which bet do you prefer?\n\n**Bet A**: 20% chance of winning €500 and 80% chance of winning €20\n**Bet B**: 20% chance of winning €100 and 80% chance of winning €80",
+        "options": ["Bet A", "Bet B"],
+        "correct": 0,
+        "points": 0.42
+      },
+      {
+        "id": "ev-7",
+        "type": "multiple-choice",
+        "text": "Which bet do you prefer?\n\n**Bet A**: 50% chance of winning €300 and 50% chance of winning €100\n**Bet B**: 50% chance of winning €250 and 50% chance of winning €150",
+        "options": ["Bet A", "Bet B"],
+        "correct": 1,
+        "points": 0.42
+      },
+      {
+        "id": "ev-8",
+        "type": "multiple-choice",
+        "text": "Which bet do you prefer?\n\n**Bet A**: 30% chance of winning €1,000 and 70% chance of winning €50\n**Bet B**: 30% chance of winning €400 and 70% chance of winning €200",
+        "options": ["Bet A", "Bet B"],
+        "correct": 0,
+        "points": 0.42
+      },
+      {
+        "id": "ev-9",
+        "type": "multiple-choice",
+        "text": "Which bet do you prefer?\n\n**Bet A**: 5% chance of winning €1,000 and 95% chance of winning €10\n**Bet B**: 5% chance of winning €200 and 95% chance of winning €20",
+        "options": ["Bet A", "Bet B"],
+        "correct": 0,
+        "points": 0.42
+      },
+      {
+        "id": "ev-10",
+        "type": "multiple-choice",
+        "text": "Which bet do you prefer?\n\n**Bet A**: 60% chance of winning €200 and 40% chance of winning €50\n**Bet B**: 60% chance of winning €150 and 40% chance of winning €100",
+        "options": ["Bet A", "Bet B"],
+        "correct": 0,
+        "points": 0.42
+      },
+      {
+        "id": "ev-11",
+        "type": "multiple-choice",
+        "text": "Which bet do you prefer?\n\n**Bet A**: 80% chance of winning €100 and 20% chance of winning €10\n**Bet B**: 80% chance of winning €90 and 20% chance of winning €30",
+        "options": ["Bet A", "Bet B"],
+        "correct": 1,
+        "points": 0.42
+      },
+      {
+        "id": "ev-12",
+        "type": "multiple-choice",
+        "text": "Which bet do you prefer?\n\n**Bet A**: 45% chance of winning €600 and 55% chance of winning €100\n**Bet B**: 45% chance of winning €300 and 55% chance of winning €250",
+        "options": ["Bet A", "Bet B"],
+        "correct": 0,
+        "points": 0.42
+      }
+    ]
+  },
+  "sunk_cost": {
+    "id": "sunk-cost",
+    "name": "Sunk Cost Fallacy (4 items)",
+    "points": 3,
+    "time": 4,
+    "questions": [
+      {
+        "id": "sunk-1",
+        "type": "multiple-choice",
+        "text": "You bought a concert ticket for €80. On the day of the concert, you fall ill (fever, fatigue). The concert won't refund you.\n\nWhat should you do?",
+        "options": [
+          "Go to the concert anyway to not waste the €80",
+          "Stay home and rest, the €80 is already lost",
+          "Try to sell the ticket"
+        ],
+        "correct": 1,
+        "points": 0.75
+      },
+      {
+        "id": "sunk-2",
+        "type": "multiple-choice",
+        "text": "You've invested €10,000 in a project for 6 months. After analysis, you realize the project will never be profitable. You can either:\n- Continue and lose €5,000 more before failure\n- Stop now and only lose the €10,000 already invested\n\nWhat to do?",
+        "options": [
+          "Continue, otherwise the €10,000 will have been wasted for nothing",
+          "Stop immediately to limit losses",
+          "Continue for 3 more months to be sure"
+        ],
+        "correct": 1,
+        "points": 0.75
+      },
+      {
+        "id": "sunk-3",
+        "type": "multiple-choice",
+        "text": "You spent 3 hours cooking an elaborate dish. When tasting it, you realize it's ruined (too salty, inedible). You could order food (€15, delicious) or force yourself to eat your ruined dish.\n\nWhat to do?",
+        "options": [
+          "Eat the ruined dish to not waste the 3 hours of work",
+          "Order food, the 3 hours are already lost",
+          "Try to fix the dish"
+        ],
+        "correct": 1,
+        "points": 0.75
+      },
+      {
+        "id": "sunk-4",
+        "type": "multiple-choice",
+        "text": "You bought an annual gym membership (€600, non-refundable). After 2 months, you realize you hate this gym (far, mediocre equipment). A new gym opened near you (€50/month).\n\nWhat to do?",
+        "options": [
+          "Continue with the old gym to make the €600 worthwhile",
+          "Switch to the new gym, the €600 is already lost",
+          "Alternate between the two gyms"
+        ],
+        "correct": 1,
+        "points": 0.75
+      }
+    ]
+  }
+}

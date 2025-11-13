@@ -241,6 +241,7 @@
       "Raisonnement Probabiliste": "Votre capacité à raisonner avec les probabilités et éviter les erreurs classiques (erreur du parieur, négligence des taux de base, erreur de conjonction).",
       "Raisonnement Scientifique": "Votre capacité à tester rigoureusement des hypothèses, falsifier plutôt que confirmer, et distinguer corrélation et causation.",
       "Réflexion vs Intuition": "Votre capacité à inhiber la réponse intuitive immédiate et engager une réflexion analytique (CRT).",
+      "Résistance au Traitement Avare": "Votre capacité à inhiber la réponse intuitive immédiate et engager une réflexion analytique approfondie (Cognitive Reflection Test).",
       "Biais de Croyance": "Votre capacité à évaluer la validité logique indépendamment de vos croyances sur la conclusion.",
       "Calibration des Connaissances": "Votre capacité à estimer avec précision votre niveau de certitude (éviter l'overconfidence).",
       "Numératie Probabiliste": "Votre capacité à manipuler les nombres dans des contextes probabilistes et comprendre les statistiques.",
@@ -249,7 +250,12 @@
       "Croyances Conspirationnistes": "Votre résistance aux explications complotistes et capacité à appliquer le Rasoir d'Occam.",
       "Raisonnement Disjonctif": "Votre capacité à raisonner correctement avec des énoncés 'OU'.",
       "Ancrage": "Votre résistance à l'ancrage (être trop influencé par la première information reçue).",
-      "Croyances Dysfonctionnelles": "Votre capacité à éviter les croyances irrationnelles qui causent de la détresse émotionnelle inutile."
+      "Croyances Dysfonctionnelles": "Votre capacité à éviter les croyances irrationnelles qui causent de la détresse émotionnelle inutile.",
+      "Évaluation d'Arguments": "Votre capacité à évaluer la force des arguments indépendamment de vos opinions personnelles (résistance au biais de croyance dans l'argumentation).",
+      "Raisonnement Causal": "Votre capacité à distinguer corrélation et causation, et à reconnaître l'importance des groupes contrôles dans les expériences.",
+      "Effets de Cadrage": "Votre résistance aux effets de cadrage : donner des réponses cohérentes quelle que soit la manière dont l'information est présentée (positivement vs négativement).",
+      "Sensibilité à la Valeur Espérée": "Votre capacité à choisir rationnellement entre des paris en maximisant la valeur espérée plutôt que de suivre vos intuitions.",
+      "Coûts Irrécupérables": "Votre résistance à la fallacy des coûts irrécupérables (sunk cost fallacy) : ne pas laisser les investissements passés influencer les décisions futures."
     },
 
     "footer": {
