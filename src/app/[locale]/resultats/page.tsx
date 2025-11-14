@@ -1612,8 +1612,8 @@ export default function ResultatsPage() {
                               </tr>
                             );
                           })}
-                          {/* Total/Average row - Weighted by CART points */}
-                          {(() => {
+                          {/* Total/Average row - Weighted by CART points - Only for complete version */}
+                          {version === 'complète' && (() => {
                             // Moyenne pondérée par les points CART de chaque module
                             const totalCartPoints = moduleComparisons.reduce((sum: number, c: any) => sum + (c.cartPoints || 1), 0);
                             const avgOurScore = moduleComparisons.reduce((sum: number, c: any) => sum + (c.ourScore * (c.cartPoints || 1)), 0) / totalCartPoints;
