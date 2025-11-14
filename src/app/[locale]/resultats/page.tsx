@@ -120,12 +120,7 @@ export default function ResultatsPage() {
   useEffect(() => {
     if (resultToken && locale && typeof window !== 'undefined') {
       const url = `${window.location.origin}/${locale}/resultats/${resultToken}`;
-      console.log('🔗 URL de partage construite:', url);
-      console.log('  - resultToken:', resultToken);
-      console.log('  - locale:', locale);
       setShareUrl(url);
-    } else {
-      console.log('⚠️ URL de partage non construite - resultToken:', resultToken, 'locale:', locale);
     }
   }, [resultToken, locale]);
 
@@ -142,12 +137,10 @@ export default function ResultatsPage() {
     // Sauvegarder automatiquement dans Supabase
     const saveToSupabase = async () => {
       const token = generateResultToken();
-      console.log('💾 Sauvegarde Supabase - token généré:', token);
 
       try {
         setSavingToDb(true);
 
-        console.log('💾 Tentative de sauvegarde dans Supabase...');
         await saveTestResult({
           result_token: token,
           test_version: version,
@@ -159,7 +152,6 @@ export default function ResultatsPage() {
           user_agent: typeof navigator !== 'undefined' ? navigator.userAgent : undefined,
         });
 
-        console.log('✅ Sauvegarde Supabase réussie!');
         setSavedToDb(true);
 
         // Calculer le vrai percentile basé sur toutes les données
@@ -171,13 +163,11 @@ export default function ResultatsPage() {
         setGlobalStats(stats);
 
       } catch (error) {
-        console.error('❌ Error saving to Supabase:', error);
+        console.error('Error saving to Supabase:', error);
         // On continue même si la sauvegarde échoue
       } finally {
         // IMPORTANT: Toujours setter le token, même si la sauvegarde échoue
-        console.log('💾 [FINALLY] Setting resultToken:', token);
         setResultToken(token);
-        console.log('✅ [FINALLY] resultToken state updated');
         setSavingToDb(false);
       }
     };
@@ -1647,24 +1637,13 @@ export default function ResultatsPage() {
 
         {/* Distribution Histogram - Section indépendante pour version complète */}
         {(() => {
-          console.log('📊 Histogramme - version:', version);
-          console.log('📊 Histogramme - version === "complète":', version === 'complète');
-
           if (version !== 'complète') {
-            console.log('❌ Histogramme non affiché - version n\'est pas "complète"');
             return null;
           }
 
           const cartNorms = CART_FULL_FORM_NORMS;
-          console.log('📊 Histogramme - CART_FULL_FORM_NORMS:', cartNorms);
 
-          if (!cartNorms) {
-            console.log('❌ Histogramme non affiché - cartNorms est null/undefined');
-            return null;
-          }
-
-          if (cartNorms.sd <= 0) {
-            console.log('❌ Histogramme non affiché - sd <= 0:', cartNorms.sd);
+          if (!cartNorms || cartNorms.sd <= 0) {
             return null;
           }
 
@@ -1672,18 +1651,12 @@ export default function ResultatsPage() {
           const sd = Math.max(1, (cartNorms.sd / cartNorms.totalPoints) * 100);
           const userScore = testScore.percentage;
 
-          console.log('✅ Histogramme - Rendu avec mean:', mean, 'sd:', sd, 'userScore:', userScore);
-
           return (
-            <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8 mb-8 border-4 border-red-500">
+            <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8 mb-8">
               <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
                 <TrendingUp className="w-6 h-6 text-indigo-600 dark:text-indigo-400" />
                 {locale === 'fr' ? 'Distribution des scores CART' : 'CART Score Distribution'}
               </h3>
-              <div className="bg-yellow-200 p-4 mb-4">
-                <p className="text-black font-bold">🔍 DEBUG: Section histogramme visible!</p>
-                <p className="text-black">Mean: {mean.toFixed(2)}% | SD: {sd.toFixed(2)}% | User: {userScore.toFixed(2)}%</p>
-              </div>
               <p className="text-sm text-gray-600 dark:text-gray-400 mb-6 text-justify">
                 {locale === 'fr'
                   ? `Distribution des scores de l'étude ${cartNorms.study} (N=${cartNorms.sampleSize}) avec votre position marquée. Notre test couvre 17 des 20 modules du CART complet, la comparaison est donc indicative.`
@@ -1697,8 +1670,6 @@ export default function ResultatsPage() {
                   const minScore = Math.max(0, mean - 3 * sd);
                   const maxScore = Math.min(100, mean + 3 * sd);
                   const binWidth = (maxScore - minScore) / numBins;
-
-                  console.log('📊 Bins - minScore:', minScore, 'maxScore:', maxScore, 'binWidth:', binWidth);
 
                   // Calculate height for each bin using normal distribution formula
                   for (let i = 0; i < numBins; i++) {
@@ -1714,33 +1685,58 @@ export default function ResultatsPage() {
                   }
 
                   const maxHeight = Math.max(...bins.map(b => b.height));
-                  console.log('📊 Bins créés:', bins.length, 'maxHeight:', maxHeight);
-                  console.log('📊 Premier bin:', bins[0]);
-                  console.log('📊 Dernier bin:', bins[bins.length - 1]);
+                  const [hoveredBin, setHoveredBin] = React.useState<number | null>(null);
 
                   return (
                     <div className="space-y-4">
-                      <div className="bg-green-200 p-2 text-black">
-                        DEBUG BINS: {bins.length} bins créés, maxHeight={maxHeight.toFixed(6)}
+                      {/* Histogram title */}
+                      <div className="text-center">
+                        <h3 className="text-sm font-semibold text-gray-700 dark:text-gray-300">
+                          {locale === 'fr' ? 'Distribution des Scores (Normes CART)' : 'Score Distribution (CART Norms)'}
+                        </h3>
+                        <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">
+                          {locale === 'fr'
+                            ? `Basé sur ${CART_FULL_FORM_NORMS.sampleSize} participants (étude ${CART_FULL_FORM_NORMS.study})`
+                            : `Based on ${CART_FULL_FORM_NORMS.sampleSize} participants (${CART_FULL_FORM_NORMS.study} study)`
+                          }
+                        </p>
                       </div>
-                      {/* Histogram bars */}
-                      <div className="relative h-48 flex items-end justify-center gap-0.5 bg-red-100 border-2 border-black">
-                        {bins.map((bin, idx) => {
-                          // Calculate height in pixels instead of percentage (h-48 = 192px)
-                          const heightInPixels = (bin.height / maxHeight) * 192;
-                          const isUserBin = userScore >= bin.start && userScore < bin.end;
 
-                          console.log(`📊 Bin ${idx}: heightInPixels=${heightInPixels.toFixed(2)}px, isUserBin=${isUserBin}`);
+                      {/* Histogram bars */}
+                      <div className="relative h-48 flex items-end justify-center gap-1 bg-gray-50 dark:bg-gray-800/50 rounded-lg p-4 border border-gray-200 dark:border-gray-700">
+                        {bins.map((bin, idx) => {
+                          // Calculate height in pixels (h-48 = 192px, minus padding)
+                          const heightInPixels = (bin.height / maxHeight) * 160;
+                          const isUserBin = userScore >= bin.start && userScore < bin.end;
+                          const isHovered = hoveredBin === idx;
 
                           return (
-                            <div key={idx} className="flex-1 flex flex-col items-center justify-end border border-gray-400">
+                            <div
+                              key={idx}
+                              className="flex-1 flex flex-col items-center justify-end relative group"
+                              onMouseEnter={() => setHoveredBin(idx)}
+                              onMouseLeave={() => setHoveredBin(null)}
+                            >
+                              {/* Tooltip */}
+                              {isHovered && (
+                                <div className="absolute bottom-full mb-2 px-2 py-1 bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900 text-xs rounded shadow-lg whitespace-nowrap z-10">
+                                  {bin.start.toFixed(0)}% - {bin.end.toFixed(0)}%
+                                  {isUserBin && (
+                                    <div className="font-semibold text-purple-300 dark:text-purple-600">
+                                      {locale === 'fr' ? '← Vous' : '← You'}
+                                    </div>
+                                  )}
+                                </div>
+                              )}
+
+                              {/* Bar */}
                               <div
-                                className={`w-full rounded-t transition-colors ${
+                                className={`w-full rounded-t transition-all duration-200 ${
                                   isUserBin
-                                    ? 'bg-purple-500 dark:bg-purple-400'
-                                    : 'bg-blue-300 dark:bg-blue-600'
-                                }`}
-                                style={{ height: `${heightInPixels}px`, minHeight: '2px' }}
+                                    ? 'bg-purple-500 dark:bg-purple-400 shadow-lg'
+                                    : 'bg-blue-400 dark:bg-blue-500 hover:bg-blue-500 dark:hover:bg-blue-400'
+                                } ${isHovered ? 'opacity-90 scale-105' : 'opacity-80'}`}
+                                style={{ height: `${heightInPixels}px`, minHeight: '4px' }}
                               />
                             </div>
                           );
@@ -2245,9 +2241,11 @@ export default function ResultatsPage() {
           </div>
 
           {/* Social Share */}
-          {resultToken && shareUrl && (
-            <div className="flex flex-col items-center gap-3 print:hidden">
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-white">{locale === 'fr' ? 'Partager vos résultats' : 'Share your results'}</h3>
+          <div className="flex flex-col items-center gap-3 print:hidden">
+            <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
+              {locale === 'fr' ? 'Partager vos résultats' : 'Share your results'}
+            </h3>
+            {resultToken && shareUrl ? (
               <SocialShare
                 url={shareUrl}
                 title={locale === 'fr'
@@ -2258,8 +2256,13 @@ export default function ResultatsPage() {
                   : 'Discover my detailed results on the CART rationality test'}
                 locale={locale}
               />
-            </div>
-          )}
+            ) : (
+              <div className="flex items-center gap-2 text-gray-500 dark:text-gray-400 text-sm">
+                <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-gray-900 dark:border-gray-100"></div>
+                {locale === 'fr' ? 'Génération du lien de partage...' : 'Generating share link...'}
+              </div>
+            )}
+          </div>
 
           <div className="mt-6 text-center">
             <a
