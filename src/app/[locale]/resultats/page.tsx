@@ -1002,6 +1002,27 @@ export default function ResultatsPage() {
           but intuition doesn't change durably.</p>
       )
     },
+    'Framing Effects': {
+      what: (
+        <p>Your resistance to{' '}
+          <a href="https://en.wikipedia.org/wiki/Framing_effect_(psychology)" target="_blank" rel="noopener" className="text-blue-600 dark:text-blue-400 hover:underline">
+            framing
+          </a>
+          : changing preferences based on how an identical option is presented (e.g., "85% lean" vs "15% fat").</p>
+      ),
+      why: (
+        <p>Violates the principle of descriptive invariance. Massively used in advertising, politics, and negotiation
+          to manipulate our choices.</p>
+      ),
+      example: (
+        <p>Health program: (A) "200 people will be saved" vs (B) "400 people will die". Same program,
+          but the first is preferred. Our brain processes gains and losses asymmetrically.</p>
+      ),
+      canImprove: (
+        <p>Improvement: difficult (&lt;10%). Framing acts at a preconscious level. Solution: systematically
+          reframe options in both ways before deciding.</p>
+      )
+    },
     'Sunk Cost Fallacy': {
       what: (
         <p>Your resistance to the{' '}
@@ -1430,7 +1451,7 @@ export default function ResultatsPage() {
                 </div>
 
                 {/* Distribution Histogram - Only for complete version */}
-                {version === 'complète' && (
+                {version === 'complète' && cartNorms && cartNorms.sd > 0 && (
                   <div>
                     <h4 className="font-bold text-gray-900 dark:text-white mb-3 flex items-center gap-2">
                       <TrendingUp className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />
@@ -1444,7 +1465,7 @@ export default function ResultatsPage() {
                   <div className="bg-white dark:bg-gray-800 rounded-lg p-6 border border-gray-200 dark:border-gray-700">
                     {(() => {
                       const mean = (cartNorms.mean / cartNorms.totalPoints) * 100;
-                      const sd = (cartNorms.sd / cartNorms.totalPoints) * 100;
+                      const sd = Math.max(1, (cartNorms.sd / cartNorms.totalPoints) * 100); // Éviter sd trop petit
                       const userScore = testScore.percentage;
 
                       // Create histogram bins (approximating normal distribution)
