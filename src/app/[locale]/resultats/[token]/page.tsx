@@ -171,8 +171,8 @@ export default function SavedResultsPage({ params }: { params: Promise<{ token: 
           </Card>
         </div>
 
-        {/* Distribution Histogram */}
-        {(() => {
+        {/* Distribution Histogram - Only for complete version */}
+        {result.test_version === 'complète' && (() => {
           const cartNorms = getCartNorms(result.test_version, result.total_points, result.total_possible);
           const mean = (cartNorms.mean / cartNorms.totalPoints) * 100;
           const sd = (cartNorms.sd / cartNorms.totalPoints) * 100;
@@ -211,8 +211,8 @@ export default function SavedResultsPage({ params }: { params: Promise<{ token: 
               <CardContent>
                 <p className="text-sm text-gray-600 dark:text-gray-400 mb-4 text-justify">
                   {locale === 'fr'
-                    ? `Distribution des scores de l'étude ${cartNorms.study} (N=${cartNorms.sampleSize}) avec votre position marquée.`
-                    : `Score distribution from ${cartNorms.study} study (N=${cartNorms.sampleSize}) with your position marked.`}
+                    ? `Distribution des scores de l'étude ${cartNorms.study} (N=${cartNorms.sampleSize}) avec votre position marquée. Notre test couvre 17 des 20 modules du CART complet, la comparaison est donc indicative.`
+                    : `Score distribution from ${cartNorms.study} study (N=${cartNorms.sampleSize}) with your position marked. Our test covers 17 out of 20 CART modules, so this comparison is indicative.`}
                 </p>
                 <div className="bg-white dark:bg-gray-800 rounded-lg p-6 border border-gray-200 dark:border-gray-700">
                   <div className="space-y-4">
