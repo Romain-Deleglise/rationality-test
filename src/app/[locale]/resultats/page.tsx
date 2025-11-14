@@ -1329,6 +1329,7 @@ export default function ResultatsPage() {
                   cartMean: cartPercentage,
                   cartSD: (cartModule.sd / cartModule.points) * 100,
                   reliability: cartModule.alpha,
+                  cartPoints: cartModule.points, // Ajouter les points CART pour moyenne pondérée
                 };
               })
               .filter(Boolean);
@@ -1598,10 +1599,12 @@ export default function ResultatsPage() {
                               </tr>
                             );
                           })}
-                          {/* Total/Average row */}
+                          {/* Total/Average row - Weighted by CART points */}
                           {(() => {
-                            const avgOurScore = moduleComparisons.reduce((sum: number, c: any) => sum + c.ourScore, 0) / moduleComparisons.length;
-                            const avgCartMean = moduleComparisons.reduce((sum: number, c: any) => sum + c.cartMean, 0) / moduleComparisons.length;
+                            // Moyenne pondérée par les points CART de chaque module
+                            const totalCartPoints = moduleComparisons.reduce((sum: number, c: any) => sum + (c.cartPoints || 1), 0);
+                            const avgOurScore = moduleComparisons.reduce((sum: number, c: any) => sum + (c.ourScore * (c.cartPoints || 1)), 0) / totalCartPoints;
+                            const avgCartMean = moduleComparisons.reduce((sum: number, c: any) => sum + (c.cartMean * (c.cartPoints || 1)), 0) / totalCartPoints;
                             const diff = avgOurScore - avgCartMean;
                             const diffColor = diff > 0 ? 'text-green-600 dark:text-green-400' : diff < 0 ? 'text-red-600 dark:text-red-400' : 'text-gray-600 dark:text-gray-400';
 
