@@ -21,12 +21,14 @@ export default function SavedResultsPage({ params }: { params: Promise<{ token: 
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [token, setToken] = useState<string>('');
-  const [locale, setLocale] = useState<string>('fr');
+  const [locale, setLocale] = useState<string>('');
+  const [paramsLoaded, setParamsLoaded] = useState(false);
 
   useEffect(() => {
     params.then(({ token: t, locale: l }) => {
       setToken(t);
       setLocale(l);
+      setParamsLoaded(true);
     });
   }, [params]);
 
@@ -69,7 +71,7 @@ export default function SavedResultsPage({ params }: { params: Promise<{ token: 
     return t('scoreLabels.limited');
   };
 
-  if (loading) {
+  if (!paramsLoaded || loading) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-gradient-to-b from-blue-50 to-white dark:from-gray-900 dark:to-gray-800">
         <div className="text-center">
