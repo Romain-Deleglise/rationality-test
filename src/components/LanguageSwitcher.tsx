@@ -10,6 +10,7 @@ export default function LanguageSwitcher() {
   const router = useRouter();
   const [mounted, setMounted] = useState(false);
 
+  // Avoid hydration mismatch
   useEffect(() => {
     setMounted(true);
   }, []);
@@ -23,14 +24,15 @@ export default function LanguageSwitcher() {
     router.push(newPath);
   };
 
+  // Render placeholder during SSR to avoid hydration mismatch
   if (!mounted) {
     return (
-      <div className="flex items-center gap-2 bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 p-1">
-        <Globe className="w-4 h-4 text-gray-500 dark:text-gray-400 ml-2" />
-        <button className="px-3 py-1.5 rounded text-sm font-medium text-gray-600 dark:text-gray-400">
+      <div className="flex items-center gap-2 bg-white rounded-lg shadow-sm border border-gray-200 p-1">
+        <Globe className="w-4 h-4 text-gray-500 ml-2" />
+        <button className="px-3 py-1.5 rounded text-sm font-medium text-gray-600">
           FR
         </button>
-        <button className="px-3 py-1.5 rounded text-sm font-medium text-gray-600 dark:text-gray-400">
+        <button className="px-3 py-1.5 rounded text-sm font-medium text-gray-600">
           EN
         </button>
       </div>
