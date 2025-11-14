@@ -175,8 +175,9 @@ export default function ResultatsPage() {
         // On continue même si la sauvegarde échoue
       } finally {
         // IMPORTANT: Toujours setter le token, même si la sauvegarde échoue
-        console.log('💾 Setting resultToken:', token);
+        console.log('💾 [FINALLY] Setting resultToken:', token);
         setResultToken(token);
+        console.log('✅ [FINALLY] resultToken state updated');
         setSavingToDb(false);
       }
     };
@@ -1725,10 +1726,11 @@ export default function ResultatsPage() {
                       {/* Histogram bars */}
                       <div className="relative h-48 flex items-end justify-center gap-0.5 bg-red-100 border-2 border-black">
                         {bins.map((bin, idx) => {
-                          const normalizedHeight = (bin.height / maxHeight) * 100;
+                          // Calculate height in pixels instead of percentage (h-48 = 192px)
+                          const heightInPixels = (bin.height / maxHeight) * 192;
                           const isUserBin = userScore >= bin.start && userScore < bin.end;
 
-                          console.log(`📊 Bin ${idx}: normalizedHeight=${normalizedHeight}%, isUserBin=${isUserBin}`);
+                          console.log(`📊 Bin ${idx}: heightInPixels=${heightInPixels.toFixed(2)}px, isUserBin=${isUserBin}`);
 
                           return (
                             <div key={idx} className="flex-1 flex flex-col items-center justify-end border border-gray-400">
@@ -1738,7 +1740,7 @@ export default function ResultatsPage() {
                                     ? 'bg-purple-500 dark:bg-purple-400'
                                     : 'bg-blue-300 dark:bg-blue-600'
                                 }`}
-                                style={{ height: `${normalizedHeight}%`, minHeight: '2px' }}
+                                style={{ height: `${heightInPixels}px`, minHeight: '2px' }}
                               />
                             </div>
                           );
