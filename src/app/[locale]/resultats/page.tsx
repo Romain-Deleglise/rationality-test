@@ -1702,10 +1702,10 @@ export default function ResultatsPage() {
                         </p>
                       </div>
 
-                      {/* Histogram bars */}
-                      <div className="relative h-48 flex items-end justify-center gap-1 bg-gray-50 dark:bg-gray-800/50 rounded-lg p-4 border border-gray-200 dark:border-gray-700">
+                      {/* Histogram bars with user position marker */}
+                      <div className="relative h-56 flex items-end justify-center gap-1 bg-gray-50 dark:bg-gray-800/50 rounded-lg p-4 border border-gray-200 dark:border-gray-700">
                         {bins.map((bin, idx) => {
-                          // Calculate height in pixels (h-48 = 192px, minus padding)
+                          // Calculate height in pixels (h-56 = 224px, minus padding for marker space)
                           const heightInPixels = (bin.height / maxHeight) * 160;
                           const isUserBin = userScore >= bin.start && userScore < bin.end;
                           const isHovered = hoveredBin === idx;
@@ -1717,13 +1717,25 @@ export default function ResultatsPage() {
                               onMouseEnter={() => setHoveredBin(idx)}
                               onMouseLeave={() => setHoveredBin(null)}
                             >
+                              {/* User position marker - arrow above the bar */}
+                              {isUserBin && (
+                                <div className="absolute -top-8 left-1/2 -translate-x-1/2 flex flex-col items-center animate-bounce">
+                                  <div className="text-purple-600 dark:text-purple-400 font-bold text-xs whitespace-nowrap">
+                                    {locale === 'fr' ? 'VOUS' : 'YOU'}
+                                  </div>
+                                  <div className="text-purple-600 dark:text-purple-400 text-2xl leading-none">
+                                    ↓
+                                  </div>
+                                </div>
+                              )}
+
                               {/* Tooltip */}
                               {isHovered && (
                                 <div className="absolute bottom-full mb-2 px-2 py-1 bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900 text-xs rounded shadow-lg whitespace-nowrap z-10">
                                   {bin.start.toFixed(0)}% - {bin.end.toFixed(0)}%
                                   {isUserBin && (
                                     <div className="font-semibold text-purple-300 dark:text-purple-600">
-                                      {locale === 'fr' ? '← Vous' : '← You'}
+                                      {locale === 'fr' ? '← Vous êtes ici' : '← You are here'}
                                     </div>
                                   )}
                                 </div>
@@ -1733,7 +1745,7 @@ export default function ResultatsPage() {
                               <div
                                 className={`w-full rounded-t transition-all duration-200 ${
                                   isUserBin
-                                    ? 'bg-purple-500 dark:bg-purple-400 shadow-lg'
+                                    ? 'bg-purple-600 dark:bg-purple-500 shadow-xl ring-2 ring-purple-400 dark:ring-purple-300'
                                     : 'bg-blue-400 dark:bg-blue-500 hover:bg-blue-500 dark:hover:bg-blue-400'
                                 } ${isHovered ? 'opacity-90 scale-105' : 'opacity-80'}`}
                                 style={{ height: `${heightInPixels}px`, minHeight: '4px' }}
@@ -1749,6 +1761,75 @@ export default function ResultatsPage() {
                         <span className="font-semibold">{mean.toFixed(1)}%</span>
                         <span>{maxScore.toFixed(0)}%</span>
                       </div>
+
+                      {/* Position statistics - Proportions */}
+                      {(() => {
+                        // Calculer le percentile en utilisant la CDF de la distribution normale
+                        const z = (userScore - mean) / sd;
+                        // Fonction erf approximation (erreur function)
+                        const erf = (x: number) => {
+                          const sign = x >= 0 ? 1 : -1;
+                          x = Math.abs(x);
+                          const a1 = 0.254829592;
+                          const a2 = -0.284496736;
+                          const a3 = 1.421413741;
+                          const a4 = -1.453152027;
+                          const a5 = 1.061405429;
+                          const p = 0.3275911;
+                          const t = 1.0 / (1.0 + p * x);
+                          const y = 1.0 - ((((a5 * t + a4) * t + a3) * t + a2) * t + a1) * t * Math.exp(-x * x);
+                          return sign * y;
+                        };
+
+                        // CDF = 0.5 * (1 + erf(z / sqrt(2)))
+                        const percentile = 0.5 * (1 + erf(z / Math.sqrt(2)));
+                        const percentilePercent = percentile * 100;
+                        const below = percentilePercent;
+                        const above = 100 - percentilePercent;
+
+                        return (
+                          <div className="bg-gradient-to-r from-purple-50 to-purple-100 dark:from-purple-900/20 dark:to-purple-800/20 rounded-lg p-4 border-2 border-purple-300 dark:border-purple-600">
+                            <h4 className="font-bold text-purple-900 dark:text-purple-100 mb-3 text-sm">
+                              {locale === 'fr' ? '📊 Votre Position Relative' : '📊 Your Relative Position'}
+                            </h4>
+                            <div className="grid grid-cols-3 gap-3 text-xs">
+                              <div className="text-center">
+                                <div className="text-gray-600 dark:text-gray-400 mb-1">
+                                  {locale === 'fr' ? 'En dessous' : 'Below you'}
+                                </div>
+                                <div className="text-2xl font-bold text-green-600 dark:text-green-400">
+                                  {below.toFixed(0)}%
+                                </div>
+                                <div className="text-xs text-gray-500 dark:text-gray-400 mt-1">
+                                  {locale === 'fr' ? `~${Math.round(below * CART_FULL_FORM_NORMS.sampleSize / 100)} personnes` : `~${Math.round(below * CART_FULL_FORM_NORMS.sampleSize / 100)} people`}
+                                </div>
+                              </div>
+                              <div className="text-center">
+                                <div className="text-gray-600 dark:text-gray-400 mb-1">
+                                  {locale === 'fr' ? 'Percentile' : 'Percentile'}
+                                </div>
+                                <div className="text-2xl font-bold text-purple-600 dark:text-purple-400">
+                                  {percentilePercent.toFixed(0)}
+                                </div>
+                                <div className="text-xs text-gray-500 dark:text-gray-400 mt-1">
+                                  {locale === 'fr' ? 'Rang relatif' : 'Relative rank'}
+                                </div>
+                              </div>
+                              <div className="text-center">
+                                <div className="text-gray-600 dark:text-gray-400 mb-1">
+                                  {locale === 'fr' ? 'Au dessus' : 'Above you'}
+                                </div>
+                                <div className="text-2xl font-bold text-orange-600 dark:text-orange-400">
+                                  {above.toFixed(0)}%
+                                </div>
+                                <div className="text-xs text-gray-500 dark:text-gray-400 mt-1">
+                                  {locale === 'fr' ? `~${Math.round(above * CART_FULL_FORM_NORMS.sampleSize / 100)} personnes` : `~${Math.round(above * CART_FULL_FORM_NORMS.sampleSize / 100)} people`}
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        );
+                      })()}
 
                       {/* Legend and statistics */}
                       <div className="grid grid-cols-1 md:grid-cols-3 gap-3 text-xs">
