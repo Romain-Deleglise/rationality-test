@@ -1396,7 +1396,7 @@ export default function ResultatsPage() {
 
                     <div className="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/30 dark:to-blue-800/30 rounded-lg p-4 border-2 border-blue-200 dark:border-blue-700">
                       <div className="text-xs text-gray-600 dark:text-gray-400 mb-1">
-                        {locale === 'fr' ? 'Moyenne CART' : 'CART Mean'}
+                        {locale === 'fr' ? 'Moyenne CART (référence)' : 'CART Mean (reference)'}
                       </div>
                       <div className="text-3xl font-bold text-blue-600 dark:text-blue-400 mb-1">
                         {((cartNorms.mean / cartNorms.totalPoints) * 100).toFixed(1)}%
@@ -1406,19 +1406,31 @@ export default function ResultatsPage() {
                       </div>
                     </div>
                   </div>
+                  <p className="text-xs text-gray-500 dark:text-gray-400 mt-3 italic">
+                    {version === 'complète' ? (
+                      locale === 'fr'
+                        ? '* Notre test couvre 17 des 20 modules du CART complet (85%). La moyenne de référence est basée sur le test complet.'
+                        : '* Our test covers 17 out of 20 full CART modules (85%). The reference mean is based on the complete test.'
+                    ) : (
+                      locale === 'fr'
+                        ? '* Notre version courte couvre 6 modules principaux. La comparaison avec les normes CART est indicative car notre test est plus court.'
+                        : '* Our short version covers 6 main modules. The comparison with CART norms is indicative as our test is shorter.'
+                    )}
+                  </p>
                 </div>
 
-                {/* Distribution Histogram */}
-                <div>
-                  <h4 className="font-bold text-gray-900 dark:text-white mb-3 flex items-center gap-2">
-                    <TrendingUp className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />
-                    {locale === 'fr' ? 'Distribution des scores CART' : 'CART Score Distribution'}
-                  </h4>
-                  <p className="text-sm text-gray-600 dark:text-gray-400 mb-4 text-justify">
-                    {locale === 'fr'
-                      ? `Distribution des scores de l'étude ${cartNorms.study} (N=${cartNorms.sampleSize}) avec votre position marquée.`
-                      : `Score distribution from ${cartNorms.study} study (N=${cartNorms.sampleSize}) with your position marked.`}
-                  </p>
+                {/* Distribution Histogram - Only for complete version */}
+                {version === 'complète' && (
+                  <div>
+                    <h4 className="font-bold text-gray-900 dark:text-white mb-3 flex items-center gap-2">
+                      <TrendingUp className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />
+                      {locale === 'fr' ? 'Distribution des scores CART' : 'CART Score Distribution'}
+                    </h4>
+                    <p className="text-sm text-gray-600 dark:text-gray-400 mb-4 text-justify">
+                      {locale === 'fr'
+                        ? `Distribution des scores de l'étude ${cartNorms.study} (N=${cartNorms.sampleSize}) avec votre position marquée. Notre test couvre 17 des 20 modules du CART complet, la comparaison est donc indicative.`
+                        : `Score distribution from ${cartNorms.study} study (N=${cartNorms.sampleSize}) with your position marked. Our test covers 17 out of 20 CART modules, so this comparison is indicative.`}
+                    </p>
                   <div className="bg-white dark:bg-gray-800 rounded-lg p-6 border border-gray-200 dark:border-gray-700">
                     {(() => {
                       const mean = (cartNorms.mean / cartNorms.totalPoints) * 100;
@@ -1533,7 +1545,8 @@ export default function ResultatsPage() {
                       );
                     })()}
                   </div>
-                </div>
+                  </div>
+                )}
 
                 {/* Module-by-Module Comparison */}
                 {moduleComparisons.length > 0 && (
