@@ -20,7 +20,8 @@ export default function SocialShare({ url, title, description, locale }: SocialS
   };
 
   const shareOnLinkedIn = () => {
-    const linkedInUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}`;
+    // LinkedIn's share API now requires title and summary parameters
+    const linkedInUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}&title=${encodedTitle}&summary=${encodedDescription}`;
     window.open(linkedInUrl, '_blank', 'width=600,height=600');
   };
 
