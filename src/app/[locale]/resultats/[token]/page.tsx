@@ -10,8 +10,6 @@ import Link from 'next/link';
 import { RadarChartComponent, BarChartComponent } from '@/components/ResultsCharts';
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
 import SocialShare from '@/components/SocialShare';
-import { getCartNorms } from '@/data/cart-reference-data';
-import { DistributionHistogram } from '@/components/DistributionHistogram';
 
 export default function SavedResultsPage({ params }: { params: Promise<{ token: string; locale: string }> }) {
   const router = useRouter();
@@ -21,14 +19,12 @@ export default function SavedResultsPage({ params }: { params: Promise<{ token: 
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [token, setToken] = useState<string>('');
-  const [locale, setLocale] = useState<string>('');
-  const [paramsLoaded, setParamsLoaded] = useState(false);
+  const [locale, setLocale] = useState<string>('fr');
 
   useEffect(() => {
     params.then(({ token: t, locale: l }) => {
       setToken(t);
       setLocale(l);
-      setParamsLoaded(true);
     });
   }, [params]);
 
@@ -71,7 +67,7 @@ export default function SavedResultsPage({ params }: { params: Promise<{ token: 
     return t('scoreLabels.limited');
   };
 
-  if (!paramsLoaded || loading) {
+  if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-gradient-to-b from-blue-50 to-white dark:from-gray-900 dark:to-gray-800">
         <div className="text-center">
@@ -160,7 +156,7 @@ export default function SavedResultsPage({ params }: { params: Promise<{ token: 
               <CardTitle>{t('radarChart')}</CardTitle>
             </CardHeader>
             <CardContent>
-              <RadarChartComponent moduleScores={moduleScores} locale={locale} />
+              <RadarChartComponent moduleScores={moduleScores} />
             </CardContent>
           </Card>
 
@@ -169,19 +165,10 @@ export default function SavedResultsPage({ params }: { params: Promise<{ token: 
               <CardTitle>{t('barChart')}</CardTitle>
             </CardHeader>
             <CardContent>
-              <BarChartComponent moduleScores={moduleScores} locale={locale} />
+              <BarChartComponent moduleScores={moduleScores} />
             </CardContent>
           </Card>
         </div>
-
-        {/* Distribution Histogram */}
-        {result.test_version === 'complète' && (
-          <DistributionHistogram
-            cartNorms={getCartNorms(result.test_version, result.total_points, result.total_possible)}
-            userScore={result.percentage}
-            locale={locale}
-          />
-        )}
 
         {/* Test Origin Section */}
         <div className="bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-gray-800 dark:to-gray-700 rounded-xl shadow-lg p-8 mb-8 border-t-4 border-indigo-600">
