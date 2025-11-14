@@ -39,8 +39,8 @@ Créer un test de rationalité scientifiquement validé, accessible gratuitement
 - 6 modules essentiels
 - Aperçu rapide des principaux biais cognitifs
 
-#### 🎯 **Version Complète** : ~94 points, 60 minutes
-- 12 modules approfondis
+#### 🎯 **Version Complète** : ~119 points, 90 minutes
+- 17 modules approfondis
 - Évaluation exhaustive sur toutes les dimensions de la rationalité
 - **RECOMMANDÉ** pour une analyse détaillée
 
@@ -295,7 +295,7 @@ rationality-test/
 │   ├── data/
 │   │   ├── test-court.json               # Version courte FR (25 points)
 │   │   ├── test-court-en.json            # Version courte EN
-│   │   ├── test-complet.json             # Version complète FR (94 points)
+│   │   ├── test-complet.json             # Version complète FR (119 points, 17 modules)
 │   │   └── test-complet-en.json          # Version complète EN
 │   │
 │   ├── store/
