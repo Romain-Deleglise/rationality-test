@@ -96,8 +96,8 @@ const AccordionItem = ({ title, children, defaultOpen = false, scorePercentage }
 export default function ResultatsPage() {
   const router = useRouter();
   const params = useParams();
-  const locale = params.locale as string;
   const t = useTranslations('results');
+  const [locale, setLocale] = useState('');
   const tCommon = useTranslations('common');
   const { session, modules, resetTest } = useTestStore();
   const [testScore, setTestScore] = useState<TestScore | null>(null);
@@ -117,12 +117,16 @@ export default function ResultatsPage() {
   const version = session?.version || (modules.length > 6 ? 'complète' : 'courte');
 
   useEffect(() => {
+    // Initialize locale from params to avoid hydration mismatch
+    const currentLocale = params.locale as string;
+    setLocale(currentLocale);
+
     if (!session?.completedAt || !modules.length) {
-      router.push(`/${locale}/test`);
+      router.push(`/${currentLocale}/test`);
       return;
     }
 
-    const scores = scoreTest(modules, session.answers, locale, session.randomizedValues);
+    const scores = scoreTest(modules, session.answers, currentLocale, session.randomizedValues);
     const percentile = calculatePercentile(scores.percentage);
     setTestScore({ ...scores, percentile });
 
@@ -163,7 +167,7 @@ export default function ResultatsPage() {
     };
 
     saveToSupabase();
-  }, [session, modules, router, version]);
+  }, [session, modules, router, version, params]);
 
   const handleSendEmail = async () => {
     if (!email || !testScore) return;
