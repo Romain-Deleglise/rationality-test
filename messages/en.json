@@ -8,7 +8,7 @@
   "home": {
     "title": "Rationality Test",
     "subtitle": "Assess your critical thinking and identify your cognitive biases",
-    "duration": "20-60 minutes",
+    "duration": "20-90 minutes",
     "detailedFeedback": "Detailed feedback",
     "scientificallyValidated": "Scientifically validated",
     "features": {
@@ -423,7 +423,7 @@
       "item2": "Original variants inspired by published research",
       "item3": "Validated question types from multiple studies",
       "differences": "Key Differences",
-      "difference1": "Shorter format (20-60 min vs. 3+ hours for full CART)",
+      "difference1": "Shorter format (20-90 min vs. 3+ hours for full CART)",
       "difference2": "Simplified scoring (percentage vs. complex normalization)",
       "difference3": "Educational focus (learning tool vs. research instrument)",
       "difference4": "Free and open-source (vs. commercial licensing)"

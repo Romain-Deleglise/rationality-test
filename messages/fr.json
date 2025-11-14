@@ -8,7 +8,7 @@
   "home": {
     "title": "Test de Rationalité",
     "subtitle": "Évaluez votre pensée critique et identifiez vos biais cognitifs",
-    "duration": "20-60 minutes",
+    "duration": "20-90 minutes",
     "detailedFeedback": "Feedback détaillé",
     "scientificallyValidated": "Scientifiquement validé",
     "features": {
@@ -423,7 +423,7 @@
       "item2": "Variantes originales inspirées de recherches publiées",
       "item3": "Types de questions validés provenant de plusieurs études",
       "differences": "Différences clés",
-      "difference1": "Format plus court (20-60 min vs. 3+ heures pour le CART complet)",
+      "difference1": "Format plus court (20-90 min vs. 3+ heures pour le CART complet)",
       "difference2": "Notation simplifiée (pourcentage vs. normalisation complexe)",
       "difference3": "Focus éducatif (outil d'apprentissage vs. instrument de recherche)",
       "difference4": "Gratuit et open-source (vs. licence commerciale)"
