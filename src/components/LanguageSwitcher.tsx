@@ -1,11 +1,12 @@
 'use client';
 
-import { useParams, usePathname, useRouter } from 'next/navigation';
+import { useParams, usePathname, useRouter, useSearchParams } from 'next/navigation';
 import { Globe } from 'lucide-react';
 
 export default function LanguageSwitcher() {
   const params = useParams();
   const pathname = usePathname();
+  const searchParams = useSearchParams();
   const router = useRouter();
 
   const currentLocale = (params?.locale as string) || 'en';
@@ -15,7 +16,12 @@ export default function LanguageSwitcher() {
 
     // Replace the locale in the current pathname
     const newPath = pathname.replace(`/${currentLocale}`, `/${newLocale}`);
-    router.push(newPath);
+
+    // Preserve query parameters
+    const queryString = searchParams.toString();
+    const fullPath = queryString ? `${newPath}?${queryString}` : newPath;
+
+    router.push(fullPath);
   };
 
   return (
