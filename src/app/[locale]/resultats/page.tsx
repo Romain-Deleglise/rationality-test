@@ -112,6 +112,7 @@ export default function ResultatsPage() {
   const [savedToDb, setSavedToDb] = useState(false);
   const [linkCopied, setLinkCopied] = useState(false);
   const [shareUrl, setShareUrl] = useState<string>('');
+  const [hoveredBin, setHoveredBin] = useState<number | null>(null);
 
   // Déduire la version si elle n'est pas définie (pour les anciennes sessions)
   const version = session?.version || (modules.length > 6 ? 'complète' : 'courte');
@@ -1685,7 +1686,6 @@ export default function ResultatsPage() {
                   }
 
                   const maxHeight = Math.max(...bins.map(b => b.height));
-                  const [hoveredBin, setHoveredBin] = React.useState<number | null>(null);
 
                   return (
                     <div className="space-y-4">
