@@ -227,20 +227,29 @@ export default function SavedResultsPage({ params }: { params: Promise<{ token: 
                 <div className="bg-white dark:bg-gray-800 rounded-lg p-6 border border-gray-200 dark:border-gray-700">
                   <div className="space-y-4">
                     {/* Histogram bars */}
-                    <div className="relative h-48 flex items-end justify-center gap-0.5">
+                    <div className="relative h-56 flex items-end justify-center gap-1 bg-gray-50 dark:bg-gray-800/50 rounded-lg p-4 border border-gray-200 dark:border-gray-700">
                       {bins.map((bin: any, idx: number) => {
-                        const normalizedHeight = (bin.height / maxHeight) * 100;
+                        // Calculate height in pixels (h-56 = 224px, minus padding)
+                        const heightInPixels = (bin.height / maxHeight) * 160;
                         const isUserBin = userScore >= bin.start && userScore < bin.end;
 
                         return (
-                          <div key={idx} className="flex-1 flex flex-col items-center justify-end">
+                          <div key={idx} className="flex-1 flex flex-col items-center justify-end relative">
+                            {/* User position marker */}
+                            {isUserBin && (
+                              <div className="absolute -top-6 left-1/2 -translate-x-1/2">
+                                <div className="bg-purple-600 dark:bg-purple-500 text-white text-xs font-bold px-2 py-0.5 rounded shadow-md whitespace-nowrap">
+                                  {locale === 'fr' ? 'VOUS' : 'YOU'}
+                                </div>
+                              </div>
+                            )}
                             <div
-                              className={`w-full rounded-t transition-colors ${
+                              className={`w-full rounded-t transition-all duration-200 ${
                                 isUserBin
-                                  ? 'bg-purple-500 dark:bg-purple-400'
-                                  : 'bg-blue-300 dark:bg-blue-600'
+                                  ? 'bg-purple-600 dark:bg-purple-500 shadow-xl ring-2 ring-purple-400 dark:ring-purple-300'
+                                  : 'bg-blue-400 dark:bg-blue-500'
                               }`}
-                              style={{ height: `${normalizedHeight}%` }}
+                              style={{ height: `${heightInPixels}px`, minHeight: '4px' }}
                             />
                           </div>
                         );

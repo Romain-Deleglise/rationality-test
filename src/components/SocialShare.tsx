@@ -1,6 +1,7 @@
 'use client';
 
-import { Twitter, Linkedin, Facebook, MessageCircle, Share2 } from 'lucide-react';
+import { Twitter, Linkedin, Facebook, MessageCircle, Share2, Link as LinkIcon, Check } from 'lucide-react';
+import { useState } from 'react';
 
 interface SocialShareProps {
   url: string;
@@ -10,9 +11,20 @@ interface SocialShareProps {
 }
 
 export default function SocialShare({ url, title, description, locale }: SocialShareProps) {
+  const [copied, setCopied] = useState(false);
   const encodedUrl = encodeURIComponent(url);
   const encodedTitle = encodeURIComponent(title);
   const encodedDescription = encodeURIComponent(description);
+
+  const copyToClipboard = async () => {
+    try {
+      await navigator.clipboard.writeText(url);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch (err) {
+      console.error('Failed to copy:', err);
+    }
+  };
 
   const shareOnTwitter = () => {
     const twitterUrl = `https://twitter.com/intent/tweet?text=${encodedTitle}%0A%0A${encodedUrl}`;
@@ -43,6 +55,20 @@ export default function SocialShare({ url, title, description, locale }: SocialS
 
   return (
     <div className="flex flex-wrap gap-2 justify-center">
+      {/* Copy Link Button */}
+      <button
+        onClick={copyToClipboard}
+        className={`flex items-center gap-2 px-3 py-2 font-medium rounded-lg transition-all text-sm ${
+          copied
+            ? 'bg-green-600 hover:bg-green-700 text-white'
+            : 'bg-gray-700 hover:bg-gray-800 dark:bg-gray-600 dark:hover:bg-gray-700 text-white'
+        }`}
+        aria-label={locale === 'fr' ? 'Copier le lien' : 'Copy link'}
+      >
+        {copied ? <Check className="w-4 h-4" /> : <LinkIcon className="w-4 h-4" />}
+        {copied ? (locale === 'fr' ? 'Copié !' : 'Copied!') : (locale === 'fr' ? 'Copier' : 'Copy link')}
+      </button>
+
       <button
         onClick={shareOnTwitter}
         className="flex items-center gap-2 px-3 py-2 bg-[#1DA1F2] hover:bg-[#1a8cd8] text-white font-medium rounded-lg transition-colors text-sm"
