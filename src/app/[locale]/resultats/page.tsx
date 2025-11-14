@@ -111,9 +111,17 @@ export default function ResultatsPage() {
   const [savingToDb, setSavingToDb] = useState(false);
   const [savedToDb, setSavedToDb] = useState(false);
   const [linkCopied, setLinkCopied] = useState(false);
+  const [shareUrl, setShareUrl] = useState<string>('');
 
   // Déduire la version si elle n'est pas définie (pour les anciennes sessions)
   const version = session?.version || (modules.length > 6 ? 'complète' : 'courte');
+
+  // Construire l'URL de partage côté client uniquement
+  useEffect(() => {
+    if (resultToken && typeof window !== 'undefined') {
+      setShareUrl(`${window.location.origin}/${locale}/resultats/${resultToken}`);
+    }
+  }, [resultToken, locale]);
 
   useEffect(() => {
     if (!session?.completedAt || !modules.length) {
@@ -1258,9 +1266,11 @@ export default function ResultatsPage() {
               <div className="flex justify-center">
                 <button
                   onClick={() => {
-                    navigator.clipboard.writeText(`${window.location.origin}/${locale}/resultats/${resultToken}`);
-                    setLinkCopied(true);
-                    setTimeout(() => setLinkCopied(false), 2000);
+                    if (shareUrl) {
+                      navigator.clipboard.writeText(shareUrl);
+                      setLinkCopied(true);
+                      setTimeout(() => setLinkCopied(false), 2000);
+                    }
                   }}
                   className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold flex items-center gap-2 transition-colors shadow-md"
                 >
@@ -2160,11 +2170,11 @@ export default function ResultatsPage() {
           </div>
 
           {/* Social Share */}
-          {resultToken && (
+          {resultToken && shareUrl && (
             <div className="flex flex-col items-center gap-3 print:hidden">
               <h3 className="text-lg font-semibold text-gray-900 dark:text-white">{locale === 'fr' ? 'Partager vos résultats' : 'Share your results'}</h3>
               <SocialShare
-                url={`${typeof window !== 'undefined' ? window.location.origin : ''}/${locale}/resultats/${resultToken}`}
+                url={shareUrl}
                 title={locale === 'fr'
                   ? `J'ai obtenu ${testScore?.percentage.toFixed(1)}% au test de rationalité CART !`
                   : `I scored ${testScore?.percentage.toFixed(1)}% on the CART rationality test!`}
