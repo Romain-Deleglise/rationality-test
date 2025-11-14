@@ -336,3 +336,18 @@ export function getPercentileInterpretation(
     return 'There is significant room for improvement.';
   }
 }
+
+/**
+ * Get CART norms based on test version
+ * @param version Test version ('complète' or 'courte')
+ * @param totalEarned Optional - total points earned by user
+ * @param totalPossible Optional - total possible points in test
+ * @returns Appropriate CART norms
+ */
+export function getCartNorms(
+  version: 'complète' | 'courte' | string,
+  totalEarned?: number,
+  totalPossible?: number
+): CARTNorms {
+  return version === 'complète' ? CART_FULL_FORM_NORMS : CART_SHORT_FORM_NORMS;
+}
