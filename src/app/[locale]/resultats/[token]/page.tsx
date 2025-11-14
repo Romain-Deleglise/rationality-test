@@ -393,11 +393,11 @@ export default function SavedResultsPage({ params }: { params: Promise<{ token: 
           <SocialShare
             url={`${typeof window !== 'undefined' ? window.location.href : ''}`}
             title={locale === 'fr'
-              ? `Résultats du test de rationalité - ${result?.global_percentage?.toFixed(1)}%`
-              : `Rationality test results - ${result?.global_percentage?.toFixed(1)}%`}
+              ? `Résultats du test de rationalité CART - ${result?.global_percentage?.toFixed(1)}%`
+              : `CART rationality test results - ${result?.global_percentage?.toFixed(1)}%`}
             description={locale === 'fr'
-              ? 'Découvrez les résultats de ce test de rationalité basé sur CART'
-              : 'Check out these rationality test results based on CART'}
+              ? 'Découvrez ces résultats détaillés au test CART de rationalité'
+              : 'Discover these detailed results on the CART rationality test'}
             locale={locale}
           />
         </div>

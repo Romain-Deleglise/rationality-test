@@ -1612,8 +1612,8 @@ export default function ResultatsPage() {
                               </tr>
                             );
                           })}
-                          {/* Total/Average row - Weighted by CART points */}
-                          {(() => {
+                          {/* Total/Average row - Weighted by CART points - Only for complete version */}
+                          {version === 'complète' && (() => {
                             // Moyenne pondérée par les points CART de chaque module
                             const totalCartPoints = moduleComparisons.reduce((sum: number, c: any) => sum + (c.cartPoints || 1), 0);
                             const avgOurScore = moduleComparisons.reduce((sum: number, c: any) => sum + (c.ourScore * (c.cartPoints || 1)), 0) / totalCartPoints;
@@ -2166,11 +2166,11 @@ export default function ResultatsPage() {
               <SocialShare
                 url={`${typeof window !== 'undefined' ? window.location.origin : ''}/${locale}/resultats/${resultToken}`}
                 title={locale === 'fr'
-                  ? `J'ai obtenu ${testScore?.percentage.toFixed(1)}% au test de rationalité !`
-                  : `I scored ${testScore?.percentage.toFixed(1)}% on the rationality test!`}
+                  ? `J'ai obtenu ${testScore?.percentage.toFixed(1)}% au test de rationalité CART !`
+                  : `I scored ${testScore?.percentage.toFixed(1)}% on the CART rationality test!`}
                 description={locale === 'fr'
-                  ? 'Testez votre pensée critique et identifiez vos biais cognitifs'
-                  : 'Test your critical thinking and identify your cognitive biases'}
+                  ? 'Découvrez mes résultats détaillés au test CART de rationalité'
+                  : 'Discover my detailed results on the CART rationality test'}
                 locale={locale}
               />
             </div>
