@@ -11,6 +11,40 @@ import { RadarChartComponent, BarChartComponent } from '@/components/ResultsChar
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
 import SocialShare from '@/components/SocialShare';
 import { getCartNorms } from '@/data/cart-reference-data';
+import React from 'react';
+
+// Composant Accordéon
+const AccordionItem = ({ title, children, defaultOpen = false }: {
+  title: string;
+  children: React.ReactNode;
+  defaultOpen?: boolean;
+}) => {
+  const [isOpen, setIsOpen] = useState(defaultOpen);
+
+  return (
+    <div className="border-2 border-gray-200 dark:border-gray-700 rounded-xl mb-4 overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className="w-full px-6 py-4 bg-gradient-to-r from-gray-50 to-white dark:from-gray-800 dark:to-gray-800 hover:from-gray-100 hover:to-gray-50 dark:hover:from-gray-700 dark:hover:to-gray-700 transition-colors"
+      >
+        <div className="flex items-center gap-4">
+          <span className="font-semibold text-left text-gray-900 dark:text-white flex-1">
+            {title}
+          </span>
+          <div className="flex-shrink-0">
+            {isOpen ?
+              <ChevronUp className="w-5 h-5 text-blue-600" /> :
+              <ChevronDown className="w-5 h-5 text-gray-400" />
+            }
+          </div>
+        </div>
+      </button>
+      <div className={`${isOpen ? 'block' : 'hidden'} px-6 py-5 bg-white dark:bg-gray-900 text-gray-700 dark:text-gray-300 leading-relaxed border-t-2 border-gray-100 dark:border-gray-700`}>
+        {children}
+      </div>
+    </div>
+  );
+};
 
 export default function SavedResultsPage({ params }: { params: Promise<{ token: string; locale: string }> }) {
   const router = useRouter();
@@ -405,6 +439,152 @@ export default function SavedResultsPage({ params }: { params: Promise<{ token: 
               })}
           </div>
         </div>
+
+        {/* Sources scientifiques */}
+        <AccordionItem title={t('scientificSources.title')}>
+          <div className="space-y-4 text-sm">
+            <div>
+              <h4 className="font-bold text-gray-900 dark:text-white mb-2">{t('scientificSources.mainFoundations')}</h4>
+              <ul className="space-y-2">
+                <li>
+                  <strong>Stanovich, K. E., West, R. F., & Toplak, M. E. (2016).</strong><br />
+                  <em>{t('scientificSources.stanovich2016')}</em>
+                </li>
+                <li>
+                  <strong>Kahneman, D., & Tversky, A. (1974).</strong><br />
+                  <em>{t('scientificSources.kahneman1974')}</em>
+                </li>
+                <li>
+                  <strong>Frederick, S. (2005).</strong><br />
+                  <em>{t('scientificSources.frederick2005')}</em>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 className="font-bold text-gray-900 dark:text-white mb-2">{t('scientificSources.onImprovement')}</h4>
+              <ul className="space-y-2">
+                <li>
+                  <strong>Morewedge et al. (2015).</strong><br />
+                  <em>{t('scientificSources.morewedge2015')}</em><br />
+                  <span className="text-gray-600 dark:text-gray-400">{t('scientificSources.morewedge2015Desc')}</span>
+                </li>
+                <li>
+                  <strong>Kahneman, D. (2011).</strong><br />
+                  <em>{t('scientificSources.kahneman2011')}</em><br />
+                  <span className="text-gray-600 dark:text-gray-400 italic">{t('scientificSources.kahneman2011Quote')}</span>
+                </li>
+              </ul>
+            </div>
+
+            <div className="bg-yellow-50 dark:bg-yellow-900/20 p-3 rounded">
+              <h4 className="font-bold text-gray-900 dark:text-white mb-2">{t('scientificSources.testLimitations')}</h4>
+              <ul className="list-disc pl-6 space-y-1 text-gray-700 dark:text-gray-300">
+                <li>{t('scientificSources.limitation1')}</li>
+                <li>{t('scientificSources.limitation2')}</li>
+                <li>{t('scientificSources.limitation3')}</li>
+                <li>{t('scientificSources.limitation4')}</li>
+              </ul>
+            </div>
+          </div>
+        </AccordionItem>
+
+        {/* State of Research */}
+        <AccordionItem title={t('stateOfResearch.title')} defaultOpen={false}>
+          <div className="space-y-6">
+            <p className="text-gray-700 dark:text-gray-300 italic text-justify">
+              {t('stateOfResearch.intro')}
+            </p>
+
+            {/* What We Know */}
+            <div>
+              <h4 className="font-bold text-gray-900 dark:text-white mb-3 flex items-center gap-2">
+                <span className="text-green-600 dark:text-green-400">✅</span>
+                {t('stateOfResearch.whatWeKnow')}
+              </h4>
+              <div className="space-y-3 pl-4">
+                <div className="bg-green-50 dark:bg-green-900/20 p-3 rounded">
+                  <strong className="text-gray-900 dark:text-white">{t('stateOfResearch.finding1')}</strong>
+                  <p className="text-gray-700 dark:text-gray-300 text-sm mt-1">{t('stateOfResearch.finding1Text')}</p>
+                </div>
+                <div className="bg-green-50 dark:bg-green-900/20 p-3 rounded">
+                  <strong className="text-gray-900 dark:text-white">{t('stateOfResearch.finding2')}</strong>
+                  <p className="text-gray-700 dark:text-gray-300 text-sm mt-1">{t('stateOfResearch.finding2Text')}</p>
+                </div>
+                <div className="bg-green-50 dark:bg-green-900/20 p-3 rounded">
+                  <strong className="text-gray-900 dark:text-white">{t('stateOfResearch.finding3')}</strong>
+                  <p className="text-gray-700 dark:text-gray-300 text-sm mt-1">{t('stateOfResearch.finding3Text')}</p>
+                </div>
+              </div>
+            </div>
+
+            {/* What We Don't Know */}
+            <div>
+              <h4 className="font-bold text-gray-900 dark:text-white mb-3 flex items-center gap-2">
+                <span className="text-yellow-600 dark:text-yellow-400">❓</span>
+                {t('stateOfResearch.whatWeDontKnow')}
+              </h4>
+              <div className="space-y-3 pl-4">
+                <div className="bg-yellow-50 dark:bg-yellow-900/20 p-3 rounded">
+                  <strong className="text-gray-900 dark:text-white">{t('stateOfResearch.question1')}</strong>
+                  <p className="text-gray-700 dark:text-gray-300 text-sm mt-1">{t('stateOfResearch.question1Text')}</p>
+                </div>
+                <div className="bg-yellow-50 dark:bg-yellow-900/20 p-3 rounded">
+                  <strong className="text-gray-900 dark:text-white">{t('stateOfResearch.question2')}</strong>
+                  <p className="text-gray-700 dark:text-gray-300 text-sm mt-1">{t('stateOfResearch.question2Text')}</p>
+                </div>
+                <div className="bg-yellow-50 dark:bg-yellow-900/20 p-3 rounded">
+                  <strong className="text-gray-900 dark:text-white">{t('stateOfResearch.question3')}</strong>
+                  <p className="text-gray-700 dark:text-gray-300 text-sm mt-1">{t('stateOfResearch.question3Text')}</p>
+                </div>
+                <div className="bg-yellow-50 dark:bg-yellow-900/20 p-3 rounded">
+                  <strong className="text-gray-900 dark:text-white">{t('stateOfResearch.question4')}</strong>
+                  <p className="text-gray-700 dark:text-gray-300 text-sm mt-1">{t('stateOfResearch.question4Text')}</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Active Controversies */}
+            <div>
+              <h4 className="font-bold text-gray-900 dark:text-white mb-3 flex items-center gap-2">
+                <span className="text-red-600 dark:text-red-400">⚡</span>
+                {t('stateOfResearch.activeControversies')}
+              </h4>
+              <div className="space-y-3 pl-4">
+                <div className="bg-red-50 dark:bg-red-900/20 p-3 rounded">
+                  <strong className="text-gray-900 dark:text-white">{t('stateOfResearch.controversy1')}</strong>
+                  <p className="text-gray-700 dark:text-gray-300 text-sm mt-1">{t('stateOfResearch.controversy1Text')}</p>
+                </div>
+                <div className="bg-red-50 dark:bg-red-900/20 p-3 rounded">
+                  <strong className="text-gray-900 dark:text-white">{t('stateOfResearch.controversy2')}</strong>
+                  <p className="text-gray-700 dark:text-gray-300 text-sm mt-1">{t('stateOfResearch.controversy2Text')}</p>
+                </div>
+                <div className="bg-red-50 dark:bg-red-900/20 p-3 rounded">
+                  <strong className="text-gray-900 dark:text-white">{t('stateOfResearch.controversy3')}</strong>
+                  <p className="text-gray-700 dark:text-gray-300 text-sm mt-1">{t('stateOfResearch.controversy3Text')}</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Bottom Line */}
+            <div className="bg-blue-50 dark:bg-blue-900/20 border-l-4 border-blue-500 dark:border-blue-600 p-4 rounded">
+              <h4 className="font-bold text-gray-900 dark:text-white mb-3">{t('stateOfResearch.honestBottomLine')}</h4>
+              <ul className="space-y-2 text-gray-700 dark:text-gray-300 text-sm">
+                <li>{t('stateOfResearch.bottomLine1')}</li>
+                <li>{t('stateOfResearch.bottomLine2')}</li>
+                <li>{t('stateOfResearch.bottomLine3')}</li>
+                <li>{t('stateOfResearch.bottomLine4')}</li>
+                <li>{t('stateOfResearch.bottomLine5')}</li>
+              </ul>
+            </div>
+
+            {/* Recent Work */}
+            <div className="bg-gray-50 dark:bg-gray-700 p-3 rounded">
+              <strong className="text-gray-900 dark:text-white">{t('stateOfResearch.recentWork')}</strong>
+              <p className="text-gray-700 dark:text-gray-300 text-sm mt-1">{t('stateOfResearch.recentWorkText')}</p>
+            </div>
+          </div>
+        </AccordionItem>
 
         {/* Social Share */}
         {shareUrl && (
