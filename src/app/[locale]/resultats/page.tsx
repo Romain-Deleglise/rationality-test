@@ -1639,20 +1639,44 @@ export default function ResultatsPage() {
         </AccordionItem>
 
         {/* Distribution Histogram - Section indépendante pour version complète */}
-        {version === 'complète' && (() => {
+        {(() => {
+          console.log('📊 Histogramme - version:', version);
+          console.log('📊 Histogramme - version === "complète":', version === 'complète');
+
+          if (version !== 'complète') {
+            console.log('❌ Histogramme non affiché - version n\'est pas "complète"');
+            return null;
+          }
+
           const cartNorms = CART_FULL_FORM_NORMS;
-          if (!cartNorms || cartNorms.sd <= 0) return null;
+          console.log('📊 Histogramme - CART_FULL_FORM_NORMS:', cartNorms);
+
+          if (!cartNorms) {
+            console.log('❌ Histogramme non affiché - cartNorms est null/undefined');
+            return null;
+          }
+
+          if (cartNorms.sd <= 0) {
+            console.log('❌ Histogramme non affiché - sd <= 0:', cartNorms.sd);
+            return null;
+          }
 
           const mean = (cartNorms.mean / cartNorms.totalPoints) * 100;
           const sd = Math.max(1, (cartNorms.sd / cartNorms.totalPoints) * 100);
           const userScore = testScore.percentage;
 
+          console.log('✅ Histogramme - Rendu avec mean:', mean, 'sd:', sd, 'userScore:', userScore);
+
           return (
-            <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8 mb-8">
+            <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8 mb-8 border-4 border-red-500">
               <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
                 <TrendingUp className="w-6 h-6 text-indigo-600 dark:text-indigo-400" />
                 {locale === 'fr' ? 'Distribution des scores CART' : 'CART Score Distribution'}
               </h3>
+              <div className="bg-yellow-200 p-4 mb-4">
+                <p className="text-black font-bold">🔍 DEBUG: Section histogramme visible!</p>
+                <p className="text-black">Mean: {mean.toFixed(2)}% | SD: {sd.toFixed(2)}% | User: {userScore.toFixed(2)}%</p>
+              </div>
               <p className="text-sm text-gray-600 dark:text-gray-400 mb-6 text-justify">
                 {locale === 'fr'
                   ? `Distribution des scores de l'étude ${cartNorms.study} (N=${cartNorms.sampleSize}) avec votre position marquée. Notre test couvre 17 des 20 modules du CART complet, la comparaison est donc indicative.`
