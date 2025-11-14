@@ -141,10 +141,13 @@ export default function ResultatsPage() {
 
     // Sauvegarder automatiquement dans Supabase
     const saveToSupabase = async () => {
+      const token = generateResultToken();
+      console.log('💾 Sauvegarde Supabase - token généré:', token);
+
       try {
         setSavingToDb(true);
-        const token = generateResultToken();
 
+        console.log('💾 Tentative de sauvegarde dans Supabase...');
         await saveTestResult({
           result_token: token,
           test_version: version,
@@ -156,7 +159,7 @@ export default function ResultatsPage() {
           user_agent: typeof navigator !== 'undefined' ? navigator.userAgent : undefined,
         });
 
-        setResultToken(token);
+        console.log('✅ Sauvegarde Supabase réussie!');
         setSavedToDb(true);
 
         // Calculer le vrai percentile basé sur toutes les données
@@ -168,9 +171,12 @@ export default function ResultatsPage() {
         setGlobalStats(stats);
 
       } catch (error) {
-        console.error('Error saving to Supabase:', error);
+        console.error('❌ Error saving to Supabase:', error);
         // On continue même si la sauvegarde échoue
       } finally {
+        // IMPORTANT: Toujours setter le token, même si la sauvegarde échoue
+        console.log('💾 Setting resultToken:', token);
+        setResultToken(token);
         setSavingToDb(false);
       }
     };
@@ -1691,6 +1697,8 @@ export default function ResultatsPage() {
                   const maxScore = Math.min(100, mean + 3 * sd);
                   const binWidth = (maxScore - minScore) / numBins;
 
+                  console.log('📊 Bins - minScore:', minScore, 'maxScore:', maxScore, 'binWidth:', binWidth);
+
                   // Calculate height for each bin using normal distribution formula
                   for (let i = 0; i < numBins; i++) {
                     const binCenter = minScore + (i + 0.5) * binWidth;
@@ -1705,24 +1713,32 @@ export default function ResultatsPage() {
                   }
 
                   const maxHeight = Math.max(...bins.map(b => b.height));
+                  console.log('📊 Bins créés:', bins.length, 'maxHeight:', maxHeight);
+                  console.log('📊 Premier bin:', bins[0]);
+                  console.log('📊 Dernier bin:', bins[bins.length - 1]);
 
                   return (
                     <div className="space-y-4">
+                      <div className="bg-green-200 p-2 text-black">
+                        DEBUG BINS: {bins.length} bins créés, maxHeight={maxHeight.toFixed(6)}
+                      </div>
                       {/* Histogram bars */}
-                      <div className="relative h-48 flex items-end justify-center gap-0.5">
+                      <div className="relative h-48 flex items-end justify-center gap-0.5 bg-red-100 border-2 border-black">
                         {bins.map((bin, idx) => {
                           const normalizedHeight = (bin.height / maxHeight) * 100;
                           const isUserBin = userScore >= bin.start && userScore < bin.end;
 
+                          console.log(`📊 Bin ${idx}: normalizedHeight=${normalizedHeight}%, isUserBin=${isUserBin}`);
+
                           return (
-                            <div key={idx} className="flex-1 flex flex-col items-center justify-end">
+                            <div key={idx} className="flex-1 flex flex-col items-center justify-end border border-gray-400">
                               <div
                                 className={`w-full rounded-t transition-colors ${
                                   isUserBin
                                     ? 'bg-purple-500 dark:bg-purple-400'
                                     : 'bg-blue-300 dark:bg-blue-600'
                                 }`}
-                                style={{ height: `${normalizedHeight}%` }}
+                                style={{ height: `${normalizedHeight}%`, minHeight: '2px' }}
                               />
                             </div>
                           );
