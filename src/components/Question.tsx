@@ -15,28 +15,27 @@ interface QuestionProps {
   defaultValue?: any;
 }
 
-// Helper function to render simple markdown (bold text and line breaks)
+// Helper function to render simple markdown (bold text and paragraphs)
 function renderMarkdown(text: string) {
-  // Split by newlines first
-  const lines = text.split('\n');
+  // Split by double newlines to get paragraphs
+  const paragraphs = text.split('\n\n');
 
-  return lines.map((line, lineIndex) => {
-    // Split each line by bold markers
-    const parts = line.split(/(\*\*.*?\*\*)/g);
+  return paragraphs.map((paragraph, paraIndex) => {
+    // For each paragraph, handle bold text
+    const parts = paragraph.split(/(\*\*.*?\*\*)/g);
     const elements = parts.map((part, partIndex) => {
       if (part.startsWith('**') && part.endsWith('**')) {
-        // Bold text
-        return <strong key={`${lineIndex}-${partIndex}`} className="font-semibold">{part.slice(2, -2)}</strong>;
+        // Bold text - use normal font weight to avoid making it too prominent
+        return <span key={`${paraIndex}-${partIndex}`} className="font-medium">{part.slice(2, -2)}</span>;
       }
       return part;
     });
 
-    // Add line break after each line except the last
+    // Return paragraph with proper spacing
     return (
-      <span key={lineIndex}>
+      <p key={paraIndex} className={paraIndex < paragraphs.length - 1 ? 'mb-3' : ''}>
         {elements}
-        {lineIndex < lines.length - 1 && <br />}
-      </span>
+      </p>
     );
   });
 }
@@ -333,7 +332,7 @@ export default function Question({ question, onAnswer, defaultValue }: QuestionP
       isAnimating ? 'opacity-0 translate-y-4' : 'opacity-100 translate-y-0'
     }`}>
       <CardHeader>
-        <CardTitle className="text-xl leading-relaxed">{renderMarkdown(question.text)}</CardTitle>
+        <CardTitle className="text-lg leading-normal">{renderMarkdown(question.text)}</CardTitle>
       </CardHeader>
 
       <CardContent className="space-y-6">
