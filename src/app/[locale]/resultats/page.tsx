@@ -2166,11 +2166,11 @@ export default function ResultatsPage() {
               <SocialShare
                 url={`${typeof window !== 'undefined' ? window.location.origin : ''}/${locale}/resultats/${resultToken}`}
                 title={locale === 'fr'
-                  ? `J'ai obtenu ${testScore?.percentage.toFixed(1)}% au test de rationalité !`
-                  : `I scored ${testScore?.percentage.toFixed(1)}% on the rationality test!`}
+                  ? `J'ai obtenu ${testScore?.percentage.toFixed(1)}% au test de rationalité CART !`
+                  : `I scored ${testScore?.percentage.toFixed(1)}% on the CART rationality test!`}
                 description={locale === 'fr'
-                  ? 'Testez votre pensée critique et identifiez vos biais cognitifs'
-                  : 'Test your critical thinking and identify your cognitive biases'}
+                  ? 'Découvrez mes résultats détaillés au test CART de rationalité'
+                  : 'Discover my detailed results on the CART rationality test'}
                 locale={locale}
               />
             </div>
