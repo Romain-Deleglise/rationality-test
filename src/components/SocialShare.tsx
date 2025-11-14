@@ -10,9 +10,6 @@ interface SocialShareProps {
 }
 
 export default function SocialShare({ url, title, description, locale }: SocialShareProps) {
-  // Debug: afficher l'URL reçue
-  console.log('🔗 SocialShare reçoit URL:', url);
-
   const encodedUrl = encodeURIComponent(url);
   const encodedTitle = encodeURIComponent(title);
   const encodedDescription = encodeURIComponent(description);
@@ -23,10 +20,7 @@ export default function SocialShare({ url, title, description, locale }: SocialS
   };
 
   const shareOnLinkedIn = () => {
-    // LinkedIn's share API now requires title and summary parameters
     const linkedInUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}&title=${encodedTitle}&summary=${encodedDescription}`;
-    console.log('🔗 LinkedIn URL complète:', linkedInUrl);
-    console.log('🔗 URL décodée:', decodeURIComponent(encodedUrl));
     window.open(linkedInUrl, '_blank', 'width=600,height=600');
   };
 

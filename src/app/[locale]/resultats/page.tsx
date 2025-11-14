@@ -1717,14 +1717,11 @@ export default function ResultatsPage() {
                               onMouseEnter={() => setHoveredBin(idx)}
                               onMouseLeave={() => setHoveredBin(null)}
                             >
-                              {/* User position marker - arrow above the bar */}
+                              {/* User position marker - badge above the bar */}
                               {isUserBin && (
-                                <div className="absolute -top-8 left-1/2 -translate-x-1/2 flex flex-col items-center animate-bounce">
-                                  <div className="text-purple-600 dark:text-purple-400 font-bold text-xs whitespace-nowrap">
+                                <div className="absolute -top-6 left-1/2 -translate-x-1/2">
+                                  <div className="bg-purple-600 dark:bg-purple-500 text-white text-xs font-bold px-2 py-0.5 rounded shadow-md whitespace-nowrap">
                                     {locale === 'fr' ? 'VOUS' : 'YOU'}
-                                  </div>
-                                  <div className="text-purple-600 dark:text-purple-400 text-2xl leading-none">
-                                    ↓
                                   </div>
                                 </div>
                               )}
@@ -1788,45 +1785,32 @@ export default function ResultatsPage() {
                         const above = 100 - percentilePercent;
 
                         return (
-                          <div className="bg-gradient-to-r from-purple-50 to-purple-100 dark:from-purple-900/20 dark:to-purple-800/20 rounded-lg p-4 border-2 border-purple-300 dark:border-purple-600">
-                            <h4 className="font-bold text-purple-900 dark:text-purple-100 mb-3 text-sm">
-                              {locale === 'fr' ? '📊 Votre Position Relative' : '📊 Your Relative Position'}
-                            </h4>
-                            <div className="grid grid-cols-3 gap-3 text-xs">
-                              <div className="text-center">
-                                <div className="text-gray-600 dark:text-gray-400 mb-1">
-                                  {locale === 'fr' ? 'En dessous' : 'Below you'}
-                                </div>
-                                <div className="text-2xl font-bold text-green-600 dark:text-green-400">
-                                  {below.toFixed(0)}%
-                                </div>
-                                <div className="text-xs text-gray-500 dark:text-gray-400 mt-1">
-                                  {locale === 'fr' ? `~${Math.round(below * CART_FULL_FORM_NORMS.sampleSize / 100)} personnes` : `~${Math.round(below * CART_FULL_FORM_NORMS.sampleSize / 100)} people`}
-                                </div>
-                              </div>
-                              <div className="text-center">
-                                <div className="text-gray-600 dark:text-gray-400 mb-1">
-                                  {locale === 'fr' ? 'Percentile' : 'Percentile'}
-                                </div>
-                                <div className="text-2xl font-bold text-purple-600 dark:text-purple-400">
-                                  {percentilePercent.toFixed(0)}
-                                </div>
-                                <div className="text-xs text-gray-500 dark:text-gray-400 mt-1">
-                                  {locale === 'fr' ? 'Rang relatif' : 'Relative rank'}
-                                </div>
-                              </div>
-                              <div className="text-center">
-                                <div className="text-gray-600 dark:text-gray-400 mb-1">
-                                  {locale === 'fr' ? 'Au dessus' : 'Above you'}
-                                </div>
-                                <div className="text-2xl font-bold text-orange-600 dark:text-orange-400">
-                                  {above.toFixed(0)}%
-                                </div>
-                                <div className="text-xs text-gray-500 dark:text-gray-400 mt-1">
-                                  {locale === 'fr' ? `~${Math.round(above * CART_FULL_FORM_NORMS.sampleSize / 100)} personnes` : `~${Math.round(above * CART_FULL_FORM_NORMS.sampleSize / 100)} people`}
-                                </div>
-                              </div>
+                          <div className="bg-purple-50 dark:bg-purple-900/20 rounded-lg p-4 border border-purple-200 dark:border-purple-700">
+                            <div className="flex items-center justify-between mb-2">
+                              <span className="text-sm font-semibold text-gray-700 dark:text-gray-300">
+                                {locale === 'fr' ? 'Votre Position' : 'Your Position'}
+                              </span>
+                              <span className="text-2xl font-bold text-purple-600 dark:text-purple-400">
+                                {locale === 'fr' ? `${percentilePercent.toFixed(0)}e percentile` : `${percentilePercent.toFixed(0)}th percentile`}
+                              </span>
                             </div>
+                            {/* Visual progress bar */}
+                            <div className="relative h-3 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden mb-2">
+                              <div
+                                className="absolute left-0 top-0 h-full bg-gradient-to-r from-green-500 to-purple-600 rounded-full transition-all duration-500"
+                                style={{ width: `${percentilePercent}%` }}
+                              />
+                              <div
+                                className="absolute top-1/2 -translate-y-1/2 w-1 h-5 bg-purple-800 dark:bg-purple-300"
+                                style={{ left: `${percentilePercent}%` }}
+                              />
+                            </div>
+                            <p className="text-xs text-gray-600 dark:text-gray-400">
+                              {locale === 'fr'
+                                ? `${below.toFixed(0)}% des participants ont un score inférieur au vôtre, ${above.toFixed(0)}% ont un score supérieur.`
+                                : `${below.toFixed(0)}% of participants scored lower than you, ${above.toFixed(0)}% scored higher.`
+                              }
+                            </p>
                           </div>
                         );
                       })()}
