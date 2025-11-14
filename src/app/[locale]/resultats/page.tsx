@@ -118,8 +118,14 @@ export default function ResultatsPage() {
 
   // Construire l'URL de partage côté client uniquement
   useEffect(() => {
-    if (resultToken && typeof window !== 'undefined') {
-      setShareUrl(`${window.location.origin}/${locale}/resultats/${resultToken}`);
+    if (resultToken && locale && typeof window !== 'undefined') {
+      const url = `${window.location.origin}/${locale}/resultats/${resultToken}`;
+      console.log('🔗 URL de partage construite:', url);
+      console.log('  - resultToken:', resultToken);
+      console.log('  - locale:', locale);
+      setShareUrl(url);
+    } else {
+      console.log('⚠️ URL de partage non construite - resultToken:', resultToken, 'locale:', locale);
     }
   }, [resultToken, locale]);
 
