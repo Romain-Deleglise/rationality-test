@@ -22,7 +22,7 @@ export default function TestContent() {
   const t = useTranslations('test');
   const tCommon = useTranslations('common');
   const [isInitialized, setIsInitialized] = useState(false);
-  const [currentLocale, setCurrentLocale] = useState<string>(locale);
+  const [currentLocale, setCurrentLocale] = useState<string>('');
 
   const {
     session,
@@ -42,6 +42,11 @@ export default function TestContent() {
   useEffect(() => {
     const reset = searchParams.get('reset');
     const version = searchParams.get('version');
+
+    // Initialize currentLocale on first render
+    if (!currentLocale) {
+      setCurrentLocale(locale);
+    }
 
     // Si le test est déjà complété, rediriger vers les résultats
     if (session?.completedAt && !reset) {
@@ -66,6 +71,7 @@ export default function TestContent() {
 
       startTest(selectedModules, versionLabel);
       setIsInitialized(true);
+      setCurrentLocale(locale);
 
       // Nettoyer l'URL en enlevant le paramètre reset
       const cleanUrl = version === 'full' ? `/${locale}/test?version=full` : `/${locale}/test`;
@@ -89,9 +95,11 @@ export default function TestContent() {
 
       startTest(selectedModules, versionLabel);
       setIsInitialized(true);
+      setCurrentLocale(locale);
     } else if (session && !isInitialized && !reset) {
       // Si une session existe déjà (depuis localStorage), marquer comme initialisé
       setIsInitialized(true);
+      setCurrentLocale(locale);
 
       // Mettre à jour les modules pour correspondre à la langue actuelle
       // IMPORTANT: utiliser session.version pour déterminer la version, pas le paramètre URL
@@ -104,7 +112,7 @@ export default function TestContent() {
       }
       const selectedModules = testData.modules as Module[];
       updateModules(selectedModules);
-    } else if (session && isInitialized && locale !== currentLocale) {
+    } else if (session && isInitialized && currentLocale && locale !== currentLocale) {
       // Locale has changed - update modules to match new language
       setCurrentLocale(locale);
 
