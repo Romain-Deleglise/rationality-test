@@ -1516,14 +1516,14 @@ export default function ResultatsPage() {
                                 if (absZ < 0.5) interpretation = 'Votre score est très proche de la moyenne.';
                                 else if (absZ < 1) interpretation = z > 0 ? 'Votre score est légèrement au-dessus de la moyenne.' : 'Votre score est légèrement en-dessous de la moyenne.';
                                 else if (absZ < 1.5) interpretation = z > 0 ? 'Votre score est nettement au-dessus de la moyenne.' : 'Votre score est nettement en-dessous de la moyenne.';
-                                else if (absZ < 2) interpretation = z > 0 ? 'Votre score est bien au-dessus de la moyenne (top 16%).' : 'Votre score est bien en-dessous de la moyenne (bottom 16%).';
-                                else interpretation = z > 0 ? 'Votre score est exceptionnellement élevé (top 2%).' : 'Votre score est exceptionnellement bas (bottom 2%).';
+                                else if (absZ < 2) interpretation = z > 0 ? 'Votre score est bien au-dessus de la moyenne (top 16%).' : 'Votre score se situe en-dessous de la moyenne (16e percentile).';
+                                else interpretation = z > 0 ? 'Votre score est exceptionnellement élevé (top 2%).' : 'Votre score se situe dans les 2% les plus bas.';
                               } else {
                                 if (absZ < 0.5) interpretation = 'Your score is very close to the mean.';
                                 else if (absZ < 1) interpretation = z > 0 ? 'Your score is slightly above the mean.' : 'Your score is slightly below the mean.';
                                 else if (absZ < 1.5) interpretation = z > 0 ? 'Your score is notably above the mean.' : 'Your score is notably below the mean.';
-                                else if (absZ < 2) interpretation = z > 0 ? 'Your score is well above the mean (top 16%).' : 'Your score is well below the mean (bottom 16%).';
-                                else interpretation = z > 0 ? 'Your score is exceptionally high (top 2%).' : 'Your score is exceptionally low (bottom 2%).';
+                                else if (absZ < 2) interpretation = z > 0 ? 'Your score is well above the mean (top 16%).' : 'Your score is below the mean (16th percentile).';
+                                else interpretation = z > 0 ? 'Your score is exceptionally high (top 2%).' : 'Your score is in the lowest 2%.';
                               }
 
                               return <><strong>{locale === 'fr' ? 'Interprétation :' : 'Interpretation:'}</strong> {interpretation}</>;
@@ -1656,10 +1656,15 @@ export default function ResultatsPage() {
                     <li className="flex items-start gap-2">
                       <span className="text-yellow-600 dark:text-yellow-400 mt-0.5">•</span>
                       <span>
-                        {locale === 'fr'
-                          ? <><strong>Couverture partielle :</strong> Notre test couvre environ 85% des modules du CART complet (17/20 modules). Les modules manquants incluent : Gambler's Fallacy Task, Covariation Detection, et Property Verification.</>
-                          : <><strong>Partial coverage:</strong> Our test covers approximately 85% of the full CART modules (17/20 modules). Missing modules include: Gambler's Fallacy Task, Covariation Detection, and Property Verification.</>
-                        }
+                        {version === 'complète' ? (
+                          locale === 'fr'
+                            ? <><strong>Couverture partielle :</strong> Notre test couvre environ 85% des modules du CART complet (17/20 modules). Les modules manquants incluent : Gambler's Fallacy Task, Covariation Detection, et Property Verification.</>
+                            : <><strong>Partial coverage:</strong> Our test covers approximately 85% of the full CART modules (17/20 modules). Missing modules include: Gambler's Fallacy Task, Covariation Detection, and Property Verification.</>
+                        ) : (
+                          locale === 'fr'
+                            ? <><strong>Couverture réduite :</strong> Notre version courte couvre 6 modules principaux du CART, permettant une évaluation rapide mais moins approfondie de la pensée rationnelle.</>
+                            : <><strong>Reduced coverage:</strong> Our short version covers 6 main CART modules, allowing for a quick but less in-depth assessment of rational thinking.</>
+                        )}
                       </span>
                     </li>
                     <li className="flex items-start gap-2">
@@ -1674,10 +1679,15 @@ export default function ResultatsPage() {
                     <li className="flex items-start gap-2">
                       <span className="text-yellow-600 dark:text-yellow-400 mt-0.5">•</span>
                       <span>
-                        {locale === 'fr'
-                          ? <><strong>Durée et profondeur :</strong> Le CART complet prend environ 3 heures (148 points), notre version complète environ 1.5 heures (119 points). Cette différence de durée peut affecter la mesure de certains biais cognitifs.</>
-                          : <><strong>Duration and depth:</strong> The full CART takes approximately 3 hours (148 points), our full version takes about 1.5 hours (119 points). This duration difference may affect the measurement of certain cognitive biases.</>
-                        }
+                        {version === 'complète' ? (
+                          locale === 'fr'
+                            ? <><strong>Durée et profondeur :</strong> Le CART complet prend environ 3 heures (148 points), notre version complète environ 1.5 heures (119 points). Cette différence de durée peut affecter la mesure de certains biais cognitifs.</>
+                            : <><strong>Duration and depth:</strong> The full CART takes approximately 3 hours (148 points), our full version takes about 1.5 hours (119 points). This duration difference may affect the measurement of certain cognitive biases.</>
+                        ) : (
+                          locale === 'fr'
+                            ? <><strong>Durée et profondeur :</strong> Notre version courte prend environ 30 minutes (40 points), contre 2 heures pour la version courte officielle du CART (100 points). Cette version permet une première évaluation rapide.</>
+                            : <><strong>Duration and depth:</strong> Our short version takes approximately 30 minutes (40 points), compared to 2 hours for the official CART short-form (100 points). This version provides a quick initial assessment.</>
+                        )}
                       </span>
                     </li>
                   </ul>

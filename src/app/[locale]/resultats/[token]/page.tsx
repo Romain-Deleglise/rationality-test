@@ -172,7 +172,7 @@ export default function SavedResultsPage({ params }: { params: Promise<{ token: 
         </div>
 
         {/* Distribution Histogram */}
-        {result.test_version === 'complète' && (() => {
+        {(() => {
           const cartNorms = getCartNorms(result.test_version, result.total_points, result.total_possible);
           const mean = (cartNorms.mean / cartNorms.totalPoints) * 100;
           const sd = (cartNorms.sd / cartNorms.totalPoints) * 100;
@@ -283,14 +283,14 @@ export default function SavedResultsPage({ params }: { params: Promise<{ token: 
                           if (absZ < 0.5) interpretation = 'Votre score est très proche de la moyenne.';
                           else if (absZ < 1) interpretation = z > 0 ? 'Votre score est légèrement au-dessus de la moyenne.' : 'Votre score est légèrement en-dessous de la moyenne.';
                           else if (absZ < 1.5) interpretation = z > 0 ? 'Votre score est nettement au-dessus de la moyenne.' : 'Votre score est nettement en-dessous de la moyenne.';
-                          else if (absZ < 2) interpretation = z > 0 ? 'Votre score est bien au-dessus de la moyenne (top 16%).' : 'Votre score est bien en-dessous de la moyenne (bottom 16%).';
-                          else interpretation = z > 0 ? 'Votre score est exceptionnellement élevé (top 2%).' : 'Votre score est exceptionnellement bas (bottom 2%).';
+                          else if (absZ < 2) interpretation = z > 0 ? 'Votre score est bien au-dessus de la moyenne (top 16%).' : 'Votre score se situe en-dessous de la moyenne (16e percentile).';
+                          else interpretation = z > 0 ? 'Votre score est exceptionnellement élevé (top 2%).' : 'Votre score se situe dans les 2% les plus bas.';
                         } else {
                           if (absZ < 0.5) interpretation = 'Your score is very close to the mean.';
                           else if (absZ < 1) interpretation = z > 0 ? 'Your score is slightly above the mean.' : 'Your score is slightly below the mean.';
                           else if (absZ < 1.5) interpretation = z > 0 ? 'Your score is notably above the mean.' : 'Your score is notably below the mean.';
-                          else if (absZ < 2) interpretation = z > 0 ? 'Your score is well above the mean (top 16%).' : 'Your score is well below the mean (bottom 16%).';
-                          else interpretation = z > 0 ? 'Your score is exceptionally high (top 2%).' : 'Your score is exceptionally low (bottom 2%).';
+                          else if (absZ < 2) interpretation = z > 0 ? 'Your score is well above the mean (top 16%).' : 'Your score is below the mean (16th percentile).';
+                          else interpretation = z > 0 ? 'Your score is exceptionally high (top 2%).' : 'Your score is in the lowest 2%.';
                         }
 
                         return <><strong>{locale === 'fr' ? 'Interprétation :' : 'Interpretation:'}</strong> {interpretation}</>;
