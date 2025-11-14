@@ -2,11 +2,18 @@
 
 import { useParams, usePathname, useRouter } from 'next/navigation';
 import { Globe } from 'lucide-react';
+import { useEffect, useState } from 'react';
 
 export default function LanguageSwitcher() {
   const params = useParams();
   const pathname = usePathname();
   const router = useRouter();
+  const [mounted, setMounted] = useState(false);
+
+  // Avoid hydration mismatch
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const currentLocale = (params?.locale as string) || 'en';
 
@@ -17,6 +24,21 @@ export default function LanguageSwitcher() {
     const newPath = pathname.replace(`/${currentLocale}`, `/${newLocale}`);
     router.push(newPath);
   };
+
+  // Render placeholder during SSR to avoid hydration mismatch
+  if (!mounted) {
+    return (
+      <div className="flex items-center gap-2 bg-white rounded-lg shadow-sm border border-gray-200 p-1">
+        <Globe className="w-4 h-4 text-gray-500 ml-2" />
+        <button className="px-3 py-1.5 rounded text-sm font-medium text-gray-600">
+          FR
+        </button>
+        <button className="px-3 py-1.5 rounded text-sm font-medium text-gray-600">
+          EN
+        </button>
+      </div>
+    );
+  }
 
   return (
     <div className="flex items-center gap-2 bg-white rounded-lg shadow-sm border border-gray-200 p-1">
