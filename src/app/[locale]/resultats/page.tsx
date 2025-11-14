@@ -111,9 +111,17 @@ export default function ResultatsPage() {
   const [savingToDb, setSavingToDb] = useState(false);
   const [savedToDb, setSavedToDb] = useState(false);
   const [linkCopied, setLinkCopied] = useState(false);
+  const [shareUrl, setShareUrl] = useState<string>('');
 
   // Déduire la version si elle n'est pas définie (pour les anciennes sessions)
   const version = session?.version || (modules.length > 6 ? 'complète' : 'courte');
+
+  // Construire l'URL de partage côté client uniquement
+  useEffect(() => {
+    if (resultToken && typeof window !== 'undefined') {
+      setShareUrl(`${window.location.origin}/${locale}/resultats/${resultToken}`);
+    }
+  }, [resultToken, locale]);
 
   useEffect(() => {
     if (!session?.completedAt || !modules.length) {
@@ -994,6 +1002,27 @@ export default function ResultatsPage() {
           but intuition doesn't change durably.</p>
       )
     },
+    'Framing Effects': {
+      what: (
+        <p>Your resistance to{' '}
+          <a href="https://en.wikipedia.org/wiki/Framing_effect_(psychology)" target="_blank" rel="noopener" className="text-blue-600 dark:text-blue-400 hover:underline">
+            framing
+          </a>
+          : changing preferences based on how an identical option is presented (e.g., "85% lean" vs "15% fat").</p>
+      ),
+      why: (
+        <p>Violates the principle of descriptive invariance. Massively used in advertising, politics, and negotiation
+          to manipulate our choices.</p>
+      ),
+      example: (
+        <p>Health program: (A) "200 people will be saved" vs (B) "400 people will die". Same program,
+          but the first is preferred. Our brain processes gains and losses asymmetrically.</p>
+      ),
+      canImprove: (
+        <p>Improvement: difficult (&lt;10%). Framing acts at a preconscious level. Solution: systematically
+          reframe options in both ways before deciding.</p>
+      )
+    },
     'Sunk Cost Fallacy': {
       what: (
         <p>Your resistance to the{' '}
@@ -1258,9 +1287,11 @@ export default function ResultatsPage() {
               <div className="flex justify-center">
                 <button
                   onClick={() => {
-                    navigator.clipboard.writeText(`${window.location.origin}/${locale}/resultats/${resultToken}`);
-                    setLinkCopied(true);
-                    setTimeout(() => setLinkCopied(false), 2000);
+                    if (shareUrl) {
+                      navigator.clipboard.writeText(shareUrl);
+                      setLinkCopied(true);
+                      setTimeout(() => setLinkCopied(false), 2000);
+                    }
                   }}
                   className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold flex items-center gap-2 transition-colors shadow-md"
                 >
@@ -1420,7 +1451,7 @@ export default function ResultatsPage() {
                 </div>
 
                 {/* Distribution Histogram - Only for complete version */}
-                {version === 'complète' && (
+                {version === 'complète' && cartNorms && cartNorms.sd > 0 && (
                   <div>
                     <h4 className="font-bold text-gray-900 dark:text-white mb-3 flex items-center gap-2">
                       <TrendingUp className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />
@@ -1434,7 +1465,7 @@ export default function ResultatsPage() {
                   <div className="bg-white dark:bg-gray-800 rounded-lg p-6 border border-gray-200 dark:border-gray-700">
                     {(() => {
                       const mean = (cartNorms.mean / cartNorms.totalPoints) * 100;
-                      const sd = (cartNorms.sd / cartNorms.totalPoints) * 100;
+                      const sd = Math.max(1, (cartNorms.sd / cartNorms.totalPoints) * 100); // Éviter sd trop petit
                       const userScore = testScore.percentage;
 
                       // Create histogram bins (approximating normal distribution)
@@ -2160,11 +2191,11 @@ export default function ResultatsPage() {
           </div>
 
           {/* Social Share */}
-          {resultToken && (
+          {resultToken && shareUrl && (
             <div className="flex flex-col items-center gap-3 print:hidden">
               <h3 className="text-lg font-semibold text-gray-900 dark:text-white">{locale === 'fr' ? 'Partager vos résultats' : 'Share your results'}</h3>
               <SocialShare
-                url={`${typeof window !== 'undefined' ? window.location.origin : ''}/${locale}/resultats/${resultToken}`}
+                url={shareUrl}
                 title={locale === 'fr'
                   ? `J'ai obtenu ${testScore?.percentage.toFixed(1)}% au test de rationalité CART !`
                   : `I scored ${testScore?.percentage.toFixed(1)}% on the CART rationality test!`}

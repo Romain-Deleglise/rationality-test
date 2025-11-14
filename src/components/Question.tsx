@@ -15,6 +15,32 @@ interface QuestionProps {
   defaultValue?: any;
 }
 
+// Helper function to render simple markdown (bold text and line breaks)
+function renderMarkdown(text: string) {
+  // Split by newlines first
+  const lines = text.split('\n');
+
+  return lines.map((line, lineIndex) => {
+    // Split each line by bold markers
+    const parts = line.split(/(\*\*.*?\*\*)/g);
+    const elements = parts.map((part, partIndex) => {
+      if (part.startsWith('**') && part.endsWith('**')) {
+        // Bold text
+        return <strong key={`${lineIndex}-${partIndex}`} className="font-semibold">{part.slice(2, -2)}</strong>;
+      }
+      return part;
+    });
+
+    // Add line break after each line except the last
+    return (
+      <span key={lineIndex}>
+        {elements}
+        {lineIndex < lines.length - 1 && <br />}
+      </span>
+    );
+  });
+}
+
 export default function Question({ question, onAnswer, defaultValue }: QuestionProps) {
   const t = useTranslations('test');
   const [value, setValue] = useState<any>(defaultValue || '');
@@ -307,7 +333,7 @@ export default function Question({ question, onAnswer, defaultValue }: QuestionP
       isAnimating ? 'opacity-0 translate-y-4' : 'opacity-100 translate-y-0'
     }`}>
       <CardHeader>
-        <CardTitle className="text-xl leading-relaxed">{question.text}</CardTitle>
+        <CardTitle className="text-xl leading-relaxed">{renderMarkdown(question.text)}</CardTitle>
       </CardHeader>
 
       <CardContent className="space-y-6">

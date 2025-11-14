@@ -21,6 +21,7 @@ export default function SavedResultsPage({ params }: { params: Promise<{ token: 
   const [error, setError] = useState<string | null>(null);
   const [token, setToken] = useState<string>('');
   const [locale, setLocale] = useState<string>('fr');
+  const [shareUrl, setShareUrl] = useState<string>('');
 
   useEffect(() => {
     params.then(({ token: t, locale: l }) => {
@@ -28,6 +29,13 @@ export default function SavedResultsPage({ params }: { params: Promise<{ token: 
       setLocale(l);
     });
   }, [params]);
+
+  // Construire l'URL de partage côté client uniquement
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      setShareUrl(window.location.href);
+    }
+  }, [token, locale]);
 
   useEffect(() => {
     if (!token) return;
@@ -174,8 +182,10 @@ export default function SavedResultsPage({ params }: { params: Promise<{ token: 
         {/* Distribution Histogram - Only for complete version */}
         {result.test_version === 'complète' && (() => {
           const cartNorms = getCartNorms(result.test_version, result.total_points, result.total_possible);
+          if (!cartNorms || cartNorms.sd <= 0) return null;
+
           const mean = (cartNorms.mean / cartNorms.totalPoints) * 100;
-          const sd = (cartNorms.sd / cartNorms.totalPoints) * 100;
+          const sd = Math.max(1, (cartNorms.sd / cartNorms.totalPoints) * 100); // Éviter sd trop petit
           const userScore = result.percentage;
 
           // Create histogram bins (approximating normal distribution)
@@ -388,19 +398,21 @@ export default function SavedResultsPage({ params }: { params: Promise<{ token: 
         </div>
 
         {/* Social Share */}
-        <div className="flex flex-col items-center gap-3 mb-8">
-          <h3 className="text-lg font-semibold text-gray-900 dark:text-white">{locale === 'fr' ? 'Partager ces résultats' : 'Share these results'}</h3>
-          <SocialShare
-            url={`${typeof window !== 'undefined' ? window.location.href : ''}`}
-            title={locale === 'fr'
-              ? `Résultats du test de rationalité CART - ${result?.global_percentage?.toFixed(1)}%`
-              : `CART rationality test results - ${result?.global_percentage?.toFixed(1)}%`}
-            description={locale === 'fr'
-              ? 'Découvrez ces résultats détaillés au test CART de rationalité'
-              : 'Discover these detailed results on the CART rationality test'}
-            locale={locale}
-          />
-        </div>
+        {shareUrl && (
+          <div className="flex flex-col items-center gap-3 mb-8">
+            <h3 className="text-lg font-semibold text-gray-900 dark:text-white">{locale === 'fr' ? 'Partager ces résultats' : 'Share these results'}</h3>
+            <SocialShare
+              url={shareUrl}
+              title={locale === 'fr'
+                ? `Résultats du test de rationalité CART - ${result?.global_percentage?.toFixed(1)}%`
+                : `CART rationality test results - ${result?.global_percentage?.toFixed(1)}%`}
+              description={locale === 'fr'
+                ? 'Découvrez ces résultats détaillés au test CART de rationalité'
+                : 'Discover these detailed results on the CART rationality test'}
+              locale={locale}
+            />
+          </div>
+        )}
 
         {/* Actions */}
         <div className="text-center">
