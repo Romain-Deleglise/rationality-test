@@ -47,32 +47,18 @@ export default function TestContent() {
       return;
     }
 
-    // Si paramètre reset=true, on reset et démarre un nouveau test
+    // Si paramètre reset=true, on reset et redirige
     if (reset === 'true') {
       resetTest();
 
-      // Charger les bonnes données selon la version et la langue
-      let testData;
-      if (locale === 'en') {
-        testData = version === 'full' ? testCompletDataEn : testCourtDataEn;
-      } else {
-        testData = version === 'full' ? testCompletDataFr : testCourtDataFr;
-      }
-
-      const selectedModules = testData.modules as Module[];
-      const versionLabel = version === 'full' ? 'complète' : 'courte';
-
-      startTest(selectedModules, versionLabel);
-      setIsInitialized(true);
-
-      // Nettoyer l'URL en enlevant le paramètre reset
-      const cleanUrl = version === 'full' ? `/${locale}/test?version=full` : `/${locale}/test`;
-      router.replace(cleanUrl);
+      // Construire l'URL de redirection en préservant la version
+      const redirectUrl = version === 'full' ? `/${locale}/test?version=full` : `/${locale}/test`;
+      router.replace(redirectUrl);
       return;
     }
 
-    // Démarrer le test seulement s'il n'y a pas de session
-    if (!session && !isInitialized) {
+    // Démarrer le test seulement s'il n'y a pas de session et qu'on est initialisé
+    if (!session && !reset) {
       // Charger les bonnes données selon la version et la langue
       let testData;
       if (locale === 'en') {
@@ -87,18 +73,17 @@ export default function TestContent() {
 
       startTest(selectedModules, versionLabel);
       setIsInitialized(true);
-    } else if (session && !isInitialized && !reset) {
+    } else if (session && !isInitialized) {
       // Si une session existe déjà (depuis localStorage), marquer comme initialisé
       setIsInitialized(true);
 
       // Mettre à jour les modules pour correspondre à la langue actuelle
-      // IMPORTANT: utiliser session.version pour déterminer la version, pas le paramètre URL
-      const sessionVersion = session.version === 'complète' ? 'full' : 'short';
+      const versionParam = searchParams.get('version');
       let testData;
       if (locale === 'en') {
-        testData = sessionVersion === 'full' ? testCompletDataEn : testCourtDataEn;
+        testData = versionParam === 'full' ? testCompletDataEn : testCourtDataEn;
       } else {
-        testData = sessionVersion === 'full' ? testCompletDataFr : testCourtDataFr;
+        testData = versionParam === 'full' ? testCompletDataFr : testCourtDataFr;
       }
       const selectedModules = testData.modules as Module[];
       updateModules(selectedModules);
