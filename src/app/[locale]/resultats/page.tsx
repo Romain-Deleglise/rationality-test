@@ -2281,6 +2281,9 @@ export default function ResultatsPage() {
                 )}
               </button>
             </div>
+            <p className="text-xs text-gray-500 dark:text-gray-400 mt-2 text-left">
+              {t('emailPrivacyNote')}
+            </p>
             {emailSent && (
               <p className="text-green-600 text-sm mt-2">{t('emailSent')}</p>
             )}

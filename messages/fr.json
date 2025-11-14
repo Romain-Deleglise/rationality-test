@@ -202,6 +202,7 @@
     "send": "Envoyer",
     "sending": "Envoi...",
     "emailSent": "✓ Email envoyé avec succès !",
+    "emailPrivacyNote": "Votre email est uniquement utilisé pour vous envoyer vos résultats et n'est pas stocké.",
     "sendFeedback": "💬 Envoyer un feedback sur le test",
     "retestAdvice": "💡 Conseil : Pour mesurer de vrais progrès, repassez le test dans 6-12 mois (pas avant, sinon c'est juste de la mémorisation)",
     "radarChart": "Profil de Rationalité",
@@ -259,7 +260,7 @@
 
     "footer": {
       "openSourceProject": "Ce test est un projet open-source, gratuit, et dans l'intérêt général :)",
-      "basedOnResearch": "Basé sur la recherche scientifique en psychologie cognitive (1970-2024)."
+      "basedOnResearch": "Basé sur la recherche scientifique en psychologie cognitive."
     },
 
     "scoreInterpretations": {
