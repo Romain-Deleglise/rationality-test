@@ -17,10 +17,10 @@ export default function TestContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const params = useParams();
-  const locale = params.locale as string;
   const t = useTranslations('test');
   const tCommon = useTranslations('common');
   const [isInitialized, setIsInitialized] = useState(false);
+  const [locale, setLocale] = useState('fr');
 
   const {
     session,
@@ -40,10 +40,14 @@ export default function TestContent() {
   useEffect(() => {
     const reset = searchParams.get('reset');
     const version = searchParams.get('version');
+    const currentLocale = (params.locale as string) || 'fr';
+
+    // Set locale from params to avoid hydration mismatch
+    setLocale(currentLocale);
 
     // Si le test est déjà complété, rediriger vers les résultats
     if (session?.completedAt && !reset) {
-      router.replace(`/${locale}/resultats`);
+      router.replace(`/${currentLocale}/resultats`);
       return;
     }
 
@@ -53,7 +57,7 @@ export default function TestContent() {
 
       // Charger les bonnes données selon la version et la langue
       let testData;
-      if (locale === 'en') {
+      if (currentLocale === 'en') {
         testData = version === 'full' ? testCompletDataEn : testCourtDataEn;
       } else {
         testData = version === 'full' ? testCompletDataFr : testCourtDataFr;
@@ -66,7 +70,7 @@ export default function TestContent() {
       setIsInitialized(true);
 
       // Nettoyer l'URL en enlevant le paramètre reset
-      const cleanUrl = version === 'full' ? `/${locale}/test?version=full` : `/${locale}/test`;
+      const cleanUrl = version === 'full' ? `/${currentLocale}/test?version=full` : `/${currentLocale}/test`;
       router.replace(cleanUrl);
       return;
     }
@@ -75,7 +79,7 @@ export default function TestContent() {
     if (!session && !isInitialized) {
       // Charger les bonnes données selon la version et la langue
       let testData;
-      if (locale === 'en') {
+      if (currentLocale === 'en') {
         testData = version === 'full' ? testCompletDataEn : testCourtDataEn;
       } else {
         testData = version === 'full' ? testCompletDataFr : testCourtDataFr;
@@ -95,7 +99,7 @@ export default function TestContent() {
       // IMPORTANT: utiliser session.version pour déterminer la version, pas le paramètre URL
       const sessionVersion = session.version === 'complète' ? 'full' : 'short';
       let testData;
-      if (locale === 'en') {
+      if (currentLocale === 'en') {
         testData = sessionVersion === 'full' ? testCompletDataEn : testCourtDataEn;
       } else {
         testData = sessionVersion === 'full' ? testCompletDataFr : testCourtDataFr;
@@ -103,7 +107,7 @@ export default function TestContent() {
       const selectedModules = testData.modules as Module[];
       updateModules(selectedModules);
     }
-  }, [searchParams, session, isInitialized, resetTest, startTest, updateModules, router, locale]);
+  }, [searchParams, session, isInitialized, resetTest, startTest, updateModules, router, params]);
 
   if (!isInitialized || !session || !modules.length) {
     return (
