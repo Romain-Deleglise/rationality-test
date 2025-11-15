@@ -502,7 +502,7 @@
   "cartNorms": {
     "shortForm": {
       "title": "CART 6 modules (weighted)",
-      "description": "Mean calculated from original CART (RT60) for the same 6 modules assessed here, weighted by each module's average score"
+      "description": "Mean calculated from original CART (RT60) for the same 6 modules assessed here, weighted by each module's importance"
     },
     "fullForm": {
       "title": "Full CART RT60",
