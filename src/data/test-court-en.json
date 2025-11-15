@@ -1,12 +1,12 @@
 {
   "version": "short",
-  "totalPoints": 25,
+  "totalPoints": 35,
   "estimatedTime": 20,
   "modules": [
     {
       "id": "prob-stats",
       "name": "Probabilistic Reasoning (9 items)",
-      "points": 10,
+      "points": 9,
       "time": 4,
       "questions": [
         {
@@ -495,7 +495,7 @@
     {
       "id": "disjunctive",
       "name": "Disjunctive Reasoning (2 items)",
-      "points": 3,
+      "points": 2,
       "time": 2,
       "questions": [
         {
@@ -529,7 +529,7 @@
     {
       "id": "anchoring",
       "name": "Anchoring (2 items)",
-      "points": 2,
+      "points": 1,
       "time": 3,
       "questions": [
         {

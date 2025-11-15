@@ -1,12 +1,12 @@
 {
   "version": "complète",
-  "totalPoints": 119,
+  "totalPoints": 95.98,
   "estimatedTime": 86,
   "modules": [
     {
       "id": "prob-stats",
       "name": "Raisonnement Probabiliste (15 items)",
-      "points": 18,
+      "points": 15,
       "time": 5,
       "questions": [
         {
@@ -222,7 +222,7 @@
     {
       "id": "sci-reasoning",
       "name": "Raisonnement Scientifique (14 items)",
-      "points": 20,
+      "points": 14,
       "time": 8,
       "questions": [
         {
@@ -429,7 +429,7 @@
     {
       "id": "reflection-intuition",
       "name": "Réflexion vs Intuition (8 items)",
-      "points": 10,
+      "points": 8,
       "time": 4,
       "questions": [
         {
@@ -513,7 +513,7 @@
     {
       "id": "belief-bias",
       "name": "Biais de Croyance (12 items)",
-      "points": 8,
+      "points": 6,
       "time": 5,
       "questions": [
         {
@@ -665,7 +665,7 @@
     {
       "id": "disjunctive",
       "name": "Raisonnement Disjonctif (5 items)",
-      "points": 6,
+      "points": 5,
       "time": 4,
       "questions": [
         {
@@ -740,7 +740,7 @@
     {
       "id": "anchoring",
       "name": "Ancrage (6 items)",
-      "points": 4,
+      "points": 3,
       "time": 4,
       "questions": [
         {
@@ -808,7 +808,7 @@
     {
       "id": "calibration-full",
       "name": "Calibration des Connaissances (20 items)",
-      "points": 3,
+      "points": 2.4,
       "time": 7,
       "questions": [
         {
@@ -1150,7 +1150,7 @@
     {
       "id": "superstition",
       "name": "Pensée Superstitieuse (10 items)",
-      "points": 5,
+      "points": 4.2,
       "time": 4,
       "questions": [
         {
@@ -1228,7 +1228,7 @@
     {
       "id": "anti-science",
       "name": "Attitudes Anti-Science (11 items)",
-      "points": 5,
+      "points": 4.18,
       "time": 4,
       "questions": [
         {
@@ -1313,7 +1313,7 @@
     {
       "id": "conspiracy",
       "name": "Croyances Conspirationnistes (11 items)",
-      "points": 5,
+      "points": 4.62,
       "time": 3,
       "questions": [
         {
@@ -1398,7 +1398,7 @@
     {
       "id": "dysfunctional-beliefs",
       "name": "Croyances Dysfonctionnelles (9 items)",
-      "points": 5,
+      "points": 5.04,
       "time": 3,
       "questions": [
         {
@@ -1469,7 +1469,7 @@
     {
       "id": "argument-eval",
       "name": "Évaluation d'Arguments (8 items)",
-      "points": 5,
+      "points": 2.5,
       "time": 8,
       "questions": [
         {
@@ -1644,7 +1644,7 @@
     {
       "id": "framing",
       "name": "Effets de Cadrage (10 items)",
-      "points": 6,
+      "points": 3,
       "time": 8,
       "questions": [
         {
@@ -1689,7 +1689,6 @@
             "Traitement A",
             "Traitement B"
           ],
-          "correct": null,
           "points": 0,
           "pairId": "frame-pair-2",
           "framingType": "gain"
@@ -1702,7 +1701,6 @@
             "Traitement A",
             "Traitement B"
           ],
-          "correct": null,
           "points": 0.6,
           "pairId": "frame-pair-2",
           "framingType": "loss"
@@ -1814,7 +1812,7 @@
     {
       "id": "expected-value",
       "name": "Sensibilité à la Valeur Espérée (12 items)",
-      "points": 5,
+      "points": 5.04,
       "time": 6,
       "questions": [
         {
