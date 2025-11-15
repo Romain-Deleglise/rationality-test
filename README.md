@@ -446,6 +446,7 @@ Le test de rationalité est **officiellement lancé** avec toutes les fonctionna
 - [x] **SEO multilingue** : hreflang, sitemap.xml, robots.txt, Open Graph
 - [x] **Email custom** : `results@send.rationality-test.com` (vérifié avec Resend)
 - [x] **Base de données** : Supabase PostgreSQL (structure robuste, backups automatiques)
+- [x] **Monitoring** : Vercel Analytics + Speed Insights (100% gratuit, voir `MONITORING.md`)
 - [x] **Partage de résultats** : Liens uniques avec token
 - [x] **Histogramme de distribution** : Comparaison avec normes CART
 - [x] **Sections éducatives** : Sources scientifiques, état de la recherche
@@ -468,6 +469,18 @@ Table: test_results
 - JSONB pour flexibilité: module_scores, answers
 - Backups automatiques Supabase
 - Scalabilité: millions de résultats possibles
+```
+
+#### 📊 Monitoring (100% Gratuit)
+```
+Vercel Analytics + Speed Insights
+- Trafic : Visiteurs, pages vues, sources, pays
+- Performances : Core Web Vitals (LCP, FID, CLS)
+- SEO : Scores Google ranking factors
+- Privacy : Pas de cookies, RGPD compliant
+- Coût : 0€ (2,500 événements/mois inclus)
+
+Configuration : Voir MONITORING.md (30 secondes)
 ```
 
 ---
@@ -555,10 +568,10 @@ Table: test_results
   - Unit tests (Vitest)
   - E2E tests (Playwright)
   - CI/CD avec GitHub Actions
-- [ ] **Monitoring**
-  - Sentry pour error tracking
-  - Plausible/Umami pour analytics privacy-friendly
-  - Uptime monitoring (UptimeRobot)
+- [x] **Monitoring** (voir `MONITORING.md`)
+  - Vercel Analytics : Trafic, visiteurs, sources (100% gratuit)
+  - Vercel Speed Insights : Core Web Vitals, SEO (100% gratuit)
+  - Sentry pour error tracking (optionnel, si bugs récurrents)
 - [ ] **Performance**
   - Image optimization (WebP, AVIF)
   - Code splitting avancé
