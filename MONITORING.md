@@ -6,24 +6,25 @@ Configuration rapide (5 minutes) pour surveiller votre site en production.
 
 ---
 
-## 📊 1. Vercel Analytics - 100% GRATUIT (30 SECONDES)
+## 📊 1. Vercel Analytics + Speed Insights - 100% GRATUIT (30 SECONDES)
 
 **Status** : ✅ Code déjà ajouté dans `src/app/[locale]/layout.tsx`
 
-### Pourquoi Vercel Analytics ?
+### Pourquoi Vercel Analytics + Speed Insights ?
 - ✅ **100% gratuit** (2,500 événements/mois inclus)
 - ✅ **Privacy-friendly** : Pas de cookies, RGPD compliant
 - ✅ **Intégration native** : Déjà inclus avec Vercel
 - ✅ **Aucune configuration** nécessaire
 - ✅ **Rapide** : Déjà optimisé pour Next.js
+- ✅ **Core Web Vitals** : Mesure automatique des performances (LCP, FID, CLS)
 
 ### Configuration :
 
 1. **Activer dans Vercel Dashboard** :
    - Aller sur https://vercel.com/dashboard
    - Sélectionner votre projet `rationality-test`
-   - Aller dans l'onglet **Analytics**
-   - Cliquer **Enable** (ou **Enable Web Analytics**)
+   - Aller dans l'onglet **Analytics** → Cliquer **Enable**
+   - Aller dans l'onglet **Speed Insights** → Cliquer **Enable**
 
 2. **C'est tout !** ✅ Le code est déjà dans le projet
 
@@ -31,12 +32,11 @@ Configuration rapide (5 minutes) pour surveiller votre site en production.
    - Déployer votre site (fait automatiquement)
    - Visiter https://rationality-test.com
    - Attendre 30 secondes
-   - Les données apparaîtront dans le dashboard
+   - Les données apparaîtront dans les dashboards
 
-### Dashboard
-Accès : https://vercel.com/dashboard → Votre projet → **Analytics**
+### Dashboards
 
-**Métriques disponibles :**
+**Analytics** : https://vercel.com/dashboard → Votre projet → **Analytics**
 - Visiteurs uniques
 - Pages vues (pageviews)
 - Top pages
@@ -44,6 +44,15 @@ Accès : https://vercel.com/dashboard → Votre projet → **Analytics**
 - Pays
 - Navigateurs et appareils
 - Temps réel
+
+**Speed Insights** : https://vercel.com/dashboard → Votre projet → **Speed Insights**
+- **Core Web Vitals** (Google ranking factors) :
+  - **LCP** (Largest Contentful Paint) : Temps de chargement principal
+  - **FID** (First Input Delay) : Temps de réponse à l'interaction
+  - **CLS** (Cumulative Layout Shift) : Stabilité visuelle
+- Scores par page (Desktop + Mobile)
+- Performance par pays
+- Tendances dans le temps
 
 ---
 
@@ -127,7 +136,7 @@ https://sentry.io/organizations/votre-org/projects/rationality-test/
 ## 🎯 Recommandation
 
 ### À faire MAINTENANT (3 minutes) :
-1. ✅ **Vercel Analytics** : Activer dans Vercel Dashboard (30 sec)
+1. ✅ **Vercel Analytics + Speed Insights** : Activer dans Vercel Dashboard (30 sec)
 2. ✅ **UptimeRobot** : Configurer monitoring uptime (2 min)
 
 ### À faire PLUS TARD (si besoin) :
@@ -140,6 +149,7 @@ https://sentry.io/organizations/votre-org/projects/rationality-test/
 ## 📈 Accès rapide (après configuration)
 
 - **Analytics** : https://vercel.com/dashboard → Votre projet → Analytics
+- **Speed Insights** : https://vercel.com/dashboard → Votre projet → Speed Insights
 - **Uptime** : https://uptimerobot.com/dashboard
 - **Errors** : https://sentry.io (si configuré)
 
@@ -147,7 +157,8 @@ https://sentry.io/organizations/votre-org/projects/rationality-test/
 
 ## ✅ Checklist Post-Config
 
-- [ ] Vercel Analytics : Activé dans dashboard (30 sec)
+- [ ] Vercel Analytics : Activé dans dashboard (15 sec)
+- [ ] Vercel Speed Insights : Activé dans dashboard (15 sec)
 - [ ] UptimeRobot configuré avec alerte email (2 min)
 - [ ] (Optionnel) Sentry installé
 
