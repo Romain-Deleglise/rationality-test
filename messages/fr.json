@@ -502,7 +502,7 @@
   "cartNorms": {
     "shortForm": {
       "title": "6 modules CART (pondéré)",
-      "description": "Moyenne calculée à partir du CART original (RT60) pour les mêmes 6 modules évalués ici, pondérée selon les scores moyens de chaque module"
+      "description": "Moyenne calculée à partir du CART original (RT60) pour les mêmes 6 modules évalués ici, pondérée selon l'importance de chaque module"
     },
     "fullForm": {
       "title": "CART complet RT60",
