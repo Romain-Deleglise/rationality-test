@@ -258,7 +258,7 @@ export function applyRandomizationToQuestion<T extends {
   id: string;
   text: string;
   options?: string[];
-  correct?: number | string;
+  correct?: number | string | number[];
   explanation?: string;
   randomization?: QuestionRandomization;
 }>(
@@ -308,7 +308,7 @@ export function getRandomizedQuestion<T extends {
   id: string;
   text: string;
   options?: string[];
-  correct?: number | string;
+  correct?: number | string | number[];
   explanation?: string;
   randomization?: QuestionRandomization;
 }>(
