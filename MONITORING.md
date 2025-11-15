@@ -1,55 +1,49 @@
 # 📊 Monitoring Post-Lancement - Guide Express
 
-Configuration rapide (10 minutes) pour surveiller votre site en production.
+Configuration rapide (5 minutes) pour surveiller votre site en production.
 
 **Budget : 0€ - Toutes les solutions sont 100% GRATUITES** ✨
 
 ---
 
-## 📊 1. Cloudflare Web Analytics - 100% GRATUIT (3 MINUTES)
+## 📊 1. Vercel Analytics - 100% GRATUIT (30 SECONDES)
 
 **Status** : ✅ Code déjà ajouté dans `src/app/[locale]/layout.tsx`
 
-### Pourquoi Cloudflare ?
-- ✅ **100% gratuit à vie** (sans limite de pageviews)
+### Pourquoi Vercel Analytics ?
+- ✅ **100% gratuit** (2,500 événements/mois inclus)
 - ✅ **Privacy-friendly** : Pas de cookies, RGPD compliant
-- ✅ **Rapide** : Script très léger (~2KB)
-- ✅ **Aucune limite** de trafic ou de données
+- ✅ **Intégration native** : Déjà inclus avec Vercel
+- ✅ **Aucune configuration** nécessaire
+- ✅ **Rapide** : Déjà optimisé pour Next.js
 
 ### Configuration :
 
-1. **Créer un compte gratuit** : https://dash.cloudflare.com/sign-up
+1. **Activer dans Vercel Dashboard** :
+   - Aller sur https://vercel.com/dashboard
+   - Sélectionner votre projet `rationality-test`
+   - Aller dans l'onglet **Analytics**
+   - Cliquer **Enable** (ou **Enable Web Analytics**)
 
-2. **Ajouter Web Analytics** :
-   - Aller dans **Analytics & Logs** → **Web Analytics**
-   - Cliquer **Add a site**
-   - Entrer : `rationality-test.com`
-   - Copier le **Beacon Token** généré
+2. **C'est tout !** ✅ Le code est déjà dans le projet
 
-3. **Ajouter le token dans Vercel** :
-   - Aller dans **Vercel Dashboard** → Votre projet → **Settings** → **Environment Variables**
-   - Ajouter :
-     ```
-     Name: NEXT_PUBLIC_CLOUDFLARE_TOKEN
-     Value: [Coller votre token Cloudflare ici]
-     ```
-   - Cliquer **Save**
-   - **Redéployer** votre site (Vercel → Deployments → Redeploy)
-
-4. **C'est tout !** ✅ Le code est déjà prêt dans `layout.tsx`
+3. **Déployer et visiter** :
+   - Déployer votre site (fait automatiquement)
+   - Visiter https://rationality-test.com
+   - Attendre 30 secondes
+   - Les données apparaîtront dans le dashboard
 
 ### Dashboard
-Accès : https://dash.cloudflare.com → Web Analytics
+Accès : https://vercel.com/dashboard → Votre projet → **Analytics**
 
 **Métriques disponibles :**
 - Visiteurs uniques
-- Pages vues
-- Sources de trafic (referrers)
-- Pays et régions
+- Pages vues (pageviews)
+- Top pages
+- Top referrers (sources de trafic)
+- Pays
 - Navigateurs et appareils
-- Pages populaires
-
-**Alternative :** Si vous préférez **Vercel Analytics** (aussi gratuit jusqu'à 2,500 événements/mois), c'est encore plus simple : juste activer dans Vercel Dashboard → Analytics.
+- Temps réel
 
 ---
 
@@ -132,8 +126,8 @@ https://sentry.io/organizations/votre-org/projects/rationality-test/
 
 ## 🎯 Recommandation
 
-### À faire MAINTENANT (5 minutes) :
-1. ✅ **Cloudflare Web Analytics** : Créer compte + copier token (3 min)
+### À faire MAINTENANT (3 minutes) :
+1. ✅ **Vercel Analytics** : Activer dans Vercel Dashboard (30 sec)
 2. ✅ **UptimeRobot** : Configurer monitoring uptime (2 min)
 
 ### À faire PLUS TARD (si besoin) :
@@ -145,7 +139,7 @@ https://sentry.io/organizations/votre-org/projects/rationality-test/
 
 ## 📈 Accès rapide (après configuration)
 
-- **Analytics** : https://dash.cloudflare.com (Web Analytics)
+- **Analytics** : https://vercel.com/dashboard → Votre projet → Analytics
 - **Uptime** : https://uptimerobot.com/dashboard
 - **Errors** : https://sentry.io (si configuré)
 
@@ -153,8 +147,8 @@ https://sentry.io/organizations/votre-org/projects/rationality-test/
 
 ## ✅ Checklist Post-Config
 
-- [ ] Cloudflare Web Analytics : Compte créé et token copié
-- [ ] UptimeRobot configuré avec alerte email
+- [ ] Vercel Analytics : Activé dans dashboard (30 sec)
+- [ ] UptimeRobot configuré avec alerte email (2 min)
 - [ ] (Optionnel) Sentry installé
 
 **Une fois fait, votre site est complètement monitoré - GRATUITEMENT ! 🚀**
