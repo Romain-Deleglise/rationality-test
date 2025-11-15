@@ -2351,6 +2351,11 @@ export default function ResultatsPage() {
           <p className="mt-1">
             {t('footer.basedOnResearch')}
           </p>
+          <p className="mt-2">
+            <Link href="/legal" className="text-blue-600 dark:text-blue-400 hover:underline">
+              {t('footer.legalNotice')}
+            </Link>
+          </p>
         </div>
       </div>
     </div>

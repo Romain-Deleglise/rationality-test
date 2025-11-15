@@ -259,7 +259,65 @@
 
     "footer": {
       "openSourceProject": "This test is a free, open-source project, in the public interest :)",
-      "basedOnResearch": "Based on scientific research in cognitive psychology."
+      "basedOnResearch": "Based on scientific research in cognitive psychology.",
+      "legalNotice": "Legal Notice"
+    },
+
+    "legal": {
+      "title": "Legal Notice",
+      "intellectualProperty": "Intellectual Property",
+      "intellectualPropertyText": "This test is an independent educational adaptation inspired by scientific research in cognitive psychology, notably the Comprehensive Assessment of Rational Thinking (CART) developed by Keith E. Stanovich, Richard F. West, and Maggie E. Toplak, published by MIT Press in 2016.",
+      "disclaimer": "Important Disclaimer",
+      "disclaimerText": "This project is NOT the official CART and is not affiliated with MIT Press, Keith Stanovich, Richard West, Maggie Toplak, or any academic institution associated with the development of the original CART.",
+      "usage": "Usage and Purpose",
+      "usageText": "This project is provided for free, as open source, and for strictly educational purposes. It should not be used for commercial purposes, clinical diagnosis, or professional decision-making (recruitment, career guidance, etc.).",
+      "usageList": {
+        "item1": "Educational purpose only",
+        "item2": "Not for clinical diagnosis",
+        "item3": "Not for commercial use",
+        "item4": "No affiliation with original CART authors"
+      },
+      "methodology": "Methodology and Sources",
+      "methodologyText": "This test uses:",
+      "methodologyList": {
+        "item1": "Public domain questions from scientific literature in cognitive psychology",
+        "item2": "Original variants inspired by peer-reviewed published research",
+        "item3": "Adaptations of classic reasoning problems (CRT, conjunction fallacy, base rate neglect, etc.)"
+      },
+      "differences": "Differences from Official CART",
+      "differencesText": "This adaptation differs from the original CART in several aspects:",
+      "differencesList": {
+        "item1": "Shorter format (20-90 minutes vs. 3+ hours for full CART)",
+        "item2": "Unsupervised online administration (vs. controlled administration for CART)",
+        "item3": "Adapted and translated questions (vs. standardized CART questions)",
+        "item4": "Indicative norms based on theoretical distribution (vs. validated psychometric norms of CART)"
+      },
+      "license": "Source Code License",
+      "licenseText": "The source code of this project is available under MIT License:",
+      "licenseLink": "View source code on GitHub",
+      "mitLicense": "MIT License - Free use with attribution",
+      "dataPrivacy": "Data Privacy",
+      "dataPrivacyText": "We collect minimal data:",
+      "dataPrivacyList": {
+        "item1": "Anonymized test results (stored in Supabase)",
+        "item2": "Email address (only if you choose to receive your results by email)",
+        "item3": "Anonymous analytics data (Vercel Analytics - privacy-friendly, no cookies)"
+      },
+      "dataPrivacyNote": "Your results are stored securely and are never shared with third parties. Email is used only to send your results once.",
+      "noWarranty": "No Warranty",
+      "noWarrantyText": "This test is provided \"as is\", without warranty of any kind. Scores obtained are indicative and should not be considered professional psychological diagnoses.",
+      "scientificReferences": "Scientific References",
+      "scientificReferencesText": "This test is inspired by the following works:",
+      "references": {
+        "ref1": "Stanovich, K. E., West, R. F., & Toplak, M. E. (2016). The Rationality Quotient: Toward a Test of Rational Thinking. MIT Press.",
+        "ref2": "Stanovich, K. E. (2009). What Intelligence Tests Miss: The Psychology of Rational Thought. Yale University Press.",
+        "ref3": "Frederick, S. (2005). Cognitive Reflection and Decision Making. Journal of Economic Perspectives, 19(4), 25-42.",
+        "ref4": "Kahneman, D., & Tversky, A. (1979). Prospect Theory: An Analysis of Decision under Risk. Econometrica, 47(2), 263-291."
+      },
+      "contact": "Contact",
+      "contactText": "For any questions, suggestions, or issue reports:",
+      "githubIssues": "Open an issue on GitHub",
+      "lastUpdated": "Last updated: November 2024"
     },
 
     "scoreInterpretations": {
