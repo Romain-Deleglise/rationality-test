@@ -18,7 +18,6 @@
       "publicInterest": "Dans l'intérêt général"
     },
     "viewSource": "→ Voir le code source sur GitHub",
-
     "whatIsRationality": {
       "title": "Qu'est-ce que la rationalité ?",
       "intro": "La rationalité, c'est la capacité à former des croyances qui reflètent fidèlement la réalité (<strong>rationalité épistémique</strong>) et à prendre des décisions qui maximisent vos objectifs (<strong>rationalité instrumentale</strong>).",
@@ -27,7 +26,6 @@
       "cognitiveBiases": "biais cognitifs",
       "andUpdating": ", et la capacité à mettre à jour vos croyances face à de nouvelles preuves."
     },
-
     "whatIsTested": {
       "title": "Ce que ce test mesure",
       "probabilistic": {
@@ -76,7 +74,6 @@
         "description": "Votre capacité à rejeter les croyances infondées et à adopter une pensée scientifique rigoureuse."
       }
     },
-
     "foundations": {
       "title": "Fondements scientifiques",
       "cart": "Ce test est inspiré du",
@@ -92,7 +89,6 @@
       "ref4": "Frederick, S. (2005). Cognitive Reflection and Decision Making. Journal of Economic Perspectives, 19(4), 25-42.",
       "disclaimer": "Note : Ce test est une adaptation éducative libre et gratuite. Il utilise des questions du domaine public et des variantes originales inspirées de la littérature scientifique."
     },
-
     "privacy": {
       "title": "🔒 Confidentialité et utilisation des données",
       "anonymous": "Vos réponses sont anonymes par défaut. Nous collectons uniquement :",
@@ -101,7 +97,6 @@
       "noPersonalData": "Aucune donnée personnelle identifiable n'est collectée. Conforme au",
       "gdpr": "RGPD"
     },
-
     "chooseVersion": {
       "title": "Choisissez votre version",
       "express": {
@@ -124,7 +119,6 @@
       "tip": "💡 Astuce :",
       "tipText": "Choisissez un moment calme où vous êtes reposé"
     },
-
     "footer": "Ce test est un projet open-source et gratuit."
   },
   "test": {
@@ -214,7 +208,6 @@
     "wantToTest": "Envie de tester votre rationalité ? Passez le test !",
     "totalDuration": "Durée totale",
     "errorSending": "Erreur lors de l'envoi. Veuillez réessayer.",
-
     "scoreLabels": {
       "veryHigh": "Très Élevée",
       "high": "Élevée",
@@ -222,7 +215,6 @@
       "belowAverage": "Sous la Moyenne",
       "limited": "Limitée"
     },
-
     "interpretations": {
       "excellent": "Excellent niveau de rationalité. Vous démontrez de solides compétences en pensée critique sur la plupart des dimensions. Vous êtes capable de résister aux biais cognitifs courants et de raisonner rigoureusement.",
       "good": "Bon niveau de rationalité. Vous avez des compétences de raisonnement solides mais il y a des marges d'amélioration dans certains domaines. Certains biais cognitifs influencent encore vos jugements.",
@@ -230,13 +222,11 @@
       "belowAverage": "Niveau de rationalité en dessous de la moyenne. Vous avez des difficultés à résister aux biais cognitifs. Un travail important est nécessaire pour améliorer votre pensée critique.",
       "weak": "Niveau de rationalité faible. Vous êtes très vulnérable aux biais cognitifs et aux erreurs de raisonnement. Votre pensée critique nécessite un développement substantiel."
     },
-
     "nextStepsContent": {
       "item1": "Consultez vos résultats détaillés avec explications scientifiques complètes",
       "item2": "Découvrez les ressources recommandées pour chaque dimension",
       "item3": "Repassez le test dans 6-12 mois pour mesurer vos progrès réels (pas avant, pour éviter l'effet de mémorisation)"
     },
-
     "moduleDescriptions": {
       "Raisonnement Probabiliste": "Votre capacité à raisonner avec les probabilités et éviter les erreurs classiques (erreur du parieur, négligence des taux de base, erreur de conjonction).",
       "Raisonnement Scientifique": "Votre capacité à tester rigoureusement des hypothèses, falsifier plutôt que confirmer, et distinguer corrélation et causation.",
@@ -256,70 +246,11 @@
       "Sensibilité à la Valeur Espérée": "Votre capacité à choisir rationnellement entre des paris en maximisant la valeur espérée plutôt que de suivre vos intuitions.",
       "Coûts Irrécupérables": "Votre résistance à la fallacy des coûts irrécupérables (sunk cost fallacy) : ne pas laisser les investissements passés influencer les décisions futures."
     },
-
     "footer": {
       "openSourceProject": "Ce test est un projet open-source, gratuit, et dans l'intérêt général :)",
       "basedOnResearch": "Basé sur la recherche scientifique en psychologie cognitive.",
       "legalNotice": "Mentions légales"
     },
-
-    "legal": {
-      "title": "Mentions Légales",
-      "intellectualProperty": "Propriété Intellectuelle",
-      "intellectualPropertyText": "Ce test est une adaptation éducative indépendante inspirée de la recherche scientifique en psychologie cognitive, notamment le Comprehensive Assessment of Rational Thinking (CART) développé par Keith E. Stanovich, Richard F. West et Maggie E. Toplak, publié par MIT Press en 2016.",
-      "disclaimer": "Avertissement Important",
-      "disclaimerText": "Ce projet n'est PAS le CART officiel et n'est pas affilié à MIT Press, Keith Stanovich, Richard West, Maggie Toplak, ou toute autre institution académique associée au développement du CART original.",
-      "usage": "Usage et Finalité",
-      "usageText": "Ce projet est fourni gratuitement, en open source, et à but strictement éducatif. Il ne doit pas être utilisé à des fins commerciales, de diagnostic clinique, ou de prise de décision professionnelle (recrutement, orientation, etc.).",
-      "usageList": {
-        "item1": "But éducatif uniquement",
-        "item2": "Pas de diagnostic clinique",
-        "item3": "Pas d'usage commercial",
-        "item4": "Pas d'affiliation avec les auteurs originaux du CART"
-      },
-      "methodology": "Méthodologie et Sources",
-      "methodologyText": "Ce test utilise :",
-      "methodologyList": {
-        "item1": "Questions du domaine public issues de la littérature scientifique en psychologie cognitive",
-        "item2": "Variantes originales inspirées de recherches publiées et validées par des pairs",
-        "item3": "Adaptations de problèmes classiques de raisonnement (CRT, biais de conjonction, négligence des taux de base, etc.)"
-      },
-      "differences": "Différences avec le CART officiel",
-      "differencesText": "Cette adaptation diffère du CART original sur plusieurs aspects :",
-      "differencesList": {
-        "item1": "Format plus court (20-90 minutes vs. 3+ heures pour le CART complet)",
-        "item2": "Administration en ligne non supervisée (vs. administration contrôlée pour le CART)",
-        "item3": "Questions adaptées et traduites (vs. questions standardisées du CART)",
-        "item4": "Normes indicatives basées sur la distribution théorique (vs. normes psychométriques validées du CART)"
-      },
-      "license": "Licence du Code Source",
-      "licenseText": "Le code source de ce projet est disponible sous licence MIT :",
-      "licenseLink": "Voir le code source sur GitHub",
-      "mitLicense": "Licence MIT - Usage libre avec attribution",
-      "dataPrivacy": "Confidentialité des Données",
-      "dataPrivacyText": "Nous collectons un minimum de données :",
-      "dataPrivacyList": {
-        "item1": "Résultats anonymisés du test (stockés dans Supabase)",
-        "item2": "Adresse email (uniquement si vous choisissez de recevoir vos résultats par email)",
-        "item3": "Données analytiques anonymisées (Vercel Analytics - privacy-friendly, pas de cookies)"
-      },
-      "dataPrivacyNote": "Vos résultats sont stockés de manière sécurisée et ne sont jamais partagés avec des tiers. L'email est utilisé uniquement pour vous envoyer vos résultats une seule fois.",
-      "noWarranty": "Absence de Garantie",
-      "noWarrantyText": "Ce test est fourni \"tel quel\", sans garantie d'aucune sorte. Les scores obtenus sont indicatifs et ne doivent pas être considérés comme des diagnostics psychologiques professionnels.",
-      "scientificReferences": "Références Scientifiques",
-      "scientificReferencesText": "Ce test s'inspire des travaux suivants :",
-      "references": {
-        "ref1": "Stanovich, K. E., West, R. F., & Toplak, M. E. (2016). The Rationality Quotient: Toward a Test of Rational Thinking. MIT Press.",
-        "ref2": "Stanovich, K. E. (2009). What Intelligence Tests Miss: The Psychology of Rational Thought. Yale University Press.",
-        "ref3": "Frederick, S. (2005). Cognitive Reflection and Decision Making. Journal of Economic Perspectives, 19(4), 25-42.",
-        "ref4": "Kahneman, D., & Tversky, A. (1979). Prospect Theory: An Analysis of Decision under Risk. Econometrica, 47(2), 263-291."
-      },
-      "contact": "Contact",
-      "contactText": "Pour toute question, suggestion ou signalement de problème :",
-      "githubIssues": "Ouvrir une issue sur GitHub",
-      "lastUpdated": "Dernière mise à jour : Novembre 2024"
-    },
-
     "scoreInterpretations": {
       "veryHigh": "Score très élevé. Vous démontrez une excellente maîtrise des principes de raisonnement rationnel. Cependant, gardez à l'esprit que connaître les biais ne garantit pas d'y résister en situation réelle (fatigue, stress, émotions).",
       "high": "Score élevé. Vous avez acquis une bonne compréhension des erreurs de raisonnement courantes. Attention toutefois : les biais persistent même chez les experts. L'utilisation de protocoles décisionnels reste recommandée pour les choix importants.",
@@ -328,7 +259,6 @@
       "limited": "Score limité. Vos résultats suggèrent une forte susceptibilité aux biais cognitifs courants. Ne vous découragez pas : même des personnes très intelligentes obtiennent des scores similaires. La rationalité se travaille différemment de l'intelligence générale. Commencez par comprendre les concepts de base avant d'attendre une amélioration mesurable.",
       "veryLimited": "Score très limité. Votre raisonnement est fortement affecté par de nombreux biais cognitifs. Cela ne reflète pas votre intelligence, mais plutôt un manque de familiarité avec ces concepts. Considérez ce test comme un point de départ éducatif plutôt qu'un jugement. L'amélioration nécessitera du temps et de la patience."
     },
-
     "testOrigin": {
       "title": "📖 À propos de ce test",
       "whatIsCart": "Qu'est-ce que le CART ?",
@@ -338,7 +268,6 @@
       "adaptationDescription": "Ce test est une adaptation éducative libre du CART. Il utilise des questions du domaine public et des variantes inspirées de la littérature scientifique. Ce n'est PAS le CART officiel (qui nécessite une administration contrôlée), mais une approximation pédagogique gratuite.",
       "keyDifference": "Différence clé : L'intelligence (QI) mesure votre capacité cognitive, mais la rationalité mesure l'efficacité avec laquelle vous utilisez cette capacité. On peut être intelligent mais peu rationnel."
     },
-
     "cartHistory": {
       "title": "📖 D'où vient ce test ? Histoire du CART",
       "fortyYears": "40 ans de recherche",
@@ -353,7 +282,6 @@
       "birthOfCartP2": "Le projet, financé par la John Templeton Foundation, a impliqué plus de 1000 participants, 20 sous-tests différents, et une validation statistique rigoureuse.",
       "birthOfCartP3": "Ce test en ligne est une adaptation éducative libre du CART original. Il utilise des questions du domaine public et des variantes inspirées de la littérature scientifique. Ce n'est PAS le CART officiel (qui nécessite une administration contrôlée), mais une approximation pédagogique gratuite."
     },
-
     "pragmaticSolution": {
       "title": "🛠️ La Solution Pragmatique (Recommandée par Kahneman)",
       "intro": "Plutôt que d'essayer de changer votre cerveau (difficile, incertain), changez votre environnement de décision :",
@@ -364,7 +292,6 @@
       "journal": "Journal de décision : Noter prédictions + confiance + raisonnement. Revue mensuelle.",
       "example": "Exemple concret : En chirurgie, imposer une checklist obligatoire a réduit les complications de 47% (Haynes et al., 2009) - bien plus efficace que \"former les chirurgiens à être moins overconfidents\"."
     },
-
     "resources": {
       "title": "📚 Ressources pour approfondir",
       "essentialReading": "Lectures essentielles",
@@ -382,7 +309,6 @@
       "lesswrong": "LessWrong.com",
       "lesswrongDesc": "Communauté et articles sur la rationalité"
     },
-
     "scientificSources": {
       "title": "📖 Sources scientifiques complètes",
       "mainFoundations": "Fondements principaux",
@@ -399,7 +325,6 @@
       "limitation2": "Score peut varier selon fatigue, stress, contexte",
       "limitation3": "Amélioration modeste et difficile à maintenir"
     },
-
     "stateOfResearch": {
       "title": "🔬 Où en sommes-nous ? État actuel de la recherche en rationalité",
       "intro": "Une évaluation honnête de ce que nous savons, ce que nous ne savons pas, et ce qui reste controversé :",
@@ -447,7 +372,6 @@
   "methodology": {
     "title": "Méthodologie & Validation Scientifique",
     "subtitle": "Comprendre les fondements scientifiques de ce test de rationalité",
-
     "cartSection": {
       "title": "Qu'est-ce que le CART ?",
       "description": "Le CART (Comprehensive Assessment of Rational Thinking) est une batterie de tests scientifiquement validée développée par les psychologues cognitivistes Keith E. Stanovich, Richard F. West et Maggie E. Toplak. Publié par MIT Press en 2016, il représente plus de 40 ans de recherche sur la pensée rationnelle et les biais cognitifs.",
@@ -459,7 +383,6 @@
       "component3": "Résistance aux biais cognitifs",
       "component4": "Calibration et mise à jour des croyances"
     },
-
     "validationSection": {
       "title": "Validation scientifique",
       "psychometric": "Propriétés psychométriques",
@@ -473,7 +396,6 @@
       "outcome3": "Croyances plus précises sur des sujets importants",
       "outcome4": "Meilleure évaluation et gestion des risques"
     },
-
     "adaptationSection": {
       "title": "Notre adaptation",
       "description": "Ce test est une adaptation éducative des principes du CART. Nous utilisons :",
@@ -486,7 +408,6 @@
       "difference3": "Focus éducatif (outil d'apprentissage vs. instrument de recherche)",
       "difference4": "Gratuit et open-source (vs. licence commerciale)"
     },
-
     "limitationsSection": {
       "title": "Limites & critiques",
       "important": "Mises en garde importantes",
@@ -501,7 +422,6 @@
       "limitation5": "Non diagnostique",
       "limitation5Text": "Ce test est éducatif, pas diagnostique. Il ne peut pas identifier de conditions cliniques ou mesurer définitivement votre 'quotient de rationalité'."
     },
-
     "improvementSection": {
       "title": "La rationalité peut-elle être améliorée ?",
       "answer": "Oui, avec des qualifications importantes :",
@@ -514,7 +434,6 @@
       "realistic": "Attentes réalistes",
       "realisticText": "L'amélioration est possible mais généralement modeste. N'attendez pas de changements dramatiques. L'objectif est un progrès incrémental et de meilleurs outils de prise de décision, pas une transformation cognitive."
     },
-
     "referencesSection": {
       "title": "Références clés",
       "ref1": "Stanovich, K. E., West, R. F., & Toplak, M. E. (2016). The Rationality Quotient: Toward a Test of Rational Thinking. MIT Press.",
@@ -523,5 +442,61 @@
       "ref4": "Frederick, S. (2005). Cognitive Reflection and Decision Making. Journal of Economic Perspectives, 19(4), 25-42.",
       "ref5": "Baron, J. (2008). Thinking and Deciding (4th ed.). Cambridge University Press."
     }
+  },
+  "legal": {
+    "title": "Mentions Légales",
+    "intellectualProperty": "Propriété Intellectuelle",
+    "intellectualPropertyText": "Ce test est une adaptation éducative indépendante inspirée de la recherche scientifique en psychologie cognitive, notamment le Comprehensive Assessment of Rational Thinking (CART) développé par Keith E. Stanovich, Richard F. West et Maggie E. Toplak, publié par MIT Press en 2016.",
+    "disclaimer": "Avertissement Important",
+    "disclaimerText": "Ce projet n'est PAS le CART officiel et n'est pas affilié à MIT Press, Keith Stanovich, Richard West, Maggie Toplak, ou toute autre institution académique associée au développement du CART original.",
+    "usage": "Usage et Finalité",
+    "usageText": "Ce projet est fourni gratuitement, en open source, et à but strictement éducatif. Il ne doit pas être utilisé à des fins commerciales, de diagnostic clinique, ou de prise de décision professionnelle (recrutement, orientation, etc.).",
+    "usageList": {
+      "item1": "But éducatif uniquement",
+      "item2": "Pas de diagnostic clinique",
+      "item3": "Pas d'usage commercial",
+      "item4": "Pas d'affiliation avec les auteurs originaux du CART"
+    },
+    "methodology": "Méthodologie et Sources",
+    "methodologyText": "Ce test utilise :",
+    "methodologyList": {
+      "item1": "Questions du domaine public issues de la littérature scientifique en psychologie cognitive",
+      "item2": "Variantes originales inspirées de recherches publiées et validées par des pairs",
+      "item3": "Adaptations de problèmes classiques de raisonnement (CRT, biais de conjonction, négligence des taux de base, etc.)"
+    },
+    "differences": "Différences avec le CART officiel",
+    "differencesText": "Cette adaptation diffère du CART original sur plusieurs aspects :",
+    "differencesList": {
+      "item1": "Format plus court (20-90 minutes vs. 3+ heures pour le CART complet)",
+      "item2": "Administration en ligne non supervisée (vs. administration contrôlée pour le CART)",
+      "item3": "Questions adaptées et traduites (vs. questions standardisées du CART)",
+      "item4": "Normes indicatives basées sur la distribution théorique (vs. normes psychométriques validées du CART)"
+    },
+    "license": "Licence du Code Source",
+    "licenseText": "Le code source de ce projet est disponible sous licence MIT :",
+    "licenseLink": "Voir le code source sur GitHub",
+    "mitLicense": "Licence MIT - Usage libre avec attribution",
+    "dataPrivacy": "Confidentialité des Données",
+    "dataPrivacyText": "Nous collectons un minimum de données :",
+    "dataPrivacyList": {
+      "item1": "Résultats anonymisés du test (stockés dans Supabase)",
+      "item2": "Adresse email (uniquement si vous choisissez de recevoir vos résultats par email)",
+      "item3": "Données analytiques anonymisées (Vercel Analytics - privacy-friendly, pas de cookies)"
+    },
+    "dataPrivacyNote": "Vos résultats sont stockés de manière sécurisée et ne sont jamais partagés avec des tiers. L'email est utilisé uniquement pour vous envoyer vos résultats une seule fois.",
+    "noWarranty": "Absence de Garantie",
+    "noWarrantyText": "Ce test est fourni \"tel quel\", sans garantie d'aucune sorte. Les scores obtenus sont indicatifs et ne doivent pas être considérés comme des diagnostics psychologiques professionnels.",
+    "scientificReferences": "Références Scientifiques",
+    "scientificReferencesText": "Ce test s'inspire des travaux suivants :",
+    "references": {
+      "ref1": "Stanovich, K. E., West, R. F., & Toplak, M. E. (2016). The Rationality Quotient: Toward a Test of Rational Thinking. MIT Press.",
+      "ref2": "Stanovich, K. E. (2009). What Intelligence Tests Miss: The Psychology of Rational Thought. Yale University Press.",
+      "ref3": "Frederick, S. (2005). Cognitive Reflection and Decision Making. Journal of Economic Perspectives, 19(4), 25-42.",
+      "ref4": "Kahneman, D., & Tversky, A. (1979). Prospect Theory: An Analysis of Decision under Risk. Econometrica, 47(2), 263-291."
+    },
+    "contact": "Contact",
+    "contactText": "Pour toute question, suggestion ou signalement de problème :",
+    "githubIssues": "Ouvrir une issue sur GitHub",
+    "lastUpdated": "Dernière mise à jour : Novembre 2024"
   }
 }
