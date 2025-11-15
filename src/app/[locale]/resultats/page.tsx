@@ -1270,7 +1270,10 @@ export default function ResultatsPage() {
               {testScore.percentage.toFixed(1)}%
             </div>
             <div className={`text-2xl font-semibold mb-2 ${getScoreColor(testScore.percentage)}`}>
-              {t('rationality')} {getScoreLabel(testScore.percentage)}
+              {locale === 'fr'
+                ? `${t('rationality')} ${getScoreLabel(testScore.percentage)}`
+                : `${getScoreLabel(testScore.percentage)} ${t('rationality')}`
+              }
             </div>
             <div className="text-lg text-gray-600 dark:text-gray-300">
               {testScore.totalEarned.toFixed(1)} / {testScore.totalPossible.toFixed(1)} {t('points')}
