@@ -210,8 +210,10 @@ export default function SavedResultsPage({ params }: { params: Promise<{ token: 
             <CardHeader>
               <CardTitle>{t('barChart')}</CardTitle>
             </CardHeader>
-            <CardContent>
-              <BarChartComponent moduleScores={moduleScores} locale={locale} />
+            <CardContent className="overflow-x-auto">
+              <div className="min-w-[600px]">
+                <BarChartComponent moduleScores={moduleScores} locale={locale} />
+              </div>
             </CardContent>
           </Card>
         </div>

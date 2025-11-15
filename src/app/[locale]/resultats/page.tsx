@@ -1948,8 +1948,10 @@ export default function ResultatsPage() {
             <CardHeader>
               <CardTitle>{t('barChart')}</CardTitle>
             </CardHeader>
-            <CardContent>
-              <BarChartComponent moduleScores={testScore.modules} locale={locale} />
+            <CardContent className="overflow-x-auto">
+              <div className="min-w-[600px]">
+                <BarChartComponent moduleScores={testScore.modules} locale={locale} />
+              </div>
             </CardContent>
           </Card>
         </div>
