@@ -33,7 +33,7 @@ export interface Question {
   text: string;
   unit?: string;
   options?: string[];
-  correct?: number | string;
+  correct?: number | string | number[];
   tolerance?: number;
   points: number;
   explanation?: string;
@@ -41,6 +41,10 @@ export interface Question {
   reverse?: boolean;
   anchorType?: 'low' | 'high';
   randomization?: QuestionRandomization;
+  scoring?: {
+    type?: string;
+    rule?: string;
+  };
 }
 
 export interface Module {

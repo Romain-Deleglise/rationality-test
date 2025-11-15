@@ -319,6 +319,11 @@ export default function Home() {
           <p>
             {t('footer')}
           </p>
+          <p className="mt-2">
+            <Link href="/legal" className="text-blue-600 dark:text-blue-400 hover:underline">
+              {locale === 'fr' ? 'Mentions légales' : 'Legal Notice'}
+            </Link>
+          </p>
         </div>
       </div>
     </div>

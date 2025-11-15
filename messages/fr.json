@@ -259,7 +259,65 @@
 
     "footer": {
       "openSourceProject": "Ce test est un projet open-source, gratuit, et dans l'intérêt général :)",
-      "basedOnResearch": "Basé sur la recherche scientifique en psychologie cognitive."
+      "basedOnResearch": "Basé sur la recherche scientifique en psychologie cognitive.",
+      "legalNotice": "Mentions légales"
+    },
+
+    "legal": {
+      "title": "Mentions Légales",
+      "intellectualProperty": "Propriété Intellectuelle",
+      "intellectualPropertyText": "Ce test est une adaptation éducative indépendante inspirée de la recherche scientifique en psychologie cognitive, notamment le Comprehensive Assessment of Rational Thinking (CART) développé par Keith E. Stanovich, Richard F. West et Maggie E. Toplak, publié par MIT Press en 2016.",
+      "disclaimer": "Avertissement Important",
+      "disclaimerText": "Ce projet n'est PAS le CART officiel et n'est pas affilié à MIT Press, Keith Stanovich, Richard West, Maggie Toplak, ou toute autre institution académique associée au développement du CART original.",
+      "usage": "Usage et Finalité",
+      "usageText": "Ce projet est fourni gratuitement, en open source, et à but strictement éducatif. Il ne doit pas être utilisé à des fins commerciales, de diagnostic clinique, ou de prise de décision professionnelle (recrutement, orientation, etc.).",
+      "usageList": {
+        "item1": "But éducatif uniquement",
+        "item2": "Pas de diagnostic clinique",
+        "item3": "Pas d'usage commercial",
+        "item4": "Pas d'affiliation avec les auteurs originaux du CART"
+      },
+      "methodology": "Méthodologie et Sources",
+      "methodologyText": "Ce test utilise :",
+      "methodologyList": {
+        "item1": "Questions du domaine public issues de la littérature scientifique en psychologie cognitive",
+        "item2": "Variantes originales inspirées de recherches publiées et validées par des pairs",
+        "item3": "Adaptations de problèmes classiques de raisonnement (CRT, biais de conjonction, négligence des taux de base, etc.)"
+      },
+      "differences": "Différences avec le CART officiel",
+      "differencesText": "Cette adaptation diffère du CART original sur plusieurs aspects :",
+      "differencesList": {
+        "item1": "Format plus court (20-90 minutes vs. 3+ heures pour le CART complet)",
+        "item2": "Administration en ligne non supervisée (vs. administration contrôlée pour le CART)",
+        "item3": "Questions adaptées et traduites (vs. questions standardisées du CART)",
+        "item4": "Normes indicatives basées sur la distribution théorique (vs. normes psychométriques validées du CART)"
+      },
+      "license": "Licence du Code Source",
+      "licenseText": "Le code source de ce projet est disponible sous licence MIT :",
+      "licenseLink": "Voir le code source sur GitHub",
+      "mitLicense": "Licence MIT - Usage libre avec attribution",
+      "dataPrivacy": "Confidentialité des Données",
+      "dataPrivacyText": "Nous collectons un minimum de données :",
+      "dataPrivacyList": {
+        "item1": "Résultats anonymisés du test (stockés dans Supabase)",
+        "item2": "Adresse email (uniquement si vous choisissez de recevoir vos résultats par email)",
+        "item3": "Données analytiques anonymisées (Vercel Analytics - privacy-friendly, pas de cookies)"
+      },
+      "dataPrivacyNote": "Vos résultats sont stockés de manière sécurisée et ne sont jamais partagés avec des tiers. L'email est utilisé uniquement pour vous envoyer vos résultats une seule fois.",
+      "noWarranty": "Absence de Garantie",
+      "noWarrantyText": "Ce test est fourni \"tel quel\", sans garantie d'aucune sorte. Les scores obtenus sont indicatifs et ne doivent pas être considérés comme des diagnostics psychologiques professionnels.",
+      "scientificReferences": "Références Scientifiques",
+      "scientificReferencesText": "Ce test s'inspire des travaux suivants :",
+      "references": {
+        "ref1": "Stanovich, K. E., West, R. F., & Toplak, M. E. (2016). The Rationality Quotient: Toward a Test of Rational Thinking. MIT Press.",
+        "ref2": "Stanovich, K. E. (2009). What Intelligence Tests Miss: The Psychology of Rational Thought. Yale University Press.",
+        "ref3": "Frederick, S. (2005). Cognitive Reflection and Decision Making. Journal of Economic Perspectives, 19(4), 25-42.",
+        "ref4": "Kahneman, D., & Tversky, A. (1979). Prospect Theory: An Analysis of Decision under Risk. Econometrica, 47(2), 263-291."
+      },
+      "contact": "Contact",
+      "contactText": "Pour toute question, suggestion ou signalement de problème :",
+      "githubIssues": "Ouvrir une issue sur GitHub",
+      "lastUpdated": "Dernière mise à jour : Novembre 2024"
     },
 
     "scoreInterpretations": {
