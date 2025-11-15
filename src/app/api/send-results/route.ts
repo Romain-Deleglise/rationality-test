@@ -359,8 +359,12 @@ ${t.projectDesc}
     `;
 
     // Envoyer l'email via Resend
+    const emailFrom = locale === 'fr'
+      ? 'Test de Rationalité <results@rationality-test.com>'
+      : 'Rationality Test <results@rationality-test.com>';
+
     const data = await resend.emails.send({
-      from: `${t.title} <onboarding@resend.dev>`,
+      from: emailFrom,
       to: [email],
       subject: `${t.emailSubject} (${testScore.percentage.toFixed(1)}%)`,
       html: htmlContent,
