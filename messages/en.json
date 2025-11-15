@@ -498,5 +498,15 @@
     "contactText": "For any questions, suggestions, or issue reports:",
     "githubIssues": "Open an issue on GitHub",
     "emailButton": "Send an email"
+  },
+  "cartNorms": {
+    "shortForm": {
+      "title": "CART 6 modules (weighted)",
+      "description": "Mean calculated from original CART (RT60) for the same 6 modules assessed here, weighted by each module's average score"
+    },
+    "fullForm": {
+      "title": "Full CART RT60",
+      "description": "Complete CART test (17 modules)"
+    }
   }
 }

@@ -98,6 +98,7 @@ export default function ResultatsPage() {
   const locale = params.locale as string;
   const t = useTranslations('results');
   const tCommon = useTranslations('common');
+  const tCart = useTranslations('cartNorms');
   const { session, modules, resetTest } = useTestStore();
   const [testScore, setTestScore] = useState<TestScore | null>(null);
   const [email, setEmail] = useState('');
@@ -1437,7 +1438,10 @@ export default function ResultatsPage() {
                         {((cartNorms.mean / cartNorms.totalPoints) * 100).toFixed(1)}%
                       </div>
                       <div className="text-xs text-gray-600 dark:text-gray-400">
-                        {cartNorms.study} (N={cartNorms.sampleSize})
+                        {version === 'complète' ? tCart('fullForm.title') : tCart('shortForm.title')}
+                      </div>
+                      <div className="text-xs text-gray-500 dark:text-gray-500 mt-1 italic">
+                        {version === 'complète' ? tCart('fullForm.description') : tCart('shortForm.description')}
                       </div>
                     </div>
                   </div>
@@ -1660,8 +1664,12 @@ export default function ResultatsPage() {
               </h3>
               <p className="text-sm text-gray-600 dark:text-gray-400 mb-6 text-justify">
                 {locale === 'fr'
-                  ? `Distribution des scores de l'étude ${cartNorms.study} (N=${cartNorms.sampleSize}) avec votre position marquée. Notre test couvre 17 des 20 modules du CART complet, la comparaison est donc indicative.`
-                  : `Score distribution from ${cartNorms.study} study (N=${cartNorms.sampleSize}) with your position marked. Our test covers 17 out of 20 CART modules, so this comparison is indicative.`}
+                  ? (version === 'complète'
+                      ? `Distribution des scores de référence (${tCart('fullForm.title')}) avec votre position marquée. Notre test couvre 17 des 20 modules du CART complet, la comparaison est donc indicative.`
+                      : `Distribution des scores de référence (${tCart('shortForm.title')}) avec votre position marquée. ${tCart('shortForm.description')}.`)
+                  : (version === 'complète'
+                      ? `Reference score distribution (${tCart('fullForm.title')}) with your position marked. Our test covers 17 out of 20 CART modules, so this comparison is indicative.`
+                      : `Reference score distribution (${tCart('shortForm.title')}) with your position marked. ${tCart('shortForm.description')}.`)}
               </p>
               <div className="bg-gray-50 dark:bg-gray-700/30 rounded-lg p-6 border border-gray-200 dark:border-gray-600">
                 {(() => {
