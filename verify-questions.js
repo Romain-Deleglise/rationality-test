@@ -62,8 +62,20 @@ testFiles.forEach((filePath) => {
         errors.push('Pas de type défini');
       }
 
-      // 2. Vérifier que la question a une bonne réponse (sauf pour certains types)
-      if (question.correct === undefined || question.correct === null) {
+      // 2. Vérifier que la question a une bonne réponse OU une manière de la calculer
+      const hasCorrect = question.correct !== undefined && question.correct !== null;
+      const hasReverse = question.reverse !== undefined && question.reverse !== null;
+      const hasScoring = question.scoring && question.scoring.rule;
+      const isOpinionQuestion = question.points === 0; // Questions d'opinion sans bonne réponse
+      const isFramingPair = question.pairId !== undefined; // Questions de framing en paire
+
+      // Pour likert: soit 'correct' existe, soit 'reverse' existe, soit c'est une question d'opinion
+      // Pour ranking: soit 'correct' existe, soit 'scoring.rule' existe
+      if (question.type === 'likert' && !hasCorrect && !hasReverse && !isOpinionQuestion) {
+        errors.push('Questions likert nécessitent soit "correct" soit "reverse"');
+      } else if (question.type === 'ranking' && !hasCorrect && !hasScoring) {
+        errors.push('Questions ranking nécessitent soit "correct" soit "scoring.rule"');
+      } else if (question.type !== 'likert' && question.type !== 'ranking' && !hasCorrect && !isOpinionQuestion && !isFramingPair) {
         errors.push('Pas de réponse correcte définie (champ "correct" manquant)');
       }
 
@@ -98,14 +110,17 @@ testFiles.forEach((filePath) => {
           break;
 
         case 'ranking':
-          if (!Array.isArray(question.correct)) {
-            errors.push('Type ranking mais "correct" n\'est pas un tableau');
+          // Valide si soit correct est un tableau, soit scoring.rule existe
+          if (!Array.isArray(question.correct) && !hasScoring) {
+            errors.push('Type ranking: nécessite soit "correct" (tableau) soit "scoring.rule"');
           }
           break;
 
         case 'likert':
-          if (typeof question.correct !== 'number' && typeof question.correct !== 'string') {
-            errors.push('Type likert mais "correct" n\'est pas un nombre');
+          // Valide si soit correct est un nombre, soit reverse est défini, soit c'est une question d'opinion
+          const hasValidCorrect = typeof question.correct === 'number' || typeof question.correct === 'string';
+          if (!hasValidCorrect && !hasReverse && !isOpinionQuestion) {
+            errors.push('Type likert: nécessite soit "correct" (nombre) soit "reverse" (boolean)');
           }
           break;
 
@@ -117,7 +132,8 @@ testFiles.forEach((filePath) => {
       }
 
       // 4. Vérifier que la question a des points
-      if (!question.points || question.points <= 0) {
+      // Sauf si c'est une question d'opinion (points === 0 intentionnellement)
+      if (question.points === undefined || question.points === null) {
         warnings.push(`Pas de points définis (défaut: 1 point)`);
       }
 

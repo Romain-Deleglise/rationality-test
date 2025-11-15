@@ -115,40 +115,77 @@ export function scoreQuestion(
 
       case 'ranking':
         const userRanking = answer.value as number[];
-        // Corriger le cast pour gérer string | number
-        const correctRanking = Array.isArray(effectiveQuestion.correct)
-          ? effectiveQuestion.correct as number[]
-          : [];
 
-        if (!Array.isArray(userRanking) || !Array.isArray(correctRanking) || correctRanking.length === 0) {
+        if (!Array.isArray(userRanking) || userRanking.length === 0) {
           break;
         }
 
-        let matches = 0;
-        for (let i = 0; i < Math.min(userRanking.length, correctRanking.length); i++) {
-          if (userRanking[i] === correctRanking[i]) matches++;
+        // Pour les questions de ranking, on utilise soit 'correct' soit 'scoring.rule'
+        if (Array.isArray(effectiveQuestion.correct) && effectiveQuestion.correct.length > 0) {
+          // Méthode 1: Si 'correct' est défini (ordre exact attendu)
+          const correctRanking = effectiveQuestion.correct as number[];
+          let matches = 0;
+          for (let i = 0; i < Math.min(userRanking.length, correctRanking.length); i++) {
+            if (userRanking[i] === correctRanking[i]) matches++;
+          }
+          const accuracy = userRanking.length > 0 ? matches / userRanking.length : 0;
+          earned = possible * accuracy;
+          correct = accuracy >= 0.8;
+        } else if (question.scoring && question.scoring.rule) {
+          // Méthode 2: Si 'scoring.rule' est défini (règle de comparaison)
+          // Format de la règle: "option-1 > option-3" signifie option-1 doit être classé avant option-3
+          const rule = question.scoring.rule as string;
+          const match = rule.match(/option-(\d+)\s*>\s*option-(\d+)/);
+
+          if (match) {
+            const higherOption = parseInt(match[1], 10);
+            const lowerOption = parseInt(match[2], 10);
+
+            // Trouver les positions dans le classement de l'utilisateur
+            const higherPos = userRanking.indexOf(higherOption);
+            const lowerPos = userRanking.indexOf(lowerOption);
+
+            // Vérifier que les deux options sont présentes et dans le bon ordre
+            if (higherPos !== -1 && lowerPos !== -1 && higherPos < lowerPos) {
+              earned = possible;
+              correct = true;
+            } else {
+              earned = 0;
+              correct = false;
+            }
+          }
         }
-        const accuracy = userRanking.length > 0 ? matches / userRanking.length : 0;
-        earned = possible * accuracy;
-        correct = accuracy >= 0.8;
         break;
 
       case 'likert':
         const likertAnswer = Number(answer.value);
-        const correctLikert = Number(effectiveQuestion.correct);
-        
+
+        // Pour les questions Likert, la bonne réponse est déterminée par le champ 'reverse'
+        // reverse: false (affirmation irrationnelle) → correct = 1 (fortement en désaccord)
+        // reverse: true (affirmation rationnelle) → correct = 7 (fortement d'accord)
+        let correctLikert: number;
+        if (effectiveQuestion.correct !== undefined && effectiveQuestion.correct !== null) {
+          // Si 'correct' est explicitement défini, l'utiliser
+          correctLikert = Number(effectiveQuestion.correct);
+        } else {
+          // Sinon, calculer basé sur 'reverse'
+          correctLikert = question.reverse ? 7 : 1;
+        }
+
         if (isNaN(likertAnswer) || isNaN(correctLikert)) {
           break;
         }
-        
+
         let distance: number;
         if (question.reverse) {
-          const reversed = 7 - likertAnswer;
+          const reversed = 8 - likertAnswer; // Échelle 1-7, donc 8-x pour inverser
           distance = Math.abs(reversed - correctLikert);
         } else {
           distance = Math.abs(likertAnswer - correctLikert);
         }
-        
+
+        // Score basé sur la distance : plus on est proche, plus on a de points
+        // Distance max = 6 (entre 1 et 7), on normalise sur 5 pour être généreux
         earned = possible * Math.max(0, 1 - distance / 5);
         correct = earned >= possible * 0.7;
         break;
