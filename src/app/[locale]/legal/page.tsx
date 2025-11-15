@@ -172,16 +172,6 @@ export default function LegalPage() {
             </a>
           </section>
         </div>
-
-        {/* Back link */}
-        <div className="mt-8 text-center">
-          <Link
-            href="/"
-            className="text-blue-600 dark:text-blue-400 hover:underline"
-          >
-            ← {t('title') === 'Legal Notice' ? 'Back to homepage' : 'Retour à l\'accueil'}
-          </Link>
-        </div>
       </div>
     </div>
   );
