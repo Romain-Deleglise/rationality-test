@@ -1,7 +1,7 @@
 {
   "version": "courte",
   "totalPoints": 35,
-  "estimatedTime": 20,
+  "estimatedTime": 21,
   "modules": [
     {
       "id": "prob-stats",
