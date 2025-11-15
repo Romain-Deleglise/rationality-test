@@ -14,9 +14,6 @@ export default function LegalPage() {
           <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
             {t('title')}
           </h1>
-          <p className="text-sm text-gray-500 dark:text-gray-400">
-            {t('lastUpdated')}
-          </p>
         </div>
 
         {/* Content sections */}
@@ -162,14 +159,22 @@ export default function LegalPage() {
             <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-3">
               {t('contactText')}
             </p>
-            <a
-              href="https://github.com/Romain-Deleglise/rationality-test/issues"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors"
-            >
-              {t('githubIssues')} →
-            </a>
+            <div className="flex flex-wrap gap-3">
+              <a
+                href="https://github.com/Romain-Deleglise/rationality-test/issues"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors"
+              >
+                {t('githubIssues')} →
+              </a>
+              <a
+                href="mailto:rom.deleglise@orange.fr"
+                className="inline-block bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors"
+              >
+                {t('emailButton')} →
+              </a>
+            </div>
           </section>
         </div>
       </div>
