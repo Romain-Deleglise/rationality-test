@@ -704,6 +704,7 @@
             "On ne peut pas déterminer"
           ],
           "correct": 2,
+          "points": 1,
           "explanation": "On ne peut pas déterminer. Si B est ouverte : A-B sont consécutives et ouvertes (OK). Si B est fermée : B-C sont consécutives et fermées (OK). Les deux sont possibles."
         },
         {
@@ -716,6 +717,7 @@
             "On ne peut pas déterminer"
           ],
           "correct": 1,
+          "points": 1,
           "explanation": "Non. Si Marc porte une cravate, alors Jean (son voisin) ne devrait pas en porter (contradiction). Donc Marc ne porte pas de cravate."
         },
         {
