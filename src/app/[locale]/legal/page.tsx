@@ -1,10 +1,11 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
-import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 
 export default function LegalPage() {
   const t = useTranslations('legal');
+  const router = useRouter();
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 py-12 px-4">
@@ -173,14 +174,14 @@ export default function LegalPage() {
           </section>
         </div>
 
-        {/* Back link */}
+        {/* Back button */}
         <div className="mt-8 text-center">
-          <Link
-            href="/"
-            className="text-blue-600 dark:text-blue-400 hover:underline"
+          <button
+            onClick={() => router.back()}
+            className="text-blue-600 dark:text-blue-400 hover:underline cursor-pointer"
           >
-            ← {t('title') === 'Legal Notice' ? 'Back to homepage' : 'Retour à l\'accueil'}
-          </Link>
+            ← {t('title') === 'Legal Notice' ? 'Back' : 'Retour'}
+          </button>
         </div>
       </div>
     </div>
