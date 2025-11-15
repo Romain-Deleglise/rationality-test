@@ -360,8 +360,8 @@ ${t.projectDesc}
 
     // Envoyer l'email via Resend
     const emailFrom = locale === 'fr'
-      ? 'Test de Rationalité <results@send.rationality-test.com>'
-      : 'Rationality Test <results@send.rationality-test.com>';
+      ? 'Test de Rationalité <results@rationality-test.com>'
+      : 'Rationality Test <results@rationality-test.com>';
 
     const data = await resend.emails.send({
       from: emailFrom,
