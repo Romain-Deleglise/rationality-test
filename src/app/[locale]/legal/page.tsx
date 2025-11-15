@@ -1,21 +1,7 @@
+'use client';
+
 import { useTranslations } from 'next-intl';
-import { getTranslations } from 'next-intl/server';
-import type { Metadata } from 'next';
 import Link from 'next/link';
-
-export async function generateMetadata({
-  params
-}: {
-  params: Promise<{ locale: string }>;
-}): Promise<Metadata> {
-  const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: 'legal' });
-
-  return {
-    title: t('title'),
-    description: t('intellectualPropertyText'),
-  };
-}
 
 export default function LegalPage() {
   const t = useTranslations('legal');
