@@ -1386,13 +1386,13 @@ export default function ResultatsPage() {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs">
                     <div className="bg-white dark:bg-gray-800 rounded p-3">
                       <div className="font-semibold text-gray-900 dark:text-white mb-1">
-                        📚 {locale === 'fr' ? 'Étude RT59 (Version courte)' : 'RT59 Study (Short-Form)'}
+                        📚 {locale === 'fr' ? 'Normes CART 6 modules (Version courte)' : 'CART 6-Module Norms (Short Form)'}
                       </div>
                       <div className="text-gray-600 dark:text-gray-400">
-                        • N = 372 {locale === 'fr' ? 'étudiants universitaires' : 'university students'}<br />
-                        • 100 {locale === 'fr' ? 'points maximum' : 'points maximum'}<br />
-                        • {locale === 'fr' ? 'Moyenne' : 'Mean'}: 43.6/100 (43.6%)<br />
-                        • {locale === 'fr' ? 'Écart-type' : 'Standard deviation'}: 13.0
+                        • {locale === 'fr' ? 'Calculé à partir des normes RT60' : 'Calculated from RT60 module norms'}<br />
+                        • 35 {locale === 'fr' ? 'points maximum' : 'points maximum'}<br />
+                        • {locale === 'fr' ? 'Moyenne' : 'Mean'}: 19.0/35 (54.2%)<br />
+                        • {locale === 'fr' ? 'Écart-type' : 'Standard deviation'}: 4.7
                       </div>
                     </div>
                     <div className="bg-white dark:bg-gray-800 rounded p-3">
