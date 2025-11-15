@@ -184,7 +184,10 @@ export default function SavedResultsPage({ params }: { params: Promise<{ token: 
               {result.percentage.toFixed(1)}%
             </div>
             <div className={`text-2xl font-semibold mb-2 ${getScoreColor(result.percentage)}`}>
-              {t('rationality')} {getScoreLabel(result.percentage)}
+              {locale === 'fr'
+                ? `${t('rationality')} ${getScoreLabel(result.percentage)}`
+                : `${getScoreLabel(result.percentage)} ${t('rationality')}`
+              }
             </div>
             <div className="text-lg text-gray-600 dark:text-gray-300">
               {result.total_points.toFixed(1)} / {result.total_possible.toFixed(1)} {t('points')}
