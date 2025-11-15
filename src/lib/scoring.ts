@@ -176,13 +176,9 @@ export function scoreQuestion(
           break;
         }
 
-        let distance: number;
-        if (question.reverse) {
-          const reversed = 8 - likertAnswer; // Échelle 1-7, donc 8-x pour inverser
-          distance = Math.abs(reversed - correctLikert);
-        } else {
-          distance = Math.abs(likertAnswer - correctLikert);
-        }
+        // Calculer la distance entre la réponse et la réponse correcte
+        // Pas besoin d'inverser : correctLikert est déjà 7 pour reverse:true et 1 pour reverse:false
+        const distance = Math.abs(likertAnswer - correctLikert);
 
         // Score basé sur la distance : plus on est proche, plus on a de points
         // Distance max = 6 (entre 1 et 7), on normalise sur 5 pour être généreux
