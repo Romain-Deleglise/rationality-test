@@ -22,6 +22,7 @@ import { RadarChartComponent, BarChartComponent } from '@/components/ResultsChar
 import { ChevronDown, ChevronUp, BookOpen, TrendingUp, AlertCircle, Award, Brain, Mail, Share2, Database } from 'lucide-react';
 import SocialShare from '@/components/SocialShare';
 import React from 'react';
+import { track } from '@vercel/analytics';
 
 // Composant Accordéon avec jauge dans le titre
 const AccordionItem = ({ title, children, defaultOpen = false, scorePercentage }: {
@@ -135,6 +136,15 @@ export default function ResultatsPage() {
     const scores = scoreTest(modules, session.answers, locale, session.randomizedValues);
     const percentile = calculatePercentile(scores.percentage);
     setTestScore({ ...scores, percentile });
+
+    // Track results viewed
+    track('results_viewed', {
+      version: version,
+      locale,
+      score_percentage: Math.round(scores.percentage),
+      total_earned: Math.round(scores.totalEarned),
+      total_possible: Math.round(scores.totalPossible),
+    });
 
     // Sauvegarder automatiquement dans Supabase
     const saveToSupabase = async () => {

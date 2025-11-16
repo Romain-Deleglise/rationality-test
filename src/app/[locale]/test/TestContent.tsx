@@ -12,6 +12,7 @@ import testCompletDataFr from '@/data/test-complet.json';
 import testCourtDataEn from '@/data/test-court-en.json';
 import testCompletDataEn from '@/data/test-complet-en.json';
 import { Module } from '@/types';
+import { track } from '@vercel/analytics';
 
 export default function TestContent() {
   const router = useRouter();
@@ -122,6 +123,19 @@ export default function TestContent() {
 
     if (isLastQuestion && isLastModule) {
       completeTest();
+
+      // Track test completion
+      const testDuration = session.startedAt
+        ? Math.round((Date.now() - new Date(session.startedAt).getTime()) / 1000 / 60) // en minutes
+        : 0;
+
+      track('test_completed', {
+        version: session.version,
+        locale,
+        duration_minutes: testDuration,
+        total_questions: totalQuestions,
+      });
+
       router.push(`/${locale}/resultats`);
     } else {
       nextQuestion();
