@@ -127,7 +127,7 @@ export default function TestContent() {
       // Track test completion
       const testDuration = session.startedAt
         ? Math.round((Date.now() - new Date(session.startedAt).getTime()) / 1000 / 60) // en minutes
-        : undefined;
+        : 0;
 
       track('test_completed', {
         version: session.version,
