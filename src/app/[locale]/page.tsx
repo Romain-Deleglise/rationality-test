@@ -6,6 +6,7 @@ import { useParams } from 'next/navigation';
 import { useTranslations } from 'next-intl';
 import { ChevronDown, ChevronUp, BookOpen, Clock, BarChart3, CheckCircle } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { track } from '@vercel/analytics';
 
 const AccordionItem = ({ title, children, defaultOpen = false }: {
   title: string;
@@ -266,6 +267,7 @@ export default function Home() {
               </ul>
               <Link
                 href={`/${locale}/test?reset=true`}
+                onClick={() => track('test_started', { version: 'express', locale })}
                 className="block w-full bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white font-semibold py-3 rounded-lg transition-all duration-300 text-center transform group-hover:scale-105"
               >
                 {t('chooseVersion.express.start')}
@@ -302,6 +304,7 @@ export default function Home() {
               </ul>
               <Link
                 href={`/${locale}/test?reset=true&version=full`}
+                onClick={() => track('test_started', { version: 'full', locale })}
                 className="block w-full bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white font-semibold py-3 rounded-lg transition-all duration-300 text-center transform group-hover:scale-105 shadow-lg"
               >
                 {t('chooseVersion.full.start')}
