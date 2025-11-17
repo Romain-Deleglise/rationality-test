@@ -96,20 +96,23 @@ export default function SavedResultsPage({ params }: { params: Promise<{ token: 
   }, [token]);
 
   const getScoreColor = (score: number) => {
-    if (score >= 80) return 'text-green-600';
-    if (score >= 68) return 'text-blue-600';
-    if (score >= 48) return 'text-yellow-600';
+    if (score >= 76) return 'text-green-600';
+    if (score >= 61) return 'text-blue-600';
+    if (score >= 42) return 'text-yellow-600';
     return 'text-red-600';
   };
 
   const getScoreLabel = (score: number) => {
     // Seuils calibrés sur la moyenne CART réelle (54.2%)
-    // Distribution approximative : mean=54%, sd=13%
-    if (score >= 80) return t('scoreLabels.veryHigh'); // >mean+2sd (top 2.5%)
-    if (score >= 68) return t('scoreLabels.high');     // >mean+1sd (top 16%)
-    if (score >= 48) return t('scoreLabels.average');  // mean±0.5sd (middle 38%)
-    if (score >= 35) return t('scoreLabels.belowAverage'); // mean-1.5sd
-    return t('scoreLabels.limited');                   // <mean-1.5sd (bottom 7%)
+    // Distribution : mean=54.2%, sd=13%
+    if (score >= 85) return t('scoreLabels.exceptional');  // >mean+2.33sd (top 1%)
+    if (score >= 76) return t('scoreLabels.veryHigh');     // >mean+1.65sd (top 5%)
+    if (score >= 68) return t('scoreLabels.high');         // >mean+1sd (top 16%)
+    if (score >= 61) return t('scoreLabels.aboveAverage'); // >mean+0.5sd (top 32%)
+    if (score >= 48) return t('scoreLabels.average');      // mean±0.5sd (40th-60th)
+    if (score >= 42) return t('scoreLabels.slightlyBelow');// mean-1sd (25th-40th)
+    if (score >= 30) return t('scoreLabels.belowAverage'); // mean-1.5sd (10th-25th)
+    return t('scoreLabels.limited');                       // <mean-1.87sd (bottom 10%)
   };
 
   if (loading) {

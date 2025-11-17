@@ -51,17 +51,17 @@ const AccordionItem = ({ title, children, defaultOpen = false, scorePercentage }
     <div className="border-2 border-gray-200 dark:border-gray-700 rounded-xl mb-4 overflow-hidden shadow-sm hover:shadow-md transition-shadow print:shadow-none print:border print:border-gray-300 print:break-inside-avoid">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full px-6 py-4 bg-gradient-to-r from-gray-50 to-white dark:from-gray-800 dark:to-gray-800 hover:from-gray-100 hover:to-gray-50 dark:hover:from-gray-700 dark:hover:to-gray-700 transition-colors print:bg-gray-50 print:cursor-default"
+        className="w-full px-3 sm:px-6 py-3 sm:py-4 bg-gradient-to-r from-gray-50 to-white dark:from-gray-800 dark:to-gray-800 hover:from-gray-100 hover:to-gray-50 dark:hover:from-gray-700 dark:hover:to-gray-700 transition-colors print:bg-gray-50 print:cursor-default"
       >
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-2 sm:gap-4">
           {/* Titre - largeur fixe pour alignement */}
-          <span className="font-semibold text-left text-gray-900 dark:text-white flex-1 min-w-0 truncate sm:truncate-none">
+          <span className="font-semibold text-left text-gray-900 dark:text-white flex-1 min-w-0 truncate sm:truncate-none text-sm sm:text-base">
             {title}
           </span>
 
           {/* Jauge - responsive */}
           {scorePercentage !== undefined && (
-            <div className="flex items-center gap-2 sm:gap-3 w-32 sm:w-48 md:w-64 flex-shrink-0">
+            <div className="flex items-center gap-1 sm:gap-2 md:gap-3 w-28 sm:w-48 md:w-64 flex-shrink-0">
               <div className="flex-1">
                 <div className="w-full bg-gray-200 dark:bg-gray-600 rounded-full h-2.5 overflow-hidden">
                   <div
@@ -86,7 +86,7 @@ const AccordionItem = ({ title, children, defaultOpen = false, scorePercentage }
         </div>
       </button>
       {/* Toujours visible en mode impression */}
-      <div className={`${isOpen ? 'block' : 'hidden'} print:block px-6 py-5 bg-white dark:bg-gray-900 text-gray-700 dark:text-gray-300 leading-relaxed border-t-2 border-gray-100 dark:border-gray-700 print:border-t print:border-gray-200`}>
+      <div className={`${isOpen ? 'block' : 'hidden'} print:block px-3 sm:px-6 py-4 sm:py-5 bg-white dark:bg-gray-900 text-gray-700 dark:text-gray-300 leading-relaxed border-t-2 border-gray-100 dark:border-gray-700 print:border-t print:border-gray-200`}>
         {children}
       </div>
     </div>
@@ -228,20 +228,23 @@ export default function ResultatsPage() {
   }
 
   const getScoreColor = (score: number) => {
-    if (score >= 80) return 'text-green-600';
-    if (score >= 68) return 'text-blue-600';
-    if (score >= 48) return 'text-yellow-600';
+    if (score >= 76) return 'text-green-600';
+    if (score >= 61) return 'text-blue-600';
+    if (score >= 42) return 'text-yellow-600';
     return 'text-red-600';
   };
 
   const getScoreLabel = (score: number) => {
     // Seuils calibrés sur la moyenne CART réelle (54.2%)
-    // Distribution approximative : mean=54%, sd=13%
-    if (score >= 80) return t('scoreLabels.veryHigh'); // >mean+2sd (top 2.5%)
-    if (score >= 68) return t('scoreLabels.high');     // >mean+1sd (top 16%)
-    if (score >= 48) return t('scoreLabels.average');  // mean±0.5sd (middle 38%)
-    if (score >= 35) return t('scoreLabels.belowAverage'); // mean-1.5sd
-    return t('scoreLabels.limited');                   // <mean-1.5sd (bottom 7%)
+    // Distribution : mean=54.2%, sd=13%
+    if (score >= 85) return t('scoreLabels.exceptional');  // >mean+2.33sd (top 1%)
+    if (score >= 76) return t('scoreLabels.veryHigh');     // >mean+1.65sd (top 5%)
+    if (score >= 68) return t('scoreLabels.high');         // >mean+1sd (top 16%)
+    if (score >= 61) return t('scoreLabels.aboveAverage'); // >mean+0.5sd (top 32%)
+    if (score >= 48) return t('scoreLabels.average');      // mean±0.5sd (40th-60th)
+    if (score >= 42) return t('scoreLabels.slightlyBelow');// mean-1sd (25th-40th)
+    if (score >= 30) return t('scoreLabels.belowAverage'); // mean-1.5sd (10th-25th)
+    return t('scoreLabels.limited');                       // <mean-1.87sd (bottom 10%)
   };
 
   // Descriptions COMPLÈTES avec liens hypertextes - FRANÇAIS
