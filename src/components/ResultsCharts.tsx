@@ -227,10 +227,10 @@ export function BarChartComponent({ moduleScores, locale = 'fr' }: ChartProps) {
 
   // Ajuster les marges selon la taille d'écran
   const chartMargin = isMobile
-    ? { top: 20, right: 20, left: 10, bottom: 20 }
+    ? { top: 20, right: 10, left: 120, bottom: 20 }
     : { top: 20, right: 30, left: 200, bottom: 20 };
 
-  const yAxisWidth = isMobile ? 0 : 190;
+  const yAxisWidth = isMobile ? 110 : 190;
 
   return (
     <ResponsiveContainer width="100%" height={Math.max(500, data.length * 70)}>
@@ -250,7 +250,7 @@ export function BarChartComponent({ moduleScores, locale = 'fr' }: ChartProps) {
         <YAxis
           type="category"
           dataKey="module"
-          tick={isMobile ? false : <CustomBarTick isDark={isDark} />}
+          tick={<CustomBarTick isDark={isDark} />}
           width={yAxisWidth}
           tickLine={false}
         />
