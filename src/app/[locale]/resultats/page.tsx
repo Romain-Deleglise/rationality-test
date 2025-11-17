@@ -55,13 +55,13 @@ const AccordionItem = ({ title, children, defaultOpen = false, scorePercentage }
       >
         <div className="flex items-center gap-4">
           {/* Titre - largeur fixe pour alignement */}
-          <span className="font-semibold text-left text-gray-900 dark:text-white flex-1 min-w-0">
+          <span className="font-semibold text-left text-gray-900 dark:text-white flex-1 min-w-0 truncate sm:truncate-none">
             {title}
           </span>
 
-          {/* Jauge - largeur fixe pour alignement */}
+          {/* Jauge - responsive */}
           {scorePercentage !== undefined && (
-            <div className="flex items-center gap-3 w-64 flex-shrink-0">
+            <div className="flex items-center gap-2 sm:gap-3 w-32 sm:w-48 md:w-64 flex-shrink-0">
               <div className="flex-1">
                 <div className="w-full bg-gray-200 dark:bg-gray-600 rounded-full h-2.5 overflow-hidden">
                   <div
@@ -70,7 +70,7 @@ const AccordionItem = ({ title, children, defaultOpen = false, scorePercentage }
                   />
                 </div>
               </div>
-              <span className={`${getScoreColor(scorePercentage)} font-bold text-sm w-12 text-right`}>
+              <span className={`${getScoreColor(scorePercentage)} font-bold text-xs sm:text-sm w-8 sm:w-12 text-right`}>
                 {scorePercentage.toFixed(0)}%
               </span>
             </div>
@@ -228,18 +228,20 @@ export default function ResultatsPage() {
   }
 
   const getScoreColor = (score: number) => {
-    if (score >= 85) return 'text-green-600';
-    if (score >= 70) return 'text-blue-600';
-    if (score >= 55) return 'text-yellow-600';
+    if (score >= 80) return 'text-green-600';
+    if (score >= 68) return 'text-blue-600';
+    if (score >= 48) return 'text-yellow-600';
     return 'text-red-600';
   };
 
   const getScoreLabel = (score: number) => {
-    if (score >= 85) return t('scoreLabels.veryHigh');
-    if (score >= 70) return t('scoreLabels.high');
-    if (score >= 55) return t('scoreLabels.average');
-    if (score >= 40) return t('scoreLabels.belowAverage');
-    return t('scoreLabels.limited');
+    // Seuils calibrés sur la moyenne CART réelle (54.2%)
+    // Distribution approximative : mean=54%, sd=13%
+    if (score >= 80) return t('scoreLabels.veryHigh'); // >mean+2sd (top 2.5%)
+    if (score >= 68) return t('scoreLabels.high');     // >mean+1sd (top 16%)
+    if (score >= 48) return t('scoreLabels.average');  // mean±0.5sd (middle 38%)
+    if (score >= 35) return t('scoreLabels.belowAverage'); // mean-1.5sd
+    return t('scoreLabels.limited');                   // <mean-1.5sd (bottom 7%)
   };
 
   // Descriptions COMPLÈTES avec liens hypertextes - FRANÇAIS
@@ -2278,7 +2280,7 @@ export default function ResultatsPage() {
             <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
               {t('sendEmail')}
             </h3>
-            <div className="flex gap-2">
+            <div className="flex flex-col sm:flex-row gap-2">
               <input
                 type="email"
                 value={email}
@@ -2289,12 +2291,13 @@ export default function ResultatsPage() {
               <button
                 onClick={handleSendEmail}
                 disabled={sendingEmail || !email}
-                className="bg-blue-600 hover:bg-blue-700 disabled:bg-gray-400 text-white font-semibold px-6 py-2 rounded-lg transition-colors flex items-center gap-2"
+                className="bg-blue-600 hover:bg-blue-700 disabled:bg-gray-400 text-white font-semibold px-4 sm:px-6 py-2 rounded-lg transition-colors flex items-center justify-center gap-2 whitespace-nowrap"
               >
                 {sendingEmail ? (
                   <>
                     <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white"></div>
-                    {t('sending')}
+                    <span className="hidden sm:inline">{t('sending')}</span>
+                    <span className="sm:hidden">{t('sending')}</span>
                   </>
                 ) : (
                   <>

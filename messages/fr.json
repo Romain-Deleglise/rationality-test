@@ -252,12 +252,12 @@
       "legalNotice": "Mentions légales"
     },
     "scoreInterpretations": {
-      "veryHigh": "Score très élevé. Vous démontrez une excellente maîtrise des principes de raisonnement rationnel. Cependant, gardez à l'esprit que connaître les biais ne garantit pas d'y résister en situation réelle (fatigue, stress, émotions).",
-      "high": "Score élevé. Vous avez acquis une bonne compréhension des erreurs de raisonnement courantes. Attention toutefois : les biais persistent même chez les experts. L'utilisation de protocoles décisionnels reste recommandée pour les choix importants.",
-      "average": "Score dans la moyenne. Vous identifiez correctement certains biais, mais d'autres vous échappent encore. C'est normal : la rationalité n'est pas intuitive. Concentrez-vous sur vos faiblesses spécifiques plutôt que d'essayer de tout améliorer à la fois.",
-      "belowAverage": "Score sous la moyenne. Plusieurs biais cognitifs importants affectent votre raisonnement. L'amélioration est possible mais modeste (10-25% sur 6-12 mois avec pratique intensive). Privilégiez l'usage d'outils externes (checklists, consultations) plutôt que de compter sur votre intuition améliorée.",
-      "limited": "Score limité. Vos résultats suggèrent une forte susceptibilité aux biais cognitifs courants. Ne vous découragez pas : même des personnes très intelligentes obtiennent des scores similaires. La rationalité se travaille différemment de l'intelligence générale. Commencez par comprendre les concepts de base avant d'attendre une amélioration mesurable.",
-      "veryLimited": "Score très limité. Votre raisonnement est fortement affecté par de nombreux biais cognitifs. Cela ne reflète pas votre intelligence, mais plutôt un manque de familiarité avec ces concepts. Considérez ce test comme un point de départ éducatif plutôt qu'un jugement. L'amélioration nécessitera du temps et de la patience."
+      "veryHigh": "Score excellent (top 3%). Vous démontrez une maîtrise solide des principes de raisonnement rationnel. Toutefois, connaître les biais ne garantit pas d'y résister en situation réelle (fatigue, stress, émotions). Restez vigilant et continuez à utiliser des protocoles décisionnels pour les choix importants.",
+      "high": "Score élevé (top 16%). Vous avez développé une bonne compréhension des erreurs de raisonnement courantes et savez les identifier. Les biais persistent même chez les experts : l'utilisation de protocoles et d'outils externes reste recommandée pour vos décisions importantes.",
+      "average": "Score dans la moyenne (40e-60e percentile). Vous identifiez correctement certains biais, mais d'autres vous échappent encore. C'est normal : la rationalité n'est pas intuitive. Concentrez-vous sur vos faiblesses spécifiques (visibles dans le détail par module) plutôt que d'essayer de tout améliorer à la fois.",
+      "belowAverage": "Score en dessous de la moyenne. Plusieurs biais cognitifs importants affectent votre raisonnement. L'amélioration est possible mais demande du temps et de la pratique délibérée (6-12 mois minimum). Privilégiez l'usage d'outils externes (checklists, protocoles, consultations) pour compenser ces biais dans vos choix importants.",
+      "limited": "Score faible. Vos résultats suggèrent une forte susceptibilité aux biais cognitifs courants. Rassurez-vous : même des personnes très intelligentes obtiennent des scores similaires sans formation. La rationalité se travaille différemment de l'intelligence. Commencez par bien comprendre les concepts de base avant d'espérer une amélioration mesurable.",
+      "veryLimited": ""
     },
     "testOrigin": {
       "title": "📖 À propos de ce test",
