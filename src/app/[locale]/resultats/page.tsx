@@ -1627,8 +1627,8 @@ export default function ResultatsPage() {
                             : <><strong>Duration and depth:</strong> The full CART takes approximately 3 hours (148 points), our full version takes about 1.5 hours (119 points). This duration difference may affect the measurement of certain cognitive biases.</>
                         ) : (
                           locale === 'fr'
-                            ? <><strong>Durée et profondeur :</strong> Notre version courte prend environ 30 minutes (40 points), contre 2 heures pour la version courte officielle du CART (100 points). Cette version permet une première évaluation rapide.</>
-                            : <><strong>Duration and depth:</strong> Our short version takes approximately 30 minutes (40 points), compared to 2 hours for the official CART short-form (100 points). This version provides a quick initial assessment.</>
+                            ? <><strong>Durée et profondeur :</strong> Notre version courte prend environ 20 minutes (35 points, 6 modules), contre 2 heures pour la version complète officielle du CART (148 points, 17 modules). Cette version permet une première évaluation rapide.</>
+                            : <><strong>Duration and depth:</strong> Our short version takes approximately 20 minutes (35 points, 6 modules), compared to 2 hours for the official full CART (148 points, 17 modules). This version provides a quick initial assessment.</>
                         )}
                       </span>
                     </li>
