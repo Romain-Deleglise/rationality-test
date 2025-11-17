@@ -96,18 +96,20 @@ export default function SavedResultsPage({ params }: { params: Promise<{ token: 
   }, [token]);
 
   const getScoreColor = (score: number) => {
-    if (score >= 85) return 'text-green-600';
-    if (score >= 70) return 'text-blue-600';
-    if (score >= 55) return 'text-yellow-600';
+    if (score >= 80) return 'text-green-600';
+    if (score >= 68) return 'text-blue-600';
+    if (score >= 48) return 'text-yellow-600';
     return 'text-red-600';
   };
 
   const getScoreLabel = (score: number) => {
-    if (score >= 85) return t('scoreLabels.veryHigh');
-    if (score >= 70) return t('scoreLabels.high');
-    if (score >= 55) return t('scoreLabels.average');
-    if (score >= 40) return t('scoreLabels.belowAverage');
-    return t('scoreLabels.limited');
+    // Seuils calibrés sur la moyenne CART réelle (54.2%)
+    // Distribution approximative : mean=54%, sd=13%
+    if (score >= 80) return t('scoreLabels.veryHigh'); // >mean+2sd (top 2.5%)
+    if (score >= 68) return t('scoreLabels.high');     // >mean+1sd (top 16%)
+    if (score >= 48) return t('scoreLabels.average');  // mean±0.5sd (middle 38%)
+    if (score >= 35) return t('scoreLabels.belowAverage'); // mean-1.5sd
+    return t('scoreLabels.limited');                   // <mean-1.5sd (bottom 7%)
   };
 
   if (loading) {

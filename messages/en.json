@@ -252,12 +252,12 @@
       "legalNotice": "Legal Notice"
     },
     "scoreInterpretations": {
-      "veryHigh": "Very high score. You demonstrate excellent mastery of rational reasoning principles. However, keep in mind that knowing biases does not guarantee resistance to them in real situations (fatigue, stress, emotions).",
-      "high": "High score. You have gained a good understanding of common reasoning errors. However, note that biases persist even among experts. The use of decision-making protocols remains recommended for important choices.",
-      "average": "Average score. You correctly identify some biases, but others still escape you. This is normal: rationality is not intuitive. Focus on your specific weaknesses rather than trying to improve everything at once.",
-      "belowAverage": "Below average score. Several important cognitive biases affect your reasoning. Improvement is possible but modest (10-25% over 6-12 months with intensive practice). Prioritize the use of external tools (checklists, consultations) rather than relying on improved intuition.",
-      "limited": "Limited score. Your results suggest strong susceptibility to common cognitive biases. Don't be discouraged: even very intelligent people get similar scores. Rationality works differently from general intelligence. Start by understanding the basic concepts before expecting measurable improvement.",
-      "veryLimited": "Very limited score. Your reasoning is strongly affected by many cognitive biases. This does not reflect your intelligence, but rather a lack of familiarity with these concepts. Consider this test as an educational starting point rather than a judgment. Improvement will require time and patience."
+      "veryHigh": "Excellent score (top 3%). You demonstrate solid mastery of rational thinking principles. However, knowing about biases doesn't guarantee resisting them in real situations (fatigue, stress, emotions). Stay vigilant and continue using decision-making protocols for important choices.",
+      "high": "High score (top 16%). You've developed a good understanding of common reasoning errors and can identify them. Biases persist even in experts: using protocols and external tools remains recommended for your important decisions.",
+      "average": "Average score (40th-60th percentile). You correctly identify some biases, but others still escape you. This is normal: rationality isn't intuitive. Focus on your specific weaknesses (visible in the module details) rather than trying to improve everything at once.",
+      "belowAverage": "Below average score. Several important cognitive biases affect your reasoning. Improvement is possible but requires time and deliberate practice (6-12 months minimum). Prioritize using external tools (checklists, protocols, consultations) to compensate for these biases in your important decisions.",
+      "limited": "Low score. Your results suggest strong susceptibility to common cognitive biases. Be reassured: even very intelligent people get similar scores without training. Rationality works differently from intelligence. Start by understanding basic concepts well before expecting measurable improvement.",
+      "veryLimited": ""
     },
     "testOrigin": {
       "title": "📖 About This Test",

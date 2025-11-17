@@ -177,9 +177,17 @@ export function RadarChartComponent({ moduleScores, locale = 'fr' }: ChartProps)
 export function BarChartComponent({ moduleScores, locale = 'fr' }: ChartProps) {
   const { theme } = useTheme();
   const [mounted, setMounted] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     setMounted(true);
+    // Detect mobile on mount
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 640);
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
   const isDark = mounted && theme === 'dark';
@@ -204,12 +212,19 @@ export function BarChartComponent({ moduleScores, locale = 'fr' }: ChartProps) {
     return '#ef4444'; // red
   };
 
+  // Ajuster les marges selon la taille d'écran
+  const chartMargin = isMobile
+    ? { top: 20, right: 20, left: 10, bottom: 20 }
+    : { top: 20, right: 30, left: 200, bottom: 20 };
+
+  const yAxisWidth = isMobile ? 0 : 190;
+
   return (
     <ResponsiveContainer width="100%" height={Math.max(500, data.length * 70)}>
       <BarChart
         data={data}
         layout="vertical"
-        margin={{ top: 20, right: 30, left: 200, bottom: 20 }}
+        margin={chartMargin}
       >
         <CartesianGrid strokeDasharray="3 3" stroke={isDark ? "#374151" : "#e5e7eb"} />
         <XAxis
@@ -221,8 +236,8 @@ export function BarChartComponent({ moduleScores, locale = 'fr' }: ChartProps) {
         <YAxis
           type="category"
           dataKey="module"
-          tick={<CustomBarTick isDark={isDark} />}
-          width={190}
+          tick={isMobile ? false : <CustomBarTick isDark={isDark} />}
+          width={yAxisWidth}
           tickLine={false}
         />
         <Tooltip
