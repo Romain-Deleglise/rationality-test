@@ -25,11 +25,12 @@ import React from 'react';
 import { track } from '@vercel/analytics';
 
 // Composant Accordéon avec jauge dans le titre
-const AccordionItem = ({ title, children, defaultOpen = false, scorePercentage }: {
+const AccordionItem = ({ title, children, defaultOpen = false, scorePercentage, tightPadding }: {
   title: string;
   children: React.ReactNode;
   defaultOpen?: boolean;
   scorePercentage?: number;
+  tightPadding?: boolean;
 }) => {
   const [isOpen, setIsOpen] = useState(defaultOpen);
 
@@ -86,7 +87,7 @@ const AccordionItem = ({ title, children, defaultOpen = false, scorePercentage }
         </div>
       </button>
       {/* Toujours visible en mode impression */}
-      <div className={`${isOpen ? 'block' : 'hidden'} print:block px-1 sm:px-6 py-3 sm:py-5 bg-white dark:bg-gray-900 text-gray-700 dark:text-gray-300 leading-relaxed border-t-2 border-gray-100 dark:border-gray-700 print:border-t print:border-gray-200`}>
+      <div className={`${isOpen ? 'block' : 'hidden'} print:block ${tightPadding ? 'px-1 sm:px-3' : 'px-2 sm:px-6'} py-3 sm:py-5 bg-white dark:bg-gray-900 text-gray-700 dark:text-gray-300 leading-relaxed border-t-2 border-gray-100 dark:border-gray-700 print:border-t print:border-gray-200`}>
         {children}
       </div>
     </div>
@@ -1963,8 +1964,10 @@ export default function ResultatsPage() {
             <CardHeader>
               <CardTitle>{t('barChart')}</CardTitle>
             </CardHeader>
-            <CardContent>
-              <BarChartComponent moduleScores={testScore.modules} locale={locale} />
+            <CardContent className="overflow-x-auto">
+              <div className="min-w-[400px]">
+                <BarChartComponent moduleScores={testScore.modules} locale={locale} />
+              </div>
             </CardContent>
           </Card>
         </div>
@@ -1994,6 +1997,7 @@ export default function ResultatsPage() {
                     key={moduleScore.moduleId}
                     title={displayName}
                     scorePercentage={moduleScore.percentage}
+                    tightPadding={true}
                   >
                     <div className="mb-4 text-sm text-gray-600 dark:text-gray-400">
                       <strong>{moduleScore.earned.toFixed(1)}</strong> / {moduleScore.possible.toFixed(1)} points
