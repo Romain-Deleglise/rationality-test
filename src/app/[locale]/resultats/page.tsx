@@ -86,7 +86,7 @@ const AccordionItem = ({ title, children, defaultOpen = false, scorePercentage }
         </div>
       </button>
       {/* Toujours visible en mode impression */}
-      <div className={`${isOpen ? 'block' : 'hidden'} print:block px-2 sm:px-6 py-3 sm:py-5 bg-white dark:bg-gray-900 text-gray-700 dark:text-gray-300 leading-relaxed border-t-2 border-gray-100 dark:border-gray-700 print:border-t print:border-gray-200`}>
+      <div className={`${isOpen ? 'block' : 'hidden'} print:block px-1 sm:px-6 py-3 sm:py-5 bg-white dark:bg-gray-900 text-gray-700 dark:text-gray-300 leading-relaxed border-t-2 border-gray-100 dark:border-gray-700 print:border-t print:border-gray-200`}>
         {children}
       </div>
     </div>
@@ -1248,7 +1248,7 @@ export default function ResultatsPage() {
       `}</style>
 
       <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white dark:from-gray-900 dark:to-gray-800 print:bg-white transition-colors">
-        <div className="max-w-4xl mx-auto px-0 sm:px-4 py-12 print:px-6 print:py-8">
+        <div className="max-w-4xl mx-auto px-2 sm:px-4 py-12 print:px-6 print:py-8">
 
         {/* Header */}
         <div className="text-center mb-12">
@@ -1963,10 +1963,8 @@ export default function ResultatsPage() {
             <CardHeader>
               <CardTitle>{t('barChart')}</CardTitle>
             </CardHeader>
-            <CardContent className="overflow-x-auto">
-              <div className="min-w-[600px]">
-                <BarChartComponent moduleScores={testScore.modules} locale={locale} />
-              </div>
+            <CardContent>
+              <BarChartComponent moduleScores={testScore.modules} locale={locale} />
             </CardContent>
           </Card>
         </div>
