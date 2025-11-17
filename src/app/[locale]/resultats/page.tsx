@@ -25,12 +25,11 @@ import React from 'react';
 import { track } from '@vercel/analytics';
 
 // Composant Accordéon avec jauge dans le titre
-const AccordionItem = ({ title, children, defaultOpen = false, scorePercentage, tightPadding }: {
+const AccordionItem = ({ title, children, defaultOpen = false, scorePercentage }: {
   title: string;
   children: React.ReactNode;
   defaultOpen?: boolean;
   scorePercentage?: number;
-  tightPadding?: boolean;
 }) => {
   const [isOpen, setIsOpen] = useState(defaultOpen);
 
@@ -87,7 +86,7 @@ const AccordionItem = ({ title, children, defaultOpen = false, scorePercentage, 
         </div>
       </button>
       {/* Toujours visible en mode impression */}
-      <div className={`${isOpen ? 'block' : 'hidden'} print:block ${tightPadding ? 'px-1 sm:px-3' : 'px-2 sm:px-6'} py-3 sm:py-5 bg-white dark:bg-gray-900 text-gray-700 dark:text-gray-300 leading-relaxed border-t-2 border-gray-100 dark:border-gray-700 print:border-t print:border-gray-200`}>
+      <div className={`${isOpen ? 'block' : 'hidden'} print:block px-2 sm:px-6 py-3 sm:py-5 bg-white dark:bg-gray-900 text-gray-700 dark:text-gray-300 leading-relaxed border-t-2 border-gray-100 dark:border-gray-700 print:border-t print:border-gray-200`}>
         {children}
       </div>
     </div>
@@ -1249,7 +1248,7 @@ export default function ResultatsPage() {
       `}</style>
 
       <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white dark:from-gray-900 dark:to-gray-800 print:bg-white transition-colors">
-        <div className="max-w-4xl mx-auto px-2 sm:px-4 py-12 print:px-6 print:py-8">
+        <div className="max-w-4xl mx-auto px-4 sm:px-4 py-12 print:px-6 print:py-8">
 
         {/* Header */}
         <div className="text-center mb-12">
@@ -1973,7 +1972,7 @@ export default function ResultatsPage() {
         </div>
 
         {/* Détail par Module avec Jauges */}
-        <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8 mb-8 border-t-4 border-blue-500">
+        <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-4 sm:p-8 mb-8 border-t-4 border-blue-500">
           <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
             {t('moduleDetails')}
           </h2>
@@ -1997,7 +1996,6 @@ export default function ResultatsPage() {
                     key={moduleScore.moduleId}
                     title={displayName}
                     scorePercentage={moduleScore.percentage}
-                    tightPadding={true}
                   >
                     <div className="mb-4 text-sm text-gray-600 dark:text-gray-400">
                       <strong>{moduleScore.earned.toFixed(1)}</strong> / {moduleScore.possible.toFixed(1)} points
