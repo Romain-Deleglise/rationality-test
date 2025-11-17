@@ -110,9 +110,17 @@ const CustomBarTick = ({ x, y, payload, isDark }: any) => {
 export function RadarChartComponent({ moduleScores, locale = 'fr' }: ChartProps) {
   const { theme } = useTheme();
   const [mounted, setMounted] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     setMounted(true);
+    // Detect mobile on mount
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 640);
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
   const isDark = mounted && theme === 'dark';
@@ -129,9 +137,14 @@ export function RadarChartComponent({ moduleScores, locale = 'fr' }: ChartProps)
       };
     });
 
+  // Ajuster les marges selon la taille d'écran pour zoomer le graphique
+  const radarMargin = isMobile
+    ? { top: 30, right: 40, bottom: 30, left: 40 }
+    : { top: 40, right: 80, bottom: 40, left: 80 };
+
   return (
     <ResponsiveContainer width="100%" height={550}>
-      <RadarChart data={data} margin={{ top: 40, right: 80, bottom: 40, left: 80 }}>
+      <RadarChart data={data} margin={radarMargin}>
         <PolarGrid stroke={isDark ? "#374151" : "#e5e7eb"} strokeWidth={1.5} />
         <PolarAngleAxis
           dataKey="module"
@@ -230,6 +243,7 @@ export function BarChartComponent({ moduleScores, locale = 'fr' }: ChartProps) {
         <XAxis
           type="number"
           domain={[0, 100]}
+          ticks={[0, 25, 50, 75, 100]}
           tick={{ fill: isDark ? '#9ca3af' : '#6b7280', fontSize: 12 }}
           tickFormatter={(value) => `${value}%`}
         />
