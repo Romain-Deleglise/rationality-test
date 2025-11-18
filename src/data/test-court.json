@@ -12,15 +12,15 @@
         {
           "id": "prob-match-1",
           "type": "multiple-choice",
-          "text": "Imaginez un jeu de cartes avec 2 couleurs : A (60% des cartes) et B (40% des cartes). On tire 10 cartes au hasard. Quelle stratégie maximise vos chances de prédire correctement chaque tirage ?",
+          "text": "Un jeu de cartes contient 60% de cartes rouges et 40% de cartes bleues. Vous devez prédire la couleur avant chaque tirage (avec remise). Sur 100 tirages, quelle stratégie vous donnera le PLUS grand nombre de prédictions correctes ?",
           "options": [
-            "Toujours prédire A",
-            "Prédire A environ 6 fois sur 10 et B environ 4 fois sur 10",
-            "Alterner entre A et B de manière égale"
+            "Toujours prédire rouge",
+            "Prédire rouge 60 fois et bleu 40 fois",
+            "Alterner entre rouge et bleu de façon égale"
           ],
           "correct": 0,
           "points": 1,
-          "explanation": "La stratégie optimale est de toujours prédire A (60% de succès). L'erreur de 'probability matching' consiste à essayer de reproduire les proportions (60/40)."
+          "explanation": "Toujours prédire rouge donne 60% de succès (60/100 correct). Prédire rouge 60 fois et bleu 40 fois donne seulement ~52% de succès en moyenne. L'erreur de 'probability matching' consiste à reproduire les proportions au lieu de toujours choisir l'option la plus probable."
         },
         {
           "id": "gambler-1",
@@ -63,7 +63,7 @@
             "rule": "option-1 > option-3"
           },
           "points": 1,
-          "explanation": "Malgré la description, P(caissière) > P(caissière ET féministe) mathématiquement. C'est le fameux 'Linda problem'."
+          "explanation": "Malgré la description, P(caissière) > P(caissière et féministe) mathématiquement. C'est le fameux 'Linda problem' : une conjonction ne peut jamais être plus probable que ses composantes."
         },
         {
           "id": "conjunction-2",
@@ -85,12 +85,12 @@
         {
           "id": "base-rate-1",
           "type": "number",
-          "text": "Une maladie touche 1% de la population. Un test la détecte avec 90% de sensibilité (vrai positif) et a 9% de faux positifs. Votre test est positif. Quelle est votre probabilité d'être malade ?",
+          "text": "Une maladie touche 1% de la population. Un test la détecte correctement dans 90% des cas chez les malades. Chez les personnes saines, le test donne un résultat positif erroné dans 9% des cas. Si votre test est positif, quelle est votre probabilité réelle d'être malade ?",
           "unit": "%",
           "correct": 9,
           "tolerance": 3,
           "points": 1,
-          "explanation": "Sur 10000 personnes : 100 malades (90 détectées), 9900 saines (891 faux positifs). P = 90/(90+891) ≈ 9,2%."
+          "explanation": "Sur 10000 personnes : 100 sont malades (90 testent positif), 9900 sont saines (891 testent faussement positif). Probabilité d'être malade = 90/(90+891) ≈ 9,2%. Beaucoup de gens ignorent le taux de base (1%) et surestiment leur probabilité d'être malade."
         },
         {
           "id": "base-rate-2",
@@ -125,13 +125,11 @@
           "options": [
             "Ils deviennent complaisants après leur succès",
             "Les adversaires étudient leur jeu et s'adaptent",
-            "Les performances extrêmes incluent de la chance qui ne se répète pas",
-            "La pression des attentes affecte leur performance",
-            "Leur entraînement devient moins rigoureux"
+            "Les performances extrêmes incluent de la chance qui ne se répète pas"
           ],
           "correct": 2,
           "points": 1,
-          "explanation": "Régression vers la moyenne. Les performances exceptionnelles combinent talent ET chance. La chance ne persiste pas, donc les performances reviennent vers la moyenne."
+          "explanation": "Régression vers la moyenne. Les performances exceptionnelles combinent talent et chance. La chance ne persiste pas, donc les performances reviennent vers la moyenne du joueur."
         }
       ]
     },
@@ -159,17 +157,17 @@
         {
           "id": "wason-2",
           "type": "multiple-choice",
-          "text": "Vous vérifiez la loi : 'Si une personne boit de l'alcool, elle doit avoir 18 ans ou plus.' 4 personnes : [Boit de la bière], [Boit du jus], [A 25 ans], [A 16 ans]. Qui vérifier ?",
+          "text": "Vous vérifiez la loi : 'Si une personne boit de l'alcool, elle doit avoir 18 ans ou plus.' 4 personnes : [Boit de la bière], [Boit du jus], [A 25 ans], [A 16 ans]. Qui SUFFIRAIT-IL de vérifier pour déterminer si la loi est respectée ou violée ?",
           "options": [
             "Boit de la bière seulement",
             "Boit de la bière et A 16 ans",
             "Boit de la bière et A 25 ans",
-            "Tous",
+            "Toutes les personnes",
             "Boit de la bière, Boit du jus et A 16 ans"
           ],
           "correct": 1,
           "points": 1,
-          "explanation": "Vérifier [Bière] (âge ≥18?) et [16 ans] (boit de l'alcool?). Les autres ne peuvent pas violer la règle."
+          "explanation": "Il suffit de vérifier [Bière] (âge ≥18?) et [16 ans] (boit de l'alcool?). Les autres ne peuvent pas violer la règle, donc les vérifier serait inutile."
         },
         {
           "id": "correlation-1",
@@ -201,23 +199,21 @@
         {
           "id": "likelihood-1",
           "type": "multiple-choice",
-          "text": "Talia a un épaississement des doigts. Quelles infos sont nécessaires pour estimer P(Syndrome de Fustis Digitus | épaississement) ?",
+          "text": "Talia a un épaississement des doigts. Pour estimer sa probabilité d'avoir le Syndrome de Fustis Digitus, quelles informations sont nécessaires ?",
           "options": [
-            "% de personnes SANS syndrome qui ont un épaississement",
-            "% de personnes AVEC syndrome",
-            "% de personnes SANS syndrome",
-            "% de personnes AVEC syndrome qui ont un épaississement",
-            "a et d",
-            "b et c"
+            "Seulement : % de personnes avec le syndrome qui ont un épaississement",
+            "Seulement : % de personnes sans le syndrome qui ont un épaississement",
+            "Les deux : % avec syndrome qui ont ce symptôme ET % sans syndrome qui ont ce symptôme",
+            "Impossible à estimer même avec ces informations"
           ],
-          "correct": 4,
+          "correct": 2,
           "points": 1,
-          "explanation": "Il faut P(symptôme|maladie) et P(symptôme|pas maladie) pour calculer P(maladie|symptôme) via Bayes."
+          "explanation": "Il faut les deux taux : combien de malades ont le symptôme ET combien de non-malades ont le symptôme. Cela permet de calculer la probabilité d'être malade sachant qu'on a le symptôme (théorème de Bayes)."
         },
         {
           "id": "wason-3",
           "type": "multiple-choice",
-          "text": "Règle : 'Si un produit est bio, il doit avoir une certification.' 4 produits : [Étiqueté bio], [Étiqueté conventionnel], [Avec certification], [Sans certification]. Lesquels vérifier ?",
+          "text": "Règle : 'Si un produit est bio, il doit avoir une certification.' 4 produits : [Étiqueté bio], [Étiqueté conventionnel], [Avec certification], [Sans certification]. Quels produits SUFFIRAIT-IL de vérifier pour déterminer si la règle est respectée ou violée ?",
           "options": [
             "Étiqueté bio seulement",
             "Étiqueté bio et Avec certification",
@@ -227,7 +223,7 @@
           ],
           "correct": 2,
           "points": 1,
-          "explanation": "Vérifier [Bio] (a-t-il certification?) et [Sans certification] (est-il bio?). Les autres ne peuvent pas violer la règle."
+          "explanation": "Il suffit de vérifier [Bio] (a-t-il certification?) et [Sans certification] (est-il bio?). Les autres ne peuvent pas violer la règle, donc les vérifier serait inutile."
         },
         {
           "id": "correlation-2",
@@ -276,12 +272,11 @@
           "options": [
             "Donner le médicament à des patients fiévreux et mesurer la température 2h après",
             "Donner le médicament à un groupe et un placebo à un groupe contrôle, en double aveugle",
-            "Demander aux patients s'ils se sentent mieux après le médicament",
-            "Comparer avec d'autres médicaments existants"
+            "Demander aux patients s'ils se sentent mieux après le médicament"
           ],
           "correct": 1,
           "points": 1,
-          "explanation": "Essai randomisé contrôlé en double aveugle : gold standard pour tester l'efficacité causale."
+          "explanation": "Un essai randomisé contrôlé en double aveugle est le gold standard pour tester l'efficacité causale. Il permet d'éliminer l'effet placebo et les biais de confirmation."
         },
         {
           "id": "covariation-1",
@@ -300,16 +295,15 @@
         {
           "id": "falsification-1",
           "type": "multiple-choice",
-          "text": "Hypothèse : 'Tous les cygnes sont blancs.' Quelle observation est la plus informative ?",
+          "text": "Hypothèse : 'Tous les cygnes sont blancs.' Quelle observation est la plus informative pour tester cette hypothèse ?",
           "options": [
             "Observer 100 cygnes blancs",
             "Observer 1 cygne noir",
-            "Observer 1000 cygnes blancs",
-            "Demander à des experts ornithologues"
+            "Observer 1000 cygnes blancs"
           ],
           "correct": 1,
           "points": 1,
-          "explanation": "Principe de falsification de Popper : un seul contre-exemple réfute l'hypothèse. Mille confirmations ne la prouvent pas."
+          "explanation": "Principe de falsification de Popper : un seul contre-exemple (cygne noir) réfute définitivement l'hypothèse. Mille confirmations (cygnes blancs) ne peuvent jamais la prouver avec certitude."
         }
       ]
     },
@@ -397,7 +391,7 @@
         {
           "id": "syllogism-1",
           "type": "multiple-choice",
-          "text": "Prémisse 1 : Tous les mammifères peuvent marcher. Prémisse 2 : Les baleines sont des mammifères. Conclusion : Les baleines peuvent marcher.",
+          "text": "Évaluez uniquement la LOGIQUE (pas la vérité dans la réalité) :\n\nPrémisse 1 : Tous les mammifères peuvent marcher.\nPrémisse 2 : Les baleines sont des mammifères.\nConclusion : Les baleines peuvent marcher.",
           "options": [
             "La conclusion suit logiquement des prémisses",
             "La conclusion ne suit PAS logiquement des prémisses"
