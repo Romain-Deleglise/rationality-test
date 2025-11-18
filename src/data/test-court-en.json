@@ -12,15 +12,15 @@
         {
           "id": "prob-match-1",
           "type": "multiple-choice",
-          "text": "Imagine a card game with 2 colors: A (60% of cards) and B (40% of cards). You draw 10 cards at random. Which strategy maximizes your chances of correctly predicting each draw?",
+          "text": "A deck of cards contains 60% red cards and 40% blue cards. You must predict the color before each draw (with replacement). Over 100 draws, which strategy will give you the HIGHEST number of correct predictions?",
           "options": [
-            "Always predict A",
-            "Predict A about 6 times out of 10 and B about 4 times out of 10",
-            "Alternate between A and B equally"
+            "Always predict red",
+            "Predict red 60 times and blue 40 times",
+            "Alternate between red and blue equally"
           ],
           "correct": 0,
           "points": 1,
-          "explanation": "The optimal strategy is to always predict A (60% success rate). The 'probability matching' error consists of trying to reproduce the proportions (60/40)."
+          "explanation": "Always predicting red gives 60% success (60/100 correct). Predicting red 60 times and blue 40 times gives only ~52% success on average. The 'probability matching' error is reproducing the proportions instead of always choosing the most probable option."
         },
         {
           "id": "gambler-1",
@@ -40,9 +40,9 @@
           "type": "multiple-choice",
           "text": "A couple has 4 daughters. They want a fifth child. What is the probability that it will be a boy?",
           "options": [
-            "More than 50% (they are 'due' for a boy)",
+            "More than 50% (after 4 girls, a boy becomes more likely)",
             "Less than 50% (they tend to have girls)",
-            "About 50% (independent of previous births)"
+            "About 50% (each birth is independent)"
           ],
           "correct": 2,
           "points": 1,
@@ -56,14 +56,14 @@
             "Linda is a teacher",
             "Linda is a bank teller",
             "Linda is active in the feminist movement",
-            "Linda is a bank teller AND active in the feminist movement"
+            "Linda is a bank teller and active in the feminist movement"
           ],
           "scoring": {
             "type": "conjunction-check",
             "rule": "option-1 > option-3"
           },
           "points": 1,
-          "explanation": "Despite the description, P(bank teller) > P(bank teller AND feminist) mathematically. This is the famous 'Linda problem'."
+          "explanation": "Despite the description, P(bank teller) > P(bank teller and feminist) mathematically. This is the famous 'Linda problem': a conjunction can never be more probable than its components."
         },
         {
           "id": "conjunction-2",
@@ -73,7 +73,7 @@
             "Mark works in IT",
             "Mark is a video game developer",
             "Mark is an accountant",
-            "Mark works in IT AND plays on an e-sports team"
+            "Mark works in IT and plays on an e-sports team"
           ],
           "scoring": {
             "type": "conjunction-check",
@@ -85,17 +85,17 @@
         {
           "id": "base-rate-1",
           "type": "number",
-          "text": "A disease affects 1% of the population. A test detects it with 90% sensitivity (true positive) and has a 9% false positive rate. Your test is positive. What is your probability of being sick?",
+          "text": "A disease affects 1% of the population. A test correctly detects the disease in 90% of sick people. Among healthy people, the test incorrectly shows positive in 9% of cases. If your test is positive, what is your actual probability of being sick?",
           "unit": "%",
           "correct": 9,
           "tolerance": 3,
           "points": 1,
-          "explanation": "Out of 10,000 people: 100 sick (90 detected), 9,900 healthy (891 false positives). P = 90/(90+891) ≈ 9.2%."
+          "explanation": "Out of 10,000 people: 100 are sick (90 test positive), 9,900 are healthy (891 test falsely positive). Probability of being sick = 90/(90+891) ≈ 9.2%. Many people ignore the base rate (1%) and overestimate their probability of being sick."
         },
         {
           "id": "base-rate-2",
           "type": "multiple-choice",
-          "text": "In a company, 70% of employees are engineers and 30% are managers. John is shy and likes puzzles. Is he more likely:",
+          "text": "In a company, 70% of employees are engineers and 30% are managers. Sophie is charismatic, loves leading teams, and excels at negotiations. Is she more likely:",
           "options": [
             "Engineer",
             "Manager",
@@ -103,7 +103,7 @@
           ],
           "correct": 0,
           "points": 1,
-          "explanation": "Even if the description seems to match engineer stereotypes, the base rate (70%) is already a strong indicator."
+          "explanation": "Despite the description suggesting a manager profile, the base rate (70% engineers vs 30% managers) remains the most important factor. Many engineers can also be charismatic and enjoy leading."
         },
         {
           "id": "sample-size",
@@ -125,13 +125,11 @@
           "options": [
             "They become complacent after their success",
             "Opponents study their game and adapt",
-            "Extreme performances include luck that doesn't repeat",
-            "The pressure of expectations affects their performance",
-            "Their training becomes less rigorous"
+            "Extreme performances include luck that doesn't repeat"
           ],
           "correct": 2,
           "points": 1,
-          "explanation": "Regression to the mean. Exceptional performances combine talent AND luck. Luck doesn't persist, so performances return toward the mean."
+          "explanation": "Regression to the mean. Exceptional performances combine talent and luck. Luck doesn't persist, so performances return toward the player's average."
         }
       ]
     },
@@ -144,32 +142,32 @@
         {
           "id": "wason-1",
           "type": "multiple-choice",
-          "text": "Rule to test: 'If Lyon is on one side of the ticket, then train is on the other side.' You have 4 tickets: [Lyon], [Paris], [Car], [Train]. Which ones should you flip to verify the rule?",
+          "text": "Rule to test: 'If Lyon is on one side of the ticket, then train is on the other side.' You have 4 tickets: [Lyon], [Paris], [Car], [Train]. Which tickets would be SUFFICIENT to flip to determine whether the rule is followed or violated?",
           "options": [
             "Lyon only",
             "Lyon and Train",
             "Lyon and Car",
-            "All",
+            "All tickets",
             "Lyon, Paris and Car"
           ],
           "correct": 2,
           "points": 1,
-          "explanation": "Lyon (verify the other side = train) and Car (verify the other side ≠ Lyon). Train and Paris cannot violate the rule."
+          "explanation": "It's sufficient to flip Lyon (verify the other side = train) and Car (verify the other side ≠ Lyon). Train and Paris cannot violate the rule, so flipping them would be unnecessary."
         },
         {
           "id": "wason-2",
           "type": "multiple-choice",
-          "text": "You're checking the law: 'If a person drinks alcohol, they must be 18 years or older.' 4 people: [Drinks beer], [Drinks juice], [Is 25 years old], [Is 16 years old]. Who to check?",
+          "text": "You're checking the law: 'If a person drinks alcohol, they must be 18 years or older.' 4 people: [Drinks beer], [Drinks juice], [Is 25 years old], [Is 16 years old]. Who would be SUFFICIENT to check to determine whether the law is followed or violated?",
           "options": [
             "Drinks beer only",
             "Drinks beer and Is 16 years old",
             "Drinks beer and Is 25 years old",
-            "All",
+            "All people",
             "Drinks beer, Drinks juice and Is 16 years old"
           ],
           "correct": 1,
           "points": 1,
-          "explanation": "Check [Beer] (age ≥18?) and [16 years old] (drinks alcohol?). The others cannot violate the rule."
+          "explanation": "It's sufficient to check [Beer] (age ≥18?) and [16 years old] (drinks alcohol?). The others cannot violate the rule, so checking them would be unnecessary."
         },
         {
           "id": "correlation-1",
@@ -201,23 +199,21 @@
         {
           "id": "likelihood-1",
           "type": "multiple-choice",
-          "text": "Talia has finger thickening. What information is needed to estimate P(Fustis Digitus Syndrome | thickening)?",
+          "text": "Talia has finger thickening. To estimate her probability of having Fustis Digitus Syndrome, what information is needed?",
           "options": [
-            "% of people WITHOUT syndrome who have thickening",
-            "% of people WITH syndrome",
-            "% of people WITHOUT syndrome",
-            "% of people WITH syndrome who have thickening",
-            "a and d",
-            "b and c"
+            "Only: % of people with the syndrome who have thickening",
+            "Only: % of people without the syndrome who have thickening",
+            "Both: % with syndrome who have this symptom AND % without syndrome who have this symptom",
+            "Impossible to estimate even with this information"
           ],
-          "correct": 4,
+          "correct": 2,
           "points": 1,
-          "explanation": "You need P(symptom|disease) and P(symptom|no disease) to calculate P(disease|symptom) via Bayes."
+          "explanation": "You need both rates: how many sick people have the symptom AND how many healthy people have the symptom. This allows calculating the probability of being sick given you have the symptom (Bayes' theorem)."
         },
         {
           "id": "wason-3",
           "type": "multiple-choice",
-          "text": "Rule: 'If a product is organic, it must have certification.' 4 products: [Labeled organic], [Labeled conventional], [With certification], [Without certification]. Which ones to check?",
+          "text": "Rule: 'If a product is organic, it must have certification.' 4 products: [Labeled organic], [Labeled conventional], [With certification], [Without certification]. Which products would be SUFFICIENT to check to determine whether the rule is followed or violated?",
           "options": [
             "Labeled organic only",
             "Labeled organic and With certification",
@@ -227,7 +223,7 @@
           ],
           "correct": 2,
           "points": 1,
-          "explanation": "Check [Organic] (does it have certification?) and [Without certification] (is it organic?). The others cannot violate the rule."
+          "explanation": "It's sufficient to check [Organic] (does it have certification?) and [Without certification] (is it organic?). The others cannot violate the rule, so checking them would be unnecessary."
         },
         {
           "id": "correlation-2",
@@ -276,12 +272,11 @@
           "options": [
             "Give the drug to feverish patients and measure temperature 2h later",
             "Give the drug to one group and a placebo to a control group, double-blind",
-            "Ask patients if they feel better after the drug",
-            "Compare with other existing drugs"
+            "Ask patients if they feel better after the drug"
           ],
           "correct": 1,
           "points": 1,
-          "explanation": "Randomized controlled double-blind trial: gold standard for testing causal efficacy."
+          "explanation": "A randomized controlled double-blind trial is the gold standard for testing causal efficacy. It eliminates the placebo effect and confirmation bias."
         },
         {
           "id": "covariation-1",
@@ -300,16 +295,15 @@
         {
           "id": "falsification-1",
           "type": "multiple-choice",
-          "text": "Hypothesis: 'All swans are white.' Which observation is most informative?",
+          "text": "Hypothesis: 'All swans are white.' Which observation is most informative for testing this hypothesis?",
           "options": [
             "Observe 100 white swans",
             "Observe 1 black swan",
-            "Observe 1000 white swans",
-            "Ask ornithology experts"
+            "Observe 1000 white swans"
           ],
           "correct": 1,
           "points": 1,
-          "explanation": "Popper's falsification principle: a single counterexample refutes the hypothesis. A thousand confirmations don't prove it."
+          "explanation": "Popper's falsification principle: a single counterexample (black swan) definitively refutes the hypothesis. A thousand confirmations (white swans) can never prove it with certainty."
         }
       ]
     },
@@ -397,7 +391,7 @@
         {
           "id": "syllogism-1",
           "type": "multiple-choice",
-          "text": "Premise 1: All mammals can walk. Premise 2: Whales are mammals. Conclusion: Whales can walk.",
+          "text": "Evaluate only the LOGIC (not the truth in reality):\n\nPremise 1: All mammals can walk.\nPremise 2: Whales are mammals.\nConclusion: Whales can walk.",
           "options": [
             "The conclusion follows logically from the premises",
             "The conclusion does NOT follow logically from the premises"
