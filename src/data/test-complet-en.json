@@ -12,15 +12,15 @@
         {
           "id": "prob-match-1",
           "type": "multiple-choice",
-          "text": "Imagine a card game with 2 colors: A (60% of cards) and B (40% of cards). You draw 10 cards at random. Which strategy maximizes your chances of correctly predicting each draw?",
+          "text": "A deck of cards contains 60% red cards and 40% blue cards. You must predict the color before each draw (with replacement). Over 100 draws, which strategy will give you the HIGHEST number of correct predictions?",
           "options": [
-            "Always predict A",
-            "Predict A about 6 times out of 10 and B about 4 times out of 10",
-            "Alternate between A and B equally"
+            "Always predict red",
+            "Predict red 60 times and blue 40 times",
+            "Alternate between red and blue equally"
           ],
           "correct": 0,
           "points": 1,
-          "explanation": "The optimal strategy is to always predict A (60% success). The 'probability matching' error consists of trying to reproduce the proportions (60/40)."
+          "explanation": "Always predicting red gives 60% success (60/100 correct). Predicting red 60 times and blue 40 times gives only ~52% success on average. The 'probability matching' error is reproducing the proportions instead of always choosing the most probable option."
         },
         {
           "id": "prob-match-2",
@@ -197,25 +197,25 @@
         {
           "id": "base-rate-1",
           "type": "number",
-          "text": "A disease affects 1% of the population. A test detects it with 90% sensitivity (true positive) and has 9% false positives. Your test is positive. What is your probability of being sick?",
+          "text": "A disease affects 1% of the population. A test correctly detects the disease in 90% of sick people. Among healthy people, the test incorrectly shows positive in 9% of cases. If your test is positive, what is your actual probability of being sick?",
           "unit": "%",
           "correct": 9,
           "tolerance": 3,
           "points": 1,
-          "explanation": "Out of 10,000 people: 100 sick (90 detected), 9,900 healthy (891 false positives). P = 90/(90+891) ≈ 9.2%."
+          "explanation": "Out of 10,000 people: 100 are sick (90 test positive), 9,900 are healthy (891 test falsely positive). Probability of being sick = 90/(90+891) ≈ 9.2%. Many people ignore the base rate (1%) and overestimate their probability of being sick."
         },
         {
           "id": "base-rate-2",
           "type": "multiple-choice",
-          "text": "In a company, 70% of employees are engineers and 30% are managers. John is shy and likes puzzles. Is he more likely to be:",
+          "text": "In a company, 70% of employees are engineers and 30% are managers. Sophie is charismatic, loves leading teams, and excels at negotiations. Is she more likely:",
           "options": [
             "Engineer",
             "Manager",
-            "Impossible to determine with this information"
+            "Impossible to determine with this info"
           ],
           "correct": 0,
           "points": 1,
-          "explanation": "Even if the description seems to match engineer stereotypes, the base rate (70%) is already a strong indicator."
+          "explanation": "Despite the description suggesting a manager profile, the base rate (70% engineers vs 30% managers) remains the most important factor. Many engineers can also be charismatic and enjoy leading."
         }
       ]
     },
@@ -228,37 +228,37 @@
         {
           "id": "wason-1",
           "type": "multiple-choice",
-          "text": "Rule to test: 'If Lyon is on one side of the ticket, then train is on the other side.' You have 4 tickets: [Lyon], [Paris], [Car], [Train]. Which ones should you turn over to verify the rule?",
+          "text": "Rule to test: 'If Lyon is on one side of the ticket, then train is on the other side.' You have 4 tickets: [Lyon], [Paris], [Car], [Train]. Which tickets would be SUFFICIENT to flip to determine whether the rule is followed or violated?",
           "options": [
             "Lyon only",
             "Lyon and Train",
             "Lyon and Car",
-            "All",
+            "All tickets",
             "Lyon, Paris and Car"
           ],
           "correct": 2,
           "points": 1,
-          "explanation": "Lyon (verify that the other side = train) and Car (verify that the other side ≠ Lyon). Train and Paris cannot violate the rule."
+          "explanation": "It's sufficient to flip Lyon (verify the other side = train) and Car (verify the other side ≠ Lyon). Train and Paris cannot violate the rule, so flipping them would be unnecessary."
         },
         {
           "id": "wason-2",
           "type": "multiple-choice",
-          "text": "You're checking the law: 'If a person drinks alcohol, they must be 18 years or older.' 4 people: [Drinking beer], [Drinking juice], [25 years old], [16 years old]. Who should you check?",
+          "text": "You're checking the law: 'If a person drinks alcohol, they must be 18 years or older.' 4 people: [Drinks beer], [Drinks juice], [Is 25 years old], [Is 16 years old]. Who would be SUFFICIENT to check to determine whether the law is followed or violated?",
           "options": [
-            "Drinking beer only",
-            "Drinking beer and 16 years old",
-            "Drinking beer and 25 years old",
-            "All",
-            "Drinking beer, Drinking juice and 16 years old"
+            "Drinks beer only",
+            "Drinks beer and Is 16 years old",
+            "Drinks beer and Is 25 years old",
+            "All people",
+            "Drinks beer, Drinks juice and Is 16 years old"
           ],
           "correct": 1,
           "points": 1,
-          "explanation": "Check [Beer] (age ≥18?) and [16 years old] (drinking alcohol?). The others cannot violate the rule."
+          "explanation": "It's sufficient to check [Beer] (age ≥18?) and [16 years old] (drinks alcohol?). The others cannot violate the rule, so checking them would be unnecessary."
         },
         {
           "id": "wason-3",
           "type": "multiple-choice",
-          "text": "Rule: 'If a product is organic, it must have certification.' 4 products: [Labeled organic], [Labeled conventional], [With certification], [Without certification]. Which ones should you check?",
+          "text": "Rule: 'If a product is organic, it must have certification.' 4 products: [Labeled organic], [Labeled conventional], [With certification], [Without certification]. Which products would be SUFFICIENT to check to determine whether the rule is followed or violated?",
           "options": [
             "Labeled organic only",
             "Labeled organic and With certification",
@@ -268,12 +268,12 @@
           ],
           "correct": 2,
           "points": 1,
-          "explanation": "Check [Organic] (does it have certification?) and [Without certification] (is it organic?). The others cannot violate the rule."
+          "explanation": "It's sufficient to check [Organic] (does it have certification?) and [Without certification] (is it organic?). The others cannot violate the rule, so checking them would be unnecessary."
         },
         {
           "id": "wason-4",
           "type": "multiple-choice",
-          "text": "Company rule: 'If a project exceeds €50,000, it requires director approval.' 4 files: [Budget: €75,000], [Budget: €30,000], [Approved by director], [Not approved]. Which ones should you check?",
+          "text": "Company rule: 'If a project exceeds €50,000, it requires director approval.' 4 files: [Budget: €75,000], [Budget: €30,000], [Approved by director], [Not approved]. Which files would be SUFFICIENT to check to determine whether the rule is followed or violated?",
           "options": [
             "Budget €75,000 only",
             "Budget €75,000 and Approved",
@@ -283,7 +283,7 @@
           ],
           "correct": 2,
           "points": 1,
-          "explanation": "Check [€75,000] (approved?) and [Not approved] (budget >€50,000?). Logical structure of the Wason task."
+          "explanation": "It's sufficient to check [€75,000] (approved?) and [Not approved] (budget >€50,000?). The others cannot violate the rule, so checking them would be unnecessary."
         },
         {
           "id": "correlation-1",
@@ -519,7 +519,7 @@
         {
           "id": "syllogism-1",
           "type": "multiple-choice",
-          "text": "Premise 1: All mammals can walk. Premise 2: Whales are mammals. Conclusion: Whales can walk.",
+          "text": "Evaluate only the LOGIC (not the truth in reality):\n\nPremise 1: All mammals can walk.\nPremise 2: Whales are mammals.\nConclusion: Whales can walk.",
           "options": [
             "The conclusion follows logically from the premises",
             "The conclusion does NOT follow logically from the premises"
