@@ -40,9 +40,9 @@
           "type": "multiple-choice",
           "text": "A couple has 4 daughters. They want a fifth child. What is the probability that it will be a boy?",
           "options": [
-            "More than 50% (they are 'due' for a boy)",
+            "More than 50% (after 4 girls, a boy becomes more likely)",
             "Less than 50% (they tend to have girls)",
-            "About 50% (independent of previous births)"
+            "About 50% (each birth is independent)"
           ],
           "correct": 2,
           "points": 1,
@@ -56,7 +56,7 @@
             "Linda is a teacher",
             "Linda is a bank teller",
             "Linda is active in the feminist movement",
-            "Linda is a bank teller AND active in the feminist movement"
+            "Linda is a bank teller and active in the feminist movement"
           ],
           "scoring": {
             "type": "conjunction-check",
@@ -73,7 +73,7 @@
             "Mark works in IT",
             "Mark is a video game developer",
             "Mark is an accountant",
-            "Mark works in IT AND plays on an e-sports team"
+            "Mark works in IT and plays on an e-sports team"
           ],
           "scoring": {
             "type": "conjunction-check",
@@ -95,7 +95,7 @@
         {
           "id": "base-rate-2",
           "type": "multiple-choice",
-          "text": "In a company, 70% of employees are engineers and 30% are managers. John is shy and likes puzzles. Is he more likely:",
+          "text": "In a company, 70% of employees are engineers and 30% are managers. Sophie is charismatic, loves leading teams, and excels at negotiations. Is she more likely:",
           "options": [
             "Engineer",
             "Manager",
@@ -103,7 +103,7 @@
           ],
           "correct": 0,
           "points": 1,
-          "explanation": "Even if the description seems to match engineer stereotypes, the base rate (70%) is already a strong indicator."
+          "explanation": "Despite the description suggesting a manager profile, the base rate (70% engineers vs 30% managers) remains the most important factor. Many engineers can also be charismatic and enjoy leading."
         },
         {
           "id": "sample-size",
@@ -144,17 +144,17 @@
         {
           "id": "wason-1",
           "type": "multiple-choice",
-          "text": "Rule to test: 'If Lyon is on one side of the ticket, then train is on the other side.' You have 4 tickets: [Lyon], [Paris], [Car], [Train]. Which ones should you flip to verify the rule?",
+          "text": "Rule to test: 'If Lyon is on one side of the ticket, then train is on the other side.' You have 4 tickets: [Lyon], [Paris], [Car], [Train]. Which tickets would be SUFFICIENT to flip to determine whether the rule is followed or violated?",
           "options": [
             "Lyon only",
             "Lyon and Train",
             "Lyon and Car",
-            "All",
+            "All tickets",
             "Lyon, Paris and Car"
           ],
           "correct": 2,
           "points": 1,
-          "explanation": "Lyon (verify the other side = train) and Car (verify the other side ≠ Lyon). Train and Paris cannot violate the rule."
+          "explanation": "It's sufficient to flip Lyon (verify the other side = train) and Car (verify the other side ≠ Lyon). Train and Paris cannot violate the rule, so flipping them would be unnecessary."
         },
         {
           "id": "wason-2",

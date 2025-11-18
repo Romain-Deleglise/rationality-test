@@ -40,9 +40,9 @@
           "type": "multiple-choice",
           "text": "Un couple a 4 filles. Ils veulent un cinquième enfant. Quelle est la probabilité que ce soit un garçon ?",
           "options": [
-            "Plus de 50% (ils sont 'dus' pour un garçon)",
+            "Plus de 50% (après 4 filles, un garçon devient plus probable)",
             "Moins de 50% (ils ont tendance à faire des filles)",
-            "Environ 50% (indépendant des naissances précédentes)"
+            "Environ 50% (chaque naissance est indépendante)"
           ],
           "correct": 2,
           "points": 1,
@@ -56,7 +56,7 @@
             "Linda est enseignante",
             "Linda est caissière",
             "Linda est active dans le mouvement féministe",
-            "Linda est caissière ET active dans le mouvement féministe"
+            "Linda est caissière et active dans le mouvement féministe"
           ],
           "scoring": {
             "type": "conjunction-check",
@@ -73,7 +73,7 @@
             "Marc travaille dans l'informatique",
             "Marc est développeur de jeux vidéo",
             "Marc est comptable",
-            "Marc travaille dans l'informatique ET joue dans une équipe e-sport"
+            "Marc travaille dans l'informatique et joue dans une équipe e-sport"
           ],
           "scoring": {
             "type": "conjunction-check",
@@ -95,15 +95,15 @@
         {
           "id": "base-rate-2",
           "type": "multiple-choice",
-          "text": "Dans une entreprise, 70% des employés sont ingénieurs et 30% sont managers. Jean est timide et aime les puzzles. Est-il plus probablement :",
+          "text": "Dans une entreprise, 70% des employés sont ingénieurs et 30% sont managers. Sophie est charismatique, aime diriger des équipes et excelle dans les négociations. Est-elle plus probablement :",
           "options": [
-            "Ingénieur",
+            "Ingénieure",
             "Manager",
             "Impossible à déterminer avec ces infos"
           ],
           "correct": 0,
           "points": 1,
-          "explanation": "Même si la description semble correspondre aux stéréotypes d'ingénieur, le taux de base (70%) est déjà un fort indicateur."
+          "explanation": "Malgré la description qui évoque un profil de manager, le taux de base (70% ingénieurs vs 30% managers) reste le facteur le plus important. Beaucoup d'ingénieurs peuvent aussi être charismatiques et aimer diriger."
         },
         {
           "id": "sample-size",
@@ -144,17 +144,17 @@
         {
           "id": "wason-1",
           "type": "multiple-choice",
-          "text": "Règle à tester : 'Si Lyon est sur un côté du ticket, alors train est sur l'autre côté.' Vous avez 4 tickets : [Lyon], [Paris], [Voiture], [Train]. Lesquels retourner pour vérifier la règle ?",
+          "text": "Règle à tester : 'Si Lyon est sur un côté du ticket, alors train est sur l'autre côté.' Vous avez 4 tickets : [Lyon], [Paris], [Voiture], [Train]. Quels tickets SUFFIRAIT-IL de retourner pour vérifier si la règle est respectée ou violée ?",
           "options": [
             "Lyon seulement",
             "Lyon et Train",
             "Lyon et Voiture",
-            "Tous",
+            "Tous les tickets",
             "Lyon, Paris et Voiture"
           ],
           "correct": 2,
           "points": 1,
-          "explanation": "Lyon (vérifier que l'autre côté = train) et Voiture (vérifier que l'autre côté ≠ Lyon). Train et Paris ne peuvent pas violer la règle."
+          "explanation": "Il suffit de retourner Lyon (vérifier que l'autre côté = train) et Voiture (vérifier que l'autre côté ≠ Lyon). Train et Paris ne peuvent pas violer la règle, donc les retourner serait inutile."
         },
         {
           "id": "wason-2",
