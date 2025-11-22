@@ -133,7 +133,7 @@
           "options": [
             "Sophie est professeure",
             "Sophie est infirmière",
-            "Sophie est infirmière ET elle court des marathons",
+            "Sophie est infirmière et elle court des marathons",
             "Sophie travaille dans la finance"
           ],
           "scoring": {
@@ -141,7 +141,7 @@
             "rule": "option-1 > option-2"
           },
           "points": 1,
-          "explanation": "P(infirmière) > P(infirmière ET marathons) car P(A) > P(A ∩ B) toujours. Ajouter une condition réduit la probabilité."
+          "explanation": "P(infirmière) > P(infirmière et marathons) car P(A) > P(A ∩ B) toujours. Ajouter une condition réduit la probabilité."
         },
         {
           "id": "conjunction-2",
@@ -151,14 +151,14 @@
             "Marc travaille dans l'informatique",
             "Marc est développeur de jeux vidéo",
             "Marc est comptable",
-            "Marc travaille dans l'informatique ET joue dans une équipe e-sport"
+            "Marc travaille dans l'informatique et joue dans une équipe e-sport"
           ],
           "scoring": {
             "type": "conjunction-check",
             "rule": "option-0 > option-3"
           },
           "points": 1,
-          "explanation": "P(informatique) doit être classé plus probable que P(informatique ET e-sport). La conjonction est toujours moins probable."
+          "explanation": "P(informatique) doit être classé plus probable que P(informatique et e-sport). La conjonction est toujours moins probable."
         },
         {
           "id": "conjunction-3",
@@ -168,14 +168,14 @@
             "Linda est enseignante",
             "Linda est caissière",
             "Linda est active dans le mouvement féministe",
-            "Linda est caissière ET active dans le mouvement féministe"
+            "Linda est caissière et active dans le mouvement féministe"
           ],
           "scoring": {
             "type": "conjunction-check",
             "rule": "option-1 > option-3"
           },
           "points": 1,
-          "explanation": "Malgré la description, P(caissière) > P(caissière ET féministe) mathématiquement. C'est le fameux 'Linda problem'."
+          "explanation": "Malgré la description, P(caissière) > P(caissière et féministe) mathématiquement. C'est le fameux 'Linda problem'."
         },
         {
           "id": "conjunction-4",
@@ -185,14 +185,14 @@
             "Paul est ingénieur",
             "Paul est professeur d'histoire",
             "Paul est bibliothécaire",
-            "Paul est professeur d'histoire ET auteur de livres historiques"
+            "Paul est professeur d'histoire et auteur de livres historiques"
           ],
           "scoring": {
             "type": "conjunction-check",
             "rule": "option-1 > option-3"
           },
           "points": 1,
-          "explanation": "P(professeur d'histoire) > P(professeur d'histoire ET auteur). Ajouter une condition réduit toujours la probabilité."
+          "explanation": "P(professeur d'histoire) > P(professeur d'histoire et auteur). Ajouter une condition réduit toujours la probabilité."
         },
         {
           "id": "base-rate-1",

@@ -80,7 +80,7 @@
             "rule": "option-0 > option-3"
           },
           "points": 1,
-          "explanation": "P(IT) must be ranked as more probable than P(IT AND e-sports). The conjunction is always less probable."
+          "explanation": "P(IT) must be ranked as more probable than P(IT and e-sports). The conjunction is always less probable."
         },
         {
           "id": "base-rate-1",
@@ -203,12 +203,12 @@
           "options": [
             "Only: % of people with the syndrome who have thickening",
             "Only: % of people without the syndrome who have thickening",
-            "Both: % with syndrome who have this symptom AND % without syndrome who have this symptom",
+            "Both: % with syndrome who have this symptom and % without syndrome who have this symptom",
             "Impossible to estimate even with this information"
           ],
           "correct": 2,
           "points": 1,
-          "explanation": "You need both rates: how many sick people have the symptom AND how many healthy people have the symptom. This allows calculating the probability of being sick given you have the symptom (Bayes' theorem)."
+          "explanation": "You need both rates: how many sick people have the symptom and how many healthy people have the symptom. This allows calculating the probability of being sick given you have the symptom (Bayes' theorem)."
         },
         {
           "id": "wason-3",
