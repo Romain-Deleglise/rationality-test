@@ -16,13 +16,15 @@ const AccordionItem = ({ title, children, defaultOpen = false }: {
   const [isOpen, setIsOpen] = useState(defaultOpen);
 
   const handleToggle = () => {
-    // Sauvegarder la position actuelle avant de changer l'état
     const scrollY = window.scrollY;
     setIsOpen(!isOpen);
-    // Restaurer la position après l'update
-    requestAnimationFrame(() => {
-      window.scrollTo(0, scrollY);
-    });
+
+    // Forcer la restauration du scroll plusieurs fois pour être sûr
+    setTimeout(() => window.scrollTo(0, scrollY), 0);
+    setTimeout(() => window.scrollTo(0, scrollY), 50);
+    setTimeout(() => window.scrollTo(0, scrollY), 100);
+    setTimeout(() => window.scrollTo(0, scrollY), 150);
+    setTimeout(() => window.scrollTo(0, scrollY), 300);
   };
 
   return (
@@ -88,10 +90,17 @@ export default function Home() {
             initial={{ scale: 0.9, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 1, delay: 0.2 }}
-            className="relative inline-block mb-8 px-4 pb-8"
-            style={{ overflow: 'visible' }}
+            className="relative inline-block mb-8 px-4"
+            style={{ overflow: 'visible', paddingBottom: '2rem' }}
           >
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tight leading-[1.4]" style={{ overflow: 'visible', paddingBottom: '0.5rem' }}>
+            <h1
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tight"
+              style={{
+                overflow: 'visible',
+                lineHeight: '1.5',
+                paddingBottom: '1rem'
+              }}
+            >
               <span className="block bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 dark:from-blue-400 dark:via-purple-400 dark:to-indigo-400 bg-clip-text text-transparent animate-gradient bg-[length:200%_auto]">
                 {t('title')}
               </span>
