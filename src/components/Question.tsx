@@ -316,9 +316,9 @@ export default function Question({ question, onAnswer, defaultValue }: QuestionP
             components={{
               p: ({node, ...props}) => <p className="mb-3 last:mb-0" {...props} />,
               strong: ({node, ...props}) => <span className="font-medium" {...props} />,
-              ul: ({node, ...props}) => <ul className="list-disc ml-6 my-3 space-y-1" {...props} />,
-              ol: ({node, ...props}) => <ol className="list-decimal ml-6 my-3 space-y-1" {...props} />,
-              li: ({node, ...props}) => <li className="mb-1" {...props} />,
+              ul: ({node, ...props}) => <ul className="list-disc pl-6 my-3 space-y-1" {...props} />,
+              ol: ({node, ...props}) => <ol className="list-decimal pl-6 my-3 space-y-1" {...props} />,
+              li: ({node, ...props}) => <li className="list-item mb-1" {...props} />,
               table: ({node, ...props}) => (
                 <div className="my-4 overflow-x-auto">
                   <table className="min-w-full border-collapse border border-gray-300 dark:border-gray-600" {...props} />
