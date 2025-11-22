@@ -95,7 +95,7 @@
         {
           "id": "base-rate-2",
           "type": "multiple-choice",
-          "text": "In a company, 70% of employees are engineers and 30% are managers. Sophie is charismatic, loves leading teams, and excels at negotiations. Is she more likely:",
+          "text": "In a company, 70% of employees are engineers and 30% are managers. We know that 20% of engineers and 40% of managers are described as 'charismatic and enjoy leading'. Sophie has been described this way. Is she more likely:",
           "options": [
             "Engineer",
             "Manager",
@@ -103,7 +103,7 @@
           ],
           "correct": 0,
           "points": 1,
-          "explanation": "Despite the description suggesting a manager profile, the base rate (70% engineers vs 30% managers) remains the most important factor. Many engineers can also be charismatic and enjoy leading."
+          "explanation": "Using Bayes' theorem: P(engineer|description) = (0.70 × 0.20) / [(0.70 × 0.20) + (0.30 × 0.40)] = 0.14 / 0.26 ≈ 54%. Despite the description being 2× more frequent among managers, the high base rate of engineers (70%) tips the balance."
         },
         {
           "id": "sample-size",
@@ -135,8 +135,8 @@
     },
     {
       "id": "sci-reasoning",
-      "name": "Scientific Reasoning (12 items)",
-      "points": 12,
+      "name": "Scientific Reasoning (11 items)",
+      "points": 11,
       "time": 6,
       "questions": [
         {
@@ -209,22 +209,6 @@
           "correct": 2,
           "points": 1,
           "explanation": "You need both rates: how many sick people have the symptom and how many healthy people have the symptom. This allows calculating the probability of being sick given you have the symptom (Bayes' theorem)."
-        },
-        {
-          "id": "likelihood-2",
-          "type": "multiple-choice",
-          "text": "A smoke detector goes off. What information is needed to estimate P(real fire | detector triggered)?",
-          "options": [
-            "% of times the detector goes off WITHOUT a fire (false alarms)",
-            "% of real fires",
-            "% of non-fires",
-            "% of times the detector goes off during a REAL fire",
-            "a and d",
-            "b and c"
-          ],
-          "correct": 4,
-          "points": 1,
-          "explanation": "To calculate P(fire|detector) via Bayes' theorem, you need P(detector|fire) and P(detector|no fire), which are options a and d."
         },
         {
           "id": "correlation-2",
@@ -535,7 +519,7 @@
           "correct": 2387,
           "anchorType": "low",
           "points": 0.5,
-          "explanation": "The real distance is ~2387 miles. To score points, you need to resist the anchor (500). If your estimate is <250 miles OR >1000 miles (far from the anchor in either direction), you resisted the anchoring bias. This question measures resistance to anchoring, not knowledge of the correct answer."
+          "explanation": "The actual distance is ~2387 miles. The anchor of 500 miles can influence your estimate downward. Points awarded by accuracy: estimate within ±30% = full points, ±60% = partial points. This question tests your ability to make reasonable estimates despite anchoring."
         },
         {
           "id": "anchor-2",
@@ -545,7 +529,7 @@
           "correct": 687,
           "anchorType": "high",
           "points": 0.5,
-          "explanation": "The actual duration is 687 days. To score points, you need to resist the anchor (1500). If your estimate is <750 days OR >3000 days (far from the anchor in either direction), you resisted the anchoring bias. This question measures resistance to anchoring, not knowledge of the correct answer."
+          "explanation": "The actual duration is ~687 days. The anchor of 1500 days can influence your estimate upward. Points awarded by accuracy: estimate within ±30% = full points, ±60% = partial points. This question tests your ability to make reasonable estimates despite anchoring."
         }
       ]
     }
