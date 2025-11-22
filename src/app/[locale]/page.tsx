@@ -18,7 +18,16 @@ const AccordionItem = ({ title, children, defaultOpen = false }: {
   const handleToggle = (e: React.MouseEvent) => {
     e.preventDefault();
     e.stopPropagation();
+
+    // Capturer la position de scroll AVANT le changement
+    const scrollY = window.scrollY;
+
     setIsOpen(!isOpen);
+
+    // Restaurer la position immédiatement après le render
+    requestAnimationFrame(() => {
+      window.scrollTo(0, scrollY);
+    });
   };
 
   return (
