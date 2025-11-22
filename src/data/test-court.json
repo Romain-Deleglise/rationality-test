@@ -142,17 +142,17 @@
         {
           "id": "wason-1",
           "type": "multiple-choice",
-          "text": "Règle à tester : 'Si Lyon est sur un côté du ticket, alors train est sur l'autre côté.'\n\nVous avez 4 tickets devant vous :\n• Ticket 1 montre : **Lyon**\n• Ticket 2 montre : **Paris**\n• Ticket 3 montre : **Voiture**\n• Ticket 4 montre : **Train**\n\nQuels tickets SUFFIRAIT-IL de retourner pour vérifier si la règle est respectée ou violée ?",
+          "text": "Règle à tester : 'Si une carte a une voyelle sur une face, alors elle doit avoir un nombre pair sur l'autre face.'\n\nVous avez 4 cartes devant vous :\n• Carte 1 montre : **E**\n• Carte 2 montre : **K**\n• Carte 3 montre : **4**\n• Carte 4 montre : **7**\n\nQuelles cartes SUFFIRAIT-IL de retourner pour vérifier si la règle est respectée ou violée ?",
           "options": [
-            "Lyon seulement",
-            "Lyon et Train",
-            "Lyon et Voiture",
-            "Tous les tickets",
-            "Lyon, Paris et Voiture"
+            "E seulement",
+            "E et 4",
+            "E et 7",
+            "Toutes les cartes",
+            "E, K et 7"
           ],
           "correct": 2,
           "points": 1,
-          "explanation": "Il suffit de retourner Lyon (vérifier que l'autre côté = train) et Voiture (vérifier que l'autre côté ≠ Lyon). Train et Paris ne peuvent pas violer la règle, donc les retourner serait inutile."
+          "explanation": "Il suffit de retourner E (vérifier que l'autre face = nombre pair) et 7 (vérifier que l'autre face ≠ voyelle). Les cartes 4 et K ne peuvent pas violer la règle."
         },
         {
           "id": "wason-2",
@@ -213,17 +213,17 @@
         {
           "id": "wason-3",
           "type": "multiple-choice",
-          "text": "Règle : 'Si un produit est bio, il doit avoir une certification.'\n\nVous avez 4 produits devant vous :\n• Produit 1 : **Étiqueté bio**\n• Produit 2 : **Étiqueté conventionnel**\n• Produit 3 : **Avec certification**\n• Produit 4 : **Sans certification**\n\nQuels produits SUFFIRAIT-IL de vérifier pour déterminer si la règle est respectée ou violée ?",
+          "text": "Règle de sécurité : 'Si une pièce a un détecteur de fumée, elle doit avoir une alarme sonore.'\n\nVous inspectez 4 pièces :\n• Pièce A : **A un détecteur de fumée**\n• Pièce B : **Pas de détecteur de fumée**\n• Pièce C : **A une alarme sonore**\n• Pièce D : **Pas d'alarme sonore**\n\nQuelles pièces SUFFIRAIT-IL de vérifier pour déterminer si la règle est respectée ou violée ?",
           "options": [
-            "Étiqueté bio seulement",
-            "Étiqueté bio et Avec certification",
-            "Étiqueté bio et Sans certification",
-            "Tous les produits",
-            "Étiqueté bio, Étiqueté conventionnel et Sans certification"
+            "Pièce A seulement",
+            "Pièces A et C",
+            "Pièces A et D",
+            "Toutes les pièces",
+            "Pièces A, B et D"
           ],
           "correct": 2,
           "points": 1,
-          "explanation": "Il suffit de vérifier [Bio] (a-t-il certification?) et [Sans certification] (est-il bio?). Les autres ne peuvent pas violer la règle, donc les vérifier serait inutile."
+          "explanation": "Il suffit de vérifier la pièce A (a-t-elle une alarme sonore ?) et la pièce D (a-t-elle un détecteur de fumée ?). Les autres ne peuvent pas violer la règle."
         },
         {
           "id": "correlation-2",

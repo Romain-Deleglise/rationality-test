@@ -228,17 +228,17 @@
         {
           "id": "wason-1",
           "type": "multiple-choice",
-          "text": "Rule to test: 'If Lyon is on one side of the ticket, then train is on the other side.'\n\nYou have 4 tickets in front of you:\n• Ticket 1 shows: **Lyon**\n• Ticket 2 shows: **Paris**\n• Ticket 3 shows: **Car**\n• Ticket 4 shows: **Train**\n\nWhich tickets would be SUFFICIENT to check to verify if the rule is respected or violated?",
+          "text": "Rule to test: 'If a card has a vowel on one side, then it must have an even number on the other side.'\n\nYou have 4 cards in front of you:\n• Card 1 shows: **E**\n• Card 2 shows: **K**\n• Card 3 shows: **4**\n• Card 4 shows: **7**\n\nWhich cards would be SUFFICIENT to flip to verify if the rule is respected or violated?",
           "options": [
-            "Lyon only",
-            "Lyon and Train",
-            "Lyon and Car",
-            "All tickets",
-            "Lyon, Paris and Car"
+            "E only",
+            "E and 4",
+            "E and 7",
+            "All cards",
+            "E, K and 7"
           ],
           "correct": 2,
           "points": 1,
-          "explanation": "It's sufficient to flip Lyon (verify the other side = train) and Car (verify the other side ≠ Lyon). Train and Paris cannot violate the rule, so flipping them would be unnecessary."
+          "explanation": "It's sufficient to flip E (verify the other side = even number) and 7 (verify the other side ≠ vowel). Cards 4 and K cannot violate the rule."
         },
         {
           "id": "wason-2",
@@ -258,17 +258,17 @@
         {
           "id": "wason-3",
           "type": "multiple-choice",
-          "text": "Rule: 'If a product is organic, it must have certification.'\n\nYou have 4 products in front of you:\n• Product 1: **Labeled organic**\n• Product 2: **Labeled conventional**\n• Product 3: **With certification**\n• Product 4: **Without certification**\n\nWhich products would be SUFFICIENT to check to determine if the rule is respected or violated?",
+          "text": "Safety rule: 'If a room has a smoke detector, it must have a sound alarm.'\n\nYou are inspecting 4 rooms:\n• Room A: **Has a smoke detector**\n• Room B: **No smoke detector**\n• Room C: **Has a sound alarm**\n• Room D: **No sound alarm**\n\nWhich rooms would be SUFFICIENT to check to determine if the rule is respected or violated?",
           "options": [
-            "Labeled organic only",
-            "Labeled organic and With certification",
-            "Labeled organic and Without certification",
-            "All products",
-            "Labeled organic, Labeled conventional and Without certification"
+            "Room A only",
+            "Rooms A and C",
+            "Rooms A and D",
+            "All rooms",
+            "Rooms A, B and D"
           ],
           "correct": 2,
           "points": 1,
-          "explanation": "It's sufficient to check [Organic] (does it have certification?) and [Without certification] (is it organic?). The others cannot violate the rule, so checking them would be unnecessary."
+          "explanation": "It's sufficient to check room A (does it have a sound alarm?) and room D (does it have a smoke detector?). The others cannot violate the rule."
         },
         {
           "id": "wason-4",
