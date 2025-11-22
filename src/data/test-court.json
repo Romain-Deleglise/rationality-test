@@ -199,32 +199,16 @@
         {
           "id": "likelihood-1",
           "type": "multiple-choice",
-          "text": "Talia a un épaississement des doigts. Pour estimer sa probabilité d'avoir l'ostéoarthropathie hypertrophiante (une maladie osseuse rare), quelles informations sont nécessaires ?",
+          "text": "Une alarme d'incendie se déclenche dans un bâtiment. Pour estimer la probabilité qu'il y ait vraiment un incendie, quelles informations sont nécessaires ?",
           "options": [
-            "Seulement : % de personnes avec le syndrome qui ont un épaississement",
-            "Seulement : % de personnes sans le syndrome qui ont un épaississement",
-            "Les deux : % avec syndrome qui ont ce symptôme et % sans syndrome qui ont ce symptôme",
+            "Seulement : % de fois où l'alarme se déclenche quand il y a un incendie",
+            "Seulement : % de fois où l'alarme se déclenche quand il n'y a PAS d'incendie (fausses alarmes)",
+            "Les deux : % de déclenchements lors d'incendies réels ET % de fausses alarmes",
             "Impossible à estimer même avec ces informations"
           ],
           "correct": 2,
           "points": 1,
-          "explanation": "Il faut les deux taux : combien de malades ont le symptôme et combien de non-malades ont le symptôme. Cela permet de calculer la probabilité d'être malade sachant qu'on a le symptôme (théorème de Bayes)."
-        },
-        {
-          "id": "likelihood-2",
-          "type": "multiple-choice",
-          "text": "Un détecteur de fumée se déclenche. Quelles informations sont nécessaires pour estimer P(incendie réel | détecteur déclenché) ?",
-          "options": [
-            "% de fois où le détecteur se déclenche SANS incendie (fausses alarmes)",
-            "% d'incendies réels",
-            "% de non-incendies",
-            "% de fois où le détecteur se déclenche lors d'un VRAI incendie",
-            "a et d",
-            "b et c"
-          ],
-          "correct": 4,
-          "points": 1,
-          "explanation": "Pour calculer P(incendie|détecteur) via le théorème de Bayes, il faut P(détecteur|incendie) et P(détecteur|pas d'incendie), c'est-à-dire les options a et d."
+          "explanation": "Il faut les deux taux : combien d'incendies réels déclenchent l'alarme et combien de non-incendies déclenchent l'alarme. Cela permet de calculer la probabilité d'incendie sachant que l'alarme sonne (théorème de Bayes)."
         },
         {
           "id": "correlation-2",

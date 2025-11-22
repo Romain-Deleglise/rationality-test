@@ -256,22 +256,6 @@
           "explanation": "Il suffit de vérifier la personne A (a-t-elle ≥18 ans ?) et la personne D (boit-elle de l'alcool ?). Les autres ne peuvent pas violer la règle, donc les vérifier serait inutile."
         },
         {
-          "id": "likelihood-2",
-          "type": "multiple-choice",
-          "text": "Un détecteur de fumée se déclenche. Quelles informations sont nécessaires pour estimer P(incendie réel | détecteur déclenché) ?",
-          "options": [
-            "% de fois où le détecteur se déclenche SANS incendie (fausses alarmes)",
-            "% d'incendies réels",
-            "% de non-incendies",
-            "% de fois où le détecteur se déclenche lors d'un VRAI incendie",
-            "a et d",
-            "b et c"
-          ],
-          "correct": 4,
-          "points": 1,
-          "explanation": "Pour calculer P(incendie|détecteur) via le théorème de Bayes, il faut P(détecteur|incendie) et P(détecteur|pas d'incendie), c'est-à-dire les options a et d."
-        },
-        {
           "id": "wason-3",
           "type": "multiple-choice",
           "text": "Règle d'entreprise : 'Si un projet dépasse 50 000€, il nécessite l'approbation du directeur.' 4 dossiers : [Budget: 75 000€], [Budget: 30 000€], [Approuvé par directeur], [Non approuvé]. Quels dossiers SUFFIRAIT-IL de vérifier pour déterminer si la règle est respectée ou violée ?",
@@ -370,18 +354,18 @@
         {
           "id": "likelihood-1",
           "type": "multiple-choice",
-          "text": "Talia a un épaississement des doigts. Quelles infos sont nécessaires pour estimer P(ostéoarthropathie hypertrophiante | épaississement) ?",
+          "text": "Une alarme d'incendie se déclenche. Quelles infos sont nécessaires pour estimer P(incendie réel | alarme déclenchée) ?",
           "options": [
-            "% de personnes SANS syndrome qui ont un épaississement",
-            "% de personnes AVEC syndrome",
-            "% de personnes SANS syndrome",
-            "% de personnes AVEC syndrome qui ont un épaississement",
+            "% de fois où l'alarme se déclenche SANS incendie (fausses alarmes)",
+            "% d'incendies réels (fréquence de base)",
+            "% de situations sans incendie (fréquence de base)",
+            "% de fois où l'alarme se déclenche lors d'un incendie RÉEL",
             "a et d",
             "b et c"
           ],
           "correct": 4,
           "points": 1,
-          "explanation": "Il faut P(symptôme|maladie) et P(symptôme|pas maladie) pour calculer P(maladie|symptôme) via Bayes."
+          "explanation": "Il faut P(alarme|incendie) et P(alarme|pas incendie) pour calculer P(incendie|alarme) via Bayes."
         },
         {
           "id": "likelihood-3",
