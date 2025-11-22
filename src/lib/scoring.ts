@@ -56,8 +56,10 @@ export function scoreQuestion(
     };
   }
 
-  // Si pas de correction définie, on ne peut pas scorer
-  if (effectiveQuestion.correct === undefined || effectiveQuestion.correct === null) {
+  // Si pas de correction définie ET pas de scoring.rule, on ne peut pas scorer
+  // Exception : les questions de type "ranking" peuvent utiliser scoring.rule au lieu de correct
+  if ((effectiveQuestion.correct === undefined || effectiveQuestion.correct === null) &&
+      !(question.type === 'ranking' && question.scoring && question.scoring.rule)) {
     console.warn(`Question ${question.id} n'a pas de correction définie`);
     return {
       questionId: question.id,
