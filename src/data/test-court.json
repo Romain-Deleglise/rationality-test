@@ -142,17 +142,17 @@
         {
           "id": "wason-1",
           "type": "multiple-choice",
-          "text": "Règle à tester : 'Si une carte a une voyelle sur une face, alors elle doit avoir un nombre pair sur l'autre face.'\n\nVous avez 4 cartes devant vous :\n• Carte 1 montre : **E**\n• Carte 2 montre : **K**\n• Carte 3 montre : **4**\n• Carte 4 montre : **7**\n\nQuelles cartes SUFFIRAIT-IL de retourner pour vérifier si la règle est respectée ou violée ?",
+          "text": "Règle à tester : 'Si une carte a une voyelle d'un côté, alors elle a un nombre pair de l'autre côté.'\n\nVous avez 4 cartes devant vous :\n• Carte 1 montre : **A**\n• Carte 2 montre : **K**\n• Carte 3 montre : **4**\n• Carte 4 montre : **7**\n\nQuelles cartes SUFFIRAIT-IL de retourner pour vérifier si la règle est respectée ou violée ?",
           "options": [
-            "E seulement",
-            "E et 4",
-            "E et 7",
+            "A seulement",
+            "A et 4",
+            "A et 7",
             "Toutes les cartes",
-            "E, K et 7"
+            "A, K et 7"
           ],
           "correct": 2,
           "points": 1,
-          "explanation": "Il suffit de retourner E (vérifier que l'autre face = nombre pair) et 7 (vérifier que l'autre face ≠ voyelle). Les cartes 4 et K ne peuvent pas violer la règle."
+          "explanation": "Il suffit de retourner A (vérifier que l'autre face = nombre pair) et 7 (vérifier que l'autre face ≠ voyelle). Les cartes 4 et K ne peuvent pas violer la règle."
         },
         {
           "id": "wason-2",
@@ -211,19 +211,20 @@
           "explanation": "Il faut les deux taux : combien de malades ont le symptôme et combien de non-malades ont le symptôme. Cela permet de calculer la probabilité d'être malade sachant qu'on a le symptôme (théorème de Bayes)."
         },
         {
-          "id": "wason-3",
+          "id": "likelihood-2",
           "type": "multiple-choice",
-          "text": "Règle de sécurité : 'Si une pièce a un détecteur de fumée, elle doit avoir une alarme sonore.'\n\nVous inspectez 4 pièces :\n• Pièce A : **A un détecteur de fumée**\n• Pièce B : **Pas de détecteur de fumée**\n• Pièce C : **A une alarme sonore**\n• Pièce D : **Pas d'alarme sonore**\n\nQuelles pièces SUFFIRAIT-IL de vérifier pour déterminer si la règle est respectée ou violée ?",
+          "text": "Un détecteur de fumée se déclenche. Quelles informations sont nécessaires pour estimer P(incendie réel | détecteur déclenché) ?",
           "options": [
-            "Pièce A seulement",
-            "Pièces A et C",
-            "Pièces A et D",
-            "Toutes les pièces",
-            "Pièces A, B et D"
+            "% de fois où le détecteur se déclenche SANS incendie (fausses alarmes)",
+            "% d'incendies réels",
+            "% de non-incendies",
+            "% de fois où le détecteur se déclenche lors d'un VRAI incendie",
+            "a et d",
+            "b et c"
           ],
-          "correct": 2,
+          "correct": 4,
           "points": 1,
-          "explanation": "Il suffit de vérifier la pièce A (a-t-elle une alarme sonore ?) et la pièce D (a-t-elle un détecteur de fumée ?). Les autres ne peuvent pas violer la règle."
+          "explanation": "Pour calculer P(incendie|détecteur) via le théorème de Bayes, il faut P(détecteur|incendie) et P(détecteur|pas d'incendie), c'est-à-dire les options a et d."
         },
         {
           "id": "correlation-2",

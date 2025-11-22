@@ -142,17 +142,17 @@
         {
           "id": "wason-1",
           "type": "multiple-choice",
-          "text": "Rule to test: 'If a card has a vowel on one side, then it must have an even number on the other side.'\n\nYou have 4 cards in front of you:\n• Card 1 shows: **E**\n• Card 2 shows: **K**\n• Card 3 shows: **4**\n• Card 4 shows: **7**\n\nWhich cards would be SUFFICIENT to flip to verify if the rule is respected or violated?",
+          "text": "Rule to test: 'If a card has a vowel on one side, then it has an even number on the other side.'\n\nYou have 4 cards in front of you:\n• Card 1 shows: **A**\n• Card 2 shows: **K**\n• Card 3 shows: **4**\n• Card 4 shows: **7**\n\nWhich cards would be SUFFICIENT to flip to verify if the rule is respected or violated?",
           "options": [
-            "E only",
-            "E and 4",
-            "E and 7",
+            "A only",
+            "A and 4",
+            "A and 7",
             "All cards",
-            "E, K and 7"
+            "A, K and 7"
           ],
           "correct": 2,
           "points": 1,
-          "explanation": "It's sufficient to flip E (verify the other side = even number) and 7 (verify the other side ≠ vowel). Cards 4 and K cannot violate the rule."
+          "explanation": "It's sufficient to flip A (verify the other side = even number) and 7 (verify the other side ≠ vowel). Cards 4 and K cannot violate the rule."
         },
         {
           "id": "wason-2",
@@ -211,19 +211,20 @@
           "explanation": "You need both rates: how many sick people have the symptom and how many healthy people have the symptom. This allows calculating the probability of being sick given you have the symptom (Bayes' theorem)."
         },
         {
-          "id": "wason-3",
+          "id": "likelihood-2",
           "type": "multiple-choice",
-          "text": "Safety rule: 'If a room has a smoke detector, it must have a sound alarm.'\n\nYou are inspecting 4 rooms:\n• Room A: **Has a smoke detector**\n• Room B: **No smoke detector**\n• Room C: **Has a sound alarm**\n• Room D: **No sound alarm**\n\nWhich rooms would be SUFFICIENT to check to determine if the rule is respected or violated?",
+          "text": "A smoke detector goes off. What information is needed to estimate P(real fire | detector triggered)?",
           "options": [
-            "Room A only",
-            "Rooms A and C",
-            "Rooms A and D",
-            "All rooms",
-            "Rooms A, B and D"
+            "% of times the detector goes off WITHOUT a fire (false alarms)",
+            "% of real fires",
+            "% of non-fires",
+            "% of times the detector goes off during a REAL fire",
+            "a and d",
+            "b and c"
           ],
-          "correct": 2,
+          "correct": 4,
           "points": 1,
-          "explanation": "It's sufficient to check room A (does it have a sound alarm?) and room D (does it have a smoke detector?). The others cannot violate the rule."
+          "explanation": "To calculate P(fire|detector) via Bayes' theorem, you need P(detector|fire) and P(detector|no fire), which are options a and d."
         },
         {
           "id": "correlation-2",
