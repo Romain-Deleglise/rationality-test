@@ -19,7 +19,7 @@ const AccordionItem = ({ title, children, defaultOpen = false }: {
     <motion.div
       initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
-      className="group relative bg-white/60 dark:bg-gray-800/60 backdrop-blur-lg border border-gray-200/50 dark:border-gray-700/50 rounded-2xl mb-4 overflow-hidden shadow-md hover:shadow-xl transition-all duration-300"
+      className="group relative bg-white/60 dark:bg-gray-800/60 backdrop-blur-lg border border-gray-200/50 dark:border-gray-700/50 rounded-2xl mb-4 shadow-md hover:shadow-xl transition-all duration-300"
     >
       <button
         onClick={() => setIsOpen(!isOpen)}
@@ -28,7 +28,7 @@ const AccordionItem = ({ title, children, defaultOpen = false }: {
         <span className="font-semibold text-left text-gray-900 dark:text-gray-100 text-base sm:text-lg">{title}</span>
         <motion.div
           animate={{ rotate: isOpen ? 180 : 0 }}
-          transition={{ duration: 0.3 }}
+          transition={{ duration: 0.3, ease: "easeInOut" }}
           className="flex-shrink-0 ml-4"
         >
           <ChevronDown className="w-5 h-5 text-blue-600 dark:text-blue-400" />
@@ -37,11 +37,14 @@ const AccordionItem = ({ title, children, defaultOpen = false }: {
       <motion.div
         initial={false}
         animate={{
-          height: isOpen ? 'auto' : 0,
+          maxHeight: isOpen ? 2000 : 0,
           opacity: isOpen ? 1 : 0
         }}
-        transition={{ duration: 0.3, ease: "easeInOut" }}
-        className="overflow-hidden"
+        transition={{
+          maxHeight: { duration: 0.4, ease: "easeInOut" },
+          opacity: { duration: 0.3, ease: "easeInOut" }
+        }}
+        className="overflow-hidden will-change-[max-height,opacity]"
       >
         <div className="px-6 sm:px-8 py-6 bg-white/40 dark:bg-gray-900/40 backdrop-blur-sm text-gray-700 dark:text-gray-300 leading-relaxed text-justify">
           {children}
@@ -79,9 +82,9 @@ export default function Home() {
             initial={{ scale: 0.9, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 1, delay: 0.2 }}
-            className="relative inline-block mb-6"
+            className="relative inline-block mb-6 pb-2"
           >
-            <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tight mb-6">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight mb-6 leading-tight px-2">
               <span className="block bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 dark:from-blue-400 dark:via-purple-400 dark:to-indigo-400 bg-clip-text text-transparent animate-gradient bg-[length:200%_auto]">
                 {t('title')}
               </span>
@@ -93,7 +96,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-xl sm:text-2xl md:text-3xl text-gray-700 dark:text-gray-300 mb-12 max-w-3xl mx-auto font-light leading-relaxed"
+            className="text-lg sm:text-xl md:text-2xl text-gray-700 dark:text-gray-300 mb-10 max-w-2xl mx-auto font-light leading-relaxed"
           >
             {t('subtitle')}
           </motion.p>
@@ -389,7 +392,7 @@ export default function Home() {
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-3xl sm:text-4xl md:text-5xl font-black text-center mb-4"
+              className="text-2xl sm:text-3xl md:text-4xl font-black text-center mb-4"
             >
               <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 dark:from-blue-400 dark:via-purple-400 dark:to-indigo-400 bg-clip-text text-transparent">
                 {t('chooseVersion.title')}
@@ -405,8 +408,8 @@ export default function Home() {
                 transition={{ duration: 0.6, delay: 0.3 }}
                 className="group relative"
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-cyan-500/20 dark:from-blue-600/20 dark:to-cyan-600/20 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-300 opacity-0 group-hover:opacity-100"></div>
-                <div className="relative bg-white/90 dark:bg-gray-900/90 backdrop-blur-lg border-2 border-gray-200/50 dark:border-gray-700/50 rounded-3xl p-6 sm:p-8 hover:border-blue-400 dark:hover:border-blue-500 transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl">
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-cyan-500/20 dark:from-blue-600/20 dark:to-cyan-600/20 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500 opacity-0 group-hover:opacity-100"></div>
+                <div className="relative bg-white/90 dark:bg-gray-900/90 backdrop-blur-lg border-2 border-gray-200/50 dark:border-gray-700/50 rounded-3xl p-6 sm:p-8 hover:border-blue-400 dark:hover:border-blue-500 transition-all duration-500 transform hover:-translate-y-2 hover:shadow-2xl">
                   <div className="text-center mb-6">
                     <motion.div
                       whileHover={{ scale: 1.1, rotate: 5 }}
@@ -415,8 +418,8 @@ export default function Home() {
                     >
                       <Clock className="w-8 h-8 text-white" />
                     </motion.div>
-                    <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-3">{t('chooseVersion.express.title')}</h3>
-                    <p className="text-4xl sm:text-5xl font-black bg-gradient-to-r from-blue-600 to-cyan-600 dark:from-blue-400 dark:to-cyan-400 bg-clip-text text-transparent mb-2">{t('chooseVersion.express.duration')}</p>
+                    <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-3">{t('chooseVersion.express.title')}</h3>
+                    <p className="text-3xl sm:text-4xl font-black bg-gradient-to-r from-blue-600 to-cyan-600 dark:from-blue-400 dark:to-cyan-400 bg-clip-text text-transparent mb-2">{t('chooseVersion.express.duration')}</p>
                     <p className="text-sm font-medium text-gray-600 dark:text-gray-400">{t('chooseVersion.express.modules')}</p>
                   </div>
                   <ul className="space-y-3 mb-8">
@@ -447,8 +450,8 @@ export default function Home() {
                 transition={{ duration: 0.6, delay: 0.4 }}
                 className="group relative"
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-purple-500/30 via-pink-500/30 to-orange-500/30 dark:from-purple-600/20 dark:via-pink-600/20 dark:to-orange-600/20 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-300"></div>
-                <div className="relative bg-gradient-to-br from-white via-purple-50/50 to-pink-50/50 dark:from-gray-900 dark:via-purple-950/30 dark:to-pink-950/30 backdrop-blur-lg border-2 border-purple-400/50 dark:border-purple-500/50 rounded-3xl p-6 sm:p-8 hover:border-purple-500 dark:hover:border-purple-400 transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl">
+                <div className="absolute inset-0 bg-gradient-to-br from-purple-500/30 via-pink-500/30 to-orange-500/30 dark:from-purple-600/20 dark:via-pink-600/20 dark:to-orange-600/20 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
+                <div className="relative bg-gradient-to-br from-white via-purple-50/50 to-pink-50/50 dark:from-gray-900 dark:via-purple-950/30 dark:to-pink-950/30 backdrop-blur-lg border-2 border-purple-400/50 dark:border-purple-500/50 rounded-3xl p-6 sm:p-8 hover:border-purple-500 dark:hover:border-purple-400 transition-all duration-500 transform hover:-translate-y-2 hover:shadow-2xl">
                   <div className="absolute top-4 right-4 bg-gradient-to-r from-purple-600 via-pink-600 to-orange-600 text-white text-xs font-bold px-4 py-2 rounded-full shadow-lg animate-pulse">
                     {t('chooseVersion.full.recommended')}
                   </div>
@@ -460,8 +463,8 @@ export default function Home() {
                     >
                       <BarChart3 className="w-8 h-8 text-white" />
                     </motion.div>
-                    <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-3">{t('chooseVersion.full.title')}</h3>
-                    <p className="text-4xl sm:text-5xl font-black bg-gradient-to-r from-purple-600 via-pink-600 to-orange-600 dark:from-purple-400 dark:via-pink-400 dark:to-orange-400 bg-clip-text text-transparent mb-2">{t('chooseVersion.full.duration')}</p>
+                    <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-3">{t('chooseVersion.full.title')}</h3>
+                    <p className="text-3xl sm:text-4xl font-black bg-gradient-to-r from-purple-600 via-pink-600 to-orange-600 dark:from-purple-400 dark:via-pink-400 dark:to-orange-400 bg-clip-text text-transparent mb-2">{t('chooseVersion.full.duration')}</p>
                     <p className="text-sm font-medium text-gray-600 dark:text-gray-400">{t('chooseVersion.full.modules')}</p>
                   </div>
                   <ul className="space-y-3 mb-8">
