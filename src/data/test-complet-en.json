@@ -1963,7 +1963,7 @@
         {
           "id": "sunk-2",
           "type": "multiple-choice",
-          "text": "You've invested €10,000 in a project for 6 months. After analysis, you realize the project will never be profitable. You can either:\n- Continue and lose €5,000 more before failure\n- Stop now and only lose the €10,000 already invested\n\nWhat to do?",
+          "text": "You've invested €10,000 in a project for 6 months. After analysis, you realize the project will never be profitable. You can either:\n\n• Continue and lose €5,000 more before failure\n• Stop now and only lose the €10,000 already invested\n\nWhat to do?",
           "options": [
             "Continue, otherwise the €10,000 will have been wasted for nothing",
             "Stop immediately to limit losses",
