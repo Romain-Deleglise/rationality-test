@@ -1,6 +1,6 @@
 {
   "version": "full",
-  "totalPoints": 95.98,
+  "totalPoints": 96.98,
   "estimatedTime": 86,
   "modules": [
     {
@@ -195,8 +195,8 @@
     },
     {
       "id": "sci-reasoning",
-      "name": "Scientific Reasoning (13 items)",
-      "points": 13,
+      "name": "Scientific Reasoning (14 items)",
+      "points": 14,
       "time": 8,
       "questions": [
         {
@@ -340,6 +340,22 @@
           "correct": 4,
           "points": 1,
           "explanation": "You need P(symptom|disease) and P(symptom|no disease) to calculate P(disease|symptom) via Bayes."
+        },
+        {
+          "id": "likelihood-2",
+          "type": "multiple-choice",
+          "text": "A smoke detector activates in a house. To estimate the probability of a real fire, what information is needed?",
+          "options": [
+            "% of times the detector triggers during false alarms (no fire)",
+            "% of real fires in equipped houses",
+            "% of houses without fire",
+            "% of times the detector correctly detects real fires",
+            "a and d",
+            "b and c"
+          ],
+          "correct": 4,
+          "points": 1,
+          "explanation": "You need P(alarm|fire) and P(alarm|no fire) - options a and d. These two conditional probabilities allow you to apply Bayes' theorem to calculate P(fire|alarm)."
         },
         {
           "id": "likelihood-3",
