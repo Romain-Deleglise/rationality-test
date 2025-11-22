@@ -272,7 +272,7 @@
           "explanation": "Pour calculer P(incendie|détecteur) via le théorème de Bayes, il faut P(détecteur|incendie) et P(détecteur|pas d'incendie), c'est-à-dire les options a et d."
         },
         {
-          "id": "wason-4",
+          "id": "wason-3",
           "type": "multiple-choice",
           "text": "Règle d'entreprise : 'Si un projet dépasse 50 000€, il nécessite l'approbation du directeur.' 4 dossiers : [Budget: 75 000€], [Budget: 30 000€], [Approuvé par directeur], [Non approuvé]. Quels dossiers SUFFIRAIT-IL de vérifier pour déterminer si la règle est respectée ou violée ?",
           "options": [
@@ -384,7 +384,7 @@
           "explanation": "Il faut P(symptôme|maladie) et P(symptôme|pas maladie) pour calculer P(maladie|symptôme) via Bayes."
         },
         {
-          "id": "likelihood-2",
+          "id": "likelihood-3",
           "type": "multiple-choice",
           "text": "Pour évaluer P(Défaillance mécanique | Vibrations anormales), de quoi avez-vous besoin ?",
           "options": [
@@ -1944,7 +1944,7 @@
             "Pari A",
             "Pari B"
           ],
-          "correct": 1,
+          "correct": 0,
           "points": 0.42,
           "explanation": "VE(A) = 0.80×100 + 0.20×10 = 82€. VE(B) = 0.80×90 + 0.20×30 = 78€. Pari A est légèrement meilleur."
         },

@@ -272,7 +272,7 @@
           "explanation": "To calculate P(fire|detector) via Bayes' theorem, you need P(detector|fire) and P(detector|no fire), which are options a and d."
         },
         {
-          "id": "wason-4",
+          "id": "wason-3",
           "type": "multiple-choice",
           "text": "Company rule: 'If a project exceeds €50,000, it requires director approval.' 4 files: [Budget: €75,000], [Budget: €30,000], [Approved by director], [Not approved]. Which files would be SUFFICIENT to check to determine whether the rule is followed or violated?",
           "options": [
@@ -384,7 +384,7 @@
           "explanation": "You need P(symptom|disease) and P(symptom|no disease) to calculate P(disease|symptom) via Bayes."
         },
         {
-          "id": "likelihood-2",
+          "id": "likelihood-3",
           "type": "multiple-choice",
           "text": "To evaluate P(Mechanical failure | Abnormal vibrations), what do you need?",
           "options": [
@@ -1926,7 +1926,7 @@
             "Bet A",
             "Bet B"
           ],
-          "correct": 1,
+          "correct": 0,
           "points": 0.42
         },
         {
