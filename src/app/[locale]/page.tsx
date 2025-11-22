@@ -46,51 +46,90 @@ export default function Home() {
   const wikipediaUrl = locale === 'fr' ? 'https://fr.wikipedia.org' : 'https://en.wikipedia.org';
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white dark:from-gray-900 dark:to-gray-800 transition-colors">
+    <div className="min-h-screen bg-gradient-to-b from-blue-50 via-white to-blue-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 transition-colors">
       <div className="max-w-4xl mx-auto px-4 py-12">
         {/* Header */}
-        <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-12"
+        >
+          <h1 className="text-5xl md:text-6xl font-extrabold bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 bg-clip-text text-transparent mb-4">
             {t('title')}
           </h1>
-          <p className="text-xl text-gray-600 dark:text-gray-300 mb-8">
+          <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-10 max-w-2xl mx-auto font-light">
             {t('subtitle')}
           </p>
-          <div className="flex flex-wrap justify-center gap-4 text-sm text-gray-600 dark:text-gray-400 mb-4">
-            <div className="flex items-center gap-2">
-              <Clock className="w-5 h-5" />
-              <span>{t('duration')}</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <BarChart3 className="w-5 h-5" />
-              <span>{t('detailedFeedback')}</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <BookOpen className="w-5 h-5" />
-              <span>{t('scientificallyValidated')}</span>
-            </div>
+
+          {/* Key Features with Icons */}
+          <div className="flex flex-wrap justify-center gap-6 mb-8">
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              className="flex items-center gap-2 bg-white dark:bg-gray-800 px-4 py-3 rounded-full shadow-md hover:shadow-lg transition-shadow"
+            >
+              <Clock className="w-5 h-5 text-blue-600 dark:text-blue-400" />
+              <span className="text-sm font-medium text-gray-700 dark:text-gray-300">{t('duration')}</span>
+            </motion.div>
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              className="flex items-center gap-2 bg-white dark:bg-gray-800 px-4 py-3 rounded-full shadow-md hover:shadow-lg transition-shadow"
+            >
+              <BarChart3 className="w-5 h-5 text-blue-600 dark:text-blue-400" />
+              <span className="text-sm font-medium text-gray-700 dark:text-gray-300">{t('detailedFeedback')}</span>
+            </motion.div>
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              className="flex items-center gap-2 bg-white dark:bg-gray-800 px-4 py-3 rounded-full shadow-md hover:shadow-lg transition-shadow"
+            >
+              <BookOpen className="w-5 h-5 text-blue-600 dark:text-blue-400" />
+              <span className="text-sm font-medium text-gray-700 dark:text-gray-300">{t('scientificallyValidated')}</span>
+            </motion.div>
           </div>
-          <div className="flex flex-wrap justify-center gap-3 text-sm text-gray-500 dark:text-gray-400">
-            <span>✓ {t('features.free')}</span>
-            <span>✓ {t('features.openSource')}</span>
-            <span>✓ {t('features.anonymous')}</span>
-            <span>✓ {t('features.publicInterest')}</span>
+
+          {/* Feature Badges */}
+          <div className="flex flex-wrap justify-center gap-3 mb-6">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-300 text-sm font-medium">
+              <CheckCircle className="w-4 h-4" />
+              {t('features.free')}
+            </span>
+            <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-purple-100 dark:bg-purple-900 text-purple-700 dark:text-purple-300 text-sm font-medium">
+              <CheckCircle className="w-4 h-4" />
+              {t('features.openSource')}
+            </span>
+            <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 text-sm font-medium">
+              <CheckCircle className="w-4 h-4" />
+              {t('features.anonymous')}
+            </span>
+            <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-orange-100 dark:bg-orange-900 text-orange-700 dark:text-orange-300 text-sm font-medium">
+              <CheckCircle className="w-4 h-4" />
+              {t('features.publicInterest')}
+            </span>
           </div>
+
           <div className="mt-4">
             <a
               href="https://github.com/Romain-Deleglise/rationality-test"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-blue-600 dark:text-blue-400 hover:underline text-sm"
+              className="inline-flex items-center gap-2 text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition-colors text-sm font-medium group"
             >
-              {t('viewSource')}
+              <span className="group-hover:underline">{t('viewSource')}</span>
+              <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
             </a>
           </div>
-        </div>
+        </motion.div>
 
         {/* Intro Card */}
-        <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8 mb-8">
-          <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8 mb-8 border border-gray-100 dark:border-gray-700"
+        >
+          <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">
             {t('whatIsRationality.title')}
           </h2>
           <p
@@ -108,7 +147,7 @@ export default function Home() {
             </a>
             {t('whatIsRationality.andUpdating')}
           </p>
-        </div>
+        </motion.div>
 
         {/* What is tested */}
         <div className="mb-8">
