@@ -8,6 +8,8 @@ import { Input } from '@/components/ui/input';
 import { Question as QuestionType } from '@/types';
 import { useState, useEffect } from 'react';
 import { useTranslations } from 'next-intl';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 
 interface QuestionProps {
   question: QuestionType;
@@ -15,43 +17,6 @@ interface QuestionProps {
   defaultValue?: any;
 }
 
-// Helper function to render simple markdown (bold text and paragraphs)
-function renderMarkdown(text: string) {
-  // Split by double newlines to get paragraphs
-  const paragraphs = text.split('\n\n');
-
-  return paragraphs.map((paragraph, paraIndex) => {
-    // Split paragraph by single newlines to handle line breaks
-    const lines = paragraph.split('\n');
-
-    const lineElements = lines.map((line, lineIndex) => {
-      // For each line, handle bold text
-      const parts = line.split(/(\*\*.*?\*\*)/g);
-      const elements = parts.map((part, partIndex) => {
-        if (part.startsWith('**') && part.endsWith('**')) {
-          // Bold text - use normal font weight to avoid making it too prominent
-          return <span key={`${paraIndex}-${lineIndex}-${partIndex}`} className="font-medium">{part.slice(2, -2)}</span>;
-        }
-        return part;
-      });
-
-      // Add line break after each line except the last one
-      return (
-        <span key={`${paraIndex}-${lineIndex}`}>
-          {elements}
-          {lineIndex < lines.length - 1 && <br />}
-        </span>
-      );
-    });
-
-    // Return paragraph with proper spacing
-    return (
-      <p key={paraIndex} className={paraIndex < paragraphs.length - 1 ? 'mb-3' : ''}>
-        {lineElements}
-      </p>
-    );
-  });
-}
 
 export default function Question({ question, onAnswer, defaultValue }: QuestionProps) {
   const t = useTranslations('test');
@@ -345,7 +310,27 @@ export default function Question({ question, onAnswer, defaultValue }: QuestionP
       isAnimating ? 'opacity-0 translate-y-4' : 'opacity-100 translate-y-0'
     }`}>
       <CardHeader>
-        <CardTitle className="text-lg leading-normal">{renderMarkdown(question.text)}</CardTitle>
+        <CardTitle className="text-lg leading-normal">
+          <ReactMarkdown
+            remarkPlugins={[remarkGfm]}
+            components={{
+              p: ({node, ...props}) => <p className="mb-3 last:mb-0" {...props} />,
+              strong: ({node, ...props}) => <span className="font-medium" {...props} />,
+              table: ({node, ...props}) => (
+                <div className="my-4 overflow-x-auto">
+                  <table className="min-w-full border-collapse border border-gray-300 dark:border-gray-600" {...props} />
+                </div>
+              ),
+              thead: ({node, ...props}) => <thead className="bg-gray-100 dark:bg-gray-800" {...props} />,
+              tbody: ({node, ...props}) => <tbody {...props} />,
+              tr: ({node, ...props}) => <tr className="border-b border-gray-300 dark:border-gray-600" {...props} />,
+              th: ({node, ...props}) => <th className="px-4 py-2 text-left font-medium border border-gray-300 dark:border-gray-600" {...props} />,
+              td: ({node, ...props}) => <td className="px-4 py-2 border border-gray-300 dark:border-gray-600" {...props} />
+            }}
+          >
+            {question.text}
+          </ReactMarkdown>
+        </CardTitle>
       </CardHeader>
 
       <CardContent className="space-y-6">
