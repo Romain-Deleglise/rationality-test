@@ -274,17 +274,17 @@
         {
           "id": "wason-3",
           "type": "multiple-choice",
-          "text": "Règle d'entreprise : 'Si un projet dépasse 50 000€, il nécessite l'approbation du directeur.' 4 dossiers : [Budget: 75 000€], [Budget: 30 000€], [Approuvé par directeur], [Non approuvé]. Quels dossiers SUFFIRAIT-IL de vérifier pour déterminer si la règle est respectée ou violée ?",
+          "text": "Règle à tester : 'Si un projet dépasse 50 000€, il nécessite l'approbation du directeur.'\n\nVous avez 4 dossiers devant vous :\n• Dossier 1 : **Budget de 75 000€**\n• Dossier 2 : **Budget de 30 000€**\n• Dossier 3 : **Approuvé par le directeur**\n• Dossier 4 : **Non approuvé**\n\nQuels dossiers SUFFIRAIT-IL de vérifier pour déterminer si la règle est respectée ou violée ?",
           "options": [
-            "Budget 75 000€ seulement",
-            "Budget 75 000€ et Approuvé",
-            "Budget 75 000€ et Non approuvé",
+            "Dossier 1 seulement",
+            "Dossiers 1 et 3",
+            "Dossiers 1 et 4",
             "Tous les dossiers",
-            "Budget 30 000€ et Non approuvé"
+            "Dossiers 2 et 4"
           ],
           "correct": 2,
           "points": 1,
-          "explanation": "Il suffit de vérifier [75 000€] (approuvé?) et [Non approuvé] (budget >50 000€?). Les autres ne peuvent pas violer la règle, donc les vérifier serait inutile."
+          "explanation": "Il suffit de vérifier le Dossier 1 (75 000€ - vérifier qu'il est approuvé) et le Dossier 4 (Non approuvé - vérifier que son budget ≤ 50 000€). Les dossiers 2 et 3 ne peuvent pas violer la règle."
         },
         {
           "id": "correlation-1",
