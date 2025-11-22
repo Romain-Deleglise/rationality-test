@@ -230,15 +230,15 @@
           "type": "multiple-choice",
           "text": "Rule to test: 'If a card has a vowel on one side, then it has an even number on the other side.'\n\nYou have 4 cards in front of you:\n• Card 1 shows: **A**\n• Card 2 shows: **K**\n• Card 3 shows: **4**\n• Card 4 shows: **7**\n\nWhich cards would be SUFFICIENT to flip to verify if the rule is respected or violated?",
           "options": [
-            "A only",
-            "A and 4",
-            "A and 7",
+            "Card 1 only",
+            "Cards 1 and 3",
+            "Cards 1 and 4",
             "All cards",
-            "A, K and 7"
+            "Cards 1, 2 and 4"
           ],
           "correct": 2,
           "points": 1,
-          "explanation": "It's sufficient to flip A (verify the other side = even number) and 7 (verify the other side ≠ vowel). Cards 4 and K cannot violate the rule."
+          "explanation": "It's sufficient to flip Card 1 (A - verify the other side = even number) and Card 4 (7 - verify the other side ≠ vowel). Cards 3 and 2 cannot violate the rule."
         },
         {
           "id": "wason-2",
