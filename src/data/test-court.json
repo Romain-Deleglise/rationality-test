@@ -144,15 +144,15 @@
           "type": "multiple-choice",
           "text": "Règle à tester : 'Si une carte a une voyelle d'un côté, alors elle a un nombre pair de l'autre côté.'\n\nVous avez 4 cartes devant vous :\n• Carte 1 montre : **A**\n• Carte 2 montre : **K**\n• Carte 3 montre : **4**\n• Carte 4 montre : **7**\n\nQuelles cartes SUFFIRAIT-IL de retourner pour vérifier si la règle est respectée ou violée ?",
           "options": [
-            "A seulement",
-            "A et 4",
-            "A et 7",
+            "Carte 1 seulement",
+            "Cartes 1 et 3",
+            "Cartes 1 et 4",
             "Toutes les cartes",
-            "A, K et 7"
+            "Cartes 1, 2 et 4"
           ],
           "correct": 2,
           "points": 1,
-          "explanation": "Il suffit de retourner A (vérifier que l'autre face = nombre pair) et 7 (vérifier que l'autre face ≠ voyelle). Les cartes 4 et K ne peuvent pas violer la règle."
+          "explanation": "Il suffit de retourner la Carte 1 (A - vérifier que l'autre face = nombre pair) et la Carte 4 (7 - vérifier que l'autre face ≠ voyelle). Les cartes 3 et 2 ne peuvent pas violer la règle."
         },
         {
           "id": "wason-2",
