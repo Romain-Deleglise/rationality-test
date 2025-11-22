@@ -1,6 +1,6 @@
 {
   "version": "complète",
-  "totalPoints": 95.98,
+  "totalPoints": 96.98,
   "estimatedTime": 86,
   "modules": [
     {
@@ -195,8 +195,8 @@
     },
     {
       "id": "sci-reasoning",
-      "name": "Raisonnement Scientifique (13 items)",
-      "points": 13,
+      "name": "Raisonnement Scientifique (14 items)",
+      "points": 14,
       "time": 8,
       "questions": [
         {
@@ -340,6 +340,22 @@
           "correct": 4,
           "points": 1,
           "explanation": "Il faut P(alarme|incendie) et P(alarme|pas incendie) pour calculer P(incendie|alarme) via Bayes."
+        },
+        {
+          "id": "likelihood-2",
+          "type": "multiple-choice",
+          "text": "Un détecteur de fumée s'active dans une maison. Pour estimer la probabilité qu'il y ait vraiment un incendie, quelles informations sont nécessaires ?",
+          "options": [
+            "% de fois où le détecteur se déclenche lors de fausses alarmes (sans incendie)",
+            "% d'incendies réels dans les maisons équipées",
+            "% de maisons sans incendie",
+            "% de fois où le détecteur détecte correctement les vrais incendies",
+            "a et d",
+            "b et c"
+          ],
+          "correct": 4,
+          "points": 1,
+          "explanation": "Il faut P(alarme|incendie) et P(alarme|pas d'incendie) - soit les options a et d. Ces deux probabilités conditionnelles permettent d'appliquer le théorème de Bayes pour calculer P(incendie|alarme)."
         },
         {
           "id": "likelihood-3",
