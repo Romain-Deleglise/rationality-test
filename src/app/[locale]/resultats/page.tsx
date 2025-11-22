@@ -1595,42 +1595,33 @@ export default function ResultatsPage() {
                     ⚠️ {locale === 'fr' ? 'Limites méthodologiques et différences' : 'Methodological Limitations and Differences'}
                   </h4>
                   <ul className="list-none space-y-2 text-sm text-gray-700 dark:text-gray-300">
-                    <li className="flex items-start gap-2">
-                      <span className="text-yellow-600 dark:text-yellow-400 mt-0.5">•</span>
-                      <span>
-                        {version === 'complète' ? (
-                          locale === 'fr'
-                            ? <><strong>Couverture partielle :</strong> Notre test couvre environ 85% des modules du CART complet (17/20 modules). Les modules manquants incluent : Gambler's Fallacy Task, Covariation Detection, et Property Verification.</>
-                            : <><strong>Partial coverage:</strong> Our test covers approximately 85% of the full CART modules (17/20 modules). Missing modules include: Gambler's Fallacy Task, Covariation Detection, and Property Verification.</>
-                        ) : (
-                          locale === 'fr'
-                            ? <><strong>Couverture réduite :</strong> Notre version courte couvre 6 modules principaux du CART, permettant une évaluation rapide mais moins approfondie de la pensée rationnelle.</>
-                            : <><strong>Reduced coverage:</strong> Our short version covers 6 main CART modules, allowing for a quick but less in-depth assessment of rational thinking.</>
-                        )}
-                      </span>
+                    <li>
+                      {version === 'complète' ? (
+                        locale === 'fr'
+                          ? <><strong>Couverture partielle :</strong> Notre test couvre environ 85% des modules du CART complet (17/20 modules). Les modules manquants incluent : Gambler's Fallacy Task, Covariation Detection, et Property Verification.</>
+                          : <><strong>Partial coverage:</strong> Our test covers approximately 85% of the full CART modules (17/20 modules). Missing modules include: Gambler's Fallacy Task, Covariation Detection, and Property Verification.</>
+                      ) : (
+                        locale === 'fr'
+                          ? <><strong>Couverture réduite :</strong> Notre version courte couvre 6 modules principaux du CART, permettant une évaluation rapide mais moins approfondie de la pensée rationnelle.</>
+                          : <><strong>Reduced coverage:</strong> Our short version covers 6 main CART modules, allowing for a quick but less in-depth assessment of rational thinking.</>
+                      )}
                     </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-yellow-600 dark:text-yellow-400 mt-0.5">•</span>
-                      <span>
-                        {locale === 'fr'
-                          ? <><strong>Différences de format :</strong> Notre test utilise un format en ligne avec notation automatique, tandis que le CART original combine questions à choix multiples et réponses ouvertes nécessitant une notation manuelle par des experts.</>
-                          : <><strong>Format differences:</strong> Our test uses an online format with automatic scoring, while the original CART combines multiple-choice and open-ended questions requiring manual scoring by experts.</>
-                        }
-                      </span>
+                    <li>
+                      {locale === 'fr'
+                        ? <><strong>Différences de format :</strong> Notre test utilise un format en ligne avec notation automatique, tandis que le CART original combine questions à choix multiples et réponses ouvertes nécessitant une notation manuelle par des experts.</>
+                        : <><strong>Format differences:</strong> Our test uses an online format with automatic scoring, while the original CART combines multiple-choice and open-ended questions requiring manual scoring by experts.</>
+                      }
                     </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-yellow-600 dark:text-yellow-400 mt-0.5">•</span>
-                      <span>
-                        {version === 'complète' ? (
-                          locale === 'fr'
-                            ? <><strong>Durée et profondeur :</strong> Le CART complet prend environ 3 heures (148 points), notre version complète environ 1.5 heures (119 points). Cette différence de durée peut affecter la mesure de certains biais cognitifs.</>
-                            : <><strong>Duration and depth:</strong> The full CART takes approximately 3 hours (148 points), our full version takes about 1.5 hours (119 points). This duration difference may affect the measurement of certain cognitive biases.</>
-                        ) : (
-                          locale === 'fr'
-                            ? <><strong>Durée et profondeur :</strong> Notre version courte prend environ 30 minutes (40 points), contre 2 heures pour la version courte officielle du CART (100 points). Cette version permet une première évaluation rapide.</>
-                            : <><strong>Duration and depth:</strong> Our short version takes approximately 30 minutes (40 points), compared to 2 hours for the official CART short-form (100 points). This version provides a quick initial assessment.</>
-                        )}
-                      </span>
+                    <li>
+                      {version === 'complète' ? (
+                        locale === 'fr'
+                          ? <><strong>Durée et profondeur :</strong> Le CART complet prend environ 3 heures (148 points), notre version complète environ 1.5 heures (119 points). Cette différence de durée peut affecter la mesure de certains biais cognitifs.</>
+                          : <><strong>Duration and depth:</strong> The full CART takes approximately 3 hours (148 points), our full version takes about 1.5 hours (119 points). This duration difference may affect the measurement of certain cognitive biases.</>
+                      ) : (
+                        locale === 'fr'
+                          ? <><strong>Durée et profondeur :</strong> Notre version courte prend environ 30 minutes (40 points), contre 2 heures pour la version courte officielle du CART (100 points). Cette version permet une première évaluation rapide.</>
+                          : <><strong>Duration and depth:</strong> Our short version takes approximately 30 minutes (40 points), compared to 2 hours for the official CART short-form (100 points). This version provides a quick initial assessment.</>
+                      )}
                     </li>
                   </ul>
                 </div>
@@ -1638,7 +1629,7 @@ export default function ResultatsPage() {
                 {/* Conclusion */}
                 <div className="bg-green-50 dark:bg-green-900/20 border-l-4 border-green-500 dark:border-green-600 rounded-r-lg p-4">
                   <h4 className="font-bold text-gray-900 dark:text-white mb-2">
-                    ✓ {locale === 'fr' ? 'Conclusion sur la comparabilité' : 'Conclusion on Comparability'}
+                    {locale === 'fr' ? 'Conclusion sur la comparabilité' : 'Conclusion on Comparability'}
                   </h4>
                   <p className="text-sm text-gray-700 dark:text-gray-300 mb-2 text-justify">
                     {locale === 'fr'
@@ -2051,25 +2042,20 @@ export default function ResultatsPage() {
             {t('pragmaticSolution.intro')}
           </p>
           <ul className="list-none space-y-2 text-gray-700 dark:text-gray-300">
-            <li className="flex items-start gap-2">
-              <span className="text-green-600 dark:text-green-400 font-bold">✓</span>
-              <span>{t('pragmaticSolution.checklist')}</span>
+            <li>
+              {t('pragmaticSolution.checklist')}
             </li>
-            <li className="flex items-start gap-2">
-              <span className="text-green-600 dark:text-green-400 font-bold">✓</span>
-              <span>{t('pragmaticSolution.consultation')}</span>
+            <li>
+              {t('pragmaticSolution.consultation')}
             </li>
-            <li className="flex items-start gap-2">
-              <span className="text-green-600 dark:text-green-400 font-bold">✓</span>
-              <span>{t('pragmaticSolution.slowdown')}</span>
+            <li>
+              {t('pragmaticSolution.slowdown')}
             </li>
-            <li className="flex items-start gap-2">
-              <span className="text-green-600 dark:text-green-400 font-bold">✓</span>
-              <span>{t('pragmaticSolution.premortem')}</span>
+            <li>
+              {t('pragmaticSolution.premortem')}
             </li>
-            <li className="flex items-start gap-2">
-              <span className="text-green-600 dark:text-green-400 font-bold">✓</span>
-              <span>{t('pragmaticSolution.journal')}</span>
+            <li>
+              {t('pragmaticSolution.journal')}
             </li>
           </ul>
           <p className="text-sm text-gray-600 dark:text-gray-400 mt-4 italic">

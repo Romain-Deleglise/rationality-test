@@ -295,13 +295,11 @@ export default function Home() {
                 <p className="text-sm text-gray-600 dark:text-gray-400">{t('chooseVersion.express.modules')}</p>
               </div>
               <ul className="list-none space-y-2 mb-6 text-sm text-gray-600 dark:text-gray-400">
-                <li className="flex items-center gap-2">
-                  <CheckCircle className="w-4 h-4 text-green-500 dark:text-green-400 flex-shrink-0" />
-                  <span>{t('chooseVersion.express.feature1')}</span>
+                <li>
+                  {t('chooseVersion.express.feature1')}
                 </li>
-                <li className="flex items-center gap-2">
-                  <CheckCircle className="w-4 h-4 text-green-500 dark:text-green-400 flex-shrink-0" />
-                  <span>{t('chooseVersion.express.feature2')}</span>
+                <li>
+                  {t('chooseVersion.express.feature2')}
                 </li>
               </ul>
               <Link
@@ -332,13 +330,11 @@ export default function Home() {
                 <p className="text-sm text-gray-600 dark:text-gray-400">{t('chooseVersion.full.modules')}</p>
               </div>
               <ul className="list-none space-y-2 mb-6 text-sm text-gray-600 dark:text-gray-400">
-                <li className="flex items-center gap-2">
-                  <CheckCircle className="w-4 h-4 text-green-500 dark:text-green-400 flex-shrink-0" />
-                  <span>{t('chooseVersion.full.feature1')}</span>
+                <li>
+                  {t('chooseVersion.full.feature1')}
                 </li>
-                <li className="flex items-center gap-2">
-                  <CheckCircle className="w-4 h-4 text-green-500 dark:text-green-400 flex-shrink-0" />
-                  <span>{t('chooseVersion.full.feature2')}</span>
+                <li>
+                  {t('chooseVersion.full.feature2')}
                 </li>
               </ul>
               <Link
