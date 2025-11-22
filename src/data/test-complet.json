@@ -752,7 +752,7 @@
           "correct": 2387,
           "anchorType": "low",
           "points": 0.5,
-          "explanation": "La distance réelle est ~2387 miles. Pour marquer des points, vous devez résister à l'ancre basse (500). Si votre estimation est >1000 miles (plus de 2x l'ancre), vous avez résisté au biais d'ancrage. Cette question mesure la résistance à l'ancrage, pas la connaissance de la bonne réponse."
+          "explanation": "La distance réelle est ~2387 miles. Pour marquer des points, vous devez résister à l'ancre (500). Si votre estimation est <250 miles OU >1000 miles (soit très loin de l'ancre dans les deux sens), vous avez résisté au biais d'ancrage. Cette question mesure la résistance à l'ancrage, pas la connaissance de la bonne réponse."
         },
         {
           "id": "anchor-2",
@@ -762,7 +762,7 @@
           "correct": 687,
           "anchorType": "high",
           "points": 0.5,
-          "explanation": "La durée réelle est 687 jours. Pour marquer des points, vous devez résister à l'ancre haute (1500). Si votre estimation est <750 jours (moins de la moitié de l'ancre), vous avez résisté au biais d'ancrage. Cette question mesure la résistance à l'ancrage, pas la connaissance de la bonne réponse."
+          "explanation": "La durée réelle est 687 jours. Pour marquer des points, vous devez résister à l'ancre (1500). Si votre estimation est <750 jours OU >3000 jours (soit très loin de l'ancre dans les deux sens), vous avez résisté au biais d'ancrage. Cette question mesure la résistance à l'ancrage, pas la connaissance de la bonne réponse."
         },
         {
           "id": "anchor-3",
@@ -772,7 +772,7 @@
           "correct": 26,
           "anchorType": "low",
           "points": 0.5,
-          "explanation": "L'Australie compte environ 26 millions d'habitants. Pour marquer des points, vous devez résister à l'ancre basse (10M). Si votre estimation est >20M (plus de 2x l'ancre), vous avez résisté au biais d'ancrage. Cette question mesure la résistance à l'ancrage, pas la connaissance de la bonne réponse."
+          "explanation": "L'Australie compte environ 26 millions d'habitants. Pour marquer des points, vous devez résister à l'ancre (10M). Si votre estimation est <5M OU >20M (soit très loin de l'ancre dans les deux sens), vous avez résisté au biais d'ancrage. Cette question mesure la résistance à l'ancrage, pas la connaissance de la bonne réponse."
         },
         {
           "id": "anchor-4",
@@ -782,7 +782,7 @@
           "correct": 56.7,
           "anchorType": "high",
           "points": 0.5,
-          "explanation": "Le record est de 56,7°C (Vallée de la Mort, 1913). Pour marquer des points, vous devez résister à l'ancre haute (70°C). Si votre estimation est <35°C (moins de la moitié de l'ancre), vous avez résisté au biais d'ancrage. Cette question mesure la résistance à l'ancrage, pas la connaissance de la bonne réponse."
+          "explanation": "Le record est de 56,7°C (Vallée de la Mort, 1913). Pour marquer des points, vous devez résister à l'ancre (70°C). Si votre estimation est <35°C OU >140°C (soit très loin de l'ancre dans les deux sens), vous avez résisté au biais d'ancrage. Cette question mesure la résistance à l'ancrage, pas la connaissance de la bonne réponse."
         },
         {
           "id": "anchor-5",
@@ -792,7 +792,7 @@
           "correct": 828,
           "anchorType": "low",
           "points": 0.5,
-          "explanation": "Le Burj Khalifa mesure 828 mètres. Pour marquer des points, vous devez résister à l'ancre basse (500m). Si votre estimation est >1000m (plus de 2x l'ancre), vous avez résisté au biais d'ancrage. Cette question mesure la résistance à l'ancrage, pas la connaissance de la bonne réponse."
+          "explanation": "Le Burj Khalifa mesure 828 mètres. Pour marquer des points, vous devez résister à l'ancre (500m). Si votre estimation est <250m OU >1000m (soit très loin de l'ancre dans les deux sens), vous avez résisté au biais d'ancrage. Cette question mesure la résistance à l'ancrage, pas la connaissance de la bonne réponse."
         },
         {
           "id": "anchor-6",
@@ -802,7 +802,7 @@
           "correct": 1815,
           "anchorType": "low",
           "points": 0.5,
-          "explanation": "La bataille de Waterloo date de 1815. Pour marquer des points, vous devez résister à l'ancre basse (1750). Si votre estimation est >1800 (pas trop influencé par l'ancre basse), vous avez résisté au biais d'ancrage. Cette question mesure la résistance à l'ancrage, pas la connaissance de la bonne réponse."
+          "explanation": "La bataille de Waterloo date de 1815. Pour marquer des points, vous devez résister à l'ancre (1750). Si votre estimation est <875 OU >3500 (soit très loin de l'ancre dans les deux sens), vous avez résisté au biais d'ancrage. Cette question mesure la résistance à l'ancrage, pas la connaissance de la bonne réponse."
         }
       ]
     },

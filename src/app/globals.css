@@ -119,4 +119,27 @@
   body {
     @apply bg-background text-foreground;
   }
+
+  /* Force bullet points and numbering in markdown content */
+  ul {
+    list-style-type: disc !important;
+  }
+
+  ol {
+    list-style-type: decimal !important;
+  }
+
+  ul li,
+  ol li {
+    display: list-item !important;
+    list-style-position: outside !important;
+  }
+
+  ul ul {
+    list-style-type: circle !important;
+  }
+
+  ul ul ul {
+    list-style-type: square !important;
+  }
 }
