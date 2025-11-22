@@ -10,6 +10,7 @@ import { useState, useEffect } from 'react';
 import { useTranslations } from 'next-intl';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
+import remarkBreaks from 'remark-breaks';
 
 interface QuestionProps {
   question: QuestionType;
@@ -312,7 +313,7 @@ export default function Question({ question, onAnswer, defaultValue }: QuestionP
       <CardHeader>
         <CardTitle className="text-lg leading-normal">
           <ReactMarkdown
-            remarkPlugins={[remarkGfm]}
+            remarkPlugins={[remarkGfm, remarkBreaks]}
             components={{
               p: ({node, ...props}) => <p className="mb-3 last:mb-0" {...props} />,
               strong: ({node, ...props}) => <span className="font-medium" {...props} />,
