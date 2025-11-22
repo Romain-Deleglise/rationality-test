@@ -133,7 +133,7 @@
           "options": [
             "Sophie is a teacher",
             "Sophie is a nurse",
-            "Sophie is a nurse AND she runs marathons",
+            "Sophie is a nurse and she runs marathons",
             "Sophie works in finance"
           ],
           "scoring": {
@@ -141,7 +141,7 @@
             "rule": "option-1 > option-2"
           },
           "points": 1,
-          "explanation": "P(nurse) > P(nurse AND marathons) because P(A) > P(A ∩ B) always. Adding a condition reduces probability."
+          "explanation": "P(nurse) > P(nurse and marathons) because P(A) > P(A ∩ B) always. Adding a condition reduces probability."
         },
         {
           "id": "conjunction-2",
@@ -151,14 +151,14 @@
             "Marc works in IT",
             "Marc is a video game developer",
             "Marc is an accountant",
-            "Marc works in IT AND plays on an e-sports team"
+            "Marc works in IT and plays on an e-sports team"
           ],
           "scoring": {
             "type": "conjunction-check",
             "rule": "option-0 > option-3"
           },
           "points": 1,
-          "explanation": "P(IT) must be ranked more probable than P(IT AND e-sports). The conjunction is always less probable."
+          "explanation": "P(IT) must be ranked more probable than P(IT and e-sports). The conjunction is always less probable."
         },
         {
           "id": "conjunction-3",
@@ -168,14 +168,14 @@
             "Linda is a teacher",
             "Linda is a bank teller",
             "Linda is active in the feminist movement",
-            "Linda is a bank teller AND active in the feminist movement"
+            "Linda is a bank teller and active in the feminist movement"
           ],
           "scoring": {
             "type": "conjunction-check",
             "rule": "option-1 > option-3"
           },
           "points": 1,
-          "explanation": "Despite the description, P(bank teller) > P(bank teller AND feminist) mathematically. This is the famous 'Linda problem'."
+          "explanation": "Despite the description, P(bank teller) > P(bank teller and feminist) mathematically. This is the famous 'Linda problem'."
         },
         {
           "id": "conjunction-4",
@@ -185,14 +185,14 @@
             "Paul is an engineer",
             "Paul is a history teacher",
             "Paul is a librarian",
-            "Paul is a history teacher AND author of history books"
+            "Paul is a history teacher and author of history books"
           ],
           "scoring": {
             "type": "conjunction-check",
             "rule": "option-1 > option-3"
           },
           "points": 1,
-          "explanation": "P(history teacher) > P(history teacher AND author). Adding a condition always reduces probability."
+          "explanation": "P(history teacher) > P(history teacher and author). Adding a condition always reduces probability."
         },
         {
           "id": "base-rate-1",
@@ -228,17 +228,17 @@
         {
           "id": "wason-1",
           "type": "multiple-choice",
-          "text": "Rule to test: 'If Lyon is on one side of the ticket, then train is on the other side.'\n\nYou have 4 tickets in front of you:\n• Ticket 1 shows: **Lyon**\n• Ticket 2 shows: **Paris**\n• Ticket 3 shows: **Car**\n• Ticket 4 shows: **Train**\n\nWhich tickets would be SUFFICIENT to check to verify if the rule is respected or violated?",
+          "text": "Rule to test: 'If a card has a vowel on one side, then it has an even number on the other side.'\n\nYou have 4 cards in front of you:\n• Card 1 shows: **A**\n• Card 2 shows: **K**\n• Card 3 shows: **4**\n• Card 4 shows: **7**\n\nWhich cards would be SUFFICIENT to flip to verify if the rule is respected or violated?",
           "options": [
-            "Lyon only",
-            "Lyon and Train",
-            "Lyon and Car",
-            "All tickets",
-            "Lyon, Paris and Car"
+            "A only",
+            "A and 4",
+            "A and 7",
+            "All cards",
+            "A, K and 7"
           ],
           "correct": 2,
           "points": 1,
-          "explanation": "It's sufficient to flip Lyon (verify the other side = train) and Car (verify the other side ≠ Lyon). Train and Paris cannot violate the rule, so flipping them would be unnecessary."
+          "explanation": "It's sufficient to flip A (verify the other side = even number) and 7 (verify the other side ≠ vowel). Cards 4 and K cannot violate the rule."
         },
         {
           "id": "wason-2",
@@ -256,19 +256,20 @@
           "explanation": "You need to check person A (is they ≥18?) and person D (are they drinking alcohol?). The others cannot violate the rule, so checking them would be useless."
         },
         {
-          "id": "wason-3",
+          "id": "likelihood-2",
           "type": "multiple-choice",
-          "text": "Rule: 'If a product is organic, it must have certification.'\n\nYou have 4 products in front of you:\n• Product 1: **Labeled organic**\n• Product 2: **Labeled conventional**\n• Product 3: **With certification**\n• Product 4: **Without certification**\n\nWhich products would be SUFFICIENT to check to determine if the rule is respected or violated?",
+          "text": "A smoke detector goes off. What information is needed to estimate P(real fire | detector triggered)?",
           "options": [
-            "Labeled organic only",
-            "Labeled organic and With certification",
-            "Labeled organic and Without certification",
-            "All products",
-            "Labeled organic, Labeled conventional and Without certification"
+            "% of times the detector goes off WITHOUT a fire (false alarms)",
+            "% of real fires",
+            "% of non-fires",
+            "% of times the detector goes off during a REAL fire",
+            "a and d",
+            "b and c"
           ],
-          "correct": 2,
+          "correct": 4,
           "points": 1,
-          "explanation": "It's sufficient to check [Organic] (does it have certification?) and [Without certification] (is it organic?). The others cannot violate the rule, so checking them would be unnecessary."
+          "explanation": "To calculate P(fire|detector) via Bayes' theorem, you need P(detector|fire) and P(detector|no fire), which are options a and d."
         },
         {
           "id": "wason-4",
