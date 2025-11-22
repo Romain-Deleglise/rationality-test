@@ -228,7 +228,7 @@
         {
           "id": "wason-1",
           "type": "multiple-choice",
-          "text": "Rule to test: 'If Lyon is on one side of the ticket, then train is on the other side.' You have 4 tickets: [Lyon], [Paris], [Car], [Train]. Which tickets would be SUFFICIENT to flip to determine whether the rule is followed or violated?",
+          "text": "Rule to test: 'If Lyon is on one side of the ticket, then train is on the other side.'\n\nYou have 4 tickets in front of you:\n• Ticket 1 shows: **Lyon**\n• Ticket 2 shows: **Paris**\n• Ticket 3 shows: **Car**\n• Ticket 4 shows: **Train**\n\nWhich tickets would be SUFFICIENT to check to verify if the rule is respected or violated?",
           "options": [
             "Lyon only",
             "Lyon and Train",
@@ -243,22 +243,22 @@
         {
           "id": "wason-2",
           "type": "multiple-choice",
-          "text": "You're checking the law: 'If a person drinks alcohol, they must be 18 years or older.' 4 people: [Drinks beer], [Drinks juice], [Is 25 years old], [Is 16 years old]. Who would be SUFFICIENT to check to determine whether the law is followed or violated?",
+          "text": "You're checking the law: 'If a person drinks alcohol, they must be 18 years or older.'\n\nYou observe 4 people:\n• Person A: **Drinking beer**\n• Person B: **Drinking orange juice**\n• Person C: **Is 25 years old**\n• Person D: **Is 16 years old**\n\nWho would be SUFFICIENT to check to determine if the law is respected or violated?",
           "options": [
-            "Drinks beer only",
-            "Drinks beer and Is 16 years old",
-            "Drinks beer and Is 25 years old",
-            "All people",
-            "Drinks beer, Drinks juice and Is 16 years old"
+            "Person A only",
+            "Persons A and D",
+            "Persons A and C",
+            "All persons",
+            "Persons A, B and D"
           ],
           "correct": 1,
           "points": 1,
-          "explanation": "It's sufficient to check [Beer] (age ≥18?) and [16 years old] (drinks alcohol?). The others cannot violate the rule, so checking them would be unnecessary."
+          "explanation": "You need to check person A (is they ≥18?) and person D (are they drinking alcohol?). The others cannot violate the rule, so checking them would be useless."
         },
         {
           "id": "wason-3",
           "type": "multiple-choice",
-          "text": "Rule: 'If a product is organic, it must have certification.' 4 products: [Labeled organic], [Labeled conventional], [With certification], [Without certification]. Which products would be SUFFICIENT to check to determine whether the rule is followed or violated?",
+          "text": "Rule: 'If a product is organic, it must have certification.'\n\nYou have 4 products in front of you:\n• Product 1: **Labeled organic**\n• Product 2: **Labeled conventional**\n• Product 3: **With certification**\n• Product 4: **Without certification**\n\nWhich products would be SUFFICIENT to check to determine if the rule is respected or violated?",
           "options": [
             "Labeled organic only",
             "Labeled organic and With certification",
@@ -369,7 +369,7 @@
         {
           "id": "likelihood-1",
           "type": "multiple-choice",
-          "text": "Talia has finger thickening. What information is needed to estimate P(Fustis Digitus Syndrome | thickening)?",
+          "text": "Talia has finger thickening. What information is needed to estimate P(hypertrophic osteoarthropathy | thickening)?",
           "options": [
             "% of people WITHOUT syndrome who have thickening",
             "% of people WITH syndrome",
@@ -444,11 +444,11 @@
         {
           "id": "crt-2",
           "type": "number",
-          "text": "If 5 machines take 5 minutes to make 5 widgets, how long does it take 100 machines to make 100 widgets?",
+          "text": "If 5 machines take 5 minutes to make 5 parts, how long does it take 100 machines to make 100 parts?",
           "unit": "minutes",
           "correct": 5,
           "points": 1,
-          "explanation": "5 minutes. Each machine makes 1 widget in 5 minutes. So 100 machines make 100 widgets in 5 minutes (in parallel). Intuition suggests 100 minutes."
+          "explanation": "5 minutes. Each machine makes 1 part in 5 minutes. So 100 machines make 100 parts in 5 minutes (in parallel). Intuition suggests 100 minutes."
         },
         {
           "id": "crt-3",
@@ -615,14 +615,14 @@
         {
           "id": "syllogism-9",
           "type": "multiple-choice",
-          "text": "Premise 1: All plants are zarbons. Premise 2: All ferns are zarbons. Conclusion: All ferns are plants.",
+          "text": "Evaluate ONLY the LOGIC (not truth in reality):\n\nPremise 1: All plants are photosynthetic organisms.\nPremise 2: All ferns are photosynthetic organisms.\nConclusion: All ferns are plants.",
           "options": [
             "The conclusion follows logically from the premises",
             "The conclusion does NOT follow logically from the premises"
           ],
           "correct": 1,
           "points": 0.5,
-          "explanation": "Logically invalid (AAA2). Even if the conclusion is true, it does not follow logically. Consistent syllogism."
+          "explanation": "Logically invalid (AAA2). Even though the conclusion is true (ferns are plants), it doesn't logically follow from the premises. There could be other photosynthetic organisms that aren't plants (algae, certain bacteria). Consistent syllogism: validity ≠ believability."
         },
         {
           "id": "syllogism-10",
@@ -751,7 +751,7 @@
           "correct": 2387,
           "anchorType": "low",
           "points": 0.5,
-          "explanation": "The actual distance is ~2387 miles. If your estimate is <1000, you were influenced by the low anchor (500)."
+          "explanation": "The real distance is ~2387 miles. To score points, you need to resist the low anchor (500). If your estimate is >1000 miles (more than 2x the anchor), you resisted the anchoring bias. This question measures resistance to anchoring, not knowledge of the correct answer."
         },
         {
           "id": "anchor-2",
@@ -761,7 +761,7 @@
           "correct": 687,
           "anchorType": "high",
           "points": 0.5,
-          "explanation": "The actual duration is 687 days. If your estimate is >1000, you were influenced by the high anchor (1500)."
+          "explanation": "The actual duration is 687 days. To score points, you need to resist the high anchor (1500). If your estimate is <750 days (less than half the anchor), you resisted the anchoring bias. This question measures resistance to anchoring, not knowledge of the correct answer."
         },
         {
           "id": "anchor-3",
@@ -771,7 +771,7 @@
           "correct": 26,
           "anchorType": "low",
           "points": 0.5,
-          "explanation": "Australia has about 26 million inhabitants. If your estimate is <20M, you were influenced by the low anchor (10M)."
+          "explanation": "Australia has about 26 million inhabitants. To score points, you need to resist the low anchor (10M). If your estimate is >20M (more than 2x the anchor), you resisted the anchoring bias. This question measures resistance to anchoring, not knowledge of the correct answer."
         },
         {
           "id": "anchor-4",
@@ -781,7 +781,7 @@
           "correct": 56.7,
           "anchorType": "high",
           "points": 0.5,
-          "explanation": "The record is 56.7°C (Death Valley, 1913). If your estimate is >60°C, you were influenced by the high anchor (70°C)."
+          "explanation": "The record is 56.7°C (Death Valley, 1913). To score points, you need to resist the high anchor (70°C). If your estimate is <35°C (less than half the anchor), you resisted the anchoring bias. This question measures resistance to anchoring, not knowledge of the correct answer."
         },
         {
           "id": "anchor-5",
@@ -791,7 +791,7 @@
           "correct": 828,
           "anchorType": "low",
           "points": 0.5,
-          "explanation": "The Burj Khalifa is 828 meters tall. If your estimate is <700m, you were influenced by the low anchor (500m)."
+          "explanation": "The Burj Khalifa is 828 meters tall. To score points, you need to resist the low anchor (500m). If your estimate is >1000m (more than 2x the anchor), you resisted the anchoring bias. This question measures resistance to anchoring, not knowledge of the correct answer."
         },
         {
           "id": "anchor-6",
@@ -801,7 +801,7 @@
           "correct": 1815,
           "anchorType": "low",
           "points": 0.5,
-          "explanation": "The Battle of Waterloo dates from 1815. If your estimate is <1800, you were influenced by the low anchor (1750)."
+          "explanation": "The Battle of Waterloo dates from 1815. To score points, you need to resist the low anchor (1750). If your estimate is >1800 (not too influenced by the low anchor), you resisted the anchoring bias. This question measures resistance to anchoring, not knowledge of the correct answer."
         }
       ]
     },

@@ -142,7 +142,7 @@
         {
           "id": "wason-1",
           "type": "multiple-choice",
-          "text": "Règle à tester : 'Si Lyon est sur un côté du ticket, alors train est sur l'autre côté.' Vous avez 4 tickets : [Lyon], [Paris], [Voiture], [Train]. Quels tickets SUFFIRAIT-IL de retourner pour vérifier si la règle est respectée ou violée ?",
+          "text": "Règle à tester : 'Si Lyon est sur un côté du ticket, alors train est sur l'autre côté.'\n\nVous avez 4 tickets devant vous :\n• Ticket 1 montre : **Lyon**\n• Ticket 2 montre : **Paris**\n• Ticket 3 montre : **Voiture**\n• Ticket 4 montre : **Train**\n\nQuels tickets SUFFIRAIT-IL de retourner pour vérifier si la règle est respectée ou violée ?",
           "options": [
             "Lyon seulement",
             "Lyon et Train",
@@ -157,17 +157,17 @@
         {
           "id": "wason-2",
           "type": "multiple-choice",
-          "text": "Vous vérifiez la loi : 'Si une personne boit de l'alcool, elle doit avoir 18 ans ou plus.' 4 personnes : [Boit de la bière], [Boit du jus], [A 25 ans], [A 16 ans]. Qui SUFFIRAIT-IL de vérifier pour déterminer si la loi est respectée ou violée ?",
+          "text": "Vous vérifiez la loi : 'Si une personne boit de l'alcool, elle doit avoir 18 ans ou plus.'\n\nVous observez 4 personnes :\n• Personne A : **Boit de la bière**\n• Personne B : **Boit du jus d'orange**\n• Personne C : **A 25 ans**\n• Personne D : **A 16 ans**\n\nQui SUFFIRAIT-IL de vérifier pour déterminer si la loi est respectée ou violée ?",
           "options": [
-            "Boit de la bière seulement",
-            "Boit de la bière et A 16 ans",
-            "Boit de la bière et A 25 ans",
+            "Personne A seulement",
+            "Personnes A et D",
+            "Personnes A et C",
             "Toutes les personnes",
-            "Boit de la bière, Boit du jus et A 16 ans"
+            "Personnes A, B et D"
           ],
           "correct": 1,
           "points": 1,
-          "explanation": "Il suffit de vérifier [Bière] (âge ≥18?) et [16 ans] (boit de l'alcool?). Les autres ne peuvent pas violer la règle, donc les vérifier serait inutile."
+          "explanation": "Il suffit de vérifier la personne A (a-t-elle ≥18 ans ?) et la personne D (boit-elle de l'alcool ?). Les autres ne peuvent pas violer la règle, donc les vérifier serait inutile."
         },
         {
           "id": "correlation-1",
@@ -199,7 +199,7 @@
         {
           "id": "likelihood-1",
           "type": "multiple-choice",
-          "text": "Talia a un épaississement des doigts. Pour estimer sa probabilité d'avoir le Syndrome de Fustis Digitus, quelles informations sont nécessaires ?",
+          "text": "Talia a un épaississement des doigts. Pour estimer sa probabilité d'avoir l'ostéoarthropathie hypertrophiante (une maladie osseuse rare), quelles informations sont nécessaires ?",
           "options": [
             "Seulement : % de personnes avec le syndrome qui ont un épaississement",
             "Seulement : % de personnes sans le syndrome qui ont un épaississement",
@@ -213,7 +213,7 @@
         {
           "id": "wason-3",
           "type": "multiple-choice",
-          "text": "Règle : 'Si un produit est bio, il doit avoir une certification.' 4 produits : [Étiqueté bio], [Étiqueté conventionnel], [Avec certification], [Sans certification]. Quels produits SUFFIRAIT-IL de vérifier pour déterminer si la règle est respectée ou violée ?",
+          "text": "Règle : 'Si un produit est bio, il doit avoir une certification.'\n\nVous avez 4 produits devant vous :\n• Produit 1 : **Étiqueté bio**\n• Produit 2 : **Étiqueté conventionnel**\n• Produit 3 : **Avec certification**\n• Produit 4 : **Sans certification**\n\nQuels produits SUFFIRAIT-IL de vérifier pour déterminer si la règle est respectée ou violée ?",
           "options": [
             "Étiqueté bio seulement",
             "Étiqueté bio et Avec certification",
@@ -281,7 +281,7 @@
         {
           "id": "covariation-1",
           "type": "multiple-choice",
-          "text": "Table de données : Pluie+Embouteillages=80 cas, Pluie+Pas d'embouteillages=20, Beau temps+Embouteillages=40, Beau temps+Pas d'embouteillages=60. La pluie cause-t-elle les embouteillages ?",
+          "text": "Données collectées sur 200 jours :\n\n| Météo | Embouteillages | Pas d'embouteillages |\n|-------|----------------|----------------------|\n| Pluie | 80 jours | 20 jours |\n| Beau temps | 40 jours | 60 jours |\n\nLa pluie cause-t-elle les embouteillages ?",
           "options": [
             "Oui, 80 cas de pluie avec embouteillages",
             "Oui, P(Embouteillages|Pluie) = 80% > P(Embouteillages|Beau) = 40%",
@@ -325,11 +325,11 @@
         {
           "id": "crt-2",
           "type": "number",
-          "text": "Si 5 machines prennent 5 minutes pour faire 5 widgets, combien de temps prennent 100 machines pour faire 100 widgets ?",
+          "text": "Si 5 machines prennent 5 minutes pour faire 5 pièces, combien de temps prennent 100 machines pour faire 100 pièces ?",
           "unit": "minutes",
           "correct": 5,
           "points": 1,
-          "explanation": "5 minutes. Chaque machine fait 1 widget en 5 minutes. Donc 100 machines font 100 widgets en 5 minutes (en parallèle). L'intuition suggère 100 minutes."
+          "explanation": "5 minutes. Chaque machine fait 1 pièce en 5 minutes. Donc 100 machines font 100 pièces en 5 minutes (en parallèle). L'intuition suggère 100 minutes."
         },
         {
           "id": "crt-3",
@@ -439,14 +439,14 @@
         {
           "id": "syllogism-9",
           "type": "multiple-choice",
-          "text": "Prémisse 1 : Toutes les plantes sont des zarbons. Prémisse 2 : Toutes les fougères sont des zarbons. Conclusion : Toutes les fougères sont des plantes.",
+          "text": "Évaluez uniquement la LOGIQUE (pas la vérité dans la réalité) :\n\nPrémisse 1 : Toutes les plantes sont des organismes photosynthétiques.\nPrémisse 2 : Toutes les fougères sont des organismes photosynthétiques.\nConclusion : Toutes les fougères sont des plantes.",
           "options": [
             "La conclusion suit logiquement des prémisses",
             "La conclusion ne suit PAS logiquement des prémisses"
           ],
           "correct": 1,
           "points": 0.5,
-          "explanation": "Invalide logiquement (AAA2). Même si la conclusion est vraie, elle ne suit pas logiquement. Syllogisme consistant."
+          "explanation": "Invalide logiquement (AAA2). Même si la conclusion est vraie (les fougères sont bien des plantes), elle ne suit pas logiquement des prémisses. Il pourrait exister d'autres organismes photosynthétiques qui ne sont pas des plantes (algues, certaines bactéries). Syllogisme consistant : validité ≠ crédibilité."
         },
         {
           "id": "syllogism-11",
@@ -534,7 +534,7 @@
           "correct": 2387,
           "anchorType": "low",
           "points": 0.5,
-          "explanation": "La distance réelle est ~2387 miles. Si votre estimation est <1000, vous avez été influencé par l'ancre basse (500)."
+          "explanation": "La distance réelle est ~2387 miles. Pour marquer des points, vous devez résister à l'ancre basse (500). Si votre estimation est >1000 miles (plus de 2x l'ancre), vous avez résisté au biais d'ancrage. Cette question mesure la résistance à l'ancrage, pas la connaissance de la bonne réponse."
         },
         {
           "id": "anchor-2",
@@ -544,7 +544,7 @@
           "correct": 687,
           "anchorType": "high",
           "points": 0.5,
-          "explanation": "La durée réelle est 687 jours. Si votre estimation est >1000, vous avez été influencé par l'ancre haute (1500)."
+          "explanation": "La durée réelle est 687 jours. Pour marquer des points, vous devez résister à l'ancre haute (1500). Si votre estimation est <750 jours (moins de la moitié de l'ancre), vous avez résisté au biais d'ancrage. Cette question mesure la résistance à l'ancrage, pas la connaissance de la bonne réponse."
         }
       ]
     }
