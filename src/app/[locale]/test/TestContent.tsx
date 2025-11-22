@@ -186,10 +186,10 @@ export default function TestContent() {
             </div>
             <div className="text-right">
               <p className="text-sm font-semibold text-gray-700 dark:text-gray-300">
-                ⏱️ ~{timeRemaining} {t('minutes')} {t('timeRemaining')}
+                ⏱️ {t('timeRemaining')} : ~{timeRemaining} {t('minutes')}
               </p>
               <p className="text-xs text-gray-500 dark:text-gray-400">
-                {locale === 'fr' ? 'Durée totale' : 'Total duration'} : ~{totalTestTime} {t('minutes')}
+                {t('totalDuration')} : ~{totalTestTime} {t('minutes')}
               </p>
             </div>
           </div>
