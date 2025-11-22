@@ -2050,7 +2050,7 @@ export default function ResultatsPage() {
           <p className="text-gray-700 dark:text-gray-300 mb-4 text-justify">
             {t('pragmaticSolution.intro')}
           </p>
-          <ul className="space-y-2 text-gray-700 dark:text-gray-300">
+          <ul className="list-none space-y-2 text-gray-700 dark:text-gray-300">
             <li className="flex items-start gap-2">
               <span className="text-green-600 dark:text-green-400 font-bold">✓</span>
               <span>{t('pragmaticSolution.checklist')}</span>
