@@ -78,9 +78,10 @@ export default function Home() {
             initial={{ scale: 0.9, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 1, delay: 0.2 }}
-            className="relative inline-block mb-8 px-4 py-4 overflow-visible"
+            className="relative inline-block mb-8 px-4 pb-8"
+            style={{ overflow: 'visible' }}
           >
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tight mb-6 leading-[1.2] overflow-visible">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tight leading-[1.4]" style={{ overflow: 'visible', paddingBottom: '0.5rem' }}>
               <span className="block bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 dark:from-blue-400 dark:via-purple-400 dark:to-indigo-400 bg-clip-text text-transparent animate-gradient bg-[length:200%_auto]">
                 {t('title')}
               </span>
@@ -404,21 +405,21 @@ export default function Home() {
                 transition={{ duration: 0.6, delay: 0.3 }}
                 className="group relative"
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-cyan-500/20 dark:from-blue-600/20 dark:to-cyan-600/20 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500 opacity-0 group-hover:opacity-100"></div>
-                <div className="relative bg-white/90 dark:bg-gray-900/90 backdrop-blur-lg border-2 border-gray-200/50 dark:border-gray-700/50 rounded-3xl p-6 sm:p-8 hover:border-blue-400 dark:hover:border-blue-500 transition-all duration-500 transform hover:-translate-y-2 hover:shadow-2xl">
-                  <div className="text-center mb-6">
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-cyan-500/20 dark:from-blue-600/20 dark:to-cyan-600/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500 opacity-0 group-hover:opacity-100"></div>
+                <div className="relative bg-white/90 dark:bg-gray-900/90 backdrop-blur-lg border-2 border-gray-200/50 dark:border-gray-700/50 rounded-2xl p-5 hover:border-blue-400 dark:hover:border-blue-500 transition-all duration-500 transform hover:-translate-y-2 hover:shadow-2xl">
+                  <div className="text-center mb-5">
                     <motion.div
                       whileHover={{ scale: 1.1, rotate: 5 }}
                       transition={{ type: "spring", stiffness: 300 }}
-                      className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-2xl mb-4 shadow-lg"
+                      className="inline-flex items-center justify-center w-12 h-12 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-xl mb-3 shadow-lg"
                     >
-                      <Clock className="w-8 h-8 text-white" />
+                      <Clock className="w-6 h-6 text-white" />
                     </motion.div>
-                    <h3 className="text-lg font-bold text-gray-900 dark:text-gray-100 mb-3">{t('chooseVersion.express.title')}</h3>
-                    <p className="text-2xl sm:text-3xl font-black bg-gradient-to-r from-blue-600 to-cyan-600 dark:from-blue-400 dark:to-cyan-400 bg-clip-text text-transparent mb-2">{t('chooseVersion.express.duration')}</p>
-                    <p className="text-sm font-medium text-gray-600 dark:text-gray-400">{t('chooseVersion.express.modules')}</p>
+                    <h3 className="text-base font-bold text-gray-900 dark:text-gray-100 mb-2">{t('chooseVersion.express.title')}</h3>
+                    <p className="text-xl sm:text-2xl font-black bg-gradient-to-r from-blue-600 to-cyan-600 dark:from-blue-400 dark:to-cyan-400 bg-clip-text text-transparent mb-1">{t('chooseVersion.express.duration')}</p>
+                    <p className="text-xs font-medium text-gray-600 dark:text-gray-400">{t('chooseVersion.express.modules')}</p>
                   </div>
-                  <ul className="space-y-3 mb-8">
+                  <ul className="space-y-2 mb-6">
                     <li className="flex items-start gap-3 text-gray-700 dark:text-gray-300">
                       <CheckCircle className="w-5 h-5 text-blue-600 dark:text-blue-400 flex-shrink-0 mt-0.5" />
                       <span className="text-sm sm:text-base">{t('chooseVersion.express.feature1')}</span>
@@ -446,24 +447,24 @@ export default function Home() {
                 transition={{ duration: 0.6, delay: 0.4 }}
                 className="group relative"
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/25 via-purple-500/25 to-violet-500/25 dark:from-indigo-600/15 dark:via-purple-600/15 dark:to-violet-600/15 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
-                <div className="relative bg-gradient-to-br from-white via-indigo-50/40 to-purple-50/40 dark:from-gray-900 dark:via-indigo-950/25 dark:to-purple-950/25 backdrop-blur-lg border-2 border-indigo-300/50 dark:border-indigo-600/50 rounded-3xl p-6 sm:p-8 hover:border-indigo-400 dark:hover:border-indigo-500 transition-all duration-500 transform hover:-translate-y-2 hover:shadow-2xl">
-                  <div className="absolute top-4 right-4 bg-gradient-to-r from-indigo-600 via-purple-600 to-violet-600 text-white text-xs font-bold px-4 py-2 rounded-full shadow-lg">
+                <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/25 via-purple-500/25 to-violet-500/25 dark:from-indigo-600/15 dark:via-purple-600/15 dark:to-violet-600/15 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
+                <div className="relative bg-gradient-to-br from-white via-indigo-50/40 to-purple-50/40 dark:from-gray-900 dark:via-indigo-950/25 dark:to-purple-950/25 backdrop-blur-lg border-2 border-indigo-300/50 dark:border-indigo-600/50 rounded-2xl p-5 hover:border-indigo-400 dark:hover:border-indigo-500 transition-all duration-500 transform hover:-translate-y-2 hover:shadow-2xl">
+                  <div className="absolute top-3 right-3 bg-gradient-to-r from-indigo-600 via-purple-600 to-violet-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg">
                     {t('chooseVersion.full.recommended')}
                   </div>
-                  <div className="text-center mb-6 mt-4">
+                  <div className="text-center mb-5 mt-6">
                     <motion.div
                       whileHover={{ scale: 1.1, rotate: -5 }}
                       transition={{ type: "spring", stiffness: 300 }}
-                      className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-indigo-600 via-purple-600 to-violet-600 rounded-2xl mb-4 shadow-lg"
+                      className="inline-flex items-center justify-center w-12 h-12 bg-gradient-to-br from-indigo-600 via-purple-600 to-violet-600 rounded-xl mb-3 shadow-lg"
                     >
-                      <BarChart3 className="w-8 h-8 text-white" />
+                      <BarChart3 className="w-6 h-6 text-white" />
                     </motion.div>
-                    <h3 className="text-lg font-bold text-gray-900 dark:text-gray-100 mb-3">{t('chooseVersion.full.title')}</h3>
-                    <p className="text-2xl sm:text-3xl font-black bg-gradient-to-r from-indigo-600 via-purple-600 to-violet-600 dark:from-indigo-400 dark:via-purple-400 dark:to-violet-400 bg-clip-text text-transparent mb-2">{t('chooseVersion.full.duration')}</p>
-                    <p className="text-sm font-medium text-gray-600 dark:text-gray-400">{t('chooseVersion.full.modules')}</p>
+                    <h3 className="text-base font-bold text-gray-900 dark:text-gray-100 mb-2">{t('chooseVersion.full.title')}</h3>
+                    <p className="text-xl sm:text-2xl font-black bg-gradient-to-r from-indigo-600 via-purple-600 to-violet-600 dark:from-indigo-400 dark:via-purple-400 dark:to-violet-400 bg-clip-text text-transparent mb-1">{t('chooseVersion.full.duration')}</p>
+                    <p className="text-xs font-medium text-gray-600 dark:text-gray-400">{t('chooseVersion.full.modules')}</p>
                   </div>
-                  <ul className="space-y-3 mb-8">
+                  <ul className="space-y-2 mb-6">
                     <li className="flex items-start gap-3 text-gray-700 dark:text-gray-300">
                       <CheckCircle className="w-5 h-5 text-indigo-600 dark:text-indigo-400 flex-shrink-0 mt-0.5" />
                       <span className="text-sm sm:text-base font-medium">{t('chooseVersion.full.feature1')}</span>
