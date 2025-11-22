@@ -1594,7 +1594,7 @@ export default function ResultatsPage() {
                   <h4 className="font-bold text-gray-900 dark:text-white mb-2">
                     ⚠️ {locale === 'fr' ? 'Limites méthodologiques et différences' : 'Methodological Limitations and Differences'}
                   </h4>
-                  <ul className="space-y-2 text-sm text-gray-700 dark:text-gray-300">
+                  <ul className="list-none space-y-2 text-sm text-gray-700 dark:text-gray-300">
                     <li className="flex items-start gap-2">
                       <span className="text-yellow-600 dark:text-yellow-400 mt-0.5">•</span>
                       <span>
@@ -2113,7 +2113,7 @@ export default function ResultatsPage() {
           </AccordionItem>
 
           <AccordionItem title={t('resources.calibrationPractice')}>
-            <ul className="space-y-2">
+            <ul className="list-none space-y-2">
               <li>
                 <a href="https://www.metaculus.com" target="_blank" rel="noopener" className="text-blue-600 dark:text-blue-400 hover:underline font-semibold">
                   {t('resources.metaculus')}
@@ -2133,7 +2133,7 @@ export default function ResultatsPage() {
           <div className="space-y-4 text-sm">
             <div>
               <h4 className="font-bold text-gray-900 dark:text-white mb-2">{t('scientificSources.mainFoundations')}</h4>
-              <ul className="space-y-2">
+              <ul className="list-none space-y-2">
                 <li>
                   <strong>Stanovich, K. E., West, R. F., & Toplak, M. E. (2016).</strong><br />
                   <em>{t('scientificSources.stanovich2016')}</em>
@@ -2151,7 +2151,7 @@ export default function ResultatsPage() {
 
             <div>
               <h4 className="font-bold text-gray-900 dark:text-white mb-2">{t('scientificSources.onImprovement')}</h4>
-              <ul className="space-y-2">
+              <ul className="list-none space-y-2">
                 <li>
                   <strong>Morewedge et al. (2015).</strong><br />
                   <em>{t('scientificSources.morewedge2015')}</em><br />
@@ -2257,7 +2257,7 @@ export default function ResultatsPage() {
             {/* Bottom Line */}
             <div className="bg-blue-50 dark:bg-blue-900/20 border-l-4 border-blue-500 dark:border-blue-600 p-4 rounded">
               <h4 className="font-bold text-gray-900 dark:text-white mb-3">{t('stateOfResearch.honestBottomLine')}</h4>
-              <ul className="space-y-2 text-gray-700 dark:text-gray-300 text-sm">
+              <ul className="list-none space-y-2 text-gray-700 dark:text-gray-300 text-sm">
                 <li>{t('stateOfResearch.bottomLine1')}</li>
                 <li>{t('stateOfResearch.bottomLine2')}</li>
                 <li>{t('stateOfResearch.bottomLine3')}</li>
