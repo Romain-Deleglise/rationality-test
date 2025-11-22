@@ -294,7 +294,7 @@ export default function Home() {
                 <p className="text-3xl font-bold text-blue-600 dark:text-blue-400 mb-1">{t('chooseVersion.express.duration')}</p>
                 <p className="text-sm text-gray-600 dark:text-gray-400">{t('chooseVersion.express.modules')}</p>
               </div>
-              <ul className="space-y-2 mb-6 text-sm text-gray-600 dark:text-gray-400">
+              <ul className="list-none space-y-2 mb-6 text-sm text-gray-600 dark:text-gray-400">
                 <li className="flex items-center gap-2">
                   <CheckCircle className="w-4 h-4 text-green-500 dark:text-green-400 flex-shrink-0" />
                   <span>{t('chooseVersion.express.feature1')}</span>
@@ -331,7 +331,7 @@ export default function Home() {
                 <p className="text-3xl font-bold text-blue-600 dark:text-blue-400 mb-1">{t('chooseVersion.full.duration')}</p>
                 <p className="text-sm text-gray-600 dark:text-gray-400">{t('chooseVersion.full.modules')}</p>
               </div>
-              <ul className="space-y-2 mb-6 text-sm text-gray-600 dark:text-gray-400">
+              <ul className="list-none space-y-2 mb-6 text-sm text-gray-600 dark:text-gray-400">
                 <li className="flex items-center gap-2">
                   <CheckCircle className="w-4 h-4 text-green-500 dark:text-green-400 flex-shrink-0" />
                   <span>{t('chooseVersion.full.feature1')}</span>
