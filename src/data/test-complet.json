@@ -1124,70 +1124,90 @@
           "type": "likert",
           "text": "Les pensées d'une personne peuvent influencer le mouvement d'un objet physique.",
           "reverse": false,
-          "points": 0.42
+          "points": 0.42,
+          "optimal": 1,
+          "explanation": "La télékinésie (influencer des objets par la pensée) n'a jamais été démontrée scientifiquement malgré de nombreuses études. C'est une croyance superstitieuse sans fondement empirique."
         },
         {
           "id": "super-2",
           "type": "likert",
           "text": "L'astrologie peut être utile pour juger de la personnalité.",
           "reverse": false,
-          "points": 0.42
+          "points": 0.42,
+          "optimal": 1,
+          "explanation": "L'astrologie n'a aucun fondement scientifique. Les études contrôlées montrent que les prédictions astrologiques ne sont pas plus précises que le hasard."
         },
         {
           "id": "super-3",
           "type": "likert",
           "text": "La lecture de la pensée n'est pas possible.",
           "reverse": true,
-          "points": 0.42
+          "points": 0.42,
+          "optimal": 7,
+          "explanation": "En effet, la télépathie (lecture de pensée) n'a jamais été démontrée de manière reproductible dans des conditions contrôlées. C'est une croyance pseudoscientifique."
         },
         {
           "id": "super-4",
           "type": "likert",
           "text": "Certaines personnes peuvent prédire l'avenir avec précision.",
           "reverse": false,
-          "points": 0.42
+          "points": 0.42,
+          "optimal": 1,
+          "explanation": "La précognition (prédire l'avenir de manière précise et systématique) n'a jamais été validée scientifiquement. Les prédictions correctes peuvent s'expliquer par le hasard, le biais de confirmation ou des prédictions vagues."
         },
         {
           "id": "super-5",
           "type": "likert",
           "text": "Les fantômes ou esprits n'existent pas.",
           "reverse": true,
-          "points": 0.42
+          "points": 0.42,
+          "optimal": 7,
+          "explanation": "Il n'existe aucune preuve scientifique de l'existence de fantômes ou d'esprits. Les phénomènes paranormaux rapportés peuvent s'expliquer par des causes naturelles, des hallucinations ou des erreurs de perception."
         },
         {
           "id": "super-6",
           "type": "likert",
           "text": "Certains porte-bonheur peuvent vraiment influencer les événements.",
           "reverse": false,
-          "points": 0.42
+          "points": 0.42,
+          "optimal": 1,
+          "explanation": "Les porte-bonheur n'ont aucun effet causal sur les événements. L'impression qu'ils fonctionnent relève du biais de confirmation et de l'illusion de contrôle."
         },
         {
           "id": "super-7",
           "type": "likert",
           "text": "Il est possible de communiquer avec les morts.",
           "reverse": false,
-          "points": 0.42
+          "points": 0.42,
+          "optimal": 1,
+          "explanation": "La communication avec les morts n'a jamais été démontrée scientifiquement. Les médiums utilisent des techniques de lecture froide et d'autres astuces psychologiques."
         },
         {
           "id": "super-8",
           "type": "likert",
           "text": "Les rêves prémonitoires sont de simples coïncidences.",
           "reverse": true,
-          "points": 0.42
+          "points": 0.42,
+          "optimal": 7,
+          "explanation": "Les rêves prémonitoires apparents sont effectivement des coïncidences. Nous rêvons de nombreuses choses chaque nuit, et occasionnellement certaines correspondent à des événements futurs par pur hasard."
         },
         {
           "id": "super-9",
           "type": "likert",
           "text": "Certaines personnes possèdent des pouvoirs psychiques réels.",
           "reverse": false,
-          "points": 0.42
+          "points": 0.42,
+          "optimal": 1,
+          "explanation": "Les pouvoirs psychiques (ESP, télékinésie, etc.) n'ont jamais été démontrés dans des conditions contrôlées malgré des décennies de recherche. Les effets apparents relèvent de biais cognitifs ou de fraude."
         },
         {
           "id": "super-10",
           "type": "likert",
           "text": "Les cristaux et pierres n'ont aucun pouvoir de guérison.",
           "reverse": true,
-          "points": 0.42
+          "points": 0.42,
+          "optimal": 7,
+          "explanation": "Les cristaux et pierres n'ont aucun pouvoir de guérison démontré au-delà de l'effet placebo. C'est une croyance New Age sans fondement scientifique."
         }
       ]
     },
@@ -1202,77 +1222,99 @@
           "type": "likert",
           "text": "Le fait que les scientifiques ne soient souvent pas d'accord montre que la science implique plus d'opinions personnelles que de preuves réelles.",
           "reverse": false,
-          "points": 0.38
+          "points": 0.38,
+          "optimal": 1,
+          "explanation": "La méthode scientifique est le meilleur outil dont nous disposons pour comprendre la réalité objective. Elle repose sur l'observation, l'expérimentation et la falsifiabilité."
         },
         {
           "id": "science-2",
           "type": "likert",
           "text": "Quand la science entre en conflit avec la sagesse conventionnelle, c'est généralement la science qui a raison.",
           "reverse": true,
-          "points": 0.38
+          "points": 0.38,
+          "optimal": 7,
+          "explanation": "La connaissance scientifique est la forme de connaissance la plus fiable car elle est testée empiriquement, reproductible et auto-correctrice. Faire confiance à la science est rationnel."
         },
         {
           "id": "science-3",
           "type": "likert",
           "text": "La science change trop souvent d'avis pour qu'on puisse lui faire confiance.",
           "reverse": false,
-          "points": 0.38
+          "points": 0.38,
+          "optimal": 1,
+          "explanation": "Les scientifiques peuvent avoir des opinions personnelles, mais la méthode scientifique intègre des garde-fous (revue par les pairs, reproductibilité) pour minimiser les biais. La science est plus fiable que l'opinion personnelle."
         },
         {
           "id": "science-4",
           "type": "likert",
           "text": "Les scientifiques sont généralement plus fiables que les sources d'information non scientifiques.",
           "reverse": true,
-          "points": 0.38
+          "points": 0.38,
+          "optimal": 7,
+          "explanation": "La science progresse en questionnant et en révisant ses théories face à de nouvelles preuves. Ce processus d'auto-correction est une force, pas une faiblesse."
         },
         {
           "id": "science-5",
           "type": "likert",
           "text": "Les découvertes scientifiques qui contredisent le bon sens sont probablement fausses.",
           "reverse": false,
-          "points": 0.38
+          "points": 0.38,
+          "optimal": 1,
+          "explanation": "Les vaccins sont l'une des interventions médicales les mieux étudiées et les plus sûres. Le consensus scientifique sur leur sécurité et efficacité est écrasant."
         },
         {
           "id": "science-6",
           "type": "likert",
           "text": "La méthode scientifique est le meilleur moyen d'obtenir des connaissances fiables.",
           "reverse": true,
-          "points": 0.38
+          "points": 0.38,
+          "optimal": 7,
+          "explanation": "Le consensus scientifique reflète l'accumulation de preuves empiriques convergentes. Bien qu'il puisse évoluer, il représente notre meilleure compréhension actuelle."
         },
         {
           "id": "science-7",
           "type": "likert",
           "text": "Les études scientifiques sont souvent biaisées par les intérêts financiers de ceux qui les financent.",
           "reverse": false,
-          "points": 0.38
+          "points": 0.38,
+          "optimal": 1,
+          "explanation": "Les théories scientifiques (comme l'évolution ou la gravité) sont des explications bien établies et testées, pas de simples suppositions. Le terme 'théorie' en science signifie un cadre explicatif robuste."
         },
         {
           "id": "science-8",
           "type": "likert",
           "text": "La science ne peut pas expliquer les choses vraiment importantes de la vie.",
           "reverse": false,
-          "points": 0.38
+          "points": 0.38,
+          "optimal": 1,
+          "explanation": "Les études scientifiques à grande échelle et bien contrôlées sont plus fiables que l'expérience personnelle, qui est sujette à de nombreux biais cognitifs (confirmation, disponibilité, etc.)."
         },
         {
           "id": "science-9",
           "type": "likert",
           "text": "Les preuves scientifiques devraient avoir plus de poids que les témoignages personnels.",
           "reverse": true,
-          "points": 0.38
+          "points": 0.38,
+          "optimal": 7,
+          "explanation": "Les médicaments modernes sont testés rigoureusement par des essais cliniques contrôlés. Bien qu'imparfaits, ils sont beaucoup plus fiables et sûrs que les remèdes traditionnels non testés."
         },
         {
           "id": "science-10",
           "type": "likert",
           "text": "L'intuition personnelle est souvent plus fiable que les résultats d'études scientifiques.",
           "reverse": false,
-          "points": 0.38
+          "points": 0.38,
+          "optimal": 1,
+          "explanation": "Le consensus scientifique sur le changement climatique anthropique est écrasant (97%+ des climatologues). Les preuves proviennent de multiples sources indépendantes et convergentes."
         },
         {
           "id": "science-11",
           "type": "likert",
           "text": "La science a créé plus de problèmes qu'elle n'en a résolu.",
           "reverse": false,
-          "points": 0.38
+          "points": 0.38,
+          "optimal": 1,
+          "explanation": "La biologie évolutive est l'un des domaines scientifiques les mieux établis, avec des preuves convergentes de la paléontologie, la génétique, la biologie moléculaire, etc."
         }
       ]
     },
@@ -1287,77 +1329,99 @@
           "type": "likert",
           "text": "Les preuves que certains vaccins infantiles peuvent causer l'autisme ont été cachées par des compagnies pharmaceutiques.",
           "reverse": false,
-          "points": 0.42
+          "points": 0.42,
+          "optimal": 1,
+          "explanation": "Il n'existe aucune preuve scientifique liant les vaccins à l'autisme. L'étude frauduleuse de Wakefield (1998) a été rétractée. De nombreuses études à grande échelle ont démontré l'absence de lien. Cette théorie du complot met en danger la santé publique."
         },
         {
           "id": "conspiracy-2",
           "type": "likert",
           "text": "Des gouvernements ont caché des preuves de l'existence des extraterrestres et d'OVNI.",
           "reverse": false,
-          "points": 0.42
+          "points": 0.42,
+          "optimal": 1,
+          "explanation": "Malgré des décennies d'observation du ciel par des millions de personnes, il n'existe aucune preuve vérifiable de visites extraterrestres. Les 'preuves cachées' relèvent de la pensée conspirationniste sans fondement empirique."
         },
         {
           "id": "conspiracy-3",
           "type": "likert",
           "text": "L'alunissage d'Apollo était une mise en scène filmée dans un studio.",
           "reverse": false,
-          "points": 0.42
+          "points": 0.42,
+          "optimal": 1,
+          "explanation": "L'alunissage d'Apollo est l'un des événements les mieux documentés de l'histoire, avec des preuves multiples : témoignages, photos, échantillons lunaires, réflecteurs laser toujours utilisés. Les arguments conspirationnistes ont tous été réfutés scientifiquement."
         },
         {
           "id": "conspiracy-4",
           "type": "likert",
           "text": "Le changement climatique est un canular inventé pour contrôler l'économie mondiale.",
           "reverse": false,
-          "points": 0.42
+          "points": 0.42,
+          "optimal": 1,
+          "explanation": "Le consensus scientifique sur le changement climatique anthropique est écrasant (97%+ des climatologues). Les preuves proviennent de multiples sources indépendantes et convergentes. Cette théorie du complot ignore des décennies de recherche rigoureuse."
         },
         {
           "id": "conspiracy-5",
           "type": "likert",
           "text": "Les chemtrails (traînées d'avion) sont utilisés pour répandre des produits chimiques sur la population.",
           "reverse": false,
-          "points": 0.42
+          "points": 0.42,
+          "optimal": 1,
+          "explanation": "Les traînées d'avion (contrails) sont de la vapeur d'eau condensée, un phénomène atmosphérique bien compris. Il n'existe aucune preuve de 'chemtrails' chimiques. Cette théorie repose sur une incompréhension de la météorologie."
         },
         {
           "id": "conspiracy-6",
           "type": "likert",
           "text": "La Terre est plate, contrairement à ce que la science officielle prétend.",
           "reverse": false,
-          "points": 0.42
+          "points": 0.42,
+          "optimal": 1,
+          "explanation": "La forme sphérique de la Terre est établie depuis l'Antiquité et confirmée par des preuves convergentes : navigation, astrophysique, photos satellites, voyages spatiaux. La théorie de la Terre plate ignore des millénaires de preuves scientifiques."
         },
         {
           "id": "conspiracy-7",
           "type": "likert",
           "text": "Un 'Nouvel Ordre Mondial' tente d'établir un gouvernement mondial unique.",
           "reverse": false,
-          "points": 0.42
+          "points": 0.42,
+          "optimal": 1,
+          "explanation": "Bien que des organisations internationales existent (ONU, UE), il n'existe aucune preuve d'un complot secret pour un gouvernement mondial unique. Cette théorie relève de la pensée conspirationniste paranoïaque sans fondement factuel."
         },
         {
           "id": "conspiracy-8",
           "type": "likert",
           "text": "Des technologies de contrôle mental sont utilisées sur la population.",
           "reverse": false,
-          "points": 0.42
+          "points": 0.42,
+          "optimal": 1,
+          "explanation": "Il n'existe aucune preuve scientifique de technologies de contrôle mental à grande échelle. Les neurosciences montrent que le contrôle mental tel que décrit par les conspirationnistes est scientifiquement impossible avec la technologie actuelle."
         },
         {
           "id": "conspiracy-9",
           "type": "likert",
           "text": "Les grandes entreprises pharmaceutiques cachent des remèdes contre le cancer pour continuer à vendre des traitements.",
           "reverse": false,
-          "points": 0.42
+          "points": 0.42,
+          "optimal": 1,
+          "explanation": "Les entreprises pharmaceutiques ont un intérêt économique à développer des remèdes efficaces (brevets lucratifs). Cacher un remède contre le cancer serait impossible (trop de personnes impliquées) et contre-productif économiquement. Cette théorie ignore la réalité de la recherche médicale."
         },
         {
           "id": "conspiracy-10",
           "type": "likert",
           "text": "Les Illuminati existent et contrôlent secrètement les affaires mondiales.",
           "reverse": false,
-          "points": 0.42
+          "points": 0.42,
+          "optimal": 1,
+          "explanation": "Il n'existe aucune preuve de l'existence des Illuminati comme organisation contrôlant secrètement le monde. Cette théorie du complot confond coïncidences, symbolisme artistique et réalité politique complexe."
         },
         {
           "id": "conspiracy-11",
           "type": "likert",
           "text": "Des expérimentations médicales ou scientifiques secrètes sont menées sur les citoyens à leur insu.",
           "reverse": false,
-          "points": 0.42
+          "points": 0.42,
+          "optimal": 1,
+          "explanation": "Bien que des expérimentations contraires à l'éthique aient existé historiquement (Tuskegee, MKUltra), les cadres éthiques modernes et la surveillance rendent de telles pratiques extrêmement difficiles. Généraliser cela en complot massif actuel est injustifié et relève de la pensée conspirationniste."
         }
       ]
     },
@@ -1372,63 +1436,81 @@
           "type": "likert",
           "text": "Je dois être aimé et approuvé par toutes les personnes importantes de ma vie.",
           "reverse": false,
-          "points": 0.56
+          "points": 0.56,
+          "optimal": 1,
+          "explanation": "Cette croyance est irrationnelle car il est impossible d'être aimé par tous. Les personnes rationnelles acceptent qu'il est normal de ne pas plaire à tout le monde."
         },
         {
           "id": "dysfunc-2",
           "type": "likert",
           "text": "Je dois être parfaitement compétent dans tout ce que j'entreprends.",
           "reverse": false,
-          "points": 0.56
+          "points": 0.56,
+          "optimal": 1,
+          "explanation": "Exiger la perfection dans tout est irréaliste et source d'anxiété. Il est plus rationnel d'accepter que l'erreur est humaine et de viser l'excellence plutôt que la perfection."
         },
         {
           "id": "dysfunc-3",
           "type": "likert",
           "text": "Les gens qui se comportent mal méritent d'être blâmés et punis sévèrement.",
           "reverse": false,
-          "points": 0.56
+          "points": 0.56,
+          "optimal": 1,
+          "explanation": "Cette généralisation excessive est irrationnelle. Un échec dans un domaine ne signifie pas l'échec total. Il est plus rationnel de voir les échecs comme des opportunités d'apprentissage spécifiques."
         },
         {
           "id": "dysfunc-4",
           "type": "likert",
           "text": "C'est catastrophique quand les choses ne se passent pas comme je le voudrais.",
           "reverse": false,
-          "points": 0.56
+          "points": 0.56,
+          "optimal": 1,
+          "explanation": "Blâmer sévèrement les autres pour leurs erreurs est contre-productif et ignore la complexité des comportements humains. Une approche plus rationnelle reconnaît que les comportements ont des causes multiples."
         },
         {
           "id": "dysfunc-5",
           "type": "likert",
           "text": "Le malheur vient de circonstances extérieures sur lesquelles je n'ai aucun contrôle.",
           "reverse": false,
-          "points": 0.56
+          "points": 0.56,
+          "optimal": 1,
+          "explanation": "Cette croyance reflète une pensée catastrophique irrationnelle. Les problèmes ont des degrés de gravité variables, et tout voir comme 'terrible' empêche une évaluation réaliste."
         },
         {
           "id": "dysfunc-6",
           "type": "likert",
           "text": "Je dois constamment m'inquiéter des choses dangereuses ou effrayantes qui pourraient arriver.",
           "reverse": false,
-          "points": 0.56
+          "points": 0.56,
+          "optimal": 1,
+          "explanation": "Cette croyance reflète un locus de contrôle externe excessif. Bien que les circonstances influencent notre vie, nous avons un certain degré de contrôle et de responsabilité."
         },
         {
           "id": "dysfunc-7",
           "type": "likert",
           "text": "Il est plus facile d'éviter les difficultés que d'y faire face.",
           "reverse": false,
-          "points": 0.56
+          "points": 0.56,
+          "optimal": 1,
+          "explanation": "Éviter les difficultés est plus facile à court terme mais empêche la croissance et la résolution de problèmes. Il est plus rationnel d'affronter les défis."
         },
         {
           "id": "dysfunc-8",
           "type": "likert",
           "text": "J'ai besoin de quelqu'un de plus fort que moi sur qui m'appuyer.",
           "reverse": false,
-          "points": 0.56
+          "points": 0.56,
+          "optimal": 1,
+          "explanation": "Cette dépendance excessive aux autres est irrationnelle. Les adultes rationnels développent leur autonomie tout en maintenant des relations saines."
         },
         {
           "id": "dysfunc-9",
           "type": "likert",
           "text": "Si quelque chose m'a affecté dans le passé, cela continuera toujours à m'affecter de la même manière.",
           "reverse": false,
-          "points": 0.56
+          "points": 0.56,
+          "optimal": 1,
+          "explanation": "Cette croyance reflète une pensée dichotomique (tout ou rien) irrationnelle. La réalité est plus nuancée, et une solution imparfaite vaut mieux que l'inaction."
         }
       ]
     },
@@ -1443,7 +1525,8 @@
           "type": "likert",
           "text": "**Partie A - Votre opinion** : Les étudiants devraient avoir une voix plus forte que le grand public dans la définition des politiques universitaires.",
           "points": 0,
-          "explanation": "Cette question mesure votre opinion préalable pour détecter le biais de croyance."
+          "explanation": "Cette question mesure votre opinion préalable pour détecter le biais de croyance.",
+          "optimal": 1
         },
         {
           "id": "arg-eval-1b",
@@ -1463,7 +1546,9 @@
           "id": "arg-eval-2a",
           "type": "likert",
           "text": "**Partie A - Votre opinion** : Le tabac devrait être interdit dans tous les lieux publics fermés.",
-          "points": 0
+          "points": 0,
+          "optimal": 1,
+          "explanation": "La pensée critique implique d'évaluer les arguments sur leur mérite intrinsèque (preuves, logique) plutôt que sur qui les présente. L'appel à l'autorité est un biais cognitif."
         },
         {
           "id": "arg-eval-2b",
@@ -1476,13 +1561,16 @@
             "4 - Très fort"
           ],
           "correct": 3,
-          "points": 0.625
+          "points": 0.625,
+          "explanation": "Évaluer la force d'un argument nécessite d'examiner ses preuves et sa structure logique, indépendamment de la source. C'est un principe fondamental de la pensée rationnelle."
         },
         {
           "id": "arg-eval-3a",
           "type": "likert",
           "text": "**Partie A - Votre opinion** : L'énergie nucléaire devrait être développée comme source principale d'énergie pour l'avenir.",
-          "points": 0
+          "points": 0,
+          "optimal": 1,
+          "explanation": "Un raisonnement solide peut être jugé indépendamment de nos émotions personnelles sur le sujet. La pensée rationnelle sépare l'évaluation logique des réactions émotionnelles."
         },
         {
           "id": "arg-eval-3b",
@@ -1495,13 +1583,16 @@
             "4 - Très fort"
           ],
           "correct": 2,
-          "points": 0.625
+          "points": 0.625,
+          "explanation": "La capacité à évaluer objectivement un argument même quand sa conclusion nous déplaît est une marque de pensée rationnelle et critique."
         },
         {
           "id": "arg-eval-4a",
           "type": "likert",
           "text": "**Partie A - Votre opinion** : Les entreprises de réseaux sociaux devraient être légalement responsables du contenu publié par leurs utilisateurs.",
-          "points": 0
+          "points": 0,
+          "optimal": 1,
+          "explanation": "La cohérence logique et les preuves sont les critères essentiels pour évaluer un argument, pas notre accord avec la conclusion. C'est le fondement de la pensée critique."
         },
         {
           "id": "arg-eval-4b",
@@ -1616,7 +1707,8 @@
           "correct": 1,
           "points": 0,
           "pairId": "frame-pair-1",
-          "framingType": "positive"
+          "framingType": "positive",
+          "explanation": "Un produit décrit comme '95% efficace' et '5% d'échec' est mathématiquement identique. Les personnes rationnelles ne devraient pas être influencées par le cadrage positif ou négatif."
         },
         {
           "id": "frame-1b",
@@ -1633,7 +1725,8 @@
           "correct": 1,
           "points": 0.6,
           "pairId": "frame-pair-1",
-          "framingType": "negative"
+          "framingType": "negative",
+          "explanation": "Un produit décrit comme '95% efficace' et '5% d'échec' est mathématiquement identique. Le cadrage négatif ne devrait pas changer votre évaluation rationnelle."
         },
         {
           "id": "frame-2a",
@@ -1645,7 +1738,8 @@
           ],
           "points": 0,
           "pairId": "frame-pair-2",
-          "framingType": "gain"
+          "framingType": "gain",
+          "explanation": "Cette question teste l'effet de cadrage (framing effect). La formulation en termes de vies sauvées influence vers l'option certaine (aversion au risque en contexte de gain)."
         },
         {
           "id": "frame-2b",
@@ -1657,7 +1751,8 @@
           ],
           "points": 0.6,
           "pairId": "frame-pair-2",
-          "framingType": "loss"
+          "framingType": "loss",
+          "explanation": "Cette question est mathématiquement équivalente à la version 'cadre gain' mais formulée en termes de pertes. Les personnes rationnelles devraient faire le même choix dans les deux cas."
         },
         {
           "id": "frame-3a",
@@ -1674,7 +1769,8 @@
           "correct": 1,
           "points": 0,
           "pairId": "frame-pair-3",
-          "framingType": "positive"
+          "framingType": "positive",
+          "explanation": "Un véhicule qui 'fonctionne 94% du temps' est identique à un véhicule qui 'dysfonctionne 6% du temps'. Le cadrage positif ne devrait pas influencer une évaluation rationnelle."
         },
         {
           "id": "frame-3b",
@@ -1691,7 +1787,8 @@
           "correct": 1,
           "points": 0.6,
           "pairId": "frame-pair-3",
-          "framingType": "negative"
+          "framingType": "negative",
+          "explanation": "Cette formulation négative décrit exactement la même réalité que la version positive (94% de fonctionnement). Les personnes rationnelles évaluent la fiabilité indépendamment du cadrage."
         },
         {
           "id": "frame-4a",
@@ -1708,7 +1805,8 @@
           "correct": 1,
           "points": 0,
           "pairId": "frame-pair-4",
-          "framingType": "positive"
+          "framingType": "positive",
+          "explanation": "Une viande décrite comme '75% maigre' est identique à '25% de matière grasse'. Le cadrage positif ne devrait pas influencer votre perception de la qualité."
         },
         {
           "id": "frame-4b",
@@ -1725,7 +1823,8 @@
           "correct": 1,
           "points": 0.6,
           "pairId": "frame-pair-4",
-          "framingType": "negative"
+          "framingType": "negative",
+          "explanation": "Cette formulation en termes de matière grasse décrit le même produit que '75% maigre'. Une évaluation rationnelle devrait être identique dans les deux cas."
         },
         {
           "id": "frame-5a",
@@ -1742,7 +1841,8 @@
           "correct": 1,
           "points": 0,
           "pairId": "frame-pair-5",
-          "framingType": "positive"
+          "framingType": "positive",
+          "explanation": "Un programme avec '90% de réussite' est identique à '10% d'échec'. Le cadrage positif ne devrait pas affecter votre jugement sur son efficacité."
         },
         {
           "id": "frame-5b",
@@ -1759,7 +1859,8 @@
           "correct": 1,
           "points": 0.6,
           "pairId": "frame-pair-5",
-          "framingType": "negative"
+          "framingType": "negative",
+          "explanation": "Cette formulation en termes d'échec décrit le même taux de succès (90%). Les personnes rationnelles résistent à l'effet de cadrage et évaluent objectivement."
         }
       ]
     },
