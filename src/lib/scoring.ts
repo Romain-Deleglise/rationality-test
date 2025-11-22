@@ -85,24 +85,33 @@ export function scoreQuestion(
 
         // Special scoring for anchoring questions
         if (effectiveQuestion.anchorType) {
-          // For anchoring questions, we use generous tolerance-based scoring
-          // The goal is to reward reasonable estimates, not perfect knowledge
-          // We use 30% tolerance for anchoring questions
-          const tolerance = correctAnswer * 0.30;
-          const error = Math.abs(userAnswer - correctAnswer);
+          // For anchoring questions, we measure resistance to the anchor, not accuracy
+          // We extract the anchor value from the question text (e.g., "500 miles" or "1500 jours")
+          const anchorMatch = effectiveQuestion.text.match(/(\d+)\s*(miles|jours|days|mètres|meters|habitants|millions?\s+d'habitants|°C|année|year)/i);
 
-          if (error <= tolerance) {
-            // Within 30% of correct answer: full points
-            earned = possible;
-            correct = true;
-          } else if (error <= tolerance * 2) {
-            // Within 60% of correct answer: partial points
-            earned = possible * 0.5;
-            correct = false;
+          if (anchorMatch) {
+            const anchorValue = Number(anchorMatch[1]);
+
+            if (effectiveQuestion.anchorType === 'low') {
+              // Low anchor: user should give an answer far from the anchor
+              // They resist if: answer < anchor/2 OR answer > anchor*2
+              // This shows they're not influenced by the anchor in either direction
+              const resistedAnchor = userAnswer < (anchorValue / 2) || userAnswer > (anchorValue * 2);
+              earned = resistedAnchor ? possible : 0;
+              correct = resistedAnchor;
+            } else if (effectiveQuestion.anchorType === 'high') {
+              // High anchor: user should give an answer far from the anchor
+              // They resist if: answer < anchor/2 OR answer > anchor*2
+              // This shows they're not influenced by the anchor in either direction
+              const resistedAnchor = userAnswer < (anchorValue / 2) || userAnswer > (anchorValue * 2);
+              earned = resistedAnchor ? possible : 0;
+              correct = resistedAnchor;
+            }
           } else {
-            // More than 60% off: no points
-            earned = 0;
-            correct = false;
+            // Fallback to standard tolerance-based scoring if anchor not found
+            const tolerance = effectiveQuestion.tolerance || 0;
+            correct = Math.abs(userAnswer - correctAnswer) <= tolerance;
+            earned = correct ? possible : 0;
           }
         } else {
           // Standard number question scoring
