@@ -47,8 +47,12 @@ testComplet.modules.forEach((module, modIndex) => {
             console.log(`  [${marker}] ${String.fromCharCode(65 + i)}. ${opt}`);
           });
 
-          if (question.correct === undefined) {
+          // Exception : les questions de framing pairs peuvent ne pas avoir de "correct"
+          const isFramingPair = question.pairId && question.framingType;
+          if (question.correct === undefined && !isFramingPair) {
             problemes.push('❌ ERREUR: Aucune réponse correcte définie (question.correct manquant)');
+          } else if (question.correct === undefined && isFramingPair) {
+            console.log(`  Note: Question de framing pair - pas de réponse "correcte" unique (teste la cohérence)`);
           }
         } else {
           // Options avec objets
@@ -73,6 +77,25 @@ testComplet.modules.forEach((module, modIndex) => {
         problemes.push('⚠️  ATTENTION: Pas de points définis');
       }
 
+    } else if (question.type === 'multiple-choice-confidence') {
+      console.log(`\nQuestion de calibration avec niveaux de confiance`);
+      if (Array.isArray(question.options)) {
+        question.options.forEach((opt, i) => {
+          const marker = question.correct === i ? '✓' : ' ';
+          console.log(`  [${marker}] ${String.fromCharCode(65 + i)}. ${opt}`);
+        });
+      }
+
+      if (question.correct !== undefined) {
+        console.log(`\nRéponse correcte: ${String.fromCharCode(65 + question.correct)}`);
+      }
+
+      if (question.points !== undefined) {
+        console.log(`Points: ${question.points}`);
+      }
+
+      // Note: Les questions de calibration n'ont pas besoin d'explication (faits objectifs)
+
     } else if (question.type === 'likert') {
       console.log(`\nÉchelle Likert`);
       if (question.min !== undefined && question.max !== undefined) {
@@ -95,17 +118,24 @@ testComplet.modules.forEach((module, modIndex) => {
 
     } else if (question.type === 'ranking') {
       console.log(`\nRanking - Items à classer:`);
-      if (question.items) {
-        question.items.forEach((item, i) => {
+      if (question.items || question.options) {
+        const items = question.items || question.options;
+        items.forEach((item, i) => {
           const itemText = typeof item === 'string' ? item : item.text;
           console.log(`  ${i + 1}. ${itemText}`);
         });
       }
+
+      // Vérifier le système de scoring
       if (question.correctOrder) {
         console.log(`\nOrdre correct: [${question.correctOrder.join(', ')}]`);
+      } else if (question.scoring && question.scoring.rule) {
+        console.log(`\nSystème de scoring: ${question.scoring.rule}`);
+        console.log(`  (basé sur des règles de comparaison, pas un ordre complet)`);
       } else {
-        problemes.push('⚠️  ATTENTION: Pas d\'ordre correct défini');
+        problemes.push('⚠️  ATTENTION: Pas de système de scoring défini (ni correctOrder ni scoring.rule)');
       }
+
       if (question.points !== undefined) {
         console.log(`Points: ${question.points}`);
       }
@@ -129,7 +159,13 @@ testComplet.modules.forEach((module, modIndex) => {
     if (question.explanation) {
       console.log(`\n📝 Explication: ${question.explanation.substring(0, 150)}${question.explanation.length > 150 ? '...' : ''}`);
     } else {
-      problemes.push('⚠️  ATTENTION: Pas d\'explication');
+      // Les questions de calibration (culture générale) n'ont pas besoin d'explication
+      const isCalibration = question.type === 'multiple-choice-confidence';
+      if (!isCalibration) {
+        problemes.push('⚠️  ATTENTION: Pas d\'explication');
+      } else {
+        console.log(`\n📝 Note: Question de calibration - pas d'explication nécessaire (fait objectif)`);
+      }
     }
 
     // Afficher les problèmes
