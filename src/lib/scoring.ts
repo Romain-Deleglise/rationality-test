@@ -83,9 +83,44 @@ export function scoreQuestion(
           break;
         }
 
-        const tolerance = effectiveQuestion.tolerance || 0;
-        correct = Math.abs(userAnswer - correctAnswer) <= tolerance;
-        earned = correct ? possible : 0;
+        // Special scoring for anchoring questions
+        if (effectiveQuestion.anchorType) {
+          // For anchoring questions, we measure resistance to the anchor, not accuracy
+          // We extract the anchor value from the question text (e.g., "500 miles" or "1500 jours")
+          const anchorMatch = effectiveQuestion.text.match(/(\d+)\s*(miles|jours|days|mètres|meters|habitants|°C|année|year)/i);
+
+          if (anchorMatch) {
+            const anchorValue = Number(anchorMatch[1]);
+
+            if (effectiveQuestion.anchorType === 'low') {
+              // Low anchor: user should estimate MUCH higher than the anchor
+              // Correct answer is much higher than anchor
+              // If user answer is close to anchor (< 2x anchor), they were influenced
+              // If user answer is far from anchor (> 2x anchor), they resisted
+              const resistedAnchor = userAnswer > (anchorValue * 2);
+              earned = resistedAnchor ? possible : 0;
+              correct = resistedAnchor;
+            } else if (effectiveQuestion.anchorType === 'high') {
+              // High anchor: user should estimate MUCH lower than the anchor
+              // Correct answer is much lower than anchor
+              // If user answer is close to anchor (> anchor/2), they were influenced
+              // If user answer is far from anchor (< anchor/2), they resisted
+              const resistedAnchor = userAnswer < (anchorValue / 2);
+              earned = resistedAnchor ? possible : 0;
+              correct = resistedAnchor;
+            }
+          } else {
+            // Fallback to standard tolerance-based scoring if anchor not found
+            const tolerance = effectiveQuestion.tolerance || 0;
+            correct = Math.abs(userAnswer - correctAnswer) <= tolerance;
+            earned = correct ? possible : 0;
+          }
+        } else {
+          // Standard number question scoring
+          const tolerance = effectiveQuestion.tolerance || 0;
+          correct = Math.abs(userAnswer - correctAnswer) <= tolerance;
+          earned = correct ? possible : 0;
+        }
         break;
 
       case 'confidence-interval':
