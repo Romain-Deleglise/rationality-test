@@ -21,20 +21,33 @@ function renderMarkdown(text: string) {
   const paragraphs = text.split('\n\n');
 
   return paragraphs.map((paragraph, paraIndex) => {
-    // For each paragraph, handle bold text
-    const parts = paragraph.split(/(\*\*.*?\*\*)/g);
-    const elements = parts.map((part, partIndex) => {
-      if (part.startsWith('**') && part.endsWith('**')) {
-        // Bold text - use normal font weight to avoid making it too prominent
-        return <span key={`${paraIndex}-${partIndex}`} className="font-medium">{part.slice(2, -2)}</span>;
-      }
-      return part;
+    // Split paragraph by single newlines to handle line breaks
+    const lines = paragraph.split('\n');
+
+    const lineElements = lines.map((line, lineIndex) => {
+      // For each line, handle bold text
+      const parts = line.split(/(\*\*.*?\*\*)/g);
+      const elements = parts.map((part, partIndex) => {
+        if (part.startsWith('**') && part.endsWith('**')) {
+          // Bold text - use normal font weight to avoid making it too prominent
+          return <span key={`${paraIndex}-${lineIndex}-${partIndex}`} className="font-medium">{part.slice(2, -2)}</span>;
+        }
+        return part;
+      });
+
+      // Add line break after each line except the last one
+      return (
+        <span key={`${paraIndex}-${lineIndex}`}>
+          {elements}
+          {lineIndex < lines.length - 1 && <br />}
+        </span>
+      );
     });
 
     // Return paragraph with proper spacing
     return (
       <p key={paraIndex} className={paraIndex < paragraphs.length - 1 ? 'mb-3' : ''}>
-        {elements}
+        {lineElements}
       </p>
     );
   });
