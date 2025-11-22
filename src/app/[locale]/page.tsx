@@ -15,50 +15,27 @@ const AccordionItem = ({ title, children, defaultOpen = false }: {
 }) => {
   const [isOpen, setIsOpen] = useState(defaultOpen);
 
-  const handleToggle = () => {
-    const scrollY = window.scrollY;
-    setIsOpen(!isOpen);
-
-    // Forcer la restauration du scroll plusieurs fois pour être sûr
-    setTimeout(() => window.scrollTo(0, scrollY), 0);
-    setTimeout(() => window.scrollTo(0, scrollY), 50);
-    setTimeout(() => window.scrollTo(0, scrollY), 100);
-    setTimeout(() => window.scrollTo(0, scrollY), 150);
-    setTimeout(() => window.scrollTo(0, scrollY), 300);
-  };
-
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 10 }}
-      animate={{ opacity: 1, y: 0 }}
-      className="group relative bg-white/60 dark:bg-gray-800/60 backdrop-blur-lg border border-gray-200/50 dark:border-gray-700/50 rounded-2xl mb-4 shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden"
-    >
+    <div className="group relative bg-white/60 dark:bg-gray-800/60 backdrop-blur-lg border border-gray-200/50 dark:border-gray-700/50 rounded-2xl mb-4 shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden">
       <button
-        onClick={handleToggle}
+        onClick={() => setIsOpen(!isOpen)}
         className="w-full px-6 sm:px-8 py-5 flex items-center justify-between bg-gradient-to-r from-transparent to-blue-50/30 dark:to-blue-950/20 hover:to-blue-100/40 dark:hover:to-blue-900/30 transition-all duration-300"
       >
         <span className="font-semibold text-left text-gray-900 dark:text-gray-100 text-base sm:text-lg">{title}</span>
-        <motion.div
-          animate={{ rotate: isOpen ? 180 : 0 }}
-          transition={{ duration: 0.3, ease: "easeInOut" }}
-          className="flex-shrink-0 ml-4"
-        >
-          <ChevronDown className="w-5 h-5 text-blue-600 dark:text-blue-400" />
-        </motion.div>
-      </button>
-      <div
-        className="grid transition-all duration-300 ease-in-out"
-        style={{
-          gridTemplateRows: isOpen ? '1fr' : '0fr'
-        }}
-      >
-        <div className="overflow-hidden">
-          <div className="px-6 sm:px-8 py-6 bg-white/40 dark:bg-gray-900/40 backdrop-blur-sm text-gray-700 dark:text-gray-300 leading-relaxed text-justify">
-            {children}
-          </div>
+        <div className="flex-shrink-0 ml-4">
+          {isOpen ? (
+            <ChevronUp className="w-5 h-5 text-blue-600 dark:text-blue-400" />
+          ) : (
+            <ChevronDown className="w-5 h-5 text-blue-600 dark:text-blue-400" />
+          )}
         </div>
-      </div>
-    </motion.div>
+      </button>
+      {isOpen && (
+        <div className="px-6 sm:px-8 py-6 bg-white/40 dark:bg-gray-900/40 backdrop-blur-sm text-gray-700 dark:text-gray-300 leading-relaxed text-justify">
+          {children}
+        </div>
+      )}
+    </div>
   );
 };
 
@@ -415,7 +392,7 @@ export default function Home() {
               </span>
             </motion.h2>
 
-            <div className="grid md:grid-cols-2 gap-6 sm:gap-8 mt-10">
+            <div className="grid md:grid-cols-2 gap-6 sm:gap-8 mt-10 items-stretch">
               {/* Short version */}
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
@@ -425,9 +402,7 @@ export default function Home() {
                 className="group relative"
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-cyan-500/20 dark:from-blue-600/20 dark:to-cyan-600/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500 opacity-0 group-hover:opacity-100"></div>
-                <div className="relative bg-white/90 dark:bg-gray-900/90 backdrop-blur-lg border-2 border-gray-200/50 dark:border-gray-700/50 rounded-2xl p-5 hover:border-blue-400 dark:hover:border-blue-500 transition-all duration-500 transform hover:-translate-y-2 hover:shadow-2xl">
-                  {/* Espace invisible pour aligner avec la carte Full */}
-                  <div className="h-6 mb-2"></div>
+                <div className="relative bg-white/90 dark:bg-gray-900/90 backdrop-blur-lg border-2 border-gray-200/50 dark:border-gray-700/50 rounded-2xl p-5 hover:border-blue-400 dark:hover:border-blue-500 transition-all duration-500 transform hover:-translate-y-2 hover:shadow-2xl h-full flex flex-col">
                   <div className="text-center mb-5">
                     <motion.div
                       whileHover={{ scale: 1.1, rotate: 5 }}
@@ -440,7 +415,7 @@ export default function Home() {
                     <p className="text-xl sm:text-2xl font-black bg-gradient-to-r from-blue-600 to-cyan-600 dark:from-blue-400 dark:to-cyan-400 bg-clip-text text-transparent mb-1">{t('chooseVersion.express.duration')}</p>
                     <p className="text-xs font-medium text-gray-600 dark:text-gray-400">{t('chooseVersion.express.modules')}</p>
                   </div>
-                  <ul className="space-y-2 mb-6">
+                  <ul className="space-y-2 mb-6 flex-grow">
                     <li className="flex items-start gap-3 text-gray-700 dark:text-gray-300">
                       <CheckCircle className="w-5 h-5 text-blue-600 dark:text-blue-400 flex-shrink-0 mt-0.5" />
                       <span className="text-sm sm:text-base">{t('chooseVersion.express.feature1')}</span>
@@ -469,7 +444,7 @@ export default function Home() {
                 className="group relative"
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/25 via-purple-500/25 to-violet-500/25 dark:from-indigo-600/15 dark:via-purple-600/15 dark:to-violet-600/15 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
-                <div className="relative bg-gradient-to-br from-white via-indigo-50/40 to-purple-50/40 dark:from-gray-900 dark:via-indigo-950/25 dark:to-purple-950/25 backdrop-blur-lg border-2 border-indigo-300/50 dark:border-indigo-600/50 rounded-2xl p-5 hover:border-indigo-400 dark:hover:border-indigo-500 transition-all duration-500 transform hover:-translate-y-2 hover:shadow-2xl">
+                <div className="relative bg-gradient-to-br from-white via-indigo-50/40 to-purple-50/40 dark:from-gray-900 dark:via-indigo-950/25 dark:to-purple-950/25 backdrop-blur-lg border-2 border-indigo-300/50 dark:border-indigo-600/50 rounded-2xl p-5 hover:border-indigo-400 dark:hover:border-indigo-500 transition-all duration-500 transform hover:-translate-y-2 hover:shadow-2xl h-full flex flex-col">
                   <div className="absolute top-3 right-3 bg-gradient-to-r from-indigo-600 via-purple-600 to-violet-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg">
                     {t('chooseVersion.full.recommended')}
                   </div>
@@ -485,7 +460,7 @@ export default function Home() {
                     <p className="text-xl sm:text-2xl font-black bg-gradient-to-r from-indigo-600 via-purple-600 to-violet-600 dark:from-indigo-400 dark:via-purple-400 dark:to-violet-400 bg-clip-text text-transparent mb-1">{t('chooseVersion.full.duration')}</p>
                     <p className="text-xs font-medium text-gray-600 dark:text-gray-400">{t('chooseVersion.full.modules')}</p>
                   </div>
-                  <ul className="space-y-2 mb-6">
+                  <ul className="space-y-2 mb-6 flex-grow">
                     <li className="flex items-start gap-3 text-gray-700 dark:text-gray-300">
                       <CheckCircle className="w-5 h-5 text-indigo-600 dark:text-indigo-400 flex-shrink-0 mt-0.5" />
                       <span className="text-sm sm:text-base font-medium">{t('chooseVersion.full.feature1')}</span>
