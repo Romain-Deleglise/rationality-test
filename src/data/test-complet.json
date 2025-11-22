@@ -463,11 +463,11 @@
         {
           "id": "crt-4",
           "type": "number",
-          "text": "Si cela prend une minute pour faire chaque coupe, combien de temps faudra-t-il pour couper une planche de 25 pieds en 25 morceaux égaux ?",
+          "text": "Un ascenseur met 1 minute pour monter d'un étage. Combien de temps met-il pour aller du rez-de-chaussée au 25ème étage ?",
           "unit": "minutes",
           "correct": 24,
           "points": 1,
-          "explanation": "24 minutes. Il faut 24 coupes pour obtenir 25 morceaux (pas 25 coupes). L'intuition suggère 25 minutes."
+          "explanation": "24 minutes. Il faut monter 24 étages pour aller du rez-de-chaussée (étage 0) au 25ème étage. L'intuition suggère 25 minutes."
         },
         {
           "id": "crt-5",

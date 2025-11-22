@@ -344,11 +344,11 @@
         {
           "id": "crt-4",
           "type": "number",
-          "text": "If it takes one minute to make each cut, how long will it take to cut a 25-foot plank into 25 equal pieces?",
+          "text": "An elevator takes 1 minute to go up one floor. How long does it take to go from the ground floor to the 25th floor?",
           "unit": "minutes",
           "correct": 24,
           "points": 1,
-          "explanation": "24 minutes. It takes 24 cuts to get 25 pieces (not 25 cuts). Intuition suggests 25 minutes."
+          "explanation": "24 minutes. You need to go up 24 floors to get from the ground floor (floor 0) to the 25th floor. Intuition suggests 25 minutes."
         },
         {
           "id": "crt-6",
