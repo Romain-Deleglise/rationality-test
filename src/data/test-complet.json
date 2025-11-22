@@ -5,8 +5,8 @@
   "modules": [
     {
       "id": "prob-stats",
-      "name": "Raisonnement Probabiliste (15 items)",
-      "points": 15,
+      "name": "Raisonnement Probabiliste (13 items)",
+      "points": 13,
       "time": 5,
       "questions": [
         {
@@ -34,32 +34,6 @@
           "correct": 0,
           "points": 1,
           "explanation": "Toujours deviner l'option la plus probable (70%) est optimal. Essayer de 'matcher' les probabilités réduit votre taux de réussite."
-        },
-        {
-          "id": "prob-match-3",
-          "type": "multiple-choice",
-          "text": "Dans une urne, il y a 80% de billes rouges et 20% de billes bleues. Vous devez prédire la couleur avant chaque tirage (avec remise). Quelle approche donne le meilleur taux de réussite sur 100 tirages ?",
-          "options": [
-            "Toujours prédire rouge",
-            "Prédire rouge 80 fois et bleu 20 fois",
-            "Choisir au hasard à chaque tirage"
-          ],
-          "correct": 0,
-          "points": 1,
-          "explanation": "Prédire systématiquement l'option la plus fréquente (rouge) donne 80% de réussite. Les autres stratégies donnent des taux inférieurs."
-        },
-        {
-          "id": "prob-match-4",
-          "type": "multiple-choice",
-          "text": "Un examen a 70% de questions faciles et 30% de questions difficiles. Si vous devez deviner le type de la prochaine question sans la voir, que devriez-vous répondre ?",
-          "options": [
-            "Toujours 'facile'",
-            "Essayer de reproduire le ratio 70/30",
-            "Choisir au hasard"
-          ],
-          "correct": 0,
-          "points": 1,
-          "explanation": "Toujours répondre 'facile' maximise vos chances (70% de succès). C'est la stratégie optimale face à l'incertitude."
         },
         {
           "id": "gambler-1",
@@ -116,15 +90,15 @@
         {
           "id": "gambler-5",
           "type": "multiple-choice",
-          "text": "Une équipe de basketball a perdu ses 10 derniers matchs. Pour le prochain match contre une équipe de niveau égal, quelle affirmation est correcte ?",
+          "text": "Dans une loterie équitable, Marie a perdu 10 fois d'affilée. Au 11ème tirage, quelle affirmation est correcte ?",
           "options": [
-            "Ils ont plus de chances de gagner (retour de chance)",
-            "Ils ont moins de chances de gagner (série négative)",
-            "Les chances sont environ 50-50 (les matchs passés ne changent pas les probabilités)"
+            "Elle a plus de chances de gagner (retour de chance)",
+            "Elle a moins de chances de gagner (série négative)",
+            "Ses chances sont identiques à chaque tirage (les résultats passés ne changent rien)"
           ],
           "correct": 2,
           "points": 1,
-          "explanation": "Si les équipes sont de niveau égal, chaque match est indépendant. Les défaites passées ne créent pas de 'dette de chance'."
+          "explanation": "Dans un jeu de hasard équitable, chaque tirage est indépendant. Les pertes passées ne créent pas de 'dette de chance'. La probabilité reste la même à chaque fois."
         },
         {
           "id": "conjunction-1",
@@ -207,7 +181,7 @@
         {
           "id": "base-rate-2",
           "type": "multiple-choice",
-          "text": "Dans une entreprise, 70% des employés sont ingénieurs et 30% sont managers. Sophie est charismatique, aime diriger des équipes et excelle dans les négociations. Est-elle plus probablement :",
+          "text": "Dans une entreprise, 70% des employés sont ingénieurs et 30% sont managers. On sait que 20% des ingénieurs et 40% des managers sont décrits comme 'charismatiques et aimant diriger'. Sophie a été décrite ainsi. Est-elle plus probablement :",
           "options": [
             "Ingénieure",
             "Manager",
@@ -215,14 +189,14 @@
           ],
           "correct": 0,
           "points": 1,
-          "explanation": "Malgré la description qui évoque un profil de manager, le taux de base (70% ingénieurs vs 30% managers) reste le facteur le plus important. Beaucoup d'ingénieurs peuvent aussi être charismatiques et aimer diriger."
+          "explanation": "En utilisant le théorème de Bayes : P(ingénieure|description) = (0.70 × 0.20) / [(0.70 × 0.20) + (0.30 × 0.40)] = 0.14 / 0.26 ≈ 54%. Malgré que la description soit 2× plus fréquente chez les managers, le taux de base élevé d'ingénieurs (70%) fait pencher la balance."
         }
       ]
     },
     {
       "id": "sci-reasoning",
-      "name": "Raisonnement Scientifique (14 items)",
-      "points": 14,
+      "name": "Raisonnement Scientifique (13 items)",
+      "points": 13,
       "time": 8,
       "questions": [
         {
@@ -254,22 +228,6 @@
           "correct": 1,
           "points": 1,
           "explanation": "Il suffit de vérifier la personne A (a-t-elle ≥18 ans ?) et la personne D (boit-elle de l'alcool ?). Les autres ne peuvent pas violer la règle, donc les vérifier serait inutile."
-        },
-        {
-          "id": "likelihood-2",
-          "type": "multiple-choice",
-          "text": "Un détecteur de fumée se déclenche. Quelles informations sont nécessaires pour estimer P(vrai incendie | détecteur déclenché) ?",
-          "options": [
-            "% de fois où le détecteur se déclenche SANS incendie (fausses alarmes)",
-            "% d'incendies réels",
-            "% de non-incendies",
-            "% de fois où le détecteur se déclenche lors d'un vrai incendie",
-            "a et d",
-            "b et c"
-          ],
-          "correct": 4,
-          "points": 1,
-          "explanation": "Pour calculer P(incendie|détecteur) via le théorème de Bayes, vous avez besoin de P(détecteur|incendie) et P(détecteur|pas d'incendie), qui correspondent aux options a et d."
         },
         {
           "id": "wason-3",
@@ -429,8 +387,8 @@
     },
     {
       "id": "reflection-intuition",
-      "name": "Réflexion vs Intuition (8 items)",
-      "points": 8,
+      "name": "Réflexion vs Intuition (7 items)",
+      "points": 7,
       "time": 4,
       "questions": [
         {
@@ -468,15 +426,6 @@
           "correct": 24,
           "points": 1,
           "explanation": "24 minutes. Il faut monter 24 étages pour aller du rez-de-chaussée (étage 0) au 25ème étage. L'intuition suggère 25 minutes."
-        },
-        {
-          "id": "crt-5",
-          "type": "number",
-          "text": "Le nombre de bactéries dans un conteneur double chaque heure. S'il faut 32 heures pour remplir le conteneur, combien d'heures faut-il pour remplir la moitié ?",
-          "unit": "heures",
-          "correct": 31,
-          "points": 1,
-          "explanation": "31 heures. À l'heure 31, le conteneur est à moitié plein. Puis ça double pour être plein à l'heure 32. L'intuition suggère 16 heures."
         },
         {
           "id": "crt-6",
@@ -752,7 +701,7 @@
           "correct": 2387,
           "anchorType": "low",
           "points": 0.5,
-          "explanation": "La distance réelle est ~2387 miles. Pour marquer des points, vous devez résister à l'ancre (500). Si votre estimation est <250 miles OU >1000 miles (soit très loin de l'ancre dans les deux sens), vous avez résisté au biais d'ancrage. Cette question mesure la résistance à l'ancrage, pas la connaissance de la bonne réponse."
+          "explanation": "La distance réelle est ~2387 miles. L'ancre de 500 miles peut influencer votre estimation à la baisse. Points attribués selon la précision : estimation à ±30% = points complets, ±60% = points partiels. Cette question teste votre capacité à faire des estimations raisonnables malgré l'ancrage."
         },
         {
           "id": "anchor-2",
@@ -762,7 +711,7 @@
           "correct": 687,
           "anchorType": "high",
           "points": 0.5,
-          "explanation": "La durée réelle est 687 jours. Pour marquer des points, vous devez résister à l'ancre (1500). Si votre estimation est <750 jours OU >3000 jours (soit très loin de l'ancre dans les deux sens), vous avez résisté au biais d'ancrage. Cette question mesure la résistance à l'ancrage, pas la connaissance de la bonne réponse."
+          "explanation": "La durée réelle est 687 jours. L'ancre de 1500 jours peut influencer votre estimation à la hausse. Points attribués selon la précision : estimation à ±30% = points complets, ±60% = points partiels. Cette question teste votre capacité à faire des estimations raisonnables malgré l'ancrage."
         },
         {
           "id": "anchor-3",
@@ -772,7 +721,7 @@
           "correct": 26,
           "anchorType": "low",
           "points": 0.5,
-          "explanation": "L'Australie compte environ 26 millions d'habitants. Pour marquer des points, vous devez résister à l'ancre (10M). Si votre estimation est <5M OU >20M (soit très loin de l'ancre dans les deux sens), vous avez résisté au biais d'ancrage. Cette question mesure la résistance à l'ancrage, pas la connaissance de la bonne réponse."
+          "explanation": "L'Australie compte environ 26 millions d'habitants. L'ancre de 10 millions peut influencer votre estimation à la baisse. Points attribués selon la précision : estimation à ±30% = points complets, ±60% = points partiels. Cette question teste votre capacité à faire des estimations raisonnables malgré l'ancrage."
         },
         {
           "id": "anchor-4",
@@ -782,7 +731,7 @@
           "correct": 56.7,
           "anchorType": "high",
           "points": 0.5,
-          "explanation": "Le record est de 56,7°C (Vallée de la Mort, 1913). Pour marquer des points, vous devez résister à l'ancre (70°C). Si votre estimation est <35°C OU >140°C (soit très loin de l'ancre dans les deux sens), vous avez résisté au biais d'ancrage. Cette question mesure la résistance à l'ancrage, pas la connaissance de la bonne réponse."
+          "explanation": "Le record est de 56,7°C (Vallée de la Mort, 1913). L'ancre de 70°C peut influencer votre estimation à la hausse. Points attribués selon la précision : estimation à ±30% = points complets, ±60% = points partiels. Cette question teste votre capacité à faire des estimations raisonnables malgré l'ancrage."
         },
         {
           "id": "anchor-5",
@@ -792,7 +741,7 @@
           "correct": 828,
           "anchorType": "low",
           "points": 0.5,
-          "explanation": "Le Burj Khalifa mesure 828 mètres. Pour marquer des points, vous devez résister à l'ancre (500m). Si votre estimation est <250m OU >1000m (soit très loin de l'ancre dans les deux sens), vous avez résisté au biais d'ancrage. Cette question mesure la résistance à l'ancrage, pas la connaissance de la bonne réponse."
+          "explanation": "Le Burj Khalifa mesure 828 mètres. L'ancre de 500m peut influencer votre estimation à la baisse. Points attribués selon la précision : estimation à ±30% = points complets, ±60% = points partiels. Cette question teste votre capacité à faire des estimations raisonnables malgré l'ancrage."
         },
         {
           "id": "anchor-6",
@@ -802,7 +751,7 @@
           "correct": 1815,
           "anchorType": "low",
           "points": 0.5,
-          "explanation": "La bataille de Waterloo date de 1815. Pour marquer des points, vous devez résister à l'ancre (1750). Si votre estimation est <875 OU >3500 (soit très loin de l'ancre dans les deux sens), vous avez résisté au biais d'ancrage. Cette question mesure la résistance à l'ancrage, pas la connaissance de la bonne réponse."
+          "explanation": "La bataille de Waterloo date de 1815. L'ancre de 1750 peut influencer votre estimation à la baisse. Points attribués selon la précision : estimation à ±30% = points complets, ±60% = points partiels. Cette question teste votre capacité à faire des estimations raisonnables malgré l'ancrage."
         }
       ]
     },
@@ -1548,16 +1497,17 @@
             "3 - Fort",
             "4 - Très fort"
           ],
-          "correct": 1,
-          "points": 0.625
+          "correct": 2,
+          "points": 0.625,
+          "explanation": "La réponse de Marc est 'Fort' (3). Il reconnaît le problème technique soulevé par le critique, mais propose une solution concrète (investissement dans la modération). Même si cette solution ne résout pas totalement le problème de l'impossibilité de modérer en temps réel, c'est une réponse constructive et raisonnable qui mérite une évaluation positive."
         }
       ]
     },
     {
       "id": "causal-reasoning",
-      "name": "Raisonnement Causal (6 items)",
-      "points": 6,
-      "time": 6,
+      "name": "Raisonnement Causal (5 items)",
+      "points": 5,
+      "time": 5,
       "questions": [
         {
           "id": "causal-1",
@@ -1584,19 +1534,6 @@
           "correct": 1,
           "points": 1,
           "explanation": "Non. Les personnes qui prennent des vitamines ont peut-être déjà un mode de vie plus sain (exercice, alimentation équilibrée), ce qui explique leur longévité."
-        },
-        {
-          "id": "causal-3",
-          "type": "multiple-choice",
-          "text": "On observe que les villes avec plus de pompiers ont plus d'incendies graves.\n\nDevrait-on réduire le nombre de pompiers pour diminuer les incendies graves ?",
-          "options": [
-            "Oui",
-            "Non",
-            "Peut-être, selon d'autres facteurs"
-          ],
-          "correct": 1,
-          "points": 1,
-          "explanation": "Non. C'est une confusion de causalité inversée : les villes ont plus de pompiers PARCE QU'elles ont plus d'incendies (grandes villes), pas l'inverse."
         },
         {
           "id": "causal-4",
