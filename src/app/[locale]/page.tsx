@@ -19,7 +19,7 @@ const AccordionItem = ({ title, children, defaultOpen = false }: {
     <motion.div
       initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
-      className="group relative bg-white/60 dark:bg-gray-800/60 backdrop-blur-lg border border-gray-200/50 dark:border-gray-700/50 rounded-2xl mb-4 shadow-md hover:shadow-xl transition-all duration-300"
+      className="group relative bg-white/60 dark:bg-gray-800/60 backdrop-blur-lg border border-gray-200/50 dark:border-gray-700/50 rounded-2xl mb-4 shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden"
     >
       <button
         onClick={() => setIsOpen(!isOpen)}
@@ -34,22 +34,18 @@ const AccordionItem = ({ title, children, defaultOpen = false }: {
           <ChevronDown className="w-5 h-5 text-blue-600 dark:text-blue-400" />
         </motion.div>
       </button>
-      <motion.div
-        initial={false}
-        animate={{
-          maxHeight: isOpen ? 2000 : 0,
-          opacity: isOpen ? 1 : 0
+      <div
+        className="grid transition-all duration-300 ease-in-out"
+        style={{
+          gridTemplateRows: isOpen ? '1fr' : '0fr'
         }}
-        transition={{
-          maxHeight: { duration: 0.4, ease: "easeInOut" },
-          opacity: { duration: 0.3, ease: "easeInOut" }
-        }}
-        className="overflow-hidden will-change-[max-height,opacity]"
       >
-        <div className="px-6 sm:px-8 py-6 bg-white/40 dark:bg-gray-900/40 backdrop-blur-sm text-gray-700 dark:text-gray-300 leading-relaxed text-justify">
-          {children}
+        <div className="overflow-hidden">
+          <div className="px-6 sm:px-8 py-6 bg-white/40 dark:bg-gray-900/40 backdrop-blur-sm text-gray-700 dark:text-gray-300 leading-relaxed text-justify">
+            {children}
+          </div>
         </div>
-      </motion.div>
+      </div>
     </motion.div>
   );
 };
@@ -82,9 +78,9 @@ export default function Home() {
             initial={{ scale: 0.9, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 1, delay: 0.2 }}
-            className="relative inline-block mb-6 pb-2"
+            className="relative inline-block mb-6 px-2 py-3"
           >
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight mb-6 leading-tight px-2">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight mb-6 leading-[1.15]">
               <span className="block bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 dark:from-blue-400 dark:via-purple-400 dark:to-indigo-400 bg-clip-text text-transparent animate-gradient bg-[length:200%_auto]">
                 {t('title')}
               </span>
@@ -385,7 +381,7 @@ export default function Home() {
           transition={{ duration: 0.8 }}
           className="relative bg-white/70 dark:bg-gray-800/70 backdrop-blur-xl rounded-3xl shadow-2xl p-8 sm:p-12 overflow-hidden border border-white/50 dark:border-gray-700/50"
         >
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-96 bg-gradient-to-br from-blue-400/20 via-purple-400/20 to-pink-400/20 dark:from-blue-600/10 dark:via-purple-600/10 dark:to-pink-600/10 rounded-full blur-3xl"></div>
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-96 bg-gradient-to-br from-blue-400/20 via-indigo-400/20 to-purple-400/20 dark:from-blue-600/10 dark:via-indigo-600/10 dark:to-purple-600/10 rounded-full blur-3xl"></div>
 
           <div className="relative z-10">
             <motion.h2
@@ -450,37 +446,37 @@ export default function Home() {
                 transition={{ duration: 0.6, delay: 0.4 }}
                 className="group relative"
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-purple-500/30 via-pink-500/30 to-orange-500/30 dark:from-purple-600/20 dark:via-pink-600/20 dark:to-orange-600/20 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
-                <div className="relative bg-gradient-to-br from-white via-purple-50/50 to-pink-50/50 dark:from-gray-900 dark:via-purple-950/30 dark:to-pink-950/30 backdrop-blur-lg border-2 border-purple-400/50 dark:border-purple-500/50 rounded-3xl p-6 sm:p-8 hover:border-purple-500 dark:hover:border-purple-400 transition-all duration-500 transform hover:-translate-y-2 hover:shadow-2xl">
-                  <div className="absolute top-4 right-4 bg-gradient-to-r from-purple-600 via-pink-600 to-orange-600 text-white text-xs font-bold px-4 py-2 rounded-full shadow-lg animate-pulse">
+                <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/25 via-purple-500/25 to-violet-500/25 dark:from-indigo-600/15 dark:via-purple-600/15 dark:to-violet-600/15 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
+                <div className="relative bg-gradient-to-br from-white via-indigo-50/40 to-purple-50/40 dark:from-gray-900 dark:via-indigo-950/25 dark:to-purple-950/25 backdrop-blur-lg border-2 border-indigo-300/50 dark:border-indigo-600/50 rounded-3xl p-6 sm:p-8 hover:border-indigo-400 dark:hover:border-indigo-500 transition-all duration-500 transform hover:-translate-y-2 hover:shadow-2xl">
+                  <div className="absolute top-4 right-4 bg-gradient-to-r from-indigo-600 via-purple-600 to-violet-600 text-white text-xs font-bold px-4 py-2 rounded-full shadow-lg">
                     {t('chooseVersion.full.recommended')}
                   </div>
                   <div className="text-center mb-6 mt-4">
                     <motion.div
                       whileHover={{ scale: 1.1, rotate: -5 }}
                       transition={{ type: "spring", stiffness: 300 }}
-                      className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-purple-500 via-pink-500 to-orange-500 rounded-2xl mb-4 shadow-lg"
+                      className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-indigo-600 via-purple-600 to-violet-600 rounded-2xl mb-4 shadow-lg"
                     >
                       <BarChart3 className="w-8 h-8 text-white" />
                     </motion.div>
                     <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-3">{t('chooseVersion.full.title')}</h3>
-                    <p className="text-3xl sm:text-4xl font-black bg-gradient-to-r from-purple-600 via-pink-600 to-orange-600 dark:from-purple-400 dark:via-pink-400 dark:to-orange-400 bg-clip-text text-transparent mb-2">{t('chooseVersion.full.duration')}</p>
+                    <p className="text-3xl sm:text-4xl font-black bg-gradient-to-r from-indigo-600 via-purple-600 to-violet-600 dark:from-indigo-400 dark:via-purple-400 dark:to-violet-400 bg-clip-text text-transparent mb-2">{t('chooseVersion.full.duration')}</p>
                     <p className="text-sm font-medium text-gray-600 dark:text-gray-400">{t('chooseVersion.full.modules')}</p>
                   </div>
                   <ul className="space-y-3 mb-8">
                     <li className="flex items-start gap-3 text-gray-700 dark:text-gray-300">
-                      <CheckCircle className="w-5 h-5 text-purple-600 dark:text-purple-400 flex-shrink-0 mt-0.5" />
+                      <CheckCircle className="w-5 h-5 text-indigo-600 dark:text-indigo-400 flex-shrink-0 mt-0.5" />
                       <span className="text-sm sm:text-base font-medium">{t('chooseVersion.full.feature1')}</span>
                     </li>
                     <li className="flex items-start gap-3 text-gray-700 dark:text-gray-300">
-                      <CheckCircle className="w-5 h-5 text-purple-600 dark:text-purple-400 flex-shrink-0 mt-0.5" />
+                      <CheckCircle className="w-5 h-5 text-indigo-600 dark:text-indigo-400 flex-shrink-0 mt-0.5" />
                       <span className="text-sm sm:text-base font-medium">{t('chooseVersion.full.feature2')}</span>
                     </li>
                   </ul>
                   <Link
                     href={`/${locale}/test?reset=true&version=full`}
                     onClick={() => track('test_started', { version: 'full', locale })}
-                    className="block w-full bg-gradient-to-r from-purple-600 via-pink-600 to-orange-600 hover:from-purple-700 hover:via-pink-700 hover:to-orange-700 dark:from-purple-500 dark:via-pink-500 dark:to-orange-500 dark:hover:from-purple-600 dark:hover:via-pink-600 dark:hover:to-orange-600 text-white font-bold py-4 rounded-2xl transition-all duration-300 text-center shadow-xl hover:shadow-2xl transform hover:scale-[1.02]"
+                    className="block w-full bg-gradient-to-r from-indigo-600 via-purple-600 to-violet-600 hover:from-indigo-700 hover:via-purple-700 hover:to-violet-700 dark:from-indigo-500 dark:via-purple-500 dark:to-violet-500 dark:hover:from-indigo-600 dark:hover:via-purple-600 dark:to-violet-600 text-white font-bold py-4 rounded-2xl transition-all duration-300 text-center shadow-xl hover:shadow-2xl transform hover:scale-[1.02]"
                   >
                     {t('chooseVersion.full.start')}
                   </Link>
