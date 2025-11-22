@@ -256,6 +256,22 @@
           "explanation": "Il suffit de vérifier la personne A (a-t-elle ≥18 ans ?) et la personne D (boit-elle de l'alcool ?). Les autres ne peuvent pas violer la règle, donc les vérifier serait inutile."
         },
         {
+          "id": "likelihood-2",
+          "type": "multiple-choice",
+          "text": "Un détecteur de fumée se déclenche. Quelles informations sont nécessaires pour estimer P(vrai incendie | détecteur déclenché) ?",
+          "options": [
+            "% de fois où le détecteur se déclenche SANS incendie (fausses alarmes)",
+            "% d'incendies réels",
+            "% de non-incendies",
+            "% de fois où le détecteur se déclenche lors d'un vrai incendie",
+            "a et d",
+            "b et c"
+          ],
+          "correct": 4,
+          "points": 1,
+          "explanation": "Pour calculer P(incendie|détecteur) via le théorème de Bayes, vous avez besoin de P(détecteur|incendie) et P(détecteur|pas d'incendie), qui correspondent aux options a et d."
+        },
+        {
           "id": "wason-3",
           "type": "multiple-choice",
           "text": "Règle d'entreprise : 'Si un projet dépasse 50 000€, il nécessite l'approbation du directeur.' 4 dossiers : [Budget: 75 000€], [Budget: 30 000€], [Approuvé par directeur], [Non approuvé]. Quels dossiers SUFFIRAIT-IL de vérifier pour déterminer si la règle est respectée ou violée ?",

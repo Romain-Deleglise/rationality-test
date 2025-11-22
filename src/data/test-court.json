@@ -211,6 +211,22 @@
           "explanation": "Il faut les deux taux : combien d'incendies réels déclenchent l'alarme et combien de non-incendies déclenchent l'alarme. Cela permet de calculer la probabilité d'incendie sachant que l'alarme sonne (théorème de Bayes)."
         },
         {
+          "id": "likelihood-2",
+          "type": "multiple-choice",
+          "text": "Un détecteur de fumée se déclenche. Quelles informations sont nécessaires pour estimer P(vrai incendie | détecteur déclenché) ?",
+          "options": [
+            "% de fois où le détecteur se déclenche SANS incendie (fausses alarmes)",
+            "% d'incendies réels",
+            "% de non-incendies",
+            "% de fois où le détecteur se déclenche lors d'un vrai incendie",
+            "a et d",
+            "b et c"
+          ],
+          "correct": 4,
+          "points": 1,
+          "explanation": "Pour calculer P(incendie|détecteur) via le théorème de Bayes, vous avez besoin de P(détecteur|incendie) et P(détecteur|pas d'incendie), qui correspondent aux options a et d."
+        },
+        {
           "id": "correlation-2",
           "type": "multiple-choice",
           "text": "Une étude montre que les personnes qui boivent du café ont moins de maladies cardiaques. Devrait-on recommander le café pour la santé cardiaque ?",
