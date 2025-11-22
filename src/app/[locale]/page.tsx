@@ -78,9 +78,9 @@ export default function Home() {
             initial={{ scale: 0.9, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 1, delay: 0.2 }}
-            className="relative inline-block mb-6 px-2 py-3"
+            className="relative inline-block mb-8 px-4 py-4 overflow-visible"
           >
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight mb-6 leading-[1.15]">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tight mb-6 leading-[1.2] overflow-visible">
               <span className="block bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 dark:from-blue-400 dark:via-purple-400 dark:to-indigo-400 bg-clip-text text-transparent animate-gradient bg-[length:200%_auto]">
                 {t('title')}
               </span>
@@ -92,7 +92,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-lg sm:text-xl md:text-2xl text-gray-700 dark:text-gray-300 mb-10 max-w-2xl mx-auto font-light leading-relaxed"
+            className="text-base sm:text-lg md:text-xl text-gray-700 dark:text-gray-300 mb-10 max-w-2xl mx-auto font-light leading-relaxed"
           >
             {t('subtitle')}
           </motion.p>
@@ -205,10 +205,10 @@ export default function Home() {
         >
           <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-blue-400/20 to-purple-400/20 dark:from-blue-600/10 dark:to-purple-600/10 rounded-full blur-3xl -z-0"></div>
           <div className="relative z-10">
-            <h2 className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 dark:from-white dark:to-gray-300 bg-clip-text text-transparent mb-6">
+            <h2 className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 dark:from-white dark:to-gray-300 bg-clip-text text-transparent mb-6">
               {t('whatIsRationality.title')}
             </h2>
-            <div className="space-y-4 text-base sm:text-lg">
+            <div className="space-y-4 text-sm sm:text-base">
               <p
                 className="text-gray-700 dark:text-gray-300 leading-relaxed text-justify"
                 dangerouslySetInnerHTML={{ __html: t('whatIsRationality.intro') }}
@@ -234,7 +234,7 @@ export default function Home() {
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 dark:from-white dark:to-gray-300 bg-clip-text text-transparent mb-8"
+            className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 dark:from-white dark:to-gray-300 bg-clip-text text-transparent mb-8"
           >
             {t('whatIsTested.title')}
           </motion.h2>
@@ -314,13 +314,13 @@ export default function Home() {
           <div className="absolute -bottom-20 -left-20 w-40 h-40 bg-purple-400/20 dark:bg-purple-600/10 rounded-full blur-3xl"></div>
 
           <div className="relative z-10">
-            <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-gray-100 mb-6 flex items-center gap-3">
+            <h3 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-gray-100 mb-6 flex items-center gap-3">
               <div className="p-3 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl">
-                <BookOpen className="w-6 h-6 text-white" />
+                <BookOpen className="w-5 h-5 text-white" />
               </div>
               {t('foundations.title')}
             </h3>
-            <div className="space-y-4 text-base sm:text-lg">
+            <div className="space-y-4 text-sm sm:text-base">
               <p className="text-gray-700 dark:text-gray-300 leading-relaxed text-justify">
                 {t('foundations.cart')}{' '}
                 <a href="https://mitpress.mit.edu/9780262034845/the-rationality-quotient/" target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 underline decoration-2 underline-offset-2 transition-colors font-semibold">
@@ -388,7 +388,7 @@ export default function Home() {
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-2xl sm:text-3xl md:text-4xl font-black text-center mb-4"
+              className="text-xl sm:text-2xl md:text-3xl font-black text-center mb-4"
             >
               <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 dark:from-blue-400 dark:via-purple-400 dark:to-indigo-400 bg-clip-text text-transparent">
                 {t('chooseVersion.title')}
@@ -414,8 +414,8 @@ export default function Home() {
                     >
                       <Clock className="w-8 h-8 text-white" />
                     </motion.div>
-                    <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-3">{t('chooseVersion.express.title')}</h3>
-                    <p className="text-3xl sm:text-4xl font-black bg-gradient-to-r from-blue-600 to-cyan-600 dark:from-blue-400 dark:to-cyan-400 bg-clip-text text-transparent mb-2">{t('chooseVersion.express.duration')}</p>
+                    <h3 className="text-lg font-bold text-gray-900 dark:text-gray-100 mb-3">{t('chooseVersion.express.title')}</h3>
+                    <p className="text-2xl sm:text-3xl font-black bg-gradient-to-r from-blue-600 to-cyan-600 dark:from-blue-400 dark:to-cyan-400 bg-clip-text text-transparent mb-2">{t('chooseVersion.express.duration')}</p>
                     <p className="text-sm font-medium text-gray-600 dark:text-gray-400">{t('chooseVersion.express.modules')}</p>
                   </div>
                   <ul className="space-y-3 mb-8">
@@ -459,8 +459,8 @@ export default function Home() {
                     >
                       <BarChart3 className="w-8 h-8 text-white" />
                     </motion.div>
-                    <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-3">{t('chooseVersion.full.title')}</h3>
-                    <p className="text-3xl sm:text-4xl font-black bg-gradient-to-r from-indigo-600 via-purple-600 to-violet-600 dark:from-indigo-400 dark:via-purple-400 dark:to-violet-400 bg-clip-text text-transparent mb-2">{t('chooseVersion.full.duration')}</p>
+                    <h3 className="text-lg font-bold text-gray-900 dark:text-gray-100 mb-3">{t('chooseVersion.full.title')}</h3>
+                    <p className="text-2xl sm:text-3xl font-black bg-gradient-to-r from-indigo-600 via-purple-600 to-violet-600 dark:from-indigo-400 dark:via-purple-400 dark:to-violet-400 bg-clip-text text-transparent mb-2">{t('chooseVersion.full.duration')}</p>
                     <p className="text-sm font-medium text-gray-600 dark:text-gray-400">{t('chooseVersion.full.modules')}</p>
                   </div>
                   <ul className="space-y-3 mb-8">
