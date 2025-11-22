@@ -181,7 +181,7 @@
         {
           "id": "base-rate-2",
           "type": "multiple-choice",
-          "text": "Dans une entreprise, 70% des employés sont ingénieurs et 30% sont managers. On sait que 20% des ingénieurs et 40% des managers sont décrits comme 'charismatiques et aimant diriger'. Sophie a été décrite ainsi. Est-elle plus probablement :",
+          "text": "Dans une entreprise, 70% des employés sont ingénieurs et 30% sont managers. Sophie a été décrite comme 'charismatique et aimant diriger'. Est-elle plus probablement :",
           "options": [
             "Ingénieure",
             "Manager",
@@ -189,7 +189,7 @@
           ],
           "correct": 0,
           "points": 1,
-          "explanation": "En utilisant le théorème de Bayes : P(ingénieure|description) = (0.70 × 0.20) / [(0.70 × 0.20) + (0.30 × 0.40)] = 0.14 / 0.26 ≈ 54%. Malgré que la description soit 2× plus fréquente chez les managers, le taux de base élevé d'ingénieurs (70%) fait pencher la balance."
+          "explanation": "Sans données sur la prévalence de ces traits dans chaque groupe, le taux de base (70% ingénieurs vs 30% managers) est la seule information objective. Beaucoup ignorent ce taux de base et jugent uniquement sur la représentativité de la description (biais de représentativité). La réponse rationnelle est 'Ingénieure' car c'est le groupe le plus nombreux."
         }
       ]
     },
