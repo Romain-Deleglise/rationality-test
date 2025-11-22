@@ -93,19 +93,17 @@ export function scoreQuestion(
             const anchorValue = Number(anchorMatch[1]);
 
             if (effectiveQuestion.anchorType === 'low') {
-              // Low anchor: user should estimate MUCH higher than the anchor
-              // Correct answer is much higher than anchor
-              // If user answer is close to anchor (< 2x anchor), they were influenced
-              // If user answer is far from anchor (> 2x anchor), they resisted
-              const resistedAnchor = userAnswer > (anchorValue * 2);
+              // Low anchor: user should give an answer far from the anchor
+              // They resist if: answer < anchor/2 OR answer > anchor*2
+              // This shows they're not influenced by the anchor in either direction
+              const resistedAnchor = userAnswer < (anchorValue / 2) || userAnswer > (anchorValue * 2);
               earned = resistedAnchor ? possible : 0;
               correct = resistedAnchor;
             } else if (effectiveQuestion.anchorType === 'high') {
-              // High anchor: user should estimate MUCH lower than the anchor
-              // Correct answer is much lower than anchor
-              // If user answer is close to anchor (> anchor/2), they were influenced
-              // If user answer is far from anchor (< anchor/2), they resisted
-              const resistedAnchor = userAnswer < (anchorValue / 2);
+              // High anchor: user should give an answer far from the anchor
+              // They resist if: answer < anchor/2 OR answer > anchor*2
+              // This shows they're not influenced by the anchor in either direction
+              const resistedAnchor = userAnswer < (anchorValue / 2) || userAnswer > (anchorValue * 2);
               earned = resistedAnchor ? possible : 0;
               correct = resistedAnchor;
             }

@@ -535,7 +535,7 @@
           "correct": 2387,
           "anchorType": "low",
           "points": 0.5,
-          "explanation": "The real distance is ~2387 miles. To score points, you need to resist the low anchor (500). If your estimate is >1000 miles (more than 2x the anchor), you resisted the anchoring bias. This question measures resistance to anchoring, not knowledge of the correct answer."
+          "explanation": "The real distance is ~2387 miles. To score points, you need to resist the anchor (500). If your estimate is <250 miles OR >1000 miles (far from the anchor in either direction), you resisted the anchoring bias. This question measures resistance to anchoring, not knowledge of the correct answer."
         },
         {
           "id": "anchor-2",
@@ -545,7 +545,7 @@
           "correct": 687,
           "anchorType": "high",
           "points": 0.5,
-          "explanation": "The actual duration is 687 days. To score points, you need to resist the high anchor (1500). If your estimate is <750 days (less than half the anchor), you resisted the anchoring bias. This question measures resistance to anchoring, not knowledge of the correct answer."
+          "explanation": "The actual duration is 687 days. To score points, you need to resist the anchor (1500). If your estimate is <750 days OR >3000 days (far from the anchor in either direction), you resisted the anchoring bias. This question measures resistance to anchoring, not knowledge of the correct answer."
         }
       ]
     }

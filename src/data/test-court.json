@@ -535,7 +535,7 @@
           "correct": 2387,
           "anchorType": "low",
           "points": 0.5,
-          "explanation": "La distance réelle est ~2387 miles. Pour marquer des points, vous devez résister à l'ancre basse (500). Si votre estimation est >1000 miles (plus de 2x l'ancre), vous avez résisté au biais d'ancrage. Cette question mesure la résistance à l'ancrage, pas la connaissance de la bonne réponse."
+          "explanation": "La distance réelle est ~2387 miles. Pour marquer des points, vous devez résister à l'ancre (500). Si votre estimation est <250 miles OU >1000 miles (soit très loin de l'ancre dans les deux sens), vous avez résisté au biais d'ancrage. Cette question mesure la résistance à l'ancrage, pas la connaissance de la bonne réponse."
         },
         {
           "id": "anchor-2",
@@ -545,7 +545,7 @@
           "correct": 687,
           "anchorType": "high",
           "points": 0.5,
-          "explanation": "La durée réelle est 687 jours. Pour marquer des points, vous devez résister à l'ancre haute (1500). Si votre estimation est <750 jours (moins de la moitié de l'ancre), vous avez résisté au biais d'ancrage. Cette question mesure la résistance à l'ancrage, pas la connaissance de la bonne réponse."
+          "explanation": "La durée réelle est 687 jours. Pour marquer des points, vous devez résister à l'ancre (1500). Si votre estimation est <750 jours OU >3000 jours (soit très loin de l'ancre dans les deux sens), vous avez résisté au biais d'ancrage. Cette question mesure la résistance à l'ancrage, pas la connaissance de la bonne réponse."
         }
       ]
     }

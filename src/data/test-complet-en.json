@@ -752,7 +752,7 @@
           "correct": 2387,
           "anchorType": "low",
           "points": 0.5,
-          "explanation": "The real distance is ~2387 miles. To score points, you need to resist the low anchor (500). If your estimate is >1000 miles (more than 2x the anchor), you resisted the anchoring bias. This question measures resistance to anchoring, not knowledge of the correct answer."
+          "explanation": "The real distance is ~2387 miles. To score points, you need to resist the anchor (500). If your estimate is <250 miles OR >1000 miles (far from the anchor in either direction), you resisted the anchoring bias. This question measures resistance to anchoring, not knowledge of the correct answer."
         },
         {
           "id": "anchor-2",
@@ -762,7 +762,7 @@
           "correct": 687,
           "anchorType": "high",
           "points": 0.5,
-          "explanation": "The actual duration is 687 days. To score points, you need to resist the high anchor (1500). If your estimate is <750 days (less than half the anchor), you resisted the anchoring bias. This question measures resistance to anchoring, not knowledge of the correct answer."
+          "explanation": "The actual duration is 687 days. To score points, you need to resist the anchor (1500). If your estimate is <750 days OR >3000 days (far from the anchor in either direction), you resisted the anchoring bias. This question measures resistance to anchoring, not knowledge of the correct answer."
         },
         {
           "id": "anchor-3",
@@ -772,7 +772,7 @@
           "correct": 26,
           "anchorType": "low",
           "points": 0.5,
-          "explanation": "Australia has about 26 million inhabitants. To score points, you need to resist the low anchor (10M). If your estimate is >20M (more than 2x the anchor), you resisted the anchoring bias. This question measures resistance to anchoring, not knowledge of the correct answer."
+          "explanation": "Australia has about 26 million inhabitants. To score points, you need to resist the anchor (10M). If your estimate is <5M OR >20M (far from the anchor in either direction), you resisted the anchoring bias. This question measures resistance to anchoring, not knowledge of the correct answer."
         },
         {
           "id": "anchor-4",
@@ -782,7 +782,7 @@
           "correct": 56.7,
           "anchorType": "high",
           "points": 0.5,
-          "explanation": "The record is 56.7°C (Death Valley, 1913). To score points, you need to resist the high anchor (70°C). If your estimate is <35°C (less than half the anchor), you resisted the anchoring bias. This question measures resistance to anchoring, not knowledge of the correct answer."
+          "explanation": "The record is 56.7°C (Death Valley, 1913). To score points, you need to resist the anchor (70°C). If your estimate is <35°C OR >140°C (far from the anchor in either direction), you resisted the anchoring bias. This question measures resistance to anchoring, not knowledge of the correct answer."
         },
         {
           "id": "anchor-5",
@@ -792,7 +792,7 @@
           "correct": 828,
           "anchorType": "low",
           "points": 0.5,
-          "explanation": "The Burj Khalifa is 828 meters tall. To score points, you need to resist the low anchor (500m). If your estimate is >1000m (more than 2x the anchor), you resisted the anchoring bias. This question measures resistance to anchoring, not knowledge of the correct answer."
+          "explanation": "The Burj Khalifa is 828 meters tall. To score points, you need to resist the anchor (500m). If your estimate is <250m OR >1000m (far from the anchor in either direction), you resisted the anchoring bias. This question measures resistance to anchoring, not knowledge of the correct answer."
         },
         {
           "id": "anchor-6",
@@ -802,7 +802,7 @@
           "correct": 1815,
           "anchorType": "low",
           "points": 0.5,
-          "explanation": "The Battle of Waterloo dates from 1815. To score points, you need to resist the low anchor (1750). If your estimate is >1800 (not too influenced by the low anchor), you resisted the anchoring bias. This question measures resistance to anchoring, not knowledge of the correct answer."
+          "explanation": "The Battle of Waterloo dates from 1815. To score points, you need to resist the anchor (1750). If your estimate is <875 OR >3500 (far from the anchor in either direction), you resisted the anchoring bias. This question measures resistance to anchoring, not knowledge of the correct answer."
         }
       ]
     },
