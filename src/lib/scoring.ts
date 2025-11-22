@@ -87,7 +87,7 @@ export function scoreQuestion(
         if (effectiveQuestion.anchorType) {
           // For anchoring questions, we measure resistance to the anchor, not accuracy
           // We extract the anchor value from the question text (e.g., "500 miles" or "1500 jours")
-          const anchorMatch = effectiveQuestion.text.match(/(\d+)\s*(miles|jours|days|mètres|meters|habitants|°C|année|year)/i);
+          const anchorMatch = effectiveQuestion.text.match(/(\d+)\s*(miles|jours|days|mètres|meters|habitants|millions?\s+d'habitants|°C|année|year)/i);
 
           if (anchorMatch) {
             const anchorValue = Number(anchorMatch[1]);

@@ -5,8 +5,8 @@
   "modules": [
     {
       "id": "prob-stats",
-      "name": "Probabilistic Reasoning (15 items)",
-      "points": 15,
+      "name": "Probabilistic Reasoning (13 items)",
+      "points": 13,
       "time": 5,
       "questions": [
         {
@@ -34,32 +34,6 @@
           "correct": 0,
           "points": 1,
           "explanation": "Always guessing the most probable option (70%) is optimal. Trying to 'match' the probabilities reduces your success rate."
-        },
-        {
-          "id": "prob-match-3",
-          "type": "multiple-choice",
-          "text": "In an urn, there are 80% red marbles and 20% blue marbles. You must predict the color before each draw (with replacement). Which approach gives the best success rate over 100 draws?",
-          "options": [
-            "Always predict red",
-            "Predict red 80 times and blue 20 times",
-            "Choose randomly on each draw"
-          ],
-          "correct": 0,
-          "points": 1,
-          "explanation": "Systematically predicting the most frequent option (red) gives 80% success. Other strategies give lower rates."
-        },
-        {
-          "id": "prob-match-4",
-          "type": "multiple-choice",
-          "text": "An exam has 70% easy questions and 30% difficult questions. If you must guess the type of the next question without seeing it, what should you answer?",
-          "options": [
-            "Always 'easy'",
-            "Try to reproduce the 70/30 ratio",
-            "Choose randomly"
-          ],
-          "correct": 0,
-          "points": 1,
-          "explanation": "Always answering 'easy' maximizes your chances (70% success). It's the optimal strategy in the face of uncertainty."
         },
         {
           "id": "gambler-1",
@@ -116,15 +90,15 @@
         {
           "id": "gambler-5",
           "type": "multiple-choice",
-          "text": "A basketball team has lost its last 10 games. For the next game against an equally skilled team, which statement is correct?",
+          "text": "In a fair lottery, Marie has lost 10 times in a row. On the 11th draw, which statement is correct?",
           "options": [
-            "They are more likely to win (return of luck)",
-            "They are less likely to win (negative streak)",
-            "The chances are about 50-50 (past games don't change probabilities)"
+            "She has a better chance of winning (return of luck)",
+            "She has a lower chance of winning (negative streak)",
+            "Her chances are identical on each draw (past results don't change anything)"
           ],
           "correct": 2,
           "points": 1,
-          "explanation": "If the teams are equally skilled, each game is independent. Past defeats do not create a 'debt of luck'."
+          "explanation": "In a fair game of chance, each draw is independent. Past losses do not create a 'debt of luck'. The probability remains the same each time."
         },
         {
           "id": "conjunction-1",
@@ -207,7 +181,7 @@
         {
           "id": "base-rate-2",
           "type": "multiple-choice",
-          "text": "In a company, 70% of employees are engineers and 30% are managers. Sophie is charismatic, loves leading teams, and excels at negotiations. Is she more likely:",
+          "text": "In a company, 70% of employees are engineers and 30% are managers. We know that 20% of engineers and 40% of managers are described as 'charismatic and enjoy leading'. Sophie has been described this way. Is she more likely:",
           "options": [
             "Engineer",
             "Manager",
@@ -215,14 +189,14 @@
           ],
           "correct": 0,
           "points": 1,
-          "explanation": "Despite the description suggesting a manager profile, the base rate (70% engineers vs 30% managers) remains the most important factor. Many engineers can also be charismatic and enjoy leading."
+          "explanation": "Using Bayes' theorem: P(engineer|description) = (0.70 × 0.20) / [(0.70 × 0.20) + (0.30 × 0.40)] = 0.14 / 0.26 ≈ 54%. Despite the description being 2× more frequent among managers, the high base rate of engineers (70%) tips the balance."
         }
       ]
     },
     {
       "id": "sci-reasoning",
-      "name": "Scientific Reasoning (14 items)",
-      "points": 14,
+      "name": "Scientific Reasoning (13 items)",
+      "points": 13,
       "time": 8,
       "questions": [
         {
@@ -254,22 +228,6 @@
           "correct": 1,
           "points": 1,
           "explanation": "You need to check person A (is they ≥18?) and person D (are they drinking alcohol?). The others cannot violate the rule, so checking them would be useless."
-        },
-        {
-          "id": "likelihood-2",
-          "type": "multiple-choice",
-          "text": "A smoke detector goes off. What information is needed to estimate P(real fire | detector triggered)?",
-          "options": [
-            "% of times the detector goes off WITHOUT a fire (false alarms)",
-            "% of real fires",
-            "% of non-fires",
-            "% of times the detector goes off during a REAL fire",
-            "a and d",
-            "b and c"
-          ],
-          "correct": 4,
-          "points": 1,
-          "explanation": "To calculate P(fire|detector) via Bayes' theorem, you need P(detector|fire) and P(detector|no fire), which are options a and d."
         },
         {
           "id": "wason-3",
@@ -429,8 +387,8 @@
     },
     {
       "id": "reflection-intuition",
-      "name": "Reflection vs Intuition (8 items)",
-      "points": 8,
+      "name": "Reflection vs Intuition (7 items)",
+      "points": 7,
       "time": 4,
       "questions": [
         {
@@ -468,15 +426,6 @@
           "correct": 24,
           "points": 1,
           "explanation": "24 minutes. You need to go up 24 floors to get from the ground floor (floor 0) to the 25th floor. Intuition suggests 25 minutes."
-        },
-        {
-          "id": "crt-5",
-          "type": "number",
-          "text": "The number of bacteria in a container doubles every hour. If it takes 32 hours to fill the container, how many hours does it take to fill half of it?",
-          "unit": "hours",
-          "correct": 31,
-          "points": 1,
-          "explanation": "31 hours. At hour 31, the container is half full. Then it doubles to be full at hour 32. Intuition suggests 16 hours."
         },
         {
           "id": "crt-6",
@@ -752,7 +701,7 @@
           "correct": 2387,
           "anchorType": "low",
           "points": 0.5,
-          "explanation": "The real distance is ~2387 miles. To score points, you need to resist the anchor (500). If your estimate is <250 miles OR >1000 miles (far from the anchor in either direction), you resisted the anchoring bias. This question measures resistance to anchoring, not knowledge of the correct answer."
+          "explanation": "The actual distance is ~2387 miles. The anchor of 500 miles can influence your estimate downward. Points awarded by accuracy: estimate within ±30% = full points, ±60% = partial points. This question tests your ability to make reasonable estimates despite anchoring."
         },
         {
           "id": "anchor-2",
@@ -762,7 +711,7 @@
           "correct": 687,
           "anchorType": "high",
           "points": 0.5,
-          "explanation": "The actual duration is 687 days. To score points, you need to resist the anchor (1500). If your estimate is <750 days OR >3000 days (far from the anchor in either direction), you resisted the anchoring bias. This question measures resistance to anchoring, not knowledge of the correct answer."
+          "explanation": "The actual duration is ~687 days. The anchor of 1500 days can influence your estimate upward. Points awarded by accuracy: estimate within ±30% = full points, ±60% = partial points. This question tests your ability to make reasonable estimates despite anchoring."
         },
         {
           "id": "anchor-3",
@@ -772,7 +721,7 @@
           "correct": 26,
           "anchorType": "low",
           "points": 0.5,
-          "explanation": "Australia has about 26 million inhabitants. To score points, you need to resist the anchor (10M). If your estimate is <5M OR >20M (far from the anchor in either direction), you resisted the anchoring bias. This question measures resistance to anchoring, not knowledge of the correct answer."
+          "explanation": "The actual population is ~26 million inhabitants. The anchor of 10 million can influence your estimate downward. Points awarded by accuracy: estimate within ±30% = full points, ±60% = partial points. This question tests your ability to make reasonable estimates despite anchoring."
         },
         {
           "id": "anchor-4",
@@ -782,7 +731,7 @@
           "correct": 56.7,
           "anchorType": "high",
           "points": 0.5,
-          "explanation": "The record is 56.7°C (Death Valley, 1913). To score points, you need to resist the anchor (70°C). If your estimate is <35°C OR >140°C (far from the anchor in either direction), you resisted the anchoring bias. This question measures resistance to anchoring, not knowledge of the correct answer."
+          "explanation": "The actual temperature is ~56.7°C (Death Valley, 1913). The anchor of 70°C can influence your estimate upward. Points awarded by accuracy: estimate within ±30% = full points, ±60% = partial points. This question tests your ability to make reasonable estimates despite anchoring."
         },
         {
           "id": "anchor-5",
@@ -792,7 +741,7 @@
           "correct": 828,
           "anchorType": "low",
           "points": 0.5,
-          "explanation": "The Burj Khalifa is 828 meters tall. To score points, you need to resist the anchor (500m). If your estimate is <250m OR >1000m (far from the anchor in either direction), you resisted the anchoring bias. This question measures resistance to anchoring, not knowledge of the correct answer."
+          "explanation": "The actual height is ~828 meters. The anchor of 500 meters can influence your estimate downward. Points awarded by accuracy: estimate within ±30% = full points, ±60% = partial points. This question tests your ability to make reasonable estimates despite anchoring."
         },
         {
           "id": "anchor-6",
@@ -802,7 +751,7 @@
           "correct": 1815,
           "anchorType": "low",
           "points": 0.5,
-          "explanation": "The Battle of Waterloo dates from 1815. To score points, you need to resist the anchor (1750). If your estimate is <875 OR >3500 (far from the anchor in either direction), you resisted the anchoring bias. This question measures resistance to anchoring, not knowledge of the correct answer."
+          "explanation": "The actual year is 1815. The anchor of 1750 can influence your estimate downward. Points awarded by accuracy: estimate within ±30% = full points, ±60% = partial points. This question tests your ability to make reasonable estimates despite anchoring."
         }
       ]
     },
@@ -1546,15 +1495,16 @@
             "3 - Strong",
             "4 - Very strong"
           ],
-          "correct": 1,
-          "points": 0.625
+          "correct": 2,
+          "points": 0.625,
+          "explanation": "Marc's response is 'Strong' (3). He acknowledges the technical problem raised by the critic but proposes a concrete solution (investment in moderation). Even if this solution doesn't completely solve the impossibility of real-time moderation, it's a constructive and reasonable response that deserves a positive evaluation."
         }
       ]
     },
     {
       "id": "causal-reasoning",
-      "name": "Causal Reasoning (6 items)",
-      "points": 6,
+      "name": "Causal Reasoning (5 items)",
+      "points": 5,
       "time": 6,
       "questions": [
         {
@@ -1577,18 +1527,6 @@
             "Yes",
             "No",
             "Impossible to determine"
-          ],
-          "correct": 1,
-          "points": 1
-        },
-        {
-          "id": "causal-3",
-          "type": "multiple-choice",
-          "text": "It is observed that cities with more firefighters have more serious fires.\n\nShould we reduce the number of firefighters to decrease serious fires?",
-          "options": [
-            "Yes",
-            "No",
-            "Maybe, depending on other factors"
           ],
           "correct": 1,
           "points": 1

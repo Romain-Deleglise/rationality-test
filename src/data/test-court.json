@@ -1,6 +1,6 @@
 {
   "version": "courte",
-  "totalPoints": 35,
+  "totalPoints": 34,
   "estimatedTime": 21,
   "modules": [
     {
@@ -95,7 +95,7 @@
         {
           "id": "base-rate-2",
           "type": "multiple-choice",
-          "text": "Dans une entreprise, 70% des employés sont ingénieurs et 30% sont managers. Sophie est charismatique, aime diriger des équipes et excelle dans les négociations. Est-elle plus probablement :",
+          "text": "Dans une entreprise, 70% des employés sont ingénieurs et 30% sont managers. On sait que 20% des ingénieurs et 40% des managers sont décrits comme 'charismatiques et aimant diriger'. Sophie a été décrite ainsi. Est-elle plus probablement :",
           "options": [
             "Ingénieure",
             "Manager",
@@ -103,7 +103,7 @@
           ],
           "correct": 0,
           "points": 1,
-          "explanation": "Malgré la description qui évoque un profil de manager, le taux de base (70% ingénieurs vs 30% managers) reste le facteur le plus important. Beaucoup d'ingénieurs peuvent aussi être charismatiques et aimer diriger."
+          "explanation": "En utilisant le théorème de Bayes : P(ingénieure|description) = (0.70 × 0.20) / [(0.70 × 0.20) + (0.30 × 0.40)] = 0.14 / 0.26 ≈ 54%. Malgré que la description soit 2× plus fréquente chez les managers, le taux de base élevé d'ingénieurs (70%) fait pencher la balance."
         },
         {
           "id": "sample-size",
@@ -135,8 +135,8 @@
     },
     {
       "id": "sci-reasoning",
-      "name": "Raisonnement Scientifique (12 items)",
-      "points": 12,
+      "name": "Raisonnement Scientifique (11 items)",
+      "points": 11,
       "time": 6,
       "questions": [
         {
@@ -209,22 +209,6 @@
           "correct": 2,
           "points": 1,
           "explanation": "Il faut les deux taux : combien d'incendies réels déclenchent l'alarme et combien de non-incendies déclenchent l'alarme. Cela permet de calculer la probabilité d'incendie sachant que l'alarme sonne (théorème de Bayes)."
-        },
-        {
-          "id": "likelihood-2",
-          "type": "multiple-choice",
-          "text": "Un détecteur de fumée se déclenche. Quelles informations sont nécessaires pour estimer P(vrai incendie | détecteur déclenché) ?",
-          "options": [
-            "% de fois où le détecteur se déclenche SANS incendie (fausses alarmes)",
-            "% d'incendies réels",
-            "% de non-incendies",
-            "% de fois où le détecteur se déclenche lors d'un vrai incendie",
-            "a et d",
-            "b et c"
-          ],
-          "correct": 4,
-          "points": 1,
-          "explanation": "Pour calculer P(incendie|détecteur) via le théorème de Bayes, vous avez besoin de P(détecteur|incendie) et P(détecteur|pas d'incendie), qui correspondent aux options a et d."
         },
         {
           "id": "correlation-2",
@@ -535,7 +519,7 @@
           "correct": 2387,
           "anchorType": "low",
           "points": 0.5,
-          "explanation": "La distance réelle est ~2387 miles. Pour marquer des points, vous devez résister à l'ancre (500). Si votre estimation est <250 miles OU >1000 miles (soit très loin de l'ancre dans les deux sens), vous avez résisté au biais d'ancrage. Cette question mesure la résistance à l'ancrage, pas la connaissance de la bonne réponse."
+          "explanation": "La distance réelle est ~2387 miles. L'ancre de 500 miles peut influencer votre estimation à la baisse. Pour marquer des points, vous devez donner une estimation très éloignée de l'ancre (< 250 miles OU > 1000 miles), montrant que vous n'avez pas été influencé. Cette question mesure la résistance à l'ancrage, pas la connaissance de la bonne réponse."
         },
         {
           "id": "anchor-2",
@@ -545,7 +529,7 @@
           "correct": 687,
           "anchorType": "high",
           "points": 0.5,
-          "explanation": "La durée réelle est 687 jours. Pour marquer des points, vous devez résister à l'ancre (1500). Si votre estimation est <750 jours OU >3000 jours (soit très loin de l'ancre dans les deux sens), vous avez résisté au biais d'ancrage. Cette question mesure la résistance à l'ancrage, pas la connaissance de la bonne réponse."
+          "explanation": "La durée réelle est 687 jours. L'ancre de 1500 jours peut influencer votre estimation à la hausse. Pour marquer des points, vous devez donner une estimation très éloignée de l'ancre (< 750 jours OU > 3000 jours), montrant que vous n'avez pas été influencé. Cette question mesure la résistance à l'ancrage, pas la connaissance de la bonne réponse."
         }
       ]
     }
