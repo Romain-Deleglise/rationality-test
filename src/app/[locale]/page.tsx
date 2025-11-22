@@ -15,6 +15,16 @@ const AccordionItem = ({ title, children, defaultOpen = false }: {
 }) => {
   const [isOpen, setIsOpen] = useState(defaultOpen);
 
+  const handleToggle = () => {
+    // Sauvegarder la position actuelle avant de changer l'état
+    const scrollY = window.scrollY;
+    setIsOpen(!isOpen);
+    // Restaurer la position après l'update
+    requestAnimationFrame(() => {
+      window.scrollTo(0, scrollY);
+    });
+  };
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 10 }}
@@ -22,7 +32,7 @@ const AccordionItem = ({ title, children, defaultOpen = false }: {
       className="group relative bg-white/60 dark:bg-gray-800/60 backdrop-blur-lg border border-gray-200/50 dark:border-gray-700/50 rounded-2xl mb-4 shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden"
     >
       <button
-        onClick={() => setIsOpen(!isOpen)}
+        onClick={handleToggle}
         className="w-full px-6 sm:px-8 py-5 flex items-center justify-between bg-gradient-to-r from-transparent to-blue-50/30 dark:to-blue-950/20 hover:to-blue-100/40 dark:hover:to-blue-900/30 transition-all duration-300"
       >
         <span className="font-semibold text-left text-gray-900 dark:text-gray-100 text-base sm:text-lg">{title}</span>
@@ -407,6 +417,8 @@ export default function Home() {
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-cyan-500/20 dark:from-blue-600/20 dark:to-cyan-600/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500 opacity-0 group-hover:opacity-100"></div>
                 <div className="relative bg-white/90 dark:bg-gray-900/90 backdrop-blur-lg border-2 border-gray-200/50 dark:border-gray-700/50 rounded-2xl p-5 hover:border-blue-400 dark:hover:border-blue-500 transition-all duration-500 transform hover:-translate-y-2 hover:shadow-2xl">
+                  {/* Espace invisible pour aligner avec la carte Full */}
+                  <div className="h-6 mb-2"></div>
                   <div className="text-center mb-5">
                     <motion.div
                       whileHover={{ scale: 1.1, rotate: 5 }}
