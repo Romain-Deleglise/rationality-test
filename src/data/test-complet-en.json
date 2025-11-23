@@ -339,23 +339,23 @@
           ],
           "correct": 4,
           "points": 1,
-          "explanation": "You need P(symptom|disease) and P(symptom|no disease) to calculate P(disease|symptom) via Bayes."
+          "explanation": "You need P(alarm|fire) and P(alarm|no fire) to calculate P(fire|alarm) via Bayes.\n\nIn other words: you need to know how often the alarm sounds when there really is a fire (option d), AND how often it sounds mistakenly when there is no fire (option a). These two pieces of information combined allow you to calculate the probability that there really is a fire given that the alarm has sounded."
         },
         {
           "id": "likelihood-2",
           "type": "multiple-choice",
-          "text": "A smoke detector activates in a house. To estimate the probability of a real fire, what information is needed?",
+          "text": "A medical screening test for a disease gives a positive result. To estimate the probability that the patient is actually sick, what information is needed?",
           "options": [
-            "% of times the detector triggers during false alarms (no fire)",
-            "% of real fires in equipped houses",
-            "% of houses without fire",
-            "% of times the detector correctly detects real fires",
+            "% of times the test is positive in NON-sick people (false positives)",
+            "% of sick people in the general population (prevalence)",
+            "% of healthy people in the population",
+            "% of times the test correctly detects the disease in sick people (sensitivity)",
             "a and d",
             "b and c"
           ],
           "correct": 4,
           "points": 1,
-          "explanation": "You need P(alarm|fire) and P(alarm|no fire) - options a and d. These two conditional probabilities allow you to apply Bayes' theorem to calculate P(fire|alarm)."
+          "explanation": "You need P(positive test|sick) and P(positive test|not sick) - options a and d. These two conditional probabilities allow you to apply Bayes' theorem to calculate P(sick|positive test).\n\nIn other words: you need to know two things: (1) how often the test is positive WHEN the person is really sick (sensitivity, option d), and (2) how often the test is mistakenly positive WHEN the person is not sick (false positive rate, option a). By comparing these two rates, you can determine whether a positive test really indicates the presence of the disease."
         },
         {
           "id": "likelihood-3",
@@ -369,7 +369,7 @@
           ],
           "correct": 1,
           "points": 1,
-          "explanation": "For Bayes, you need the likelihood ratio: P(evidence|H) and P(evidence|not-H)."
+          "explanation": "For Bayes, you need the likelihood ratio: P(evidence|H) and P(evidence|not-H).\n\nIn simple terms: you need to know two things: (1) how often abnormal vibrations are observed WHEN there is a failure, and (2) how often these same vibrations are observed WHEN there is NO failure. It's the comparison of these two frequencies that allows you to determine whether the vibrations really indicate a failure."
         },
         {
           "id": "hypothesis-test-1",

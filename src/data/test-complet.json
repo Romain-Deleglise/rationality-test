@@ -339,23 +339,23 @@
           ],
           "correct": 4,
           "points": 1,
-          "explanation": "Il faut P(alarme|incendie) et P(alarme|pas incendie) pour calculer P(incendie|alarme) via Bayes."
+          "explanation": "Il faut P(alarme|incendie) et P(alarme|pas incendie) pour calculer P(incendie|alarme) via Bayes.\n\nEn d'autres termes : vous devez savoir à quelle fréquence l'alarme sonne quand il y a vraiment un incendie (option d), ET à quelle fréquence elle sonne par erreur quand il n'y a pas d'incendie (option a). Ces deux informations combinées permettent de calculer la probabilité qu'il y ait vraiment un incendie sachant que l'alarme a sonné."
         },
         {
           "id": "likelihood-2",
           "type": "multiple-choice",
-          "text": "Un détecteur de fumée s'active dans une maison. Pour estimer la probabilité qu'il y ait vraiment un incendie, quelles informations sont nécessaires ?",
+          "text": "Un test médical de dépistage d'une maladie donne un résultat positif. Pour estimer la probabilité que le patient soit vraiment malade, quelles informations sont nécessaires ?",
           "options": [
-            "% de fois où le détecteur se déclenche lors de fausses alarmes (sans incendie)",
-            "% d'incendies réels dans les maisons équipées",
-            "% de maisons sans incendie",
-            "% de fois où le détecteur détecte correctement les vrais incendies",
+            "% de fois où le test est positif chez des personnes NON malades (faux positifs)",
+            "% de personnes malades dans la population générale (prévalence)",
+            "% de personnes en bonne santé dans la population",
+            "% de fois où le test détecte correctement la maladie chez les malades (sensibilité)",
             "a et d",
             "b et c"
           ],
           "correct": 4,
           "points": 1,
-          "explanation": "Il faut P(alarme|incendie) et P(alarme|pas d'incendie) - soit les options a et d. Ces deux probabilités conditionnelles permettent d'appliquer le théorème de Bayes pour calculer P(incendie|alarme)."
+          "explanation": "Il faut P(test positif|malade) et P(test positif|non malade) - soit les options a et d. Ces deux probabilités conditionnelles permettent d'appliquer le théorème de Bayes pour calculer P(malade|test positif).\n\nEn d'autres termes : vous devez connaître deux choses : (1) à quelle fréquence le test est positif QUAND la personne est vraiment malade (la sensibilité, option d), et (2) à quelle fréquence le test est positif par erreur QUAND la personne n'est pas malade (le taux de faux positifs, option a). C'est en comparant ces deux taux qu'on peut savoir si un test positif indique vraiment la présence de la maladie."
         },
         {
           "id": "likelihood-3",
@@ -369,7 +369,7 @@
           ],
           "correct": 1,
           "points": 1,
-          "explanation": "Pour Bayes, il faut le rapport de vraisemblance : P(preuve|H) et P(preuve|non-H)."
+          "explanation": "Pour Bayes, il faut le rapport de vraisemblance : P(preuve|H) et P(preuve|non-H).\n\nEn termes simples : il faut connaître deux choses : (1) à quelle fréquence on observe des vibrations QUAND il y a une défaillance, et (2) à quelle fréquence on observe ces mêmes vibrations QUAND il n'y a PAS de défaillance. C'est la comparaison de ces deux fréquences qui permet de savoir si les vibrations indiquent vraiment une défaillance."
         },
         {
           "id": "hypothesis-test-1",
