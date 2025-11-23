@@ -497,14 +497,14 @@
         {
           "id": "syllogism-2",
           "type": "multiple-choice",
-          "text": "Prémisse 1 : Tous les poissons sont des bictodes. Prémisse 2 : Aucun requin n'est un bictode. Conclusion : Aucun requin n'est un poisson.",
+          "text": "Prémisse 1 : Tous les fruits sont sucrés. Prémisse 2 : Aucun citron n'est sucré. Conclusion : Aucun citron n'est un fruit.",
           "options": [
             "La conclusion suit logiquement des prémisses",
             "La conclusion ne suit PAS logiquement des prémisses"
           ],
           "correct": 0,
           "points": 0.5,
-          "explanation": "Valide logiquement (AEE2). La conclusion suit des prémisses, même si elle est fausse dans la réalité. Syllogisme inconsistant."
+          "explanation": "Valide logiquement (AEE2). La conclusion suit des prémisses, même si elle est fausse dans la réalité. Syllogisme inconsistant (validité ≠ crédibilité)."
         },
         {
           "id": "syllogism-3",
@@ -581,14 +581,14 @@
         {
           "id": "syllogism-9",
           "type": "multiple-choice",
-          "text": "Évaluez uniquement la LOGIQUE (pas la vérité dans la réalité) :\n\nPrémisse 1 : Toutes les plantes sont des organismes photosynthétiques.\nPrémisse 2 : Toutes les fougères sont des organismes photosynthétiques.\nConclusion : Toutes les fougères sont des plantes.",
+          "text": "Évaluez uniquement la LOGIQUE (pas la vérité dans la réalité) :\n\nPrémisse 1 : Toutes les plantes produisent de l'oxygène.\nPrémisse 2 : Toutes les fougères produisent de l'oxygène.\nConclusion : Toutes les fougères sont des plantes.",
           "options": [
             "La conclusion suit logiquement des prémisses",
             "La conclusion ne suit PAS logiquement des prémisses"
           ],
           "correct": 1,
           "points": 0.5,
-          "explanation": "Invalide logiquement (AAA2). Même si la conclusion est vraie (les fougères sont bien des plantes), elle ne suit pas logiquement des prémisses. Il pourrait exister d'autres organismes photosynthétiques qui ne sont pas des plantes (algues, certaines bactéries). Syllogisme consistant : validité ≠ crédibilité."
+          "explanation": "Invalide logiquement (AAA2). Même si la conclusion est vraie (les fougères sont bien des plantes), elle ne suit pas logiquement des prémisses. Il pourrait exister d'autres organismes qui produisent de l'oxygène et qui ne sont pas des plantes (algues, certaines bactéries). Syllogisme consistant : validité ≠ crédibilité."
         },
         {
           "id": "syllogism-10",
