@@ -1932,7 +1932,7 @@ Le fait que les scientifiques ne soient souvent pas d'accord montre que la scien
 
 **Explication:**
 
-La méthode scientifique est le meilleur outil dont nous disposons pour comprendre la réalité objective. Elle repose sur l'observation, l'expérimentation et la falsifiabilité.
+Les désaccords scientifiques portent sur l'interprétation des preuves, pas sur des opinions personnelles. Ces débats font partie du processus scientifique normal et se résolvent avec l'accumulation de nouvelles données.
 
 **Points:** 0.38
 
@@ -1964,7 +1964,7 @@ La science change trop souvent d'avis pour qu'on puisse lui faire confiance.
 
 **Explication:**
 
-Les scientifiques peuvent avoir des opinions personnelles, mais la méthode scientifique intègre des garde-fous (revue par les pairs, reproductibilité) pour minimiser les biais. La science est plus fiable que l'opinion personnelle.
+La science progresse en questionnant et en révisant ses théories face à de nouvelles preuves. Ce processus d'auto-correction est une force, pas une faiblesse. C'est ce qui rend la science fiable à long terme.
 
 **Points:** 0.38
 
@@ -1980,7 +1980,7 @@ Les scientifiques sont généralement plus fiables que les sources d'information
 
 **Explication:**
 
-La science progresse en questionnant et en révisant ses théories face à de nouvelles preuves. Ce processus d'auto-correction est une force, pas une faiblesse.
+Les scientifiques utilisent des méthodes rigoureuses, la revue par les pairs et exigent la reproductibilité des résultats. Ces garde-fous les rendent généralement plus fiables que les sources non scientifiques.
 
 **Points:** 0.38
 
@@ -1996,7 +1996,7 @@ Les découvertes scientifiques qui contredisent le bon sens sont probablement fa
 
 **Explication:**
 
-Les vaccins sont l'une des interventions médicales les mieux étudiées et les plus sûres. Le consensus scientifique sur leur sécurité et efficacité est écrasant.
+Le bon sens est souvent trompeur (ex: la Terre semble plate, les objets lourds semblent tomber plus vite). De nombreuses découvertes scientifiques contre-intuitives sont vraies (mécanique quantique, relativité).
 
 **Points:** 0.38
 
@@ -2012,7 +2012,7 @@ La méthode scientifique est le meilleur moyen d'obtenir des connaissances fiabl
 
 **Explication:**
 
-Le consensus scientifique reflète l'accumulation de preuves empiriques convergentes. Bien qu'il puisse évoluer, il représente notre meilleure compréhension actuelle.
+La méthode scientifique repose sur l'observation, l'expérimentation, la falsifiabilité et la reproductibilité. C'est le meilleur outil dont nous disposons pour comprendre la réalité objective de manière fiable.
 
 **Points:** 0.38
 
@@ -2024,11 +2024,11 @@ Le consensus scientifique reflète l'accumulation de preuves empiriques converge
 
 **Question:**
 
-Les études scientifiques sont souvent biaisées par les intérêts financiers de ceux qui les financent.
+Les études scientifiques sont parfois biaisées par les intérêts financiers de ceux qui les financent.
 
 **Explication:**
 
-Les théories scientifiques (comme l'évolution ou la gravité) sont des explications bien établies et testées, pas de simples suppositions. Le terme 'théorie' en science signifie un cadre explicatif robuste.
+Les conflits d'intérêts peuvent influencer les résultats de recherche (ex: études financées par l'industrie du tabac, pharmaceutique). Reconnaître cette réalité et exiger la transparence sur le financement sont des positions rationnelles.
 
 **Points:** 0.38
 
@@ -2044,7 +2044,7 @@ La science ne peut pas expliquer les choses vraiment importantes de la vie.
 
 **Explication:**
 
-Les études scientifiques à grande échelle et bien contrôlées sont plus fiables que l'expérience personnelle, qui est sujette à de nombreux biais cognitifs (confirmation, disponibilité, etc.).
+La science peut éclairer de nombreux aspects importants de la vie (santé, relations, bonheur, moralité). Même les questions philosophiques profondes bénéficient souvent de perspectives scientifiques.
 
 **Points:** 0.38
 
@@ -2060,7 +2060,7 @@ Les preuves scientifiques devraient avoir plus de poids que les témoignages per
 
 **Explication:**
 
-Les médicaments modernes sont testés rigoureusement par des essais cliniques contrôlés. Bien qu'imparfaits, ils sont beaucoup plus fiables et sûrs que les remèdes traditionnels non testés.
+Les études scientifiques à grande échelle et bien contrôlées sont plus fiables que l'expérience personnelle, qui est sujette à de nombreux biais cognitifs (confirmation, disponibilité, récence, etc.).
 
 **Points:** 0.38
 
@@ -2076,7 +2076,7 @@ L'intuition personnelle est souvent plus fiable que les résultats d'études sci
 
 **Explication:**
 
-Le consensus scientifique sur le changement climatique anthropique est écrasant (97%+ des climatologues). Les preuves proviennent de multiples sources indépendantes et convergentes.
+L'intuition est sujette à de nombreux biais cognitifs (heuristiques, effet de halo, ancrage). Les études scientifiques utilisent des méthodes rigoureuses pour minimiser ces biais et fournir des résultats plus fiables.
 
 **Points:** 0.38
 
@@ -2092,7 +2092,7 @@ La science a créé plus de problèmes qu'elle n'en a résolu.
 
 **Explication:**
 
-La biologie évolutive est l'un des domaines scientifiques les mieux établis, avec des preuves convergentes de la paléontologie, la génétique, la biologie moléculaire, etc.
+La science a considérablement amélioré la qualité de vie (médecine, agriculture, assainissement, technologie). Bien qu'elle crée parfois de nouveaux défis, le bilan global est largement positif.
 
 **Points:** 0.38
 

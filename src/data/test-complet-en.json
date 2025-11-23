@@ -1202,77 +1202,99 @@
           "type": "likert",
           "text": "The fact that scientists often disagree shows that science involves more personal opinions than real evidence.",
           "reverse": false,
-          "points": 0.38
+          "points": 0.38,
+          "optimal": 1,
+          "explanation": "Scientific disagreements are about interpreting evidence, not personal opinions. These debates are part of the normal scientific process and get resolved with the accumulation of new data."
         },
         {
           "id": "science-2",
           "type": "likert",
           "text": "When science conflicts with conventional wisdom, it is generally science that is right.",
           "reverse": true,
-          "points": 0.38
+          "points": 0.38,
+          "optimal": 7,
+          "explanation": "Scientific knowledge is the most reliable form of knowledge because it is empirically tested, reproducible, and self-correcting. Trusting science is rational."
         },
         {
           "id": "science-3",
           "type": "likert",
           "text": "Science changes its mind too often to be trusted.",
           "reverse": false,
-          "points": 0.38
+          "points": 0.38,
+          "optimal": 1,
+          "explanation": "Science progresses by questioning and revising its theories in light of new evidence. This process of self-correction is a strength, not a weakness. It's what makes science reliable in the long term."
         },
         {
           "id": "science-4",
           "type": "likert",
           "text": "Scientists are generally more reliable than non-scientific sources of information.",
           "reverse": true,
-          "points": 0.38
+          "points": 0.38,
+          "optimal": 7,
+          "explanation": "Scientists use rigorous methods, peer review, and require reproducibility of results. These safeguards make them generally more reliable than non-scientific sources."
         },
         {
           "id": "science-5",
           "type": "likert",
           "text": "Scientific findings that contradict common sense are probably false.",
           "reverse": false,
-          "points": 0.38
+          "points": 0.38,
+          "optimal": 1,
+          "explanation": "Common sense is often misleading (e.g., the Earth seems flat, heavy objects seem to fall faster). Many counterintuitive scientific discoveries are true (quantum mechanics, relativity)."
         },
         {
           "id": "science-6",
           "type": "likert",
           "text": "The scientific method is the best way to obtain reliable knowledge.",
           "reverse": true,
-          "points": 0.38
+          "points": 0.38,
+          "optimal": 7,
+          "explanation": "The scientific method is based on observation, experimentation, falsifiability, and reproducibility. It is the best tool we have for understanding objective reality in a reliable way."
         },
         {
           "id": "science-7",
           "type": "likert",
-          "text": "Scientific studies are often biased by the financial interests of those who fund them.",
-          "reverse": false,
-          "points": 0.38
+          "text": "Scientific studies are sometimes biased by the financial interests of those who fund them.",
+          "reverse": true,
+          "points": 0.38,
+          "optimal": 7,
+          "explanation": "Conflicts of interest can influence research outcomes (e.g., tobacco industry, pharmaceutical studies). Recognizing this reality and demanding transparency about funding are rational positions."
         },
         {
           "id": "science-8",
           "type": "likert",
           "text": "Science cannot explain the really important things in life.",
           "reverse": false,
-          "points": 0.38
+          "points": 0.38,
+          "optimal": 1,
+          "explanation": "Science can shed light on many important aspects of life (health, relationships, happiness, morality). Even deep philosophical questions often benefit from scientific perspectives."
         },
         {
           "id": "science-9",
           "type": "likert",
           "text": "Scientific evidence should carry more weight than personal testimonials.",
           "reverse": true,
-          "points": 0.38
+          "points": 0.38,
+          "optimal": 7,
+          "explanation": "Large-scale, well-controlled scientific studies are more reliable than personal experience, which is subject to many cognitive biases (confirmation, availability, recency, etc.)."
         },
         {
           "id": "science-10",
           "type": "likert",
           "text": "Personal intuition is often more reliable than the results of scientific studies.",
           "reverse": false,
-          "points": 0.38
+          "points": 0.38,
+          "optimal": 1,
+          "explanation": "Intuition is subject to many cognitive biases (heuristics, halo effect, anchoring). Scientific studies use rigorous methods to minimize these biases and provide more reliable results."
         },
         {
           "id": "science-11",
           "type": "likert",
           "text": "Science has created more problems than it has solved.",
           "reverse": false,
-          "points": 0.38
+          "points": 0.38,
+          "optimal": 1,
+          "explanation": "Science has vastly improved quality of life (medicine, agriculture, sanitation, technology). While it sometimes creates new challenges, the overall balance is overwhelmingly positive."
         }
       ]
     },

@@ -1882,6 +1882,10 @@ Crystals and stones have no healing powers.
 
 The fact that scientists often disagree shows that science involves more personal opinions than real evidence.
 
+**Explanation:**
+
+Scientific disagreements are about interpreting evidence, not personal opinions. These debates are part of the normal scientific process and get resolved with the accumulation of new data.
+
 **Points:** 0.38
 
 ---
@@ -1893,6 +1897,10 @@ The fact that scientists often disagree shows that science involves more persona
 **Question:**
 
 When science conflicts with conventional wisdom, it is generally science that is right.
+
+**Explanation:**
+
+Scientific knowledge is the most reliable form of knowledge because it is empirically tested, reproducible, and self-correcting. Trusting science is rational.
 
 **Points:** 0.38
 
@@ -1906,6 +1914,10 @@ When science conflicts with conventional wisdom, it is generally science that is
 
 Science changes its mind too often to be trusted.
 
+**Explanation:**
+
+Science progresses by questioning and revising its theories in light of new evidence. This process of self-correction is a strength, not a weakness. It's what makes science reliable in the long term.
+
 **Points:** 0.38
 
 ---
@@ -1917,6 +1929,10 @@ Science changes its mind too often to be trusted.
 **Question:**
 
 Scientists are generally more reliable than non-scientific sources of information.
+
+**Explanation:**
+
+Scientists use rigorous methods, peer review, and require reproducibility of results. These safeguards make them generally more reliable than non-scientific sources.
 
 **Points:** 0.38
 
@@ -1930,6 +1946,10 @@ Scientists are generally more reliable than non-scientific sources of informatio
 
 Scientific findings that contradict common sense are probably false.
 
+**Explanation:**
+
+Common sense is often misleading (e.g., the Earth seems flat, heavy objects seem to fall faster). Many counterintuitive scientific discoveries are true (quantum mechanics, relativity).
+
 **Points:** 0.38
 
 ---
@@ -1942,6 +1962,10 @@ Scientific findings that contradict common sense are probably false.
 
 The scientific method is the best way to obtain reliable knowledge.
 
+**Explanation:**
+
+The scientific method is based on observation, experimentation, falsifiability, and reproducibility. It is the best tool we have for understanding objective reality in a reliable way.
+
 **Points:** 0.38
 
 ---
@@ -1952,7 +1976,11 @@ The scientific method is the best way to obtain reliable knowledge.
 
 **Question:**
 
-Scientific studies are often biased by the financial interests of those who fund them.
+Scientific studies are sometimes biased by the financial interests of those who fund them.
+
+**Explanation:**
+
+Conflicts of interest can influence research outcomes (e.g., tobacco industry, pharmaceutical studies). Recognizing this reality and demanding transparency about funding are rational positions.
 
 **Points:** 0.38
 
@@ -1966,6 +1994,10 @@ Scientific studies are often biased by the financial interests of those who fund
 
 Science cannot explain the really important things in life.
 
+**Explanation:**
+
+Science can shed light on many important aspects of life (health, relationships, happiness, morality). Even deep philosophical questions often benefit from scientific perspectives.
+
 **Points:** 0.38
 
 ---
@@ -1977,6 +2009,10 @@ Science cannot explain the really important things in life.
 **Question:**
 
 Scientific evidence should carry more weight than personal testimonials.
+
+**Explanation:**
+
+Large-scale, well-controlled scientific studies are more reliable than personal experience, which is subject to many cognitive biases (confirmation, availability, recency, etc.).
 
 **Points:** 0.38
 
@@ -1990,6 +2026,10 @@ Scientific evidence should carry more weight than personal testimonials.
 
 Personal intuition is often more reliable than the results of scientific studies.
 
+**Explanation:**
+
+Intuition is subject to many cognitive biases (heuristics, halo effect, anchoring). Scientific studies use rigorous methods to minimize these biases and provide more reliable results.
+
 **Points:** 0.38
 
 ---
@@ -2001,6 +2041,10 @@ Personal intuition is often more reliable than the results of scientific studies
 **Question:**
 
 Science has created more problems than it has solved.
+
+**Explanation:**
+
+Science has vastly improved quality of life (medicine, agriculture, sanitation, technology). While it sometimes creates new challenges, the overall balance is overwhelmingly positive.
 
 **Points:** 0.38
 
