@@ -1470,11 +1470,11 @@
         {
           "id": "dysfunc-5",
           "type": "likert",
-          "text": "Le malheur vient de circonstances extérieures sur lesquelles je n'ai aucun contrôle.",
+          "text": "Quand quelque chose de mauvais m'arrive, c'est toujours dû à des facteurs externes, jamais à mes décisions.",
           "reverse": false,
           "points": 0.56,
           "optimal": 1,
-          "explanation": "Cette croyance reflète un locus de contrôle externe excessif qui peut mener à l'impuissance apprise. Bien que les débats philosophiques sur le libre arbitre soient légitimes et que les circonstances extérieures influencent effectivement notre vie, adopter cette croyance de manière absolue empêche toute action constructive. D'un point de vue pragmatique et psychologique, reconnaître notre capacité d'influence sur certains aspects de notre vie améliore le bien-être et favorise des comportements adaptatifs."
+          "explanation": "Cette affirmation reflète un biais d'attribution externe systématique et une sur-généralisation. C'est une erreur de raisonnement car elle utilise des termes absolus ('toujours', 'jamais') qui ignorent la complexité causale des événements. Dans la réalité, les résultats négatifs proviennent généralement d'une combinaison de facteurs internes et externes. Une évaluation rationnelle examine la contribution respective de chaque facteur plutôt que d'attribuer systématiquement la causalité à une seule source."
         },
         {
           "id": "dysfunc-6",
@@ -1488,20 +1488,20 @@
         {
           "id": "dysfunc-7",
           "type": "likert",
-          "text": "Il est plus facile d'éviter les difficultés que d'y faire face.",
+          "text": "Si j'ignore un problème, il finira par se résoudre tout seul.",
           "reverse": false,
           "points": 0.56,
           "optimal": 1,
-          "explanation": "Éviter les difficultés est plus facile à court terme mais empêche la croissance et la résolution de problèmes. Il est plus rationnel d'affronter les défis."
+          "explanation": "Cette croyance repose sur une fausse relation causale entre l'inaction et la résolution de problèmes. C'est une forme de pensée magique qui confond l'espoir avec la causalité. Dans la réalité, la plupart des problèmes non traités persistent ou s'aggravent ; ils ne se résolvent pas spontanément par le simple fait de les ignorer. Une approche rationnelle consiste à évaluer objectivement si un problème nécessite une intervention active ou si d'autres facteurs pourraient le résoudre."
         },
         {
           "id": "dysfunc-8",
           "type": "likert",
-          "text": "J'ai besoin de quelqu'un de plus fort que moi sur qui m'appuyer.",
+          "text": "Je ne peux rien accomplir d'important sans que quelqu'un me dise exactement quoi faire.",
           "reverse": false,
           "points": 0.56,
           "optimal": 1,
-          "explanation": "Cette dépendance excessive aux autres est irrationnelle. Les adultes rationnels développent leur autonomie tout en maintenant des relations saines."
+          "explanation": "Cette croyance reflète une sous-estimation systématique de ses propres capacités et peut indiquer une impuissance apprise. C'est une erreur de calibration : affirmer qu'on ne peut 'rien' accomplir d'important de manière autonome est une généralisation excessive qui ignore les nombreuses compétences et ressources dont dispose tout individu. Une auto-évaluation rationnelle reconnaît à la fois ses limites (où le soutien est utile) et ses capacités (où l'autonomie est possible)."
         },
         {
           "id": "dysfunc-9",
