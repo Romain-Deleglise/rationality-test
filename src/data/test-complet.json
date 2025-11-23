@@ -328,7 +328,7 @@
         {
           "id": "likelihood-1",
           "type": "multiple-choice",
-          "text": "Une alarme d'incendie se déclenche. Quelles infos sont nécessaires pour estimer P(incendie réel | alarme déclenchée) ?",
+          "text": "Une alarme d'incendie se déclenche. Quelles infos sont nécessaires pour estimer P(incendie réel | alarme déclenchée) (c'est-à-dire la probabilité qu'il y ait vraiment un incendie sachant que l'alarme s'est déclenchée) ?",
           "options": [
             "% de fois où l'alarme se déclenche SANS incendie (fausses alarmes)",
             "% d'incendies réels (fréquence de base)",
@@ -339,7 +339,7 @@
           ],
           "correct": 4,
           "points": 1,
-          "explanation": "Il faut P(alarme|incendie) et P(alarme|pas incendie) pour calculer P(incendie|alarme) via Bayes.\n\nEn d'autres termes : vous devez savoir à quelle fréquence l'alarme sonne quand il y a vraiment un incendie (option d), ET à quelle fréquence elle sonne par erreur quand il n'y a pas d'incendie (option a). Ces deux informations combinées permettent de calculer la probabilité qu'il y ait vraiment un incendie sachant que l'alarme a sonné."
+          "explanation": "Il faut P(alarme|incendie) (la probabilité que l'alarme sonne sachant qu'il y a un incendie) et P(alarme|pas incendie) (la probabilité que l'alarme sonne sachant qu'il n'y a pas d'incendie) pour calculer P(incendie|alarme) (la probabilité qu'il y ait un incendie sachant que l'alarme sonne) via Bayes.\n\nEn d'autres termes : vous devez savoir à quelle fréquence l'alarme sonne quand il y a vraiment un incendie (option d), ET à quelle fréquence elle sonne par erreur quand il n'y a pas d'incendie (option a). Ces deux informations combinées permettent de calculer la probabilité qu'il y ait vraiment un incendie sachant que l'alarme a sonné."
         },
         {
           "id": "likelihood-2",
@@ -355,21 +355,21 @@
           ],
           "correct": 4,
           "points": 1,
-          "explanation": "Il faut P(test positif|malade) et P(test positif|non malade) - soit les options a et d. Ces deux probabilités conditionnelles permettent d'appliquer le théorème de Bayes pour calculer P(malade|test positif).\n\nEn d'autres termes : vous devez connaître deux choses : (1) à quelle fréquence le test est positif QUAND la personne est vraiment malade (la sensibilité, option d), et (2) à quelle fréquence le test est positif par erreur QUAND la personne n'est pas malade (le taux de faux positifs, option a). C'est en comparant ces deux taux qu'on peut savoir si un test positif indique vraiment la présence de la maladie."
+          "explanation": "Il faut P(test positif|malade) (la probabilité que le test soit positif sachant que la personne est malade) et P(test positif|non malade) (la probabilité que le test soit positif sachant que la personne n'est pas malade) - soit les options a et d. Ces deux probabilités conditionnelles permettent d'appliquer le théorème de Bayes pour calculer P(malade|test positif) (la probabilité que la personne soit malade sachant que le test est positif).\n\nEn d'autres termes : vous devez connaître deux choses : (1) à quelle fréquence le test est positif QUAND la personne est vraiment malade (la sensibilité, option d), et (2) à quelle fréquence le test est positif par erreur QUAND la personne n'est pas malade (le taux de faux positifs, option a). C'est en comparant ces deux taux qu'on peut savoir si un test positif indique vraiment la présence de la maladie."
         },
         {
           "id": "likelihood-3",
           "type": "multiple-choice",
-          "text": "Pour évaluer P(Défaillance mécanique | Vibrations anormales), de quoi avez-vous besoin ?",
+          "text": "Pour évaluer P(Défaillance mécanique | Vibrations anormales) (c'est-à-dire la probabilité qu'il y ait une défaillance mécanique sachant qu'on observe des vibrations anormales), de quoi avez-vous besoin ?",
           "options": [
-            "Seulement P(Vibrations | Défaillance)",
-            "P(Vibrations | Défaillance) et P(Vibrations | Pas de défaillance)",
+            "Seulement P(Vibrations | Défaillance) (la probabilité d'observer des vibrations sachant qu'il y a une défaillance)",
+            "P(Vibrations | Défaillance) (la probabilité d'observer des vibrations sachant qu'il y a une défaillance) et P(Vibrations | Pas de défaillance) (la probabilité d'observer des vibrations sachant qu'il n'y a pas de défaillance)",
             "Seulement le taux de base des défaillances",
             "L'avis d'un expert mécanicien"
           ],
           "correct": 1,
           "points": 1,
-          "explanation": "Pour Bayes, il faut le rapport de vraisemblance : P(preuve|H) et P(preuve|non-H).\n\nEn termes simples : il faut connaître deux choses : (1) à quelle fréquence on observe des vibrations QUAND il y a une défaillance, et (2) à quelle fréquence on observe ces mêmes vibrations QUAND il n'y a PAS de défaillance. C'est la comparaison de ces deux fréquences qui permet de savoir si les vibrations indiquent vraiment une défaillance."
+          "explanation": "Pour Bayes, il faut le rapport de vraisemblance : P(preuve|H) (la probabilité d'observer la preuve sachant que l'hypothèse est vraie) et P(preuve|non-H) (la probabilité d'observer la preuve sachant que l'hypothèse est fausse).\n\nEn termes simples : il faut connaître deux choses : (1) à quelle fréquence on observe des vibrations QUAND il y a une défaillance, et (2) à quelle fréquence on observe ces mêmes vibrations QUAND il n'y a PAS de défaillance. C'est la comparaison de ces deux fréquences qui permet de savoir si les vibrations indiquent vraiment une défaillance."
         },
         {
           "id": "hypothesis-test-1",
