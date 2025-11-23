@@ -717,7 +717,7 @@
           "correct": 2387,
           "anchorType": "low",
           "points": 0.5,
-          "explanation": "The actual distance is ~2387 miles. The anchor of 500 miles can influence your estimate downward. Points awarded by accuracy: estimate within ±30% = full points, ±60% = partial points. This question tests your ability to make reasonable estimates despite anchoring."
+          "explanation": "The actual distance is ~2387 miles. The anchor of 500 miles can influence your estimate downward. To score points, you must give an estimate far from the anchor (< 250 miles OR > 1000 miles), showing you were not influenced. This question measures resistance to anchoring, not knowledge of the correct answer."
         },
         {
           "id": "anchor-2",
@@ -727,7 +727,7 @@
           "correct": 687,
           "anchorType": "high",
           "points": 0.5,
-          "explanation": "The actual duration is ~687 days. The anchor of 1500 days can influence your estimate upward. Points awarded by accuracy: estimate within ±30% = full points, ±60% = partial points. This question tests your ability to make reasonable estimates despite anchoring."
+          "explanation": "The actual duration is ~687 days. The anchor of 1500 days can influence your estimate upward. To score points, you must give an estimate far from the anchor (< 750 days OR > 3000 days), showing you were not influenced. This question measures resistance to anchoring, not knowledge of the correct answer."
         },
         {
           "id": "anchor-3",
@@ -737,7 +737,7 @@
           "correct": 26,
           "anchorType": "low",
           "points": 0.5,
-          "explanation": "The actual population is ~26 million inhabitants. The anchor of 10 million can influence your estimate downward. Points awarded by accuracy: estimate within ±30% = full points, ±60% = partial points. This question tests your ability to make reasonable estimates despite anchoring."
+          "explanation": "The actual population is ~26 million inhabitants. The anchor of 10 million can influence your estimate downward. To score points, you must give an estimate far from the anchor (< 5 million OR > 20 million), showing you were not influenced. This question measures resistance to anchoring, not knowledge of the correct answer."
         },
         {
           "id": "anchor-4",
@@ -747,7 +747,7 @@
           "correct": 56.7,
           "anchorType": "high",
           "points": 0.5,
-          "explanation": "The actual temperature is ~56.7°C (Death Valley, 1913). The anchor of 70°C can influence your estimate upward. Points awarded by accuracy: estimate within ±30% = full points, ±60% = partial points. This question tests your ability to make reasonable estimates despite anchoring."
+          "explanation": "The actual temperature is ~56.7°C (Death Valley, 1913). The anchor of 70°C can influence your estimate upward. To score points, you must give an estimate far from the anchor (< 35°C OR > 140°C), showing you were not influenced. This question measures resistance to anchoring, not knowledge of the correct answer."
         },
         {
           "id": "anchor-5",
@@ -757,7 +757,7 @@
           "correct": 828,
           "anchorType": "low",
           "points": 0.5,
-          "explanation": "The actual height is ~828 meters. The anchor of 500 meters can influence your estimate downward. Points awarded by accuracy: estimate within ±30% = full points, ±60% = partial points. This question tests your ability to make reasonable estimates despite anchoring."
+          "explanation": "The actual height is ~828 meters. The anchor of 500 meters can influence your estimate downward. To score points, you must give an estimate far from the anchor (< 250 meters OR > 1000 meters), showing you were not influenced. This question measures resistance to anchoring, not knowledge of the correct answer."
         },
         {
           "id": "anchor-6",
@@ -767,7 +767,7 @@
           "correct": 1815,
           "anchorType": "low",
           "points": 0.5,
-          "explanation": "The actual year is 1815. The anchor of 1750 can influence your estimate downward. Points awarded by accuracy: estimate within ±30% = full points, ±60% = partial points. This question tests your ability to make reasonable estimates despite anchoring."
+          "explanation": "The actual year is 1815. The anchor of 1750 can influence your estimate downward. To score points, you must give an estimate far from the anchor (< 875 OR > 3500), showing you were not influenced. This question measures resistance to anchoring, not knowledge of the correct answer."
         }
       ]
     },
@@ -1202,77 +1202,99 @@
           "type": "likert",
           "text": "The fact that scientists often disagree shows that science involves more personal opinions than real evidence.",
           "reverse": false,
-          "points": 0.38
+          "points": 0.38,
+          "optimal": 1,
+          "explanation": "Scientific disagreements are about interpreting evidence, not personal opinions. These debates are part of the normal scientific process and get resolved with the accumulation of new data."
         },
         {
           "id": "science-2",
           "type": "likert",
           "text": "When science conflicts with conventional wisdom, it is generally science that is right.",
           "reverse": true,
-          "points": 0.38
+          "points": 0.38,
+          "optimal": 7,
+          "explanation": "Scientific knowledge is the most reliable form of knowledge because it is empirically tested, reproducible, and self-correcting. Trusting science is rational."
         },
         {
           "id": "science-3",
           "type": "likert",
           "text": "Science changes its mind too often to be trusted.",
           "reverse": false,
-          "points": 0.38
+          "points": 0.38,
+          "optimal": 1,
+          "explanation": "Science progresses by questioning and revising its theories in light of new evidence. This process of self-correction is a strength, not a weakness. It's what makes science reliable in the long term."
         },
         {
           "id": "science-4",
           "type": "likert",
           "text": "Scientists are generally more reliable than non-scientific sources of information.",
           "reverse": true,
-          "points": 0.38
+          "points": 0.38,
+          "optimal": 7,
+          "explanation": "Scientists use rigorous methods, peer review, and require reproducibility of results. These safeguards make them generally more reliable than non-scientific sources."
         },
         {
           "id": "science-5",
           "type": "likert",
           "text": "Scientific findings that contradict common sense are probably false.",
           "reverse": false,
-          "points": 0.38
+          "points": 0.38,
+          "optimal": 1,
+          "explanation": "Common sense is often misleading (e.g., the Earth seems flat, heavy objects seem to fall faster). Many counterintuitive scientific discoveries are true (quantum mechanics, relativity)."
         },
         {
           "id": "science-6",
           "type": "likert",
           "text": "The scientific method is the best way to obtain reliable knowledge.",
           "reverse": true,
-          "points": 0.38
+          "points": 0.38,
+          "optimal": 7,
+          "explanation": "The scientific method is based on observation, experimentation, falsifiability, and reproducibility. It is the best tool we have for understanding objective reality in a reliable way."
         },
         {
           "id": "science-7",
           "type": "likert",
-          "text": "Scientific studies are often biased by the financial interests of those who fund them.",
-          "reverse": false,
-          "points": 0.38
+          "text": "Scientific studies are sometimes biased by the financial interests of those who fund them.",
+          "reverse": true,
+          "points": 0.38,
+          "optimal": 7,
+          "explanation": "Conflicts of interest can influence research outcomes (e.g., tobacco industry, pharmaceutical studies). Recognizing this reality and demanding transparency about funding are rational positions."
         },
         {
           "id": "science-8",
           "type": "likert",
           "text": "Science cannot explain the really important things in life.",
           "reverse": false,
-          "points": 0.38
+          "points": 0.38,
+          "optimal": 1,
+          "explanation": "Science can shed light on many important aspects of life (health, relationships, happiness, morality). Even deep philosophical questions often benefit from scientific perspectives."
         },
         {
           "id": "science-9",
           "type": "likert",
           "text": "Scientific evidence should carry more weight than personal testimonials.",
           "reverse": true,
-          "points": 0.38
+          "points": 0.38,
+          "optimal": 7,
+          "explanation": "Large-scale, well-controlled scientific studies are more reliable than personal experience, which is subject to many cognitive biases (confirmation, availability, recency, etc.)."
         },
         {
           "id": "science-10",
           "type": "likert",
           "text": "Personal intuition is often more reliable than the results of scientific studies.",
           "reverse": false,
-          "points": 0.38
+          "points": 0.38,
+          "optimal": 1,
+          "explanation": "Intuition is subject to many cognitive biases (heuristics, halo effect, anchoring). Scientific studies use rigorous methods to minimize these biases and provide more reliable results."
         },
         {
           "id": "science-11",
           "type": "likert",
           "text": "Science has created more problems than it has solved.",
           "reverse": false,
-          "points": 0.38
+          "points": 0.38,
+          "optimal": 2,
+          "explanation": "Science has vastly improved quality of life (medicine, agriculture, sanitation, technology). While it sometimes creates new challenges (pollution, nuclear weapons), the overall balance is overwhelmingly positive. A nuanced position recognizes both the massive benefits and some problems created."
         }
       ]
     },
@@ -1334,9 +1356,11 @@
         {
           "id": "conspiracy-8",
           "type": "likert",
-          "text": "Mind control technologies are being used on the population.",
+          "text": "Secret telepathic mind control technologies exist.",
           "reverse": false,
-          "points": 0.42
+          "points": 0.42,
+          "optimal": 1,
+          "explanation": "There is no scientific evidence for telepathic mind control technologies. Neuroscience shows that telepathy and remote mind control are scientifically impossible with our current understanding of physics and biology."
         },
         {
           "id": "conspiracy-9",
@@ -1355,9 +1379,11 @@
         {
           "id": "conspiracy-11",
           "type": "likert",
-          "text": "Secret medical or scientific experiments are conducted on citizens without their knowledge.",
+          "text": "Governments are currently conducting secret medical experiments on their citizens without their knowledge.",
           "reverse": false,
-          "points": 0.42
+          "points": 0.42,
+          "optimal": 1,
+          "explanation": "While unethical experiments existed historically (Tuskegee, MKUltra), modern ethical frameworks, institutional oversight, and transparency make such practices extremely difficult today. Claiming this is currently happening on a widespread scale without evidence is unjustified and reflects conspiratorial thinking."
         }
       ]
     },
@@ -1479,32 +1505,37 @@
         {
           "id": "arg-eval-3a",
           "type": "likert",
-          "text": "**Part A - Your opinion**: Nuclear energy should be developed as the main energy source for the future.",
-          "points": 0
+          "text": "**Part A - Your opinion**: Mobile phones should be banned in all schools.",
+          "points": 0,
+          "optimal": 1,
+          "explanation": "Sound reasoning can be judged independently of our personal emotions about the subject. Rational thinking separates logical evaluation from emotional reactions."
         },
         {
           "id": "arg-eval-3b",
           "type": "multiple-choice",
-          "text": "**Part B - Evaluation**:\n\n**Marc's opinion**: Nuclear energy should be developed as the main energy source for the future.\n\n**Marc's justification**: Nuclear energy is cleaner than fossil fuels and can provide stable and abundant energy to meet our growing needs.\n\n**Critic's counter-argument**: Nuclear accidents like Chernobyl and Fukushima show that nuclear energy carries catastrophic risks (assume this is factually correct).\n\n**Marc's response**: These accidents were due to old technologies and human errors. New fourth-generation nuclear technologies are designed to be much safer (assume this is factually correct).\n\n**Evaluate the strength of Marc's response**:",
+          "text": "**Part B - Evaluation**:\n\n**Marc's opinion**: Mobile phones should be banned in all schools.\n\n**Marc's justification**: They distract students and disrupt learning in the classroom.\n\n**Critic's counter-argument**: Phones can be useful educational tools (research, calculator, educational apps) and allow parents to contact their children in emergencies (assume this is factually correct).\n\n**Marc's response**: Anyway, when I was in school, we didn't have phones and we learned just fine.\n\n**Evaluate the strength of Marc's response**:",
           "options": [
             "1 - Very weak",
             "2 - Weak",
             "3 - Strong",
             "4 - Very strong"
           ],
-          "correct": 2,
-          "points": 0.625
+          "correct": 0,
+          "points": 0.625,
+          "explanation": "Marc's response is very weak because it commits an 'appeal to tradition' (a logical fallacy). Saying 'we used to do it differently and it worked' doesn't address the specific advantages mentioned (modern educational tools, safety). Moreover, this logic would block any technological progress in education. Marc addresses neither the pedagogical benefits nor the safety aspect raised by the critic."
         },
         {
           "id": "arg-eval-4a",
           "type": "likert",
-          "text": "**Part A - Your opinion**: Social media companies should be legally responsible for content posted by their users.",
-          "points": 0
+          "text": "**Part A - Your opinion**: Taxes on sugary products should be significantly increased to reduce obesity.",
+          "points": 0,
+          "optimal": 1,
+          "explanation": "Logical consistency and evidence are the essential criteria for evaluating an argument, not our agreement with the conclusion. This is the foundation of critical thinking."
         },
         {
           "id": "arg-eval-4b",
           "type": "multiple-choice",
-          "text": "**Part B - Evaluation**:\n\n**Marc's opinion**: Social media companies should be legally responsible for content posted by their users.\n\n**Marc's justification**: Platforms profit from user-generated content, so they should be responsible for that content.\n\n**Critic's counter-argument**: It is technically impossible to moderate billions of posts in real time (assume this is factually correct).\n\n**Marc's response**: That's true, but they can invest more in automatic and human moderation systems (assume this is factually correct).\n\n**Evaluate the strength of Marc's response**:",
+          "text": "**Part B - Evaluation**:\n\n**Marc's opinion**: Taxes on sugary products should be significantly increased to reduce obesity.\n\n**Marc's justification**: High taxes discourage consumption of products harmful to health.\n\n**Critic's counter-argument**: Sugar taxes disproportionately affect low-income households who spend a higher percentage of their budget on food (assume this is factually correct).\n\n**Marc's response**: But obesity and diabetes also disproportionately affect low-income populations (assume this is factually correct). A tax that reduces their sugar consumption would therefore improve their health, which far outweighs the financial cost.\n\n**Evaluate the strength of Marc's response**:",
           "options": [
             "1 - Very weak",
             "2 - Weak",
@@ -1513,7 +1544,7 @@
           ],
           "correct": 2,
           "points": 0.625,
-          "explanation": "Marc's response is 'Strong' (3). He acknowledges the technical problem raised by the critic but proposes a concrete solution (investment in moderation). Even if this solution doesn't completely solve the impossibility of real-time moderation, it's a constructive and reasonable response that deserves a positive evaluation."
+          "explanation": "Marc's response is strong because it directly addresses the counter-argument. The critic raises that the tax negatively affects low-income populations. Marc acknowledges this point but shows that these same populations would benefit most from reduced sugar consumption (reduced obesity and diabetes). He thus proposes a specific cost-benefit trade-off for the affected population. This is a logical response that addresses the raised issue rather than ignoring it."
         }
       ]
     },
@@ -1526,26 +1557,28 @@
         {
           "id": "causal-1",
           "type": "multiple-choice",
-          "text": "Researchers found that children who watch a lot of television tend to have poorer academic results than children who watch little television.\n\nDoes this finding mean that banning television from children would improve their academic results?",
+          "text": "Researchers have discovered that children who watch a lot of television tend to have worse academic results than children who watch little television.\n\nDoes this finding mean that banning television for children would improve their academic results?",
           "options": [
-            "Yes, certainly",
-            "No, not necessarily",
-            "Cannot be determined from this information alone"
+            "Yes, this correlation proves that reducing TV will improve results",
+            "No, correlation does not imply causation - other factors could explain both",
+            "Impossible to answer because the study doesn't specify the type of programs watched"
           ],
           "correct": 1,
-          "points": 1
+          "points": 1,
+          "explanation": "No, correlation does not imply causation. Other factors (socioeconomic status, parental education, family environment) could explain both more TV and worse academic results. To establish a causal link, we would need a controlled experimental study or eliminate confounding variables."
         },
         {
           "id": "causal-2",
           "type": "multiple-choice",
-          "text": "A study shows that people who take vitamins daily live longer on average than those who don't.\n\nCan we conclude that taking vitamins increases life expectancy?",
+          "text": "A study shows that people who take vitamins daily live on average longer than those who don't.\n\nCan we conclude that taking vitamins increases life expectancy?",
           "options": [
-            "Yes",
-            "No",
-            "Impossible to determine"
+            "Yes, the difference in life expectancy proves the effect of vitamins",
+            "No, because people who take vitamins probably already have a healthier lifestyle",
+            "Yes, but only for certain types of vitamins"
           ],
           "correct": 1,
-          "points": 1
+          "points": 1,
+          "explanation": "No, we cannot conclude a causal effect. People who take vitamins daily are probably more health-conscious in general: they may exercise more, eat better, consult a doctor regularly, etc. It's this overall healthier lifestyle that could explain their longevity, not necessarily the vitamins themselves. This is a classic selection bias."
         },
         {
           "id": "causal-4",

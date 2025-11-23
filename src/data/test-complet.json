@@ -717,7 +717,7 @@
           "correct": 2387,
           "anchorType": "low",
           "points": 0.5,
-          "explanation": "La distance réelle est ~2387 miles. L'ancre de 500 miles peut influencer votre estimation à la baisse. Points attribués selon la précision : estimation à ±30% = points complets, ±60% = points partiels. Cette question teste votre capacité à faire des estimations raisonnables malgré l'ancrage."
+          "explanation": "La distance réelle est ~2387 miles. L'ancre de 500 miles peut influencer votre estimation à la baisse. Pour marquer des points, vous devez donner une estimation très éloignée de l'ancre (< 250 miles OU > 1000 miles), montrant que vous n'avez pas été influencé. Cette question mesure la résistance à l'ancrage, pas la connaissance de la bonne réponse."
         },
         {
           "id": "anchor-2",
@@ -727,7 +727,7 @@
           "correct": 687,
           "anchorType": "high",
           "points": 0.5,
-          "explanation": "La durée réelle est 687 jours. L'ancre de 1500 jours peut influencer votre estimation à la hausse. Points attribués selon la précision : estimation à ±30% = points complets, ±60% = points partiels. Cette question teste votre capacité à faire des estimations raisonnables malgré l'ancrage."
+          "explanation": "La durée réelle est 687 jours. L'ancre de 1500 jours peut influencer votre estimation à la hausse. Pour marquer des points, vous devez donner une estimation très éloignée de l'ancre (< 750 jours OU > 3000 jours), montrant que vous n'avez pas été influencé. Cette question mesure la résistance à l'ancrage, pas la connaissance de la bonne réponse."
         },
         {
           "id": "anchor-3",
@@ -737,7 +737,7 @@
           "correct": 26,
           "anchorType": "low",
           "points": 0.5,
-          "explanation": "L'Australie compte environ 26 millions d'habitants. L'ancre de 10 millions peut influencer votre estimation à la baisse. Points attribués selon la précision : estimation à ±30% = points complets, ±60% = points partiels. Cette question teste votre capacité à faire des estimations raisonnables malgré l'ancrage."
+          "explanation": "L'Australie compte environ 26 millions d'habitants. L'ancre de 10 millions peut influencer votre estimation à la baisse. Pour marquer des points, vous devez donner une estimation très éloignée de l'ancre (< 5 millions OU > 20 millions), montrant que vous n'avez pas été influencé. Cette question mesure la résistance à l'ancrage, pas la connaissance de la bonne réponse."
         },
         {
           "id": "anchor-4",
@@ -747,7 +747,7 @@
           "correct": 56.7,
           "anchorType": "high",
           "points": 0.5,
-          "explanation": "Le record est de 56,7°C (Vallée de la Mort, 1913). L'ancre de 70°C peut influencer votre estimation à la hausse. Points attribués selon la précision : estimation à ±30% = points complets, ±60% = points partiels. Cette question teste votre capacité à faire des estimations raisonnables malgré l'ancrage."
+          "explanation": "Le record est de 56,7°C (Vallée de la Mort, 1913). L'ancre de 70°C peut influencer votre estimation à la hausse. Pour marquer des points, vous devez donner une estimation très éloignée de l'ancre (< 35°C OU > 140°C), montrant que vous n'avez pas été influencé. Cette question mesure la résistance à l'ancrage, pas la connaissance de la bonne réponse."
         },
         {
           "id": "anchor-5",
@@ -757,7 +757,7 @@
           "correct": 828,
           "anchorType": "low",
           "points": 0.5,
-          "explanation": "Le Burj Khalifa mesure 828 mètres. L'ancre de 500m peut influencer votre estimation à la baisse. Points attribués selon la précision : estimation à ±30% = points complets, ±60% = points partiels. Cette question teste votre capacité à faire des estimations raisonnables malgré l'ancrage."
+          "explanation": "Le Burj Khalifa mesure 828 mètres. L'ancre de 500 mètres peut influencer votre estimation à la baisse. Pour marquer des points, vous devez donner une estimation très éloignée de l'ancre (< 250 mètres OU > 1000 mètres), montrant que vous n'avez pas été influencé. Cette question mesure la résistance à l'ancrage, pas la connaissance de la bonne réponse."
         },
         {
           "id": "anchor-6",
@@ -767,7 +767,7 @@
           "correct": 1815,
           "anchorType": "low",
           "points": 0.5,
-          "explanation": "La bataille de Waterloo date de 1815. L'ancre de 1750 peut influencer votre estimation à la baisse. Points attribués selon la précision : estimation à ±30% = points complets, ±60% = points partiels. Cette question teste votre capacité à faire des estimations raisonnables malgré l'ancrage."
+          "explanation": "La bataille de Waterloo date de 1815. L'ancre de 1750 peut influencer votre estimation à la baisse. Pour marquer des points, vous devez donner une estimation très éloignée de l'ancre (< 875 OU > 3500), montrant que vous n'avez pas été influencé. Cette question mesure la résistance à l'ancrage, pas la connaissance de la bonne réponse."
         }
       ]
     },
@@ -1224,7 +1224,7 @@
           "reverse": false,
           "points": 0.38,
           "optimal": 1,
-          "explanation": "La méthode scientifique est le meilleur outil dont nous disposons pour comprendre la réalité objective. Elle repose sur l'observation, l'expérimentation et la falsifiabilité."
+          "explanation": "Les désaccords scientifiques portent sur l'interprétation des preuves, pas sur des opinions personnelles. Ces débats font partie du processus scientifique normal et se résolvent avec l'accumulation de nouvelles données."
         },
         {
           "id": "science-2",
@@ -1242,7 +1242,7 @@
           "reverse": false,
           "points": 0.38,
           "optimal": 1,
-          "explanation": "Les scientifiques peuvent avoir des opinions personnelles, mais la méthode scientifique intègre des garde-fous (revue par les pairs, reproductibilité) pour minimiser les biais. La science est plus fiable que l'opinion personnelle."
+          "explanation": "La science progresse en questionnant et en révisant ses théories face à de nouvelles preuves. Ce processus d'auto-correction est une force, pas une faiblesse. C'est ce qui rend la science fiable à long terme."
         },
         {
           "id": "science-4",
@@ -1251,7 +1251,7 @@
           "reverse": true,
           "points": 0.38,
           "optimal": 7,
-          "explanation": "La science progresse en questionnant et en révisant ses théories face à de nouvelles preuves. Ce processus d'auto-correction est une force, pas une faiblesse."
+          "explanation": "Les scientifiques utilisent des méthodes rigoureuses, la revue par les pairs et exigent la reproductibilité des résultats. Ces garde-fous les rendent généralement plus fiables que les sources non scientifiques."
         },
         {
           "id": "science-5",
@@ -1260,7 +1260,7 @@
           "reverse": false,
           "points": 0.38,
           "optimal": 1,
-          "explanation": "Les vaccins sont l'une des interventions médicales les mieux étudiées et les plus sûres. Le consensus scientifique sur leur sécurité et efficacité est écrasant."
+          "explanation": "Le bon sens est souvent trompeur (ex: la Terre semble plate, les objets lourds semblent tomber plus vite). De nombreuses découvertes scientifiques contre-intuitives sont vraies (mécanique quantique, relativité)."
         },
         {
           "id": "science-6",
@@ -1269,16 +1269,16 @@
           "reverse": true,
           "points": 0.38,
           "optimal": 7,
-          "explanation": "Le consensus scientifique reflète l'accumulation de preuves empiriques convergentes. Bien qu'il puisse évoluer, il représente notre meilleure compréhension actuelle."
+          "explanation": "La méthode scientifique repose sur l'observation, l'expérimentation, la falsifiabilité et la reproductibilité. C'est le meilleur outil dont nous disposons pour comprendre la réalité objective de manière fiable."
         },
         {
           "id": "science-7",
           "type": "likert",
-          "text": "Les études scientifiques sont souvent biaisées par les intérêts financiers de ceux qui les financent.",
-          "reverse": false,
+          "text": "Les études scientifiques sont parfois biaisées par les intérêts financiers de ceux qui les financent.",
+          "reverse": true,
           "points": 0.38,
-          "optimal": 1,
-          "explanation": "Les théories scientifiques (comme l'évolution ou la gravité) sont des explications bien établies et testées, pas de simples suppositions. Le terme 'théorie' en science signifie un cadre explicatif robuste."
+          "optimal": 7,
+          "explanation": "Les conflits d'intérêts peuvent influencer les résultats de recherche (ex: études financées par l'industrie du tabac, pharmaceutique). Reconnaître cette réalité et exiger la transparence sur le financement sont des positions rationnelles."
         },
         {
           "id": "science-8",
@@ -1287,7 +1287,7 @@
           "reverse": false,
           "points": 0.38,
           "optimal": 1,
-          "explanation": "Les études scientifiques à grande échelle et bien contrôlées sont plus fiables que l'expérience personnelle, qui est sujette à de nombreux biais cognitifs (confirmation, disponibilité, etc.)."
+          "explanation": "La science peut éclairer de nombreux aspects importants de la vie (santé, relations, bonheur, moralité). Même les questions philosophiques profondes bénéficient souvent de perspectives scientifiques."
         },
         {
           "id": "science-9",
@@ -1296,7 +1296,7 @@
           "reverse": true,
           "points": 0.38,
           "optimal": 7,
-          "explanation": "Les médicaments modernes sont testés rigoureusement par des essais cliniques contrôlés. Bien qu'imparfaits, ils sont beaucoup plus fiables et sûrs que les remèdes traditionnels non testés."
+          "explanation": "Les études scientifiques à grande échelle et bien contrôlées sont plus fiables que l'expérience personnelle, qui est sujette à de nombreux biais cognitifs (confirmation, disponibilité, récence, etc.)."
         },
         {
           "id": "science-10",
@@ -1305,7 +1305,7 @@
           "reverse": false,
           "points": 0.38,
           "optimal": 1,
-          "explanation": "Le consensus scientifique sur le changement climatique anthropique est écrasant (97%+ des climatologues). Les preuves proviennent de multiples sources indépendantes et convergentes."
+          "explanation": "L'intuition est sujette à de nombreux biais cognitifs (heuristiques, effet de halo, ancrage). Les études scientifiques utilisent des méthodes rigoureuses pour minimiser ces biais et fournir des résultats plus fiables."
         },
         {
           "id": "science-11",
@@ -1313,8 +1313,8 @@
           "text": "La science a créé plus de problèmes qu'elle n'en a résolu.",
           "reverse": false,
           "points": 0.38,
-          "optimal": 1,
-          "explanation": "La biologie évolutive est l'un des domaines scientifiques les mieux établis, avec des preuves convergentes de la paléontologie, la génétique, la biologie moléculaire, etc."
+          "optimal": 2,
+          "explanation": "La science a considérablement amélioré la qualité de vie (médecine, agriculture, assainissement, technologie). Bien qu'elle crée parfois de nouveaux défis (pollution, armes nucléaires), le bilan global est largement positif. Une position nuancée reconnaît à la fois les bénéfices massifs et certains problèmes créés."
         }
       ]
     },
@@ -1390,11 +1390,11 @@
         {
           "id": "conspiracy-8",
           "type": "likert",
-          "text": "Des technologies de contrôle mental sont utilisées sur la population.",
+          "text": "Des technologies secrètes de contrôle mental télépathique existent.",
           "reverse": false,
           "points": 0.42,
           "optimal": 1,
-          "explanation": "Il n'existe aucune preuve scientifique de technologies de contrôle mental à grande échelle. Les neurosciences montrent que le contrôle mental tel que décrit par les conspirationnistes est scientifiquement impossible avec la technologie actuelle."
+          "explanation": "Il n'existe aucune preuve scientifique de technologies de contrôle mental télépathique. Les neurosciences montrent que la télépathie et le contrôle mental à distance sont scientifiquement impossibles avec nos connaissances actuelles de la physique et de la biologie."
         },
         {
           "id": "conspiracy-9",
@@ -1417,11 +1417,11 @@
         {
           "id": "conspiracy-11",
           "type": "likert",
-          "text": "Des expérimentations médicales ou scientifiques secrètes sont menées sur les citoyens à leur insu.",
+          "text": "Des gouvernements mènent actuellement des expérimentations médicales secrètes à grande échelle sur leurs citoyens à leur insu.",
           "reverse": false,
           "points": 0.42,
           "optimal": 1,
-          "explanation": "Bien que des expérimentations contraires à l'éthique aient existé historiquement (Tuskegee, MKUltra), les cadres éthiques modernes et la surveillance rendent de telles pratiques extrêmement difficiles. Généraliser cela en complot massif actuel est injustifié et relève de la pensée conspirationniste."
+          "explanation": "Bien que des expérimentations contraires à l'éthique aient existé historiquement (Tuskegee, MKUltra), les cadres éthiques modernes, la surveillance institutionnelle et la transparence rendent de telles pratiques à grande échelle extrêmement difficiles aujourd'hui. Affirmer que cela se produit actuellement de manière généralisée sans preuve relève de la pensée conspirationniste."
         }
       ]
     },
@@ -1434,11 +1434,11 @@
         {
           "id": "dysfunc-1",
           "type": "likert",
-          "text": "Je dois être aimé et approuvé par toutes les personnes importantes de ma vie.",
+          "text": "Je DOIS être aimé et approuvé par toutes les personnes importantes de ma vie.",
           "reverse": false,
           "points": 0.56,
           "optimal": 1,
-          "explanation": "Cette croyance est irrationnelle car il est impossible d'être aimé par tous. Les personnes rationnelles acceptent qu'il est normal de ne pas plaire à tout le monde."
+          "explanation": "Cette croyance est irrationnelle car elle transforme un désir légitime (être aimé) en une exigence absolue. Il est impossible d'être aimé et approuvé par tous, et cette croyance génère anxiété et dépendance affective. Les personnes rationnelles acceptent qu'il est normal de ne pas plaire à tout le monde tout en valorisant les relations authentiques."
         },
         {
           "id": "dysfunc-2",
@@ -1452,11 +1452,11 @@
         {
           "id": "dysfunc-3",
           "type": "likert",
-          "text": "Les gens qui se comportent mal méritent d'être blâmés et punis sévèrement.",
+          "text": "Les gens qui se comportent mal ou commettent des erreurs méritent d'être blâmés et punis sévèrement.",
           "reverse": false,
           "points": 0.56,
           "optimal": 1,
-          "explanation": "Cette généralisation excessive est irrationnelle. Un échec dans un domaine ne signifie pas l'échec total. Il est plus rationnel de voir les échecs comme des opportunités d'apprentissage spécifiques."
+          "explanation": "Blâmer et punir sévèrement les autres pour leurs erreurs est contre-productif et ignore la complexité des comportements humains. Une approche plus rationnelle reconnaît que les comportements ont des causes multiples et que la compréhension est souvent plus efficace que la punition sévère."
         },
         {
           "id": "dysfunc-4",
@@ -1465,16 +1465,16 @@
           "reverse": false,
           "points": 0.56,
           "optimal": 1,
-          "explanation": "Blâmer sévèrement les autres pour leurs erreurs est contre-productif et ignore la complexité des comportements humains. Une approche plus rationnelle reconnaît que les comportements ont des causes multiples."
+          "explanation": "Cette croyance reflète une pensée catastrophique irrationnelle. Les problèmes ont des degrés de gravité variables, et tout qualifier de 'catastrophique' empêche une évaluation réaliste et proportionnée des situations. La plupart des contretemps sont des désagréments, pas des catastrophes."
         },
         {
           "id": "dysfunc-5",
           "type": "likert",
-          "text": "Le malheur vient de circonstances extérieures sur lesquelles je n'ai aucun contrôle.",
+          "text": "Quand quelque chose de mauvais m'arrive, c'est toujours dû à des facteurs externes, jamais à mes décisions.",
           "reverse": false,
           "points": 0.56,
           "optimal": 1,
-          "explanation": "Cette croyance reflète une pensée catastrophique irrationnelle. Les problèmes ont des degrés de gravité variables, et tout voir comme 'terrible' empêche une évaluation réaliste."
+          "explanation": "Cette affirmation reflète un biais d'attribution externe systématique et une sur-généralisation. C'est une erreur de raisonnement car elle utilise des termes absolus ('toujours', 'jamais') qui ignorent la complexité causale des événements. Dans la réalité, les résultats négatifs proviennent généralement d'une combinaison de facteurs internes et externes. Une évaluation rationnelle examine la contribution respective de chaque facteur plutôt que d'attribuer systématiquement la causalité à une seule source."
         },
         {
           "id": "dysfunc-6",
@@ -1483,25 +1483,25 @@
           "reverse": false,
           "points": 0.56,
           "optimal": 1,
-          "explanation": "Cette croyance reflète un locus de contrôle externe excessif. Bien que les circonstances influencent notre vie, nous avons un certain degré de contrôle et de responsabilité."
+          "explanation": "L'inquiétude excessive et constante n'augmente pas le contrôle sur les événements futurs et génère anxiété et stress inutiles. Une approche plus rationnelle consiste à évaluer les risques de manière réaliste, à prendre des précautions raisonnables quand c'est possible, puis à accepter l'incertitude inhérente à la vie."
         },
         {
           "id": "dysfunc-7",
           "type": "likert",
-          "text": "Il est plus facile d'éviter les difficultés que d'y faire face.",
+          "text": "Si j'ignore un problème, il finira par se résoudre tout seul.",
           "reverse": false,
           "points": 0.56,
           "optimal": 1,
-          "explanation": "Éviter les difficultés est plus facile à court terme mais empêche la croissance et la résolution de problèmes. Il est plus rationnel d'affronter les défis."
+          "explanation": "Cette croyance repose sur une fausse relation causale entre l'inaction et la résolution de problèmes. C'est une forme de pensée magique qui confond l'espoir avec la causalité. Dans la réalité, la plupart des problèmes non traités persistent ou s'aggravent ; ils ne se résolvent pas spontanément par le simple fait de les ignorer. Une approche rationnelle consiste à évaluer objectivement si un problème nécessite une intervention active ou si d'autres facteurs pourraient le résoudre."
         },
         {
           "id": "dysfunc-8",
           "type": "likert",
-          "text": "J'ai besoin de quelqu'un de plus fort que moi sur qui m'appuyer.",
+          "text": "Je ne peux rien accomplir d'important sans que quelqu'un me dise exactement quoi faire.",
           "reverse": false,
           "points": 0.56,
           "optimal": 1,
-          "explanation": "Cette dépendance excessive aux autres est irrationnelle. Les adultes rationnels développent leur autonomie tout en maintenant des relations saines."
+          "explanation": "Cette croyance reflète une sous-estimation systématique de ses propres capacités et peut indiquer une impuissance apprise. C'est une erreur de calibration : affirmer qu'on ne peut 'rien' accomplir d'important de manière autonome est une généralisation excessive qui ignore les nombreuses compétences et ressources dont dispose tout individu. Une auto-évaluation rationnelle reconnaît à la fois ses limites (où le soutien est utile) et ses capacités (où l'autonomie est possible)."
         },
         {
           "id": "dysfunc-9",
@@ -1531,7 +1531,7 @@
         {
           "id": "arg-eval-1b",
           "type": "multiple-choice",
-          "text": "**Partie B - Évaluation** :\n\n**Opinion de Marc** : Les étudiants devraient avoir une voix plus forte que le grand public dans la définition des politiques universitaires.\n\n**Justification de Marc** : Puisque ce sont les étudiants qui doivent finalement payer les coûts de fonctionnement de l'université par leurs frais de scolarité, ils devraient avoir une voix plus forte dans les politiques universitaires.\n\n**Contre-argument du critique** : Les frais de scolarité couvrent moins de la moitié du coût d'une éducation dans la plupart des universités publiques (supposez que c'est factuellement correct), donc les contribuables devraient avoir leur mot à dire plus important dans les politiques.\n\n**Réponse de Marc** : Puisque ce sont les étudiants qui sont directement influencés par les politiques universitaires (supposez que c'est factuellement correct), ce sont eux qui devraient avoir la voix la plus forte.\n\n**Évaluez la force de la réponse de Marc** :",
+          "text": "**Partie B - Évaluation** :\n\n**Opinion de Marc** : Les étudiants devraient avoir une voix plus forte que le grand public dans la définition des politiques universitaires.\n\n**Justification de Marc** : Puisque ce sont les étudiants qui doivent finalement payer les coûts de fonctionnement de l'université par leurs frais de scolarité, ils devraient avoir une voix plus forte dans les politiques universitaires.\n\n**Contre-argument du critique** : Les frais de scolarité couvrent moins de la moitié du coût d'une éducation dans la plupart des universités publiques (supposez que c'est factuellement correct), donc les contribuables devraient avoir leur mot à dire plus important dans les politiques.\n\n**Réponse de Marc** : Certes, mais laissons de côté la question du financement pour l'instant. Ce qui compte vraiment, c'est que les étudiants sont directement influencés par les politiques universitaires au quotidien (supposez que c'est factuellement correct), donc ce sont eux qui devraient avoir la voix la plus forte.\n\n**Évaluez la force de la réponse de Marc** :",
           "options": [
             "1 - Très faible",
             "2 - Faible",
@@ -1540,7 +1540,7 @@
           ],
           "correct": 0,
           "points": 0.625,
-          "explanation": "La réponse de Marc est très faible car il change d'argument sans répondre au contre-argument sur le financement."
+          "explanation": "La réponse de Marc est très faible car il esquive explicitement le contre-argument sur le financement ('laissons de côté la question du financement') et introduit un nouvel argument (impact direct) sans défendre son argument initial. C'est un sophisme de déplacement des poteaux de but (moving the goalposts). Une réponse forte aurait dû soit défendre l'argument du financement, soit reconnaître sa faiblesse et expliquer pourquoi l'opinion reste valide malgré cela."
         },
         {
           "id": "arg-eval-2a",
@@ -1567,7 +1567,7 @@
         {
           "id": "arg-eval-3a",
           "type": "likert",
-          "text": "**Partie A - Votre opinion** : L'énergie nucléaire devrait être développée comme source principale d'énergie pour l'avenir.",
+          "text": "**Partie A - Votre opinion** : Les téléphones portables devraient être interdits dans toutes les écoles.",
           "points": 0,
           "optimal": 1,
           "explanation": "Un raisonnement solide peut être jugé indépendamment de nos émotions personnelles sur le sujet. La pensée rationnelle sépare l'évaluation logique des réactions émotionnelles."
@@ -1575,21 +1575,21 @@
         {
           "id": "arg-eval-3b",
           "type": "multiple-choice",
-          "text": "**Partie B - Évaluation** :\n\n**Opinion de Marc** : L'énergie nucléaire devrait être développée comme source principale d'énergie pour l'avenir.\n\n**Justification de Marc** : L'énergie nucléaire est plus propre que les combustibles fossiles et peut fournir une énergie stable et abondante pour répondre à nos besoins croissants.\n\n**Contre-argument du critique** : Les accidents nucléaires comme Tchernobyl et Fukushima montrent que l'énergie nucléaire comporte des risques catastrophiques (supposez que c'est factuellement correct).\n\n**Réponse de Marc** : Ces accidents étaient dus à des technologies anciennes et des erreurs humaines. Les nouvelles technologies nucléaires de quatrième génération sont conçues pour être beaucoup plus sûres (supposez que c'est factuellement correct).\n\n**Évaluez la force de la réponse de Marc** :",
+          "text": "**Partie B - Évaluation** :\n\n**Opinion de Marc** : Les téléphones portables devraient être interdits dans toutes les écoles.\n\n**Justification de Marc** : Ils distraient les élèves et perturbent l'apprentissage en classe.\n\n**Contre-argument du critique** : Les téléphones peuvent être des outils pédagogiques utiles (recherche, calculatrice, applications éducatives) et permettent aux parents de joindre leurs enfants en cas d'urgence (supposez que c'est factuellement correct).\n\n**Réponse de Marc** : De toute façon, quand j'étais à l'école, on n'avait pas de téléphones et on apprenait très bien.\n\n**Évaluez la force de la réponse de Marc** :",
           "options": [
             "1 - Très faible",
             "2 - Faible",
             "3 - Fort",
             "4 - Très fort"
           ],
-          "correct": 2,
+          "correct": 0,
           "points": 0.625,
-          "explanation": "La capacité à évaluer objectivement un argument même quand sa conclusion nous déplaît est une marque de pensée rationnelle et critique."
+          "explanation": "La réponse de Marc est très faible car elle commet un 'appel à la tradition' (une erreur logique). Dire que 'avant on faisait autrement et ça marchait' ne répond pas aux avantages spécifiques mentionnés (outils pédagogiques modernes, sécurité). De plus, cette logique bloquerait tout progrès technologique en éducation. Marc ne traite ni les bénéfices pédagogiques ni l'aspect sécuritaire soulevés par le critique."
         },
         {
           "id": "arg-eval-4a",
           "type": "likert",
-          "text": "**Partie A - Votre opinion** : Les entreprises de réseaux sociaux devraient être légalement responsables du contenu publié par leurs utilisateurs.",
+          "text": "**Partie A - Votre opinion** : Il faut augmenter significativement les taxes sur les produits sucrés pour réduire l'obésité.",
           "points": 0,
           "optimal": 1,
           "explanation": "La cohérence logique et les preuves sont les critères essentiels pour évaluer un argument, pas notre accord avec la conclusion. C'est le fondement de la pensée critique."
@@ -1597,7 +1597,7 @@
         {
           "id": "arg-eval-4b",
           "type": "multiple-choice",
-          "text": "**Partie B - Évaluation** :\n\n**Opinion de Marc** : Les entreprises de réseaux sociaux devraient être légalement responsables du contenu publié par leurs utilisateurs.\n\n**Justification de Marc** : Les plateformes profitent du contenu généré par les utilisateurs, donc elles devraient être responsables de ce contenu.\n\n**Contre-argument du critique** : Il est impossible techniquement de modérer des milliards de publications en temps réel (supposez que c'est factuellement correct).\n\n**Réponse de Marc** : C'est vrai, mais elles peuvent investir davantage dans des systèmes de modération automatiques et humains (supposez que c'est factuellement correct).\n\n**Évaluez la force de la réponse de Marc** :",
+          "text": "**Partie B - Évaluation** :\n\n**Opinion de Marc** : Il faut augmenter significativement les taxes sur les produits sucrés pour réduire l'obésité.\n\n**Justification de Marc** : Des taxes élevées découragent la consommation de produits nocifs pour la santé.\n\n**Contre-argument du critique** : Les taxes sur le sucre affectent de manière disproportionnée les ménages à faible revenu qui dépensent un pourcentage plus élevé de leur budget en alimentation (supposez que c'est factuellement correct).\n\n**Réponse de Marc** : Mais l'obésité et le diabète affectent aussi davantage les populations à faible revenu (supposez que c'est factuellement correct). Une taxe qui réduit leur consommation de sucre améliorerait donc leur santé, ce qui compense largement le coût financier.\n\n**Évaluez la force de la réponse de Marc** :",
           "options": [
             "1 - Très faible",
             "2 - Faible",
@@ -1606,7 +1606,7 @@
           ],
           "correct": 2,
           "points": 0.625,
-          "explanation": "La réponse de Marc est 'Fort' (3). Il reconnaît le problème technique soulevé par le critique, mais propose une solution concrète (investissement dans la modération). Même si cette solution ne résout pas totalement le problème de l'impossibilité de modérer en temps réel, c'est une réponse constructive et raisonnable qui mérite une évaluation positive."
+          "explanation": "La réponse de Marc est forte car elle répond directement au contre-argument. Le critique soulève que la taxe affecte négativement les populations à faible revenu. Marc reconnaît ce point mais montre que ces mêmes populations bénéficieraient le plus de la réduction de consommation de sucre (réduction de l'obésité et du diabète). Il propose ainsi un compromis coût-bénéfice spécifique à la population concernée. C'est une réponse logique qui traite le problème soulevé plutôt que de l'ignorer."
         }
       ]
     },
@@ -1621,26 +1621,26 @@
           "type": "multiple-choice",
           "text": "Des chercheurs ont découvert que les enfants qui regardent beaucoup de télévision ont tendance à obtenir de moins bons résultats scolaires que les enfants qui regardent peu de télévision.\n\nCette découverte signifie-t-elle qu'interdire la télévision aux enfants améliorerait leurs résultats scolaires ?",
           "options": [
-            "Oui, certainement",
-            "Non, pas nécessairement",
-            "On ne peut pas le déterminer avec ces informations seules"
+            "Oui, cette corrélation prouve que réduire la TV améliorera les résultats",
+            "Non, la corrélation n'implique pas la causation - d'autres facteurs pourraient expliquer les deux",
+            "Impossible de répondre car l'étude ne précise pas le type d'émissions regardées"
           ],
           "correct": 1,
           "points": 1,
-          "explanation": "Non nécessairement. La corrélation n'implique pas la causation. D'autres facteurs (niveau socio-économique, éducation des parents) pourraient expliquer à la fois plus de TV et de moins bons résultats."
+          "explanation": "Non, la corrélation n'implique pas la causation. D'autres facteurs (niveau socio-économique, éducation des parents, environnement familial) pourraient expliquer à la fois plus de TV et de moins bons résultats scolaires. Pour établir un lien causal, il faudrait une étude expérimentale contrôlée ou éliminer les variables confondantes."
         },
         {
           "id": "causal-2",
           "type": "multiple-choice",
           "text": "Une étude montre que les personnes qui prennent des vitamines quotidiennement vivent en moyenne plus longtemps que celles qui n'en prennent pas.\n\nPeut-on conclure que prendre des vitamines augmente l'espérance de vie ?",
           "options": [
-            "Oui",
-            "Non",
-            "Impossible à déterminer"
+            "Oui, la différence d'espérance de vie prouve l'effet des vitamines",
+            "Non, car les personnes qui prennent des vitamines ont probablement déjà un mode de vie plus sain",
+            "Oui, mais seulement pour certains types de vitamines"
           ],
           "correct": 1,
           "points": 1,
-          "explanation": "Non. Les personnes qui prennent des vitamines ont peut-être déjà un mode de vie plus sain (exercice, alimentation équilibrée), ce qui explique leur longévité."
+          "explanation": "Non, on ne peut pas conclure à un effet causal. Les personnes qui prennent des vitamines quotidiennement sont probablement plus soucieuses de leur santé en général : elles font peut-être plus d'exercice, mangent mieux, consultent régulièrement un médecin, etc. C'est ce mode de vie global plus sain qui pourrait expliquer leur longévité, pas nécessairement les vitamines elles-mêmes. Il s'agit d'un biais de sélection classique."
         },
         {
           "id": "causal-4",
