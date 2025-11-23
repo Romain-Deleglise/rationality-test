@@ -1,6 +1,6 @@
 {
   "version": "complète",
-  "totalPoints": 96.98,
+  "totalPoints": 89.46,
   "estimatedTime": 86,
   "modules": [
     {
@@ -1125,8 +1125,8 @@
           "text": "Les pensées d'une personne peuvent influencer le mouvement d'un objet physique.",
           "reverse": false,
           "points": 0.42,
-          "optimal": 1,
-          "explanation": "La télékinésie (influencer des objets par la pensée) n'a jamais été démontrée scientifiquement malgré de nombreuses études. C'est une croyance superstitieuse sans fondement empirique."
+          "explanation": "La télékinésie (influencer des objets par la pensée) n'a jamais été démontrée scientifiquement malgré de nombreuses études. C'est une croyance superstitieuse sans fondement empirique.",
+          "correct": 1
         },
         {
           "id": "super-2",
@@ -1134,8 +1134,8 @@
           "text": "L'astrologie peut être utile pour juger de la personnalité.",
           "reverse": false,
           "points": 0.42,
-          "optimal": 1,
-          "explanation": "L'astrologie n'a aucun fondement scientifique. Les études contrôlées montrent que les prédictions astrologiques ne sont pas plus précises que le hasard."
+          "explanation": "L'astrologie n'a aucun fondement scientifique. Les études contrôlées montrent que les prédictions astrologiques ne sont pas plus précises que le hasard.",
+          "correct": 1
         },
         {
           "id": "super-3",
@@ -1143,8 +1143,8 @@
           "text": "La lecture de la pensée n'est pas possible.",
           "reverse": true,
           "points": 0.42,
-          "optimal": 7,
-          "explanation": "En effet, la télépathie (lecture de pensée) n'a jamais été démontrée de manière reproductible dans des conditions contrôlées. C'est une croyance pseudoscientifique."
+          "explanation": "En effet, la télépathie (lecture de pensée) n'a jamais été démontrée de manière reproductible dans des conditions contrôlées. C'est une croyance pseudoscientifique.",
+          "correct": 7
         },
         {
           "id": "super-4",
@@ -1152,8 +1152,8 @@
           "text": "Certaines personnes peuvent prédire l'avenir avec précision.",
           "reverse": false,
           "points": 0.42,
-          "optimal": 1,
-          "explanation": "La précognition (prédire l'avenir de manière précise et systématique) n'a jamais été validée scientifiquement. Les prédictions correctes peuvent s'expliquer par le hasard, le biais de confirmation ou des prédictions vagues."
+          "explanation": "La précognition (prédire l'avenir de manière précise et systématique) n'a jamais été validée scientifiquement. Les prédictions correctes peuvent s'expliquer par le hasard, le biais de confirmation ou des prédictions vagues.",
+          "correct": 1
         },
         {
           "id": "super-5",
@@ -1161,8 +1161,8 @@
           "text": "Les fantômes ou esprits n'existent pas.",
           "reverse": true,
           "points": 0.42,
-          "optimal": 7,
-          "explanation": "Il n'existe aucune preuve scientifique de l'existence de fantômes ou d'esprits. Les phénomènes paranormaux rapportés peuvent s'expliquer par des causes naturelles, des hallucinations ou des erreurs de perception."
+          "explanation": "Il n'existe aucune preuve scientifique de l'existence de fantômes ou d'esprits. Les phénomènes paranormaux rapportés peuvent s'expliquer par des causes naturelles, des hallucinations ou des erreurs de perception.",
+          "correct": 7
         },
         {
           "id": "super-6",
@@ -1170,8 +1170,8 @@
           "text": "Certains porte-bonheur peuvent vraiment influencer les événements.",
           "reverse": false,
           "points": 0.42,
-          "optimal": 1,
-          "explanation": "Les porte-bonheur n'ont aucun effet causal sur les événements. L'impression qu'ils fonctionnent relève du biais de confirmation et de l'illusion de contrôle."
+          "explanation": "Les porte-bonheur n'ont aucun effet causal sur les événements. L'impression qu'ils fonctionnent relève du biais de confirmation et de l'illusion de contrôle.",
+          "correct": 1
         },
         {
           "id": "super-7",
@@ -1179,8 +1179,8 @@
           "text": "Il est possible de communiquer avec les morts.",
           "reverse": false,
           "points": 0.42,
-          "optimal": 1,
-          "explanation": "La communication avec les morts n'a jamais été démontrée scientifiquement. Les médiums utilisent des techniques de lecture froide et d'autres astuces psychologiques."
+          "explanation": "La communication avec les morts n'a jamais été démontrée scientifiquement. Les médiums utilisent des techniques de lecture froide et d'autres astuces psychologiques.",
+          "correct": 1
         },
         {
           "id": "super-8",
@@ -1188,8 +1188,8 @@
           "text": "Les rêves prémonitoires sont de simples coïncidences.",
           "reverse": true,
           "points": 0.42,
-          "optimal": 7,
-          "explanation": "Les rêves prémonitoires apparents sont effectivement des coïncidences. Nous rêvons de nombreuses choses chaque nuit, et occasionnellement certaines correspondent à des événements futurs par pur hasard."
+          "explanation": "Les rêves prémonitoires apparents sont effectivement des coïncidences. Nous rêvons de nombreuses choses chaque nuit, et occasionnellement certaines correspondent à des événements futurs par pur hasard.",
+          "correct": 7
         },
         {
           "id": "super-9",
@@ -1197,8 +1197,8 @@
           "text": "Certaines personnes possèdent des pouvoirs psychiques réels.",
           "reverse": false,
           "points": 0.42,
-          "optimal": 1,
-          "explanation": "Les pouvoirs psychiques (ESP, télékinésie, etc.) n'ont jamais été démontrés dans des conditions contrôlées malgré des décennies de recherche. Les effets apparents relèvent de biais cognitifs ou de fraude."
+          "explanation": "Les pouvoirs psychiques (ESP, télékinésie, etc.) n'ont jamais été démontrés dans des conditions contrôlées malgré des décennies de recherche. Les effets apparents relèvent de biais cognitifs ou de fraude.",
+          "correct": 1
         },
         {
           "id": "super-10",
@@ -1206,8 +1206,8 @@
           "text": "Les cristaux et pierres n'ont aucun pouvoir de guérison.",
           "reverse": true,
           "points": 0.42,
-          "optimal": 7,
-          "explanation": "Les cristaux et pierres n'ont aucun pouvoir de guérison démontré au-delà de l'effet placebo. C'est une croyance New Age sans fondement scientifique."
+          "explanation": "Les cristaux et pierres n'ont aucun pouvoir de guérison démontré au-delà de l'effet placebo. C'est une croyance New Age sans fondement scientifique.",
+          "correct": 7
         }
       ]
     },
@@ -1223,8 +1223,8 @@
           "text": "Le fait que les scientifiques ne soient souvent pas d'accord montre que la science implique plus d'opinions personnelles que de preuves réelles.",
           "reverse": false,
           "points": 0.38,
-          "optimal": 1,
-          "explanation": "Les désaccords scientifiques portent sur l'interprétation des preuves, pas sur des opinions personnelles. Ces débats font partie du processus scientifique normal et se résolvent avec l'accumulation de nouvelles données."
+          "explanation": "Les désaccords scientifiques portent sur l'interprétation des preuves, pas sur des opinions personnelles. Ces débats font partie du processus scientifique normal et se résolvent avec l'accumulation de nouvelles données.",
+          "correct": 1
         },
         {
           "id": "science-2",
@@ -1232,8 +1232,8 @@
           "text": "Quand la science entre en conflit avec la sagesse conventionnelle, c'est généralement la science qui a raison.",
           "reverse": true,
           "points": 0.38,
-          "optimal": 7,
-          "explanation": "La connaissance scientifique est la forme de connaissance la plus fiable car elle est testée empiriquement, reproductible et auto-correctrice. Faire confiance à la science est rationnel."
+          "explanation": "La connaissance scientifique est la forme de connaissance la plus fiable car elle est testée empiriquement, reproductible et auto-correctrice. Faire confiance à la science est rationnel.",
+          "correct": 7
         },
         {
           "id": "science-3",
@@ -1241,8 +1241,8 @@
           "text": "La science change trop souvent d'avis pour qu'on puisse lui faire confiance.",
           "reverse": false,
           "points": 0.38,
-          "optimal": 1,
-          "explanation": "La science progresse en questionnant et en révisant ses théories face à de nouvelles preuves. Ce processus d'auto-correction est une force, pas une faiblesse. C'est ce qui rend la science fiable à long terme."
+          "explanation": "La science progresse en questionnant et en révisant ses théories face à de nouvelles preuves. Ce processus d'auto-correction est une force, pas une faiblesse. C'est ce qui rend la science fiable à long terme.",
+          "correct": 1
         },
         {
           "id": "science-4",
@@ -1250,8 +1250,8 @@
           "text": "Les scientifiques sont généralement plus fiables que les sources d'information non scientifiques.",
           "reverse": true,
           "points": 0.38,
-          "optimal": 7,
-          "explanation": "Les scientifiques utilisent des méthodes rigoureuses, la revue par les pairs et exigent la reproductibilité des résultats. Ces garde-fous les rendent généralement plus fiables que les sources non scientifiques."
+          "explanation": "Les scientifiques utilisent des méthodes rigoureuses, la revue par les pairs et exigent la reproductibilité des résultats. Ces garde-fous les rendent généralement plus fiables que les sources non scientifiques.",
+          "correct": 7
         },
         {
           "id": "science-5",
@@ -1259,8 +1259,8 @@
           "text": "Les découvertes scientifiques qui contredisent le bon sens sont probablement fausses.",
           "reverse": false,
           "points": 0.38,
-          "optimal": 1,
-          "explanation": "Le bon sens est souvent trompeur (ex: la Terre semble plate, les objets lourds semblent tomber plus vite). De nombreuses découvertes scientifiques contre-intuitives sont vraies (mécanique quantique, relativité)."
+          "explanation": "Le bon sens est souvent trompeur (ex: la Terre semble plate, les objets lourds semblent tomber plus vite). De nombreuses découvertes scientifiques contre-intuitives sont vraies (mécanique quantique, relativité).",
+          "correct": 1
         },
         {
           "id": "science-6",
@@ -1268,8 +1268,8 @@
           "text": "La méthode scientifique est le meilleur moyen d'obtenir des connaissances fiables.",
           "reverse": true,
           "points": 0.38,
-          "optimal": 7,
-          "explanation": "La méthode scientifique repose sur l'observation, l'expérimentation, la falsifiabilité et la reproductibilité. C'est le meilleur outil dont nous disposons pour comprendre la réalité objective de manière fiable."
+          "explanation": "La méthode scientifique repose sur l'observation, l'expérimentation, la falsifiabilité et la reproductibilité. C'est le meilleur outil dont nous disposons pour comprendre la réalité objective de manière fiable.",
+          "correct": 7
         },
         {
           "id": "science-7",
@@ -1277,8 +1277,8 @@
           "text": "Les études scientifiques sont parfois biaisées par les intérêts financiers de ceux qui les financent.",
           "reverse": true,
           "points": 0.38,
-          "optimal": 7,
-          "explanation": "Les conflits d'intérêts peuvent influencer les résultats de recherche (ex: études financées par l'industrie du tabac, pharmaceutique). Reconnaître cette réalité et exiger la transparence sur le financement sont des positions rationnelles."
+          "explanation": "Les conflits d'intérêts peuvent influencer les résultats de recherche (ex: études financées par l'industrie du tabac, pharmaceutique). Reconnaître cette réalité et exiger la transparence sur le financement sont des positions rationnelles.",
+          "correct": 7
         },
         {
           "id": "science-8",
@@ -1286,8 +1286,8 @@
           "text": "La science ne peut pas expliquer les choses vraiment importantes de la vie.",
           "reverse": false,
           "points": 0.38,
-          "optimal": 1,
-          "explanation": "La science peut éclairer de nombreux aspects importants de la vie (santé, relations, bonheur, moralité). Même les questions philosophiques profondes bénéficient souvent de perspectives scientifiques."
+          "explanation": "La science peut éclairer de nombreux aspects importants de la vie (santé, relations, bonheur, moralité). Même les questions philosophiques profondes bénéficient souvent de perspectives scientifiques.",
+          "correct": 1
         },
         {
           "id": "science-9",
@@ -1295,8 +1295,8 @@
           "text": "Les preuves scientifiques devraient avoir plus de poids que les témoignages personnels.",
           "reverse": true,
           "points": 0.38,
-          "optimal": 7,
-          "explanation": "Les études scientifiques à grande échelle et bien contrôlées sont plus fiables que l'expérience personnelle, qui est sujette à de nombreux biais cognitifs (confirmation, disponibilité, récence, etc.)."
+          "explanation": "Les études scientifiques à grande échelle et bien contrôlées sont plus fiables que l'expérience personnelle, qui est sujette à de nombreux biais cognitifs (confirmation, disponibilité, récence, etc.).",
+          "correct": 7
         },
         {
           "id": "science-10",
@@ -1304,8 +1304,8 @@
           "text": "L'intuition personnelle est souvent plus fiable que les résultats d'études scientifiques.",
           "reverse": false,
           "points": 0.38,
-          "optimal": 1,
-          "explanation": "L'intuition est sujette à de nombreux biais cognitifs (heuristiques, effet de halo, ancrage). Les études scientifiques utilisent des méthodes rigoureuses pour minimiser ces biais et fournir des résultats plus fiables."
+          "explanation": "L'intuition est sujette à de nombreux biais cognitifs (heuristiques, effet de halo, ancrage). Les études scientifiques utilisent des méthodes rigoureuses pour minimiser ces biais et fournir des résultats plus fiables.",
+          "correct": 1
         },
         {
           "id": "science-11",
@@ -1313,8 +1313,8 @@
           "text": "La science a créé plus de problèmes qu'elle n'en a résolu.",
           "reverse": false,
           "points": 0.38,
-          "optimal": 2,
-          "explanation": "La science a considérablement amélioré la qualité de vie (médecine, agriculture, assainissement, technologie). Bien qu'elle crée parfois de nouveaux défis (pollution, armes nucléaires), le bilan global est largement positif. Une position nuancée reconnaît à la fois les bénéfices massifs et certains problèmes créés."
+          "explanation": "La science a considérablement amélioré la qualité de vie (médecine, agriculture, assainissement, technologie). Bien qu'elle crée parfois de nouveaux défis (pollution, armes nucléaires), le bilan global est largement positif. Une position nuancée reconnaît à la fois les bénéfices massifs et certains problèmes créés.",
+          "correct": 2
         }
       ]
     },
@@ -1330,8 +1330,8 @@
           "text": "Les preuves que certains vaccins infantiles peuvent causer l'autisme ont été cachées par des compagnies pharmaceutiques.",
           "reverse": false,
           "points": 0.42,
-          "optimal": 1,
-          "explanation": "Il n'existe aucune preuve scientifique liant les vaccins à l'autisme. L'étude frauduleuse de Wakefield (1998) a été rétractée. De nombreuses études à grande échelle ont démontré l'absence de lien. Cette théorie du complot met en danger la santé publique."
+          "explanation": "Il n'existe aucune preuve scientifique liant les vaccins à l'autisme. L'étude frauduleuse de Wakefield (1998) a été rétractée. De nombreuses études à grande échelle ont démontré l'absence de lien. Cette théorie du complot met en danger la santé publique.",
+          "correct": 1
         },
         {
           "id": "conspiracy-2",
@@ -1339,8 +1339,8 @@
           "text": "Des gouvernements ont caché des preuves de l'existence des extraterrestres et d'OVNI.",
           "reverse": false,
           "points": 0.42,
-          "optimal": 1,
-          "explanation": "Malgré des décennies d'observation du ciel par des millions de personnes, il n'existe aucune preuve vérifiable de visites extraterrestres. Les 'preuves cachées' relèvent de la pensée conspirationniste sans fondement empirique."
+          "explanation": "Malgré des décennies d'observation du ciel par des millions de personnes, il n'existe aucune preuve vérifiable de visites extraterrestres. Les 'preuves cachées' relèvent de la pensée conspirationniste sans fondement empirique.",
+          "correct": 1
         },
         {
           "id": "conspiracy-3",
@@ -1348,8 +1348,8 @@
           "text": "L'alunissage d'Apollo était une mise en scène filmée dans un studio.",
           "reverse": false,
           "points": 0.42,
-          "optimal": 1,
-          "explanation": "L'alunissage d'Apollo est l'un des événements les mieux documentés de l'histoire, avec des preuves multiples : témoignages, photos, échantillons lunaires, réflecteurs laser toujours utilisés. Les arguments conspirationnistes ont tous été réfutés scientifiquement."
+          "explanation": "L'alunissage d'Apollo est l'un des événements les mieux documentés de l'histoire, avec des preuves multiples : témoignages, photos, échantillons lunaires, réflecteurs laser toujours utilisés. Les arguments conspirationnistes ont tous été réfutés scientifiquement.",
+          "correct": 1
         },
         {
           "id": "conspiracy-4",
@@ -1357,8 +1357,8 @@
           "text": "Le changement climatique est un canular inventé pour contrôler l'économie mondiale.",
           "reverse": false,
           "points": 0.42,
-          "optimal": 1,
-          "explanation": "Le consensus scientifique sur le changement climatique anthropique est écrasant (97%+ des climatologues). Les preuves proviennent de multiples sources indépendantes et convergentes. Cette théorie du complot ignore des décennies de recherche rigoureuse."
+          "explanation": "Le consensus scientifique sur le changement climatique anthropique est écrasant (97%+ des climatologues). Les preuves proviennent de multiples sources indépendantes et convergentes. Cette théorie du complot ignore des décennies de recherche rigoureuse.",
+          "correct": 1
         },
         {
           "id": "conspiracy-5",
@@ -1366,8 +1366,8 @@
           "text": "Les chemtrails (traînées d'avion) sont utilisés pour répandre des produits chimiques sur la population.",
           "reverse": false,
           "points": 0.42,
-          "optimal": 1,
-          "explanation": "Les traînées d'avion (contrails) sont de la vapeur d'eau condensée, un phénomène atmosphérique bien compris. Il n'existe aucune preuve de 'chemtrails' chimiques. Cette théorie repose sur une incompréhension de la météorologie."
+          "explanation": "Les traînées d'avion (contrails) sont de la vapeur d'eau condensée, un phénomène atmosphérique bien compris. Il n'existe aucune preuve de 'chemtrails' chimiques. Cette théorie repose sur une incompréhension de la météorologie.",
+          "correct": 1
         },
         {
           "id": "conspiracy-6",
@@ -1375,8 +1375,8 @@
           "text": "La Terre est plate, contrairement à ce que la science officielle prétend.",
           "reverse": false,
           "points": 0.42,
-          "optimal": 1,
-          "explanation": "La forme sphérique de la Terre est établie depuis l'Antiquité et confirmée par des preuves convergentes : navigation, astrophysique, photos satellites, voyages spatiaux. La théorie de la Terre plate ignore des millénaires de preuves scientifiques."
+          "explanation": "La forme sphérique de la Terre est établie depuis l'Antiquité et confirmée par des preuves convergentes : navigation, astrophysique, photos satellites, voyages spatiaux. La théorie de la Terre plate ignore des millénaires de preuves scientifiques.",
+          "correct": 1
         },
         {
           "id": "conspiracy-7",
@@ -1384,8 +1384,8 @@
           "text": "Un 'Nouvel Ordre Mondial' tente d'établir un gouvernement mondial unique.",
           "reverse": false,
           "points": 0.42,
-          "optimal": 1,
-          "explanation": "Bien que des organisations internationales existent (ONU, UE), il n'existe aucune preuve d'un complot secret pour un gouvernement mondial unique. Cette théorie relève de la pensée conspirationniste paranoïaque sans fondement factuel."
+          "explanation": "Bien que des organisations internationales existent (ONU, UE), il n'existe aucune preuve d'un complot secret pour un gouvernement mondial unique. Cette théorie relève de la pensée conspirationniste paranoïaque sans fondement factuel.",
+          "correct": 1
         },
         {
           "id": "conspiracy-8",
@@ -1393,8 +1393,8 @@
           "text": "Des technologies secrètes de contrôle mental télépathique existent.",
           "reverse": false,
           "points": 0.42,
-          "optimal": 1,
-          "explanation": "Il n'existe aucune preuve scientifique de technologies de contrôle mental télépathique. Les neurosciences montrent que la télépathie et le contrôle mental à distance sont scientifiquement impossibles avec nos connaissances actuelles de la physique et de la biologie."
+          "explanation": "Il n'existe aucune preuve scientifique de technologies de contrôle mental télépathique. Les neurosciences montrent que la télépathie et le contrôle mental à distance sont scientifiquement impossibles avec nos connaissances actuelles de la physique et de la biologie.",
+          "correct": 1
         },
         {
           "id": "conspiracy-9",
@@ -1402,8 +1402,8 @@
           "text": "Les grandes entreprises pharmaceutiques cachent des remèdes contre le cancer pour continuer à vendre des traitements.",
           "reverse": false,
           "points": 0.42,
-          "optimal": 1,
-          "explanation": "Les entreprises pharmaceutiques ont un intérêt économique à développer des remèdes efficaces (brevets lucratifs). Cacher un remède contre le cancer serait impossible (trop de personnes impliquées) et contre-productif économiquement. Cette théorie ignore la réalité de la recherche médicale."
+          "explanation": "Les entreprises pharmaceutiques ont un intérêt économique à développer des remèdes efficaces (brevets lucratifs). Cacher un remède contre le cancer serait impossible (trop de personnes impliquées) et contre-productif économiquement. Cette théorie ignore la réalité de la recherche médicale.",
+          "correct": 1
         },
         {
           "id": "conspiracy-10",
@@ -1411,8 +1411,8 @@
           "text": "Les Illuminati existent et contrôlent secrètement les affaires mondiales.",
           "reverse": false,
           "points": 0.42,
-          "optimal": 1,
-          "explanation": "Il n'existe aucune preuve de l'existence des Illuminati comme organisation contrôlant secrètement le monde. Cette théorie du complot confond coïncidences, symbolisme artistique et réalité politique complexe."
+          "explanation": "Il n'existe aucune preuve de l'existence des Illuminati comme organisation contrôlant secrètement le monde. Cette théorie du complot confond coïncidences, symbolisme artistique et réalité politique complexe.",
+          "correct": 1
         },
         {
           "id": "conspiracy-11",
@@ -1420,8 +1420,8 @@
           "text": "Des gouvernements mènent actuellement des expérimentations médicales secrètes à grande échelle sur leurs citoyens à leur insu.",
           "reverse": false,
           "points": 0.42,
-          "optimal": 1,
-          "explanation": "Bien que des expérimentations contraires à l'éthique aient existé historiquement (Tuskegee, MKUltra), les cadres éthiques modernes, la surveillance institutionnelle et la transparence rendent de telles pratiques à grande échelle extrêmement difficiles aujourd'hui. Affirmer que cela se produit actuellement de manière généralisée sans preuve relève de la pensée conspirationniste."
+          "explanation": "Bien que des expérimentations contraires à l'éthique aient existé historiquement (Tuskegee, MKUltra), les cadres éthiques modernes, la surveillance institutionnelle et la transparence rendent de telles pratiques à grande échelle extrêmement difficiles aujourd'hui. Affirmer que cela se produit actuellement de manière généralisée sans preuve relève de la pensée conspirationniste.",
+          "correct": 1
         }
       ]
     },
@@ -1437,8 +1437,8 @@
           "text": "Je DOIS être aimé et approuvé par toutes les personnes importantes de ma vie.",
           "reverse": false,
           "points": 0.56,
-          "optimal": 1,
-          "explanation": "Cette croyance est irrationnelle car elle transforme un désir légitime (être aimé) en une exigence absolue. Il est impossible d'être aimé et approuvé par tous, et cette croyance génère anxiété et dépendance affective. Les personnes rationnelles acceptent qu'il est normal de ne pas plaire à tout le monde tout en valorisant les relations authentiques."
+          "explanation": "Cette croyance est irrationnelle car elle transforme un désir légitime (être aimé) en une exigence absolue. Il est impossible d'être aimé et approuvé par tous, et cette croyance génère anxiété et dépendance affective. Les personnes rationnelles acceptent qu'il est normal de ne pas plaire à tout le monde tout en valorisant les relations authentiques.",
+          "correct": 1
         },
         {
           "id": "dysfunc-2",
@@ -1446,8 +1446,8 @@
           "text": "Je dois être parfaitement compétent dans tout ce que j'entreprends.",
           "reverse": false,
           "points": 0.56,
-          "optimal": 1,
-          "explanation": "Exiger la perfection dans tout est irréaliste et source d'anxiété. Il est plus rationnel d'accepter que l'erreur est humaine et de viser l'excellence plutôt que la perfection."
+          "explanation": "Exiger la perfection dans tout est irréaliste et source d'anxiété. Il est plus rationnel d'accepter que l'erreur est humaine et de viser l'excellence plutôt que la perfection.",
+          "correct": 1
         },
         {
           "id": "dysfunc-3",
@@ -1455,8 +1455,8 @@
           "text": "Les gens qui se comportent mal ou commettent des erreurs méritent d'être blâmés et punis sévèrement.",
           "reverse": false,
           "points": 0.56,
-          "optimal": 1,
-          "explanation": "Blâmer et punir sévèrement les autres pour leurs erreurs est contre-productif et ignore la complexité des comportements humains. Une approche plus rationnelle reconnaît que les comportements ont des causes multiples et que la compréhension est souvent plus efficace que la punition sévère."
+          "explanation": "Blâmer et punir sévèrement les autres pour leurs erreurs est contre-productif et ignore la complexité des comportements humains. Une approche plus rationnelle reconnaît que les comportements ont des causes multiples et que la compréhension est souvent plus efficace que la punition sévère.",
+          "correct": 1
         },
         {
           "id": "dysfunc-4",
@@ -1464,8 +1464,8 @@
           "text": "C'est catastrophique quand les choses ne se passent pas comme je le voudrais.",
           "reverse": false,
           "points": 0.56,
-          "optimal": 1,
-          "explanation": "Cette croyance reflète une pensée catastrophique irrationnelle. Les problèmes ont des degrés de gravité variables, et tout qualifier de 'catastrophique' empêche une évaluation réaliste et proportionnée des situations. La plupart des contretemps sont des désagréments, pas des catastrophes."
+          "explanation": "Cette croyance reflète une pensée catastrophique irrationnelle. Les problèmes ont des degrés de gravité variables, et tout qualifier de 'catastrophique' empêche une évaluation réaliste et proportionnée des situations. La plupart des contretemps sont des désagréments, pas des catastrophes.",
+          "correct": 1
         },
         {
           "id": "dysfunc-5",
@@ -1473,8 +1473,8 @@
           "text": "Quand quelque chose de mauvais m'arrive, c'est toujours dû à des facteurs externes, jamais à mes décisions.",
           "reverse": false,
           "points": 0.56,
-          "optimal": 1,
-          "explanation": "Cette affirmation reflète un biais d'attribution externe systématique et une sur-généralisation. C'est une erreur de raisonnement car elle utilise des termes absolus ('toujours', 'jamais') qui ignorent la complexité causale des événements. Dans la réalité, les résultats négatifs proviennent généralement d'une combinaison de facteurs internes et externes. Une évaluation rationnelle examine la contribution respective de chaque facteur plutôt que d'attribuer systématiquement la causalité à une seule source."
+          "explanation": "Cette affirmation reflète un biais d'attribution externe systématique et une sur-généralisation. C'est une erreur de raisonnement car elle utilise des termes absolus ('toujours', 'jamais') qui ignorent la complexité causale des événements. Dans la réalité, les résultats négatifs proviennent généralement d'une combinaison de facteurs internes et externes. Une évaluation rationnelle examine la contribution respective de chaque facteur plutôt que d'attribuer systématiquement la causalité à une seule source.",
+          "correct": 1
         },
         {
           "id": "dysfunc-6",
@@ -1482,8 +1482,8 @@
           "text": "Je dois constamment m'inquiéter des choses dangereuses ou effrayantes qui pourraient arriver.",
           "reverse": false,
           "points": 0.56,
-          "optimal": 1,
-          "explanation": "L'inquiétude excessive et constante n'augmente pas le contrôle sur les événements futurs et génère anxiété et stress inutiles. Une approche plus rationnelle consiste à évaluer les risques de manière réaliste, à prendre des précautions raisonnables quand c'est possible, puis à accepter l'incertitude inhérente à la vie."
+          "explanation": "L'inquiétude excessive et constante n'augmente pas le contrôle sur les événements futurs et génère anxiété et stress inutiles. Une approche plus rationnelle consiste à évaluer les risques de manière réaliste, à prendre des précautions raisonnables quand c'est possible, puis à accepter l'incertitude inhérente à la vie.",
+          "correct": 1
         },
         {
           "id": "dysfunc-7",
@@ -1491,8 +1491,8 @@
           "text": "Si j'ignore un problème, il finira par se résoudre tout seul.",
           "reverse": false,
           "points": 0.56,
-          "optimal": 1,
-          "explanation": "Cette croyance repose sur une fausse relation causale entre l'inaction et la résolution de problèmes. C'est une forme de pensée magique qui confond l'espoir avec la causalité. Dans la réalité, la plupart des problèmes non traités persistent ou s'aggravent ; ils ne se résolvent pas spontanément par le simple fait de les ignorer. Une approche rationnelle consiste à évaluer objectivement si un problème nécessite une intervention active ou si d'autres facteurs pourraient le résoudre."
+          "explanation": "Cette croyance repose sur une fausse relation causale entre l'inaction et la résolution de problèmes. C'est une forme de pensée magique qui confond l'espoir avec la causalité. Dans la réalité, la plupart des problèmes non traités persistent ou s'aggravent ; ils ne se résolvent pas spontanément par le simple fait de les ignorer. Une approche rationnelle consiste à évaluer objectivement si un problème nécessite une intervention active ou si d'autres facteurs pourraient le résoudre.",
+          "correct": 1
         },
         {
           "id": "dysfunc-8",
@@ -1500,8 +1500,8 @@
           "text": "Je ne peux rien accomplir d'important sans que quelqu'un me dise exactement quoi faire.",
           "reverse": false,
           "points": 0.56,
-          "optimal": 1,
-          "explanation": "Cette croyance reflète une sous-estimation systématique de ses propres capacités et peut indiquer une impuissance apprise. C'est une erreur de calibration : affirmer qu'on ne peut 'rien' accomplir d'important de manière autonome est une généralisation excessive qui ignore les nombreuses compétences et ressources dont dispose tout individu. Une auto-évaluation rationnelle reconnaît à la fois ses limites (où le soutien est utile) et ses capacités (où l'autonomie est possible)."
+          "explanation": "Cette croyance reflète une sous-estimation systématique de ses propres capacités et peut indiquer une impuissance apprise. C'est une erreur de calibration : affirmer qu'on ne peut 'rien' accomplir d'important de manière autonome est une généralisation excessive qui ignore les nombreuses compétences et ressources dont dispose tout individu. Une auto-évaluation rationnelle reconnaît à la fois ses limites (où le soutien est utile) et ses capacités (où l'autonomie est possible).",
+          "correct": 1
         },
         {
           "id": "dysfunc-9",
@@ -1509,8 +1509,8 @@
           "text": "Si quelque chose m'a affecté dans le passé, cela continuera toujours à m'affecter de la même manière.",
           "reverse": false,
           "points": 0.56,
-          "optimal": 1,
-          "explanation": "Cette croyance reflète une pensée dichotomique (tout ou rien) irrationnelle. La réalité est plus nuancée, et une solution imparfaite vaut mieux que l'inaction."
+          "explanation": "Cette croyance suggère un déterminisme psychologique irréaliste et ignore la capacité humaine au changement, à l'adaptation et à la résilience. Les recherches en psychologie montrent que les personnes peuvent modifier leurs réactions émotionnelles et comportementales par la thérapie, l'apprentissage et l'expérience. Bien que les traumatismes passés puissent avoir des effets durables, leur impact peut évoluer avec le temps et le traitement approprié.",
+          "correct": 1
         }
       ]
     },
@@ -1526,7 +1526,7 @@
           "text": "**Partie A - Votre opinion** : Les étudiants devraient avoir une voix plus forte que le grand public dans la définition des politiques universitaires.",
           "points": 0,
           "explanation": "Cette question mesure votre opinion préalable pour détecter le biais de croyance.",
-          "optimal": 1
+          "correct": null
         },
         {
           "id": "arg-eval-1b",
@@ -1547,8 +1547,8 @@
           "type": "likert",
           "text": "**Partie A - Votre opinion** : Le tabac devrait être interdit dans tous les lieux publics fermés.",
           "points": 0,
-          "optimal": 1,
-          "explanation": "La pensée critique implique d'évaluer les arguments sur leur mérite intrinsèque (preuves, logique) plutôt que sur qui les présente. L'appel à l'autorité est un biais cognitif."
+          "explanation": "Cette question mesure votre opinion préalable pour détecter le biais de croyance.",
+          "correct": null
         },
         {
           "id": "arg-eval-2b",
@@ -1569,8 +1569,8 @@
           "type": "likert",
           "text": "**Partie A - Votre opinion** : Les téléphones portables devraient être interdits dans toutes les écoles.",
           "points": 0,
-          "optimal": 1,
-          "explanation": "Un raisonnement solide peut être jugé indépendamment de nos émotions personnelles sur le sujet. La pensée rationnelle sépare l'évaluation logique des réactions émotionnelles."
+          "explanation": "Un raisonnement solide peut être jugé indépendamment de nos émotions personnelles sur le sujet. La pensée rationnelle sépare l'évaluation logique des réactions émotionnelles.",
+          "correct": null
         },
         {
           "id": "arg-eval-3b",
@@ -1591,8 +1591,8 @@
           "type": "likert",
           "text": "**Partie A - Votre opinion** : Il faut augmenter significativement les taxes sur les produits sucrés pour réduire l'obésité.",
           "points": 0,
-          "optimal": 1,
-          "explanation": "La cohérence logique et les preuves sont les critères essentiels pour évaluer un argument, pas notre accord avec la conclusion. C'est le fondement de la pensée critique."
+          "explanation": "La cohérence logique et les preuves sont les critères essentiels pour évaluer un argument, pas notre accord avec la conclusion. C'est le fondement de la pensée critique.",
+          "correct": null
         },
         {
           "id": "arg-eval-4b",
@@ -1689,7 +1689,7 @@
     {
       "id": "framing",
       "name": "Effets de Cadrage (10 items)",
-      "points": 3,
+      "points": 3.0,
       "time": 8,
       "questions": [
         {
@@ -1866,22 +1866,10 @@
     },
     {
       "id": "expected-value",
-      "name": "Sensibilité à la Valeur Espérée (12 items)",
-      "points": 5.04,
-      "time": 6,
+      "name": "Sensibilité à la Valeur Espérée (6 items)",
+      "points": 2.52,
+      "time": 3,
       "questions": [
-        {
-          "id": "ev-1",
-          "type": "multiple-choice",
-          "text": "Quel pari préférez-vous ?\n\n**Pari A** : 25% de chances de gagner 2 500€ et 75% de chances de gagner 100€\n**Pari B** : 25% de chances de gagner 500€ et 75% de chances de gagner 1 200€",
-          "options": [
-            "Pari A",
-            "Pari B"
-          ],
-          "correct": 1,
-          "points": 0.42,
-          "explanation": "VE(A) = 0.25×2500 + 0.75×100 = 700€. VE(B) = 0.25×500 + 0.75×1200 = 1025€. Pari B est optimal."
-        },
         {
           "id": "ev-2",
           "type": "multiple-choice",
@@ -1919,18 +1907,6 @@
           "explanation": "VE(A) = 0,75€. VE(B) = 0.40×2,50 = 1,00€. Pari B est optimal."
         },
         {
-          "id": "ev-5",
-          "type": "multiple-choice",
-          "text": "Quel pari préférez-vous ?\n\n**Pari A** : 35% de chances de gagner 800€ et 65% de chances de gagner 50€\n**Pari B** : 35% de chances de gagner 200€ et 65% de chances de gagner 400€",
-          "options": [
-            "Pari A",
-            "Pari B"
-          ],
-          "correct": 1,
-          "points": 0.42,
-          "explanation": "VE(A) = 0.35×800 + 0.65×50 = 312,50€. VE(B) = 0.35×200 + 0.65×400 = 330€. Pari B est légèrement meilleur."
-        },
-        {
           "id": "ev-6",
           "type": "multiple-choice",
           "text": "Quel pari préférez-vous ?\n\n**Pari A** : 20% de chances de gagner 500€ et 80% de chances de gagner 20€\n**Pari B** : 20% de chances de gagner 100€ et 80% de chances de gagner 80€",
@@ -1955,30 +1931,6 @@
           "explanation": "VE(A) = 0.50×300 + 0.50×100 = 200€. VE(B) = 0.50×250 + 0.50×150 = 200€. Égalité, mais B a moins de variance."
         },
         {
-          "id": "ev-8",
-          "type": "multiple-choice",
-          "text": "Quel pari préférez-vous ?\n\n**Pari A** : 30% de chances de gagner 1 000€ et 70% de chances de gagner 50€\n**Pari B** : 30% de chances de gagner 400€ et 70% de chances de gagner 200€",
-          "options": [
-            "Pari A",
-            "Pari B"
-          ],
-          "correct": 0,
-          "points": 0.42,
-          "explanation": "VE(A) = 0.30×1000 + 0.70×50 = 335€. VE(B) = 0.30×400 + 0.70×200 = 260€. Pari A est optimal."
-        },
-        {
-          "id": "ev-9",
-          "type": "multiple-choice",
-          "text": "Quel pari préférez-vous ?\n\n**Pari A** : 5% de chances de gagner 1 000€ et 95% de chances de gagner 10€\n**Pari B** : 5% de chances de gagner 200€ et 95% de chances de gagner 20€",
-          "options": [
-            "Pari A",
-            "Pari B"
-          ],
-          "correct": 0,
-          "points": 0.42,
-          "explanation": "VE(A) = 0.05×1000 + 0.95×10 = 59,50€. VE(B) = 0.05×200 + 0.95×20 = 29€. Pari A est optimal."
-        },
-        {
           "id": "ev-10",
           "type": "multiple-choice",
           "text": "Quel pari préférez-vous ?\n\n**Pari A** : 60% de chances de gagner 200€ et 40% de chances de gagner 50€\n**Pari B** : 60% de chances de gagner 150€ et 40% de chances de gagner 100€",
@@ -1989,30 +1941,6 @@
           "correct": 0,
           "points": 0.42,
           "explanation": "VE(A) = 0.60×200 + 0.40×50 = 140€. VE(B) = 0.60×150 + 0.40×100 = 130€. Pari A est optimal."
-        },
-        {
-          "id": "ev-11",
-          "type": "multiple-choice",
-          "text": "Quel pari préférez-vous ?\n\n**Pari A** : 80% de chances de gagner 100€ et 20% de chances de gagner 10€\n**Pari B** : 80% de chances de gagner 90€ et 20% de chances de gagner 30€",
-          "options": [
-            "Pari A",
-            "Pari B"
-          ],
-          "correct": 0,
-          "points": 0.42,
-          "explanation": "VE(A) = 0.80×100 + 0.20×10 = 82€. VE(B) = 0.80×90 + 0.20×30 = 78€. Pari A est légèrement meilleur."
-        },
-        {
-          "id": "ev-12",
-          "type": "multiple-choice",
-          "text": "Quel pari préférez-vous ?\n\n**Pari A** : 45% de chances de gagner 600€ et 55% de chances de gagner 100€\n**Pari B** : 45% de chances de gagner 300€ et 55% de chances de gagner 250€",
-          "options": [
-            "Pari A",
-            "Pari B"
-          ],
-          "correct": 0,
-          "points": 0.42,
-          "explanation": "VE(A) = 0.45×600 + 0.55×100 = 325€. VE(B) = 0.45×300 + 0.55×250 = 272,50€. Pari A est optimal."
         }
       ]
     },

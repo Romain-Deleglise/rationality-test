@@ -2,7 +2,7 @@
   "framing_effects": {
     "id": "framing",
     "name": "Effets de Cadrage (10 items)",
-    "points": 6,
+    "points": 3.0,
     "time": 10,
     "questions": [
       {
@@ -171,22 +171,10 @@
   },
   "expected_value": {
     "id": "expected-value",
-    "name": "Sensibilité à la Valeur Espérée (12 items)",
-    "points": 5,
-    "time": 8,
+    "name": "Sensibilité à la Valeur Espérée (6 items)",
+    "points": 2.5,
+    "time": 4,
     "questions": [
-      {
-        "id": "ev-1",
-        "type": "multiple-choice",
-        "text": "Quel pari préférez-vous ?\n\n**Pari A** : 25% de chances de gagner 2 500€ et 75% de chances de gagner 100€\n**Pari B** : 25% de chances de gagner 500€ et 75% de chances de gagner 1 200€",
-        "options": [
-          "Pari A",
-          "Pari B"
-        ],
-        "correct": 1,
-        "points": 0.42,
-        "explanation": "VE(A) = 0.25×2500 + 0.75×100 = 700€. VE(B) = 0.25×500 + 0.75×1200 = 1025€. Pari B est optimal."
-      },
       {
         "id": "ev-2",
         "type": "multiple-choice",
@@ -224,18 +212,6 @@
         "explanation": "VE(A) = 0,75€. VE(B) = 0.40×2,50 = 1,00€. Pari B est optimal."
       },
       {
-        "id": "ev-5",
-        "type": "multiple-choice",
-        "text": "Quel pari préférez-vous ?\n\n**Pari A** : 35% de chances de gagner 800€ et 65% de chances de gagner 50€\n**Pari B** : 35% de chances de gagner 200€ et 65% de chances de gagner 400€",
-        "options": [
-          "Pari A",
-          "Pari B"
-        ],
-        "correct": 1,
-        "points": 0.42,
-        "explanation": "VE(A) = 0.35×800 + 0.65×50 = 312,50€. VE(B) = 0.35×200 + 0.65×400 = 330€. Pari B est légèrement meilleur."
-      },
-      {
         "id": "ev-6",
         "type": "multiple-choice",
         "text": "Quel pari préférez-vous ?\n\n**Pari A** : 20% de chances de gagner 500€ et 80% de chances de gagner 20€\n**Pari B** : 20% de chances de gagner 100€ et 80% de chances de gagner 80€",
@@ -260,30 +236,6 @@
         "explanation": "VE(A) = 0.50×300 + 0.50×100 = 200€. VE(B) = 0.50×250 + 0.50×150 = 200€. Égalité, mais B a moins de variance."
       },
       {
-        "id": "ev-8",
-        "type": "multiple-choice",
-        "text": "Quel pari préférez-vous ?\n\n**Pari A** : 30% de chances de gagner 1 000€ et 70% de chances de gagner 50€\n**Pari B** : 30% de chances de gagner 400€ et 70% de chances de gagner 200€",
-        "options": [
-          "Pari A",
-          "Pari B"
-        ],
-        "correct": 0,
-        "points": 0.42,
-        "explanation": "VE(A) = 0.30×1000 + 0.70×50 = 335€. VE(B) = 0.30×400 + 0.70×200 = 260€. Pari A est optimal."
-      },
-      {
-        "id": "ev-9",
-        "type": "multiple-choice",
-        "text": "Quel pari préférez-vous ?\n\n**Pari A** : 5% de chances de gagner 1 000€ et 95% de chances de gagner 10€\n**Pari B** : 5% de chances de gagner 200€ et 95% de chances de gagner 20€",
-        "options": [
-          "Pari A",
-          "Pari B"
-        ],
-        "correct": 0,
-        "points": 0.42,
-        "explanation": "VE(A) = 0.05×1000 + 0.95×10 = 59,50€. VE(B) = 0.05×200 + 0.95×20 = 29€. Pari A est optimal."
-      },
-      {
         "id": "ev-10",
         "type": "multiple-choice",
         "text": "Quel pari préférez-vous ?\n\n**Pari A** : 60% de chances de gagner 200€ et 40% de chances de gagner 50€\n**Pari B** : 60% de chances de gagner 150€ et 40% de chances de gagner 100€",
@@ -294,30 +246,6 @@
         "correct": 0,
         "points": 0.42,
         "explanation": "VE(A) = 0.60×200 + 0.40×50 = 140€. VE(B) = 0.60×150 + 0.40×100 = 130€. Pari A est optimal."
-      },
-      {
-        "id": "ev-11",
-        "type": "multiple-choice",
-        "text": "Quel pari préférez-vous ?\n\n**Pari A** : 80% de chances de gagner 100€ et 20% de chances de gagner 10€\n**Pari B** : 80% de chances de gagner 90€ et 20% de chances de gagner 30€",
-        "options": [
-          "Pari A",
-          "Pari B"
-        ],
-        "correct": 1,
-        "points": 0.42,
-        "explanation": "VE(A) = 0.80×100 + 0.20×10 = 82€. VE(B) = 0.80×90 + 0.20×30 = 78€. Pari A est légèrement meilleur."
-      },
-      {
-        "id": "ev-12",
-        "type": "multiple-choice",
-        "text": "Quel pari préférez-vous ?\n\n**Pari A** : 45% de chances de gagner 600€ et 55% de chances de gagner 100€\n**Pari B** : 45% de chances de gagner 300€ et 55% de chances de gagner 250€",
-        "options": [
-          "Pari A",
-          "Pari B"
-        ],
-        "correct": 0,
-        "points": 0.42,
-        "explanation": "VE(A) = 0.45×600 + 0.55×100 = 325€. VE(B) = 0.45×300 + 0.55×250 = 272,50€. Pari A est optimal."
       }
     ]
   },
