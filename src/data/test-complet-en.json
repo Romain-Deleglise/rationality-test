@@ -328,18 +328,18 @@
         {
           "id": "likelihood-1",
           "type": "multiple-choice",
-          "text": "Talia has finger thickening. What information is needed to estimate P(hypertrophic osteoarthropathy | thickening)?",
+          "text": "A fire alarm goes off. What information is needed to estimate P(real fire | alarm triggered) (i.e., the probability that there really is a fire given that the alarm has triggered)?",
           "options": [
-            "% of people WITHOUT syndrome who have thickening",
-            "% of people WITH syndrome",
-            "% of people WITHOUT syndrome",
-            "% of people WITH syndrome who have thickening",
+            "% of times the alarm triggers WITHOUT a fire (false alarms)",
+            "% of real fires (base rate)",
+            "% of times there is NO fire",
+            "% of times the alarm triggers WHEN there is a fire",
             "a and d",
             "b and c"
           ],
           "correct": 4,
           "points": 1,
-          "explanation": "You need P(alarm|fire) and P(alarm|no fire) to calculate P(fire|alarm) via Bayes.\n\nIn other words: you need to know how often the alarm sounds when there really is a fire (option d), AND how often it sounds mistakenly when there is no fire (option a). These two pieces of information combined allow you to calculate the probability that there really is a fire given that the alarm has sounded."
+          "explanation": "You need P(alarm|fire) (the probability that the alarm sounds given that there is a fire) and P(alarm|no fire) (the probability that the alarm sounds given that there is no fire) to calculate P(fire|alarm) (the probability that there is a fire given that the alarm sounds) via Bayes.\n\nIn other words: you need to know how often the alarm sounds when there really is a fire (option d), AND how often it sounds mistakenly when there is no fire (option a). These two pieces of information combined allow you to calculate the probability that there really is a fire given that the alarm has sounded."
         },
         {
           "id": "likelihood-2",
@@ -355,21 +355,21 @@
           ],
           "correct": 4,
           "points": 1,
-          "explanation": "You need P(positive test|sick) and P(positive test|not sick) - options a and d. These two conditional probabilities allow you to apply Bayes' theorem to calculate P(sick|positive test).\n\nIn other words: you need to know two things: (1) how often the test is positive WHEN the person is really sick (sensitivity, option d), and (2) how often the test is mistakenly positive WHEN the person is not sick (false positive rate, option a). By comparing these two rates, you can determine whether a positive test really indicates the presence of the disease."
+          "explanation": "You need P(positive test|sick) (the probability that the test is positive given that the person is sick) and P(positive test|not sick) (the probability that the test is positive given that the person is not sick) - options a and d. These two conditional probabilities allow you to apply Bayes' theorem to calculate P(sick|positive test) (the probability that the person is sick given that the test is positive).\n\nIn other words: you need to know two things: (1) how often the test is positive WHEN the person is really sick (sensitivity, option d), and (2) how often the test is mistakenly positive WHEN the person is not sick (false positive rate, option a). By comparing these two rates, you can determine whether a positive test really indicates the presence of the disease."
         },
         {
           "id": "likelihood-3",
           "type": "multiple-choice",
-          "text": "To evaluate P(Mechanical failure | Abnormal vibrations), what do you need?",
+          "text": "To evaluate P(Mechanical failure | Abnormal vibrations) (i.e., the probability that there is a mechanical failure given that abnormal vibrations are observed), what do you need?",
           "options": [
-            "Only P(Vibrations | Failure)",
-            "P(Vibrations | Failure) and P(Vibrations | No failure)",
+            "Only P(Vibrations | Failure) (the probability of observing vibrations given that there is a failure)",
+            "P(Vibrations | Failure) (the probability of observing vibrations given that there is a failure) and P(Vibrations | No failure) (the probability of observing vibrations given that there is no failure)",
             "Only the base rate of failures",
             "A mechanic expert's opinion"
           ],
           "correct": 1,
           "points": 1,
-          "explanation": "For Bayes, you need the likelihood ratio: P(evidence|H) and P(evidence|not-H).\n\nIn simple terms: you need to know two things: (1) how often abnormal vibrations are observed WHEN there is a failure, and (2) how often these same vibrations are observed WHEN there is NO failure. It's the comparison of these two frequencies that allows you to determine whether the vibrations really indicate a failure."
+          "explanation": "For Bayes, you need the likelihood ratio: P(evidence|H) (the probability of observing the evidence given that the hypothesis is true) and P(evidence|not-H) (the probability of observing the evidence given that the hypothesis is false).\n\nIn simple terms: you need to know two things: (1) how often abnormal vibrations are observed WHEN there is a failure, and (2) how often these same vibrations are observed WHEN there is NO failure. It's the comparison of these two frequencies that allows you to determine whether the vibrations really indicate a failure."
         },
         {
           "id": "hypothesis-test-1",

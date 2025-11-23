@@ -199,16 +199,16 @@
         {
           "id": "likelihood-1",
           "type": "multiple-choice",
-          "text": "Talia has finger thickening. To estimate her probability of having hypertrophic osteoarthropathy (a rare bone disease), what information is needed?",
+          "text": "A fire alarm goes off in a building. To estimate the probability that there really is a fire, what information is needed?",
           "options": [
-            "Only: % of people with the syndrome who have thickening",
-            "Only: % of people without the syndrome who have thickening",
-            "Both: % with syndrome who have this symptom and % without syndrome who have this symptom",
+            "Only: % of times the alarm goes off when there is a fire",
+            "Only: % of times the alarm goes off when there is NO fire (false alarms)",
+            "Both: % of triggers during real fires AND % of false alarms",
             "Impossible to estimate even with this information"
           ],
           "correct": 2,
           "points": 1,
-          "explanation": "You need both rates: how many sick people have the symptom and how many healthy people have the symptom. This allows calculating the probability of being sick given you have the symptom (Bayes' theorem)."
+          "explanation": "You need both rates: how many real fires trigger the alarm and how many non-fires trigger the alarm. This allows calculating the probability of fire given that the alarm sounds (Bayes' theorem)."
         },
         {
           "id": "correlation-2",
@@ -269,13 +269,13 @@
           "text": "Data collected over 200 days:\n\n| Weather | Traffic jams | No traffic jams |\n|---------|--------------|------------------|\n| Rain | 80 days | 20 days |\n| Sunny | 40 days | 60 days |\n\nDoes rain cause traffic jams?",
           "options": [
             "Yes, 80 cases of rain with traffic",
-            "Yes, P(Traffic|Rain) = 80% > P(Traffic|Sunny) = 40%",
+            "Yes, P(Traffic|Rain) (the probability of having traffic jams given that it's raining) = 80% > P(Traffic|Sunny) (the probability of having traffic jams given that it's sunny) = 40%",
             "No, no clear relationship",
             "Impossible to say"
           ],
           "correct": 1,
           "points": 1,
-          "explanation": "Covariation: P(T|Rain) = 80/100 = 80% vs P(T|Sunny) = 40/100 = 40%. Rain increases the probability of traffic."
+          "explanation": "Covariation: P(T|Rain) (the probability of having traffic jams given that it's raining) = 80/100 = 80% vs P(T|Sunny) (the probability of having traffic jams given that it's sunny) = 40/100 = 40%. Rain increases the probability of traffic jams."
         },
         {
           "id": "falsification-1",
