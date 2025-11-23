@@ -1531,7 +1531,7 @@
         {
           "id": "arg-eval-1b",
           "type": "multiple-choice",
-          "text": "**Partie B - Évaluation** :\n\n**Opinion de Marc** : Les étudiants devraient avoir une voix plus forte que le grand public dans la définition des politiques universitaires.\n\n**Justification de Marc** : Puisque ce sont les étudiants qui doivent finalement payer les coûts de fonctionnement de l'université par leurs frais de scolarité, ils devraient avoir une voix plus forte dans les politiques universitaires.\n\n**Contre-argument du critique** : Les frais de scolarité couvrent moins de la moitié du coût d'une éducation dans la plupart des universités publiques (supposez que c'est factuellement correct), donc les contribuables devraient avoir leur mot à dire plus important dans les politiques.\n\n**Réponse de Marc** : Puisque ce sont les étudiants qui sont directement influencés par les politiques universitaires (supposez que c'est factuellement correct), ce sont eux qui devraient avoir la voix la plus forte.\n\n**Évaluez la force de la réponse de Marc** :",
+          "text": "**Partie B - Évaluation** :\n\n**Opinion de Marc** : Les étudiants devraient avoir une voix plus forte que le grand public dans la définition des politiques universitaires.\n\n**Justification de Marc** : Puisque ce sont les étudiants qui doivent finalement payer les coûts de fonctionnement de l'université par leurs frais de scolarité, ils devraient avoir une voix plus forte dans les politiques universitaires.\n\n**Contre-argument du critique** : Les frais de scolarité couvrent moins de la moitié du coût d'une éducation dans la plupart des universités publiques (supposez que c'est factuellement correct), donc les contribuables devraient avoir leur mot à dire plus important dans les politiques.\n\n**Réponse de Marc** : Certes, mais laissons de côté la question du financement pour l'instant. Ce qui compte vraiment, c'est que les étudiants sont directement influencés par les politiques universitaires au quotidien (supposez que c'est factuellement correct), donc ce sont eux qui devraient avoir la voix la plus forte.\n\n**Évaluez la force de la réponse de Marc** :",
           "options": [
             "1 - Très faible",
             "2 - Faible",
@@ -1540,7 +1540,7 @@
           ],
           "correct": 0,
           "points": 0.625,
-          "explanation": "La réponse de Marc est très faible car il change d'argument sans répondre au contre-argument sur le financement."
+          "explanation": "La réponse de Marc est très faible car il esquive explicitement le contre-argument sur le financement ('laissons de côté la question du financement') et introduit un nouvel argument (impact direct) sans défendre son argument initial. C'est un sophisme de déplacement des poteaux de but (moving the goalposts). Une réponse forte aurait dû soit défendre l'argument du financement, soit reconnaître sa faiblesse et expliquer pourquoi l'opinion reste valide malgré cela."
         },
         {
           "id": "arg-eval-2a",
@@ -1584,7 +1584,7 @@
           ],
           "correct": 2,
           "points": 0.625,
-          "explanation": "La capacité à évaluer objectivement un argument même quand sa conclusion nous déplaît est une marque de pensée rationnelle et critique."
+          "explanation": "La réponse de Marc est faible car bien qu'il réponde au contre-argument en évoquant les nouvelles technologies, il ne traite pas adéquatement le point central soulevé : le caractère 'catastrophique' des risques. Affirmer que les nouvelles technologies sont 'beaucoup plus sûres' ne démontre pas que le risque catastrophique est éliminé ou réduit à un niveau acceptable. De plus, les accidents passés prouvent que même avec des précautions, des événements catastrophiques restent possibles. Une réponse forte aurait dû quantifier la réduction des risques, expliquer les mécanismes de sécurité spécifiques qui préviennent les scénarios catastrophiques, ou reconnaître que le risque persiste mais est acceptable au vu des bénéfices."
         },
         {
           "id": "arg-eval-4a",
@@ -1606,7 +1606,7 @@
           ],
           "correct": 2,
           "points": 0.625,
-          "explanation": "La réponse de Marc est 'Fort' (3). Il reconnaît le problème technique soulevé par le critique, mais propose une solution concrète (investissement dans la modération). Même si cette solution ne résout pas totalement le problème de l'impossibilité de modérer en temps réel, c'est une réponse constructive et raisonnable qui mérite une évaluation positive."
+          "explanation": "La réponse de Marc est faible car elle ne répond pas adéquatement au contre-argument. Le critique soulève une impossibilité technique ('impossible techniquement de modérer des milliards de publications en temps réel'). Marc propose simplement d'investir davantage dans la modération, mais allouer plus de ressources financières ne résout pas une impossibilité technique fondamentale. C'est un argument qui passe à côté du point central. Une réponse forte aurait dû soit contester l'impossibilité technique (en démontrant que c'est techniquement possible avec certaines approches), soit proposer une solution alternative (comme la modération a posteriori avec responsabilité différée plutôt qu'en temps réel), soit reconnaître la contrainte technique et ajuster la proposition de responsabilité légale en conséquence."
         }
       ]
     },
