@@ -1567,7 +1567,7 @@
         {
           "id": "arg-eval-3a",
           "type": "likert",
-          "text": "**Partie A - Votre opinion** : L'énergie nucléaire devrait être développée comme source principale d'énergie pour l'avenir.",
+          "text": "**Partie A - Votre opinion** : Les téléphones portables devraient être interdits dans toutes les écoles.",
           "points": 0,
           "optimal": 1,
           "explanation": "Un raisonnement solide peut être jugé indépendamment de nos émotions personnelles sur le sujet. La pensée rationnelle sépare l'évaluation logique des réactions émotionnelles."
@@ -1575,21 +1575,21 @@
         {
           "id": "arg-eval-3b",
           "type": "multiple-choice",
-          "text": "**Partie B - Évaluation** :\n\n**Opinion de Marc** : L'énergie nucléaire devrait être développée comme source principale d'énergie pour l'avenir.\n\n**Justification de Marc** : L'énergie nucléaire est plus propre que les combustibles fossiles et peut fournir une énergie stable et abondante pour répondre à nos besoins croissants.\n\n**Contre-argument du critique** : Les accidents nucléaires comme Tchernobyl et Fukushima montrent que l'énergie nucléaire comporte des risques catastrophiques (supposez que c'est factuellement correct).\n\n**Réponse de Marc** : Ces accidents étaient dus à des technologies anciennes et des erreurs humaines. Les nouvelles technologies nucléaires de quatrième génération sont conçues pour être beaucoup plus sûres (supposez que c'est factuellement correct).\n\n**Évaluez la force de la réponse de Marc** :",
+          "text": "**Partie B - Évaluation** :\n\n**Opinion de Marc** : Les téléphones portables devraient être interdits dans toutes les écoles.\n\n**Justification de Marc** : Ils distraient les élèves et perturbent l'apprentissage en classe.\n\n**Contre-argument du critique** : Les téléphones peuvent être des outils pédagogiques utiles (recherche, calculatrice, applications éducatives) et permettent aux parents de joindre leurs enfants en cas d'urgence (supposez que c'est factuellement correct).\n\n**Réponse de Marc** : De toute façon, quand j'étais à l'école, on n'avait pas de téléphones et on apprenait très bien.\n\n**Évaluez la force de la réponse de Marc** :",
           "options": [
             "1 - Très faible",
             "2 - Faible",
             "3 - Fort",
             "4 - Très fort"
           ],
-          "correct": 2,
+          "correct": 0,
           "points": 0.625,
-          "explanation": "La réponse de Marc est faible car bien qu'il réponde au contre-argument en évoquant les nouvelles technologies, il ne traite pas adéquatement le point central soulevé : le caractère 'catastrophique' des risques. Affirmer que les nouvelles technologies sont 'beaucoup plus sûres' ne démontre pas que le risque catastrophique est éliminé ou réduit à un niveau acceptable. De plus, les accidents passés prouvent que même avec des précautions, des événements catastrophiques restent possibles. Une réponse forte aurait dû quantifier la réduction des risques, expliquer les mécanismes de sécurité spécifiques qui préviennent les scénarios catastrophiques, ou reconnaître que le risque persiste mais est acceptable au vu des bénéfices."
+          "explanation": "La réponse de Marc est très faible car elle commet un 'appel à la tradition' (une erreur logique). Dire que 'avant on faisait autrement et ça marchait' ne répond pas aux avantages spécifiques mentionnés (outils pédagogiques modernes, sécurité). De plus, cette logique bloquerait tout progrès technologique en éducation. Marc ne traite ni les bénéfices pédagogiques ni l'aspect sécuritaire soulevés par le critique."
         },
         {
           "id": "arg-eval-4a",
           "type": "likert",
-          "text": "**Partie A - Votre opinion** : Les entreprises de réseaux sociaux devraient être légalement responsables du contenu publié par leurs utilisateurs.",
+          "text": "**Partie A - Votre opinion** : Il faut augmenter significativement les taxes sur les produits sucrés pour réduire l'obésité.",
           "points": 0,
           "optimal": 1,
           "explanation": "La cohérence logique et les preuves sont les critères essentiels pour évaluer un argument, pas notre accord avec la conclusion. C'est le fondement de la pensée critique."
@@ -1597,7 +1597,7 @@
         {
           "id": "arg-eval-4b",
           "type": "multiple-choice",
-          "text": "**Partie B - Évaluation** :\n\n**Opinion de Marc** : Les entreprises de réseaux sociaux devraient être légalement responsables du contenu publié par leurs utilisateurs.\n\n**Justification de Marc** : Les plateformes profitent du contenu généré par les utilisateurs, donc elles devraient être responsables de ce contenu.\n\n**Contre-argument du critique** : Il est impossible techniquement de modérer des milliards de publications en temps réel (supposez que c'est factuellement correct).\n\n**Réponse de Marc** : C'est vrai, mais elles peuvent investir davantage dans des systèmes de modération automatiques et humains (supposez que c'est factuellement correct).\n\n**Évaluez la force de la réponse de Marc** :",
+          "text": "**Partie B - Évaluation** :\n\n**Opinion de Marc** : Il faut augmenter significativement les taxes sur les produits sucrés pour réduire l'obésité.\n\n**Justification de Marc** : Des taxes élevées découragent la consommation de produits nocifs pour la santé.\n\n**Contre-argument du critique** : Les taxes sur le sucre affectent de manière disproportionnée les ménages à faible revenu qui dépensent un pourcentage plus élevé de leur budget en alimentation (supposez que c'est factuellement correct).\n\n**Réponse de Marc** : Mais l'obésité et le diabète affectent aussi davantage les populations à faible revenu (supposez que c'est factuellement correct). Une taxe qui réduit leur consommation de sucre améliorerait donc leur santé, ce qui compense largement le coût financier.\n\n**Évaluez la force de la réponse de Marc** :",
           "options": [
             "1 - Très faible",
             "2 - Faible",
@@ -1606,7 +1606,7 @@
           ],
           "correct": 2,
           "points": 0.625,
-          "explanation": "La réponse de Marc est faible car elle ne répond pas adéquatement au contre-argument. Le critique soulève une impossibilité technique ('impossible techniquement de modérer des milliards de publications en temps réel'). Marc propose simplement d'investir davantage dans la modération, mais allouer plus de ressources financières ne résout pas une impossibilité technique fondamentale. C'est un argument qui passe à côté du point central. Une réponse forte aurait dû soit contester l'impossibilité technique (en démontrant que c'est techniquement possible avec certaines approches), soit proposer une solution alternative (comme la modération a posteriori avec responsabilité différée plutôt qu'en temps réel), soit reconnaître la contrainte technique et ajuster la proposition de responsabilité légale en conséquence."
+          "explanation": "La réponse de Marc est forte car elle répond directement au contre-argument. Le critique soulève que la taxe affecte négativement les populations à faible revenu. Marc reconnaît ce point mais montre que ces mêmes populations bénéficieraient le plus de la réduction de consommation de sucre (réduction de l'obésité et du diabète). Il propose ainsi un compromis coût-bénéfice spécifique à la population concernée. C'est une réponse logique qui traite le problème soulevé plutôt que de l'ignorer."
         }
       ]
     },
@@ -1621,26 +1621,26 @@
           "type": "multiple-choice",
           "text": "Des chercheurs ont découvert que les enfants qui regardent beaucoup de télévision ont tendance à obtenir de moins bons résultats scolaires que les enfants qui regardent peu de télévision.\n\nCette découverte signifie-t-elle qu'interdire la télévision aux enfants améliorerait leurs résultats scolaires ?",
           "options": [
-            "Oui, certainement",
-            "Non, pas nécessairement",
-            "On ne peut pas le déterminer avec ces informations seules"
+            "Oui, cette corrélation prouve que réduire la TV améliorera les résultats",
+            "Non, la corrélation n'implique pas la causation - d'autres facteurs pourraient expliquer les deux",
+            "Impossible de répondre car l'étude ne précise pas le type d'émissions regardées"
           ],
           "correct": 1,
           "points": 1,
-          "explanation": "Non nécessairement. La corrélation n'implique pas la causation. D'autres facteurs (niveau socio-économique, éducation des parents) pourraient expliquer à la fois plus de TV et de moins bons résultats."
+          "explanation": "Non, la corrélation n'implique pas la causation. D'autres facteurs (niveau socio-économique, éducation des parents, environnement familial) pourraient expliquer à la fois plus de TV et de moins bons résultats scolaires. Pour établir un lien causal, il faudrait une étude expérimentale contrôlée ou éliminer les variables confondantes."
         },
         {
           "id": "causal-2",
           "type": "multiple-choice",
           "text": "Une étude montre que les personnes qui prennent des vitamines quotidiennement vivent en moyenne plus longtemps que celles qui n'en prennent pas.\n\nPeut-on conclure que prendre des vitamines augmente l'espérance de vie ?",
           "options": [
-            "Oui",
-            "Non",
-            "Impossible à déterminer"
+            "Oui, la différence d'espérance de vie prouve l'effet des vitamines",
+            "Non, car les personnes qui prennent des vitamines ont probablement déjà un mode de vie plus sain",
+            "Oui, mais seulement pour certains types de vitamines"
           ],
           "correct": 1,
           "points": 1,
-          "explanation": "Non. Les personnes qui prennent des vitamines ont peut-être déjà un mode de vie plus sain (exercice, alimentation équilibrée), ce qui explique leur longévité."
+          "explanation": "Non, on ne peut pas conclure à un effet causal. Les personnes qui prennent des vitamines quotidiennement sont probablement plus soucieuses de leur santé en général : elles font peut-être plus d'exercice, mangent mieux, consultent régulièrement un médecin, etc. C'est ce mode de vie global plus sain qui pourrait expliquer leur longévité, pas nécessairement les vitamines elles-mêmes. Il s'agit d'un biais de sélection classique."
         },
         {
           "id": "causal-4",

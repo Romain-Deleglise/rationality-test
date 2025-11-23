@@ -1505,32 +1505,37 @@
         {
           "id": "arg-eval-3a",
           "type": "likert",
-          "text": "**Part A - Your opinion**: Nuclear energy should be developed as the main energy source for the future.",
-          "points": 0
+          "text": "**Part A - Your opinion**: Mobile phones should be banned in all schools.",
+          "points": 0,
+          "optimal": 1,
+          "explanation": "Sound reasoning can be judged independently of our personal emotions about the subject. Rational thinking separates logical evaluation from emotional reactions."
         },
         {
           "id": "arg-eval-3b",
           "type": "multiple-choice",
-          "text": "**Part B - Evaluation**:\n\n**Marc's opinion**: Nuclear energy should be developed as the main energy source for the future.\n\n**Marc's justification**: Nuclear energy is cleaner than fossil fuels and can provide stable and abundant energy to meet our growing needs.\n\n**Critic's counter-argument**: Nuclear accidents like Chernobyl and Fukushima show that nuclear energy carries catastrophic risks (assume this is factually correct).\n\n**Marc's response**: These accidents were due to old technologies and human errors. New fourth-generation nuclear technologies are designed to be much safer (assume this is factually correct).\n\n**Evaluate the strength of Marc's response**:",
+          "text": "**Part B - Evaluation**:\n\n**Marc's opinion**: Mobile phones should be banned in all schools.\n\n**Marc's justification**: They distract students and disrupt learning in the classroom.\n\n**Critic's counter-argument**: Phones can be useful educational tools (research, calculator, educational apps) and allow parents to contact their children in emergencies (assume this is factually correct).\n\n**Marc's response**: Anyway, when I was in school, we didn't have phones and we learned just fine.\n\n**Evaluate the strength of Marc's response**:",
           "options": [
             "1 - Very weak",
             "2 - Weak",
             "3 - Strong",
             "4 - Very strong"
           ],
-          "correct": 2,
-          "points": 0.625
+          "correct": 0,
+          "points": 0.625,
+          "explanation": "Marc's response is very weak because it commits an 'appeal to tradition' (a logical fallacy). Saying 'we used to do it differently and it worked' doesn't address the specific advantages mentioned (modern educational tools, safety). Moreover, this logic would block any technological progress in education. Marc addresses neither the pedagogical benefits nor the safety aspect raised by the critic."
         },
         {
           "id": "arg-eval-4a",
           "type": "likert",
-          "text": "**Part A - Your opinion**: Social media companies should be legally responsible for content posted by their users.",
-          "points": 0
+          "text": "**Part A - Your opinion**: Taxes on sugary products should be significantly increased to reduce obesity.",
+          "points": 0,
+          "optimal": 1,
+          "explanation": "Logical consistency and evidence are the essential criteria for evaluating an argument, not our agreement with the conclusion. This is the foundation of critical thinking."
         },
         {
           "id": "arg-eval-4b",
           "type": "multiple-choice",
-          "text": "**Part B - Evaluation**:\n\n**Marc's opinion**: Social media companies should be legally responsible for content posted by their users.\n\n**Marc's justification**: Platforms profit from user-generated content, so they should be responsible for that content.\n\n**Critic's counter-argument**: It is technically impossible to moderate billions of posts in real time (assume this is factually correct).\n\n**Marc's response**: That's true, but they can invest more in automatic and human moderation systems (assume this is factually correct).\n\n**Evaluate the strength of Marc's response**:",
+          "text": "**Part B - Evaluation**:\n\n**Marc's opinion**: Taxes on sugary products should be significantly increased to reduce obesity.\n\n**Marc's justification**: High taxes discourage consumption of products harmful to health.\n\n**Critic's counter-argument**: Sugar taxes disproportionately affect low-income households who spend a higher percentage of their budget on food (assume this is factually correct).\n\n**Marc's response**: But obesity and diabetes also disproportionately affect low-income populations (assume this is factually correct). A tax that reduces their sugar consumption would therefore improve their health, which far outweighs the financial cost.\n\n**Evaluate the strength of Marc's response**:",
           "options": [
             "1 - Very weak",
             "2 - Weak",
@@ -1539,7 +1544,7 @@
           ],
           "correct": 2,
           "points": 0.625,
-          "explanation": "Marc's response is 'Strong' (3). He acknowledges the technical problem raised by the critic but proposes a concrete solution (investment in moderation). Even if this solution doesn't completely solve the impossibility of real-time moderation, it's a constructive and reasonable response that deserves a positive evaluation."
+          "explanation": "Marc's response is strong because it directly addresses the counter-argument. The critic raises that the tax negatively affects low-income populations. Marc acknowledges this point but shows that these same populations would benefit most from reduced sugar consumption (reduced obesity and diabetes). He thus proposes a specific cost-benefit trade-off for the affected population. This is a logical response that addresses the raised issue rather than ignoring it."
         }
       ]
     },
@@ -1552,26 +1557,28 @@
         {
           "id": "causal-1",
           "type": "multiple-choice",
-          "text": "Researchers found that children who watch a lot of television tend to have poorer academic results than children who watch little television.\n\nDoes this finding mean that banning television from children would improve their academic results?",
+          "text": "Researchers have discovered that children who watch a lot of television tend to have worse academic results than children who watch little television.\n\nDoes this finding mean that banning television for children would improve their academic results?",
           "options": [
-            "Yes, certainly",
-            "No, not necessarily",
-            "Cannot be determined from this information alone"
+            "Yes, this correlation proves that reducing TV will improve results",
+            "No, correlation does not imply causation - other factors could explain both",
+            "Impossible to answer because the study doesn't specify the type of programs watched"
           ],
           "correct": 1,
-          "points": 1
+          "points": 1,
+          "explanation": "No, correlation does not imply causation. Other factors (socioeconomic status, parental education, family environment) could explain both more TV and worse academic results. To establish a causal link, we would need a controlled experimental study or eliminate confounding variables."
         },
         {
           "id": "causal-2",
           "type": "multiple-choice",
-          "text": "A study shows that people who take vitamins daily live longer on average than those who don't.\n\nCan we conclude that taking vitamins increases life expectancy?",
+          "text": "A study shows that people who take vitamins daily live on average longer than those who don't.\n\nCan we conclude that taking vitamins increases life expectancy?",
           "options": [
-            "Yes",
-            "No",
-            "Impossible to determine"
+            "Yes, the difference in life expectancy proves the effect of vitamins",
+            "No, because people who take vitamins probably already have a healthier lifestyle",
+            "Yes, but only for certain types of vitamins"
           ],
           "correct": 1,
-          "points": 1
+          "points": 1,
+          "explanation": "No, we cannot conclude a causal effect. People who take vitamins daily are probably more health-conscious in general: they may exercise more, eat better, consult a doctor regularly, etc. It's this overall healthier lifestyle that could explain their longevity, not necessarily the vitamins themselves. This is a classic selection bias."
         },
         {
           "id": "causal-4",
