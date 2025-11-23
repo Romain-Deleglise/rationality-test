@@ -1,161 +1,180 @@
-# TOUTES LES QUESTIONS DU TEST LONG (test-complet.json)
+# Test de Rationalité - Questions Complètes (Version Mise à Jour)
 
 **Version:** complète
-**Total de points:** 96.98
+**Points totaux:** 96.98
 **Temps estimé:** 86 minutes
 
 ---
 
+## Raisonnement Probabiliste (13 items)
 
-## MODULE 1: Raisonnement Probabiliste (13 items)
-
-**Points du module:** 13
-**Temps estimé:** 5 minutes
+**Points:** 13 | **Temps:** 5 min
 
 ### Question 1 (ID: prob-match-1)
 
-**Type:** multiple-choice
+**Type:** Choix multiple
 
 **Question:**
+
 Un jeu de cartes contient 60% de cartes rouges et 40% de cartes bleues. Vous devez prédire la couleur avant chaque tirage (avec remise). Sur 100 tirages, quelle stratégie vous donnera le PLUS grand nombre de prédictions correctes ?
 
 **Options:**
-A. Toujours prédire rouge **✓**
-B. Prédire rouge 60 fois et bleu 40 fois 
-C. Alterner entre rouge et bleu de façon égale 
 
-**Réponse correcte:** A
+a. Toujours prédire rouge
+b. Prédire rouge 60 fois et bleu 40 fois
+c. Alterner entre rouge et bleu de façon égale
 
-**Points:** 1
+**Réponse correcte:** a
 
 **Explication:**
+
 Toujours prédire rouge donne 60% de succès (60/100 correct). Prédire rouge 60 fois et bleu 40 fois donne seulement ~52% de succès en moyenne. L'erreur de 'probability matching' consiste à reproduire les proportions au lieu de toujours choisir l'option la plus probable.
+
+**Points:** 1
 
 ---
 
 ### Question 2 (ID: prob-match-2)
 
-**Type:** multiple-choice
+**Type:** Choix multiple
 
 **Question:**
+
 Une machine produit des pièces défectueuses 30% du temps et des bonnes pièces 70% du temps. Pour deviner l'état de la prochaine pièce, quelle stratégie est la meilleure ?
 
 **Options:**
-A. Toujours deviner 'bonne pièce' **✓**
-B. Deviner 'défectueuse' 3 fois sur 10 et 'bonne' 7 fois sur 10 
-C. Alterner de façon aléatoire 
 
-**Réponse correcte:** A
+a. Toujours deviner 'bonne pièce'
+b. Deviner 'défectueuse' 3 fois sur 10 et 'bonne' 7 fois sur 10
+c. Alterner de façon aléatoire
 
-**Points:** 1
+**Réponse correcte:** a
 
 **Explication:**
+
 Toujours deviner l'option la plus probable (70%) est optimal. Essayer de 'matcher' les probabilités réduit votre taux de réussite.
+
+**Points:** 1
 
 ---
 
 ### Question 3 (ID: gambler-1)
 
-**Type:** multiple-choice
+**Type:** Choix multiple
 
 **Question:**
+
 Une pièce équilibrée (50-50 pile ou face) vient de tomber sur pile cinq fois d'affilée. Pour le sixième lancer :
 
 **Options:**
-A. Il est plus probable que face sorte 
-B. Il est plus probable que pile sorte 
-C. Pile et face sont également probables **✓**
 
-**Réponse correcte:** C
+a. Il est plus probable que face sorte
+b. Il est plus probable que pile sorte
+c. Pile et face sont également probables
 
-**Points:** 1
+**Réponse correcte:** c
 
 **Explication:**
+
 Les lancers sont indépendants. La pièce n'a pas de mémoire. P(pile) = P(face) = 50% à chaque lancer, peu importe l'historique.
+
+**Points:** 1
 
 ---
 
 ### Question 4 (ID: gambler-2)
 
-**Type:** multiple-choice
+**Type:** Choix multiple
 
 **Question:**
+
 À la roulette, le rouge est sorti 7 fois de suite. Quelle couleur a le plus de chances de sortir au prochain tour ?
 
 **Options:**
-A. Rouge 
-B. Noir 
-C. Les deux ont les mêmes chances **✓**
 
-**Réponse correcte:** C
+a. Rouge
+b. Noir
+c. Les deux ont les mêmes chances
 
-**Points:** 1
+**Réponse correcte:** c
 
 **Explication:**
+
 Chaque tour est indépendant. Les résultats passés n'influencent pas les tours futurs. C'est l'erreur du 'gambler's fallacy'.
+
+**Points:** 1
 
 ---
 
 ### Question 5 (ID: gambler-3)
 
-**Type:** multiple-choice
+**Type:** Choix multiple
 
 **Question:**
+
 Vous lancez un dé équilibré. Il tombe sur 6 trois fois consécutives. Au quatrième lancer, quelle face a la plus grande probabilité de sortir ?
 
 **Options:**
-A. Un nombre différent de 6 
-B. Le 6 à nouveau 
-C. Toutes les faces ont la même probabilité (1/6) **✓**
 
-**Réponse correcte:** C
+a. Un nombre différent de 6
+b. Le 6 à nouveau
+c. Toutes les faces ont la même probabilité (1/6)
 
-**Points:** 1
+**Réponse correcte:** c
 
 **Explication:**
+
 Le dé n'a pas de mémoire. Chaque lancer est indépendant. Toutes les faces ont exactement 1/6 de chances à chaque fois.
+
+**Points:** 1
 
 ---
 
 ### Question 6 (ID: gambler-4)
 
-**Type:** multiple-choice
+**Type:** Choix multiple
 
 **Question:**
+
 Un couple a 4 filles. Ils veulent un cinquième enfant. Quelle est la probabilité que ce soit un garçon ?
 
 **Options:**
-A. Plus de 50% (ils sont 'dus' pour un garçon) 
-B. Moins de 50% (ils ont tendance à faire des filles) 
-C. Environ 50% (indépendant des naissances précédentes) **✓**
 
-**Réponse correcte:** C
+a. Plus de 50% (ils sont 'dus' pour un garçon)
+b. Moins de 50% (ils ont tendance à faire des filles)
+c. Environ 50% (indépendant des naissances précédentes)
 
-**Points:** 1
+**Réponse correcte:** c
 
 **Explication:**
+
 Chaque naissance est indépendante. Les naissances précédentes n'affectent pas la probabilité du prochain enfant (~50% garçon/fille).
+
+**Points:** 1
 
 ---
 
 ### Question 7 (ID: gambler-5)
 
-**Type:** multiple-choice
+**Type:** Choix multiple
 
 **Question:**
+
 Dans une loterie équitable, Marie a perdu 10 fois d'affilée. Au 11ème tirage, quelle affirmation est correcte ?
 
 **Options:**
-A. Elle a plus de chances de gagner (retour de chance) 
-B. Elle a moins de chances de gagner (série négative) 
-C. Ses chances sont identiques à chaque tirage (les résultats passés ne changent rien) **✓**
 
-**Réponse correcte:** C
+a. Elle a plus de chances de gagner (retour de chance)
+b. Elle a moins de chances de gagner (série négative)
+c. Ses chances sont identiques à chaque tirage (les résultats passés ne changent rien)
 
-**Points:** 1
+**Réponse correcte:** c
 
 **Explication:**
+
 Dans un jeu de hasard équitable, chaque tirage est indépendant. Les pertes passées ne créent pas de 'dette de chance'. La probabilité reste la même à chaque fois.
+
+**Points:** 1
 
 ---
 
@@ -164,16 +183,21 @@ Dans un jeu de hasard équitable, chaque tirage est indépendant. Les pertes pas
 **Type:** ranking
 
 **Question:**
+
 Sophie a 28 ans, elle est dynamique et sportive. Elle fait du jogging tous les matins. Classez ces affirmations par probabilité (1 = plus probable) :
 
-**Items à classer:**
+**Options:**
 
-**Ordre correct:** (non défini)
-
-**Points:** 1
+a. Sophie est professeure
+b. Sophie est infirmière
+c. Sophie est infirmière et elle court des marathons
+d. Sophie travaille dans la finance
 
 **Explication:**
+
 P(infirmière) > P(infirmière et marathons) car P(A) > P(A ∩ B) toujours. Ajouter une condition réduit la probabilité.
+
+**Points:** 1
 
 ---
 
@@ -182,16 +206,21 @@ P(infirmière) > P(infirmière et marathons) car P(A) > P(A ∩ B) toujours. Ajo
 **Type:** ranking
 
 **Question:**
+
 Marc aime les jeux vidéo et passe beaucoup de temps sur son ordinateur. Classez par probabilité :
 
-**Items à classer:**
+**Options:**
 
-**Ordre correct:** (non défini)
-
-**Points:** 1
+a. Marc travaille dans l'informatique
+b. Marc est développeur de jeux vidéo
+c. Marc est comptable
+d. Marc travaille dans l'informatique et joue dans une équipe e-sport
 
 **Explication:**
+
 P(informatique) doit être classé plus probable que P(informatique et e-sport). La conjonction est toujours moins probable.
+
+**Points:** 1
 
 ---
 
@@ -200,16 +229,21 @@ P(informatique) doit être classé plus probable que P(informatique et e-sport).
 **Type:** ranking
 
 **Question:**
+
 Linda a 31 ans, célibataire, franche et brillante. Elle a étudié la philosophie. Étudiante, elle était préoccupée par la discrimination sociale. Classez par probabilité :
 
-**Items à classer:**
+**Options:**
 
-**Ordre correct:** (non défini)
-
-**Points:** 1
+a. Linda est enseignante
+b. Linda est caissière
+c. Linda est active dans le mouvement féministe
+d. Linda est caissière et active dans le mouvement féministe
 
 **Explication:**
+
 Malgré la description, P(caissière) > P(caissière et féministe) mathématiquement. C'est le fameux 'Linda problem'.
+
+**Points:** 1
 
 ---
 
@@ -218,16 +252,21 @@ Malgré la description, P(caissière) > P(caissière et féministe) mathématiqu
 **Type:** ranking
 
 **Question:**
+
 Paul lit beaucoup de livres d'histoire et visite souvent des musées. Classez par probabilité :
 
-**Items à classer:**
+**Options:**
 
-**Ordre correct:** (non défini)
-
-**Points:** 1
+a. Paul est ingénieur
+b. Paul est professeur d'histoire
+c. Paul est bibliothécaire
+d. Paul est professeur d'histoire et auteur de livres historiques
 
 **Explication:**
+
 P(professeur d'histoire) > P(professeur d'histoire et auteur). Ajouter une condition réduit toujours la probabilité.
+
+**Points:** 1
 
 ---
 
@@ -236,52 +275,51 @@ P(professeur d'histoire) > P(professeur d'histoire et auteur). Ajouter une condi
 **Type:** number
 
 **Question:**
+
 Une maladie touche 1% de la population. Un test la détecte correctement dans 90% des cas chez les malades. Chez les personnes saines, le test donne un résultat positif erroné dans 9% des cas. Si votre test est positif, quelle est votre probabilité réelle d'être malade ?
 
-**Type de réponse:** Numérique
+**Explication:**
 
-**Réponse correcte:** (non définie)
-**Tolérance:** ±3
+Sur 10000 personnes : 100 sont malades (90 testent positif), 9900 sont saines (891 testent faussement positif). Probabilité d'être malade = 90/(90+891) ≈ 9,2%. Beaucoup de gens ignorent le taux de base (1%) et surestiment leur probabilité d'être malade.
 
 **Points:** 1
-
-**Explication:**
-Sur 10000 personnes : 100 sont malades (90 testent positif), 9900 sont saines (891 testent faussement positif). Probabilité d'être malade = 90/(90+891) ≈ 9,2%. Beaucoup de gens ignorent le taux de base (1%) et surestiment leur probabilité d'être malade.
 
 ---
 
 ### Question 13 (ID: base-rate-2)
 
-**Type:** multiple-choice
+**Type:** Choix multiple
 
 **Question:**
-Dans une entreprise, 70% des employés sont ingénieurs et 30% sont managers. On sait que 20% des ingénieurs et 40% des managers sont décrits comme 'charismatiques et aimant diriger'. Sophie a été décrite ainsi. Est-elle plus probablement :
+
+Dans une entreprise, 70% des employés sont ingénieurs et 30% sont managers. Sophie a été décrite comme 'charismatique et aimant diriger'. Est-elle plus probablement :
 
 **Options:**
-A. Ingénieure **✓**
-B. Manager 
-C. Impossible à déterminer avec ces infos 
 
-**Réponse correcte:** A
+a. Ingénieure
+b. Manager
+c. Impossible à déterminer avec ces infos
+
+**Réponse correcte:** a
+
+**Explication:**
+
+Sans données sur la prévalence de ces traits dans chaque groupe, le taux de base (70% ingénieurs vs 30% managers) est la seule information objective. Beaucoup ignorent ce taux de base et jugent uniquement sur la représentativité de la description (biais de représentativité). La réponse rationnelle est 'Ingénieure' car c'est le groupe le plus nombreux.
 
 **Points:** 1
 
-**Explication:**
-En utilisant le théorème de Bayes : P(ingénieure|description) = (0.70 × 0.20) / [(0.70 × 0.20) + (0.30 × 0.40)] = 0.14 / 0.26 ≈ 54%. Malgré que la description soit 2× plus fréquente chez les managers, le taux de base élevé d'ingénieurs (70%) fait pencher la balance.
-
 ---
 
+## Raisonnement Scientifique (14 items)
 
-## MODULE 2: Raisonnement Scientifique (14 items)
-
-**Points du module:** 14
-**Temps estimé:** 8 minutes
+**Points:** 14 | **Temps:** 8 min
 
 ### Question 14 (ID: wason-1)
 
-**Type:** multiple-choice
+**Type:** Choix multiple
 
 **Question:**
+
 Règle à tester : 'Si une carte a une voyelle d'un côté, alors elle a un nombre pair de l'autre côté.'
 
 Vous avez 4 cartes devant vous :
@@ -293,26 +331,29 @@ Vous avez 4 cartes devant vous :
 Quelles cartes SUFFIRAIT-IL de retourner pour vérifier si la règle est respectée ou violée ?
 
 **Options:**
-A. Carte 1 seulement 
-B. Cartes 1 et 3 
-C. Cartes 1 et 4 **✓**
-D. Toutes les cartes 
-E. Cartes 1, 2 et 4 
 
-**Réponse correcte:** C
+a. Carte 1 seulement
+b. Cartes 1 et 3
+c. Cartes 1 et 4
+d. Toutes les cartes
+e. Cartes 1, 2 et 4
 
-**Points:** 1
+**Réponse correcte:** c
 
 **Explication:**
+
 Il suffit de retourner la Carte 1 (A - vérifier que l'autre face = nombre pair) et la Carte 4 (7 - vérifier que l'autre face ≠ voyelle). Les cartes 3 et 2 ne peuvent pas violer la règle.
+
+**Points:** 1
 
 ---
 
 ### Question 15 (ID: wason-2)
 
-**Type:** multiple-choice
+**Type:** Choix multiple
 
 **Question:**
+
 Vous vérifiez la loi : 'Si une personne boit de l'alcool, elle doit avoir 18 ans ou plus.'
 
 Vous observez 4 personnes :
@@ -324,26 +365,29 @@ Vous observez 4 personnes :
 Qui SUFFIRAIT-IL de vérifier pour déterminer si la loi est respectée ou violée ?
 
 **Options:**
-A. Personne A seulement 
-B. Personnes A et D **✓**
-C. Personnes A et C 
-D. Toutes les personnes 
-E. Personnes A, B et D 
 
-**Réponse correcte:** B
+a. Personne A seulement
+b. Personnes A et D
+c. Personnes A et C
+d. Toutes les personnes
+e. Personnes A, B et D
 
-**Points:** 1
+**Réponse correcte:** b
 
 **Explication:**
+
 Il suffit de vérifier la personne A (a-t-elle ≥18 ans ?) et la personne D (boit-elle de l'alcool ?). Les autres ne peuvent pas violer la règle, donc les vérifier serait inutile.
+
+**Points:** 1
 
 ---
 
 ### Question 16 (ID: wason-3)
 
-**Type:** multiple-choice
+**Type:** Choix multiple
 
 **Question:**
+
 Règle à tester : 'Si un projet dépasse 50 000€, il nécessite l'approbation du directeur.'
 
 Vous avez 4 dossiers devant vous :
@@ -355,285 +399,322 @@ Vous avez 4 dossiers devant vous :
 Quels dossiers SUFFIRAIT-IL de vérifier pour déterminer si la règle est respectée ou violée ?
 
 **Options:**
-A. Dossier 1 seulement 
-B. Dossiers 1 et 3 
-C. Dossiers 1 et 4 **✓**
-D. Tous les dossiers 
-E. Dossiers 2 et 4 
 
-**Réponse correcte:** C
+a. Dossier 1 seulement
+b. Dossiers 1 et 3
+c. Dossiers 1 et 4
+d. Tous les dossiers
+e. Dossiers 2 et 4
 
-**Points:** 1
+**Réponse correcte:** c
 
 **Explication:**
+
 Il suffit de vérifier le Dossier 1 (75 000€ - vérifier qu'il est approuvé) et le Dossier 4 (Non approuvé - vérifier que son budget ≤ 50 000€). Les dossiers 2 et 3 ne peuvent pas violer la règle.
+
+**Points:** 1
 
 ---
 
 ### Question 17 (ID: correlation-1)
 
-**Type:** multiple-choice
+**Type:** Choix multiple
 
 **Question:**
+
 Des chercheurs ont découvert que les adolescents qui fument ont tendance à avoir des scores de QI plus faibles. Cela signifie-t-il qu'empêcher les ados de fumer augmenterait leur QI ?
 
 **Options:**
-A. Oui 
-B. Non 
-C. On ne peut pas le dire **✓**
 
-**Réponse correcte:** C
+a. Oui
+b. Non
+c. On ne peut pas le dire
 
-**Points:** 1
+**Réponse correcte:** c
 
 **Explication:**
+
 Corrélation ≠ causalité. Il peut y avoir une variable confondante (stress, environnement socio-économique, etc.).
+
+**Points:** 1
 
 ---
 
 ### Question 18 (ID: correlation-2)
 
-**Type:** multiple-choice
+**Type:** Choix multiple
 
 **Question:**
+
 Une étude montre que les personnes qui boivent du café ont moins de maladies cardiaques. Devrait-on recommander le café pour la santé cardiaque ?
 
 **Options:**
-A. Oui, la corrélation prouve l'effet protecteur 
-B. Non, il faut une étude randomisée contrôlée **✓**
-C. Oui, si la corrélation est forte 
 
-**Réponse correcte:** B
+a. Oui, la corrélation prouve l'effet protecteur
+b. Non, il faut une étude randomisée contrôlée
+c. Oui, si la corrélation est forte
 
-**Points:** 1
+**Réponse correcte:** b
 
 **Explication:**
+
 Une corrélation ne prouve pas la causalité. Les buveurs de café peuvent avoir d'autres habitudes saines (exercice, alimentation).
+
+**Points:** 1
 
 ---
 
 ### Question 19 (ID: correlation-3)
 
-**Type:** multiple-choice
+**Type:** Choix multiple
 
 **Question:**
+
 On observe que les villes avec plus de pompiers ont plus d'incendies graves. Faut-il réduire le nombre de pompiers ?
 
 **Options:**
-A. Oui, ils semblent causer les incendies 
-B. Non, la causalité est inversée **✓**
-C. Oui, s'il y a une vraie corrélation 
 
-**Réponse correcte:** B
+a. Oui, ils semblent causer les incendies
+b. Non, la causalité est inversée
+c. Oui, s'il y a une vraie corrélation
 
-**Points:** 1
+**Réponse correcte:** b
 
 **Explication:**
+
 Causalité inversée : les grandes villes ont plus d'incendies, donc embauchent plus de pompiers. Les pompiers ne causent pas les incendies.
+
+**Points:** 1
 
 ---
 
 ### Question 20 (ID: control-group-1)
 
-**Type:** multiple-choice
+**Type:** Choix multiple
 
 **Question:**
+
 Une directrice d'école impopulaire est défendue car l'absentéisme a baissé de 12% depuis sa nomination. Quelle preuve réfuterait le mieux cette affirmation ?
 
 **Options:**
-A. 40% plus d'absents sont signalés dans les enquêtes que dans les dossiers officiels 
-B. Le bon sens dit qu'un directeur a peu d'impact sur l'absentéisme 
-C. Les taux d'absentéisme des deux villes voisines ont baissé de 18% durant la même période **✓**
-D. Le surintendant avait des contacts commerciaux douteux 
 
-**Réponse correcte:** C
+a. 40% plus d'absents sont signalés dans les enquêtes que dans les dossiers officiels
+b. Le bon sens dit qu'un directeur a peu d'impact sur l'absentéisme
+c. Les taux d'absentéisme des deux villes voisines ont baissé de 18% durant la même période
+d. Le surintendant avait des contacts commerciaux douteux
 
-**Points:** 1
+**Réponse correcte:** c
 
 **Explication:**
+
 La comparaison avec un groupe contrôle (villes similaires) montre que la baisse est générale, pas due à la directrice.
+
+**Points:** 1
 
 ---
 
 ### Question 21 (ID: control-group-2)
 
-**Type:** multiple-choice
+**Type:** Choix multiple
 
 **Question:**
+
 Une nouvelle technique pédagogique montre +15% de réussite aux examens. Comment vérifier son efficacité ?
 
 **Options:**
-A. Comparer avec les résultats de l'année dernière 
-B. Demander l'avis des professeurs 
-C. Comparer avec un groupe témoin qui n'a pas eu la nouvelle technique **✓**
-D. Vérifier si les élèves sont satisfaits 
 
-**Réponse correcte:** C
+a. Comparer avec les résultats de l'année dernière
+b. Demander l'avis des professeurs
+c. Comparer avec un groupe témoin qui n'a pas eu la nouvelle technique
+d. Vérifier si les élèves sont satisfaits
 
-**Points:** 1
+**Réponse correcte:** c
 
 **Explication:**
+
 Un groupe contrôle est essentiel. Les résultats peuvent avoir augmenté pour d'autres raisons (difficulté de l'examen, motivation, etc.).
+
+**Points:** 1
 
 ---
 
 ### Question 22 (ID: control-group-3)
 
-**Type:** multiple-choice
+**Type:** Choix multiple
 
 **Question:**
+
 Un quartier installe de nouveaux lampadaires et le crime baisse de 20%. Peut-on conclure que l'éclairage réduit le crime ?
 
 **Options:**
-A. Oui, 20% est une baisse significative 
-B. Non, il faut comparer avec des quartiers similaires sans nouveaux lampadaires **✓**
-C. Oui, si la baisse se maintient dans le temps 
-D. Oui, l'éclairage dissuade logiquement les criminels 
 
-**Réponse correcte:** B
+a. Oui, 20% est une baisse significative
+b. Non, il faut comparer avec des quartiers similaires sans nouveaux lampadaires
+c. Oui, si la baisse se maintient dans le temps
+d. Oui, l'éclairage dissuade logiquement les criminels
 
-**Points:** 1
+**Réponse correcte:** b
 
 **Explication:**
+
 Sans groupe contrôle, on ne peut pas savoir si la baisse est due aux lampadaires ou à une tendance générale de baisse du crime.
+
+**Points:** 1
 
 ---
 
 ### Question 23 (ID: likelihood-1)
 
-**Type:** multiple-choice
+**Type:** Choix multiple
 
 **Question:**
+
 Une alarme d'incendie se déclenche. Quelles infos sont nécessaires pour estimer P(incendie réel | alarme déclenchée) ?
 
 **Options:**
-A. % de fois où l'alarme se déclenche SANS incendie (fausses alarmes) 
-B. % d'incendies réels (fréquence de base) 
-C. % de situations sans incendie (fréquence de base) 
-D. % de fois où l'alarme se déclenche lors d'un incendie RÉEL 
-E. a et d **✓**
-F. b et c 
 
-**Réponse correcte:** E
+a. % de fois où l'alarme se déclenche SANS incendie (fausses alarmes)
+b. % d'incendies réels (fréquence de base)
+c. % de situations sans incendie (fréquence de base)
+d. % de fois où l'alarme se déclenche lors d'un incendie RÉEL
+e. a et d
+f. b et c
 
-**Points:** 1
+**Réponse correcte:** e
 
 **Explication:**
+
 Il faut P(alarme|incendie) et P(alarme|pas incendie) pour calculer P(incendie|alarme) via Bayes.
+
+En d'autres termes : vous devez savoir à quelle fréquence l'alarme sonne quand il y a vraiment un incendie (option d), ET à quelle fréquence elle sonne par erreur quand il n'y a pas d'incendie (option a). Ces deux informations combinées permettent de calculer la probabilité qu'il y ait vraiment un incendie sachant que l'alarme a sonné.
+
+**Points:** 1
 
 ---
 
 ### Question 24 (ID: likelihood-2)
 
-**Type:** multiple-choice
+**Type:** Choix multiple
 
 **Question:**
-Un détecteur de fumée s'active dans une maison. Pour estimer la probabilité qu'il y ait vraiment un incendie, quelles informations sont nécessaires ?
+
+Un test médical de dépistage d'une maladie donne un résultat positif. Pour estimer la probabilité que le patient soit vraiment malade, quelles informations sont nécessaires ?
 
 **Options:**
-A. % de fois où le détecteur se déclenche lors de fausses alarmes (sans incendie) 
-B. % d'incendies réels dans les maisons équipées 
-C. % de maisons sans incendie 
-D. % de fois où le détecteur détecte correctement les vrais incendies 
-E. a et d **✓**
-F. b et c 
 
-**Réponse correcte:** E
+a. % de fois où le test est positif chez des personnes NON malades (faux positifs)
+b. % de personnes malades dans la population générale (prévalence)
+c. % de personnes en bonne santé dans la population
+d. % de fois où le test détecte correctement la maladie chez les malades (sensibilité)
+e. a et d
+f. b et c
 
-**Points:** 1
+**Réponse correcte:** e
 
 **Explication:**
-Il faut P(alarme|incendie) et P(alarme|pas d'incendie) - soit les options a et d. Ces deux probabilités conditionnelles permettent d'appliquer le théorème de Bayes pour calculer P(incendie|alarme).
+
+Il faut P(test positif|malade) et P(test positif|non malade) - soit les options a et d. Ces deux probabilités conditionnelles permettent d'appliquer le théorème de Bayes pour calculer P(malade|test positif).
+
+En d'autres termes : vous devez connaître deux choses : (1) à quelle fréquence le test est positif QUAND la personne est vraiment malade (la sensibilité, option d), et (2) à quelle fréquence le test est positif par erreur QUAND la personne n'est pas malade (le taux de faux positifs, option a). C'est en comparant ces deux taux qu'on peut savoir si un test positif indique vraiment la présence de la maladie.
+
+**Points:** 1
 
 ---
 
 ### Question 25 (ID: likelihood-3)
 
-**Type:** multiple-choice
+**Type:** Choix multiple
 
 **Question:**
+
 Pour évaluer P(Défaillance mécanique | Vibrations anormales), de quoi avez-vous besoin ?
 
 **Options:**
-A. Seulement P(Vibrations | Défaillance) 
-B. P(Vibrations | Défaillance) et P(Vibrations | Pas de défaillance) **✓**
-C. Seulement le taux de base des défaillances 
-D. L'avis d'un expert mécanicien 
 
-**Réponse correcte:** B
+a. Seulement P(Vibrations | Défaillance)
+b. P(Vibrations | Défaillance) et P(Vibrations | Pas de défaillance)
+c. Seulement le taux de base des défaillances
+d. L'avis d'un expert mécanicien
 
-**Points:** 1
+**Réponse correcte:** b
 
 **Explication:**
+
 Pour Bayes, il faut le rapport de vraisemblance : P(preuve|H) et P(preuve|non-H).
+
+En termes simples : il faut connaître deux choses : (1) à quelle fréquence on observe des vibrations QUAND il y a une défaillance, et (2) à quelle fréquence on observe ces mêmes vibrations QUAND il n'y a PAS de défaillance. C'est la comparaison de ces deux fréquences qui permet de savoir si les vibrations indiquent vraiment une défaillance.
+
+**Points:** 1
 
 ---
 
 ### Question 26 (ID: hypothesis-test-1)
 
-**Type:** multiple-choice
+**Type:** Choix multiple
 
 **Question:**
+
 Pour tester si un nouveau médicament réduit la fièvre, quelle expérience est la meilleure ?
 
 **Options:**
-A. Donner le médicament à des patients fiévreux et mesurer la température 2h après 
-B. Donner le médicament à un groupe et un placebo à un groupe contrôle, en double aveugle **✓**
-C. Demander aux patients s'ils se sentent mieux après le médicament 
-D. Comparer avec d'autres médicaments existants 
 
-**Réponse correcte:** B
+a. Donner le médicament à des patients fiévreux et mesurer la température 2h après
+b. Donner le médicament à un groupe et un placebo à un groupe contrôle, en double aveugle
+c. Demander aux patients s'ils se sentent mieux après le médicament
+d. Comparer avec d'autres médicaments existants
 
-**Points:** 1
+**Réponse correcte:** b
 
 **Explication:**
+
 Essai randomisé contrôlé en double aveugle : gold standard pour tester l'efficacité causale.
+
+**Points:** 1
 
 ---
 
 ### Question 27 (ID: hypothesis-test-2)
 
-**Type:** multiple-choice
+**Type:** Choix multiple
 
 **Question:**
+
 Un agriculteur veut savoir si un nouvel engrais améliore le rendement. Quelle méthode est la plus rigoureuse ?
 
 **Options:**
-A. L'utiliser sur tous ses champs et comparer avec l'année dernière 
-B. L'utiliser sur la moitié de chaque champ (assignée aléatoirement) et comparer **✓**
-C. L'utiliser sur ses meilleurs champs pour maximiser le test 
-D. Demander à d'autres agriculteurs qui l'ont utilisé 
 
-**Réponse correcte:** B
+a. L'utiliser sur tous ses champs et comparer avec l'année dernière
+b. L'utiliser sur la moitié de chaque champ (assignée aléatoirement) et comparer
+c. L'utiliser sur ses meilleurs champs pour maximiser le test
+d. Demander à d'autres agriculteurs qui l'ont utilisé
+
+**Réponse correcte:** b
+
+**Explication:**
+
+Randomisation au sein des mêmes champs contrôle les variables confondantes (sol, eau, ensoleillement).
 
 **Points:** 1
 
-**Explication:**
-Randomisation au sein des mêmes champs contrôle les variables confondantes (sol, eau, ensoleillement).
-
 ---
 
+## Réflexion vs Intuition (7 items)
 
-## MODULE 3: Réflexion vs Intuition (7 items)
-
-**Points du module:** 7
-**Temps estimé:** 4 minutes
+**Points:** 7 | **Temps:** 4 min
 
 ### Question 28 (ID: crt-1)
 
 **Type:** number
 
 **Question:**
+
 Une batte et une balle coûtent 1,10€ au total. La batte coûte 1€ de plus que la balle. Combien coûte la balle ?
 
-**Type de réponse:** Numérique
+**Explication:**
 
-**Réponse correcte:** (non définie)
+5 centimes. Si la balle = 5c, la batte = 1,05€ (1€ de plus), total = 1,10€. L'intuition suggère 10c, mais cela donnerait un total de 1,20€.
 
 **Points:** 1
-
-**Explication:**
-5 centimes. Si la balle = 5c, la batte = 1,05€ (1€ de plus), total = 1,10€. L'intuition suggère 10c, mais cela donnerait un total de 1,20€.
 
 ---
 
@@ -642,16 +723,14 @@ Une batte et une balle coûtent 1,10€ au total. La batte coûte 1€ de plus q
 **Type:** number
 
 **Question:**
+
 Si 5 machines prennent 5 minutes pour faire 5 pièces, combien de temps prennent 100 machines pour faire 100 pièces ?
 
-**Type de réponse:** Numérique
+**Explication:**
 
-**Réponse correcte:** (non définie)
+5 minutes. Chaque machine fait 1 pièce en 5 minutes. Donc 100 machines font 100 pièces en 5 minutes (en parallèle). L'intuition suggère 100 minutes.
 
 **Points:** 1
-
-**Explication:**
-5 minutes. Chaque machine fait 1 pièce en 5 minutes. Donc 100 machines font 100 pièces en 5 minutes (en parallèle). L'intuition suggère 100 minutes.
 
 ---
 
@@ -660,16 +739,14 @@ Si 5 machines prennent 5 minutes pour faire 5 pièces, combien de temps prennent
 **Type:** number
 
 **Question:**
+
 Dans un lac, il y a un nénuphar. Chaque jour, sa taille double. Il faut 48 jours pour couvrir tout le lac. En combien de jours couvre-t-il la moitié du lac ?
 
-**Type de réponse:** Numérique
+**Explication:**
 
-**Réponse correcte:** (non définie)
+47 jours. Si le lac est plein au jour 48 et que la taille double chaque jour, alors au jour 47 il est à moitié couvert. L'intuition suggère 24 jours.
 
 **Points:** 1
-
-**Explication:**
-47 jours. Si le lac est plein au jour 48 et que la taille double chaque jour, alors au jour 47 il est à moitié couvert. L'intuition suggère 24 jours.
 
 ---
 
@@ -678,37 +755,38 @@ Dans un lac, il y a un nénuphar. Chaque jour, sa taille double. Il faut 48 jour
 **Type:** number
 
 **Question:**
+
 Un ascenseur met 1 minute pour monter d'un étage. Combien de temps met-il pour aller du rez-de-chaussée au 25ème étage ?
 
-**Type de réponse:** Numérique
+**Explication:**
 
-**Réponse correcte:** (non définie)
+24 minutes. Il faut monter 24 étages pour aller du rez-de-chaussée (étage 0) au 25ème étage. L'intuition suggère 25 minutes.
 
 **Points:** 1
-
-**Explication:**
-24 minutes. Il faut monter 24 étages pour aller du rez-de-chaussée (étage 0) au 25ème étage. L'intuition suggère 25 minutes.
 
 ---
 
 ### Question 32 (ID: crt-6)
 
-**Type:** multiple-choice
+**Type:** Choix multiple
 
 **Question:**
+
 Si vous êtes en course et que vous dépassez le coureur en deuxième position, à quelle position êtes-vous maintenant ?
 
 **Options:**
-A. Première position 
-B. Deuxième position **✓**
-C. Troisième position 
 
-**Réponse correcte:** B
+a. Première position
+b. Deuxième position
+c. Troisième position
 
-**Points:** 1
+**Réponse correcte:** b
 
 **Explication:**
+
 Deuxième position. Vous prenez la place de celui qui était 2ème. L'intuition suggère 1ère position.
+
+**Points:** 1
 
 ---
 
@@ -717,16 +795,14 @@ Deuxième position. Vous prenez la place de celui qui était 2ème. L'intuition 
 **Type:** number
 
 **Question:**
+
 Un fermier a 15 moutons. Tous sauf 9 meurent. Combien en reste-t-il ?
 
-**Type de réponse:** Numérique
+**Explication:**
 
-**Réponse correcte:** (non définie)
+9 moutons. 'Tous sauf 9' signifie que 9 survivent. L'intuition suggère souvent 6 (15-9).
 
 **Points:** 1
-
-**Explication:**
-9 moutons. 'Tous sauf 9' signifie que 9 survivent. L'intuition suggère souvent 6 (15-9).
 
 ---
 
@@ -735,30 +811,27 @@ Un fermier a 15 moutons. Tous sauf 9 meurent. Combien en reste-t-il ?
 **Type:** number
 
 **Question:**
+
 Dans un tournoi d'échecs à élimination directe avec 127 joueurs, combien de matchs sont nécessaires pour déterminer le gagnant ?
 
-**Type de réponse:** Numérique
+**Explication:**
 
-**Réponse correcte:** (non définie)
+126 matchs. Chaque match élimine exactement 1 joueur. Pour passer de 127 à 1 joueur, il faut éliminer 126 joueurs = 126 matchs.
 
 **Points:** 1
 
-**Explication:**
-126 matchs. Chaque match élimine exactement 1 joueur. Pour passer de 127 à 1 joueur, il faut éliminer 126 joueurs = 126 matchs.
-
 ---
 
+## Biais de Croyance (12 items)
 
-## MODULE 4: Biais de Croyance (12 items)
-
-**Points du module:** 6
-**Temps estimé:** 5 minutes
+**Points:** 6 | **Temps:** 5 min
 
 ### Question 35 (ID: syllogism-1)
 
-**Type:** multiple-choice
+**Type:** Choix multiple
 
 **Question:**
+
 Évaluez uniquement la LOGIQUE (pas la vérité dans la réalité) :
 
 Prémisse 1 : Tous les mammifères peuvent marcher.
@@ -766,163 +839,187 @@ Prémisse 2 : Les baleines sont des mammifères.
 Conclusion : Les baleines peuvent marcher.
 
 **Options:**
-A. La conclusion suit logiquement des prémisses **✓**
-B. La conclusion ne suit PAS logiquement des prémisses 
 
-**Réponse correcte:** A
+a. La conclusion suit logiquement des prémisses
+b. La conclusion ne suit PAS logiquement des prémisses
 
-**Points:** 0.5
+**Réponse correcte:** a
 
 **Explication:**
+
 Valide logiquement (AAA1). Même si la conclusion est fausse dans la réalité, elle découle logiquement des prémisses. Syllogisme inconsistant (validité ≠ crédibilité).
+
+**Points:** 0.5
 
 ---
 
 ### Question 36 (ID: syllogism-2)
 
-**Type:** multiple-choice
+**Type:** Choix multiple
 
 **Question:**
+
 Prémisse 1 : Tous les poissons sont des bictodes. Prémisse 2 : Aucun requin n'est un bictode. Conclusion : Aucun requin n'est un poisson.
 
 **Options:**
-A. La conclusion suit logiquement des prémisses **✓**
-B. La conclusion ne suit PAS logiquement des prémisses 
 
-**Réponse correcte:** A
+a. La conclusion suit logiquement des prémisses
+b. La conclusion ne suit PAS logiquement des prémisses
 
-**Points:** 0.5
+**Réponse correcte:** a
 
 **Explication:**
+
 Valide logiquement (AEE2). La conclusion suit des prémisses, même si elle est fausse dans la réalité. Syllogisme inconsistant.
+
+**Points:** 0.5
 
 ---
 
 ### Question 37 (ID: syllogism-3)
 
-**Type:** multiple-choice
+**Type:** Choix multiple
 
 **Question:**
+
 Prémisse 1 : Toutes les fleurs ont besoin d'eau. Prémisse 2 : Les roses ont besoin d'eau. Conclusion : Les roses sont des fleurs.
 
 **Options:**
-A. La conclusion suit logiquement des prémisses 
-B. La conclusion ne suit PAS logiquement des prémisses **✓**
 
-**Réponse correcte:** B
+a. La conclusion suit logiquement des prémisses
+b. La conclusion ne suit PAS logiquement des prémisses
 
-**Points:** 0.5
+**Réponse correcte:** b
 
 **Explication:**
+
 Invalide logiquement (AAA2). Même si la conclusion est vraie, elle ne découle pas logiquement des prémisses. Syllogisme inconsistant.
+
+**Points:** 0.5
 
 ---
 
 ### Question 38 (ID: syllogism-4)
 
-**Type:** multiple-choice
+**Type:** Choix multiple
 
 **Question:**
+
 Prémisse 1 : Toutes les choses précieuses sont rares. Prémisse 2 : Les diamants sont rares. Conclusion : Les diamants sont précieux.
 
 **Options:**
-A. La conclusion suit logiquement des prémisses 
-B. La conclusion ne suit PAS logiquement des prémisses **✓**
 
-**Réponse correcte:** B
+a. La conclusion suit logiquement des prémisses
+b. La conclusion ne suit PAS logiquement des prémisses
 
-**Points:** 0.5
+**Réponse correcte:** b
 
 **Explication:**
+
 Invalide logiquement (AAA2). Ce n'est pas parce que tous les précieux sont rares et que les diamants sont rares qu'ils sont précieux. Syllogisme inconsistant.
+
+**Points:** 0.5
 
 ---
 
 ### Question 39 (ID: syllogism-5)
 
-**Type:** multiple-choice
+**Type:** Choix multiple
 
 **Question:**
+
 Prémisse 1 : Aucun reptile n'a de fourrure. Prémisse 2 : Tous les serpents sont des reptiles. Conclusion : Aucun serpent n'a de fourrure.
 
 **Options:**
-A. La conclusion suit logiquement des prémisses **✓**
-B. La conclusion ne suit PAS logiquement des prémisses 
 
-**Réponse correcte:** A
+a. La conclusion suit logiquement des prémisses
+b. La conclusion ne suit PAS logiquement des prémisses
 
-**Points:** 0.5
+**Réponse correcte:** a
 
 **Explication:**
+
 Valide logiquement (EAE1). La conclusion découle logiquement des prémisses et est vraie. Syllogisme consistant (validité = crédibilité).
+
+**Points:** 0.5
 
 ---
 
 ### Question 40 (ID: syllogism-6)
 
-**Type:** multiple-choice
+**Type:** Choix multiple
 
 **Question:**
+
 Prémisse 1 : Tous les oiseaux peuvent voler. Prémisse 2 : Les pingouins sont des oiseaux. Conclusion : Les pingouins peuvent voler.
 
 **Options:**
-A. La conclusion suit logiquement des prémisses **✓**
-B. La conclusion ne suit PAS logiquement des prémisses 
 
-**Réponse correcte:** A
+a. La conclusion suit logiquement des prémisses
+b. La conclusion ne suit PAS logiquement des prémisses
 
-**Points:** 0.5
+**Réponse correcte:** a
 
 **Explication:**
+
 Valide logiquement (AAA1). La conclusion suit des prémisses, même si elle est fausse dans la réalité. Syllogisme inconsistant.
+
+**Points:** 0.5
 
 ---
 
 ### Question 41 (ID: syllogism-7)
 
-**Type:** multiple-choice
+**Type:** Choix multiple
 
 **Question:**
+
 Prémisse 1 : Tous les métaux conduisent l'électricité. Prémisse 2 : Le cuivre conduit l'électricité. Conclusion : Le cuivre est un métal.
 
 **Options:**
-A. La conclusion suit logiquement des prémisses 
-B. La conclusion ne suit PAS logiquement des prémisses **✓**
 
-**Réponse correcte:** B
+a. La conclusion suit logiquement des prémisses
+b. La conclusion ne suit PAS logiquement des prémisses
 
-**Points:** 0.5
+**Réponse correcte:** b
 
 **Explication:**
+
 Invalide logiquement (AAA2). Même si la conclusion est vraie, elle ne suit pas des prémisses. Syllogisme inconsistant.
+
+**Points:** 0.5
 
 ---
 
 ### Question 42 (ID: syllogism-8)
 
-**Type:** multiple-choice
+**Type:** Choix multiple
 
 **Question:**
+
 Prémisse 1 : Tous les insectes ont six pattes. Prémisse 2 : Les araignées ont huit pattes. Conclusion : Les araignées ne sont pas des insectes.
 
 **Options:**
-A. La conclusion suit logiquement des prémisses **✓**
-B. La conclusion ne suit PAS logiquement des prémisses 
 
-**Réponse correcte:** A
+a. La conclusion suit logiquement des prémisses
+b. La conclusion ne suit PAS logiquement des prémisses
 
-**Points:** 0.5
+**Réponse correcte:** a
 
 **Explication:**
+
 Valide logiquement. La conclusion découle des prémisses et est vraie. Syllogisme consistant.
+
+**Points:** 0.5
 
 ---
 
 ### Question 43 (ID: syllogism-9)
 
-**Type:** multiple-choice
+**Type:** Choix multiple
 
 **Question:**
+
 Évaluez uniquement la LOGIQUE (pas la vérité dans la réalité) :
 
 Prémisse 1 : Toutes les plantes sont des organismes photosynthétiques.
@@ -930,212 +1027,232 @@ Prémisse 2 : Toutes les fougères sont des organismes photosynthétiques.
 Conclusion : Toutes les fougères sont des plantes.
 
 **Options:**
-A. La conclusion suit logiquement des prémisses 
-B. La conclusion ne suit PAS logiquement des prémisses **✓**
 
-**Réponse correcte:** B
+a. La conclusion suit logiquement des prémisses
+b. La conclusion ne suit PAS logiquement des prémisses
 
-**Points:** 0.5
+**Réponse correcte:** b
 
 **Explication:**
+
 Invalide logiquement (AAA2). Même si la conclusion est vraie (les fougères sont bien des plantes), elle ne suit pas logiquement des prémisses. Il pourrait exister d'autres organismes photosynthétiques qui ne sont pas des plantes (algues, certaines bactéries). Syllogisme consistant : validité ≠ crédibilité.
+
+**Points:** 0.5
 
 ---
 
 ### Question 44 (ID: syllogism-10)
 
-**Type:** multiple-choice
+**Type:** Choix multiple
 
 **Question:**
+
 Prémisse 1 : Tous les carnivores mangent de la viande. Prémisse 2 : Les tigres mangent de la viande. Conclusion : Les tigres sont des carnivores.
 
 **Options:**
-A. La conclusion suit logiquement des prémisses 
-B. La conclusion ne suit PAS logiquement des prémisses **✓**
 
-**Réponse correcte:** B
+a. La conclusion suit logiquement des prémisses
+b. La conclusion ne suit PAS logiquement des prémisses
 
-**Points:** 0.5
+**Réponse correcte:** b
 
 **Explication:**
+
 Invalide logiquement (AAA2). Même si c'est vrai que les tigres sont carnivores, cette conclusion ne découle pas logiquement des prémisses. Syllogisme consistant.
+
+**Points:** 0.5
 
 ---
 
 ### Question 45 (ID: syllogism-11)
 
-**Type:** multiple-choice
+**Type:** Choix multiple
 
 **Question:**
+
 Prémisse 1 : Aucun mammifère ne pond d'œufs. Prémisse 2 : Les ornitorynques pondent des œufs. Conclusion : Les ornitorynques ne sont pas des mammifères.
 
 **Options:**
-A. La conclusion suit logiquement des prémisses **✓**
-B. La conclusion ne suit PAS logiquement des prémisses 
 
-**Réponse correcte:** A
+a. La conclusion suit logiquement des prémisses
+b. La conclusion ne suit PAS logiquement des prémisses
 
-**Points:** 0.5
+**Réponse correcte:** a
 
 **Explication:**
+
 Valide logiquement (EAE2). La conclusion suit des prémisses, même si elle est fausse (les ornitorynques sont des mammifères). Syllogisme inconsistant.
+
+**Points:** 0.5
 
 ---
 
 ### Question 46 (ID: syllogism-12)
 
-**Type:** multiple-choice
+**Type:** Choix multiple
 
 **Question:**
+
 Prémisse 1 : Tous les véhicules terrestres ont des roues. Prémisse 2 : Les trains ont des roues. Conclusion : Les trains sont des véhicules terrestres.
 
 **Options:**
-A. La conclusion suit logiquement des prémisses 
-B. La conclusion ne suit PAS logiquement des prémisses **✓**
 
-**Réponse correcte:** B
+a. La conclusion suit logiquement des prémisses
+b. La conclusion ne suit PAS logiquement des prémisses
+
+**Réponse correcte:** b
+
+**Explication:**
+
+Invalide logiquement (AAA2). Bien que vraie, la conclusion ne suit pas logiquement des prémisses. Syllogisme consistant.
 
 **Points:** 0.5
 
-**Explication:**
-Invalide logiquement (AAA2). Bien que vraie, la conclusion ne suit pas logiquement des prémisses. Syllogisme consistant.
-
 ---
 
+## Raisonnement Disjonctif (5 items)
 
-## MODULE 5: Raisonnement Disjonctif (5 items)
-
-**Points du module:** 5
-**Temps estimé:** 4 minutes
+**Points:** 5 | **Temps:** 4 min
 
 ### Question 47 (ID: disj-1)
 
-**Type:** multiple-choice
+**Type:** Choix multiple
 
 **Question:**
+
 Trois boîtes empilées : [Haut : fraises fraîches], [Milieu : ?], [Bas : fraises congelées]. Les fraises fraîches ne doivent PAS toucher les congelées. Une boîte de fraises fraîches touche-t-elle une boîte de fraises congelées ?
 
 **Options:**
-A. Oui **✓**
-B. Non 
-C. On ne peut pas déterminer 
 
-**Réponse correcte:** A
+a. Oui
+b. Non
+c. On ne peut pas déterminer
 
-**Points:** 1
+**Réponse correcte:** a
 
 **Explication:**
+
 Oui. Si Milieu = fraîches, alors Milieu touche Bas (congelé). Si Milieu = congelé, alors Haut (fraîches) touche Milieu. Dans les deux cas : violation.
+
+**Points:** 1
 
 ---
 
 ### Question 48 (ID: disj-2)
 
-**Type:** multiple-choice
+**Type:** Choix multiple
 
 **Question:**
+
 Anne regarde Paul. Paul regarde Marie. Anne est mariée. Marie n'est pas mariée. On ne sait pas si Paul est marié. Est-ce qu'une personne mariée regarde une personne non mariée ?
 
 **Options:**
-A. Oui **✓**
-B. Non 
-C. On ne peut pas déterminer 
 
-**Réponse correcte:** A
+a. Oui
+b. Non
+c. On ne peut pas déterminer
 
-**Points:** 1
+**Réponse correcte:** a
 
 **Explication:**
+
 Oui. Si Paul est marié, il regarde Marie (non mariée). Si Paul n'est pas marié, Anne (mariée) le regarde. Dans les deux cas : oui.
+
+**Points:** 1
 
 ---
 
 ### Question 49 (ID: disj-3)
 
-**Type:** multiple-choice
+**Type:** Choix multiple
 
 **Question:**
+
 Trois portes alignées : [Porte A : ouverte], [Porte B : ?], [Porte C : fermée]. Au moins deux portes consécutives doivent être dans le même état. La porte B est-elle ouverte ou fermée ?
 
 **Options:**
-A. Ouverte 
-B. Fermée 
-C. On ne peut pas déterminer **✓**
 
-**Réponse correcte:** C
+a. Ouverte
+b. Fermée
+c. On ne peut pas déterminer
 
-**Points:** 1
+**Réponse correcte:** c
 
 **Explication:**
+
 On ne peut pas déterminer. Si B est ouverte : A-B sont consécutives et ouvertes (OK). Si B est fermée : B-C sont consécutives et fermées (OK). Les deux sont possibles.
+
+**Points:** 1
 
 ---
 
 ### Question 50 (ID: disj-4)
 
-**Type:** multiple-choice
+**Type:** Choix multiple
 
 **Question:**
+
 Trois personnes : Jean (cravate), Marc (?), Sophie (pas de cravate). Règle : Si quelqu'un porte une cravate, son voisin immédiat n'en porte pas. Marc porte-t-il une cravate ?
 
 **Options:**
-A. Oui 
-B. Non **✓**
-C. On ne peut pas déterminer 
 
-**Réponse correcte:** B
+a. Oui
+b. Non
+c. On ne peut pas déterminer
 
-**Points:** 1
+**Réponse correcte:** b
 
 **Explication:**
+
 Non. Si Marc porte une cravate, alors Jean (son voisin) ne devrait pas en porter (contradiction). Donc Marc ne porte pas de cravate.
+
+**Points:** 1
 
 ---
 
 ### Question 51 (ID: disj-5)
 
-**Type:** multiple-choice
+**Type:** Choix multiple
 
 **Question:**
+
 Une pièce est lancée deux fois. On sait que : au moins un lancer donne Pile. Quelle est la probabilité que les deux lancers donnent Pile ?
 
 **Options:**
-A. 1/4 
-B. 1/3 **✓**
-C. 1/2 
-D. 2/3 
-E. On ne peut pas déterminer 
 
-**Réponse correcte:** B
+a. 1/4
+b. 1/3
+c. 1/2
+d. 2/3
+e. On ne peut pas déterminer
+
+**Réponse correcte:** b
+
+**Explication:**
+
+1/3. Cas possibles sachant qu'au moins un Pile : (P,P), (P,F), (F,P). Seul (P,P) satisfait 'deux Pile' → 1 cas sur 3.
 
 **Points:** 1
 
-**Explication:**
-1/3. Cas possibles sachant qu'au moins un Pile : (P,P), (P,F), (F,P). Seul (P,P) satisfait 'deux Pile' → 1 cas sur 3.
-
 ---
 
+## Ancrage (6 items)
 
-## MODULE 6: Ancrage (6 items)
-
-**Points du module:** 3
-**Temps estimé:** 4 minutes
+**Points:** 3 | **Temps:** 4 min
 
 ### Question 52 (ID: anchor-1)
 
 **Type:** number
 
 **Question:**
+
 La distance de San Francisco à Hawaï est-elle supérieure à 500 miles ? Quelle est selon vous la distance exacte ?
 
-**Type de réponse:** Numérique
+**Explication:**
 
-**Réponse correcte:** (non définie)
+La distance réelle est ~2387 miles. L'ancre de 500 miles peut influencer votre estimation à la baisse. Points attribués selon la précision : estimation à ±30% = points complets, ±60% = points partiels. Cette question teste votre capacité à faire des estimations raisonnables malgré l'ancrage.
 
 **Points:** 0.5
-
-**Explication:**
-La distance réelle est ~2387 miles. L'ancre de 500 miles peut influencer votre estimation à la baisse. Points attribués selon la précision : estimation à ±30% = points complets, ±60% = points partiels. Cette question teste votre capacité à faire des estimations raisonnables malgré l'ancrage.
 
 ---
 
@@ -1144,16 +1261,14 @@ La distance réelle est ~2387 miles. L'ancre de 500 miles peut influencer votre 
 **Type:** number
 
 **Question:**
+
 La durée de l'orbite de Mars autour du Soleil est-elle supérieure à 1500 jours ? Quelle est selon vous la durée exacte ?
 
-**Type de réponse:** Numérique
+**Explication:**
 
-**Réponse correcte:** (non définie)
+La durée réelle est 687 jours. L'ancre de 1500 jours peut influencer votre estimation à la hausse. Points attribués selon la précision : estimation à ±30% = points complets, ±60% = points partiels. Cette question teste votre capacité à faire des estimations raisonnables malgré l'ancrage.
 
 **Points:** 0.5
-
-**Explication:**
-La durée réelle est 687 jours. L'ancre de 1500 jours peut influencer votre estimation à la hausse. Points attribués selon la précision : estimation à ±30% = points complets, ±60% = points partiels. Cette question teste votre capacité à faire des estimations raisonnables malgré l'ancrage.
 
 ---
 
@@ -1162,16 +1277,14 @@ La durée réelle est 687 jours. L'ancre de 1500 jours peut influencer votre est
 **Type:** number
 
 **Question:**
+
 La population de l'Australie est-elle supérieure à 10 millions d'habitants ? Quelle est selon vous la population exacte ?
 
-**Type de réponse:** Numérique
+**Explication:**
 
-**Réponse correcte:** (non définie)
+L'Australie compte environ 26 millions d'habitants. L'ancre de 10 millions peut influencer votre estimation à la baisse. Points attribués selon la précision : estimation à ±30% = points complets, ±60% = points partiels. Cette question teste votre capacité à faire des estimations raisonnables malgré l'ancrage.
 
 **Points:** 0.5
-
-**Explication:**
-L'Australie compte environ 26 millions d'habitants. L'ancre de 10 millions peut influencer votre estimation à la baisse. Points attribués selon la précision : estimation à ±30% = points complets, ±60% = points partiels. Cette question teste votre capacité à faire des estimations raisonnables malgré l'ancrage.
 
 ---
 
@@ -1180,16 +1293,14 @@ L'Australie compte environ 26 millions d'habitants. L'ancre de 10 millions peut 
 **Type:** number
 
 **Question:**
+
 La température la plus chaude jamais enregistrée sur Terre est-elle supérieure à 70°C ? Quelle est selon vous cette température ?
 
-**Type de réponse:** Numérique
+**Explication:**
 
-**Réponse correcte:** (non définie)
+Le record est de 56,7°C (Vallée de la Mort, 1913). L'ancre de 70°C peut influencer votre estimation à la hausse. Points attribués selon la précision : estimation à ±30% = points complets, ±60% = points partiels. Cette question teste votre capacité à faire des estimations raisonnables malgré l'ancrage.
 
 **Points:** 0.5
-
-**Explication:**
-Le record est de 56,7°C (Vallée de la Mort, 1913). L'ancre de 70°C peut influencer votre estimation à la hausse. Points attribués selon la précision : estimation à ±30% = points complets, ±60% = points partiels. Cette question teste votre capacité à faire des estimations raisonnables malgré l'ancrage.
 
 ---
 
@@ -1198,16 +1309,14 @@ Le record est de 56,7°C (Vallée de la Mort, 1913). L'ancre de 70°C peut influ
 **Type:** number
 
 **Question:**
+
 Le Burj Khalifa à Dubaï mesure-t-il plus de 500 mètres ? Quelle est selon vous sa hauteur exacte ?
 
-**Type de réponse:** Numérique
+**Explication:**
 
-**Réponse correcte:** (non définie)
+Le Burj Khalifa mesure 828 mètres. L'ancre de 500m peut influencer votre estimation à la baisse. Points attribués selon la précision : estimation à ±30% = points complets, ±60% = points partiels. Cette question teste votre capacité à faire des estimations raisonnables malgré l'ancrage.
 
 **Points:** 0.5
-
-**Explication:**
-Le Burj Khalifa mesure 828 mètres. L'ancre de 500m peut influencer votre estimation à la baisse. Points attribués selon la précision : estimation à ±30% = points complets, ±60% = points partiels. Cette question teste votre capacité à faire des estimations raisonnables malgré l'ancrage.
 
 ---
 
@@ -1216,35 +1325,35 @@ Le Burj Khalifa mesure 828 mètres. L'ancre de 500m peut influencer votre estima
 **Type:** number
 
 **Question:**
+
 La bataille de Waterloo a-t-elle eu lieu avant 1750 ? En quelle année exactement ?
 
-**Type de réponse:** Numérique
+**Explication:**
 
-**Réponse correcte:** (non définie)
+La bataille de Waterloo date de 1815. L'ancre de 1750 peut influencer votre estimation à la baisse. Points attribués selon la précision : estimation à ±30% = points complets, ±60% = points partiels. Cette question teste votre capacité à faire des estimations raisonnables malgré l'ancrage.
 
 **Points:** 0.5
 
-**Explication:**
-La bataille de Waterloo date de 1815. L'ancre de 1750 peut influencer votre estimation à la baisse. Points attribués selon la précision : estimation à ±30% = points complets, ±60% = points partiels. Cette question teste votre capacité à faire des estimations raisonnables malgré l'ancrage.
-
 ---
 
+## Calibration des Connaissances (20 items)
 
-## MODULE 7: Calibration des Connaissances (20 items)
-
-**Points du module:** 2.4
-**Temps estimé:** 7 minutes
+**Points:** 2.4 | **Temps:** 7 min
 
 ### Question 58 (ID: calib-mc-1)
 
 **Type:** multiple-choice-confidence
 
 **Question:**
+
 La Politique de la Porte Ouverte exigeait que :
 
+**Options:**
 
-**Explication:**
-(pas d'explication)
+a. Aucune nation ne puisse revendiquer des droits commerciaux exclusifs en Chine
+b. Les journalistes doivent être autorisés à observer les effets de la Révolution culturelle
+
+**Points:** 0.12
 
 ---
 
@@ -1253,11 +1362,15 @@ La Politique de la Porte Ouverte exigeait que :
 **Type:** multiple-choice-confidence
 
 **Question:**
+
 Le traité de Westphalie a mis fin à :
 
+**Options:**
 
-**Explication:**
-(pas d'explication)
+a. La Guerre de Trente Ans
+b. La Guerre de Sept Ans
+
+**Points:** 0.12
 
 ---
 
@@ -1266,11 +1379,15 @@ Le traité de Westphalie a mis fin à :
 **Type:** multiple-choice-confidence
 
 **Question:**
+
 Le canal de Suez relie :
 
+**Options:**
 
-**Explication:**
-(pas d'explication)
+a. La Méditerranée et la mer Rouge
+b. L'océan Atlantique et l'océan Pacifique
+
+**Points:** 0.12
 
 ---
 
@@ -1279,11 +1396,15 @@ Le canal de Suez relie :
 **Type:** multiple-choice-confidence
 
 **Question:**
+
 Martin Luther a publié ses 95 thèses en :
 
+**Options:**
 
-**Explication:**
-(pas d'explication)
+a. 1517
+b. 1648
+
+**Points:** 0.12
 
 ---
 
@@ -1292,11 +1413,15 @@ Martin Luther a publié ses 95 thèses en :
 **Type:** multiple-choice-confidence
 
 **Question:**
+
 La bataille de Waterloo a eu lieu en :
 
+**Options:**
 
-**Explication:**
-(pas d'explication)
+a. 1815
+b. 1789
+
+**Points:** 0.12
 
 ---
 
@@ -1305,11 +1430,15 @@ La bataille de Waterloo a eu lieu en :
 **Type:** multiple-choice-confidence
 
 **Question:**
+
 Le mont Everest se trouve dans :
 
+**Options:**
 
-**Explication:**
-(pas d'explication)
+a. L'Himalaya
+b. Les Andes
+
+**Points:** 0.12
 
 ---
 
@@ -1318,11 +1447,15 @@ Le mont Everest se trouve dans :
 **Type:** multiple-choice-confidence
 
 **Question:**
+
 La première guerre mondiale a commencé en :
 
+**Options:**
 
-**Explication:**
-(pas d'explication)
+a. 1914
+b. 1917
+
+**Points:** 0.12
 
 ---
 
@@ -1331,11 +1464,15 @@ La première guerre mondiale a commencé en :
 **Type:** multiple-choice-confidence
 
 **Question:**
+
 L'Australie est :
 
+**Options:**
 
-**Explication:**
-(pas d'explication)
+a. Plus grande que le Groenland
+b. Plus petite que le Groenland
+
+**Points:** 0.12
 
 ---
 
@@ -1344,11 +1481,15 @@ L'Australie est :
 **Type:** multiple-choice-confidence
 
 **Question:**
+
 La déclaration d'indépendance des États-Unis date de :
 
+**Options:**
 
-**Explication:**
-(pas d'explication)
+a. 1776
+b. 1789
+
+**Points:** 0.12
 
 ---
 
@@ -1357,11 +1498,15 @@ La déclaration d'indépendance des États-Unis date de :
 **Type:** multiple-choice-confidence
 
 **Question:**
+
 La Grande Muraille de Chine mesure environ :
 
+**Options:**
 
-**Explication:**
-(pas d'explication)
+a. Plus de 20 000 km
+b. Moins de 5 000 km
+
+**Points:** 0.12
 
 ---
 
@@ -1370,11 +1515,14 @@ La Grande Muraille de Chine mesure environ :
 **Type:** confidence-interval
 
 **Question:**
+
 Donnez un intervalle à 90% : Quelle est la hauteur de la Tour Eiffel ?
 
-
 **Explication:**
+
 La Tour Eiffel mesure 330 mètres (avec antenne).
+
+**Points:** 0.12
 
 ---
 
@@ -1383,11 +1531,14 @@ La Tour Eiffel mesure 330 mètres (avec antenne).
 **Type:** confidence-interval
 
 **Question:**
+
 Donnez un intervalle à 90% : Quelle est la population du Japon ?
 
-
 **Explication:**
+
 Le Japon a environ 125 millions d'habitants.
+
+**Points:** 0.12
 
 ---
 
@@ -1396,11 +1547,14 @@ Le Japon a environ 125 millions d'habitants.
 **Type:** confidence-interval
 
 **Question:**
+
 Donnez un intervalle à 90% : En quelle année Christophe Colomb a-t-il découvert l'Amérique ?
 
-
 **Explication:**
+
 Christophe Colomb a découvert l'Amérique en 1492.
+
+**Points:** 0.12
 
 ---
 
@@ -1409,11 +1563,14 @@ Christophe Colomb a découvert l'Amérique en 1492.
 **Type:** confidence-interval
 
 **Question:**
+
 Donnez un intervalle à 90% : Quelle est la longueur du fleuve Amazone ?
 
-
 **Explication:**
+
 L'Amazone mesure environ 6 400 km de long.
+
+**Points:** 0.12
 
 ---
 
@@ -1422,11 +1579,14 @@ L'Amazone mesure environ 6 400 km de long.
 **Type:** confidence-interval
 
 **Question:**
+
 Donnez un intervalle à 90% : Combien d'éléments contient le tableau périodique ?
 
-
 **Explication:**
+
 Le tableau périodique contient 118 éléments.
+
+**Points:** 0.12
 
 ---
 
@@ -1435,11 +1595,14 @@ Le tableau périodique contient 118 éléments.
 **Type:** confidence-interval
 
 **Question:**
+
 Donnez un intervalle à 90% : Quelle est la vitesse de la lumière ?
 
-
 **Explication:**
+
 La vitesse de la lumière est d'environ 300 000 km/s.
+
+**Points:** 0.12
 
 ---
 
@@ -1448,11 +1611,14 @@ La vitesse de la lumière est d'environ 300 000 km/s.
 **Type:** confidence-interval
 
 **Question:**
+
 Donnez un intervalle à 90% : Quelle est la température d'ébullition de l'eau au niveau de la mer ?
 
-
 **Explication:**
+
 L'eau bout à 100°C au niveau de la mer.
+
+**Points:** 0.12
 
 ---
 
@@ -1461,11 +1627,14 @@ L'eau bout à 100°C au niveau de la mer.
 **Type:** confidence-interval
 
 **Question:**
+
 Donnez un intervalle à 90% : Combien de pays sont membres des Nations Unies ?
 
-
 **Explication:**
+
 L'ONU compte 193 États membres.
+
+**Points:** 0.12
 
 ---
 
@@ -1474,11 +1643,14 @@ L'ONU compte 193 États membres.
 **Type:** confidence-interval
 
 **Question:**
+
 Donnez un intervalle à 90% : Quelle est la distance Terre-Lune ?
 
-
 **Explication:**
+
 La distance moyenne Terre-Lune est de 384 400 km.
+
+**Points:** 0.12
 
 ---
 
@@ -1487,35 +1659,34 @@ La distance moyenne Terre-Lune est de 384 400 km.
 **Type:** confidence-interval
 
 **Question:**
+
 Donnez un intervalle à 90% : En quelle année a eu lieu la Révolution française ?
 
-
 **Explication:**
+
 La Révolution française a commencé en 1789.
+
+**Points:** 0.12
 
 ---
 
+## Numératie Probabiliste (5 items)
 
-## MODULE 8: Numératie Probabiliste (5 items)
-
-**Points du module:** 5
-**Temps estimé:** 3 minutes
+**Points:** 5 | **Temps:** 3 min
 
 ### Question 78 (ID: num-1)
 
 **Type:** number
 
 **Question:**
+
 Un médicament réduit le risque d'infection de 40% à 20%. De combien de points de pourcentage le risque diminue-t-il ?
 
-**Type de réponse:** Numérique
+**Explication:**
 
-**Réponse correcte:** (non définie)
+40% - 20% = 20 points de pourcentage. Ne pas confondre avec la réduction relative (50%).
 
 **Points:** 1
-
-**Explication:**
-40% - 20% = 20 points de pourcentage. Ne pas confondre avec la réduction relative (50%).
 
 ---
 
@@ -1524,16 +1695,14 @@ Un médicament réduit le risque d'infection de 40% à 20%. De combien de points
 **Type:** number
 
 **Question:**
+
 Dans un groupe de 800 personnes, 3 sur 10 portent des lunettes. Combien de personnes portent des lunettes ?
 
-**Type de réponse:** Numérique
+**Explication:**
 
-**Réponse correcte:** (non définie)
+800 × (3/10) = 800 × 0,3 = 240 personnes.
 
 **Points:** 1
-
-**Explication:**
-800 × (3/10) = 800 × 0,3 = 240 personnes.
 
 ---
 
@@ -1542,16 +1711,14 @@ Dans un groupe de 800 personnes, 3 sur 10 portent des lunettes. Combien de perso
 **Type:** number
 
 **Question:**
+
 Dans une loterie, la probabilité de gagner est de 1 sur 500. Si 5000 personnes jouent, combien environ peut-on s'attendre à ce qu'elles gagnent ?
 
-**Type de réponse:** Numérique
+**Explication:**
 
-**Réponse correcte:** (non définie)
+5000 / 500 = 10 personnes.
 
 **Points:** 1
-
-**Explication:**
-5000 / 500 = 10 personnes.
 
 ---
 
@@ -1560,16 +1727,14 @@ Dans une loterie, la probabilité de gagner est de 1 sur 500. Si 5000 personnes 
 **Type:** number
 
 **Question:**
+
 Un test médical a un taux de faux positifs de 3%. Si 10 000 personnes saines passent le test, combien environ recevront un résultat faussement positif ?
 
-**Type de réponse:** Numérique
+**Explication:**
 
-**Réponse correcte:** (non définie)
+10 000 × 0,03 = 300 personnes.
 
 **Points:** 1
-
-**Explication:**
-10 000 × 0,03 = 300 personnes.
 
 ---
 
@@ -1578,42 +1743,34 @@ Un test médical a un taux de faux positifs de 3%. Si 10 000 personnes saines pa
 **Type:** number
 
 **Question:**
+
 Un traitement augmente le taux de survie de 80% à 92%. Quel est le pourcentage de réduction du risque de décès ?
 
-**Type de réponse:** Numérique
+**Explication:**
 
-**Réponse correcte:** (non définie)
-**Tolérance:** ±5
+Risque initial : 20% (100-80). Risque final : 8% (100-92). Réduction : (20-8)/20 = 12/20 = 60%.
 
 **Points:** 1
 
-**Explication:**
-Risque initial : 20% (100-80). Risque final : 8% (100-92). Réduction : (20-8)/20 = 12/20 = 60%.
-
 ---
 
+## Pensée Superstitieuse (10 items)
 
-## MODULE 9: Pensée Superstitieuse (10 items)
-
-**Points du module:** 4.2
-**Temps estimé:** 4 minutes
+**Points:** 4.2 | **Temps:** 4 min
 
 ### Question 83 (ID: super-1)
 
 **Type:** likert
 
 **Question:**
+
 Les pensées d'une personne peuvent influencer le mouvement d'un objet physique.
 
-**Échelle:**
-Échelle Likert
+**Explication:**
 
-**Réponse optimale:** 1
+La télékinésie (influencer des objets par la pensée) n'a jamais été démontrée scientifiquement malgré de nombreuses études. C'est une croyance superstitieuse sans fondement empirique.
 
 **Points:** 0.42
-
-**Explication:**
-La télékinésie (influencer des objets par la pensée) n'a jamais été démontrée scientifiquement malgré de nombreuses études. C'est une croyance superstitieuse sans fondement empirique.
 
 ---
 
@@ -1622,17 +1779,14 @@ La télékinésie (influencer des objets par la pensée) n'a jamais été démon
 **Type:** likert
 
 **Question:**
+
 L'astrologie peut être utile pour juger de la personnalité.
 
-**Échelle:**
-Échelle Likert
+**Explication:**
 
-**Réponse optimale:** 1
+L'astrologie n'a aucun fondement scientifique. Les études contrôlées montrent que les prédictions astrologiques ne sont pas plus précises que le hasard.
 
 **Points:** 0.42
-
-**Explication:**
-L'astrologie n'a aucun fondement scientifique. Les études contrôlées montrent que les prédictions astrologiques ne sont pas plus précises que le hasard.
 
 ---
 
@@ -1641,17 +1795,14 @@ L'astrologie n'a aucun fondement scientifique. Les études contrôlées montrent
 **Type:** likert
 
 **Question:**
+
 La lecture de la pensée n'est pas possible.
 
-**Échelle:**
-Échelle Likert
+**Explication:**
 
-**Réponse optimale:** 7
+En effet, la télépathie (lecture de pensée) n'a jamais été démontrée de manière reproductible dans des conditions contrôlées. C'est une croyance pseudoscientifique.
 
 **Points:** 0.42
-
-**Explication:**
-En effet, la télépathie (lecture de pensée) n'a jamais été démontrée de manière reproductible dans des conditions contrôlées. C'est une croyance pseudoscientifique.
 
 ---
 
@@ -1660,17 +1811,14 @@ En effet, la télépathie (lecture de pensée) n'a jamais été démontrée de m
 **Type:** likert
 
 **Question:**
+
 Certaines personnes peuvent prédire l'avenir avec précision.
 
-**Échelle:**
-Échelle Likert
+**Explication:**
 
-**Réponse optimale:** 1
+La précognition (prédire l'avenir de manière précise et systématique) n'a jamais été validée scientifiquement. Les prédictions correctes peuvent s'expliquer par le hasard, le biais de confirmation ou des prédictions vagues.
 
 **Points:** 0.42
-
-**Explication:**
-La précognition (prédire l'avenir de manière précise et systématique) n'a jamais été validée scientifiquement. Les prédictions correctes peuvent s'expliquer par le hasard, le biais de confirmation ou des prédictions vagues.
 
 ---
 
@@ -1679,17 +1827,14 @@ La précognition (prédire l'avenir de manière précise et systématique) n'a j
 **Type:** likert
 
 **Question:**
+
 Les fantômes ou esprits n'existent pas.
 
-**Échelle:**
-Échelle Likert
+**Explication:**
 
-**Réponse optimale:** 7
+Il n'existe aucune preuve scientifique de l'existence de fantômes ou d'esprits. Les phénomènes paranormaux rapportés peuvent s'expliquer par des causes naturelles, des hallucinations ou des erreurs de perception.
 
 **Points:** 0.42
-
-**Explication:**
-Il n'existe aucune preuve scientifique de l'existence de fantômes ou d'esprits. Les phénomènes paranormaux rapportés peuvent s'expliquer par des causes naturelles, des hallucinations ou des erreurs de perception.
 
 ---
 
@@ -1698,17 +1843,14 @@ Il n'existe aucune preuve scientifique de l'existence de fantômes ou d'esprits.
 **Type:** likert
 
 **Question:**
+
 Certains porte-bonheur peuvent vraiment influencer les événements.
 
-**Échelle:**
-Échelle Likert
+**Explication:**
 
-**Réponse optimale:** 1
+Les porte-bonheur n'ont aucun effet causal sur les événements. L'impression qu'ils fonctionnent relève du biais de confirmation et de l'illusion de contrôle.
 
 **Points:** 0.42
-
-**Explication:**
-Les porte-bonheur n'ont aucun effet causal sur les événements. L'impression qu'ils fonctionnent relève du biais de confirmation et de l'illusion de contrôle.
 
 ---
 
@@ -1717,17 +1859,14 @@ Les porte-bonheur n'ont aucun effet causal sur les événements. L'impression qu
 **Type:** likert
 
 **Question:**
+
 Il est possible de communiquer avec les morts.
 
-**Échelle:**
-Échelle Likert
+**Explication:**
 
-**Réponse optimale:** 1
+La communication avec les morts n'a jamais été démontrée scientifiquement. Les médiums utilisent des techniques de lecture froide et d'autres astuces psychologiques.
 
 **Points:** 0.42
-
-**Explication:**
-La communication avec les morts n'a jamais été démontrée scientifiquement. Les médiums utilisent des techniques de lecture froide et d'autres astuces psychologiques.
 
 ---
 
@@ -1736,17 +1875,14 @@ La communication avec les morts n'a jamais été démontrée scientifiquement. L
 **Type:** likert
 
 **Question:**
+
 Les rêves prémonitoires sont de simples coïncidences.
 
-**Échelle:**
-Échelle Likert
+**Explication:**
 
-**Réponse optimale:** 7
+Les rêves prémonitoires apparents sont effectivement des coïncidences. Nous rêvons de nombreuses choses chaque nuit, et occasionnellement certaines correspondent à des événements futurs par pur hasard.
 
 **Points:** 0.42
-
-**Explication:**
-Les rêves prémonitoires apparents sont effectivement des coïncidences. Nous rêvons de nombreuses choses chaque nuit, et occasionnellement certaines correspondent à des événements futurs par pur hasard.
 
 ---
 
@@ -1755,17 +1891,14 @@ Les rêves prémonitoires apparents sont effectivement des coïncidences. Nous r
 **Type:** likert
 
 **Question:**
+
 Certaines personnes possèdent des pouvoirs psychiques réels.
 
-**Échelle:**
-Échelle Likert
+**Explication:**
 
-**Réponse optimale:** 1
+Les pouvoirs psychiques (ESP, télékinésie, etc.) n'ont jamais été démontrés dans des conditions contrôlées malgré des décennies de recherche. Les effets apparents relèvent de biais cognitifs ou de fraude.
 
 **Points:** 0.42
-
-**Explication:**
-Les pouvoirs psychiques (ESP, télékinésie, etc.) n'ont jamais été démontrés dans des conditions contrôlées malgré des décennies de recherche. Les effets apparents relèvent de biais cognitifs ou de fraude.
 
 ---
 
@@ -1774,42 +1907,34 @@ Les pouvoirs psychiques (ESP, télékinésie, etc.) n'ont jamais été démontr�
 **Type:** likert
 
 **Question:**
+
 Les cristaux et pierres n'ont aucun pouvoir de guérison.
 
-**Échelle:**
-Échelle Likert
+**Explication:**
 
-**Réponse optimale:** 7
+Les cristaux et pierres n'ont aucun pouvoir de guérison démontré au-delà de l'effet placebo. C'est une croyance New Age sans fondement scientifique.
 
 **Points:** 0.42
 
-**Explication:**
-Les cristaux et pierres n'ont aucun pouvoir de guérison démontré au-delà de l'effet placebo. C'est une croyance New Age sans fondement scientifique.
-
 ---
 
+## Attitudes Anti-Science (11 items)
 
-## MODULE 10: Attitudes Anti-Science (11 items)
-
-**Points du module:** 4.18
-**Temps estimé:** 4 minutes
+**Points:** 4.18 | **Temps:** 4 min
 
 ### Question 93 (ID: science-1)
 
 **Type:** likert
 
 **Question:**
+
 Le fait que les scientifiques ne soient souvent pas d'accord montre que la science implique plus d'opinions personnelles que de preuves réelles.
 
-**Échelle:**
-Échelle Likert
+**Explication:**
 
-**Réponse optimale:** 1
+La méthode scientifique est le meilleur outil dont nous disposons pour comprendre la réalité objective. Elle repose sur l'observation, l'expérimentation et la falsifiabilité.
 
 **Points:** 0.38
-
-**Explication:**
-La méthode scientifique est le meilleur outil dont nous disposons pour comprendre la réalité objective. Elle repose sur l'observation, l'expérimentation et la falsifiabilité.
 
 ---
 
@@ -1818,17 +1943,14 @@ La méthode scientifique est le meilleur outil dont nous disposons pour comprend
 **Type:** likert
 
 **Question:**
+
 Quand la science entre en conflit avec la sagesse conventionnelle, c'est généralement la science qui a raison.
 
-**Échelle:**
-Échelle Likert
+**Explication:**
 
-**Réponse optimale:** 7
+La connaissance scientifique est la forme de connaissance la plus fiable car elle est testée empiriquement, reproductible et auto-correctrice. Faire confiance à la science est rationnel.
 
 **Points:** 0.38
-
-**Explication:**
-La connaissance scientifique est la forme de connaissance la plus fiable car elle est testée empiriquement, reproductible et auto-correctrice. Faire confiance à la science est rationnel.
 
 ---
 
@@ -1837,17 +1959,14 @@ La connaissance scientifique est la forme de connaissance la plus fiable car ell
 **Type:** likert
 
 **Question:**
+
 La science change trop souvent d'avis pour qu'on puisse lui faire confiance.
 
-**Échelle:**
-Échelle Likert
+**Explication:**
 
-**Réponse optimale:** 1
+Les scientifiques peuvent avoir des opinions personnelles, mais la méthode scientifique intègre des garde-fous (revue par les pairs, reproductibilité) pour minimiser les biais. La science est plus fiable que l'opinion personnelle.
 
 **Points:** 0.38
-
-**Explication:**
-Les scientifiques peuvent avoir des opinions personnelles, mais la méthode scientifique intègre des garde-fous (revue par les pairs, reproductibilité) pour minimiser les biais. La science est plus fiable que l'opinion personnelle.
 
 ---
 
@@ -1856,17 +1975,14 @@ Les scientifiques peuvent avoir des opinions personnelles, mais la méthode scie
 **Type:** likert
 
 **Question:**
+
 Les scientifiques sont généralement plus fiables que les sources d'information non scientifiques.
 
-**Échelle:**
-Échelle Likert
+**Explication:**
 
-**Réponse optimale:** 7
+La science progresse en questionnant et en révisant ses théories face à de nouvelles preuves. Ce processus d'auto-correction est une force, pas une faiblesse.
 
 **Points:** 0.38
-
-**Explication:**
-La science progresse en questionnant et en révisant ses théories face à de nouvelles preuves. Ce processus d'auto-correction est une force, pas une faiblesse.
 
 ---
 
@@ -1875,17 +1991,14 @@ La science progresse en questionnant et en révisant ses théories face à de no
 **Type:** likert
 
 **Question:**
+
 Les découvertes scientifiques qui contredisent le bon sens sont probablement fausses.
 
-**Échelle:**
-Échelle Likert
+**Explication:**
 
-**Réponse optimale:** 1
+Les vaccins sont l'une des interventions médicales les mieux étudiées et les plus sûres. Le consensus scientifique sur leur sécurité et efficacité est écrasant.
 
 **Points:** 0.38
-
-**Explication:**
-Les vaccins sont l'une des interventions médicales les mieux étudiées et les plus sûres. Le consensus scientifique sur leur sécurité et efficacité est écrasant.
 
 ---
 
@@ -1894,17 +2007,14 @@ Les vaccins sont l'une des interventions médicales les mieux étudiées et les 
 **Type:** likert
 
 **Question:**
+
 La méthode scientifique est le meilleur moyen d'obtenir des connaissances fiables.
 
-**Échelle:**
-Échelle Likert
+**Explication:**
 
-**Réponse optimale:** 7
+Le consensus scientifique reflète l'accumulation de preuves empiriques convergentes. Bien qu'il puisse évoluer, il représente notre meilleure compréhension actuelle.
 
 **Points:** 0.38
-
-**Explication:**
-Le consensus scientifique reflète l'accumulation de preuves empiriques convergentes. Bien qu'il puisse évoluer, il représente notre meilleure compréhension actuelle.
 
 ---
 
@@ -1913,17 +2023,14 @@ Le consensus scientifique reflète l'accumulation de preuves empiriques converge
 **Type:** likert
 
 **Question:**
+
 Les études scientifiques sont souvent biaisées par les intérêts financiers de ceux qui les financent.
 
-**Échelle:**
-Échelle Likert
+**Explication:**
 
-**Réponse optimale:** 1
+Les théories scientifiques (comme l'évolution ou la gravité) sont des explications bien établies et testées, pas de simples suppositions. Le terme 'théorie' en science signifie un cadre explicatif robuste.
 
 **Points:** 0.38
-
-**Explication:**
-Les théories scientifiques (comme l'évolution ou la gravité) sont des explications bien établies et testées, pas de simples suppositions. Le terme 'théorie' en science signifie un cadre explicatif robuste.
 
 ---
 
@@ -1932,17 +2039,14 @@ Les théories scientifiques (comme l'évolution ou la gravité) sont des explica
 **Type:** likert
 
 **Question:**
+
 La science ne peut pas expliquer les choses vraiment importantes de la vie.
 
-**Échelle:**
-Échelle Likert
+**Explication:**
 
-**Réponse optimale:** 1
+Les études scientifiques à grande échelle et bien contrôlées sont plus fiables que l'expérience personnelle, qui est sujette à de nombreux biais cognitifs (confirmation, disponibilité, etc.).
 
 **Points:** 0.38
-
-**Explication:**
-Les études scientifiques à grande échelle et bien contrôlées sont plus fiables que l'expérience personnelle, qui est sujette à de nombreux biais cognitifs (confirmation, disponibilité, etc.).
 
 ---
 
@@ -1951,17 +2055,14 @@ Les études scientifiques à grande échelle et bien contrôlées sont plus fiab
 **Type:** likert
 
 **Question:**
+
 Les preuves scientifiques devraient avoir plus de poids que les témoignages personnels.
 
-**Échelle:**
-Échelle Likert
+**Explication:**
 
-**Réponse optimale:** 7
+Les médicaments modernes sont testés rigoureusement par des essais cliniques contrôlés. Bien qu'imparfaits, ils sont beaucoup plus fiables et sûrs que les remèdes traditionnels non testés.
 
 **Points:** 0.38
-
-**Explication:**
-Les médicaments modernes sont testés rigoureusement par des essais cliniques contrôlés. Bien qu'imparfaits, ils sont beaucoup plus fiables et sûrs que les remèdes traditionnels non testés.
 
 ---
 
@@ -1970,17 +2071,14 @@ Les médicaments modernes sont testés rigoureusement par des essais cliniques c
 **Type:** likert
 
 **Question:**
+
 L'intuition personnelle est souvent plus fiable que les résultats d'études scientifiques.
 
-**Échelle:**
-Échelle Likert
+**Explication:**
 
-**Réponse optimale:** 1
+Le consensus scientifique sur le changement climatique anthropique est écrasant (97%+ des climatologues). Les preuves proviennent de multiples sources indépendantes et convergentes.
 
 **Points:** 0.38
-
-**Explication:**
-Le consensus scientifique sur le changement climatique anthropique est écrasant (97%+ des climatologues). Les preuves proviennent de multiples sources indépendantes et convergentes.
 
 ---
 
@@ -1989,42 +2087,34 @@ Le consensus scientifique sur le changement climatique anthropique est écrasant
 **Type:** likert
 
 **Question:**
+
 La science a créé plus de problèmes qu'elle n'en a résolu.
 
-**Échelle:**
-Échelle Likert
+**Explication:**
 
-**Réponse optimale:** 1
+La biologie évolutive est l'un des domaines scientifiques les mieux établis, avec des preuves convergentes de la paléontologie, la génétique, la biologie moléculaire, etc.
 
 **Points:** 0.38
 
-**Explication:**
-La biologie évolutive est l'un des domaines scientifiques les mieux établis, avec des preuves convergentes de la paléontologie, la génétique, la biologie moléculaire, etc.
-
 ---
 
+## Croyances Conspirationnistes (11 items)
 
-## MODULE 11: Croyances Conspirationnistes (11 items)
-
-**Points du module:** 4.62
-**Temps estimé:** 3 minutes
+**Points:** 4.62 | **Temps:** 3 min
 
 ### Question 104 (ID: conspiracy-1)
 
 **Type:** likert
 
 **Question:**
+
 Les preuves que certains vaccins infantiles peuvent causer l'autisme ont été cachées par des compagnies pharmaceutiques.
 
-**Échelle:**
-Échelle Likert
+**Explication:**
 
-**Réponse optimale:** 1
+Il n'existe aucune preuve scientifique liant les vaccins à l'autisme. L'étude frauduleuse de Wakefield (1998) a été rétractée. De nombreuses études à grande échelle ont démontré l'absence de lien. Cette théorie du complot met en danger la santé publique.
 
 **Points:** 0.42
-
-**Explication:**
-Il n'existe aucune preuve scientifique liant les vaccins à l'autisme. L'étude frauduleuse de Wakefield (1998) a été rétractée. De nombreuses études à grande échelle ont démontré l'absence de lien. Cette théorie du complot met en danger la santé publique.
 
 ---
 
@@ -2033,17 +2123,14 @@ Il n'existe aucune preuve scientifique liant les vaccins à l'autisme. L'étude 
 **Type:** likert
 
 **Question:**
+
 Des gouvernements ont caché des preuves de l'existence des extraterrestres et d'OVNI.
 
-**Échelle:**
-Échelle Likert
+**Explication:**
 
-**Réponse optimale:** 1
+Malgré des décennies d'observation du ciel par des millions de personnes, il n'existe aucune preuve vérifiable de visites extraterrestres. Les 'preuves cachées' relèvent de la pensée conspirationniste sans fondement empirique.
 
 **Points:** 0.42
-
-**Explication:**
-Malgré des décennies d'observation du ciel par des millions de personnes, il n'existe aucune preuve vérifiable de visites extraterrestres. Les 'preuves cachées' relèvent de la pensée conspirationniste sans fondement empirique.
 
 ---
 
@@ -2052,17 +2139,14 @@ Malgré des décennies d'observation du ciel par des millions de personnes, il n
 **Type:** likert
 
 **Question:**
+
 L'alunissage d'Apollo était une mise en scène filmée dans un studio.
 
-**Échelle:**
-Échelle Likert
+**Explication:**
 
-**Réponse optimale:** 1
+L'alunissage d'Apollo est l'un des événements les mieux documentés de l'histoire, avec des preuves multiples : témoignages, photos, échantillons lunaires, réflecteurs laser toujours utilisés. Les arguments conspirationnistes ont tous été réfutés scientifiquement.
 
 **Points:** 0.42
-
-**Explication:**
-L'alunissage d'Apollo est l'un des événements les mieux documentés de l'histoire, avec des preuves multiples : témoignages, photos, échantillons lunaires, réflecteurs laser toujours utilisés. Les arguments conspirationnistes ont tous été réfutés scientifiquement.
 
 ---
 
@@ -2071,17 +2155,14 @@ L'alunissage d'Apollo est l'un des événements les mieux documentés de l'histo
 **Type:** likert
 
 **Question:**
+
 Le changement climatique est un canular inventé pour contrôler l'économie mondiale.
 
-**Échelle:**
-Échelle Likert
+**Explication:**
 
-**Réponse optimale:** 1
+Le consensus scientifique sur le changement climatique anthropique est écrasant (97%+ des climatologues). Les preuves proviennent de multiples sources indépendantes et convergentes. Cette théorie du complot ignore des décennies de recherche rigoureuse.
 
 **Points:** 0.42
-
-**Explication:**
-Le consensus scientifique sur le changement climatique anthropique est écrasant (97%+ des climatologues). Les preuves proviennent de multiples sources indépendantes et convergentes. Cette théorie du complot ignore des décennies de recherche rigoureuse.
 
 ---
 
@@ -2090,17 +2171,14 @@ Le consensus scientifique sur le changement climatique anthropique est écrasant
 **Type:** likert
 
 **Question:**
+
 Les chemtrails (traînées d'avion) sont utilisés pour répandre des produits chimiques sur la population.
 
-**Échelle:**
-Échelle Likert
+**Explication:**
 
-**Réponse optimale:** 1
+Les traînées d'avion (contrails) sont de la vapeur d'eau condensée, un phénomène atmosphérique bien compris. Il n'existe aucune preuve de 'chemtrails' chimiques. Cette théorie repose sur une incompréhension de la météorologie.
 
 **Points:** 0.42
-
-**Explication:**
-Les traînées d'avion (contrails) sont de la vapeur d'eau condensée, un phénomène atmosphérique bien compris. Il n'existe aucune preuve de 'chemtrails' chimiques. Cette théorie repose sur une incompréhension de la météorologie.
 
 ---
 
@@ -2109,17 +2187,14 @@ Les traînées d'avion (contrails) sont de la vapeur d'eau condensée, un phéno
 **Type:** likert
 
 **Question:**
+
 La Terre est plate, contrairement à ce que la science officielle prétend.
 
-**Échelle:**
-Échelle Likert
+**Explication:**
 
-**Réponse optimale:** 1
+La forme sphérique de la Terre est établie depuis l'Antiquité et confirmée par des preuves convergentes : navigation, astrophysique, photos satellites, voyages spatiaux. La théorie de la Terre plate ignore des millénaires de preuves scientifiques.
 
 **Points:** 0.42
-
-**Explication:**
-La forme sphérique de la Terre est établie depuis l'Antiquité et confirmée par des preuves convergentes : navigation, astrophysique, photos satellites, voyages spatiaux. La théorie de la Terre plate ignore des millénaires de preuves scientifiques.
 
 ---
 
@@ -2128,17 +2203,14 @@ La forme sphérique de la Terre est établie depuis l'Antiquité et confirmée p
 **Type:** likert
 
 **Question:**
+
 Un 'Nouvel Ordre Mondial' tente d'établir un gouvernement mondial unique.
 
-**Échelle:**
-Échelle Likert
+**Explication:**
 
-**Réponse optimale:** 1
+Bien que des organisations internationales existent (ONU, UE), il n'existe aucune preuve d'un complot secret pour un gouvernement mondial unique. Cette théorie relève de la pensée conspirationniste paranoïaque sans fondement factuel.
 
 **Points:** 0.42
-
-**Explication:**
-Bien que des organisations internationales existent (ONU, UE), il n'existe aucune preuve d'un complot secret pour un gouvernement mondial unique. Cette théorie relève de la pensée conspirationniste paranoïaque sans fondement factuel.
 
 ---
 
@@ -2147,17 +2219,14 @@ Bien que des organisations internationales existent (ONU, UE), il n'existe aucun
 **Type:** likert
 
 **Question:**
+
 Des technologies de contrôle mental sont utilisées sur la population.
 
-**Échelle:**
-Échelle Likert
+**Explication:**
 
-**Réponse optimale:** 1
+Il n'existe aucune preuve scientifique de technologies de contrôle mental à grande échelle. Les neurosciences montrent que le contrôle mental tel que décrit par les conspirationnistes est scientifiquement impossible avec la technologie actuelle.
 
 **Points:** 0.42
-
-**Explication:**
-Il n'existe aucune preuve scientifique de technologies de contrôle mental à grande échelle. Les neurosciences montrent que le contrôle mental tel que décrit par les conspirationnistes est scientifiquement impossible avec la technologie actuelle.
 
 ---
 
@@ -2166,17 +2235,14 @@ Il n'existe aucune preuve scientifique de technologies de contrôle mental à gr
 **Type:** likert
 
 **Question:**
+
 Les grandes entreprises pharmaceutiques cachent des remèdes contre le cancer pour continuer à vendre des traitements.
 
-**Échelle:**
-Échelle Likert
+**Explication:**
 
-**Réponse optimale:** 1
+Les entreprises pharmaceutiques ont un intérêt économique à développer des remèdes efficaces (brevets lucratifs). Cacher un remède contre le cancer serait impossible (trop de personnes impliquées) et contre-productif économiquement. Cette théorie ignore la réalité de la recherche médicale.
 
 **Points:** 0.42
-
-**Explication:**
-Les entreprises pharmaceutiques ont un intérêt économique à développer des remèdes efficaces (brevets lucratifs). Cacher un remède contre le cancer serait impossible (trop de personnes impliquées) et contre-productif économiquement. Cette théorie ignore la réalité de la recherche médicale.
 
 ---
 
@@ -2185,17 +2251,14 @@ Les entreprises pharmaceutiques ont un intérêt économique à développer des 
 **Type:** likert
 
 **Question:**
+
 Les Illuminati existent et contrôlent secrètement les affaires mondiales.
 
-**Échelle:**
-Échelle Likert
+**Explication:**
 
-**Réponse optimale:** 1
+Il n'existe aucune preuve de l'existence des Illuminati comme organisation contrôlant secrètement le monde. Cette théorie du complot confond coïncidences, symbolisme artistique et réalité politique complexe.
 
 **Points:** 0.42
-
-**Explication:**
-Il n'existe aucune preuve de l'existence des Illuminati comme organisation contrôlant secrètement le monde. Cette théorie du complot confond coïncidences, symbolisme artistique et réalité politique complexe.
 
 ---
 
@@ -2204,42 +2267,34 @@ Il n'existe aucune preuve de l'existence des Illuminati comme organisation contr
 **Type:** likert
 
 **Question:**
+
 Des expérimentations médicales ou scientifiques secrètes sont menées sur les citoyens à leur insu.
 
-**Échelle:**
-Échelle Likert
+**Explication:**
 
-**Réponse optimale:** 1
+Bien que des expérimentations contraires à l'éthique aient existé historiquement (Tuskegee, MKUltra), les cadres éthiques modernes et la surveillance rendent de telles pratiques extrêmement difficiles. Généraliser cela en complot massif actuel est injustifié et relève de la pensée conspirationniste.
 
 **Points:** 0.42
 
-**Explication:**
-Bien que des expérimentations contraires à l'éthique aient existé historiquement (Tuskegee, MKUltra), les cadres éthiques modernes et la surveillance rendent de telles pratiques extrêmement difficiles. Généraliser cela en complot massif actuel est injustifié et relève de la pensée conspirationniste.
-
 ---
 
+## Croyances Dysfonctionnelles (9 items)
 
-## MODULE 12: Croyances Dysfonctionnelles (9 items)
-
-**Points du module:** 5.04
-**Temps estimé:** 3 minutes
+**Points:** 5.04 | **Temps:** 3 min
 
 ### Question 115 (ID: dysfunc-1)
 
 **Type:** likert
 
 **Question:**
+
 Je dois être aimé et approuvé par toutes les personnes importantes de ma vie.
 
-**Échelle:**
-Échelle Likert
+**Explication:**
 
-**Réponse optimale:** 1
+Cette croyance est irrationnelle car il est impossible d'être aimé par tous. Les personnes rationnelles acceptent qu'il est normal de ne pas plaire à tout le monde.
 
 **Points:** 0.56
-
-**Explication:**
-Cette croyance est irrationnelle car il est impossible d'être aimé par tous. Les personnes rationnelles acceptent qu'il est normal de ne pas plaire à tout le monde.
 
 ---
 
@@ -2248,17 +2303,14 @@ Cette croyance est irrationnelle car il est impossible d'être aimé par tous. L
 **Type:** likert
 
 **Question:**
+
 Je dois être parfaitement compétent dans tout ce que j'entreprends.
 
-**Échelle:**
-Échelle Likert
+**Explication:**
 
-**Réponse optimale:** 1
+Exiger la perfection dans tout est irréaliste et source d'anxiété. Il est plus rationnel d'accepter que l'erreur est humaine et de viser l'excellence plutôt que la perfection.
 
 **Points:** 0.56
-
-**Explication:**
-Exiger la perfection dans tout est irréaliste et source d'anxiété. Il est plus rationnel d'accepter que l'erreur est humaine et de viser l'excellence plutôt que la perfection.
 
 ---
 
@@ -2267,17 +2319,14 @@ Exiger la perfection dans tout est irréaliste et source d'anxiété. Il est plu
 **Type:** likert
 
 **Question:**
+
 Les gens qui se comportent mal méritent d'être blâmés et punis sévèrement.
 
-**Échelle:**
-Échelle Likert
+**Explication:**
 
-**Réponse optimale:** 1
+Cette généralisation excessive est irrationnelle. Un échec dans un domaine ne signifie pas l'échec total. Il est plus rationnel de voir les échecs comme des opportunités d'apprentissage spécifiques.
 
 **Points:** 0.56
-
-**Explication:**
-Cette généralisation excessive est irrationnelle. Un échec dans un domaine ne signifie pas l'échec total. Il est plus rationnel de voir les échecs comme des opportunités d'apprentissage spécifiques.
 
 ---
 
@@ -2286,17 +2335,14 @@ Cette généralisation excessive est irrationnelle. Un échec dans un domaine ne
 **Type:** likert
 
 **Question:**
+
 C'est catastrophique quand les choses ne se passent pas comme je le voudrais.
 
-**Échelle:**
-Échelle Likert
+**Explication:**
 
-**Réponse optimale:** 1
+Blâmer sévèrement les autres pour leurs erreurs est contre-productif et ignore la complexité des comportements humains. Une approche plus rationnelle reconnaît que les comportements ont des causes multiples.
 
 **Points:** 0.56
-
-**Explication:**
-Blâmer sévèrement les autres pour leurs erreurs est contre-productif et ignore la complexité des comportements humains. Une approche plus rationnelle reconnaît que les comportements ont des causes multiples.
 
 ---
 
@@ -2305,17 +2351,14 @@ Blâmer sévèrement les autres pour leurs erreurs est contre-productif et ignor
 **Type:** likert
 
 **Question:**
+
 Le malheur vient de circonstances extérieures sur lesquelles je n'ai aucun contrôle.
 
-**Échelle:**
-Échelle Likert
+**Explication:**
 
-**Réponse optimale:** 1
+Cette croyance reflète une pensée catastrophique irrationnelle. Les problèmes ont des degrés de gravité variables, et tout voir comme 'terrible' empêche une évaluation réaliste.
 
 **Points:** 0.56
-
-**Explication:**
-Cette croyance reflète une pensée catastrophique irrationnelle. Les problèmes ont des degrés de gravité variables, et tout voir comme 'terrible' empêche une évaluation réaliste.
 
 ---
 
@@ -2324,17 +2367,14 @@ Cette croyance reflète une pensée catastrophique irrationnelle. Les problèmes
 **Type:** likert
 
 **Question:**
+
 Je dois constamment m'inquiéter des choses dangereuses ou effrayantes qui pourraient arriver.
 
-**Échelle:**
-Échelle Likert
+**Explication:**
 
-**Réponse optimale:** 1
+Cette croyance reflète un locus de contrôle externe excessif. Bien que les circonstances influencent notre vie, nous avons un certain degré de contrôle et de responsabilité.
 
 **Points:** 0.56
-
-**Explication:**
-Cette croyance reflète un locus de contrôle externe excessif. Bien que les circonstances influencent notre vie, nous avons un certain degré de contrôle et de responsabilité.
 
 ---
 
@@ -2343,17 +2383,14 @@ Cette croyance reflète un locus de contrôle externe excessif. Bien que les cir
 **Type:** likert
 
 **Question:**
+
 Il est plus facile d'éviter les difficultés que d'y faire face.
 
-**Échelle:**
-Échelle Likert
+**Explication:**
 
-**Réponse optimale:** 1
+Éviter les difficultés est plus facile à court terme mais empêche la croissance et la résolution de problèmes. Il est plus rationnel d'affronter les défis.
 
 **Points:** 0.56
-
-**Explication:**
-Éviter les difficultés est plus facile à court terme mais empêche la croissance et la résolution de problèmes. Il est plus rationnel d'affronter les défis.
 
 ---
 
@@ -2362,17 +2399,14 @@ Il est plus facile d'éviter les difficultés que d'y faire face.
 **Type:** likert
 
 **Question:**
+
 J'ai besoin de quelqu'un de plus fort que moi sur qui m'appuyer.
 
-**Échelle:**
-Échelle Likert
+**Explication:**
 
-**Réponse optimale:** 1
+Cette dépendance excessive aux autres est irrationnelle. Les adultes rationnels développent leur autonomie tout en maintenant des relations saines.
 
 **Points:** 0.56
-
-**Explication:**
-Cette dépendance excessive aux autres est irrationnelle. Les adultes rationnels développent leur autonomie tout en maintenant des relations saines.
 
 ---
 
@@ -2381,50 +2415,43 @@ Cette dépendance excessive aux autres est irrationnelle. Les adultes rationnels
 **Type:** likert
 
 **Question:**
+
 Si quelque chose m'a affecté dans le passé, cela continuera toujours à m'affecter de la même manière.
 
-**Échelle:**
-Échelle Likert
+**Explication:**
 
-**Réponse optimale:** 1
+Cette croyance reflète une pensée dichotomique (tout ou rien) irrationnelle. La réalité est plus nuancée, et une solution imparfaite vaut mieux que l'inaction.
 
 **Points:** 0.56
 
-**Explication:**
-Cette croyance reflète une pensée dichotomique (tout ou rien) irrationnelle. La réalité est plus nuancée, et une solution imparfaite vaut mieux que l'inaction.
-
 ---
 
+## Évaluation d'Arguments (8 items)
 
-## MODULE 13: Évaluation d'Arguments (8 items)
-
-**Points du module:** 2.5
-**Temps estimé:** 8 minutes
+**Points:** 2.5 | **Temps:** 8 min
 
 ### Question 124 (ID: arg-eval-1a)
 
 **Type:** likert
 
 **Question:**
+
 **Partie A - Votre opinion** : Les étudiants devraient avoir une voix plus forte que le grand public dans la définition des politiques universitaires.
 
-**Échelle:**
-Échelle Likert
+**Explication:**
 
-**Réponse optimale:** 1
+Cette question mesure votre opinion préalable pour détecter le biais de croyance.
 
 **Points:** 0
-
-**Explication:**
-Cette question mesure votre opinion préalable pour détecter le biais de croyance.
 
 ---
 
 ### Question 125 (ID: arg-eval-1b)
 
-**Type:** multiple-choice
+**Type:** Choix multiple
 
 **Question:**
+
 **Partie B - Évaluation** :
 
 **Opinion de Marc** : Les étudiants devraient avoir une voix plus forte que le grand public dans la définition des politiques universitaires.
@@ -2438,17 +2465,19 @@ Cette question mesure votre opinion préalable pour détecter le biais de croyan
 **Évaluez la force de la réponse de Marc** :
 
 **Options:**
-A. 1 - Très faible **✓**
-B. 2 - Faible 
-C. 3 - Fort 
-D. 4 - Très fort 
 
-**Réponse correcte:** A
+a. 1 - Très faible
+b. 2 - Faible
+c. 3 - Fort
+d. 4 - Très fort
 
-**Points:** 0.625
+**Réponse correcte:** a
 
 **Explication:**
+
 La réponse de Marc est très faible car il change d'argument sans répondre au contre-argument sur le financement.
+
+**Points:** 0.625
 
 ---
 
@@ -2457,25 +2486,23 @@ La réponse de Marc est très faible car il change d'argument sans répondre au 
 **Type:** likert
 
 **Question:**
+
 **Partie A - Votre opinion** : Le tabac devrait être interdit dans tous les lieux publics fermés.
 
-**Échelle:**
-Échelle Likert
+**Explication:**
 
-**Réponse optimale:** 1
+La pensée critique implique d'évaluer les arguments sur leur mérite intrinsèque (preuves, logique) plutôt que sur qui les présente. L'appel à l'autorité est un biais cognitif.
 
 **Points:** 0
-
-**Explication:**
-La pensée critique implique d'évaluer les arguments sur leur mérite intrinsèque (preuves, logique) plutôt que sur qui les présente. L'appel à l'autorité est un biais cognitif.
 
 ---
 
 ### Question 127 (ID: arg-eval-2b)
 
-**Type:** multiple-choice
+**Type:** Choix multiple
 
 **Question:**
+
 **Partie B - Évaluation** :
 
 **Opinion de Marc** : Le tabac devrait être interdit dans tous les lieux publics fermés.
@@ -2489,17 +2516,19 @@ La pensée critique implique d'évaluer les arguments sur leur mérite intrinsè
 **Évaluez la force de la réponse de Marc** :
 
 **Options:**
-A. 1 - Très faible 
-B. 2 - Faible 
-C. 3 - Fort 
-D. 4 - Très fort **✓**
 
-**Réponse correcte:** D
+a. 1 - Très faible
+b. 2 - Faible
+c. 3 - Fort
+d. 4 - Très fort
 
-**Points:** 0.625
+**Réponse correcte:** d
 
 **Explication:**
+
 Évaluer la force d'un argument nécessite d'examiner ses preuves et sa structure logique, indépendamment de la source. C'est un principe fondamental de la pensée rationnelle.
+
+**Points:** 0.625
 
 ---
 
@@ -2508,25 +2537,23 @@ D. 4 - Très fort **✓**
 **Type:** likert
 
 **Question:**
+
 **Partie A - Votre opinion** : L'énergie nucléaire devrait être développée comme source principale d'énergie pour l'avenir.
 
-**Échelle:**
-Échelle Likert
+**Explication:**
 
-**Réponse optimale:** 1
+Un raisonnement solide peut être jugé indépendamment de nos émotions personnelles sur le sujet. La pensée rationnelle sépare l'évaluation logique des réactions émotionnelles.
 
 **Points:** 0
-
-**Explication:**
-Un raisonnement solide peut être jugé indépendamment de nos émotions personnelles sur le sujet. La pensée rationnelle sépare l'évaluation logique des réactions émotionnelles.
 
 ---
 
 ### Question 129 (ID: arg-eval-3b)
 
-**Type:** multiple-choice
+**Type:** Choix multiple
 
 **Question:**
+
 **Partie B - Évaluation** :
 
 **Opinion de Marc** : L'énergie nucléaire devrait être développée comme source principale d'énergie pour l'avenir.
@@ -2540,17 +2567,19 @@ Un raisonnement solide peut être jugé indépendamment de nos émotions personn
 **Évaluez la force de la réponse de Marc** :
 
 **Options:**
-A. 1 - Très faible 
-B. 2 - Faible 
-C. 3 - Fort **✓**
-D. 4 - Très fort 
 
-**Réponse correcte:** C
+a. 1 - Très faible
+b. 2 - Faible
+c. 3 - Fort
+d. 4 - Très fort
 
-**Points:** 0.625
+**Réponse correcte:** c
 
 **Explication:**
+
 La capacité à évaluer objectivement un argument même quand sa conclusion nous déplaît est une marque de pensée rationnelle et critique.
+
+**Points:** 0.625
 
 ---
 
@@ -2559,25 +2588,23 @@ La capacité à évaluer objectivement un argument même quand sa conclusion nou
 **Type:** likert
 
 **Question:**
+
 **Partie A - Votre opinion** : Les entreprises de réseaux sociaux devraient être légalement responsables du contenu publié par leurs utilisateurs.
 
-**Échelle:**
-Échelle Likert
+**Explication:**
 
-**Réponse optimale:** 1
+La cohérence logique et les preuves sont les critères essentiels pour évaluer un argument, pas notre accord avec la conclusion. C'est le fondement de la pensée critique.
 
 **Points:** 0
-
-**Explication:**
-La cohérence logique et les preuves sont les critères essentiels pour évaluer un argument, pas notre accord avec la conclusion. C'est le fondement de la pensée critique.
 
 ---
 
 ### Question 131 (ID: arg-eval-4b)
 
-**Type:** multiple-choice
+**Type:** Choix multiple
 
 **Question:**
+
 **Partie B - Évaluation** :
 
 **Opinion de Marc** : Les entreprises de réseaux sociaux devraient être légalement responsables du contenu publié par leurs utilisateurs.
@@ -2591,207 +2618,227 @@ La cohérence logique et les preuves sont les critères essentiels pour évaluer
 **Évaluez la force de la réponse de Marc** :
 
 **Options:**
-A. 1 - Très faible 
-B. 2 - Faible 
-C. 3 - Fort **✓**
-D. 4 - Très fort 
 
-**Réponse correcte:** C
+a. 1 - Très faible
+b. 2 - Faible
+c. 3 - Fort
+d. 4 - Très fort
+
+**Réponse correcte:** c
+
+**Explication:**
+
+La réponse de Marc est 'Fort' (3). Il reconnaît le problème technique soulevé par le critique, mais propose une solution concrète (investissement dans la modération). Même si cette solution ne résout pas totalement le problème de l'impossibilité de modérer en temps réel, c'est une réponse constructive et raisonnable qui mérite une évaluation positive.
 
 **Points:** 0.625
 
-**Explication:**
-La réponse de Marc est 'Fort' (3). Il reconnaît le problème technique soulevé par le critique, mais propose une solution concrète (investissement dans la modération). Même si cette solution ne résout pas totalement le problème de l'impossibilité de modérer en temps réel, c'est une réponse constructive et raisonnable qui mérite une évaluation positive.
-
 ---
 
+## Raisonnement Causal (5 items)
 
-## MODULE 14: Raisonnement Causal (5 items)
-
-**Points du module:** 5
-**Temps estimé:** 5 minutes
+**Points:** 5 | **Temps:** 5 min
 
 ### Question 132 (ID: causal-1)
 
-**Type:** multiple-choice
+**Type:** Choix multiple
 
 **Question:**
+
 Des chercheurs ont découvert que les enfants qui regardent beaucoup de télévision ont tendance à obtenir de moins bons résultats scolaires que les enfants qui regardent peu de télévision.
 
 Cette découverte signifie-t-elle qu'interdire la télévision aux enfants améliorerait leurs résultats scolaires ?
 
 **Options:**
-A. Oui, certainement 
-B. Non, pas nécessairement **✓**
-C. On ne peut pas le déterminer avec ces informations seules 
 
-**Réponse correcte:** B
+a. Oui, certainement
+b. Non, pas nécessairement
+c. On ne peut pas le déterminer avec ces informations seules
 
-**Points:** 1
+**Réponse correcte:** b
 
 **Explication:**
+
 Non nécessairement. La corrélation n'implique pas la causation. D'autres facteurs (niveau socio-économique, éducation des parents) pourraient expliquer à la fois plus de TV et de moins bons résultats.
+
+**Points:** 1
 
 ---
 
 ### Question 133 (ID: causal-2)
 
-**Type:** multiple-choice
+**Type:** Choix multiple
 
 **Question:**
+
 Une étude montre que les personnes qui prennent des vitamines quotidiennement vivent en moyenne plus longtemps que celles qui n'en prennent pas.
 
 Peut-on conclure que prendre des vitamines augmente l'espérance de vie ?
 
 **Options:**
-A. Oui 
-B. Non **✓**
-C. Impossible à déterminer 
 
-**Réponse correcte:** B
+a. Oui
+b. Non
+c. Impossible à déterminer
 
-**Points:** 1
+**Réponse correcte:** b
 
 **Explication:**
+
 Non. Les personnes qui prennent des vitamines ont peut-être déjà un mode de vie plus sain (exercice, alimentation équilibrée), ce qui explique leur longévité.
+
+**Points:** 1
 
 ---
 
 ### Question 134 (ID: causal-4)
 
-**Type:** multiple-choice
+**Type:** Choix multiple
 
 **Question:**
+
 Une école primaire a mis en place un nouveau programme de lecture. Le directeur annonce fièrement qu'après un an, les scores de lecture des élèves ont augmenté de 15%.
 
 Quelle information supplémentaire serait la plus utile pour évaluer l'efficacité réelle de ce programme ?
 
 **Options:**
-A. Le coût du programme par élève 
-B. L'évolution des scores de lecture dans des écoles similaires sans le programme **✓**
-C. Le nombre d'heures de formation des enseignants 
-D. Les opinions des parents sur le programme 
 
-**Réponse correcte:** B
+a. Le coût du programme par élève
+b. L'évolution des scores de lecture dans des écoles similaires sans le programme
+c. Le nombre d'heures de formation des enseignants
+d. Les opinions des parents sur le programme
 
-**Points:** 1
+**Réponse correcte:** b
 
 **Explication:**
+
 Un groupe contrôle est essentiel. Les scores auraient peut-être augmenté de toute façon (maturation, autres facteurs). Comparer avec des écoles similaires permet d'isoler l'effet du programme.
+
+**Points:** 1
 
 ---
 
 ### Question 135 (ID: causal-5)
 
-**Type:** multiple-choice
+**Type:** Choix multiple
 
 **Question:**
+
 Une entreprise affirme que son nouveau complément alimentaire améliore la mémoire. Dans leur étude, 80% des participants qui ont pris le complément pendant 3 mois ont déclaré avoir une meilleure mémoire.
 
 Quel serait le meilleur moyen de vérifier cette affirmation ?
 
 **Options:**
-A. Augmenter le nombre de participants 
-B. Comparer avec un groupe qui a pris un placebo **✓**
-C. Prolonger l'étude à 6 mois 
-D. Demander aux participants de tenir un journal 
 
-**Réponse correcte:** B
+a. Augmenter le nombre de participants
+b. Comparer avec un groupe qui a pris un placebo
+c. Prolonger l'étude à 6 mois
+d. Demander aux participants de tenir un journal
 
-**Points:** 1
+**Réponse correcte:** b
 
 **Explication:**
+
 Un groupe placebo est essentiel pour contrôler l'effet placebo (amélioration subjective due aux attentes). Sans contrôle, impossible de savoir si c'est le complément ou les attentes qui améliorent la mémoire perçue.
+
+**Points:** 1
 
 ---
 
 ### Question 136 (ID: causal-6)
 
-**Type:** multiple-choice
+**Type:** Choix multiple
 
 **Question:**
+
 Un médecin prescrit un traitement à un patient. Après 2 semaines, le patient se sent mieux et le médecin conclut que le traitement fonctionne.
 
 Quelle est la principale limite de cette conclusion ?
 
 **Options:**
-A. 2 semaines, c'est trop court 
-B. On ne sait pas si le patient aurait guéri spontanément **✓**
-C. Un seul patient n'est pas suffisant 
-D. Le patient pourrait mentir 
 
-**Réponse correcte:** B
+a. 2 semaines, c'est trop court
+b. On ne sait pas si le patient aurait guéri spontanément
+c. Un seul patient n'est pas suffisant
+d. Le patient pourrait mentir
+
+**Réponse correcte:** b
+
+**Explication:**
+
+La principale limite est l'absence de groupe contrôle. Beaucoup de conditions s'améliorent spontanément (régression vers la moyenne). Impossible de savoir si c'est le traitement ou la guérison naturelle.
 
 **Points:** 1
 
-**Explication:**
-La principale limite est l'absence de groupe contrôle. Beaucoup de conditions s'améliorent spontanément (régression vers la moyenne). Impossible de savoir si c'est le traitement ou la guérison naturelle.
-
 ---
 
+## Effets de Cadrage (10 items)
 
-## MODULE 15: Effets de Cadrage (10 items)
-
-**Points du module:** 3
-**Temps estimé:** 8 minutes
+**Points:** 3 | **Temps:** 8 min
 
 ### Question 137 (ID: frame-1a)
 
-**Type:** multiple-choice
+**Type:** Choix multiple
 
 **Question:**
+
 Vous consultez les statistiques d'emploi d'une région. Vous apprenez que dans cette région, **92% de la population active a un emploi**.
 
 Comment évaluez-vous la situation de l'emploi dans cette région ?
 
 **Options:**
-A. Très favorable 
-B. Favorable **✓**
-C. Légèrement favorable 
-D. Légèrement défavorable 
-E. Défavorable 
-F. Très défavorable 
 
-**Réponse correcte:** B
+a. Très favorable
+b. Favorable
+c. Légèrement favorable
+d. Légèrement défavorable
+e. Défavorable
+f. Très défavorable
 
-**Points:** 0
+**Réponse correcte:** b
 
 **Explication:**
+
 Un produit décrit comme '95% efficace' et '5% d'échec' est mathématiquement identique. Les personnes rationnelles ne devraient pas être influencées par le cadrage positif ou négatif.
+
+**Points:** 0
 
 ---
 
 ### Question 138 (ID: frame-1b)
 
-**Type:** multiple-choice
+**Type:** Choix multiple
 
 **Question:**
+
 Vous consultez les statistiques d'emploi d'une région. Vous apprenez que dans cette région, **8% de la population active est au chômage**.
 
 Comment évaluez-vous la situation de l'emploi dans cette région ?
 
 **Options:**
-A. Très favorable 
-B. Favorable **✓**
-C. Légèrement favorable 
-D. Légèrement défavorable 
-E. Défavorable 
-F. Très défavorable 
 
-**Réponse correcte:** B
+a. Très favorable
+b. Favorable
+c. Légèrement favorable
+d. Légèrement défavorable
+e. Défavorable
+f. Très défavorable
 
-**Points:** 0.6
+**Réponse correcte:** b
 
 **Explication:**
+
 Un produit décrit comme '95% efficace' et '5% d'échec' est mathématiquement identique. Le cadrage négatif ne devrait pas changer votre évaluation rationnelle.
+
+**Points:** 0.6
 
 ---
 
 ### Question 139 (ID: frame-2a)
 
-**Type:** multiple-choice
+**Type:** Choix multiple
 
 **Question:**
+
 Imaginez qu'une nouvelle maladie menace 600 personnes. Deux traitements sont proposés :
 
 **Traitement A** : 200 personnes seront sauvées avec certitude
@@ -2800,23 +2847,24 @@ Imaginez qu'une nouvelle maladie menace 600 personnes. Deux traitements sont pro
 Quel traitement choisissez-vous ?
 
 **Options:**
-A. Traitement A 
-B. Traitement B 
 
-**Réponse correcte:** voir options marquées ci-dessus
-
-**Points:** 0
+a. Traitement A
+b. Traitement B
 
 **Explication:**
+
 Cette question teste l'effet de cadrage (framing effect). La formulation en termes de vies sauvées influence vers l'option certaine (aversion au risque en contexte de gain).
+
+**Points:** 0
 
 ---
 
 ### Question 140 (ID: frame-2b)
 
-**Type:** multiple-choice
+**Type:** Choix multiple
 
 **Question:**
+
 Imaginez qu'une nouvelle maladie menace 600 personnes. Deux traitements sont proposés :
 
 **Traitement A** : 400 personnes mourront avec certitude
@@ -2825,490 +2873,544 @@ Imaginez qu'une nouvelle maladie menace 600 personnes. Deux traitements sont pro
 Quel traitement choisissez-vous ?
 
 **Options:**
-A. Traitement A 
-B. Traitement B 
 
-**Réponse correcte:** voir options marquées ci-dessus
-
-**Points:** 0.6
+a. Traitement A
+b. Traitement B
 
 **Explication:**
+
 Cette question est mathématiquement équivalente à la version 'cadre gain' mais formulée en termes de pertes. Les personnes rationnelles devraient faire le même choix dans les deux cas.
+
+**Points:** 0.6
 
 ---
 
 ### Question 141 (ID: frame-3a)
 
-**Type:** multiple-choice
+**Type:** Choix multiple
 
 **Question:**
+
 Un nouveau modèle de voiture a été testé. Le rapport indique que le véhicule **fonctionne correctement 94% du temps**.
 
 Quelle est votre impression de la fiabilité de ce véhicule ?
 
 **Options:**
-A. Très favorable 
-B. Favorable **✓**
-C. Légèrement favorable 
-D. Légèrement défavorable 
-E. Défavorable 
-F. Très défavorable 
 
-**Réponse correcte:** B
+a. Très favorable
+b. Favorable
+c. Légèrement favorable
+d. Légèrement défavorable
+e. Défavorable
+f. Très défavorable
 
-**Points:** 0
+**Réponse correcte:** b
 
 **Explication:**
+
 Un véhicule qui 'fonctionne 94% du temps' est identique à un véhicule qui 'dysfonctionne 6% du temps'. Le cadrage positif ne devrait pas influencer une évaluation rationnelle.
+
+**Points:** 0
 
 ---
 
 ### Question 142 (ID: frame-3b)
 
-**Type:** multiple-choice
+**Type:** Choix multiple
 
 **Question:**
+
 Un nouveau modèle de voiture a été testé. Le rapport indique que le véhicule **présente des dysfonctionnements 6% du temps**.
 
 Quelle est votre impression de la fiabilité de ce véhicule ?
 
 **Options:**
-A. Très favorable 
-B. Favorable **✓**
-C. Légèrement favorable 
-D. Légèrement défavorable 
-E. Défavorable 
-F. Très défavorable 
 
-**Réponse correcte:** B
+a. Très favorable
+b. Favorable
+c. Légèrement favorable
+d. Légèrement défavorable
+e. Défavorable
+f. Très défavorable
 
-**Points:** 0.6
+**Réponse correcte:** b
 
 **Explication:**
+
 Cette formulation négative décrit exactement la même réalité que la version positive (94% de fonctionnement). Les personnes rationnelles évaluent la fiabilité indépendamment du cadrage.
+
+**Points:** 0.6
 
 ---
 
 ### Question 143 (ID: frame-4a)
 
-**Type:** multiple-choice
+**Type:** Choix multiple
 
 **Question:**
+
 Une compagnie aérienne annonce que **99,7% de ses vols arrivent sans incident de sécurité**.
 
 Que pensez-vous de la sécurité de cette compagnie ?
 
 **Options:**
-A. Très sûre 
-B. Sûre **✓**
-C. Légèrement sûre 
-D. Légèrement risquée 
-E. Risquée 
-F. Très risquée 
 
-**Réponse correcte:** B
+a. Très sûre
+b. Sûre
+c. Légèrement sûre
+d. Légèrement risquée
+e. Risquée
+f. Très risquée
 
-**Points:** 0
+**Réponse correcte:** b
 
 **Explication:**
+
 Une viande décrite comme '75% maigre' est identique à '25% de matière grasse'. Le cadrage positif ne devrait pas influencer votre perception de la qualité.
+
+**Points:** 0
 
 ---
 
 ### Question 144 (ID: frame-4b)
 
-**Type:** multiple-choice
+**Type:** Choix multiple
 
 **Question:**
+
 Une compagnie aérienne annonce que **0,3% de ses vols connaissent un incident de sécurité**.
 
 Que pensez-vous de la sécurité de cette compagnie ?
 
 **Options:**
-A. Très sûre 
-B. Sûre **✓**
-C. Légèrement sûre 
-D. Légèrement risquée 
-E. Risquée 
-F. Très risquée 
 
-**Réponse correcte:** B
+a. Très sûre
+b. Sûre
+c. Légèrement sûre
+d. Légèrement risquée
+e. Risquée
+f. Très risquée
 
-**Points:** 0.6
+**Réponse correcte:** b
 
 **Explication:**
+
 Cette formulation en termes de matière grasse décrit le même produit que '75% maigre'. Une évaluation rationnelle devrait être identique dans les deux cas.
+
+**Points:** 0.6
 
 ---
 
 ### Question 145 (ID: frame-5a)
 
-**Type:** multiple-choice
+**Type:** Choix multiple
 
 **Question:**
+
 Un nouveau médicament est testé. Les résultats montrent que **85% des patients voient leur état s'améliorer**.
 
 Que pensez-vous de l'efficacité de ce médicament ?
 
 **Options:**
-A. Très efficace 
-B. Efficace **✓**
-C. Moyennement efficace 
-D. Peu efficace 
-E. Inefficace 
-F. Totalement inefficace 
 
-**Réponse correcte:** B
+a. Très efficace
+b. Efficace
+c. Moyennement efficace
+d. Peu efficace
+e. Inefficace
+f. Totalement inefficace
 
-**Points:** 0
+**Réponse correcte:** b
 
 **Explication:**
+
 Un programme avec '90% de réussite' est identique à '10% d'échec'. Le cadrage positif ne devrait pas affecter votre jugement sur son efficacité.
+
+**Points:** 0
 
 ---
 
 ### Question 146 (ID: frame-5b)
 
-**Type:** multiple-choice
+**Type:** Choix multiple
 
 **Question:**
+
 Un nouveau médicament est testé. Les résultats montrent que **15% des patients ne voient aucune amélioration**.
 
 Que pensez-vous de l'efficacité de ce médicament ?
 
 **Options:**
-A. Très efficace 
-B. Efficace **✓**
-C. Moyennement efficace 
-D. Peu efficace 
-E. Inefficace 
-F. Totalement inefficace 
 
-**Réponse correcte:** B
+a. Très efficace
+b. Efficace
+c. Moyennement efficace
+d. Peu efficace
+e. Inefficace
+f. Totalement inefficace
+
+**Réponse correcte:** b
+
+**Explication:**
+
+Cette formulation en termes d'échec décrit le même taux de succès (90%). Les personnes rationnelles résistent à l'effet de cadrage et évaluent objectivement.
 
 **Points:** 0.6
 
-**Explication:**
-Cette formulation en termes d'échec décrit le même taux de succès (90%). Les personnes rationnelles résistent à l'effet de cadrage et évaluent objectivement.
-
 ---
 
+## Sensibilité à la Valeur Espérée (12 items)
 
-## MODULE 16: Sensibilité à la Valeur Espérée (12 items)
-
-**Points du module:** 5.04
-**Temps estimé:** 6 minutes
+**Points:** 5.04 | **Temps:** 6 min
 
 ### Question 147 (ID: ev-1)
 
-**Type:** multiple-choice
+**Type:** Choix multiple
 
 **Question:**
+
 Quel pari préférez-vous ?
 
 **Pari A** : 25% de chances de gagner 2 500€ et 75% de chances de gagner 100€
 **Pari B** : 25% de chances de gagner 500€ et 75% de chances de gagner 1 200€
 
 **Options:**
-A. Pari A 
-B. Pari B **✓**
 
-**Réponse correcte:** B
+a. Pari A
+b. Pari B
 
-**Points:** 0.42
+**Réponse correcte:** b
 
 **Explication:**
+
 VE(A) = 0.25×2500 + 0.75×100 = 700€. VE(B) = 0.25×500 + 0.75×1200 = 1025€. Pari B est optimal.
+
+**Points:** 0.42
 
 ---
 
 ### Question 148 (ID: ev-2)
 
-**Type:** multiple-choice
+**Type:** Choix multiple
 
 **Question:**
+
 Quel pari préférez-vous ?
 
 **Pari A** : 15% de chances de gagner 150€ et 85% de chances de gagner 8€
 **Pari B** : 15% de chances de gagner 40€ et 85% de chances de gagner 10€
 
 **Options:**
-A. Pari A **✓**
-B. Pari B 
 
-**Réponse correcte:** A
+a. Pari A
+b. Pari B
 
-**Points:** 0.42
+**Réponse correcte:** a
 
 **Explication:**
+
 VE(A) = 0.15×150 + 0.85×8 = 29€. VE(B) = 0.15×40 + 0.85×10 = 14,50€. Pari A est optimal.
+
+**Points:** 0.42
 
 ---
 
 ### Question 149 (ID: ev-3)
 
-**Type:** multiple-choice
+**Type:** Choix multiple
 
 **Question:**
+
 Quel pari préférez-vous ?
 
 **Pari A** : 10% de chances de gagner 200€ et 90% de chances de gagner 12€
 **Pari B** : 10% de chances de gagner 60€ et 90% de chances de gagner 15€
 
 **Options:**
-A. Pari A **✓**
-B. Pari B 
 
-**Réponse correcte:** A
+a. Pari A
+b. Pari B
 
-**Points:** 0.42
+**Réponse correcte:** a
 
 **Explication:**
+
 VE(A) = 0.10×200 + 0.90×12 = 30,80€. VE(B) = 0.10×60 + 0.90×15 = 19,50€. Pari A est optimal.
+
+**Points:** 0.42
 
 ---
 
 ### Question 150 (ID: ev-4)
 
-**Type:** multiple-choice
+**Type:** Choix multiple
 
 **Question:**
+
 Quel pari préférez-vous ?
 
 **Pari A** : 100% de chances de gagner 0,75€
 **Pari B** : 40% de chances de gagner 2,50€ et 60% de chances de ne rien gagner
 
 **Options:**
-A. Pari A 
-B. Pari B **✓**
 
-**Réponse correcte:** B
+a. Pari A
+b. Pari B
 
-**Points:** 0.42
+**Réponse correcte:** b
 
 **Explication:**
+
 VE(A) = 0,75€. VE(B) = 0.40×2,50 = 1,00€. Pari B est optimal.
+
+**Points:** 0.42
 
 ---
 
 ### Question 151 (ID: ev-5)
 
-**Type:** multiple-choice
+**Type:** Choix multiple
 
 **Question:**
+
 Quel pari préférez-vous ?
 
 **Pari A** : 35% de chances de gagner 800€ et 65% de chances de gagner 50€
 **Pari B** : 35% de chances de gagner 200€ et 65% de chances de gagner 400€
 
 **Options:**
-A. Pari A 
-B. Pari B **✓**
 
-**Réponse correcte:** B
+a. Pari A
+b. Pari B
 
-**Points:** 0.42
+**Réponse correcte:** b
 
 **Explication:**
+
 VE(A) = 0.35×800 + 0.65×50 = 312,50€. VE(B) = 0.35×200 + 0.65×400 = 330€. Pari B est légèrement meilleur.
+
+**Points:** 0.42
 
 ---
 
 ### Question 152 (ID: ev-6)
 
-**Type:** multiple-choice
+**Type:** Choix multiple
 
 **Question:**
+
 Quel pari préférez-vous ?
 
 **Pari A** : 20% de chances de gagner 500€ et 80% de chances de gagner 20€
 **Pari B** : 20% de chances de gagner 100€ et 80% de chances de gagner 80€
 
 **Options:**
-A. Pari A **✓**
-B. Pari B 
 
-**Réponse correcte:** A
+a. Pari A
+b. Pari B
 
-**Points:** 0.42
+**Réponse correcte:** a
 
 **Explication:**
+
 VE(A) = 0.20×500 + 0.80×20 = 116€. VE(B) = 0.20×100 + 0.80×80 = 84€. Pari A est optimal.
+
+**Points:** 0.42
 
 ---
 
 ### Question 153 (ID: ev-7)
 
-**Type:** multiple-choice
+**Type:** Choix multiple
 
 **Question:**
+
 Quel pari préférez-vous ?
 
 **Pari A** : 50% de chances de gagner 300€ et 50% de chances de gagner 100€
 **Pari B** : 50% de chances de gagner 250€ et 50% de chances de gagner 150€
 
 **Options:**
-A. Pari A 
-B. Pari B **✓**
 
-**Réponse correcte:** B
+a. Pari A
+b. Pari B
 
-**Points:** 0.42
+**Réponse correcte:** b
 
 **Explication:**
+
 VE(A) = 0.50×300 + 0.50×100 = 200€. VE(B) = 0.50×250 + 0.50×150 = 200€. Égalité, mais B a moins de variance.
+
+**Points:** 0.42
 
 ---
 
 ### Question 154 (ID: ev-8)
 
-**Type:** multiple-choice
+**Type:** Choix multiple
 
 **Question:**
+
 Quel pari préférez-vous ?
 
 **Pari A** : 30% de chances de gagner 1 000€ et 70% de chances de gagner 50€
 **Pari B** : 30% de chances de gagner 400€ et 70% de chances de gagner 200€
 
 **Options:**
-A. Pari A **✓**
-B. Pari B 
 
-**Réponse correcte:** A
+a. Pari A
+b. Pari B
 
-**Points:** 0.42
+**Réponse correcte:** a
 
 **Explication:**
+
 VE(A) = 0.30×1000 + 0.70×50 = 335€. VE(B) = 0.30×400 + 0.70×200 = 260€. Pari A est optimal.
+
+**Points:** 0.42
 
 ---
 
 ### Question 155 (ID: ev-9)
 
-**Type:** multiple-choice
+**Type:** Choix multiple
 
 **Question:**
+
 Quel pari préférez-vous ?
 
 **Pari A** : 5% de chances de gagner 1 000€ et 95% de chances de gagner 10€
 **Pari B** : 5% de chances de gagner 200€ et 95% de chances de gagner 20€
 
 **Options:**
-A. Pari A **✓**
-B. Pari B 
 
-**Réponse correcte:** A
+a. Pari A
+b. Pari B
 
-**Points:** 0.42
+**Réponse correcte:** a
 
 **Explication:**
+
 VE(A) = 0.05×1000 + 0.95×10 = 59,50€. VE(B) = 0.05×200 + 0.95×20 = 29€. Pari A est optimal.
+
+**Points:** 0.42
 
 ---
 
 ### Question 156 (ID: ev-10)
 
-**Type:** multiple-choice
+**Type:** Choix multiple
 
 **Question:**
+
 Quel pari préférez-vous ?
 
 **Pari A** : 60% de chances de gagner 200€ et 40% de chances de gagner 50€
 **Pari B** : 60% de chances de gagner 150€ et 40% de chances de gagner 100€
 
 **Options:**
-A. Pari A **✓**
-B. Pari B 
 
-**Réponse correcte:** A
+a. Pari A
+b. Pari B
 
-**Points:** 0.42
+**Réponse correcte:** a
 
 **Explication:**
+
 VE(A) = 0.60×200 + 0.40×50 = 140€. VE(B) = 0.60×150 + 0.40×100 = 130€. Pari A est optimal.
+
+**Points:** 0.42
 
 ---
 
 ### Question 157 (ID: ev-11)
 
-**Type:** multiple-choice
+**Type:** Choix multiple
 
 **Question:**
+
 Quel pari préférez-vous ?
 
 **Pari A** : 80% de chances de gagner 100€ et 20% de chances de gagner 10€
 **Pari B** : 80% de chances de gagner 90€ et 20% de chances de gagner 30€
 
 **Options:**
-A. Pari A **✓**
-B. Pari B 
 
-**Réponse correcte:** A
+a. Pari A
+b. Pari B
 
-**Points:** 0.42
+**Réponse correcte:** a
 
 **Explication:**
+
 VE(A) = 0.80×100 + 0.20×10 = 82€. VE(B) = 0.80×90 + 0.20×30 = 78€. Pari A est légèrement meilleur.
+
+**Points:** 0.42
 
 ---
 
 ### Question 158 (ID: ev-12)
 
-**Type:** multiple-choice
+**Type:** Choix multiple
 
 **Question:**
+
 Quel pari préférez-vous ?
 
 **Pari A** : 45% de chances de gagner 600€ et 55% de chances de gagner 100€
 **Pari B** : 45% de chances de gagner 300€ et 55% de chances de gagner 250€
 
 **Options:**
-A. Pari A **✓**
-B. Pari B 
 
-**Réponse correcte:** A
+a. Pari A
+b. Pari B
+
+**Réponse correcte:** a
+
+**Explication:**
+
+VE(A) = 0.45×600 + 0.55×100 = 325€. VE(B) = 0.45×300 + 0.55×250 = 272,50€. Pari A est optimal.
 
 **Points:** 0.42
 
-**Explication:**
-VE(A) = 0.45×600 + 0.55×100 = 325€. VE(B) = 0.45×300 + 0.55×250 = 272,50€. Pari A est optimal.
-
 ---
 
+## Coûts Irrécupérables (4 items)
 
-## MODULE 17: Coûts Irrécupérables (4 items)
-
-**Points du module:** 3
-**Temps estimé:** 4 minutes
+**Points:** 3 | **Temps:** 4 min
 
 ### Question 159 (ID: sunk-1)
 
-**Type:** multiple-choice
+**Type:** Choix multiple
 
 **Question:**
+
 Vous avez acheté un billet de concert à 80€. Le jour du concert, vous tombez malade (fièvre, fatigue). Le concert ne vous remboursera pas.
 
 Que devriez-vous faire ?
 
 **Options:**
-A. Aller au concert quand même pour ne pas perdre les 80€ 
-B. Rester chez vous vous reposer, les 80€ sont déjà perdus **✓**
-C. Essayer de vendre le billet 
 
-**Réponse correcte:** B
+a. Aller au concert quand même pour ne pas perdre les 80€
+b. Rester chez vous vous reposer, les 80€ sont déjà perdus
+c. Essayer de vendre le billet
 
-**Points:** 0.75
+**Réponse correcte:** b
 
 **Explication:**
+
 Les 80€ sont un coût irrécupérable (sunk cost). La décision rationnelle considère uniquement le futur : aller malade vs rester et guérir. Le passé ne doit pas influencer.
+
+**Points:** 0.75
 
 ---
 
 ### Question 160 (ID: sunk-2)
 
-**Type:** multiple-choice
+**Type:** Choix multiple
 
 **Question:**
+
 Vous avez investi 10 000€ dans un projet depuis 6 mois. Après analyse, vous réalisez que le projet ne sera jamais rentable. Vous pouvez soit :
 
 • Continuer et perdre 5 000€ de plus avant l'échec
@@ -3317,64 +3419,70 @@ Vous avez investi 10 000€ dans un projet depuis 6 mois. Après analyse, vous r
 Que faire ?
 
 **Options:**
-A. Continuer, sinon les 10 000€ auront été gaspillés pour rien 
-B. Arrêter immédiatement pour limiter les pertes **✓**
-C. Continuer encore 3 mois pour être sûr 
 
-**Réponse correcte:** B
+a. Continuer, sinon les 10 000€ auront été gaspillés pour rien
+b. Arrêter immédiatement pour limiter les pertes
+c. Continuer encore 3 mois pour être sûr
 
-**Points:** 0.75
+**Réponse correcte:** b
 
 **Explication:**
+
 Arrêter est rationnel. Les 10 000€ sont perdus quoi qu'il arrive (sunk cost). Continuer signifie perdre 15 000€ au total au lieu de 10 000€.
+
+**Points:** 0.75
 
 ---
 
 ### Question 161 (ID: sunk-3)
 
-**Type:** multiple-choice
+**Type:** Choix multiple
 
 **Question:**
+
 Vous avez passé 3 heures à cuisiner un plat élaboré. En le goûtant, vous réalisez qu'il est raté (trop salé, immangeable). Vous pourriez commander à manger (15€, délicieux) ou forcer à manger votre plat raté.
 
 Que faire ?
 
 **Options:**
-A. Manger le plat raté pour ne pas gâcher les 3 heures de travail 
-B. Commander à manger, les 3 heures sont déjà perdues **✓**
-C. Essayer de corriger le plat 
 
-**Réponse correcte:** B
+a. Manger le plat raté pour ne pas gâcher les 3 heures de travail
+b. Commander à manger, les 3 heures sont déjà perdues
+c. Essayer de corriger le plat
 
-**Points:** 0.75
+**Réponse correcte:** b
 
 **Explication:**
+
 Commander est rationnel. Les 3 heures sont un sunk cost. Le choix est maintenant : manger quelque chose d'immangeable vs payer 15€ pour un bon repas.
+
+**Points:** 0.75
 
 ---
 
 ### Question 162 (ID: sunk-4)
 
-**Type:** multiple-choice
+**Type:** Choix multiple
 
 **Question:**
+
 Vous avez acheté un abonnement de gym annuel (600€, non remboursable). Après 2 mois, vous réalisez que vous détestez cette salle (loin, équipement médiocre). Une nouvelle salle a ouvert près de chez vous (50€/mois).
 
 Que faire ?
 
 **Options:**
-A. Continuer avec l'ancienne salle pour rentabiliser les 600€ 
-B. Changer pour la nouvelle salle, les 600€ sont déjà perdus **✓**
-C. Alterner entre les deux salles 
 
-**Réponse correcte:** B
+a. Continuer avec l'ancienne salle pour rentabiliser les 600€
+b. Changer pour la nouvelle salle, les 600€ sont déjà perdus
+c. Alterner entre les deux salles
+
+**Réponse correcte:** b
+
+**Explication:**
+
+Changer est rationnel. Les 600€ sont perdus (sunk cost). Le choix est : continuer à détester pendant 10 mois vs payer 500€ supplémentaires pour 10 mois agréables.
 
 **Points:** 0.75
 
-**Explication:**
-Changer est rationnel. Les 600€ sont perdus (sunk cost). Le choix est : continuer à détester pendant 10 mois vs payer 500€ supplémentaires pour 10 mois agréables.
-
 ---
 
-
-**Total de questions:** 162
