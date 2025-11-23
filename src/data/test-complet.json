@@ -1417,11 +1417,11 @@
         {
           "id": "conspiracy-11",
           "type": "likert",
-          "text": "Des gouvernements mènent actuellement des expérimentations médicales secrètes sur leurs citoyens à leur insu.",
+          "text": "Des gouvernements mènent actuellement des expérimentations médicales secrètes à grande échelle sur leurs citoyens à leur insu.",
           "reverse": false,
           "points": 0.42,
           "optimal": 1,
-          "explanation": "Bien que des expérimentations contraires à l'éthique aient existé historiquement (Tuskegee, MKUltra), les cadres éthiques modernes, la surveillance institutionnelle et la transparence rendent de telles pratiques extrêmement difficiles aujourd'hui. Affirmer que cela se produit actuellement de manière généralisée sans preuve relève de la pensée conspirationniste."
+          "explanation": "Bien que des expérimentations contraires à l'éthique aient existé historiquement (Tuskegee, MKUltra), les cadres éthiques modernes, la surveillance institutionnelle et la transparence rendent de telles pratiques à grande échelle extrêmement difficiles aujourd'hui. Affirmer que cela se produit actuellement de manière généralisée sans preuve relève de la pensée conspirationniste."
         }
       ]
     },
@@ -1434,11 +1434,11 @@
         {
           "id": "dysfunc-1",
           "type": "likert",
-          "text": "Je dois être aimé et approuvé par toutes les personnes importantes de ma vie.",
+          "text": "Je DOIS être aimé et approuvé par toutes les personnes importantes de ma vie.",
           "reverse": false,
           "points": 0.56,
           "optimal": 1,
-          "explanation": "Cette croyance est irrationnelle car il est impossible d'être aimé par tous. Les personnes rationnelles acceptent qu'il est normal de ne pas plaire à tout le monde."
+          "explanation": "Cette croyance est irrationnelle car elle transforme un désir légitime (être aimé) en une exigence absolue. Il est impossible d'être aimé et approuvé par tous, et cette croyance génère anxiété et dépendance affective. Les personnes rationnelles acceptent qu'il est normal de ne pas plaire à tout le monde tout en valorisant les relations authentiques."
         },
         {
           "id": "dysfunc-2",
@@ -1452,11 +1452,11 @@
         {
           "id": "dysfunc-3",
           "type": "likert",
-          "text": "Les gens qui se comportent mal méritent d'être blâmés et punis sévèrement.",
+          "text": "Les gens qui se comportent mal ou commettent des erreurs méritent d'être blâmés et punis sévèrement.",
           "reverse": false,
           "points": 0.56,
           "optimal": 1,
-          "explanation": "Cette généralisation excessive est irrationnelle. Un échec dans un domaine ne signifie pas l'échec total. Il est plus rationnel de voir les échecs comme des opportunités d'apprentissage spécifiques."
+          "explanation": "Blâmer et punir sévèrement les autres pour leurs erreurs est contre-productif et ignore la complexité des comportements humains. Une approche plus rationnelle reconnaît que les comportements ont des causes multiples et que la compréhension est souvent plus efficace que la punition sévère."
         },
         {
           "id": "dysfunc-4",
@@ -1465,7 +1465,7 @@
           "reverse": false,
           "points": 0.56,
           "optimal": 1,
-          "explanation": "Blâmer sévèrement les autres pour leurs erreurs est contre-productif et ignore la complexité des comportements humains. Une approche plus rationnelle reconnaît que les comportements ont des causes multiples."
+          "explanation": "Cette croyance reflète une pensée catastrophique irrationnelle. Les problèmes ont des degrés de gravité variables, et tout qualifier de 'catastrophique' empêche une évaluation réaliste et proportionnée des situations. La plupart des contretemps sont des désagréments, pas des catastrophes."
         },
         {
           "id": "dysfunc-5",
@@ -1474,7 +1474,7 @@
           "reverse": false,
           "points": 0.56,
           "optimal": 1,
-          "explanation": "Cette croyance reflète une pensée catastrophique irrationnelle. Les problèmes ont des degrés de gravité variables, et tout voir comme 'terrible' empêche une évaluation réaliste."
+          "explanation": "Cette croyance reflète un locus de contrôle externe excessif qui peut mener à l'impuissance apprise. Bien que les débats philosophiques sur le libre arbitre soient légitimes et que les circonstances extérieures influencent effectivement notre vie, adopter cette croyance de manière absolue empêche toute action constructive. D'un point de vue pragmatique et psychologique, reconnaître notre capacité d'influence sur certains aspects de notre vie améliore le bien-être et favorise des comportements adaptatifs."
         },
         {
           "id": "dysfunc-6",
@@ -1483,7 +1483,7 @@
           "reverse": false,
           "points": 0.56,
           "optimal": 1,
-          "explanation": "Cette croyance reflète un locus de contrôle externe excessif. Bien que les circonstances influencent notre vie, nous avons un certain degré de contrôle et de responsabilité."
+          "explanation": "L'inquiétude excessive et constante n'augmente pas le contrôle sur les événements futurs et génère anxiété et stress inutiles. Une approche plus rationnelle consiste à évaluer les risques de manière réaliste, à prendre des précautions raisonnables quand c'est possible, puis à accepter l'incertitude inhérente à la vie."
         },
         {
           "id": "dysfunc-7",
