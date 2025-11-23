@@ -1,7 +1,7 @@
 # Test de Rationalité - Questions Complètes (Version Mise à Jour)
 
 **Version:** complète
-**Points totaux:** 96.98
+**Points totaux:** 89.46
 **Temps estimé:** 86 minutes
 
 ---
@@ -180,7 +180,7 @@ Dans un jeu de hasard équitable, chaque tirage est indépendant. Les pertes pas
 
 ### Question 8 (ID: conjunction-1)
 
-**Type:** ranking
+**Type:** Ranking
 
 **Question:**
 
@@ -203,7 +203,7 @@ P(infirmière) > P(infirmière et marathons) car P(A) > P(A ∩ B) toujours. Ajo
 
 ### Question 9 (ID: conjunction-2)
 
-**Type:** ranking
+**Type:** Ranking
 
 **Question:**
 
@@ -226,7 +226,7 @@ P(informatique) doit être classé plus probable que P(informatique et e-sport).
 
 ### Question 10 (ID: conjunction-3)
 
-**Type:** ranking
+**Type:** Ranking
 
 **Question:**
 
@@ -249,7 +249,7 @@ Malgré la description, P(caissière) > P(caissière et féministe) mathématiqu
 
 ### Question 11 (ID: conjunction-4)
 
-**Type:** ranking
+**Type:** Ranking
 
 **Question:**
 
@@ -272,7 +272,7 @@ P(professeur d'histoire) > P(professeur d'histoire et auteur). Ajouter une condi
 
 ### Question 12 (ID: base-rate-1)
 
-**Type:** number
+**Type:** Number
 
 **Question:**
 
@@ -314,7 +314,7 @@ Sans données sur la prévalence de ces traits dans chaque groupe, le taux de ba
 
 **Points:** 14 | **Temps:** 8 min
 
-### Question 14 (ID: wason-1)
+### Question 1 (ID: wason-1)
 
 **Type:** Choix multiple
 
@@ -348,7 +348,7 @@ Il suffit de retourner la Carte 1 (A - vérifier que l'autre face = nombre pair)
 
 ---
 
-### Question 15 (ID: wason-2)
+### Question 2 (ID: wason-2)
 
 **Type:** Choix multiple
 
@@ -382,7 +382,7 @@ Il suffit de vérifier la personne A (a-t-elle ≥18 ans ?) et la personne D (bo
 
 ---
 
-### Question 16 (ID: wason-3)
+### Question 3 (ID: wason-3)
 
 **Type:** Choix multiple
 
@@ -416,7 +416,7 @@ Il suffit de vérifier le Dossier 1 (75 000€ - vérifier qu'il est approuvé) 
 
 ---
 
-### Question 17 (ID: correlation-1)
+### Question 4 (ID: correlation-1)
 
 **Type:** Choix multiple
 
@@ -440,7 +440,7 @@ Corrélation ≠ causalité. Il peut y avoir une variable confondante (stress, e
 
 ---
 
-### Question 18 (ID: correlation-2)
+### Question 5 (ID: correlation-2)
 
 **Type:** Choix multiple
 
@@ -464,7 +464,7 @@ Une corrélation ne prouve pas la causalité. Les buveurs de café peuvent avoir
 
 ---
 
-### Question 19 (ID: correlation-3)
+### Question 6 (ID: correlation-3)
 
 **Type:** Choix multiple
 
@@ -488,7 +488,7 @@ Causalité inversée : les grandes villes ont plus d'incendies, donc embauchent 
 
 ---
 
-### Question 20 (ID: control-group-1)
+### Question 7 (ID: control-group-1)
 
 **Type:** Choix multiple
 
@@ -513,7 +513,7 @@ La comparaison avec un groupe contrôle (villes similaires) montre que la baisse
 
 ---
 
-### Question 21 (ID: control-group-2)
+### Question 8 (ID: control-group-2)
 
 **Type:** Choix multiple
 
@@ -538,7 +538,7 @@ Un groupe contrôle est essentiel. Les résultats peuvent avoir augmenté pour d
 
 ---
 
-### Question 22 (ID: control-group-3)
+### Question 9 (ID: control-group-3)
 
 **Type:** Choix multiple
 
@@ -563,13 +563,13 @@ Sans groupe contrôle, on ne peut pas savoir si la baisse est due aux lampadaire
 
 ---
 
-### Question 23 (ID: likelihood-1)
+### Question 10 (ID: likelihood-1)
 
 **Type:** Choix multiple
 
 **Question:**
 
-Une alarme d'incendie se déclenche. Quelles infos sont nécessaires pour estimer P(incendie réel | alarme déclenchée) ?
+Une alarme d'incendie se déclenche. Quelles infos sont nécessaires pour estimer P(incendie réel | alarme déclenchée) (c'est-à-dire la probabilité qu'il y ait vraiment un incendie sachant que l'alarme s'est déclenchée) ?
 
 **Options:**
 
@@ -584,7 +584,7 @@ f. b et c
 
 **Explication:**
 
-Il faut P(alarme|incendie) et P(alarme|pas incendie) pour calculer P(incendie|alarme) via Bayes.
+Il faut P(alarme|incendie) (la probabilité que l'alarme sonne sachant qu'il y a un incendie) et P(alarme|pas incendie) (la probabilité que l'alarme sonne sachant qu'il n'y a pas d'incendie) pour calculer P(incendie|alarme) (la probabilité qu'il y ait un incendie sachant que l'alarme sonne) via Bayes.
 
 En d'autres termes : vous devez savoir à quelle fréquence l'alarme sonne quand il y a vraiment un incendie (option d), ET à quelle fréquence elle sonne par erreur quand il n'y a pas d'incendie (option a). Ces deux informations combinées permettent de calculer la probabilité qu'il y ait vraiment un incendie sachant que l'alarme a sonné.
 
@@ -592,7 +592,7 @@ En d'autres termes : vous devez savoir à quelle fréquence l'alarme sonne quand
 
 ---
 
-### Question 24 (ID: likelihood-2)
+### Question 11 (ID: likelihood-2)
 
 **Type:** Choix multiple
 
@@ -613,7 +613,7 @@ f. b et c
 
 **Explication:**
 
-Il faut P(test positif|malade) et P(test positif|non malade) - soit les options a et d. Ces deux probabilités conditionnelles permettent d'appliquer le théorème de Bayes pour calculer P(malade|test positif).
+Il faut P(test positif|malade) (la probabilité que le test soit positif sachant que la personne est malade) et P(test positif|non malade) (la probabilité que le test soit positif sachant que la personne n'est pas malade) - soit les options a et d. Ces deux probabilités conditionnelles permettent d'appliquer le théorème de Bayes pour calculer P(malade|test positif) (la probabilité que la personne soit malade sachant que le test est positif).
 
 En d'autres termes : vous devez connaître deux choses : (1) à quelle fréquence le test est positif QUAND la personne est vraiment malade (la sensibilité, option d), et (2) à quelle fréquence le test est positif par erreur QUAND la personne n'est pas malade (le taux de faux positifs, option a). C'est en comparant ces deux taux qu'on peut savoir si un test positif indique vraiment la présence de la maladie.
 
@@ -621,18 +621,18 @@ En d'autres termes : vous devez connaître deux choses : (1) à quelle fréquenc
 
 ---
 
-### Question 25 (ID: likelihood-3)
+### Question 12 (ID: likelihood-3)
 
 **Type:** Choix multiple
 
 **Question:**
 
-Pour évaluer P(Défaillance mécanique | Vibrations anormales), de quoi avez-vous besoin ?
+Pour évaluer P(Défaillance mécanique | Vibrations anormales) (c'est-à-dire la probabilité qu'il y ait une défaillance mécanique sachant qu'on observe des vibrations anormales), de quoi avez-vous besoin ?
 
 **Options:**
 
-a. Seulement P(Vibrations | Défaillance)
-b. P(Vibrations | Défaillance) et P(Vibrations | Pas de défaillance)
+a. Seulement P(Vibrations | Défaillance) (la probabilité d'observer des vibrations sachant qu'il y a une défaillance)
+b. P(Vibrations | Défaillance) (la probabilité d'observer des vibrations sachant qu'il y a une défaillance) et P(Vibrations | Pas de défaillance) (la probabilité d'observer des vibrations sachant qu'il n'y a pas de défaillance)
 c. Seulement le taux de base des défaillances
 d. L'avis d'un expert mécanicien
 
@@ -640,7 +640,7 @@ d. L'avis d'un expert mécanicien
 
 **Explication:**
 
-Pour Bayes, il faut le rapport de vraisemblance : P(preuve|H) et P(preuve|non-H).
+Pour Bayes, il faut le rapport de vraisemblance : P(preuve|H) (la probabilité d'observer la preuve sachant que l'hypothèse est vraie) et P(preuve|non-H) (la probabilité d'observer la preuve sachant que l'hypothèse est fausse).
 
 En termes simples : il faut connaître deux choses : (1) à quelle fréquence on observe des vibrations QUAND il y a une défaillance, et (2) à quelle fréquence on observe ces mêmes vibrations QUAND il n'y a PAS de défaillance. C'est la comparaison de ces deux fréquences qui permet de savoir si les vibrations indiquent vraiment une défaillance.
 
@@ -648,7 +648,7 @@ En termes simples : il faut connaître deux choses : (1) à quelle fréquence on
 
 ---
 
-### Question 26 (ID: hypothesis-test-1)
+### Question 13 (ID: hypothesis-test-1)
 
 **Type:** Choix multiple
 
@@ -673,7 +673,7 @@ Essai randomisé contrôlé en double aveugle : gold standard pour tester l'effi
 
 ---
 
-### Question 27 (ID: hypothesis-test-2)
+### Question 14 (ID: hypothesis-test-2)
 
 **Type:** Choix multiple
 
@@ -702,9 +702,9 @@ Randomisation au sein des mêmes champs contrôle les variables confondantes (so
 
 **Points:** 7 | **Temps:** 4 min
 
-### Question 28 (ID: crt-1)
+### Question 1 (ID: crt-1)
 
-**Type:** number
+**Type:** Number
 
 **Question:**
 
@@ -718,9 +718,9 @@ Une batte et une balle coûtent 1,10€ au total. La batte coûte 1€ de plus q
 
 ---
 
-### Question 29 (ID: crt-2)
+### Question 2 (ID: crt-2)
 
-**Type:** number
+**Type:** Number
 
 **Question:**
 
@@ -734,9 +734,9 @@ Si 5 machines prennent 5 minutes pour faire 5 pièces, combien de temps prennent
 
 ---
 
-### Question 30 (ID: crt-3)
+### Question 3 (ID: crt-3)
 
-**Type:** number
+**Type:** Number
 
 **Question:**
 
@@ -750,9 +750,9 @@ Dans un lac, il y a un nénuphar. Chaque jour, sa taille double. Il faut 48 jour
 
 ---
 
-### Question 31 (ID: crt-4)
+### Question 4 (ID: crt-4)
 
-**Type:** number
+**Type:** Number
 
 **Question:**
 
@@ -766,7 +766,7 @@ Un ascenseur met 1 minute pour monter d'un étage. Combien de temps met-il pour 
 
 ---
 
-### Question 32 (ID: crt-6)
+### Question 5 (ID: crt-6)
 
 **Type:** Choix multiple
 
@@ -790,9 +790,9 @@ Deuxième position. Vous prenez la place de celui qui était 2ème. L'intuition 
 
 ---
 
-### Question 33 (ID: crt-7)
+### Question 6 (ID: crt-7)
 
-**Type:** number
+**Type:** Number
 
 **Question:**
 
@@ -806,9 +806,9 @@ Un fermier a 15 moutons. Tous sauf 9 meurent. Combien en reste-t-il ?
 
 ---
 
-### Question 34 (ID: crt-8)
+### Question 7 (ID: crt-8)
 
-**Type:** number
+**Type:** Number
 
 **Question:**
 
@@ -826,7 +826,7 @@ Dans un tournoi d'échecs à élimination directe avec 127 joueurs, combien de m
 
 **Points:** 6 | **Temps:** 5 min
 
-### Question 35 (ID: syllogism-1)
+### Question 1 (ID: syllogism-1)
 
 **Type:** Choix multiple
 
@@ -853,13 +853,13 @@ Valide logiquement (AAA1). Même si la conclusion est fausse dans la réalité, 
 
 ---
 
-### Question 36 (ID: syllogism-2)
+### Question 2 (ID: syllogism-2)
 
 **Type:** Choix multiple
 
 **Question:**
 
-Prémisse 1 : Tous les poissons sont des bictodes. Prémisse 2 : Aucun requin n'est un bictode. Conclusion : Aucun requin n'est un poisson.
+Prémisse 1 : Tous les fruits sont sucrés. Prémisse 2 : Aucun citron n'est sucré. Conclusion : Aucun citron n'est un fruit.
 
 **Options:**
 
@@ -870,13 +870,13 @@ b. La conclusion ne suit PAS logiquement des prémisses
 
 **Explication:**
 
-Valide logiquement (AEE2). La conclusion suit des prémisses, même si elle est fausse dans la réalité. Syllogisme inconsistant.
+Valide logiquement (AEE2). La conclusion suit des prémisses, même si elle est fausse dans la réalité. Syllogisme inconsistant (validité ≠ crédibilité).
 
 **Points:** 0.5
 
 ---
 
-### Question 37 (ID: syllogism-3)
+### Question 3 (ID: syllogism-3)
 
 **Type:** Choix multiple
 
@@ -899,7 +899,7 @@ Invalide logiquement (AAA2). Même si la conclusion est vraie, elle ne découle 
 
 ---
 
-### Question 38 (ID: syllogism-4)
+### Question 4 (ID: syllogism-4)
 
 **Type:** Choix multiple
 
@@ -922,7 +922,7 @@ Invalide logiquement (AAA2). Ce n'est pas parce que tous les précieux sont rare
 
 ---
 
-### Question 39 (ID: syllogism-5)
+### Question 5 (ID: syllogism-5)
 
 **Type:** Choix multiple
 
@@ -945,7 +945,7 @@ Valide logiquement (EAE1). La conclusion découle logiquement des prémisses et 
 
 ---
 
-### Question 40 (ID: syllogism-6)
+### Question 6 (ID: syllogism-6)
 
 **Type:** Choix multiple
 
@@ -968,7 +968,7 @@ Valide logiquement (AAA1). La conclusion suit des prémisses, même si elle est 
 
 ---
 
-### Question 41 (ID: syllogism-7)
+### Question 7 (ID: syllogism-7)
 
 **Type:** Choix multiple
 
@@ -991,7 +991,7 @@ Invalide logiquement (AAA2). Même si la conclusion est vraie, elle ne suit pas 
 
 ---
 
-### Question 42 (ID: syllogism-8)
+### Question 8 (ID: syllogism-8)
 
 **Type:** Choix multiple
 
@@ -1014,7 +1014,7 @@ Valide logiquement. La conclusion découle des prémisses et est vraie. Syllogis
 
 ---
 
-### Question 43 (ID: syllogism-9)
+### Question 9 (ID: syllogism-9)
 
 **Type:** Choix multiple
 
@@ -1022,8 +1022,8 @@ Valide logiquement. La conclusion découle des prémisses et est vraie. Syllogis
 
 Évaluez uniquement la LOGIQUE (pas la vérité dans la réalité) :
 
-Prémisse 1 : Toutes les plantes sont des organismes photosynthétiques.
-Prémisse 2 : Toutes les fougères sont des organismes photosynthétiques.
+Prémisse 1 : Toutes les plantes produisent de l'oxygène.
+Prémisse 2 : Toutes les fougères produisent de l'oxygène.
 Conclusion : Toutes les fougères sont des plantes.
 
 **Options:**
@@ -1035,13 +1035,13 @@ b. La conclusion ne suit PAS logiquement des prémisses
 
 **Explication:**
 
-Invalide logiquement (AAA2). Même si la conclusion est vraie (les fougères sont bien des plantes), elle ne suit pas logiquement des prémisses. Il pourrait exister d'autres organismes photosynthétiques qui ne sont pas des plantes (algues, certaines bactéries). Syllogisme consistant : validité ≠ crédibilité.
+Invalide logiquement (AAA2). Même si la conclusion est vraie (les fougères sont bien des plantes), elle ne suit pas logiquement des prémisses. Il pourrait exister d'autres organismes qui produisent de l'oxygène et qui ne sont pas des plantes (algues, certaines bactéries). Syllogisme consistant : validité ≠ crédibilité.
 
 **Points:** 0.5
 
 ---
 
-### Question 44 (ID: syllogism-10)
+### Question 10 (ID: syllogism-10)
 
 **Type:** Choix multiple
 
@@ -1064,7 +1064,7 @@ Invalide logiquement (AAA2). Même si c'est vrai que les tigres sont carnivores,
 
 ---
 
-### Question 45 (ID: syllogism-11)
+### Question 11 (ID: syllogism-11)
 
 **Type:** Choix multiple
 
@@ -1087,7 +1087,7 @@ Valide logiquement (EAE2). La conclusion suit des prémisses, même si elle est 
 
 ---
 
-### Question 46 (ID: syllogism-12)
+### Question 12 (ID: syllogism-12)
 
 **Type:** Choix multiple
 
@@ -1114,7 +1114,7 @@ Invalide logiquement (AAA2). Bien que vraie, la conclusion ne suit pas logiqueme
 
 **Points:** 5 | **Temps:** 4 min
 
-### Question 47 (ID: disj-1)
+### Question 1 (ID: disj-1)
 
 **Type:** Choix multiple
 
@@ -1138,7 +1138,7 @@ Oui. Si Milieu = fraîches, alors Milieu touche Bas (congelé). Si Milieu = cong
 
 ---
 
-### Question 48 (ID: disj-2)
+### Question 2 (ID: disj-2)
 
 **Type:** Choix multiple
 
@@ -1162,7 +1162,7 @@ Oui. Si Paul est marié, il regarde Marie (non mariée). Si Paul n'est pas mari�
 
 ---
 
-### Question 49 (ID: disj-3)
+### Question 3 (ID: disj-3)
 
 **Type:** Choix multiple
 
@@ -1186,7 +1186,7 @@ On ne peut pas déterminer. Si B est ouverte : A-B sont consécutives et ouverte
 
 ---
 
-### Question 50 (ID: disj-4)
+### Question 4 (ID: disj-4)
 
 **Type:** Choix multiple
 
@@ -1210,7 +1210,7 @@ Non. Si Marc porte une cravate, alors Jean (son voisin) ne devrait pas en porter
 
 ---
 
-### Question 51 (ID: disj-5)
+### Question 5 (ID: disj-5)
 
 **Type:** Choix multiple
 
@@ -1240,9 +1240,9 @@ e. On ne peut pas déterminer
 
 **Points:** 3 | **Temps:** 4 min
 
-### Question 52 (ID: anchor-1)
+### Question 1 (ID: anchor-1)
 
-**Type:** number
+**Type:** Number
 
 **Question:**
 
@@ -1250,15 +1250,15 @@ La distance de San Francisco à Hawaï est-elle supérieure à 500 miles ? Quell
 
 **Explication:**
 
-La distance réelle est ~2387 miles. L'ancre de 500 miles peut influencer votre estimation à la baisse. Points attribués selon la précision : estimation à ±30% = points complets, ±60% = points partiels. Cette question teste votre capacité à faire des estimations raisonnables malgré l'ancrage.
+La distance réelle est ~2387 miles. L'ancre de 500 miles peut influencer votre estimation à la baisse. Pour marquer des points, vous devez donner une estimation très éloignée de l'ancre (< 250 miles OU > 1000 miles), montrant que vous n'avez pas été influencé. Cette question mesure la résistance à l'ancrage, pas la connaissance de la bonne réponse.
 
 **Points:** 0.5
 
 ---
 
-### Question 53 (ID: anchor-2)
+### Question 2 (ID: anchor-2)
 
-**Type:** number
+**Type:** Number
 
 **Question:**
 
@@ -1266,15 +1266,15 @@ La durée de l'orbite de Mars autour du Soleil est-elle supérieure à 1500 jour
 
 **Explication:**
 
-La durée réelle est 687 jours. L'ancre de 1500 jours peut influencer votre estimation à la hausse. Points attribués selon la précision : estimation à ±30% = points complets, ±60% = points partiels. Cette question teste votre capacité à faire des estimations raisonnables malgré l'ancrage.
+La durée réelle est 687 jours. L'ancre de 1500 jours peut influencer votre estimation à la hausse. Pour marquer des points, vous devez donner une estimation très éloignée de l'ancre (< 750 jours OU > 3000 jours), montrant que vous n'avez pas été influencé. Cette question mesure la résistance à l'ancrage, pas la connaissance de la bonne réponse.
 
 **Points:** 0.5
 
 ---
 
-### Question 54 (ID: anchor-3)
+### Question 3 (ID: anchor-3)
 
-**Type:** number
+**Type:** Number
 
 **Question:**
 
@@ -1282,15 +1282,15 @@ La population de l'Australie est-elle supérieure à 10 millions d'habitants ? Q
 
 **Explication:**
 
-L'Australie compte environ 26 millions d'habitants. L'ancre de 10 millions peut influencer votre estimation à la baisse. Points attribués selon la précision : estimation à ±30% = points complets, ±60% = points partiels. Cette question teste votre capacité à faire des estimations raisonnables malgré l'ancrage.
+L'Australie compte environ 26 millions d'habitants. L'ancre de 10 millions peut influencer votre estimation à la baisse. Pour marquer des points, vous devez donner une estimation très éloignée de l'ancre (< 5 millions OU > 20 millions), montrant que vous n'avez pas été influencé. Cette question mesure la résistance à l'ancrage, pas la connaissance de la bonne réponse.
 
 **Points:** 0.5
 
 ---
 
-### Question 55 (ID: anchor-4)
+### Question 4 (ID: anchor-4)
 
-**Type:** number
+**Type:** Number
 
 **Question:**
 
@@ -1298,15 +1298,15 @@ La température la plus chaude jamais enregistrée sur Terre est-elle supérieur
 
 **Explication:**
 
-Le record est de 56,7°C (Vallée de la Mort, 1913). L'ancre de 70°C peut influencer votre estimation à la hausse. Points attribués selon la précision : estimation à ±30% = points complets, ±60% = points partiels. Cette question teste votre capacité à faire des estimations raisonnables malgré l'ancrage.
+Le record est de 56,7°C (Vallée de la Mort, 1913). L'ancre de 70°C peut influencer votre estimation à la hausse. Pour marquer des points, vous devez donner une estimation très éloignée de l'ancre (< 35°C OU > 140°C), montrant que vous n'avez pas été influencé. Cette question mesure la résistance à l'ancrage, pas la connaissance de la bonne réponse.
 
 **Points:** 0.5
 
 ---
 
-### Question 56 (ID: anchor-5)
+### Question 5 (ID: anchor-5)
 
-**Type:** number
+**Type:** Number
 
 **Question:**
 
@@ -1314,15 +1314,15 @@ Le Burj Khalifa à Dubaï mesure-t-il plus de 500 mètres ? Quelle est selon vou
 
 **Explication:**
 
-Le Burj Khalifa mesure 828 mètres. L'ancre de 500m peut influencer votre estimation à la baisse. Points attribués selon la précision : estimation à ±30% = points complets, ±60% = points partiels. Cette question teste votre capacité à faire des estimations raisonnables malgré l'ancrage.
+Le Burj Khalifa mesure 828 mètres. L'ancre de 500 mètres peut influencer votre estimation à la baisse. Pour marquer des points, vous devez donner une estimation très éloignée de l'ancre (< 250 mètres OU > 1000 mètres), montrant que vous n'avez pas été influencé. Cette question mesure la résistance à l'ancrage, pas la connaissance de la bonne réponse.
 
 **Points:** 0.5
 
 ---
 
-### Question 57 (ID: anchor-6)
+### Question 6 (ID: anchor-6)
 
-**Type:** number
+**Type:** Number
 
 **Question:**
 
@@ -1330,7 +1330,7 @@ La bataille de Waterloo a-t-elle eu lieu avant 1750 ? En quelle année exactemen
 
 **Explication:**
 
-La bataille de Waterloo date de 1815. L'ancre de 1750 peut influencer votre estimation à la baisse. Points attribués selon la précision : estimation à ±30% = points complets, ±60% = points partiels. Cette question teste votre capacité à faire des estimations raisonnables malgré l'ancrage.
+La bataille de Waterloo date de 1815. L'ancre de 1750 peut influencer votre estimation à la baisse. Pour marquer des points, vous devez donner une estimation très éloignée de l'ancre (< 875 OU > 3500), montrant que vous n'avez pas été influencé. Cette question mesure la résistance à l'ancrage, pas la connaissance de la bonne réponse.
 
 **Points:** 0.5
 
@@ -1340,9 +1340,9 @@ La bataille de Waterloo date de 1815. L'ancre de 1750 peut influencer votre esti
 
 **Points:** 2.4 | **Temps:** 7 min
 
-### Question 58 (ID: calib-mc-1)
+### Question 1 (ID: calib-mc-1)
 
-**Type:** multiple-choice-confidence
+**Type:** Multiple-Choice-Confidence
 
 **Question:**
 
@@ -1353,13 +1353,15 @@ La Politique de la Porte Ouverte exigeait que :
 a. Aucune nation ne puisse revendiquer des droits commerciaux exclusifs en Chine
 b. Les journalistes doivent être autorisés à observer les effets de la Révolution culturelle
 
+**Réponse correcte:** a
+
 **Points:** 0.12
 
 ---
 
-### Question 59 (ID: calib-mc-2)
+### Question 2 (ID: calib-mc-2)
 
-**Type:** multiple-choice-confidence
+**Type:** Multiple-Choice-Confidence
 
 **Question:**
 
@@ -1370,13 +1372,15 @@ Le traité de Westphalie a mis fin à :
 a. La Guerre de Trente Ans
 b. La Guerre de Sept Ans
 
+**Réponse correcte:** a
+
 **Points:** 0.12
 
 ---
 
-### Question 60 (ID: calib-mc-3)
+### Question 3 (ID: calib-mc-3)
 
-**Type:** multiple-choice-confidence
+**Type:** Multiple-Choice-Confidence
 
 **Question:**
 
@@ -1387,13 +1391,15 @@ Le canal de Suez relie :
 a. La Méditerranée et la mer Rouge
 b. L'océan Atlantique et l'océan Pacifique
 
+**Réponse correcte:** a
+
 **Points:** 0.12
 
 ---
 
-### Question 61 (ID: calib-mc-4)
+### Question 4 (ID: calib-mc-4)
 
-**Type:** multiple-choice-confidence
+**Type:** Multiple-Choice-Confidence
 
 **Question:**
 
@@ -1404,13 +1410,15 @@ Martin Luther a publié ses 95 thèses en :
 a. 1517
 b. 1648
 
+**Réponse correcte:** a
+
 **Points:** 0.12
 
 ---
 
-### Question 62 (ID: calib-mc-5)
+### Question 5 (ID: calib-mc-5)
 
-**Type:** multiple-choice-confidence
+**Type:** Multiple-Choice-Confidence
 
 **Question:**
 
@@ -1421,13 +1429,15 @@ La bataille de Waterloo a eu lieu en :
 a. 1815
 b. 1789
 
+**Réponse correcte:** a
+
 **Points:** 0.12
 
 ---
 
-### Question 63 (ID: calib-mc-6)
+### Question 6 (ID: calib-mc-6)
 
-**Type:** multiple-choice-confidence
+**Type:** Multiple-Choice-Confidence
 
 **Question:**
 
@@ -1438,13 +1448,15 @@ Le mont Everest se trouve dans :
 a. L'Himalaya
 b. Les Andes
 
+**Réponse correcte:** a
+
 **Points:** 0.12
 
 ---
 
-### Question 64 (ID: calib-mc-7)
+### Question 7 (ID: calib-mc-7)
 
-**Type:** multiple-choice-confidence
+**Type:** Multiple-Choice-Confidence
 
 **Question:**
 
@@ -1455,13 +1467,15 @@ La première guerre mondiale a commencé en :
 a. 1914
 b. 1917
 
+**Réponse correcte:** a
+
 **Points:** 0.12
 
 ---
 
-### Question 65 (ID: calib-mc-8)
+### Question 8 (ID: calib-mc-8)
 
-**Type:** multiple-choice-confidence
+**Type:** Multiple-Choice-Confidence
 
 **Question:**
 
@@ -1472,13 +1486,15 @@ L'Australie est :
 a. Plus grande que le Groenland
 b. Plus petite que le Groenland
 
+**Réponse correcte:** a
+
 **Points:** 0.12
 
 ---
 
-### Question 66 (ID: calib-mc-9)
+### Question 9 (ID: calib-mc-9)
 
-**Type:** multiple-choice-confidence
+**Type:** Multiple-Choice-Confidence
 
 **Question:**
 
@@ -1489,13 +1505,15 @@ La déclaration d'indépendance des États-Unis date de :
 a. 1776
 b. 1789
 
+**Réponse correcte:** a
+
 **Points:** 0.12
 
 ---
 
-### Question 67 (ID: calib-mc-10)
+### Question 10 (ID: calib-mc-10)
 
-**Type:** multiple-choice-confidence
+**Type:** Multiple-Choice-Confidence
 
 **Question:**
 
@@ -1506,13 +1524,15 @@ La Grande Muraille de Chine mesure environ :
 a. Plus de 20 000 km
 b. Moins de 5 000 km
 
+**Réponse correcte:** a
+
 **Points:** 0.12
 
 ---
 
-### Question 68 (ID: calib-interval-1)
+### Question 11 (ID: calib-interval-1)
 
-**Type:** confidence-interval
+**Type:** Confidence-Interval
 
 **Question:**
 
@@ -1526,9 +1546,9 @@ La Tour Eiffel mesure 330 mètres (avec antenne).
 
 ---
 
-### Question 69 (ID: calib-interval-2)
+### Question 12 (ID: calib-interval-2)
 
-**Type:** confidence-interval
+**Type:** Confidence-Interval
 
 **Question:**
 
@@ -1542,9 +1562,9 @@ Le Japon a environ 125 millions d'habitants.
 
 ---
 
-### Question 70 (ID: calib-interval-3)
+### Question 13 (ID: calib-interval-3)
 
-**Type:** confidence-interval
+**Type:** Confidence-Interval
 
 **Question:**
 
@@ -1558,9 +1578,9 @@ Christophe Colomb a découvert l'Amérique en 1492.
 
 ---
 
-### Question 71 (ID: calib-interval-4)
+### Question 14 (ID: calib-interval-4)
 
-**Type:** confidence-interval
+**Type:** Confidence-Interval
 
 **Question:**
 
@@ -1574,9 +1594,9 @@ L'Amazone mesure environ 6 400 km de long.
 
 ---
 
-### Question 72 (ID: calib-interval-5)
+### Question 15 (ID: calib-interval-5)
 
-**Type:** confidence-interval
+**Type:** Confidence-Interval
 
 **Question:**
 
@@ -1590,9 +1610,9 @@ Le tableau périodique contient 118 éléments.
 
 ---
 
-### Question 73 (ID: calib-interval-6)
+### Question 16 (ID: calib-interval-6)
 
-**Type:** confidence-interval
+**Type:** Confidence-Interval
 
 **Question:**
 
@@ -1606,9 +1626,9 @@ La vitesse de la lumière est d'environ 300 000 km/s.
 
 ---
 
-### Question 74 (ID: calib-interval-7)
+### Question 17 (ID: calib-interval-7)
 
-**Type:** confidence-interval
+**Type:** Confidence-Interval
 
 **Question:**
 
@@ -1622,9 +1642,9 @@ L'eau bout à 100°C au niveau de la mer.
 
 ---
 
-### Question 75 (ID: calib-interval-8)
+### Question 18 (ID: calib-interval-8)
 
-**Type:** confidence-interval
+**Type:** Confidence-Interval
 
 **Question:**
 
@@ -1638,9 +1658,9 @@ L'ONU compte 193 États membres.
 
 ---
 
-### Question 76 (ID: calib-interval-9)
+### Question 19 (ID: calib-interval-9)
 
-**Type:** confidence-interval
+**Type:** Confidence-Interval
 
 **Question:**
 
@@ -1654,9 +1674,9 @@ La distance moyenne Terre-Lune est de 384 400 km.
 
 ---
 
-### Question 77 (ID: calib-interval-10)
+### Question 20 (ID: calib-interval-10)
 
-**Type:** confidence-interval
+**Type:** Confidence-Interval
 
 **Question:**
 
@@ -1674,9 +1694,9 @@ La Révolution française a commencé en 1789.
 
 **Points:** 5 | **Temps:** 3 min
 
-### Question 78 (ID: num-1)
+### Question 1 (ID: num-1)
 
-**Type:** number
+**Type:** Number
 
 **Question:**
 
@@ -1690,9 +1710,9 @@ Un médicament réduit le risque d'infection de 40% à 20%. De combien de points
 
 ---
 
-### Question 79 (ID: num-2)
+### Question 2 (ID: num-2)
 
-**Type:** number
+**Type:** Number
 
 **Question:**
 
@@ -1706,9 +1726,9 @@ Dans un groupe de 800 personnes, 3 sur 10 portent des lunettes. Combien de perso
 
 ---
 
-### Question 80 (ID: num-3)
+### Question 3 (ID: num-3)
 
-**Type:** number
+**Type:** Number
 
 **Question:**
 
@@ -1722,9 +1742,9 @@ Dans une loterie, la probabilité de gagner est de 1 sur 500. Si 5000 personnes 
 
 ---
 
-### Question 81 (ID: num-4)
+### Question 4 (ID: num-4)
 
-**Type:** number
+**Type:** Number
 
 **Question:**
 
@@ -1738,9 +1758,9 @@ Un test médical a un taux de faux positifs de 3%. Si 10 000 personnes saines pa
 
 ---
 
-### Question 82 (ID: num-5)
+### Question 5 (ID: num-5)
 
-**Type:** number
+**Type:** Number
 
 **Question:**
 
@@ -1758,13 +1778,17 @@ Risque initial : 20% (100-80). Risque final : 8% (100-92). Réduction : (20-8)/2
 
 **Points:** 4.2 | **Temps:** 4 min
 
-### Question 83 (ID: super-1)
+### Question 1 (ID: super-1)
 
-**Type:** likert
+**Type:** Likert
 
 **Question:**
 
 Les pensées d'une personne peuvent influencer le mouvement d'un objet physique.
+
+**Échelle:** 1 (Pas du tout d'accord) à 7 (Tout à fait d'accord)
+
+**Réponse rationnelle:** 1
 
 **Explication:**
 
@@ -1774,13 +1798,17 @@ La télékinésie (influencer des objets par la pensée) n'a jamais été démon
 
 ---
 
-### Question 84 (ID: super-2)
+### Question 2 (ID: super-2)
 
-**Type:** likert
+**Type:** Likert
 
 **Question:**
 
 L'astrologie peut être utile pour juger de la personnalité.
+
+**Échelle:** 1 (Pas du tout d'accord) à 7 (Tout à fait d'accord)
+
+**Réponse rationnelle:** 1
 
 **Explication:**
 
@@ -1790,13 +1818,19 @@ L'astrologie n'a aucun fondement scientifique. Les études contrôlées montrent
 
 ---
 
-### Question 85 (ID: super-3)
+### Question 3 (ID: super-3)
 
-**Type:** likert
+**Type:** Likert
 
 **Question:**
 
 La lecture de la pensée n'est pas possible.
+
+**Échelle:** 1 (Pas du tout d'accord) à 7 (Tout à fait d'accord)
+
+**Réponse rationnelle:** 7
+
+**Note:** Question inversée
 
 **Explication:**
 
@@ -1806,13 +1840,17 @@ En effet, la télépathie (lecture de pensée) n'a jamais été démontrée de m
 
 ---
 
-### Question 86 (ID: super-4)
+### Question 4 (ID: super-4)
 
-**Type:** likert
+**Type:** Likert
 
 **Question:**
 
 Certaines personnes peuvent prédire l'avenir avec précision.
+
+**Échelle:** 1 (Pas du tout d'accord) à 7 (Tout à fait d'accord)
+
+**Réponse rationnelle:** 1
 
 **Explication:**
 
@@ -1822,13 +1860,19 @@ La précognition (prédire l'avenir de manière précise et systématique) n'a j
 
 ---
 
-### Question 87 (ID: super-5)
+### Question 5 (ID: super-5)
 
-**Type:** likert
+**Type:** Likert
 
 **Question:**
 
 Les fantômes ou esprits n'existent pas.
+
+**Échelle:** 1 (Pas du tout d'accord) à 7 (Tout à fait d'accord)
+
+**Réponse rationnelle:** 7
+
+**Note:** Question inversée
 
 **Explication:**
 
@@ -1838,13 +1882,17 @@ Il n'existe aucune preuve scientifique de l'existence de fantômes ou d'esprits.
 
 ---
 
-### Question 88 (ID: super-6)
+### Question 6 (ID: super-6)
 
-**Type:** likert
+**Type:** Likert
 
 **Question:**
 
 Certains porte-bonheur peuvent vraiment influencer les événements.
+
+**Échelle:** 1 (Pas du tout d'accord) à 7 (Tout à fait d'accord)
+
+**Réponse rationnelle:** 1
 
 **Explication:**
 
@@ -1854,13 +1902,17 @@ Les porte-bonheur n'ont aucun effet causal sur les événements. L'impression qu
 
 ---
 
-### Question 89 (ID: super-7)
+### Question 7 (ID: super-7)
 
-**Type:** likert
+**Type:** Likert
 
 **Question:**
 
 Il est possible de communiquer avec les morts.
+
+**Échelle:** 1 (Pas du tout d'accord) à 7 (Tout à fait d'accord)
+
+**Réponse rationnelle:** 1
 
 **Explication:**
 
@@ -1870,13 +1922,19 @@ La communication avec les morts n'a jamais été démontrée scientifiquement. L
 
 ---
 
-### Question 90 (ID: super-8)
+### Question 8 (ID: super-8)
 
-**Type:** likert
+**Type:** Likert
 
 **Question:**
 
 Les rêves prémonitoires sont de simples coïncidences.
+
+**Échelle:** 1 (Pas du tout d'accord) à 7 (Tout à fait d'accord)
+
+**Réponse rationnelle:** 7
+
+**Note:** Question inversée
 
 **Explication:**
 
@@ -1886,13 +1944,17 @@ Les rêves prémonitoires apparents sont effectivement des coïncidences. Nous r
 
 ---
 
-### Question 91 (ID: super-9)
+### Question 9 (ID: super-9)
 
-**Type:** likert
+**Type:** Likert
 
 **Question:**
 
 Certaines personnes possèdent des pouvoirs psychiques réels.
+
+**Échelle:** 1 (Pas du tout d'accord) à 7 (Tout à fait d'accord)
+
+**Réponse rationnelle:** 1
 
 **Explication:**
 
@@ -1902,13 +1964,19 @@ Les pouvoirs psychiques (ESP, télékinésie, etc.) n'ont jamais été démontr�
 
 ---
 
-### Question 92 (ID: super-10)
+### Question 10 (ID: super-10)
 
-**Type:** likert
+**Type:** Likert
 
 **Question:**
 
 Les cristaux et pierres n'ont aucun pouvoir de guérison.
+
+**Échelle:** 1 (Pas du tout d'accord) à 7 (Tout à fait d'accord)
+
+**Réponse rationnelle:** 7
+
+**Note:** Question inversée
 
 **Explication:**
 
@@ -1922,13 +1990,17 @@ Les cristaux et pierres n'ont aucun pouvoir de guérison démontré au-delà de 
 
 **Points:** 4.18 | **Temps:** 4 min
 
-### Question 93 (ID: science-1)
+### Question 1 (ID: science-1)
 
-**Type:** likert
+**Type:** Likert
 
 **Question:**
 
 Le fait que les scientifiques ne soient souvent pas d'accord montre que la science implique plus d'opinions personnelles que de preuves réelles.
+
+**Échelle:** 1 (Pas du tout d'accord) à 7 (Tout à fait d'accord)
+
+**Réponse rationnelle:** 1
 
 **Explication:**
 
@@ -1938,13 +2010,19 @@ Les désaccords scientifiques portent sur l'interprétation des preuves, pas sur
 
 ---
 
-### Question 94 (ID: science-2)
+### Question 2 (ID: science-2)
 
-**Type:** likert
+**Type:** Likert
 
 **Question:**
 
 Quand la science entre en conflit avec la sagesse conventionnelle, c'est généralement la science qui a raison.
+
+**Échelle:** 1 (Pas du tout d'accord) à 7 (Tout à fait d'accord)
+
+**Réponse rationnelle:** 7
+
+**Note:** Question inversée
 
 **Explication:**
 
@@ -1954,13 +2032,17 @@ La connaissance scientifique est la forme de connaissance la plus fiable car ell
 
 ---
 
-### Question 95 (ID: science-3)
+### Question 3 (ID: science-3)
 
-**Type:** likert
+**Type:** Likert
 
 **Question:**
 
 La science change trop souvent d'avis pour qu'on puisse lui faire confiance.
+
+**Échelle:** 1 (Pas du tout d'accord) à 7 (Tout à fait d'accord)
+
+**Réponse rationnelle:** 1
 
 **Explication:**
 
@@ -1970,13 +2052,19 @@ La science progresse en questionnant et en révisant ses théories face à de no
 
 ---
 
-### Question 96 (ID: science-4)
+### Question 4 (ID: science-4)
 
-**Type:** likert
+**Type:** Likert
 
 **Question:**
 
 Les scientifiques sont généralement plus fiables que les sources d'information non scientifiques.
+
+**Échelle:** 1 (Pas du tout d'accord) à 7 (Tout à fait d'accord)
+
+**Réponse rationnelle:** 7
+
+**Note:** Question inversée
 
 **Explication:**
 
@@ -1986,13 +2074,17 @@ Les scientifiques utilisent des méthodes rigoureuses, la revue par les pairs et
 
 ---
 
-### Question 97 (ID: science-5)
+### Question 5 (ID: science-5)
 
-**Type:** likert
+**Type:** Likert
 
 **Question:**
 
 Les découvertes scientifiques qui contredisent le bon sens sont probablement fausses.
+
+**Échelle:** 1 (Pas du tout d'accord) à 7 (Tout à fait d'accord)
+
+**Réponse rationnelle:** 1
 
 **Explication:**
 
@@ -2002,13 +2094,19 @@ Le bon sens est souvent trompeur (ex: la Terre semble plate, les objets lourds s
 
 ---
 
-### Question 98 (ID: science-6)
+### Question 6 (ID: science-6)
 
-**Type:** likert
+**Type:** Likert
 
 **Question:**
 
 La méthode scientifique est le meilleur moyen d'obtenir des connaissances fiables.
+
+**Échelle:** 1 (Pas du tout d'accord) à 7 (Tout à fait d'accord)
+
+**Réponse rationnelle:** 7
+
+**Note:** Question inversée
 
 **Explication:**
 
@@ -2018,13 +2116,19 @@ La méthode scientifique repose sur l'observation, l'expérimentation, la falsif
 
 ---
 
-### Question 99 (ID: science-7)
+### Question 7 (ID: science-7)
 
-**Type:** likert
+**Type:** Likert
 
 **Question:**
 
 Les études scientifiques sont parfois biaisées par les intérêts financiers de ceux qui les financent.
+
+**Échelle:** 1 (Pas du tout d'accord) à 7 (Tout à fait d'accord)
+
+**Réponse rationnelle:** 7
+
+**Note:** Question inversée
 
 **Explication:**
 
@@ -2034,13 +2138,17 @@ Les conflits d'intérêts peuvent influencer les résultats de recherche (ex: é
 
 ---
 
-### Question 100 (ID: science-8)
+### Question 8 (ID: science-8)
 
-**Type:** likert
+**Type:** Likert
 
 **Question:**
 
 La science ne peut pas expliquer les choses vraiment importantes de la vie.
+
+**Échelle:** 1 (Pas du tout d'accord) à 7 (Tout à fait d'accord)
+
+**Réponse rationnelle:** 1
 
 **Explication:**
 
@@ -2050,13 +2158,19 @@ La science peut éclairer de nombreux aspects importants de la vie (santé, rela
 
 ---
 
-### Question 101 (ID: science-9)
+### Question 9 (ID: science-9)
 
-**Type:** likert
+**Type:** Likert
 
 **Question:**
 
 Les preuves scientifiques devraient avoir plus de poids que les témoignages personnels.
+
+**Échelle:** 1 (Pas du tout d'accord) à 7 (Tout à fait d'accord)
+
+**Réponse rationnelle:** 7
+
+**Note:** Question inversée
 
 **Explication:**
 
@@ -2066,13 +2180,17 @@ Les études scientifiques à grande échelle et bien contrôlées sont plus fiab
 
 ---
 
-### Question 102 (ID: science-10)
+### Question 10 (ID: science-10)
 
-**Type:** likert
+**Type:** Likert
 
 **Question:**
 
 L'intuition personnelle est souvent plus fiable que les résultats d'études scientifiques.
+
+**Échelle:** 1 (Pas du tout d'accord) à 7 (Tout à fait d'accord)
+
+**Réponse rationnelle:** 1
 
 **Explication:**
 
@@ -2082,17 +2200,21 @@ L'intuition est sujette à de nombreux biais cognitifs (heuristiques, effet de h
 
 ---
 
-### Question 103 (ID: science-11)
+### Question 11 (ID: science-11)
 
-**Type:** likert
+**Type:** Likert
 
 **Question:**
 
 La science a créé plus de problèmes qu'elle n'en a résolu.
 
+**Échelle:** 1 (Pas du tout d'accord) à 7 (Tout à fait d'accord)
+
+**Réponse rationnelle:** 2
+
 **Explication:**
 
-La science a considérablement amélioré la qualité de vie (médecine, agriculture, assainissement, technologie). Bien qu'elle crée parfois de nouveaux défis, le bilan global est largement positif.
+La science a considérablement amélioré la qualité de vie (médecine, agriculture, assainissement, technologie). Bien qu'elle crée parfois de nouveaux défis (pollution, armes nucléaires), le bilan global est largement positif. Une position nuancée reconnaît à la fois les bénéfices massifs et certains problèmes créés.
 
 **Points:** 0.38
 
@@ -2102,13 +2224,17 @@ La science a considérablement amélioré la qualité de vie (médecine, agricul
 
 **Points:** 4.62 | **Temps:** 3 min
 
-### Question 104 (ID: conspiracy-1)
+### Question 1 (ID: conspiracy-1)
 
-**Type:** likert
+**Type:** Likert
 
 **Question:**
 
 Les preuves que certains vaccins infantiles peuvent causer l'autisme ont été cachées par des compagnies pharmaceutiques.
+
+**Échelle:** 1 (Pas du tout d'accord) à 7 (Tout à fait d'accord)
+
+**Réponse rationnelle:** 1
 
 **Explication:**
 
@@ -2118,13 +2244,17 @@ Il n'existe aucune preuve scientifique liant les vaccins à l'autisme. L'étude 
 
 ---
 
-### Question 105 (ID: conspiracy-2)
+### Question 2 (ID: conspiracy-2)
 
-**Type:** likert
+**Type:** Likert
 
 **Question:**
 
 Des gouvernements ont caché des preuves de l'existence des extraterrestres et d'OVNI.
+
+**Échelle:** 1 (Pas du tout d'accord) à 7 (Tout à fait d'accord)
+
+**Réponse rationnelle:** 1
 
 **Explication:**
 
@@ -2134,13 +2264,17 @@ Malgré des décennies d'observation du ciel par des millions de personnes, il n
 
 ---
 
-### Question 106 (ID: conspiracy-3)
+### Question 3 (ID: conspiracy-3)
 
-**Type:** likert
+**Type:** Likert
 
 **Question:**
 
 L'alunissage d'Apollo était une mise en scène filmée dans un studio.
+
+**Échelle:** 1 (Pas du tout d'accord) à 7 (Tout à fait d'accord)
+
+**Réponse rationnelle:** 1
 
 **Explication:**
 
@@ -2150,13 +2284,17 @@ L'alunissage d'Apollo est l'un des événements les mieux documentés de l'histo
 
 ---
 
-### Question 107 (ID: conspiracy-4)
+### Question 4 (ID: conspiracy-4)
 
-**Type:** likert
+**Type:** Likert
 
 **Question:**
 
 Le changement climatique est un canular inventé pour contrôler l'économie mondiale.
+
+**Échelle:** 1 (Pas du tout d'accord) à 7 (Tout à fait d'accord)
+
+**Réponse rationnelle:** 1
 
 **Explication:**
 
@@ -2166,13 +2304,17 @@ Le consensus scientifique sur le changement climatique anthropique est écrasant
 
 ---
 
-### Question 108 (ID: conspiracy-5)
+### Question 5 (ID: conspiracy-5)
 
-**Type:** likert
+**Type:** Likert
 
 **Question:**
 
 Les chemtrails (traînées d'avion) sont utilisés pour répandre des produits chimiques sur la population.
+
+**Échelle:** 1 (Pas du tout d'accord) à 7 (Tout à fait d'accord)
+
+**Réponse rationnelle:** 1
 
 **Explication:**
 
@@ -2182,13 +2324,17 @@ Les traînées d'avion (contrails) sont de la vapeur d'eau condensée, un phéno
 
 ---
 
-### Question 109 (ID: conspiracy-6)
+### Question 6 (ID: conspiracy-6)
 
-**Type:** likert
+**Type:** Likert
 
 **Question:**
 
 La Terre est plate, contrairement à ce que la science officielle prétend.
+
+**Échelle:** 1 (Pas du tout d'accord) à 7 (Tout à fait d'accord)
+
+**Réponse rationnelle:** 1
 
 **Explication:**
 
@@ -2198,13 +2344,17 @@ La forme sphérique de la Terre est établie depuis l'Antiquité et confirmée p
 
 ---
 
-### Question 110 (ID: conspiracy-7)
+### Question 7 (ID: conspiracy-7)
 
-**Type:** likert
+**Type:** Likert
 
 **Question:**
 
 Un 'Nouvel Ordre Mondial' tente d'établir un gouvernement mondial unique.
+
+**Échelle:** 1 (Pas du tout d'accord) à 7 (Tout à fait d'accord)
+
+**Réponse rationnelle:** 1
 
 **Explication:**
 
@@ -2214,29 +2364,37 @@ Bien que des organisations internationales existent (ONU, UE), il n'existe aucun
 
 ---
 
-### Question 111 (ID: conspiracy-8)
+### Question 8 (ID: conspiracy-8)
 
-**Type:** likert
+**Type:** Likert
 
 **Question:**
 
-Des technologies de contrôle mental sont utilisées sur la population.
+Des technologies secrètes de contrôle mental télépathique existent.
+
+**Échelle:** 1 (Pas du tout d'accord) à 7 (Tout à fait d'accord)
+
+**Réponse rationnelle:** 1
 
 **Explication:**
 
-Il n'existe aucune preuve scientifique de technologies de contrôle mental à grande échelle. Les neurosciences montrent que le contrôle mental tel que décrit par les conspirationnistes est scientifiquement impossible avec la technologie actuelle.
+Il n'existe aucune preuve scientifique de technologies de contrôle mental télépathique. Les neurosciences montrent que la télépathie et le contrôle mental à distance sont scientifiquement impossibles avec nos connaissances actuelles de la physique et de la biologie.
 
 **Points:** 0.42
 
 ---
 
-### Question 112 (ID: conspiracy-9)
+### Question 9 (ID: conspiracy-9)
 
-**Type:** likert
+**Type:** Likert
 
 **Question:**
 
 Les grandes entreprises pharmaceutiques cachent des remèdes contre le cancer pour continuer à vendre des traitements.
+
+**Échelle:** 1 (Pas du tout d'accord) à 7 (Tout à fait d'accord)
+
+**Réponse rationnelle:** 1
 
 **Explication:**
 
@@ -2246,13 +2404,17 @@ Les entreprises pharmaceutiques ont un intérêt économique à développer des 
 
 ---
 
-### Question 113 (ID: conspiracy-10)
+### Question 10 (ID: conspiracy-10)
 
-**Type:** likert
+**Type:** Likert
 
 **Question:**
 
 Les Illuminati existent et contrôlent secrètement les affaires mondiales.
+
+**Échelle:** 1 (Pas du tout d'accord) à 7 (Tout à fait d'accord)
+
+**Réponse rationnelle:** 1
 
 **Explication:**
 
@@ -2262,17 +2424,21 @@ Il n'existe aucune preuve de l'existence des Illuminati comme organisation contr
 
 ---
 
-### Question 114 (ID: conspiracy-11)
+### Question 11 (ID: conspiracy-11)
 
-**Type:** likert
+**Type:** Likert
 
 **Question:**
 
-Des expérimentations médicales ou scientifiques secrètes sont menées sur les citoyens à leur insu.
+Des gouvernements mènent actuellement des expérimentations médicales secrètes à grande échelle sur leurs citoyens à leur insu.
+
+**Échelle:** 1 (Pas du tout d'accord) à 7 (Tout à fait d'accord)
+
+**Réponse rationnelle:** 1
 
 **Explication:**
 
-Bien que des expérimentations contraires à l'éthique aient existé historiquement (Tuskegee, MKUltra), les cadres éthiques modernes et la surveillance rendent de telles pratiques extrêmement difficiles. Généraliser cela en complot massif actuel est injustifié et relève de la pensée conspirationniste.
+Bien que des expérimentations contraires à l'éthique aient existé historiquement (Tuskegee, MKUltra), les cadres éthiques modernes, la surveillance institutionnelle et la transparence rendent de telles pratiques à grande échelle extrêmement difficiles aujourd'hui. Affirmer que cela se produit actuellement de manière généralisée sans preuve relève de la pensée conspirationniste.
 
 **Points:** 0.42
 
@@ -2282,29 +2448,37 @@ Bien que des expérimentations contraires à l'éthique aient existé historique
 
 **Points:** 5.04 | **Temps:** 3 min
 
-### Question 115 (ID: dysfunc-1)
+### Question 1 (ID: dysfunc-1)
 
-**Type:** likert
+**Type:** Likert
 
 **Question:**
 
-Je dois être aimé et approuvé par toutes les personnes importantes de ma vie.
+Je DOIS être aimé et approuvé par toutes les personnes importantes de ma vie.
+
+**Échelle:** 1 (Pas du tout d'accord) à 7 (Tout à fait d'accord)
+
+**Réponse rationnelle:** 1
 
 **Explication:**
 
-Cette croyance est irrationnelle car il est impossible d'être aimé par tous. Les personnes rationnelles acceptent qu'il est normal de ne pas plaire à tout le monde.
+Cette croyance est irrationnelle car elle transforme un désir légitime (être aimé) en une exigence absolue. Il est impossible d'être aimé et approuvé par tous, et cette croyance génère anxiété et dépendance affective. Les personnes rationnelles acceptent qu'il est normal de ne pas plaire à tout le monde tout en valorisant les relations authentiques.
 
 **Points:** 0.56
 
 ---
 
-### Question 116 (ID: dysfunc-2)
+### Question 2 (ID: dysfunc-2)
 
-**Type:** likert
+**Type:** Likert
 
 **Question:**
 
 Je dois être parfaitement compétent dans tout ce que j'entreprends.
+
+**Échelle:** 1 (Pas du tout d'accord) à 7 (Tout à fait d'accord)
+
+**Réponse rationnelle:** 1
 
 **Explication:**
 
@@ -2314,113 +2488,141 @@ Exiger la perfection dans tout est irréaliste et source d'anxiété. Il est plu
 
 ---
 
-### Question 117 (ID: dysfunc-3)
+### Question 3 (ID: dysfunc-3)
 
-**Type:** likert
+**Type:** Likert
 
 **Question:**
 
-Les gens qui se comportent mal méritent d'être blâmés et punis sévèrement.
+Les gens qui se comportent mal ou commettent des erreurs méritent d'être blâmés et punis sévèrement.
+
+**Échelle:** 1 (Pas du tout d'accord) à 7 (Tout à fait d'accord)
+
+**Réponse rationnelle:** 1
 
 **Explication:**
 
-Cette généralisation excessive est irrationnelle. Un échec dans un domaine ne signifie pas l'échec total. Il est plus rationnel de voir les échecs comme des opportunités d'apprentissage spécifiques.
+Blâmer et punir sévèrement les autres pour leurs erreurs est contre-productif et ignore la complexité des comportements humains. Une approche plus rationnelle reconnaît que les comportements ont des causes multiples et que la compréhension est souvent plus efficace que la punition sévère.
 
 **Points:** 0.56
 
 ---
 
-### Question 118 (ID: dysfunc-4)
+### Question 4 (ID: dysfunc-4)
 
-**Type:** likert
+**Type:** Likert
 
 **Question:**
 
 C'est catastrophique quand les choses ne se passent pas comme je le voudrais.
 
+**Échelle:** 1 (Pas du tout d'accord) à 7 (Tout à fait d'accord)
+
+**Réponse rationnelle:** 1
+
 **Explication:**
 
-Blâmer sévèrement les autres pour leurs erreurs est contre-productif et ignore la complexité des comportements humains. Une approche plus rationnelle reconnaît que les comportements ont des causes multiples.
+Cette croyance reflète une pensée catastrophique irrationnelle. Les problèmes ont des degrés de gravité variables, et tout qualifier de 'catastrophique' empêche une évaluation réaliste et proportionnée des situations. La plupart des contretemps sont des désagréments, pas des catastrophes.
 
 **Points:** 0.56
 
 ---
 
-### Question 119 (ID: dysfunc-5)
+### Question 5 (ID: dysfunc-5)
 
-**Type:** likert
+**Type:** Likert
 
 **Question:**
 
-Le malheur vient de circonstances extérieures sur lesquelles je n'ai aucun contrôle.
+Quand quelque chose de mauvais m'arrive, c'est toujours dû à des facteurs externes, jamais à mes décisions.
+
+**Échelle:** 1 (Pas du tout d'accord) à 7 (Tout à fait d'accord)
+
+**Réponse rationnelle:** 1
 
 **Explication:**
 
-Cette croyance reflète une pensée catastrophique irrationnelle. Les problèmes ont des degrés de gravité variables, et tout voir comme 'terrible' empêche une évaluation réaliste.
+Cette affirmation reflète un biais d'attribution externe systématique et une sur-généralisation. C'est une erreur de raisonnement car elle utilise des termes absolus ('toujours', 'jamais') qui ignorent la complexité causale des événements. Dans la réalité, les résultats négatifs proviennent généralement d'une combinaison de facteurs internes et externes. Une évaluation rationnelle examine la contribution respective de chaque facteur plutôt que d'attribuer systématiquement la causalité à une seule source.
 
 **Points:** 0.56
 
 ---
 
-### Question 120 (ID: dysfunc-6)
+### Question 6 (ID: dysfunc-6)
 
-**Type:** likert
+**Type:** Likert
 
 **Question:**
 
 Je dois constamment m'inquiéter des choses dangereuses ou effrayantes qui pourraient arriver.
 
+**Échelle:** 1 (Pas du tout d'accord) à 7 (Tout à fait d'accord)
+
+**Réponse rationnelle:** 1
+
 **Explication:**
 
-Cette croyance reflète un locus de contrôle externe excessif. Bien que les circonstances influencent notre vie, nous avons un certain degré de contrôle et de responsabilité.
+L'inquiétude excessive et constante n'augmente pas le contrôle sur les événements futurs et génère anxiété et stress inutiles. Une approche plus rationnelle consiste à évaluer les risques de manière réaliste, à prendre des précautions raisonnables quand c'est possible, puis à accepter l'incertitude inhérente à la vie.
 
 **Points:** 0.56
 
 ---
 
-### Question 121 (ID: dysfunc-7)
+### Question 7 (ID: dysfunc-7)
 
-**Type:** likert
+**Type:** Likert
 
 **Question:**
 
-Il est plus facile d'éviter les difficultés que d'y faire face.
+Si j'ignore un problème, il finira par se résoudre tout seul.
+
+**Échelle:** 1 (Pas du tout d'accord) à 7 (Tout à fait d'accord)
+
+**Réponse rationnelle:** 1
 
 **Explication:**
 
-Éviter les difficultés est plus facile à court terme mais empêche la croissance et la résolution de problèmes. Il est plus rationnel d'affronter les défis.
+Cette croyance repose sur une fausse relation causale entre l'inaction et la résolution de problèmes. C'est une forme de pensée magique qui confond l'espoir avec la causalité. Dans la réalité, la plupart des problèmes non traités persistent ou s'aggravent ; ils ne se résolvent pas spontanément par le simple fait de les ignorer. Une approche rationnelle consiste à évaluer objectivement si un problème nécessite une intervention active ou si d'autres facteurs pourraient le résoudre.
 
 **Points:** 0.56
 
 ---
 
-### Question 122 (ID: dysfunc-8)
+### Question 8 (ID: dysfunc-8)
 
-**Type:** likert
+**Type:** Likert
 
 **Question:**
 
-J'ai besoin de quelqu'un de plus fort que moi sur qui m'appuyer.
+Je ne peux rien accomplir d'important sans que quelqu'un me dise exactement quoi faire.
+
+**Échelle:** 1 (Pas du tout d'accord) à 7 (Tout à fait d'accord)
+
+**Réponse rationnelle:** 1
 
 **Explication:**
 
-Cette dépendance excessive aux autres est irrationnelle. Les adultes rationnels développent leur autonomie tout en maintenant des relations saines.
+Cette croyance reflète une sous-estimation systématique de ses propres capacités et peut indiquer une impuissance apprise. C'est une erreur de calibration : affirmer qu'on ne peut 'rien' accomplir d'important de manière autonome est une généralisation excessive qui ignore les nombreuses compétences et ressources dont dispose tout individu. Une auto-évaluation rationnelle reconnaît à la fois ses limites (où le soutien est utile) et ses capacités (où l'autonomie est possible).
 
 **Points:** 0.56
 
 ---
 
-### Question 123 (ID: dysfunc-9)
+### Question 9 (ID: dysfunc-9)
 
-**Type:** likert
+**Type:** Likert
 
 **Question:**
 
 Si quelque chose m'a affecté dans le passé, cela continuera toujours à m'affecter de la même manière.
 
+**Échelle:** 1 (Pas du tout d'accord) à 7 (Tout à fait d'accord)
+
+**Réponse rationnelle:** 1
+
 **Explication:**
 
-Cette croyance reflète une pensée dichotomique (tout ou rien) irrationnelle. La réalité est plus nuancée, et une solution imparfaite vaut mieux que l'inaction.
+Cette croyance suggère un déterminisme psychologique irréaliste et ignore la capacité humaine au changement, à l'adaptation et à la résilience. Les recherches en psychologie montrent que les personnes peuvent modifier leurs réactions émotionnelles et comportementales par la thérapie, l'apprentissage et l'expérience. Bien que les traumatismes passés puissent avoir des effets durables, leur impact peut évoluer avec le temps et le traitement approprié.
 
 **Points:** 0.56
 
@@ -2430,13 +2632,15 @@ Cette croyance reflète une pensée dichotomique (tout ou rien) irrationnelle. L
 
 **Points:** 2.5 | **Temps:** 8 min
 
-### Question 124 (ID: arg-eval-1a)
+### Question 1 (ID: arg-eval-1a)
 
-**Type:** likert
+**Type:** Likert
 
 **Question:**
 
 **Partie A - Votre opinion** : Les étudiants devraient avoir une voix plus forte que le grand public dans la définition des politiques universitaires.
+
+**Échelle:** 1 (Pas du tout d'accord) à 7 (Tout à fait d'accord)
 
 **Explication:**
 
@@ -2446,7 +2650,7 @@ Cette question mesure votre opinion préalable pour détecter le biais de croyan
 
 ---
 
-### Question 125 (ID: arg-eval-1b)
+### Question 2 (ID: arg-eval-1b)
 
 **Type:** Choix multiple
 
@@ -2460,7 +2664,7 @@ Cette question mesure votre opinion préalable pour détecter le biais de croyan
 
 **Contre-argument du critique** : Les frais de scolarité couvrent moins de la moitié du coût d'une éducation dans la plupart des universités publiques (supposez que c'est factuellement correct), donc les contribuables devraient avoir leur mot à dire plus important dans les politiques.
 
-**Réponse de Marc** : Puisque ce sont les étudiants qui sont directement influencés par les politiques universitaires (supposez que c'est factuellement correct), ce sont eux qui devraient avoir la voix la plus forte.
+**Réponse de Marc** : Certes, mais laissons de côté la question du financement pour l'instant. Ce qui compte vraiment, c'est que les étudiants sont directement influencés par les politiques universitaires au quotidien (supposez que c'est factuellement correct), donc ce sont eux qui devraient avoir la voix la plus forte.
 
 **Évaluez la force de la réponse de Marc** :
 
@@ -2475,29 +2679,31 @@ d. 4 - Très fort
 
 **Explication:**
 
-La réponse de Marc est très faible car il change d'argument sans répondre au contre-argument sur le financement.
+La réponse de Marc est très faible car il esquive explicitement le contre-argument sur le financement ('laissons de côté la question du financement') et introduit un nouvel argument (impact direct) sans défendre son argument initial. C'est un sophisme de déplacement des poteaux de but (moving the goalposts). Une réponse forte aurait dû soit défendre l'argument du financement, soit reconnaître sa faiblesse et expliquer pourquoi l'opinion reste valide malgré cela.
 
 **Points:** 0.625
 
 ---
 
-### Question 126 (ID: arg-eval-2a)
+### Question 3 (ID: arg-eval-2a)
 
-**Type:** likert
+**Type:** Likert
 
 **Question:**
 
 **Partie A - Votre opinion** : Le tabac devrait être interdit dans tous les lieux publics fermés.
 
+**Échelle:** 1 (Pas du tout d'accord) à 7 (Tout à fait d'accord)
+
 **Explication:**
 
-La pensée critique implique d'évaluer les arguments sur leur mérite intrinsèque (preuves, logique) plutôt que sur qui les présente. L'appel à l'autorité est un biais cognitif.
+Cette question mesure votre opinion préalable pour détecter le biais de croyance.
 
 **Points:** 0
 
 ---
 
-### Question 127 (ID: arg-eval-2b)
+### Question 4 (ID: arg-eval-2b)
 
 **Type:** Choix multiple
 
@@ -2532,13 +2738,15 @@ d. 4 - Très fort
 
 ---
 
-### Question 128 (ID: arg-eval-3a)
+### Question 5 (ID: arg-eval-3a)
 
-**Type:** likert
+**Type:** Likert
 
 **Question:**
 
-**Partie A - Votre opinion** : L'énergie nucléaire devrait être développée comme source principale d'énergie pour l'avenir.
+**Partie A - Votre opinion** : Les téléphones portables devraient être interdits dans toutes les écoles.
+
+**Échelle:** 1 (Pas du tout d'accord) à 7 (Tout à fait d'accord)
 
 **Explication:**
 
@@ -2548,7 +2756,7 @@ Un raisonnement solide peut être jugé indépendamment de nos émotions personn
 
 ---
 
-### Question 129 (ID: arg-eval-3b)
+### Question 6 (ID: arg-eval-3b)
 
 **Type:** Choix multiple
 
@@ -2556,13 +2764,13 @@ Un raisonnement solide peut être jugé indépendamment de nos émotions personn
 
 **Partie B - Évaluation** :
 
-**Opinion de Marc** : L'énergie nucléaire devrait être développée comme source principale d'énergie pour l'avenir.
+**Opinion de Marc** : Les téléphones portables devraient être interdits dans toutes les écoles.
 
-**Justification de Marc** : L'énergie nucléaire est plus propre que les combustibles fossiles et peut fournir une énergie stable et abondante pour répondre à nos besoins croissants.
+**Justification de Marc** : Ils distraient les élèves et perturbent l'apprentissage en classe.
 
-**Contre-argument du critique** : Les accidents nucléaires comme Tchernobyl et Fukushima montrent que l'énergie nucléaire comporte des risques catastrophiques (supposez que c'est factuellement correct).
+**Contre-argument du critique** : Les téléphones peuvent être des outils pédagogiques utiles (recherche, calculatrice, applications éducatives) et permettent aux parents de joindre leurs enfants en cas d'urgence (supposez que c'est factuellement correct).
 
-**Réponse de Marc** : Ces accidents étaient dus à des technologies anciennes et des erreurs humaines. Les nouvelles technologies nucléaires de quatrième génération sont conçues pour être beaucoup plus sûres (supposez que c'est factuellement correct).
+**Réponse de Marc** : De toute façon, quand j'étais à l'école, on n'avait pas de téléphones et on apprenait très bien.
 
 **Évaluez la force de la réponse de Marc** :
 
@@ -2573,23 +2781,25 @@ b. 2 - Faible
 c. 3 - Fort
 d. 4 - Très fort
 
-**Réponse correcte:** c
+**Réponse correcte:** a
 
 **Explication:**
 
-La capacité à évaluer objectivement un argument même quand sa conclusion nous déplaît est une marque de pensée rationnelle et critique.
+La réponse de Marc est très faible car elle commet un 'appel à la tradition' (une erreur logique). Dire que 'avant on faisait autrement et ça marchait' ne répond pas aux avantages spécifiques mentionnés (outils pédagogiques modernes, sécurité). De plus, cette logique bloquerait tout progrès technologique en éducation. Marc ne traite ni les bénéfices pédagogiques ni l'aspect sécuritaire soulevés par le critique.
 
 **Points:** 0.625
 
 ---
 
-### Question 130 (ID: arg-eval-4a)
+### Question 7 (ID: arg-eval-4a)
 
-**Type:** likert
+**Type:** Likert
 
 **Question:**
 
-**Partie A - Votre opinion** : Les entreprises de réseaux sociaux devraient être légalement responsables du contenu publié par leurs utilisateurs.
+**Partie A - Votre opinion** : Il faut augmenter significativement les taxes sur les produits sucrés pour réduire l'obésité.
+
+**Échelle:** 1 (Pas du tout d'accord) à 7 (Tout à fait d'accord)
 
 **Explication:**
 
@@ -2599,7 +2809,7 @@ La cohérence logique et les preuves sont les critères essentiels pour évaluer
 
 ---
 
-### Question 131 (ID: arg-eval-4b)
+### Question 8 (ID: arg-eval-4b)
 
 **Type:** Choix multiple
 
@@ -2607,13 +2817,13 @@ La cohérence logique et les preuves sont les critères essentiels pour évaluer
 
 **Partie B - Évaluation** :
 
-**Opinion de Marc** : Les entreprises de réseaux sociaux devraient être légalement responsables du contenu publié par leurs utilisateurs.
+**Opinion de Marc** : Il faut augmenter significativement les taxes sur les produits sucrés pour réduire l'obésité.
 
-**Justification de Marc** : Les plateformes profitent du contenu généré par les utilisateurs, donc elles devraient être responsables de ce contenu.
+**Justification de Marc** : Des taxes élevées découragent la consommation de produits nocifs pour la santé.
 
-**Contre-argument du critique** : Il est impossible techniquement de modérer des milliards de publications en temps réel (supposez que c'est factuellement correct).
+**Contre-argument du critique** : Les taxes sur le sucre affectent de manière disproportionnée les ménages à faible revenu qui dépensent un pourcentage plus élevé de leur budget en alimentation (supposez que c'est factuellement correct).
 
-**Réponse de Marc** : C'est vrai, mais elles peuvent investir davantage dans des systèmes de modération automatiques et humains (supposez que c'est factuellement correct).
+**Réponse de Marc** : Mais l'obésité et le diabète affectent aussi davantage les populations à faible revenu (supposez que c'est factuellement correct). Une taxe qui réduit leur consommation de sucre améliorerait donc leur santé, ce qui compense largement le coût financier.
 
 **Évaluez la force de la réponse de Marc** :
 
@@ -2628,7 +2838,7 @@ d. 4 - Très fort
 
 **Explication:**
 
-La réponse de Marc est 'Fort' (3). Il reconnaît le problème technique soulevé par le critique, mais propose une solution concrète (investissement dans la modération). Même si cette solution ne résout pas totalement le problème de l'impossibilité de modérer en temps réel, c'est une réponse constructive et raisonnable qui mérite une évaluation positive.
+La réponse de Marc est forte car elle répond directement au contre-argument. Le critique soulève que la taxe affecte négativement les populations à faible revenu. Marc reconnaît ce point mais montre que ces mêmes populations bénéficieraient le plus de la réduction de consommation de sucre (réduction de l'obésité et du diabète). Il propose ainsi un compromis coût-bénéfice spécifique à la population concernée. C'est une réponse logique qui traite le problème soulevé plutôt que de l'ignorer.
 
 **Points:** 0.625
 
@@ -2638,7 +2848,7 @@ La réponse de Marc est 'Fort' (3). Il reconnaît le problème technique soulev�
 
 **Points:** 5 | **Temps:** 5 min
 
-### Question 132 (ID: causal-1)
+### Question 1 (ID: causal-1)
 
 **Type:** Choix multiple
 
@@ -2650,21 +2860,21 @@ Cette découverte signifie-t-elle qu'interdire la télévision aux enfants amél
 
 **Options:**
 
-a. Oui, certainement
-b. Non, pas nécessairement
-c. On ne peut pas le déterminer avec ces informations seules
+a. Oui, cette corrélation prouve que réduire la TV améliorera les résultats
+b. Non, la corrélation n'implique pas la causation - d'autres facteurs pourraient expliquer les deux
+c. Impossible de répondre car l'étude ne précise pas le type d'émissions regardées
 
 **Réponse correcte:** b
 
 **Explication:**
 
-Non nécessairement. La corrélation n'implique pas la causation. D'autres facteurs (niveau socio-économique, éducation des parents) pourraient expliquer à la fois plus de TV et de moins bons résultats.
+Non, la corrélation n'implique pas la causation. D'autres facteurs (niveau socio-économique, éducation des parents, environnement familial) pourraient expliquer à la fois plus de TV et de moins bons résultats scolaires. Pour établir un lien causal, il faudrait une étude expérimentale contrôlée ou éliminer les variables confondantes.
 
 **Points:** 1
 
 ---
 
-### Question 133 (ID: causal-2)
+### Question 2 (ID: causal-2)
 
 **Type:** Choix multiple
 
@@ -2676,21 +2886,21 @@ Peut-on conclure que prendre des vitamines augmente l'espérance de vie ?
 
 **Options:**
 
-a. Oui
-b. Non
-c. Impossible à déterminer
+a. Oui, la différence d'espérance de vie prouve l'effet des vitamines
+b. Non, car les personnes qui prennent des vitamines ont probablement déjà un mode de vie plus sain
+c. Oui, mais seulement pour certains types de vitamines
 
 **Réponse correcte:** b
 
 **Explication:**
 
-Non. Les personnes qui prennent des vitamines ont peut-être déjà un mode de vie plus sain (exercice, alimentation équilibrée), ce qui explique leur longévité.
+Non, on ne peut pas conclure à un effet causal. Les personnes qui prennent des vitamines quotidiennement sont probablement plus soucieuses de leur santé en général : elles font peut-être plus d'exercice, mangent mieux, consultent régulièrement un médecin, etc. C'est ce mode de vie global plus sain qui pourrait expliquer leur longévité, pas nécessairement les vitamines elles-mêmes. Il s'agit d'un biais de sélection classique.
 
 **Points:** 1
 
 ---
 
-### Question 134 (ID: causal-4)
+### Question 3 (ID: causal-4)
 
 **Type:** Choix multiple
 
@@ -2717,7 +2927,7 @@ Un groupe contrôle est essentiel. Les scores auraient peut-être augmenté de t
 
 ---
 
-### Question 135 (ID: causal-5)
+### Question 4 (ID: causal-5)
 
 **Type:** Choix multiple
 
@@ -2744,7 +2954,7 @@ Un groupe placebo est essentiel pour contrôler l'effet placebo (amélioration s
 
 ---
 
-### Question 136 (ID: causal-6)
+### Question 5 (ID: causal-6)
 
 **Type:** Choix multiple
 
@@ -2773,9 +2983,9 @@ La principale limite est l'absence de groupe contrôle. Beaucoup de conditions s
 
 ## Effets de Cadrage (10 items)
 
-**Points:** 3 | **Temps:** 8 min
+**Points:** 3.0 | **Temps:** 8 min
 
-### Question 137 (ID: frame-1a)
+### Question 1 (ID: frame-1a)
 
 **Type:** Choix multiple
 
@@ -2802,9 +3012,11 @@ Un produit décrit comme '95% efficace' et '5% d'échec' est mathématiquement i
 
 **Points:** 0
 
+**Paire:** frame-pair-1 (positive)
+
 ---
 
-### Question 138 (ID: frame-1b)
+### Question 2 (ID: frame-1b)
 
 **Type:** Choix multiple
 
@@ -2831,9 +3043,11 @@ Un produit décrit comme '95% efficace' et '5% d'échec' est mathématiquement i
 
 **Points:** 0.6
 
+**Paire:** frame-pair-1 (negative)
+
 ---
 
-### Question 139 (ID: frame-2a)
+### Question 3 (ID: frame-2a)
 
 **Type:** Choix multiple
 
@@ -2857,9 +3071,11 @@ Cette question teste l'effet de cadrage (framing effect). La formulation en term
 
 **Points:** 0
 
+**Paire:** frame-pair-2 (gain)
+
 ---
 
-### Question 140 (ID: frame-2b)
+### Question 4 (ID: frame-2b)
 
 **Type:** Choix multiple
 
@@ -2883,9 +3099,11 @@ Cette question est mathématiquement équivalente à la version 'cadre gain' mai
 
 **Points:** 0.6
 
+**Paire:** frame-pair-2 (loss)
+
 ---
 
-### Question 141 (ID: frame-3a)
+### Question 5 (ID: frame-3a)
 
 **Type:** Choix multiple
 
@@ -2912,9 +3130,11 @@ Un véhicule qui 'fonctionne 94% du temps' est identique à un véhicule qui 'dy
 
 **Points:** 0
 
+**Paire:** frame-pair-3 (positive)
+
 ---
 
-### Question 142 (ID: frame-3b)
+### Question 6 (ID: frame-3b)
 
 **Type:** Choix multiple
 
@@ -2941,9 +3161,11 @@ Cette formulation négative décrit exactement la même réalité que la version
 
 **Points:** 0.6
 
+**Paire:** frame-pair-3 (negative)
+
 ---
 
-### Question 143 (ID: frame-4a)
+### Question 7 (ID: frame-4a)
 
 **Type:** Choix multiple
 
@@ -2970,9 +3192,11 @@ Une viande décrite comme '75% maigre' est identique à '25% de matière grasse'
 
 **Points:** 0
 
+**Paire:** frame-pair-4 (positive)
+
 ---
 
-### Question 144 (ID: frame-4b)
+### Question 8 (ID: frame-4b)
 
 **Type:** Choix multiple
 
@@ -2999,9 +3223,11 @@ Cette formulation en termes de matière grasse décrit le même produit que '75%
 
 **Points:** 0.6
 
+**Paire:** frame-pair-4 (negative)
+
 ---
 
-### Question 145 (ID: frame-5a)
+### Question 9 (ID: frame-5a)
 
 **Type:** Choix multiple
 
@@ -3028,9 +3254,11 @@ Un programme avec '90% de réussite' est identique à '10% d'échec'. Le cadrage
 
 **Points:** 0
 
+**Paire:** frame-pair-5 (positive)
+
 ---
 
-### Question 146 (ID: frame-5b)
+### Question 10 (ID: frame-5b)
 
 **Type:** Choix multiple
 
@@ -3057,39 +3285,15 @@ Cette formulation en termes d'échec décrit le même taux de succès (90%). Les
 
 **Points:** 0.6
 
----
-
-## Sensibilité à la Valeur Espérée (12 items)
-
-**Points:** 5.04 | **Temps:** 6 min
-
-### Question 147 (ID: ev-1)
-
-**Type:** Choix multiple
-
-**Question:**
-
-Quel pari préférez-vous ?
-
-**Pari A** : 25% de chances de gagner 2 500€ et 75% de chances de gagner 100€
-**Pari B** : 25% de chances de gagner 500€ et 75% de chances de gagner 1 200€
-
-**Options:**
-
-a. Pari A
-b. Pari B
-
-**Réponse correcte:** b
-
-**Explication:**
-
-VE(A) = 0.25×2500 + 0.75×100 = 700€. VE(B) = 0.25×500 + 0.75×1200 = 1025€. Pari B est optimal.
-
-**Points:** 0.42
+**Paire:** frame-pair-5 (negative)
 
 ---
 
-### Question 148 (ID: ev-2)
+## Sensibilité à la Valeur Espérée (6 items)
+
+**Points:** 2.52 | **Temps:** 3 min
+
+### Question 1 (ID: ev-2)
 
 **Type:** Choix multiple
 
@@ -3115,7 +3319,7 @@ VE(A) = 0.15×150 + 0.85×8 = 29€. VE(B) = 0.15×40 + 0.85×10 = 14,50€. Par
 
 ---
 
-### Question 149 (ID: ev-3)
+### Question 2 (ID: ev-3)
 
 **Type:** Choix multiple
 
@@ -3141,7 +3345,7 @@ VE(A) = 0.10×200 + 0.90×12 = 30,80€. VE(B) = 0.10×60 + 0.90×15 = 19,50€.
 
 ---
 
-### Question 150 (ID: ev-4)
+### Question 3 (ID: ev-4)
 
 **Type:** Choix multiple
 
@@ -3167,33 +3371,7 @@ VE(A) = 0,75€. VE(B) = 0.40×2,50 = 1,00€. Pari B est optimal.
 
 ---
 
-### Question 151 (ID: ev-5)
-
-**Type:** Choix multiple
-
-**Question:**
-
-Quel pari préférez-vous ?
-
-**Pari A** : 35% de chances de gagner 800€ et 65% de chances de gagner 50€
-**Pari B** : 35% de chances de gagner 200€ et 65% de chances de gagner 400€
-
-**Options:**
-
-a. Pari A
-b. Pari B
-
-**Réponse correcte:** b
-
-**Explication:**
-
-VE(A) = 0.35×800 + 0.65×50 = 312,50€. VE(B) = 0.35×200 + 0.65×400 = 330€. Pari B est légèrement meilleur.
-
-**Points:** 0.42
-
----
-
-### Question 152 (ID: ev-6)
+### Question 4 (ID: ev-6)
 
 **Type:** Choix multiple
 
@@ -3219,7 +3397,7 @@ VE(A) = 0.20×500 + 0.80×20 = 116€. VE(B) = 0.20×100 + 0.80×80 = 84€. Par
 
 ---
 
-### Question 153 (ID: ev-7)
+### Question 5 (ID: ev-7)
 
 **Type:** Choix multiple
 
@@ -3245,59 +3423,7 @@ VE(A) = 0.50×300 + 0.50×100 = 200€. VE(B) = 0.50×250 + 0.50×150 = 200€. 
 
 ---
 
-### Question 154 (ID: ev-8)
-
-**Type:** Choix multiple
-
-**Question:**
-
-Quel pari préférez-vous ?
-
-**Pari A** : 30% de chances de gagner 1 000€ et 70% de chances de gagner 50€
-**Pari B** : 30% de chances de gagner 400€ et 70% de chances de gagner 200€
-
-**Options:**
-
-a. Pari A
-b. Pari B
-
-**Réponse correcte:** a
-
-**Explication:**
-
-VE(A) = 0.30×1000 + 0.70×50 = 335€. VE(B) = 0.30×400 + 0.70×200 = 260€. Pari A est optimal.
-
-**Points:** 0.42
-
----
-
-### Question 155 (ID: ev-9)
-
-**Type:** Choix multiple
-
-**Question:**
-
-Quel pari préférez-vous ?
-
-**Pari A** : 5% de chances de gagner 1 000€ et 95% de chances de gagner 10€
-**Pari B** : 5% de chances de gagner 200€ et 95% de chances de gagner 20€
-
-**Options:**
-
-a. Pari A
-b. Pari B
-
-**Réponse correcte:** a
-
-**Explication:**
-
-VE(A) = 0.05×1000 + 0.95×10 = 59,50€. VE(B) = 0.05×200 + 0.95×20 = 29€. Pari A est optimal.
-
-**Points:** 0.42
-
----
-
-### Question 156 (ID: ev-10)
+### Question 6 (ID: ev-10)
 
 **Type:** Choix multiple
 
@@ -3323,63 +3449,11 @@ VE(A) = 0.60×200 + 0.40×50 = 140€. VE(B) = 0.60×150 + 0.40×100 = 130€. P
 
 ---
 
-### Question 157 (ID: ev-11)
-
-**Type:** Choix multiple
-
-**Question:**
-
-Quel pari préférez-vous ?
-
-**Pari A** : 80% de chances de gagner 100€ et 20% de chances de gagner 10€
-**Pari B** : 80% de chances de gagner 90€ et 20% de chances de gagner 30€
-
-**Options:**
-
-a. Pari A
-b. Pari B
-
-**Réponse correcte:** a
-
-**Explication:**
-
-VE(A) = 0.80×100 + 0.20×10 = 82€. VE(B) = 0.80×90 + 0.20×30 = 78€. Pari A est légèrement meilleur.
-
-**Points:** 0.42
-
----
-
-### Question 158 (ID: ev-12)
-
-**Type:** Choix multiple
-
-**Question:**
-
-Quel pari préférez-vous ?
-
-**Pari A** : 45% de chances de gagner 600€ et 55% de chances de gagner 100€
-**Pari B** : 45% de chances de gagner 300€ et 55% de chances de gagner 250€
-
-**Options:**
-
-a. Pari A
-b. Pari B
-
-**Réponse correcte:** a
-
-**Explication:**
-
-VE(A) = 0.45×600 + 0.55×100 = 325€. VE(B) = 0.45×300 + 0.55×250 = 272,50€. Pari A est optimal.
-
-**Points:** 0.42
-
----
-
 ## Coûts Irrécupérables (4 items)
 
 **Points:** 3 | **Temps:** 4 min
 
-### Question 159 (ID: sunk-1)
+### Question 1 (ID: sunk-1)
 
 **Type:** Choix multiple
 
@@ -3405,7 +3479,7 @@ Les 80€ sont un coût irrécupérable (sunk cost). La décision rationnelle co
 
 ---
 
-### Question 160 (ID: sunk-2)
+### Question 2 (ID: sunk-2)
 
 **Type:** Choix multiple
 
@@ -3434,7 +3508,7 @@ Arrêter est rationnel. Les 10 000€ sont perdus quoi qu'il arrive (sunk cost).
 
 ---
 
-### Question 161 (ID: sunk-3)
+### Question 3 (ID: sunk-3)
 
 **Type:** Choix multiple
 
@@ -3460,7 +3534,7 @@ Commander est rationnel. Les 3 heures sont un sunk cost. Le choix est maintenant
 
 ---
 
-### Question 162 (ID: sunk-4)
+### Question 4 (ID: sunk-4)
 
 **Type:** Choix multiple
 
