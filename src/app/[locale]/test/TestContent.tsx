@@ -91,6 +91,45 @@ export default function TestContent() {
     }
   }, [searchParams, session, isInitialized, resetTest, startTest, updateModules, router, locale]);
 
+  // Protection contre le bouton retour du navigateur
+  useEffect(() => {
+    if (!session || session.completedAt) {
+      return;
+    }
+
+    // Ajouter une entrée dans l'historique pour intercepter le bouton retour
+    window.history.pushState(null, '', window.location.href);
+
+    const handlePopState = (event: PopStateEvent) => {
+      event.preventDefault();
+
+      const confirmMessage = t('confirmExitMessage');
+      const shouldExit = window.confirm(confirmMessage);
+
+      if (shouldExit) {
+        // L'utilisateur veut vraiment quitter
+        window.history.back();
+      } else {
+        // L'utilisateur ne veut pas quitter, on remet une entrée dans l'historique
+        window.history.pushState(null, '', window.location.href);
+      }
+    };
+
+    const handleBeforeUnload = (event: BeforeUnloadEvent) => {
+      // Protection contre la fermeture de l'onglet/fenêtre
+      event.preventDefault();
+      event.returnValue = ''; // Chrome nécessite returnValue pour afficher la confirmation
+    };
+
+    window.addEventListener('popstate', handlePopState);
+    window.addEventListener('beforeunload', handleBeforeUnload);
+
+    return () => {
+      window.removeEventListener('popstate', handlePopState);
+      window.removeEventListener('beforeunload', handleBeforeUnload);
+    };
+  }, [session, t]);
+
   if (!isInitialized || !session || !modules.length) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-white dark:bg-gray-950">

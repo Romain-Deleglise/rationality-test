@@ -131,6 +131,8 @@
     "timeRemaining": "Temps restant",
     "totalDuration": "Durée totale",
     "minutes": "minutes",
+    "confirmExit": "⚠️ Attention : Quitter le test maintenant ?",
+    "confirmExitMessage": "Vous êtes en train de passer le test. Si vous quittez maintenant, vous perdrez votre progression actuelle.\n\nUtilisez le bouton \"Précédent\" en bas de page pour revenir à la question précédente.\n\nÊtes-vous sûr de vouloir quitter le test ?",
     "rankingInstructions": "✋ Glissez-déposez ou utilisez les flèches ▲▼ pour réordonner.",
     "rankingMostLikely": "1 = le plus probable.",
     "yourAnswer": "Votre réponse",
