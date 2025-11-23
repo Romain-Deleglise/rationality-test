@@ -497,14 +497,14 @@
         {
           "id": "syllogism-2",
           "type": "multiple-choice",
-          "text": "Premise 1: All fish are bictodes. Premise 2: No shark is a bictode. Conclusion: No shark is a fish.",
+          "text": "Premise 1: All fruits are sweet. Premise 2: No lemon is sweet. Conclusion: No lemon is a fruit.",
           "options": [
             "The conclusion follows logically from the premises",
             "The conclusion does NOT follow logically from the premises"
           ],
           "correct": 0,
           "points": 0.5,
-          "explanation": "Logically valid (AEE2). The conclusion follows from the premises, even if it is false in reality. Inconsistent syllogism."
+          "explanation": "Logically valid (AEE2). The conclusion follows from the premises, even if it is false in reality. Inconsistent syllogism (validity ≠ believability)."
         },
         {
           "id": "syllogism-3",
@@ -581,14 +581,14 @@
         {
           "id": "syllogism-9",
           "type": "multiple-choice",
-          "text": "Evaluate ONLY the LOGIC (not truth in reality):\n\nPremise 1: All plants are photosynthetic organisms.\nPremise 2: All ferns are photosynthetic organisms.\nConclusion: All ferns are plants.",
+          "text": "Evaluate ONLY the LOGIC (not truth in reality):\n\nPremise 1: All plants produce oxygen.\nPremise 2: All ferns produce oxygen.\nConclusion: All ferns are plants.",
           "options": [
             "The conclusion follows logically from the premises",
             "The conclusion does NOT follow logically from the premises"
           ],
           "correct": 1,
           "points": 0.5,
-          "explanation": "Logically invalid (AAA2). Even though the conclusion is true (ferns are plants), it doesn't logically follow from the premises. There could be other photosynthetic organisms that aren't plants (algae, certain bacteria). Consistent syllogism: validity ≠ believability."
+          "explanation": "Logically invalid (AAA2). Even though the conclusion is true (ferns are plants), it doesn't logically follow from the premises. There could be other organisms that produce oxygen and aren't plants (algae, certain bacteria). Consistent syllogism: validity ≠ believability."
         },
         {
           "id": "syllogism-10",
