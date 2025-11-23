@@ -717,7 +717,7 @@
           "correct": 2387,
           "anchorType": "low",
           "points": 0.5,
-          "explanation": "The actual distance is ~2387 miles. The anchor of 500 miles can influence your estimate downward. Points awarded by accuracy: estimate within ±30% = full points, ±60% = partial points. This question tests your ability to make reasonable estimates despite anchoring."
+          "explanation": "The actual distance is ~2387 miles. The anchor of 500 miles can influence your estimate downward. To score points, you must give an estimate far from the anchor (< 250 miles OR > 1000 miles), showing you were not influenced. This question measures resistance to anchoring, not knowledge of the correct answer."
         },
         {
           "id": "anchor-2",
@@ -727,7 +727,7 @@
           "correct": 687,
           "anchorType": "high",
           "points": 0.5,
-          "explanation": "The actual duration is ~687 days. The anchor of 1500 days can influence your estimate upward. Points awarded by accuracy: estimate within ±30% = full points, ±60% = partial points. This question tests your ability to make reasonable estimates despite anchoring."
+          "explanation": "The actual duration is ~687 days. The anchor of 1500 days can influence your estimate upward. To score points, you must give an estimate far from the anchor (< 750 days OR > 3000 days), showing you were not influenced. This question measures resistance to anchoring, not knowledge of the correct answer."
         },
         {
           "id": "anchor-3",
@@ -737,7 +737,7 @@
           "correct": 26,
           "anchorType": "low",
           "points": 0.5,
-          "explanation": "The actual population is ~26 million inhabitants. The anchor of 10 million can influence your estimate downward. Points awarded by accuracy: estimate within ±30% = full points, ±60% = partial points. This question tests your ability to make reasonable estimates despite anchoring."
+          "explanation": "The actual population is ~26 million inhabitants. The anchor of 10 million can influence your estimate downward. To score points, you must give an estimate far from the anchor (< 5 million OR > 20 million), showing you were not influenced. This question measures resistance to anchoring, not knowledge of the correct answer."
         },
         {
           "id": "anchor-4",
@@ -747,7 +747,7 @@
           "correct": 56.7,
           "anchorType": "high",
           "points": 0.5,
-          "explanation": "The actual temperature is ~56.7°C (Death Valley, 1913). The anchor of 70°C can influence your estimate upward. Points awarded by accuracy: estimate within ±30% = full points, ±60% = partial points. This question tests your ability to make reasonable estimates despite anchoring."
+          "explanation": "The actual temperature is ~56.7°C (Death Valley, 1913). The anchor of 70°C can influence your estimate upward. To score points, you must give an estimate far from the anchor (< 35°C OR > 140°C), showing you were not influenced. This question measures resistance to anchoring, not knowledge of the correct answer."
         },
         {
           "id": "anchor-5",
@@ -757,7 +757,7 @@
           "correct": 828,
           "anchorType": "low",
           "points": 0.5,
-          "explanation": "The actual height is ~828 meters. The anchor of 500 meters can influence your estimate downward. Points awarded by accuracy: estimate within ±30% = full points, ±60% = partial points. This question tests your ability to make reasonable estimates despite anchoring."
+          "explanation": "The actual height is ~828 meters. The anchor of 500 meters can influence your estimate downward. To score points, you must give an estimate far from the anchor (< 250 meters OR > 1000 meters), showing you were not influenced. This question measures resistance to anchoring, not knowledge of the correct answer."
         },
         {
           "id": "anchor-6",
@@ -767,7 +767,7 @@
           "correct": 1815,
           "anchorType": "low",
           "points": 0.5,
-          "explanation": "The actual year is 1815. The anchor of 1750 can influence your estimate downward. Points awarded by accuracy: estimate within ±30% = full points, ±60% = partial points. This question tests your ability to make reasonable estimates despite anchoring."
+          "explanation": "The actual year is 1815. The anchor of 1750 can influence your estimate downward. To score points, you must give an estimate far from the anchor (< 875 OR > 3500), showing you were not influenced. This question measures resistance to anchoring, not knowledge of the correct answer."
         }
       ]
     },

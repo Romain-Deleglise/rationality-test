@@ -89,7 +89,13 @@ export function scoreQuestion(
         if (effectiveQuestion.anchorType) {
           // For anchoring questions, we measure resistance to the anchor, not accuracy
           // We extract the anchor value from the question text (e.g., "500 miles" or "1500 jours")
-          const anchorMatch = effectiveQuestion.text.match(/(\d+)\s*(miles|jours|days|mètres|meters|habitants|millions?\s+d'habitants|°C|année|year)/i);
+          // Try matching with various patterns: "X unit", "avant X", "before X"
+          let anchorMatch = effectiveQuestion.text.match(/(\d+)\s*(miles|jours|days|mètres|meters|habitants|millions?\s+d'habitants|million\s+inhabitants|°C|année|year)/i);
+
+          // Special case for years without explicit unit (e.g., "avant 1750" or "before 1750")
+          if (!anchorMatch) {
+            anchorMatch = effectiveQuestion.text.match(/(?:avant|before)\s+(\d+)/i);
+          }
 
           if (anchorMatch) {
             const anchorValue = Number(anchorMatch[1]);

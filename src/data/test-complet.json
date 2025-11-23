@@ -717,7 +717,7 @@
           "correct": 2387,
           "anchorType": "low",
           "points": 0.5,
-          "explanation": "La distance réelle est ~2387 miles. L'ancre de 500 miles peut influencer votre estimation à la baisse. Points attribués selon la précision : estimation à ±30% = points complets, ±60% = points partiels. Cette question teste votre capacité à faire des estimations raisonnables malgré l'ancrage."
+          "explanation": "La distance réelle est ~2387 miles. L'ancre de 500 miles peut influencer votre estimation à la baisse. Pour marquer des points, vous devez donner une estimation très éloignée de l'ancre (< 250 miles OU > 1000 miles), montrant que vous n'avez pas été influencé. Cette question mesure la résistance à l'ancrage, pas la connaissance de la bonne réponse."
         },
         {
           "id": "anchor-2",
@@ -727,7 +727,7 @@
           "correct": 687,
           "anchorType": "high",
           "points": 0.5,
-          "explanation": "La durée réelle est 687 jours. L'ancre de 1500 jours peut influencer votre estimation à la hausse. Points attribués selon la précision : estimation à ±30% = points complets, ±60% = points partiels. Cette question teste votre capacité à faire des estimations raisonnables malgré l'ancrage."
+          "explanation": "La durée réelle est 687 jours. L'ancre de 1500 jours peut influencer votre estimation à la hausse. Pour marquer des points, vous devez donner une estimation très éloignée de l'ancre (< 750 jours OU > 3000 jours), montrant que vous n'avez pas été influencé. Cette question mesure la résistance à l'ancrage, pas la connaissance de la bonne réponse."
         },
         {
           "id": "anchor-3",
@@ -737,7 +737,7 @@
           "correct": 26,
           "anchorType": "low",
           "points": 0.5,
-          "explanation": "L'Australie compte environ 26 millions d'habitants. L'ancre de 10 millions peut influencer votre estimation à la baisse. Points attribués selon la précision : estimation à ±30% = points complets, ±60% = points partiels. Cette question teste votre capacité à faire des estimations raisonnables malgré l'ancrage."
+          "explanation": "L'Australie compte environ 26 millions d'habitants. L'ancre de 10 millions peut influencer votre estimation à la baisse. Pour marquer des points, vous devez donner une estimation très éloignée de l'ancre (< 5 millions OU > 20 millions), montrant que vous n'avez pas été influencé. Cette question mesure la résistance à l'ancrage, pas la connaissance de la bonne réponse."
         },
         {
           "id": "anchor-4",
@@ -747,7 +747,7 @@
           "correct": 56.7,
           "anchorType": "high",
           "points": 0.5,
-          "explanation": "Le record est de 56,7°C (Vallée de la Mort, 1913). L'ancre de 70°C peut influencer votre estimation à la hausse. Points attribués selon la précision : estimation à ±30% = points complets, ±60% = points partiels. Cette question teste votre capacité à faire des estimations raisonnables malgré l'ancrage."
+          "explanation": "Le record est de 56,7°C (Vallée de la Mort, 1913). L'ancre de 70°C peut influencer votre estimation à la hausse. Pour marquer des points, vous devez donner une estimation très éloignée de l'ancre (< 35°C OU > 140°C), montrant que vous n'avez pas été influencé. Cette question mesure la résistance à l'ancrage, pas la connaissance de la bonne réponse."
         },
         {
           "id": "anchor-5",
@@ -757,7 +757,7 @@
           "correct": 828,
           "anchorType": "low",
           "points": 0.5,
-          "explanation": "Le Burj Khalifa mesure 828 mètres. L'ancre de 500m peut influencer votre estimation à la baisse. Points attribués selon la précision : estimation à ±30% = points complets, ±60% = points partiels. Cette question teste votre capacité à faire des estimations raisonnables malgré l'ancrage."
+          "explanation": "Le Burj Khalifa mesure 828 mètres. L'ancre de 500 mètres peut influencer votre estimation à la baisse. Pour marquer des points, vous devez donner une estimation très éloignée de l'ancre (< 250 mètres OU > 1000 mètres), montrant que vous n'avez pas été influencé. Cette question mesure la résistance à l'ancrage, pas la connaissance de la bonne réponse."
         },
         {
           "id": "anchor-6",
@@ -767,7 +767,7 @@
           "correct": 1815,
           "anchorType": "low",
           "points": 0.5,
-          "explanation": "La bataille de Waterloo date de 1815. L'ancre de 1750 peut influencer votre estimation à la baisse. Points attribués selon la précision : estimation à ±30% = points complets, ±60% = points partiels. Cette question teste votre capacité à faire des estimations raisonnables malgré l'ancrage."
+          "explanation": "La bataille de Waterloo date de 1815. L'ancre de 1750 peut influencer votre estimation à la baisse. Pour marquer des points, vous devez donner une estimation très éloignée de l'ancre (< 875 OU > 3500), montrant que vous n'avez pas été influencé. Cette question mesure la résistance à l'ancrage, pas la connaissance de la bonne réponse."
         }
       ]
     },
