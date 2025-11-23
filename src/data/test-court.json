@@ -269,13 +269,13 @@
           "text": "Données collectées sur 200 jours :\n\n| Météo | Embouteillages | Pas d'embouteillages |\n|-------|----------------|----------------------|\n| Pluie | 80 jours | 20 jours |\n| Beau temps | 40 jours | 60 jours |\n\nLa pluie cause-t-elle les embouteillages ?",
           "options": [
             "Oui, 80 cas de pluie avec embouteillages",
-            "Oui, P(Embouteillages|Pluie) = 80% > P(Embouteillages|Beau) = 40%",
+            "Oui, P(Embouteillages|Pluie) (la probabilité d'avoir des embouteillages sachant qu'il pleut) = 80% > P(Embouteillages|Beau) (la probabilité d'avoir des embouteillages sachant qu'il fait beau) = 40%",
             "Non, pas de relation claire",
             "Impossible à dire"
           ],
           "correct": 1,
           "points": 1,
-          "explanation": "Covariation : P(E|Pluie) = 80/100 = 80% vs P(E|Beau) = 40/100 = 40%. La pluie augmente la probabilité d'embouteillages."
+          "explanation": "Covariation : P(E|Pluie) (la probabilité d'avoir des embouteillages sachant qu'il pleut) = 80/100 = 80% vs P(E|Beau) (la probabilité d'avoir des embouteillages sachant qu'il fait beau) = 40/100 = 40%. La pluie augmente la probabilité d'embouteillages."
         },
         {
           "id": "falsification-1",
