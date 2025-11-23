@@ -1313,8 +1313,8 @@
           "text": "La science a créé plus de problèmes qu'elle n'en a résolu.",
           "reverse": false,
           "points": 0.38,
-          "optimal": 1,
-          "explanation": "La science a considérablement amélioré la qualité de vie (médecine, agriculture, assainissement, technologie). Bien qu'elle crée parfois de nouveaux défis, le bilan global est largement positif."
+          "optimal": 2,
+          "explanation": "La science a considérablement amélioré la qualité de vie (médecine, agriculture, assainissement, technologie). Bien qu'elle crée parfois de nouveaux défis (pollution, armes nucléaires), le bilan global est largement positif. Une position nuancée reconnaît à la fois les bénéfices massifs et certains problèmes créés."
         }
       ]
     },
@@ -1390,11 +1390,11 @@
         {
           "id": "conspiracy-8",
           "type": "likert",
-          "text": "Des technologies de contrôle mental sont utilisées sur la population.",
+          "text": "Des technologies secrètes de contrôle mental télépathique existent.",
           "reverse": false,
           "points": 0.42,
           "optimal": 1,
-          "explanation": "Il n'existe aucune preuve scientifique de technologies de contrôle mental à grande échelle. Les neurosciences montrent que le contrôle mental tel que décrit par les conspirationnistes est scientifiquement impossible avec la technologie actuelle."
+          "explanation": "Il n'existe aucune preuve scientifique de technologies de contrôle mental télépathique. Les neurosciences montrent que la télépathie et le contrôle mental à distance sont scientifiquement impossibles avec nos connaissances actuelles de la physique et de la biologie."
         },
         {
           "id": "conspiracy-9",
@@ -1417,11 +1417,11 @@
         {
           "id": "conspiracy-11",
           "type": "likert",
-          "text": "Des expérimentations médicales ou scientifiques secrètes sont menées sur les citoyens à leur insu.",
+          "text": "Des gouvernements mènent actuellement des expérimentations médicales secrètes sur leurs citoyens à leur insu.",
           "reverse": false,
           "points": 0.42,
           "optimal": 1,
-          "explanation": "Bien que des expérimentations contraires à l'éthique aient existé historiquement (Tuskegee, MKUltra), les cadres éthiques modernes et la surveillance rendent de telles pratiques extrêmement difficiles. Généraliser cela en complot massif actuel est injustifié et relève de la pensée conspirationniste."
+          "explanation": "Bien que des expérimentations contraires à l'éthique aient existé historiquement (Tuskegee, MKUltra), les cadres éthiques modernes, la surveillance institutionnelle et la transparence rendent de telles pratiques extrêmement difficiles aujourd'hui. Affirmer que cela se produit actuellement de manière généralisée sans preuve relève de la pensée conspirationniste."
         }
       ]
     },

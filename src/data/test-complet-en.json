@@ -1293,8 +1293,8 @@
           "text": "Science has created more problems than it has solved.",
           "reverse": false,
           "points": 0.38,
-          "optimal": 1,
-          "explanation": "Science has vastly improved quality of life (medicine, agriculture, sanitation, technology). While it sometimes creates new challenges, the overall balance is overwhelmingly positive."
+          "optimal": 2,
+          "explanation": "Science has vastly improved quality of life (medicine, agriculture, sanitation, technology). While it sometimes creates new challenges (pollution, nuclear weapons), the overall balance is overwhelmingly positive. A nuanced position recognizes both the massive benefits and some problems created."
         }
       ]
     },
@@ -1356,9 +1356,11 @@
         {
           "id": "conspiracy-8",
           "type": "likert",
-          "text": "Mind control technologies are being used on the population.",
+          "text": "Secret telepathic mind control technologies exist.",
           "reverse": false,
-          "points": 0.42
+          "points": 0.42,
+          "optimal": 1,
+          "explanation": "There is no scientific evidence for telepathic mind control technologies. Neuroscience shows that telepathy and remote mind control are scientifically impossible with our current understanding of physics and biology."
         },
         {
           "id": "conspiracy-9",
@@ -1377,9 +1379,11 @@
         {
           "id": "conspiracy-11",
           "type": "likert",
-          "text": "Secret medical or scientific experiments are conducted on citizens without their knowledge.",
+          "text": "Governments are currently conducting secret medical experiments on their citizens without their knowledge.",
           "reverse": false,
-          "points": 0.42
+          "points": 0.42,
+          "optimal": 1,
+          "explanation": "While unethical experiments existed historically (Tuskegee, MKUltra), modern ethical frameworks, institutional oversight, and transparency make such practices extremely difficult today. Claiming this is currently happening on a widespread scale without evidence is unjustified and reflects conspiratorial thinking."
         }
       ]
     },
