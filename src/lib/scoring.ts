@@ -143,15 +143,13 @@ export function scoreQuestion(
           break;
         }
 
+        // CART Appendix scoring: measure calibration, not precision
+        // If the interval contains the true value → full points
+        // If not → 0 points
+        // No penalty for wide intervals (shows good calibration if uncertain)
         const contains = min <= target && target <= max;
-
-        if (contains) {
-          const width = max - min;
-          const expectedWidth = Number(effectiveQuestion.tolerance || 100);
-          const wellCalibrated = width <= expectedWidth * 2;
-          earned = wellCalibrated ? possible : possible * 0.5;
-          correct = true;
-        }
+        earned = contains ? possible : 0;
+        correct = contains;
         break;
 
       case 'ranking':
