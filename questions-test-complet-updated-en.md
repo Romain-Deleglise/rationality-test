@@ -1270,11 +1270,11 @@ The actual duration is ~687 days. The anchor of 1500 days can influence your est
 
 **Question:**
 
-Is Australia's population greater than 10 million inhabitants? In your opinion, what is the exact population?
+Is a cheetah's maximum speed greater than 45 km/h? What do you think this exact speed is?
 
 **Explanation:**
 
-The actual population is ~26 million inhabitants. The anchor of 10 million can influence your estimate downward. Points awarded by accuracy: estimate within ±30% = full points, ±60% = partial points. This question tests your ability to make reasonable estimates despite anchoring.
+A cheetah's maximum speed is approximately 110 km/h. The anchor of 45 km/h can influence your estimate downward. People resistant to the anchoring effect give an estimate independent of the presented anchor.
 
 **Points:** 0.5
 
@@ -1286,11 +1286,11 @@ The actual population is ~26 million inhabitants. The anchor of 10 million can i
 
 **Question:**
 
-Is the hottest temperature ever recorded on Earth greater than 70°C? In your opinion, what is this temperature?
+Is the average weight of an adult male African elephant greater than 1.5 tons? What do you think this exact weight is?
 
 **Explanation:**
 
-The actual temperature is ~56.7°C (Death Valley, 1913). The anchor of 70°C can influence your estimate upward. Points awarded by accuracy: estimate within ±30% = full points, ±60% = partial points. This question tests your ability to make reasonable estimates despite anchoring.
+An adult male African elephant weighs on average about 6 tons. The anchor of 1.5 tons can influence your estimate downward. People resistant to the anchoring effect give an estimate independent of the presented anchor.
 
 **Points:** 0.5
 
@@ -1302,11 +1302,11 @@ The actual temperature is ~56.7°C (Death Valley, 1913). The anchor of 70°C can
 
 **Question:**
 
-Is the Burj Khalifa in Dubai taller than 500 meters? In your opinion, what is its exact height?
+Is the cruising speed of a commercial airliner greater than 340 km/h? What do you think this exact speed is?
 
 **Explanation:**
 
-The actual height is ~828 meters. The anchor of 500 meters can influence your estimate downward. Points awarded by accuracy: estimate within ±30% = full points, ±60% = partial points. This question tests your ability to make reasonable estimates despite anchoring.
+The cruising speed of a commercial airliner is approximately 900 km/h. The anchor of 340 km/h can influence your estimate downward. People resistant to the anchoring effect give an estimate independent of the presented anchor.
 
 **Points:** 0.5
 
@@ -1318,11 +1318,11 @@ The actual height is ~828 meters. The anchor of 500 meters can influence your es
 
 **Question:**
 
-Did the Battle of Waterloo take place before 1750? In what year exactly?
+Is the number of bones in an adult human body greater than 65? What do you think this exact number is?
 
 **Explanation:**
 
-The actual year is 1815. The anchor of 1750 can influence your estimate downward. Points awarded by accuracy: estimate within ±30% = full points, ±60% = partial points. This question tests your ability to make reasonable estimates despite anchoring.
+The adult human body contains 206 bones. The anchor of 65 can influence your estimate downward. People resistant to the anchoring effect give an estimate independent of the presented anchor.
 
 **Points:** 0.5
 

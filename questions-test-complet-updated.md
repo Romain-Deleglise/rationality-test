@@ -1278,11 +1278,11 @@ La durée réelle est 687 jours. L'ancre de 1500 jours peut influencer votre est
 
 **Question:**
 
-La population de l'Australie est-elle supérieure à 10 millions d'habitants ? Quelle est selon vous la population exacte ?
+La vitesse maximale d'un guépard est-elle supérieure à 45 km/h ? Quelle est selon vous cette vitesse exacte ?
 
 **Explication:**
 
-L'Australie compte environ 26 millions d'habitants. L'ancre de 10 millions peut influencer votre estimation à la baisse. Pour marquer des points, vous devez donner une estimation très éloignée de l'ancre (< 5 millions OU > 20 millions), montrant que vous n'avez pas été influencé. Cette question mesure la résistance à l'ancrage, pas la connaissance de la bonne réponse.
+La vitesse maximale d'un guépard est d'environ 110 km/h. L'ancre de 45 km/h peut influencer votre estimation à la baisse. Les personnes résistant à l'effet d'ancrage donnent une estimation indépendante de l'ancre présentée.
 
 **Points:** 0.5
 
@@ -1294,11 +1294,11 @@ L'Australie compte environ 26 millions d'habitants. L'ancre de 10 millions peut 
 
 **Question:**
 
-La température la plus chaude jamais enregistrée sur Terre est-elle supérieure à 70°C ? Quelle est selon vous cette température ?
+Le poids moyen d'un éléphant d'Afrique mâle adulte est-il supérieur à 1,5 tonnes ? Quel est selon vous ce poids exact ?
 
 **Explication:**
 
-Le record est de 56,7°C (Vallée de la Mort, 1913). L'ancre de 70°C peut influencer votre estimation à la hausse. Pour marquer des points, vous devez donner une estimation très éloignée de l'ancre (< 35°C OU > 140°C), montrant que vous n'avez pas été influencé. Cette question mesure la résistance à l'ancrage, pas la connaissance de la bonne réponse.
+Un éléphant d'Afrique mâle adulte pèse en moyenne environ 6 tonnes. L'ancre de 1,5 tonnes peut influencer votre estimation à la baisse. Les personnes résistant à l'effet d'ancrage donnent une estimation indépendante de l'ancre présentée.
 
 **Points:** 0.5
 
@@ -1310,11 +1310,11 @@ Le record est de 56,7°C (Vallée de la Mort, 1913). L'ancre de 70°C peut influ
 
 **Question:**
 
-Le Burj Khalifa à Dubaï mesure-t-il plus de 500 mètres ? Quelle est selon vous sa hauteur exacte ?
+La vitesse de croisière d'un avion de ligne est-elle supérieure à 340 km/h ? Quelle est selon vous cette vitesse exacte ?
 
 **Explication:**
 
-Le Burj Khalifa mesure 828 mètres. L'ancre de 500 mètres peut influencer votre estimation à la baisse. Pour marquer des points, vous devez donner une estimation très éloignée de l'ancre (< 250 mètres OU > 1000 mètres), montrant que vous n'avez pas été influencé. Cette question mesure la résistance à l'ancrage, pas la connaissance de la bonne réponse.
+La vitesse de croisière d'un avion de ligne est d'environ 900 km/h. L'ancre de 340 km/h peut influencer votre estimation à la baisse. Les personnes résistant à l'effet d'ancrage donnent une estimation indépendante de l'ancre présentée.
 
 **Points:** 0.5
 
@@ -1326,11 +1326,11 @@ Le Burj Khalifa mesure 828 mètres. L'ancre de 500 mètres peut influencer votre
 
 **Question:**
 
-La bataille de Waterloo a-t-elle eu lieu avant 1750 ? En quelle année exactement ?
+Le nombre d'os dans le corps humain adulte est-il supérieur à 65 ? Quel est selon vous ce nombre exact ?
 
 **Explication:**
 
-La bataille de Waterloo date de 1815. L'ancre de 1750 peut influencer votre estimation à la baisse. Pour marquer des points, vous devez donner une estimation très éloignée de l'ancre (< 875 OU > 3500), montrant que vous n'avez pas été influencé. Cette question mesure la résistance à l'ancrage, pas la connaissance de la bonne réponse.
+Le corps humain adulte contient 206 os. L'ancre de 65 peut influencer votre estimation à la baisse. Les personnes résistant à l'effet d'ancrage donnent une estimation indépendante de l'ancre présentée.
 
 **Points:** 0.5
 

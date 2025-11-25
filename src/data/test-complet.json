@@ -732,42 +732,42 @@
         {
           "id": "anchor-3",
           "type": "number",
-          "text": "La population de l'Australie est-elle supérieure à 10 millions d'habitants ? Quelle est selon vous la population exacte ?",
-          "unit": "millions d'habitants",
-          "correct": 26,
+          "text": "La vitesse maximale d'un guépard est-elle supérieure à 45 km/h ? Quelle est selon vous cette vitesse exacte ?",
+          "unit": "km/h",
+          "correct": 110,
           "anchorType": "low",
           "points": 0.5,
-          "explanation": "L'Australie compte environ 26 millions d'habitants. L'ancre de 10 millions peut influencer votre estimation à la baisse. Pour marquer des points, vous devez donner une estimation très éloignée de l'ancre (< 5 millions OU > 20 millions), montrant que vous n'avez pas été influencé. Cette question mesure la résistance à l'ancrage, pas la connaissance de la bonne réponse."
+          "explanation": "La vitesse maximale d'un guépard est d'environ 110 km/h. L'ancre de 45 km/h peut influencer votre estimation à la baisse. Les personnes résistant à l'effet d'ancrage donnent une estimation indépendante de l'ancre présentée."
         },
         {
           "id": "anchor-4",
           "type": "number",
-          "text": "La température la plus chaude jamais enregistrée sur Terre est-elle supérieure à 70°C ? Quelle est selon vous cette température ?",
-          "unit": "°C",
-          "correct": 56.7,
-          "anchorType": "high",
+          "text": "Le poids moyen d'un éléphant d'Afrique mâle adulte est-il supérieur à 1,5 tonnes ? Quel est selon vous ce poids exact ?",
+          "unit": "tonnes",
+          "correct": 6,
+          "anchorType": "low",
           "points": 0.5,
-          "explanation": "Le record est de 56,7°C (Vallée de la Mort, 1913). L'ancre de 70°C peut influencer votre estimation à la hausse. Pour marquer des points, vous devez donner une estimation très éloignée de l'ancre (< 35°C OU > 140°C), montrant que vous n'avez pas été influencé. Cette question mesure la résistance à l'ancrage, pas la connaissance de la bonne réponse."
+          "explanation": "Un éléphant d'Afrique mâle adulte pèse en moyenne environ 6 tonnes. L'ancre de 1,5 tonnes peut influencer votre estimation à la baisse. Les personnes résistant à l'effet d'ancrage donnent une estimation indépendante de l'ancre présentée."
         },
         {
           "id": "anchor-5",
           "type": "number",
-          "text": "Le Burj Khalifa à Dubaï mesure-t-il plus de 500 mètres ? Quelle est selon vous sa hauteur exacte ?",
-          "unit": "mètres",
-          "correct": 828,
+          "text": "La vitesse de croisière d'un avion de ligne est-elle supérieure à 340 km/h ? Quelle est selon vous cette vitesse exacte ?",
+          "unit": "km/h",
+          "correct": 900,
           "anchorType": "low",
           "points": 0.5,
-          "explanation": "Le Burj Khalifa mesure 828 mètres. L'ancre de 500 mètres peut influencer votre estimation à la baisse. Pour marquer des points, vous devez donner une estimation très éloignée de l'ancre (< 250 mètres OU > 1000 mètres), montrant que vous n'avez pas été influencé. Cette question mesure la résistance à l'ancrage, pas la connaissance de la bonne réponse."
+          "explanation": "La vitesse de croisière d'un avion de ligne est d'environ 900 km/h. L'ancre de 340 km/h peut influencer votre estimation à la baisse. Les personnes résistant à l'effet d'ancrage donnent une estimation indépendante de l'ancre présentée."
         },
         {
           "id": "anchor-6",
           "type": "number",
-          "text": "La bataille de Waterloo a-t-elle eu lieu avant 1750 ? En quelle année exactement ?",
-          "unit": "année",
-          "correct": 1815,
+          "text": "Le nombre d'os dans le corps humain adulte est-il supérieur à 65 ? Quel est selon vous ce nombre exact ?",
+          "unit": "os",
+          "correct": 206,
           "anchorType": "low",
           "points": 0.5,
-          "explanation": "La bataille de Waterloo date de 1815. L'ancre de 1750 peut influencer votre estimation à la baisse. Pour marquer des points, vous devez donner une estimation très éloignée de l'ancre (< 875 OU > 3500), montrant que vous n'avez pas été influencé. Cette question mesure la résistance à l'ancrage, pas la connaissance de la bonne réponse."
+          "explanation": "Le corps humain adulte contient 206 os. L'ancre de 65 peut influencer votre estimation à la baisse. Les personnes résistant à l'effet d'ancrage donnent une estimation indépendante de l'ancre présentée."
         }
       ]
     },
