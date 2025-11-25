@@ -89,12 +89,13 @@ function generateCorrectAnswer(question: Question): Answer {
       case 'multiple-choice-confidence':
         return {
           choice: question.correct,
-          confidence: 90
+          confidence: 100 // Perfect calibration: 100% confidence for correct answers
         };
 
       case 'aggregate-estimate':
-        // Pour les questions d'estimation agrégée, on donne une estimation prudente
-        return question.aggregateTotal ? Math.floor(question.aggregateTotal * 0.8) : 0;
+        // Pour les questions d'estimation agrégée avec toutes bonnes réponses,
+        // on estime exactement ou légèrement en dessous pour être parfaitement calibré
+        return question.aggregateTotal ? question.aggregateTotal : 0;
 
       default:
         console.warn(`${YELLOW}Type de question non géré: ${question.type}${RESET}`);
