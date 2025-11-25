@@ -54,10 +54,10 @@
           "text": "At roulette, red has come up 7 times in a row. Which color is most likely to come up on the next spin?",
           "options": [
             "Red",
-            "Black",
-            "Both have the same chances"
+            "Both have the same chances",
+            "Black"
           ],
-          "correct": 2,
+          "correct": 1,
           "points": 1,
           "explanation": "Each spin is independent. Past results do not influence future spins. This is the 'gambler's fallacy' error."
         },
@@ -80,10 +80,10 @@
           "text": "A couple has 4 daughters. They want a fifth child. What is the probability that it will be a boy?",
           "options": [
             "More than 50% (they are 'due' for a boy)",
-            "Less than 50% (they tend to have girls)",
-            "About 50% (independent of previous births)"
+            "About 50% (independent of previous births)",
+            "Less than 50% (they tend to have girls)"
           ],
-          "correct": 2,
+          "correct": 1,
           "points": 1,
           "explanation": "Each birth is independent. Previous births do not affect the probability of the next child (~50% boy/girl)."
         },
@@ -377,11 +377,11 @@
           "text": "To test whether a new drug reduces fever, which experiment is best?",
           "options": [
             "Give the drug to feverish patients and measure temperature 2h later",
-            "Give the drug to one group and a placebo to a control group, double-blind",
             "Ask patients if they feel better after the drug",
+            "Give the drug to one group and a placebo to a control group, double-blind",
             "Compare with other existing drugs"
           ],
-          "correct": 1,
+          "correct": 2,
           "points": 1,
           "explanation": "Randomized controlled double-blind trial: gold standard for testing causal efficacy."
         },
@@ -1572,11 +1572,11 @@
           "type": "multiple-choice",
           "text": "A study shows that people who take vitamins daily live on average longer than those who don't.\n\nCan we conclude that taking vitamins increases life expectancy?",
           "options": [
-            "Yes, the difference in life expectancy proves the effect of vitamins",
             "No, because people who take vitamins probably already have a healthier lifestyle",
+            "Yes, the difference in life expectancy proves the effect of vitamins",
             "Yes, but only for certain types of vitamins"
           ],
-          "correct": 1,
+          "correct": 0,
           "points": 1,
           "explanation": "No, we cannot conclude a causal effect. People who take vitamins daily are probably more health-conscious in general: they may exercise more, eat better, consult a doctor regularly, etc. It's this overall healthier lifestyle that could explain their longevity, not necessarily the vitamins themselves. This is a classic selection bias."
         },
@@ -1598,12 +1598,12 @@
           "type": "multiple-choice",
           "text": "A company claims their new dietary supplement improves memory. In their study, 80% of participants who took the supplement for 3 months reported having better memory.\n\nWhat would be the best way to verify this claim?",
           "options": [
-            "Increase the number of participants",
             "Compare with a group that took a placebo",
+            "Increase the number of participants",
             "Extend the study to 6 months",
             "Ask participants to keep a journal"
           ],
-          "correct": 1,
+          "correct": 0,
           "points": 1
         },
         {
@@ -1649,14 +1649,14 @@
           "type": "multiple-choice",
           "text": "You consult employment statistics for a region. You learn that in this region, **8% of the active population is unemployed**.\n\nHow do you evaluate the employment situation in this region?",
           "options": [
-            "Very favorable",
             "Favorable",
+            "Very favorable",
             "Slightly favorable",
             "Slightly unfavorable",
             "Unfavorable",
             "Very unfavorable"
           ],
-          "correct": 1,
+          "correct": 0,
           "points": 0.6,
           "pairId": "frame-pair-1",
           "framingType": "negative"
@@ -1707,14 +1707,14 @@
           "type": "multiple-choice",
           "text": "A new car model has been tested. The report indicates the vehicle **experiences malfunctions 6% of the time**.\n\nWhat is your impression of the reliability of this vehicle?",
           "options": [
-            "Very favorable",
             "Favorable",
+            "Very favorable",
             "Slightly favorable",
             "Slightly unfavorable",
             "Unfavorable",
             "Very unfavorable"
           ],
-          "correct": 1,
+          "correct": 0,
           "points": 0.6,
           "pairId": "frame-pair-3",
           "framingType": "negative"
@@ -1741,14 +1741,14 @@
           "type": "multiple-choice",
           "text": "An airline announces that **0.3% of its flights experience a safety incident**.\n\nWhat do you think about this airline's safety?",
           "options": [
-            "Very safe",
             "Safe",
+            "Very safe",
             "Slightly safe",
             "Slightly risky",
             "Risky",
             "Very risky"
           ],
-          "correct": 1,
+          "correct": 0,
           "points": 0.6,
           "pairId": "frame-pair-4",
           "framingType": "negative"
@@ -1952,11 +1952,11 @@
           "type": "multiple-choice",
           "text": "You've invested €10,000 in a project for 6 months. After analysis, you realize the project will never be profitable. You can either:\n\n• Continue and lose €5,000 more before failure\n• Stop now and only lose the €10,000 already invested\n\nWhat to do?",
           "options": [
-            "Continue, otherwise the €10,000 will have been wasted for nothing",
             "Stop immediately to limit losses",
+            "Continue, otherwise the €10,000 will have been wasted for nothing",
             "Continue for 3 more months to be sure"
           ],
-          "correct": 1,
+          "correct": 0,
           "points": 0.75
         },
         {

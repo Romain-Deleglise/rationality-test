@@ -80,6 +80,7 @@ Créer un test de rationalité scientifiquement validé, accessible gratuitement
 - ✅ **Ranking** (classement par ordre de probabilité)
 - ✅ **Intervalles de confiance** (90% confidence intervals)
 - ✅ **Échelles de Likert** (7 points, accord/désaccord)
+- ✅ **Distribution équilibrée des réponses** - Les options ont été réorganisées pour éviter les patterns prévisibles (ex: 3+ réponses "c" consécutives)
 
 #### 🎲 **Randomisation Anti-Mémorisation** (NOUVEAU !)
 - **Valeurs numériques randomisées** dans les questions à chaque nouveau test
@@ -452,6 +453,8 @@ Le test de rationalité est **officiellement lancé** avec toutes les fonctionna
 - [x] **Sections éducatives** : Sources scientifiques, état de la recherche
 - [x] **PDF & Impression** : Export propre des résultats
 - [x] **Tests validés** : Version courte et complète testées bout en bout
+- [x] **Distribution équilibrée des réponses** : Options réorganisées pour éviter les patterns prévisibles *(Novembre 2025)*
+- [x] **Navigation améliorée** : Correction du bug de retour en arrière du navigateur *(Novembre 2025)*
 
 #### 📧 Configuration Email
 ```

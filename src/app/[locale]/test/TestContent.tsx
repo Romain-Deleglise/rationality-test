@@ -107,8 +107,8 @@ export default function TestContent() {
       const shouldExit = window.confirm(confirmMessage);
 
       if (shouldExit) {
-        // L'utilisateur veut vraiment quitter
-        window.history.back();
+        // L'utilisateur veut vraiment quitter - rediriger vers la page d'accueil
+        router.push(`/${locale}`);
       } else {
         // L'utilisateur ne veut pas quitter, on remet une entrée dans l'historique
         window.history.pushState(null, '', window.location.href);

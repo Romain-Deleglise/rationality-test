@@ -188,11 +188,11 @@
           "text": "An unpopular school principal is defended because absenteeism dropped 12% since her appointment. What evidence would best refute this claim?",
           "options": [
             "40% more absences are reported in surveys than in official records",
-            "Common sense says a principal has little impact on absenteeism",
             "Absenteeism rates in two neighboring cities dropped 18% during the same period",
+            "Common sense says a principal has little impact on absenteeism",
             "The superintendent had questionable business contacts"
           ],
-          "correct": 2,
+          "correct": 1,
           "points": 1,
           "explanation": "Comparison with a control group (similar cities) shows the decrease is general, not due to the principal."
         },
@@ -268,12 +268,12 @@
           "type": "multiple-choice",
           "text": "Data collected over 200 days:\n\n| Weather | Traffic jams | No traffic jams |\n|---------|--------------|------------------|\n| Rain | 80 days | 20 days |\n| Sunny | 40 days | 60 days |\n\nDoes rain cause traffic jams?",
           "options": [
-            "Yes, 80 cases of rain with traffic",
             "Yes, P(Traffic|Rain) (the probability of having traffic jams given that it's raining) = 80% > P(Traffic|Sunny) (the probability of having traffic jams given that it's sunny) = 40%",
+            "Yes, 80 cases of rain with traffic",
             "No, no clear relationship",
             "Impossible to say"
           ],
-          "correct": 1,
+          "correct": 0,
           "points": 1,
           "explanation": "Covariation: P(T|Rain) (the probability of having traffic jams given that it's raining) = 80/100 = 80% vs P(T|Sunny) (the probability of having traffic jams given that it's sunny) = 40/100 = 40%. Rain increases the probability of traffic jams."
         },
