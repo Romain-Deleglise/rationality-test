@@ -1,11 +1,11 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useParams } from 'next/navigation';
 import { useTranslations } from 'next-intl';
 import { ChevronDown, BookOpen, Clock, BarChart3, CheckCircle } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { track } from '@vercel/analytics';
 
 const AccordionItem = ({ title, children, defaultOpen = false }: {
@@ -54,6 +54,27 @@ export default function Home() {
   const locale = params.locale as string;
   const t = useTranslations('home');
 
+  // Scroll tracking for title effects
+  const { scrollY } = useScroll();
+
+  // Transform values based on scroll position
+  const titleY = useTransform(scrollY, [0, 300], [0, -50]); // Parallax effect
+  const titleRotateX = useTransform(scrollY, [0, 300], [0, 15]); // 3D rotation
+  const titleScale = useTransform(scrollY, [0, 300], [1, 0.85]); // Scale down
+  const titleOpacity = useTransform(scrollY, [0, 300], [1, 0.3]); // Fade out
+  const titleBlur = useTransform(scrollY, [0, 300], [0, 8]); // Blur effect
+
+  // Dynamic gradient hue rotation
+  const [gradientHue, setGradientHue] = useState(0);
+
+  useEffect(() => {
+    const unsubscribe = scrollY.on('change', (latest) => {
+      setGradientHue((latest * 0.5) % 360);
+    });
+
+    return () => unsubscribe();
+  }, [scrollY]);
+
   // Wikipedia base URL based on locale
   const wikipediaUrl = locale === 'fr' ? 'https://fr.wikipedia.org' : 'https://en.wikipedia.org';
 
@@ -72,6 +93,9 @@ export default function Home() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="text-center mb-16 sm:mb-20"
+          style={{
+            perspective: '1000px',
+          }}
         >
           <motion.div
             initial={{ scale: 0.9, opacity: 0 }}
@@ -80,19 +104,45 @@ export default function Home() {
             className="relative inline-block mb-8 px-4"
             style={{ overflow: 'visible', paddingBottom: '2rem' }}
           >
-            <h1
+            <motion.h1
               className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tight"
               style={{
                 overflow: 'visible',
                 lineHeight: '1.5',
-                paddingBottom: '1rem'
+                paddingBottom: '1rem',
+                y: titleY,
+                rotateX: titleRotateX,
+                scale: titleScale,
+                opacity: titleOpacity,
+                filter: useTransform(titleBlur, (value) => `blur(${value}px)`),
+                transformStyle: 'preserve-3d',
               }}
             >
-              <span className="block bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 dark:from-blue-400 dark:via-purple-400 dark:to-indigo-400 bg-clip-text text-transparent animate-gradient bg-[length:200%_auto]">
+              <motion.span
+                className="block bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 dark:from-blue-400 dark:via-purple-400 dark:to-indigo-400 bg-clip-text text-transparent animate-gradient bg-[length:200%_auto]"
+                style={{
+                  filter: `hue-rotate(${gradientHue}deg) saturate(1.3)`,
+                }}
+              >
                 {t('title')}
-              </span>
-            </h1>
-            <div className="absolute -inset-4 bg-gradient-to-r from-blue-600/20 via-purple-600/20 to-indigo-600/20 dark:from-blue-400/10 dark:via-purple-400/10 dark:to-indigo-400/10 blur-2xl -z-10 animate-pulse"></div>
+              </motion.span>
+            </motion.h1>
+
+            {/* Enhanced glow effect with scroll-reactive hue */}
+            <motion.div
+              className="absolute -inset-4 bg-gradient-to-r from-blue-600/20 via-purple-600/20 to-indigo-600/20 dark:from-blue-400/10 dark:via-purple-400/10 dark:to-indigo-400/10 blur-2xl -z-10"
+              style={{
+                filter: `hue-rotate(${gradientHue}deg)`,
+              }}
+              animate={{
+                opacity: [0.3, 0.7, 0.3],
+              }}
+              transition={{
+                duration: 3,
+                repeat: Infinity,
+                ease: 'easeInOut',
+              }}
+            />
           </motion.div>
 
           <motion.p
