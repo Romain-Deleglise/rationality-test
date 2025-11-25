@@ -3541,7 +3541,7 @@ VE(A) = 0.60×200 + 0.40×50 = 140€. VE(B) = 0.60×150 + 0.40×100 = 130€. P
 
 **Question:**
 
-Vous avez acheté un billet de concert à 80€. Le jour du concert, vous tombez malade (fièvre, fatigue). Le concert ne vous remboursera pas.
+Vous avez acheté un billet de concert à 80€. Le concert commence dans 1 heure, et vous tombez malade (fièvre, fatigue). Le concert ne vous remboursera pas, et il est trop tard pour vendre le billet.
 
 Que devriez-vous faire ?
 
@@ -3549,13 +3549,12 @@ Que devriez-vous faire ?
 
 a. Aller au concert quand même pour ne pas perdre les 80€
 b. Rester chez vous vous reposer, les 80€ sont déjà perdus
-c. Essayer de vendre le billet
 
-**Réponses correctes:** b, c
+**Réponse correcte:** b
 
 **Explication:**
 
-Les 80€ sont un coût irrécupérable (sunk cost). La décision rationnelle considère uniquement le futur. Deux options sont rationnelles : (1) Rester chez vous pour vous reposer et guérir, ou (2) Essayer de vendre le billet pour récupérer l'argent. L'important est de ne PAS aller au concert juste parce que vous avez payé.
+Les 80€ sont un coût irrécupérable (sunk cost). La décision rationnelle considère uniquement le futur : aller malade au concert vs rester chez vous pour guérir. Le passé (les 80€ déjà dépensés) ne doit pas influencer cette décision. Il est trop tard pour vendre le billet, donc cette option n'est pas disponible.
 
 **Points:** 0.75
 
@@ -3596,7 +3595,7 @@ Arrêter est rationnel. Les 10 000€ sont perdus quoi qu'il arrive (sunk cost).
 
 **Question:**
 
-Vous avez passé 3 heures à cuisiner un plat élaboré. En le goûtant, vous réalisez qu'il est raté (trop salé, immangeable). Vous pourriez commander à manger (15€, délicieux) ou forcer à manger votre plat raté.
+Vous avez passé 3 heures à cuisiner un plat élaboré. En le goûtant, vous réalisez qu'il est complètement raté (BEAUCOUP trop salé, absolument immangeable, impossible à corriger). Vous pourriez commander à manger (15€, délicieux).
 
 Que faire ?
 
@@ -3604,13 +3603,12 @@ Que faire ?
 
 a. Manger le plat raté pour ne pas gâcher les 3 heures de travail
 b. Commander à manger, les 3 heures sont déjà perdues
-c. Essayer de corriger le plat
 
-**Réponses correctes:** b, c
+**Réponse correcte:** b
 
 **Explication:**
 
-Les 3 heures de cuisine sont un sunk cost. Deux options sont rationnelles : (1) Commander à manger pour avoir un bon repas, ou (2) Essayer de corriger le plat si c'est possible (par exemple, diluer avec des ingrédients non salés). L'important est de ne PAS se forcer à manger quelque chose d'immangeable juste pour "ne pas gaspiller" le temps passé.
+Les 3 heures de cuisine sont un sunk cost. La décision rationnelle considère uniquement le futur : se forcer à manger quelque chose d'immangeable vs payer 15€ pour un bon repas. Le temps déjà passé ne doit pas influencer cette décision. Le plat étant impossible à corriger, cette option n'est pas disponible.
 
 **Points:** 0.75
 
