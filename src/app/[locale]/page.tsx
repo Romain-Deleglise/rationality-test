@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { useParams } from 'next/navigation';
 import { useTranslations } from 'next-intl';
 import { ChevronDown, BookOpen, Clock, BarChart3, CheckCircle } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { track } from '@vercel/analytics';
 
 const AccordionItem = ({ title, children, defaultOpen = false }: {
@@ -57,6 +57,14 @@ export default function Home() {
   // Wikipedia base URL based on locale
   const wikipediaUrl = locale === 'fr' ? 'https://fr.wikipedia.org' : 'https://en.wikipedia.org';
 
+  // Scroll tracking for lightweight title effects (mobile-optimized)
+  const { scrollY } = useScroll();
+
+  // Only use lightweight transforms: scale and opacity (no blur, no 3D rotation)
+  // These are GPU-accelerated and perform well on mobile
+  const titleScale = useTransform(scrollY, [0, 300], [1, 0.9]);
+  const titleOpacity = useTransform(scrollY, [0, 300], [1, 0.4]);
+
   return (
     <div className="min-h-screen relative overflow-hidden bg-gradient-to-br from-slate-50 via-blue-50/30 to-indigo-50/40 dark:from-gray-950 dark:via-blue-950/20 dark:to-indigo-950/30 transition-colors">
       {/* Animated background elements */}
@@ -80,19 +88,35 @@ export default function Home() {
             className="relative inline-block mb-8 px-4"
             style={{ overflow: 'visible', paddingBottom: '2rem' }}
           >
-            <h1
+            <motion.h1
               className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tight"
               style={{
                 overflow: 'visible',
                 lineHeight: '1.5',
-                paddingBottom: '1rem'
+                paddingBottom: '1rem',
+                scale: titleScale,
+                opacity: titleOpacity,
+                willChange: 'transform, opacity', // Hint browser for GPU optimization
               }}
             >
               <span className="block bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 dark:from-blue-400 dark:via-purple-400 dark:to-indigo-400 bg-clip-text text-transparent animate-gradient bg-[length:200%_auto]">
                 {t('title')}
               </span>
-            </h1>
-            <div className="absolute -inset-4 bg-gradient-to-r from-blue-600/20 via-purple-600/20 to-indigo-600/20 dark:from-blue-400/10 dark:via-purple-400/10 dark:to-indigo-400/10 blur-2xl -z-10 animate-pulse"></div>
+            </motion.h1>
+
+            {/* Enhanced glow effect - animated pulse */}
+            <motion.div
+              className="absolute -inset-4 bg-gradient-to-r from-blue-600/20 via-purple-600/20 to-indigo-600/20 dark:from-blue-400/10 dark:via-purple-400/10 dark:to-indigo-400/10 blur-2xl -z-10"
+              animate={{
+                opacity: [0.4, 0.7, 0.4],
+                scale: [1, 1.05, 1],
+              }}
+              transition={{
+                duration: 4,
+                repeat: Infinity,
+                ease: 'easeInOut',
+              }}
+            />
           </motion.div>
 
           <motion.p
@@ -226,7 +250,7 @@ export default function Home() {
               />
               <p className="text-gray-700 dark:text-gray-300 leading-relaxed text-justify">
                 {t('whatIsRationality.testDescription')}{' '}
-                <a href={`${wikipediaUrl}/wiki/Cognitive_bias`} target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 underline decoration-2 underline-offset-2 transition-colors font-medium">
+                <a href={locale === 'fr' ? 'https://fr.wikipedia.org/wiki/Biais_cognitif' : 'https://en.wikipedia.org/wiki/Cognitive_bias'} target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 underline decoration-2 underline-offset-2 transition-colors font-medium">
                   {t('whatIsRationality.cognitiveBiases')}
                 </a>
                 {t('whatIsRationality.andUpdating')}
