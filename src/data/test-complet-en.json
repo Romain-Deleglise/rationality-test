@@ -1,6 +1,6 @@
 {
   "version": "full",
-  "totalPoints": 102.02,
+  "totalPoints": 95.58,
   "estimatedTime": 87,
   "modules": [
     {
@@ -479,7 +479,7 @@
     {
       "id": "belief-bias",
       "name": "Belief Bias (12 items)",
-      "points": 8,
+      "points": 6,
       "time": 5,
       "questions": [
         {
@@ -1136,7 +1136,7 @@
     {
       "id": "superstition",
       "name": "Superstitious Thinking (10 items)",
-      "points": 5,
+      "points": 4.2,
       "time": 4,
       "questions": [
         {
@@ -1214,7 +1214,7 @@
     {
       "id": "anti-science",
       "name": "Anti-Science Attitudes (11 items)",
-      "points": 5,
+      "points": 4.18,
       "time": 4,
       "questions": [
         {
@@ -1321,7 +1321,7 @@
     {
       "id": "conspiracy",
       "name": "Conspiracy Beliefs (11 items)",
-      "points": 10,
+      "points": 4.62,
       "time": 3,
       "questions": [
         {
@@ -1410,7 +1410,7 @@
     {
       "id": "dysfunctional-beliefs",
       "name": "Dysfunctional Beliefs (9 items)",
-      "points": 5,
+      "points": 5.04,
       "time": 3,
       "questions": [
         {
@@ -1964,8 +1964,12 @@
             "Stay home and rest, the €80 is already lost",
             "Try to sell the ticket"
           ],
-          "correct": 1,
-          "points": 0.75
+          "points": 0.75,
+          "correctAnswers": [
+            1,
+            2
+          ],
+          "explanation": "The 80€ is a sunk cost. The rational decision only considers the future. Two options are rational: (1) Stay home to rest and recover, or (2) Try to sell the ticket to recover the money. The key is NOT to go to the concert just because you paid."
         },
         {
           "id": "sunk-2",
@@ -1988,8 +1992,12 @@
             "Order food, the 3 hours are already lost",
             "Try to fix the dish"
           ],
-          "correct": 1,
-          "points": 0.75
+          "points": 0.75,
+          "correctAnswers": [
+            1,
+            2
+          ],
+          "explanation": "The 3 hours of cooking is a sunk cost. Two options are rational: (1) Order food to have a good meal, or (2) Try to fix the dish if possible (e.g., dilute with unsalted ingredients). The key is NOT to force yourself to eat something inedible just to 'not waste' the time spent."
         },
         {
           "id": "sunk-4",

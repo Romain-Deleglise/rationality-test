@@ -72,7 +72,12 @@ export function scoreQuestion(
   try {
     switch (question.type) {
       case 'multiple-choice':
-        correct = answer.value === effectiveQuestion.correct;
+        // Support for multiple correct answers (correctAnswers array) or single correct answer
+        if (effectiveQuestion.correctAnswers && Array.isArray(effectiveQuestion.correctAnswers)) {
+          correct = effectiveQuestion.correctAnswers.includes(answer.value);
+        } else {
+          correct = answer.value === effectiveQuestion.correct;
+        }
         earned = correct ? possible : 0;
         break;
 
