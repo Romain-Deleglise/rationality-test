@@ -1,5 +1,74 @@
 # Changelog - Test de Rationalité
 
+## [2025-11-25] - Réorganisation des options + Fix navigation
+
+### 🎯 Réorganisation des options pour éviter les patterns de réponses
+
+**Problème détecté :** Plusieurs modules présentaient 3 questions consécutives ou plus avec la même bonne réponse (ex: toutes "c" ou toutes "b"), permettant aux participants de deviner un pattern plutôt que de réfléchir aux questions.
+
+**Corrections appliquées :**
+
+#### Test Complet (`test-complet.json`)
+- **Module 1 (Raisonnement Probabiliste)** : Questions 3-7 (5 questions avec "c")
+  → Alternance des réponses: c-b-c-b-c
+- **Module 2 (Raisonnement Scientifique)** : Questions 12-14 (3 questions avec "b")
+  → Pattern corrigé: b-c-b
+- **Module 14 (Raisonnement Causal)** : Questions 1-5 (5 questions avec "b")
+  → Alternance des réponses: b-a-b-a-b
+- **Module 15 (Effets de Cadrage)** : Questions 1-8 (8 questions avec "b")
+  → Alternance des réponses: b-a-b-a-b-a-b-b
+- **Module 17 (Coûts Irrécupérables)** : Questions 1-4 (4 questions avec "b")
+  → Pattern corrigé: b-a-b-b
+
+#### Test Court (`test-court.json`)
+- **Module 2 (Raisonnement Scientifique)** :
+  - Questions 3-5 (3 questions avec "c") → Pattern corrigé: c-b-c
+  - Questions 9-11 (3 questions avec "b") → Pattern corrigé: b-a-b
+
+**Méthode utilisée :**
+- Réorganisation de l'ordre des options sans changer le sens des questions
+- Les bonnes réponses restent sémantiquement identiques
+- Le système de scoring reste inchangé (vérifié)
+
+**Impact :**
+- ✅ Amélioration de la validité psychométrique du test
+- ✅ Prévention du "pattern guessing"
+- ✅ Aucun impact sur les scores existants
+
+**Fichiers modifiés :**
+- `src/data/test-complet.json`
+- `src/data/test-court.json`
+
+---
+
+### 🐛 Correction du bug de retour en arrière
+
+**Problème :** Lorsque l'utilisateur cliquait sur le bouton retour du navigateur et confirmait vouloir quitter le test (en cliquant sur "Oui"), le popup se déclenchait correctement mais l'utilisateur restait sur la page du test.
+
+**Cause :** Le code utilisait `window.history.back()` qui revenait simplement à l'entrée d'historique ajoutée par le système de protection, créant une boucle.
+
+**Solution :** Utiliser `router.push(\`/\${locale}\`)` pour rediriger explicitement vers la page d'accueil lorsque l'utilisateur confirme vouloir quitter.
+
+**Fichier modifié :**
+- `src/app/[locale]/test/TestContent.tsx` (ligne 111)
+
+**Test :**
+- ✅ Bouton retour + confirmation "Oui" → Redirige vers la page d'accueil
+- ✅ Bouton retour + confirmation "Non" → Reste sur le test
+- ✅ Tentative de fermeture d'onglet → Popup de confirmation
+
+---
+
+### 📝 Commit
+
+**Branch :** `claude/clarify-test-questions-01AZv6yraUp7koQNrpwvcui1`
+
+**Commits :**
+1. `fix: Réorganisation des options pour éviter les patterns de réponses`
+2. `fix: Correction du bug de retour en arrière du navigateur`
+
+---
+
 ## [2025-11-12] - Multilingual fixes + SEO + Dark Mode + Methodology
 
 ### ✅ Fixes Critiques
