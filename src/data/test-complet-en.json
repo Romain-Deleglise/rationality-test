@@ -1958,18 +1958,14 @@
         {
           "id": "sunk-1",
           "type": "multiple-choice",
-          "text": "You bought a concert ticket for €80. On the day of the concert, you fall ill (fever, fatigue). The concert won't refund you.\n\nWhat should you do?",
+          "text": "You bought a concert ticket for €80. The concert starts in 1 hour, and you fall ill (fever, fatigue). The concert won't refund you, and it's too late to sell the ticket.\n\nWhat should you do?",
           "options": [
-            "Go to the concert anyway to not waste the €80",
-            "Stay home and rest, the €80 is already lost",
-            "Try to sell the ticket"
+            "Go to the concert anyway to not lose the €80",
+            "Stay home to rest, the €80 are already lost"
           ],
           "points": 0.75,
-          "correctAnswers": [
-            1,
-            2
-          ],
-          "explanation": "The 80€ is a sunk cost. The rational decision only considers the future. Two options are rational: (1) Stay home to rest and recover, or (2) Try to sell the ticket to recover the money. The key is NOT to go to the concert just because you paid."
+          "explanation": "The €80 is a sunk cost. The rational decision only considers the future: going to the concert while sick vs staying home to recover. The past (the €80 already spent) should not influence this decision. It's too late to sell the ticket, so that option is not available.",
+          "correct": 1
         },
         {
           "id": "sunk-2",
@@ -1986,18 +1982,14 @@
         {
           "id": "sunk-3",
           "type": "multiple-choice",
-          "text": "You spent 3 hours cooking an elaborate dish. When tasting it, you realize it's ruined (too salty, inedible). You could order food (€15, delicious) or force yourself to eat your ruined dish.\n\nWhat to do?",
+          "text": "You spent 3 hours cooking an elaborate dish. Upon tasting it, you realize it's completely ruined (WAY too salty, absolutely inedible, impossible to fix). You could order food (€15, delicious).\n\nWhat to do?",
           "options": [
             "Eat the ruined dish to not waste the 3 hours of work",
-            "Order food, the 3 hours are already lost",
-            "Try to fix the dish"
+            "Order food, the 3 hours are already lost"
           ],
           "points": 0.75,
-          "correctAnswers": [
-            1,
-            2
-          ],
-          "explanation": "The 3 hours of cooking is a sunk cost. Two options are rational: (1) Order food to have a good meal, or (2) Try to fix the dish if possible (e.g., dilute with unsalted ingredients). The key is NOT to force yourself to eat something inedible just to 'not waste' the time spent."
+          "explanation": "The 3 hours of cooking is a sunk cost. The rational decision only considers the future: forcing yourself to eat something inedible vs paying €15 for a good meal. The time already spent should not influence this decision. Since the dish is impossible to fix, that option is not available.",
+          "correct": 1
         },
         {
           "id": "sunk-4",
