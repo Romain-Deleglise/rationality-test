@@ -651,11 +651,11 @@ To test whether a new drug reduces fever, which experiment is best?
 **Options:**
 
 a. Give the drug to feverish patients and measure temperature 2h later
-b. Give the drug to one group and a placebo to a control group, double-blind
-c. Ask patients if they feel better after the drug
+b. Ask patients if they feel better after the drug
+c. Give the drug to one group and a placebo to a control group, double-blind
 d. Compare with other existing drugs
 
-**Correct Answer:** b
+**Correct Answer:** c
 
 **Explanation:**
 

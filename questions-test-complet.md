@@ -577,12 +577,12 @@ Pour Bayes, il faut le rapport de vraisemblance : P(preuve|H) et P(preuve|non-H)
 Pour tester si un nouveau médicament réduit la fièvre, quelle expérience est la meilleure ?
 
 **Options:**
-A. Donner le médicament à des patients fiévreux et mesurer la température 2h après 
-B. Donner le médicament à un groupe et un placebo à un groupe contrôle, en double aveugle **✓**
-C. Demander aux patients s'ils se sentent mieux après le médicament 
-D. Comparer avec d'autres médicaments existants 
+A. Donner le médicament à des patients fiévreux et mesurer la température 2h après
+B. Demander aux patients s'ils se sentent mieux après le médicament
+C. Donner le médicament à un groupe et un placebo à un groupe contrôle, en double aveugle **✓**
+D. Comparer avec d'autres médicaments existants
 
-**Réponse correcte:** B
+**Réponse correcte:** C
 
 **Points:** 1
 

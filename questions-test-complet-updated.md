@@ -659,11 +659,11 @@ Pour tester si un nouveau médicament réduit la fièvre, quelle expérience est
 **Options:**
 
 a. Donner le médicament à des patients fiévreux et mesurer la température 2h après
-b. Donner le médicament à un groupe et un placebo à un groupe contrôle, en double aveugle
-c. Demander aux patients s'ils se sentent mieux après le médicament
+b. Demander aux patients s'ils se sentent mieux après le médicament
+c. Donner le médicament à un groupe et un placebo à un groupe contrôle, en double aveugle
 d. Comparer avec d'autres médicaments existants
 
-**Réponse correcte:** b
+**Réponse correcte:** c
 
 **Explication:**
 
