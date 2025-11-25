@@ -151,6 +151,9 @@
     "likertSlightlyAgree": "Légèrement d'accord",
     "likertModeratelyAgree": "Modérément d'accord",
     "likertStronglyAgree": "Fortement d'accord",
+    "yourEstimate": "Votre estimation",
+    "aggregateEstimatePrompt1": "💡 Estimation globale : Après avoir répondu aux 10 questions précédentes, combien pensez-vous en avoir réussi ?",
+    "aggregateEstimatePrompt2": "💡 Estimation globale : Pour combien de vos 10 intervalles précédents pensez-vous que la vraie réponse est bien comprise dans votre intervalle ?",
     "unsupportedQuestionType": "Type de question non supporté"
   },
   "results": {

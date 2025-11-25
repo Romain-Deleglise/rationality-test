@@ -5,7 +5,8 @@ export type QuestionType =
   | 'confidence-interval'
   | 'ranking'
   | 'likert'
-  | 'multiple-choice-confidence';
+  | 'multiple-choice-confidence'
+  | 'aggregate-estimate';
 
 export interface QuestionRandomization {
   variables: {
@@ -45,6 +46,9 @@ export interface Question {
     type?: string;
     rule?: string;
   };
+  // For aggregate-estimate questions (CART methodology)
+  aggregateScope?: 'part1-mc' | 'part2-interval';
+  aggregateTotal?: number;
 }
 
 export interface Module {

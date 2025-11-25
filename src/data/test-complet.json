@@ -1,7 +1,7 @@
 {
   "version": "complète",
-  "totalPoints": 89.46,
-  "estimatedTime": 86,
+  "totalPoints": 93.06,
+  "estimatedTime": 87,
   "modules": [
     {
       "id": "prob-stats",
@@ -773,9 +773,9 @@
     },
     {
       "id": "calibration-full",
-      "name": "Calibration des Connaissances (20 items)",
-      "points": 2.4,
-      "time": 7,
+      "name": "Calibration des Connaissances (22 items)",
+      "points": 6,
+      "time": 8,
       "questions": [
         {
           "id": "calib-mc-1",
@@ -786,7 +786,7 @@
             "Les journalistes doivent être autorisés à observer les effets de la Révolution culturelle"
           ],
           "correct": 0,
-          "points": 0.12,
+          "points": 0.2,
           "confidenceLevels": [
             50,
             60,
@@ -805,7 +805,7 @@
             "La Guerre de Sept Ans"
           ],
           "correct": 0,
-          "points": 0.12,
+          "points": 0.2,
           "confidenceLevels": [
             50,
             60,
@@ -824,7 +824,7 @@
             "L'océan Atlantique et l'océan Pacifique"
           ],
           "correct": 0,
-          "points": 0.12,
+          "points": 0.2,
           "confidenceLevels": [
             50,
             60,
@@ -843,7 +843,7 @@
             "1648"
           ],
           "correct": 0,
-          "points": 0.12,
+          "points": 0.2,
           "confidenceLevels": [
             50,
             60,
@@ -862,7 +862,7 @@
             "1789"
           ],
           "correct": 0,
-          "points": 0.12,
+          "points": 0.2,
           "confidenceLevels": [
             50,
             60,
@@ -881,7 +881,7 @@
             "Les Andes"
           ],
           "correct": 0,
-          "points": 0.12,
+          "points": 0.2,
           "confidenceLevels": [
             50,
             60,
@@ -900,7 +900,7 @@
             "1917"
           ],
           "correct": 0,
-          "points": 0.12,
+          "points": 0.2,
           "confidenceLevels": [
             50,
             60,
@@ -919,7 +919,7 @@
             "Plus petite que le Groenland"
           ],
           "correct": 0,
-          "points": 0.12,
+          "points": 0.2,
           "confidenceLevels": [
             50,
             60,
@@ -938,7 +938,7 @@
             "1789"
           ],
           "correct": 0,
-          "points": 0.12,
+          "points": 0.2,
           "confidenceLevels": [
             50,
             60,
@@ -957,7 +957,7 @@
             "Moins de 5 000 km"
           ],
           "correct": 0,
-          "points": 0.12,
+          "points": 0.2,
           "confidenceLevels": [
             50,
             60,
@@ -968,12 +968,22 @@
           ]
         },
         {
+          "id": "calib-aggregate-1",
+          "type": "aggregate-estimate",
+          "text": "Sur les 10 questions précédentes, combien pensez-vous avoir répondu correctement ? (Rappel : en devinant au hasard, on s'attend à en avoir 5 de bonnes)",
+          "unit": "questions",
+          "aggregateScope": "part1-mc",
+          "aggregateTotal": 10,
+          "points": 1,
+          "explanation": "Cette question mesure votre capacité à estimer globalement vos performances (calibration agrégée)."
+        },
+        {
           "id": "calib-interval-1",
           "type": "confidence-interval",
           "text": "Donnez un intervalle à 90% : Quelle est la hauteur de la Tour Eiffel ?",
           "unit": "mètres",
           "correct": 330,
-          "points": 0.12,
+          "points": 0.2,
           "explanation": "La Tour Eiffel mesure 330 mètres (avec antenne)."
         },
         {
@@ -982,7 +992,7 @@
           "text": "Donnez un intervalle à 90% : Quelle est la population du Japon ?",
           "unit": "millions d'habitants",
           "correct": 125,
-          "points": 0.12,
+          "points": 0.2,
           "explanation": "Le Japon a environ 125 millions d'habitants."
         },
         {
@@ -991,7 +1001,7 @@
           "text": "Donnez un intervalle à 90% : En quelle année Christophe Colomb a-t-il découvert l'Amérique ?",
           "unit": "année",
           "correct": 1492,
-          "points": 0.12,
+          "points": 0.2,
           "explanation": "Christophe Colomb a découvert l'Amérique en 1492."
         },
         {
@@ -1000,7 +1010,7 @@
           "text": "Donnez un intervalle à 90% : Quelle est la longueur du fleuve Amazone ?",
           "unit": "kilomètres",
           "correct": 6400,
-          "points": 0.12,
+          "points": 0.2,
           "explanation": "L'Amazone mesure environ 6 400 km de long."
         },
         {
@@ -1009,7 +1019,7 @@
           "text": "Donnez un intervalle à 90% : Combien d'éléments contient le tableau périodique ?",
           "unit": "éléments",
           "correct": 118,
-          "points": 0.12,
+          "points": 0.2,
           "explanation": "Le tableau périodique contient 118 éléments."
         },
         {
@@ -1018,7 +1028,7 @@
           "text": "Donnez un intervalle à 90% : Quelle est la vitesse de la lumière ?",
           "unit": "km/s",
           "correct": 300000,
-          "points": 0.12,
+          "points": 0.2,
           "explanation": "La vitesse de la lumière est d'environ 300 000 km/s."
         },
         {
@@ -1027,7 +1037,7 @@
           "text": "Donnez un intervalle à 90% : Quelle est la température d'ébullition de l'eau au niveau de la mer ?",
           "unit": "degrés Celsius",
           "correct": 100,
-          "points": 0.12,
+          "points": 0.2,
           "explanation": "L'eau bout à 100°C au niveau de la mer."
         },
         {
@@ -1036,7 +1046,7 @@
           "text": "Donnez un intervalle à 90% : Combien de pays sont membres des Nations Unies ?",
           "unit": "pays",
           "correct": 193,
-          "points": 0.12,
+          "points": 0.2,
           "explanation": "L'ONU compte 193 États membres."
         },
         {
@@ -1045,7 +1055,7 @@
           "text": "Donnez un intervalle à 90% : Quelle est la distance Terre-Lune ?",
           "unit": "milliers de km",
           "correct": 384,
-          "points": 0.12,
+          "points": 0.2,
           "explanation": "La distance moyenne Terre-Lune est de 384 400 km."
         },
         {
@@ -1054,8 +1064,18 @@
           "text": "Donnez un intervalle à 90% : En quelle année a eu lieu la Révolution française ?",
           "unit": "année",
           "correct": 1789,
-          "points": 0.12,
+          "points": 0.2,
           "explanation": "La Révolution française a commencé en 1789."
+        },
+        {
+          "id": "calib-aggregate-2",
+          "type": "aggregate-estimate",
+          "text": "Sur les 10 questions d'intervalles précédentes, pour combien de ces questions pensez-vous que votre intervalle contient la bonne réponse ?",
+          "unit": "questions",
+          "aggregateScope": "part2-interval",
+          "aggregateTotal": 10,
+          "points": 1,
+          "explanation": "Cette question mesure votre capacité à estimer globalement la qualité de vos intervalles de confiance (calibration agrégée)."
         }
       ]
     },

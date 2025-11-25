@@ -1,7 +1,7 @@
 {
   "version": "full",
-  "totalPoints": 96.98,
-  "estimatedTime": 86,
+  "totalPoints": 93.06,
+  "estimatedTime": 87,
   "modules": [
     {
       "id": "prob-stats",
@@ -773,9 +773,9 @@
     },
     {
       "id": "calibration-full",
-      "name": "Knowledge Calibration (20 items)",
-      "points": 2.4,
-      "time": 7,
+      "name": "Knowledge Calibration (22 items)",
+      "points": 6,
+      "time": 8,
       "questions": [
         {
           "id": "calib-mc-1",
@@ -786,7 +786,7 @@
             "Journalists must be allowed to observe the effects of the Cultural Revolution"
           ],
           "correct": 0,
-          "points": 0.12,
+          "points": 0.2,
           "confidenceLevels": [
             50,
             60,
@@ -805,7 +805,7 @@
             "The Seven Years' War"
           ],
           "correct": 0,
-          "points": 0.12,
+          "points": 0.2,
           "confidenceLevels": [
             50,
             60,
@@ -824,7 +824,7 @@
             "The Atlantic and Pacific Oceans"
           ],
           "correct": 0,
-          "points": 0.12,
+          "points": 0.2,
           "confidenceLevels": [
             50,
             60,
@@ -843,7 +843,7 @@
             "1648"
           ],
           "correct": 0,
-          "points": 0.12,
+          "points": 0.2,
           "confidenceLevels": [
             50,
             60,
@@ -862,7 +862,7 @@
             "1789"
           ],
           "correct": 0,
-          "points": 0.12,
+          "points": 0.2,
           "confidenceLevels": [
             50,
             60,
@@ -881,7 +881,7 @@
             "The Andes"
           ],
           "correct": 0,
-          "points": 0.12,
+          "points": 0.2,
           "confidenceLevels": [
             50,
             60,
@@ -900,7 +900,7 @@
             "1917"
           ],
           "correct": 0,
-          "points": 0.12,
+          "points": 0.2,
           "confidenceLevels": [
             50,
             60,
@@ -919,7 +919,7 @@
             "Smaller than Greenland"
           ],
           "correct": 0,
-          "points": 0.12,
+          "points": 0.2,
           "confidenceLevels": [
             50,
             60,
@@ -938,7 +938,7 @@
             "1789"
           ],
           "correct": 0,
-          "points": 0.12,
+          "points": 0.2,
           "confidenceLevels": [
             50,
             60,
@@ -957,7 +957,7 @@
             "Less than 5,000 km"
           ],
           "correct": 0,
-          "points": 0.12,
+          "points": 0.2,
           "confidenceLevels": [
             50,
             60,
@@ -968,12 +968,22 @@
           ]
         },
         {
+          "id": "calib-aggregate-1",
+          "type": "aggregate-estimate",
+          "text": "Of the 10 previous questions, how many do you think you answered correctly? (Reminder: by just guessing, you would expect to get 5 correct)",
+          "unit": "questions",
+          "aggregateScope": "part1-mc",
+          "aggregateTotal": 10,
+          "points": 1,
+          "explanation": "This question measures your ability to estimate your overall performance (aggregate calibration)."
+        },
+        {
           "id": "calib-interval-1",
           "type": "confidence-interval",
           "text": "Give a 90% confidence interval: What is the height of the Eiffel Tower?",
           "unit": "meters",
           "correct": 330,
-          "points": 0.12,
+          "points": 0.2,
           "explanation": "The Eiffel Tower is 330 meters tall (with antenna)."
         },
         {
@@ -982,7 +992,7 @@
           "text": "Give a 90% confidence interval: What is the population of Japan?",
           "unit": "million inhabitants",
           "correct": 125,
-          "points": 0.12,
+          "points": 0.2,
           "explanation": "Japan has about 125 million inhabitants."
         },
         {
@@ -991,7 +1001,7 @@
           "text": "Give a 90% confidence interval: In what year did Christopher Columbus discover America?",
           "unit": "year",
           "correct": 1492,
-          "points": 0.12,
+          "points": 0.2,
           "explanation": "Christopher Columbus discovered America in 1492."
         },
         {
@@ -1000,7 +1010,7 @@
           "text": "Give a 90% confidence interval: What is the length of the Amazon River?",
           "unit": "kilometers",
           "correct": 6400,
-          "points": 0.12,
+          "points": 0.2,
           "explanation": "The Amazon is approximately 6,400 km long."
         },
         {
@@ -1009,7 +1019,7 @@
           "text": "Give a 90% confidence interval: How many elements does the periodic table contain?",
           "unit": "elements",
           "correct": 118,
-          "points": 0.12,
+          "points": 0.2,
           "explanation": "The periodic table contains 118 elements."
         },
         {
@@ -1018,7 +1028,7 @@
           "text": "Give a 90% confidence interval: What is the speed of light?",
           "unit": "km/s",
           "correct": 300000,
-          "points": 0.12,
+          "points": 0.2,
           "explanation": "The speed of light is approximately 300,000 km/s."
         },
         {
@@ -1027,7 +1037,7 @@
           "text": "Give a 90% confidence interval: What is the boiling point of water at sea level?",
           "unit": "degrees Celsius",
           "correct": 100,
-          "points": 0.12,
+          "points": 0.2,
           "explanation": "Water boils at 100°C at sea level."
         },
         {
@@ -1036,7 +1046,7 @@
           "text": "Give a 90% confidence interval: How many countries are members of the United Nations?",
           "unit": "countries",
           "correct": 193,
-          "points": 0.12,
+          "points": 0.2,
           "explanation": "The UN has 193 member states."
         },
         {
@@ -1045,7 +1055,7 @@
           "text": "Give a 90% confidence interval: What is the Earth-Moon distance?",
           "unit": "thousands of km",
           "correct": 384,
-          "points": 0.12,
+          "points": 0.2,
           "explanation": "The average Earth-Moon distance is 384,400 km."
         },
         {
@@ -1054,8 +1064,18 @@
           "text": "Give a 90% confidence interval: In what year did the French Revolution take place?",
           "unit": "year",
           "correct": 1789,
-          "points": 0.12,
+          "points": 0.2,
           "explanation": "The French Revolution began in 1789."
+        },
+        {
+          "id": "calib-aggregate-2",
+          "type": "aggregate-estimate",
+          "text": "Of the 10 previous interval questions, for how many of these questions do you think your interval contains the correct answer?",
+          "unit": "questions",
+          "aggregateScope": "part2-interval",
+          "aggregateTotal": 10,
+          "points": 1,
+          "explanation": "This question measures your ability to estimate the overall quality of your confidence intervals (aggregate calibration)."
         }
       ]
     },

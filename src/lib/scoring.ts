@@ -234,15 +234,18 @@ export function scoreQuestion(
         }
 
         const choiceCorrect = choice === effectiveQuestion.correct;
-        
-        if (choiceCorrect) {
-          const confidenceBonus = confidence >= 80 ? 0.2 : 0;
-          earned = possible * (1 + confidenceBonus);
-        } else {
-          const confidencePenalty = confidence >= 80 ? -0.2 : 0;
-          earned = Math.max(0, confidencePenalty);
-        }
+
+        // For now, just mark correct/incorrect with proportional points
+        // The CART calibration scoring will be applied at the module level
+        earned = choiceCorrect ? possible : 0;
         correct = choiceCorrect;
+        break;
+
+      case 'aggregate-estimate':
+        // This will be scored by scoreCalibrationModule based on actual performance
+        // For now, store 0 and let the module-level function calculate it
+        earned = 0;
+        correct = false;
         break;
 
       default:
@@ -265,11 +268,192 @@ export function scoreQuestion(
 }
 
 
+/**
+ * Special scoring function for the Knowledge Calibration module using CART methodology
+ */
+function scoreCalibrationModule(
+  module: Module,
+  answers: Answer[],
+  randomizedValues?: { [questionId: string]: { [key: string]: number | string } }
+): ModuleScore {
+  const questionScores: QuestionScore[] = [];
+
+  // Separate questions by type
+  const mcQuestions = module.questions.filter(q => q.type === 'multiple-choice-confidence');
+  const intervalQuestions = module.questions.filter(q => q.type === 'confidence-interval');
+  const aggregateQuestions = module.questions.filter(q => q.type === 'aggregate-estimate');
+
+  // PART 1: Multiple-choice with confidence (CART item-by-item calibration)
+  let totalConfidence = 0;
+  let correctCount = 0;
+  const mcScores: QuestionScore[] = [];
+
+  mcQuestions.forEach((question) => {
+    const answer = answers.find((a) => a.questionId === question.id);
+    if (answer && answer.value?.choice !== undefined && answer.value?.confidence !== undefined) {
+      const isCorrect = answer.value.choice === question.correct;
+      if (isCorrect) correctCount++;
+      totalConfidence += answer.value.confidence;
+
+      // Store temporary score (will be adjusted by CART scoring)
+      mcScores.push({
+        questionId: question.id,
+        earned: 0, // Will be calculated below
+        possible: question.points || 0.2,
+        correct: isCorrect,
+      });
+    } else {
+      mcScores.push({
+        questionId: question.id,
+        earned: 0,
+        possible: question.points || 0.2,
+        correct: false,
+      });
+    }
+  });
+
+  // Calculate CART Part 1 score (0-2 points)
+  let part1Score = 0;
+  if (mcQuestions.length > 0) {
+    const avgConfidence = totalConfidence / mcQuestions.length;
+    const percentCorrect = (correctCount / mcQuestions.length) * 100;
+    const calibrationDiff = Math.abs(avgConfidence - percentCorrect);
+
+    if (calibrationDiff <= 2) {
+      part1Score = 2;
+    } else if (calibrationDiff < 10) {
+      part1Score = 1;
+    } else {
+      part1Score = 0;
+    }
+  }
+
+  // Distribute Part 1 score proportionally across MC questions
+  const part1TotalPossible = mcScores.reduce((sum, qs) => sum + qs.possible, 0);
+  mcScores.forEach(qs => {
+    qs.earned = part1TotalPossible > 0 ? (qs.possible / part1TotalPossible) * part1Score : 0;
+  });
+  questionScores.push(...mcScores);
+
+  // PART 1 AGGREGATE: Score the aggregate estimate for Part 1
+  const aggregate1 = aggregateQuestions.find(q => q.aggregateScope === 'part1-mc');
+  if (aggregate1) {
+    const answer = answers.find((a) => a.questionId === aggregate1.id);
+    let earned = 0;
+    if (answer && answer.value !== null && answer.value !== undefined) {
+      const userEstimate = Number(answer.value);
+      const actualCorrect = correctCount;
+      const difference = userEstimate - actualCorrect;
+
+      // CART: difference ≤ 0 means not overconfident → 1 point
+      // difference > 0 means overconfident → 0 points
+      earned = difference <= 0 ? (aggregate1.points || 1) : 0;
+    }
+    questionScores.push({
+      questionId: aggregate1.id,
+      earned,
+      possible: aggregate1.points || 1,
+      correct: earned > 0,
+    });
+  }
+
+  // PART 2: Confidence intervals (CART item-by-item calibration)
+  let hitCount = 0;
+  const intervalScores: QuestionScore[] = [];
+
+  intervalQuestions.forEach((question) => {
+    const answer = answers.find((a) => a.questionId === question.id);
+    if (answer && answer.value?.min !== undefined && answer.value?.max !== undefined) {
+      const min = Number(answer.value.min);
+      const max = Number(answer.value.max);
+      const target = Number(question.correct);
+
+      const contains = !isNaN(min) && !isNaN(max) && !isNaN(target) && min <= target && target <= max;
+      if (contains) hitCount++;
+
+      intervalScores.push({
+        questionId: question.id,
+        earned: 0, // Will be calculated below
+        possible: question.points || 0.2,
+        correct: contains,
+      });
+    } else {
+      intervalScores.push({
+        questionId: question.id,
+        earned: 0,
+        possible: question.points || 0.2,
+        correct: false,
+      });
+    }
+  });
+
+  // Calculate CART Part 2 score (0-2 points)
+  // Adapted thresholds: ≥6/10 (60%) → 2pts, 4-5/10 (40-50%) → 1pt, <4/10 (<40%) → 0pts
+  let part2Score = 0;
+  if (intervalQuestions.length > 0) {
+    if (hitCount >= 6) {
+      part2Score = 2;
+    } else if (hitCount >= 4) {
+      part2Score = 1;
+    } else {
+      part2Score = 0;
+    }
+  }
+
+  // Distribute Part 2 score proportionally across interval questions
+  const part2TotalPossible = intervalScores.reduce((sum, qs) => sum + qs.possible, 0);
+  intervalScores.forEach(qs => {
+    qs.earned = part2TotalPossible > 0 ? (qs.possible / part2TotalPossible) * part2Score : 0;
+  });
+  questionScores.push(...intervalScores);
+
+  // PART 2 AGGREGATE: Score the aggregate estimate for Part 2
+  const aggregate2 = aggregateQuestions.find(q => q.aggregateScope === 'part2-interval');
+  if (aggregate2) {
+    const answer = answers.find((a) => a.questionId === aggregate2.id);
+    let earned = 0;
+    if (answer && answer.value !== null && answer.value !== undefined) {
+      const userEstimate = Number(answer.value);
+      const actualHits = hitCount;
+      const difference = userEstimate - actualHits;
+
+      // CART: difference ≤ 0 means not overconfident → 1 point
+      // difference > 0 means overconfident → 0 points
+      earned = difference <= 0 ? (aggregate2.points || 1) : 0;
+    }
+    questionScores.push({
+      questionId: aggregate2.id,
+      earned,
+      possible: aggregate2.points || 1,
+      correct: earned > 0,
+    });
+  }
+
+  // Calculate total scores
+  const earned = questionScores.reduce((sum, qs) => sum + (qs.earned || 0), 0);
+  const possible = questionScores.reduce((sum, qs) => sum + (qs.possible || 0), 0);
+  const percentage = possible > 0 ? (earned / possible) * 100 : 0;
+
+  return {
+    moduleId: module.id,
+    moduleName: module.name,
+    earned: isNaN(earned) ? 0 : earned,
+    possible: isNaN(possible) ? 0 : possible,
+    percentage: isNaN(percentage) ? 0 : percentage,
+    questions: questionScores,
+  };
+}
+
 export function scoreModule(
   module: Module,
   answers: Answer[],
   randomizedValues?: { [questionId: string]: { [key: string]: number | string } }
 ): ModuleScore {
+  // Use special CART scoring for the Knowledge Calibration module
+  if (module.id === 'calibration-full') {
+    return scoreCalibrationModule(module, answers, randomizedValues);
+  }
+
   const questionScores = module.questions.map((question) => {
     const answer = answers.find((a) => a.questionId === question.id);
     if (!answer) {
