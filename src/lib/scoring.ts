@@ -309,17 +309,19 @@ function scoreSuperstitionModule(
   });
 
   // Calculate CART score based on composite sum (adapted thresholds)
+  // Use module.points as the maximum score to ensure consistency
+  const maxScore = module.points;
   let cartScore = 0;
   if (compositeSum <= 17) {
-    cartScore = 5;
+    cartScore = maxScore;
   } else if (compositeSum <= 23) {
-    cartScore = 4;
+    cartScore = maxScore * 0.8;
   } else if (compositeSum <= 27) {
-    cartScore = 3;
+    cartScore = maxScore * 0.6;
   } else if (compositeSum <= 31) {
-    cartScore = 2;
+    cartScore = maxScore * 0.4;
   } else if (compositeSum <= 35) {
-    cartScore = 1;
+    cartScore = maxScore * 0.2;
   } else {
     cartScore = 0;
   }
@@ -328,7 +330,7 @@ function scoreSuperstitionModule(
   const totalPossible = questionScores.reduce((sum, qs) => sum + qs.possible, 0);
   questionScores.forEach(qs => {
     qs.earned = totalPossible > 0 ? (qs.possible / totalPossible) * cartScore : 0;
-    qs.correct = cartScore >= 3; // Arbitrary threshold for display
+    qs.correct = cartScore >= maxScore * 0.6; // 60% threshold for display
   });
 
   const earned = questionScores.reduce((sum, qs) => sum + (qs.earned || 0), 0);
@@ -377,17 +379,19 @@ function scoreAntiscienceModule(
   });
 
   // Calculate CART score (adapted thresholds)
+  // Use module.points as the maximum score to ensure consistency
+  const maxScore = module.points;
   let cartScore = 0;
   if (compositeSum <= 27) {
-    cartScore = 5;
+    cartScore = maxScore;
   } else if (compositeSum <= 31) {
-    cartScore = 4;
+    cartScore = maxScore * 0.8;
   } else if (compositeSum <= 34) {
-    cartScore = 3;
+    cartScore = maxScore * 0.6;
   } else if (compositeSum <= 36) {
-    cartScore = 2;
+    cartScore = maxScore * 0.4;
   } else if (compositeSum <= 39) {
-    cartScore = 1;
+    cartScore = maxScore * 0.2;
   } else {
     cartScore = 0;
   }
@@ -396,7 +400,7 @@ function scoreAntiscienceModule(
   const totalPossible = questionScores.reduce((sum, qs) => sum + qs.possible, 0);
   questionScores.forEach(qs => {
     qs.earned = totalPossible > 0 ? (qs.possible / totalPossible) * cartScore : 0;
-    qs.correct = cartScore >= 3;
+    qs.correct = cartScore >= maxScore * 0.6; // 60% threshold for display
   });
 
   const earned = questionScores.reduce((sum, qs) => sum + (qs.earned || 0), 0);
@@ -443,28 +447,30 @@ function scoreConspiracyModule(
     });
   });
 
-  // Calculate CART score (adapted thresholds for 10 points max)
+  // Calculate CART score (adapted thresholds)
+  // Use module.points as the maximum score to ensure consistency
+  const maxScore = module.points;
   let cartScore = 0;
   if (compositeSum <= 17) {
-    cartScore = 10;
+    cartScore = maxScore;
   } else if (compositeSum <= 19) {
-    cartScore = 9;
+    cartScore = maxScore * 0.9;
   } else if (compositeSum <= 21) {
-    cartScore = 8;
+    cartScore = maxScore * 0.8;
   } else if (compositeSum <= 23) {
-    cartScore = 7;
+    cartScore = maxScore * 0.7;
   } else if (compositeSum <= 26) {
-    cartScore = 6;
+    cartScore = maxScore * 0.6;
   } else if (compositeSum <= 28) {
-    cartScore = 5;
+    cartScore = maxScore * 0.5;
   } else if (compositeSum <= 31) {
-    cartScore = 4;
+    cartScore = maxScore * 0.4;
   } else if (compositeSum <= 34) {
-    cartScore = 3;
+    cartScore = maxScore * 0.3;
   } else if (compositeSum <= 36) {
-    cartScore = 2;
+    cartScore = maxScore * 0.2;
   } else if (compositeSum <= 38) {
-    cartScore = 1;
+    cartScore = maxScore * 0.1;
   } else {
     cartScore = 0;
   }
@@ -473,7 +479,7 @@ function scoreConspiracyModule(
   const totalPossible = questionScores.reduce((sum, qs) => sum + qs.possible, 0);
   questionScores.forEach(qs => {
     qs.earned = totalPossible > 0 ? (qs.possible / totalPossible) * cartScore : 0;
-    qs.correct = cartScore >= 5;
+    qs.correct = cartScore >= maxScore * 0.5; // 50% threshold for display
   });
 
   const earned = questionScores.reduce((sum, qs) => sum + (qs.earned || 0), 0);
@@ -521,17 +527,19 @@ function scoreDysfunctionalModule(
   });
 
   // Calculate CART score (exact CART thresholds)
+  // Use module.points as the maximum score to ensure consistency
+  const maxScore = module.points;
   let cartScore = 0;
   if (compositeSum <= 24) {
-    cartScore = 5;
+    cartScore = maxScore;
   } else if (compositeSum <= 28) {
-    cartScore = 4;
+    cartScore = maxScore * 0.8;
   } else if (compositeSum <= 31) {
-    cartScore = 3;
+    cartScore = maxScore * 0.6;
   } else if (compositeSum <= 34) {
-    cartScore = 2;
+    cartScore = maxScore * 0.4;
   } else if (compositeSum <= 38) {
-    cartScore = 1;
+    cartScore = maxScore * 0.2;
   } else {
     cartScore = 0;
   }
@@ -540,7 +548,7 @@ function scoreDysfunctionalModule(
   const totalPossible = questionScores.reduce((sum, qs) => sum + qs.possible, 0);
   questionScores.forEach(qs => {
     qs.earned = totalPossible > 0 ? (qs.possible / totalPossible) * cartScore : 0;
-    qs.correct = cartScore >= 3;
+    qs.correct = cartScore >= maxScore * 0.6; // 60% threshold for display
   });
 
   const earned = questionScores.reduce((sum, qs) => sum + (qs.earned || 0), 0);
@@ -587,19 +595,21 @@ function scoreBeliefBiasModule(
   });
 
   // Apply CART transformation curve (adapted thresholds)
+  // Use module.points as the maximum score to ensure consistency
+  const maxScore = module.points;
   let cartScore = 0;
   if (rawScore >= 12) {
-    cartScore = 8;
+    cartScore = maxScore;
   } else if (rawScore >= 11) {
-    cartScore = 7;
+    cartScore = maxScore * 0.875;
   } else if (rawScore >= 10) {
-    cartScore = 6;
+    cartScore = maxScore * 0.75;
   } else if (rawScore >= 9) {
-    cartScore = 5;
+    cartScore = maxScore * 0.625;
   } else if (rawScore >= 8) {
-    cartScore = 4;
+    cartScore = maxScore * 0.5;
   } else if (rawScore >= 7) {
-    cartScore = 2;
+    cartScore = maxScore * 0.25;
   } else {
     cartScore = 0;
   }
