@@ -1,6 +1,6 @@
 {
   "version": "full",
-  "totalPoints": 93.06,
+  "totalPoints": 102.02,
   "estimatedTime": 87,
   "modules": [
     {
@@ -479,7 +479,7 @@
     {
       "id": "belief-bias",
       "name": "Belief Bias (12 items)",
-      "points": 6,
+      "points": 8,
       "time": 5,
       "questions": [
         {
@@ -1136,7 +1136,7 @@
     {
       "id": "superstition",
       "name": "Superstitious Thinking (10 items)",
-      "points": 4.2,
+      "points": 5,
       "time": 4,
       "questions": [
         {
@@ -1214,7 +1214,7 @@
     {
       "id": "anti-science",
       "name": "Anti-Science Attitudes (11 items)",
-      "points": 4.18,
+      "points": 5,
       "time": 4,
       "questions": [
         {
@@ -1321,7 +1321,7 @@
     {
       "id": "conspiracy",
       "name": "Conspiracy Beliefs (11 items)",
-      "points": 4.62,
+      "points": 10,
       "time": 3,
       "questions": [
         {
@@ -1410,7 +1410,7 @@
     {
       "id": "dysfunctional-beliefs",
       "name": "Dysfunctional Beliefs (9 items)",
-      "points": 5.04,
+      "points": 5,
       "time": 3,
       "questions": [
         {

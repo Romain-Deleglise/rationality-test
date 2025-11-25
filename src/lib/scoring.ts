@@ -269,6 +269,356 @@ export function scoreQuestion(
 
 
 /**
+ * Special scoring function for Superstitious Thinking using CART methodology
+ * CART: 12 items, our version: 10 items
+ * Composite sum range: 10-60 (scale 1-6)
+ * CART thresholds adapted proportionally (10/12 = 0.833)
+ */
+function scoreSuperstitionModule(
+  module: Module,
+  answers: Answer[]
+): ModuleScore {
+  const questionScores: QuestionScore[] = [];
+  let compositeSum = 0;
+  let itemCount = 0;
+
+  module.questions.forEach((question) => {
+    const answer = answers.find((a) => a.questionId === question.id);
+    if (answer && answer.value !== null && answer.value !== undefined) {
+      const likertValue = Number(answer.value);
+      if (!isNaN(likertValue) && likertValue >= 1 && likertValue <= 6) {
+        // Reverse scoring if needed
+        const scoredValue = question.reverse ? (7 - likertValue) : likertValue;
+        compositeSum += scoredValue;
+        itemCount++;
+      }
+    }
+
+    // Store individual question scores (will be distributed later)
+    questionScores.push({
+      questionId: question.id,
+      earned: 0,
+      possible: question.points || 0.42,
+      correct: false,
+    });
+  });
+
+  // Calculate CART score based on composite sum (adapted thresholds)
+  let cartScore = 0;
+  if (compositeSum <= 17) {
+    cartScore = 5;
+  } else if (compositeSum <= 23) {
+    cartScore = 4;
+  } else if (compositeSum <= 27) {
+    cartScore = 3;
+  } else if (compositeSum <= 31) {
+    cartScore = 2;
+  } else if (compositeSum <= 35) {
+    cartScore = 1;
+  } else {
+    cartScore = 0;
+  }
+
+  // Distribute CART score proportionally across questions
+  const totalPossible = questionScores.reduce((sum, qs) => sum + qs.possible, 0);
+  questionScores.forEach(qs => {
+    qs.earned = totalPossible > 0 ? (qs.possible / totalPossible) * cartScore : 0;
+    qs.correct = cartScore >= 3; // Arbitrary threshold for display
+  });
+
+  const earned = questionScores.reduce((sum, qs) => sum + (qs.earned || 0), 0);
+  const possible = totalPossible;
+  const percentage = possible > 0 ? (earned / possible) * 100 : 0;
+
+  return {
+    moduleId: module.id,
+    moduleName: module.name,
+    earned,
+    possible,
+    percentage,
+    questions: questionScores,
+  };
+}
+
+/**
+ * Special scoring function for Antiscience Attitudes using CART methodology
+ * CART: 13 items, our version: 11 items
+ * Composite sum range: 11-66 (scale 1-6)
+ * CART thresholds adapted proportionally (11/13 = 0.846)
+ */
+function scoreAntiscienceModule(
+  module: Module,
+  answers: Answer[]
+): ModuleScore {
+  const questionScores: QuestionScore[] = [];
+  let compositeSum = 0;
+
+  module.questions.forEach((question) => {
+    const answer = answers.find((a) => a.questionId === question.id);
+    if (answer && answer.value !== null && answer.value !== undefined) {
+      const likertValue = Number(answer.value);
+      if (!isNaN(likertValue) && likertValue >= 1 && likertValue <= 6) {
+        const scoredValue = question.reverse ? (7 - likertValue) : likertValue;
+        compositeSum += scoredValue;
+      }
+    }
+
+    questionScores.push({
+      questionId: question.id,
+      earned: 0,
+      possible: question.points || 0.38,
+      correct: false,
+    });
+  });
+
+  // Calculate CART score (adapted thresholds)
+  let cartScore = 0;
+  if (compositeSum <= 27) {
+    cartScore = 5;
+  } else if (compositeSum <= 31) {
+    cartScore = 4;
+  } else if (compositeSum <= 34) {
+    cartScore = 3;
+  } else if (compositeSum <= 36) {
+    cartScore = 2;
+  } else if (compositeSum <= 39) {
+    cartScore = 1;
+  } else {
+    cartScore = 0;
+  }
+
+  // Distribute CART score proportionally
+  const totalPossible = questionScores.reduce((sum, qs) => sum + qs.possible, 0);
+  questionScores.forEach(qs => {
+    qs.earned = totalPossible > 0 ? (qs.possible / totalPossible) * cartScore : 0;
+    qs.correct = cartScore >= 3;
+  });
+
+  const earned = questionScores.reduce((sum, qs) => sum + (qs.earned || 0), 0);
+  const percentage = totalPossible > 0 ? (earned / totalPossible) * 100 : 0;
+
+  return {
+    moduleId: module.id,
+    moduleName: module.name,
+    earned,
+    possible: totalPossible,
+    percentage,
+    questions: questionScores,
+  };
+}
+
+/**
+ * Special scoring function for Conspiracy Beliefs using CART methodology
+ * CART: 24 items, our version: 11 items
+ * Composite sum range: 11-66 (scale 1-6)
+ * CART thresholds adapted proportionally (11/24 = 0.458)
+ */
+function scoreConspiracyModule(
+  module: Module,
+  answers: Answer[]
+): ModuleScore {
+  const questionScores: QuestionScore[] = [];
+  let compositeSum = 0;
+
+  module.questions.forEach((question) => {
+    const answer = answers.find((a) => a.questionId === question.id);
+    if (answer && answer.value !== null && answer.value !== undefined) {
+      const likertValue = Number(answer.value);
+      if (!isNaN(likertValue) && likertValue >= 1 && likertValue <= 6) {
+        const scoredValue = question.reverse ? (7 - likertValue) : likertValue;
+        compositeSum += scoredValue;
+      }
+    }
+
+    questionScores.push({
+      questionId: question.id,
+      earned: 0,
+      possible: question.points || 0.42,
+      correct: false,
+    });
+  });
+
+  // Calculate CART score (adapted thresholds for 10 points max)
+  let cartScore = 0;
+  if (compositeSum <= 17) {
+    cartScore = 10;
+  } else if (compositeSum <= 19) {
+    cartScore = 9;
+  } else if (compositeSum <= 21) {
+    cartScore = 8;
+  } else if (compositeSum <= 23) {
+    cartScore = 7;
+  } else if (compositeSum <= 26) {
+    cartScore = 6;
+  } else if (compositeSum <= 28) {
+    cartScore = 5;
+  } else if (compositeSum <= 31) {
+    cartScore = 4;
+  } else if (compositeSum <= 34) {
+    cartScore = 3;
+  } else if (compositeSum <= 36) {
+    cartScore = 2;
+  } else if (compositeSum <= 38) {
+    cartScore = 1;
+  } else {
+    cartScore = 0;
+  }
+
+  // Distribute CART score proportionally
+  const totalPossible = questionScores.reduce((sum, qs) => sum + qs.possible, 0);
+  questionScores.forEach(qs => {
+    qs.earned = totalPossible > 0 ? (qs.possible / totalPossible) * cartScore : 0;
+    qs.correct = cartScore >= 5;
+  });
+
+  const earned = questionScores.reduce((sum, qs) => sum + (qs.earned || 0), 0);
+  const percentage = totalPossible > 0 ? (earned / totalPossible) * 100 : 0;
+
+  return {
+    moduleId: module.id,
+    moduleName: module.name,
+    earned,
+    possible: totalPossible,
+    percentage,
+    questions: questionScores,
+  };
+}
+
+/**
+ * Special scoring function for Dysfunctional Beliefs using CART methodology
+ * CART: 9 items, our version: 9 items (exact match!)
+ * Composite sum range: 9-54 (scale 1-6)
+ * Using exact CART thresholds
+ */
+function scoreDysfunctionalModule(
+  module: Module,
+  answers: Answer[]
+): ModuleScore {
+  const questionScores: QuestionScore[] = [];
+  let compositeSum = 0;
+
+  module.questions.forEach((question) => {
+    const answer = answers.find((a) => a.questionId === question.id);
+    if (answer && answer.value !== null && answer.value !== undefined) {
+      const likertValue = Number(answer.value);
+      if (!isNaN(likertValue) && likertValue >= 1 && likertValue <= 6) {
+        const scoredValue = question.reverse ? (7 - likertValue) : likertValue;
+        compositeSum += scoredValue;
+      }
+    }
+
+    questionScores.push({
+      questionId: question.id,
+      earned: 0,
+      possible: question.points || 0.56,
+      correct: false,
+    });
+  });
+
+  // Calculate CART score (exact CART thresholds)
+  let cartScore = 0;
+  if (compositeSum <= 24) {
+    cartScore = 5;
+  } else if (compositeSum <= 28) {
+    cartScore = 4;
+  } else if (compositeSum <= 31) {
+    cartScore = 3;
+  } else if (compositeSum <= 34) {
+    cartScore = 2;
+  } else if (compositeSum <= 38) {
+    cartScore = 1;
+  } else {
+    cartScore = 0;
+  }
+
+  // Distribute CART score proportionally
+  const totalPossible = questionScores.reduce((sum, qs) => sum + qs.possible, 0);
+  questionScores.forEach(qs => {
+    qs.earned = totalPossible > 0 ? (qs.possible / totalPossible) * cartScore : 0;
+    qs.correct = cartScore >= 3;
+  });
+
+  const earned = questionScores.reduce((sum, qs) => sum + (qs.earned || 0), 0);
+  const percentage = totalPossible > 0 ? (earned / totalPossible) * 100 : 0;
+
+  return {
+    moduleId: module.id,
+    moduleName: module.name,
+    earned,
+    possible: totalPossible,
+    percentage,
+    questions: questionScores,
+  };
+}
+
+/**
+ * Special scoring function for Belief Bias using CART methodology
+ * CART: 16 items (8 consistent + 8 inconsistent), our version: 12 items
+ * Raw score range: 0-12
+ * CART curve transformation adapted proportionally (12/16 = 0.75)
+ */
+function scoreBeliefBiasModule(
+  module: Module,
+  answers: Answer[]
+): ModuleScore {
+  const questionScores: QuestionScore[] = [];
+  let rawScore = 0;
+
+  module.questions.forEach((question) => {
+    const answer = answers.find((a) => a.questionId === question.id);
+    let correct = false;
+
+    if (answer && answer.value !== null && answer.value !== undefined) {
+      correct = answer.value === question.correct;
+      if (correct) rawScore++;
+    }
+
+    questionScores.push({
+      questionId: question.id,
+      earned: 0, // Will be distributed later
+      possible: question.points || 0.5,
+      correct,
+    });
+  });
+
+  // Apply CART transformation curve (adapted thresholds)
+  let cartScore = 0;
+  if (rawScore >= 12) {
+    cartScore = 8;
+  } else if (rawScore >= 11) {
+    cartScore = 7;
+  } else if (rawScore >= 10) {
+    cartScore = 6;
+  } else if (rawScore >= 9) {
+    cartScore = 5;
+  } else if (rawScore >= 8) {
+    cartScore = 4;
+  } else if (rawScore >= 7) {
+    cartScore = 2;
+  } else {
+    cartScore = 0;
+  }
+
+  // Distribute CART score proportionally
+  const totalPossible = questionScores.reduce((sum, qs) => sum + qs.possible, 0);
+  questionScores.forEach(qs => {
+    qs.earned = totalPossible > 0 ? (qs.possible / totalPossible) * cartScore : 0;
+  });
+
+  const earned = questionScores.reduce((sum, qs) => sum + (qs.earned || 0), 0);
+  const percentage = totalPossible > 0 ? (earned / totalPossible) * 100 : 0;
+
+  return {
+    moduleId: module.id,
+    moduleName: module.name,
+    earned,
+    possible: totalPossible,
+    percentage,
+    questions: questionScores,
+  };
+}
+
+/**
  * Special scoring function for the Knowledge Calibration module using CART methodology
  */
 function scoreCalibrationModule(
@@ -449,9 +799,29 @@ export function scoreModule(
   answers: Answer[],
   randomizedValues?: { [questionId: string]: { [key: string]: number | string } }
 ): ModuleScore {
-  // Use special CART scoring for the Knowledge Calibration module
+  // Use special CART scoring for modules that require it
   if (module.id === 'calibration-full') {
     return scoreCalibrationModule(module, answers, randomizedValues);
+  }
+
+  if (module.id === 'superstition') {
+    return scoreSuperstitionModule(module, answers);
+  }
+
+  if (module.id === 'anti-science') {
+    return scoreAntiscienceModule(module, answers);
+  }
+
+  if (module.id === 'conspiracy') {
+    return scoreConspiracyModule(module, answers);
+  }
+
+  if (module.id === 'dysfunctional-beliefs') {
+    return scoreDysfunctionalModule(module, answers);
+  }
+
+  if (module.id === 'belief-bias') {
+    return scoreBeliefBiasModule(module, answers);
   }
 
   const questionScores = module.questions.map((question) => {
