@@ -54,10 +54,10 @@
           "text": "À la roulette, le rouge est sorti 7 fois de suite. Quelle couleur a le plus de chances de sortir au prochain tour ?",
           "options": [
             "Rouge",
-            "Noir",
-            "Les deux ont les mêmes chances"
+            "Les deux ont les mêmes chances",
+            "Noir"
           ],
-          "correct": 2,
+          "correct": 1,
           "points": 1,
           "explanation": "Chaque tour est indépendant. Les résultats passés n'influencent pas les tours futurs. C'est l'erreur du 'gambler's fallacy'."
         },
@@ -80,10 +80,10 @@
           "text": "Un couple a 4 filles. Ils veulent un cinquième enfant. Quelle est la probabilité que ce soit un garçon ?",
           "options": [
             "Plus de 50% (ils sont 'dus' pour un garçon)",
-            "Moins de 50% (ils ont tendance à faire des filles)",
-            "Environ 50% (indépendant des naissances précédentes)"
+            "Environ 50% (indépendant des naissances précédentes)",
+            "Moins de 50% (ils ont tendance à faire des filles)"
           ],
-          "correct": 2,
+          "correct": 1,
           "points": 1,
           "explanation": "Chaque naissance est indépendante. Les naissances précédentes n'affectent pas la probabilité du prochain enfant (~50% garçon/fille)."
         },
@@ -377,11 +377,11 @@
           "text": "Pour tester si un nouveau médicament réduit la fièvre, quelle expérience est la meilleure ?",
           "options": [
             "Donner le médicament à des patients fiévreux et mesurer la température 2h après",
-            "Donner le médicament à un groupe et un placebo à un groupe contrôle, en double aveugle",
             "Demander aux patients s'ils se sentent mieux après le médicament",
+            "Donner le médicament à un groupe et un placebo à un groupe contrôle, en double aveugle",
             "Comparer avec d'autres médicaments existants"
           ],
-          "correct": 1,
+          "correct": 2,
           "points": 1,
           "explanation": "Essai randomisé contrôlé en double aveugle : gold standard pour tester l'efficacité causale."
         },
@@ -1634,11 +1634,11 @@
           "type": "multiple-choice",
           "text": "Une étude montre que les personnes qui prennent des vitamines quotidiennement vivent en moyenne plus longtemps que celles qui n'en prennent pas.\n\nPeut-on conclure que prendre des vitamines augmente l'espérance de vie ?",
           "options": [
-            "Oui, la différence d'espérance de vie prouve l'effet des vitamines",
             "Non, car les personnes qui prennent des vitamines ont probablement déjà un mode de vie plus sain",
+            "Oui, la différence d'espérance de vie prouve l'effet des vitamines",
             "Oui, mais seulement pour certains types de vitamines"
           ],
-          "correct": 1,
+          "correct": 0,
           "points": 1,
           "explanation": "Non, on ne peut pas conclure à un effet causal. Les personnes qui prennent des vitamines quotidiennement sont probablement plus soucieuses de leur santé en général : elles font peut-être plus d'exercice, mangent mieux, consultent régulièrement un médecin, etc. C'est ce mode de vie global plus sain qui pourrait expliquer leur longévité, pas nécessairement les vitamines elles-mêmes. Il s'agit d'un biais de sélection classique."
         },
@@ -1661,12 +1661,12 @@
           "type": "multiple-choice",
           "text": "Une entreprise affirme que son nouveau complément alimentaire améliore la mémoire. Dans leur étude, 80% des participants qui ont pris le complément pendant 3 mois ont déclaré avoir une meilleure mémoire.\n\nQuel serait le meilleur moyen de vérifier cette affirmation ?",
           "options": [
-            "Augmenter le nombre de participants",
             "Comparer avec un groupe qui a pris un placebo",
+            "Augmenter le nombre de participants",
             "Prolonger l'étude à 6 mois",
             "Demander aux participants de tenir un journal"
           ],
-          "correct": 1,
+          "correct": 0,
           "points": 1,
           "explanation": "Un groupe placebo est essentiel pour contrôler l'effet placebo (amélioration subjective due aux attentes). Sans contrôle, impossible de savoir si c'est le complément ou les attentes qui améliorent la mémoire perçue."
         },
@@ -1689,7 +1689,7 @@
     {
       "id": "framing",
       "name": "Effets de Cadrage (10 items)",
-      "points": 3.0,
+      "points": 3,
       "time": 8,
       "questions": [
         {
@@ -1715,14 +1715,14 @@
           "type": "multiple-choice",
           "text": "Vous consultez les statistiques d'emploi d'une région. Vous apprenez que dans cette région, **8% de la population active est au chômage**.\n\nComment évaluez-vous la situation de l'emploi dans cette région ?",
           "options": [
-            "Très favorable",
             "Favorable",
+            "Très favorable",
             "Légèrement favorable",
             "Légèrement défavorable",
             "Défavorable",
             "Très défavorable"
           ],
-          "correct": 1,
+          "correct": 0,
           "points": 0.6,
           "pairId": "frame-pair-1",
           "framingType": "negative",
@@ -1777,14 +1777,14 @@
           "type": "multiple-choice",
           "text": "Un nouveau modèle de voiture a été testé. Le rapport indique que le véhicule **présente des dysfonctionnements 6% du temps**.\n\nQuelle est votre impression de la fiabilité de ce véhicule ?",
           "options": [
-            "Très favorable",
             "Favorable",
+            "Très favorable",
             "Légèrement favorable",
             "Légèrement défavorable",
             "Défavorable",
             "Très défavorable"
           ],
-          "correct": 1,
+          "correct": 0,
           "points": 0.6,
           "pairId": "frame-pair-3",
           "framingType": "negative",
@@ -1813,14 +1813,14 @@
           "type": "multiple-choice",
           "text": "Une compagnie aérienne annonce que **0,3% de ses vols connaissent un incident de sécurité**.\n\nQue pensez-vous de la sécurité de cette compagnie ?",
           "options": [
-            "Très sûre",
             "Sûre",
+            "Très sûre",
             "Légèrement sûre",
             "Légèrement risquée",
             "Risquée",
             "Très risquée"
           ],
-          "correct": 1,
+          "correct": 0,
           "points": 0.6,
           "pairId": "frame-pair-4",
           "framingType": "negative",
@@ -1968,11 +1968,11 @@
           "type": "multiple-choice",
           "text": "Vous avez investi 10 000€ dans un projet depuis 6 mois. Après analyse, vous réalisez que le projet ne sera jamais rentable. Vous pouvez soit :\n\n• Continuer et perdre 5 000€ de plus avant l'échec\n• Arrêter maintenant et perdre seulement les 10 000€ déjà investis\n\nQue faire ?",
           "options": [
-            "Continuer, sinon les 10 000€ auront été gaspillés pour rien",
             "Arrêter immédiatement pour limiter les pertes",
+            "Continuer, sinon les 10 000€ auront été gaspillés pour rien",
             "Continuer encore 3 mois pour être sûr"
           ],
-          "correct": 1,
+          "correct": 0,
           "points": 0.75,
           "explanation": "Arrêter est rationnel. Les 10 000€ sont perdus quoi qu'il arrive (sunk cost). Continuer signifie perdre 15 000€ au total au lieu de 10 000€."
         },
