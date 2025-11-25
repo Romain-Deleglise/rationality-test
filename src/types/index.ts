@@ -35,6 +35,7 @@ export interface Question {
   unit?: string;
   options?: string[];
   correct?: number | string | number[];
+  correctAnswers?: number[]; // For questions with multiple acceptable answers
   tolerance?: number;
   points: number;
   explanation?: string;

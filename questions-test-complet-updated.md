@@ -1,8 +1,8 @@
 # Test de Rationalité - Questions Complètes (Version Mise à Jour)
 
 **Version:** complète
-**Points totaux:** 89.46
-**Temps estimé:** 86 minutes
+**Points totaux:** 93.06
+**Temps estimé:** 87 minutes
 
 ---
 
@@ -93,10 +93,10 @@ Les lancers sont indépendants. La pièce n'a pas de mémoire. P(pile) = P(face)
 **Options:**
 
 a. Rouge
-b. Noir
-c. Les deux ont les mêmes chances
+b. Les deux ont les mêmes chances
+c. Noir
 
-**Réponse correcte:** c
+**Réponse correcte:** b
 
 **Explication:**
 
@@ -141,10 +141,10 @@ Un couple a 4 filles. Ils veulent un cinquième enfant. Quelle est la probabilit
 **Options:**
 
 a. Plus de 50% (ils sont 'dus' pour un garçon)
-b. Moins de 50% (ils ont tendance à faire des filles)
-c. Environ 50% (indépendant des naissances précédentes)
+b. Environ 50% (indépendant des naissances précédentes)
+c. Moins de 50% (ils ont tendance à faire des filles)
 
-**Réponse correcte:** c
+**Réponse correcte:** b
 
 **Explication:**
 
@@ -180,7 +180,7 @@ Dans un jeu de hasard équitable, chaque tirage est indépendant. Les pertes pas
 
 ### Question 8 (ID: conjunction-1)
 
-**Type:** Ranking
+**Type:** Classement
 
 **Question:**
 
@@ -203,7 +203,7 @@ P(infirmière) > P(infirmière et marathons) car P(A) > P(A ∩ B) toujours. Ajo
 
 ### Question 9 (ID: conjunction-2)
 
-**Type:** Ranking
+**Type:** Classement
 
 **Question:**
 
@@ -226,7 +226,7 @@ P(informatique) doit être classé plus probable que P(informatique et e-sport).
 
 ### Question 10 (ID: conjunction-3)
 
-**Type:** Ranking
+**Type:** Classement
 
 **Question:**
 
@@ -249,7 +249,7 @@ Malgré la description, P(caissière) > P(caissière et féministe) mathématiqu
 
 ### Question 11 (ID: conjunction-4)
 
-**Type:** Ranking
+**Type:** Classement
 
 **Question:**
 
@@ -272,11 +272,13 @@ P(professeur d'histoire) > P(professeur d'histoire et auteur). Ajouter une condi
 
 ### Question 12 (ID: base-rate-1)
 
-**Type:** Number
+**Type:** Numérique
 
 **Question:**
 
 Une maladie touche 1% de la population. Un test la détecte correctement dans 90% des cas chez les malades. Chez les personnes saines, le test donne un résultat positif erroné dans 9% des cas. Si votre test est positif, quelle est votre probabilité réelle d'être malade ?
+
+**Réponse correcte:** 9 %
 
 **Explication:**
 
@@ -314,7 +316,7 @@ Sans données sur la prévalence de ces traits dans chaque groupe, le taux de ba
 
 **Points:** 14 | **Temps:** 8 min
 
-### Question 1 (ID: wason-1)
+### Question 14 (ID: wason-1)
 
 **Type:** Choix multiple
 
@@ -348,7 +350,7 @@ Il suffit de retourner la Carte 1 (A - vérifier que l'autre face = nombre pair)
 
 ---
 
-### Question 2 (ID: wason-2)
+### Question 15 (ID: wason-2)
 
 **Type:** Choix multiple
 
@@ -382,7 +384,7 @@ Il suffit de vérifier la personne A (a-t-elle ≥18 ans ?) et la personne D (bo
 
 ---
 
-### Question 3 (ID: wason-3)
+### Question 16 (ID: wason-3)
 
 **Type:** Choix multiple
 
@@ -416,7 +418,7 @@ Il suffit de vérifier le Dossier 1 (75 000€ - vérifier qu'il est approuvé) 
 
 ---
 
-### Question 4 (ID: correlation-1)
+### Question 17 (ID: correlation-1)
 
 **Type:** Choix multiple
 
@@ -440,7 +442,7 @@ Corrélation ≠ causalité. Il peut y avoir une variable confondante (stress, e
 
 ---
 
-### Question 5 (ID: correlation-2)
+### Question 18 (ID: correlation-2)
 
 **Type:** Choix multiple
 
@@ -464,7 +466,7 @@ Une corrélation ne prouve pas la causalité. Les buveurs de café peuvent avoir
 
 ---
 
-### Question 6 (ID: correlation-3)
+### Question 19 (ID: correlation-3)
 
 **Type:** Choix multiple
 
@@ -488,7 +490,7 @@ Causalité inversée : les grandes villes ont plus d'incendies, donc embauchent 
 
 ---
 
-### Question 7 (ID: control-group-1)
+### Question 20 (ID: control-group-1)
 
 **Type:** Choix multiple
 
@@ -513,7 +515,7 @@ La comparaison avec un groupe contrôle (villes similaires) montre que la baisse
 
 ---
 
-### Question 8 (ID: control-group-2)
+### Question 21 (ID: control-group-2)
 
 **Type:** Choix multiple
 
@@ -538,7 +540,7 @@ Un groupe contrôle est essentiel. Les résultats peuvent avoir augmenté pour d
 
 ---
 
-### Question 9 (ID: control-group-3)
+### Question 22 (ID: control-group-3)
 
 **Type:** Choix multiple
 
@@ -563,7 +565,7 @@ Sans groupe contrôle, on ne peut pas savoir si la baisse est due aux lampadaire
 
 ---
 
-### Question 10 (ID: likelihood-1)
+### Question 23 (ID: likelihood-1)
 
 **Type:** Choix multiple
 
@@ -592,7 +594,7 @@ En d'autres termes : vous devez savoir à quelle fréquence l'alarme sonne quand
 
 ---
 
-### Question 11 (ID: likelihood-2)
+### Question 24 (ID: likelihood-2)
 
 **Type:** Choix multiple
 
@@ -621,7 +623,7 @@ En d'autres termes : vous devez connaître deux choses : (1) à quelle fréquenc
 
 ---
 
-### Question 12 (ID: likelihood-3)
+### Question 25 (ID: likelihood-3)
 
 **Type:** Choix multiple
 
@@ -648,7 +650,7 @@ En termes simples : il faut connaître deux choses : (1) à quelle fréquence on
 
 ---
 
-### Question 13 (ID: hypothesis-test-1)
+### Question 26 (ID: hypothesis-test-1)
 
 **Type:** Choix multiple
 
@@ -673,7 +675,7 @@ Essai randomisé contrôlé en double aveugle : gold standard pour tester l'effi
 
 ---
 
-### Question 14 (ID: hypothesis-test-2)
+### Question 27 (ID: hypothesis-test-2)
 
 **Type:** Choix multiple
 
@@ -702,13 +704,15 @@ Randomisation au sein des mêmes champs contrôle les variables confondantes (so
 
 **Points:** 7 | **Temps:** 4 min
 
-### Question 1 (ID: crt-1)
+### Question 28 (ID: crt-1)
 
-**Type:** Number
+**Type:** Numérique
 
 **Question:**
 
 Une batte et une balle coûtent 1,10€ au total. La batte coûte 1€ de plus que la balle. Combien coûte la balle ?
+
+**Réponse correcte:** 5 centimes
 
 **Explication:**
 
@@ -718,13 +722,15 @@ Une batte et une balle coûtent 1,10€ au total. La batte coûte 1€ de plus q
 
 ---
 
-### Question 2 (ID: crt-2)
+### Question 29 (ID: crt-2)
 
-**Type:** Number
+**Type:** Numérique
 
 **Question:**
 
 Si 5 machines prennent 5 minutes pour faire 5 pièces, combien de temps prennent 100 machines pour faire 100 pièces ?
+
+**Réponse correcte:** 5 minutes
 
 **Explication:**
 
@@ -734,13 +740,15 @@ Si 5 machines prennent 5 minutes pour faire 5 pièces, combien de temps prennent
 
 ---
 
-### Question 3 (ID: crt-3)
+### Question 30 (ID: crt-3)
 
-**Type:** Number
+**Type:** Numérique
 
 **Question:**
 
 Dans un lac, il y a un nénuphar. Chaque jour, sa taille double. Il faut 48 jours pour couvrir tout le lac. En combien de jours couvre-t-il la moitié du lac ?
+
+**Réponse correcte:** 47 jours
 
 **Explication:**
 
@@ -750,13 +758,15 @@ Dans un lac, il y a un nénuphar. Chaque jour, sa taille double. Il faut 48 jour
 
 ---
 
-### Question 4 (ID: crt-4)
+### Question 31 (ID: crt-4)
 
-**Type:** Number
+**Type:** Numérique
 
 **Question:**
 
 Un ascenseur met 1 minute pour monter d'un étage. Combien de temps met-il pour aller du rez-de-chaussée au 25ème étage ?
+
+**Réponse correcte:** 24 minutes
 
 **Explication:**
 
@@ -766,7 +776,7 @@ Un ascenseur met 1 minute pour monter d'un étage. Combien de temps met-il pour 
 
 ---
 
-### Question 5 (ID: crt-6)
+### Question 32 (ID: crt-6)
 
 **Type:** Choix multiple
 
@@ -790,13 +800,15 @@ Deuxième position. Vous prenez la place de celui qui était 2ème. L'intuition 
 
 ---
 
-### Question 6 (ID: crt-7)
+### Question 33 (ID: crt-7)
 
-**Type:** Number
+**Type:** Numérique
 
 **Question:**
 
 Un fermier a 15 moutons. Tous sauf 9 meurent. Combien en reste-t-il ?
+
+**Réponse correcte:** 9 moutons
 
 **Explication:**
 
@@ -806,13 +818,15 @@ Un fermier a 15 moutons. Tous sauf 9 meurent. Combien en reste-t-il ?
 
 ---
 
-### Question 7 (ID: crt-8)
+### Question 34 (ID: crt-8)
 
-**Type:** Number
+**Type:** Numérique
 
 **Question:**
 
 Dans un tournoi d'échecs à élimination directe avec 127 joueurs, combien de matchs sont nécessaires pour déterminer le gagnant ?
+
+**Réponse correcte:** 126 matchs
 
 **Explication:**
 
@@ -826,7 +840,7 @@ Dans un tournoi d'échecs à élimination directe avec 127 joueurs, combien de m
 
 **Points:** 6 | **Temps:** 5 min
 
-### Question 1 (ID: syllogism-1)
+### Question 35 (ID: syllogism-1)
 
 **Type:** Choix multiple
 
@@ -853,7 +867,7 @@ Valide logiquement (AAA1). Même si la conclusion est fausse dans la réalité, 
 
 ---
 
-### Question 2 (ID: syllogism-2)
+### Question 36 (ID: syllogism-2)
 
 **Type:** Choix multiple
 
@@ -876,7 +890,7 @@ Valide logiquement (AEE2). La conclusion suit des prémisses, même si elle est 
 
 ---
 
-### Question 3 (ID: syllogism-3)
+### Question 37 (ID: syllogism-3)
 
 **Type:** Choix multiple
 
@@ -899,7 +913,7 @@ Invalide logiquement (AAA2). Même si la conclusion est vraie, elle ne découle 
 
 ---
 
-### Question 4 (ID: syllogism-4)
+### Question 38 (ID: syllogism-4)
 
 **Type:** Choix multiple
 
@@ -922,7 +936,7 @@ Invalide logiquement (AAA2). Ce n'est pas parce que tous les précieux sont rare
 
 ---
 
-### Question 5 (ID: syllogism-5)
+### Question 39 (ID: syllogism-5)
 
 **Type:** Choix multiple
 
@@ -945,7 +959,7 @@ Valide logiquement (EAE1). La conclusion découle logiquement des prémisses et 
 
 ---
 
-### Question 6 (ID: syllogism-6)
+### Question 40 (ID: syllogism-6)
 
 **Type:** Choix multiple
 
@@ -968,7 +982,7 @@ Valide logiquement (AAA1). La conclusion suit des prémisses, même si elle est 
 
 ---
 
-### Question 7 (ID: syllogism-7)
+### Question 41 (ID: syllogism-7)
 
 **Type:** Choix multiple
 
@@ -991,7 +1005,7 @@ Invalide logiquement (AAA2). Même si la conclusion est vraie, elle ne suit pas 
 
 ---
 
-### Question 8 (ID: syllogism-8)
+### Question 42 (ID: syllogism-8)
 
 **Type:** Choix multiple
 
@@ -1014,7 +1028,7 @@ Valide logiquement. La conclusion découle des prémisses et est vraie. Syllogis
 
 ---
 
-### Question 9 (ID: syllogism-9)
+### Question 43 (ID: syllogism-9)
 
 **Type:** Choix multiple
 
@@ -1041,7 +1055,7 @@ Invalide logiquement (AAA2). Même si la conclusion est vraie (les fougères son
 
 ---
 
-### Question 10 (ID: syllogism-10)
+### Question 44 (ID: syllogism-10)
 
 **Type:** Choix multiple
 
@@ -1064,7 +1078,7 @@ Invalide logiquement (AAA2). Même si c'est vrai que les tigres sont carnivores,
 
 ---
 
-### Question 11 (ID: syllogism-11)
+### Question 45 (ID: syllogism-11)
 
 **Type:** Choix multiple
 
@@ -1087,7 +1101,7 @@ Valide logiquement (EAE2). La conclusion suit des prémisses, même si elle est 
 
 ---
 
-### Question 12 (ID: syllogism-12)
+### Question 46 (ID: syllogism-12)
 
 **Type:** Choix multiple
 
@@ -1114,7 +1128,7 @@ Invalide logiquement (AAA2). Bien que vraie, la conclusion ne suit pas logiqueme
 
 **Points:** 5 | **Temps:** 4 min
 
-### Question 1 (ID: disj-1)
+### Question 47 (ID: disj-1)
 
 **Type:** Choix multiple
 
@@ -1138,7 +1152,7 @@ Oui. Si Milieu = fraîches, alors Milieu touche Bas (congelé). Si Milieu = cong
 
 ---
 
-### Question 2 (ID: disj-2)
+### Question 48 (ID: disj-2)
 
 **Type:** Choix multiple
 
@@ -1162,7 +1176,7 @@ Oui. Si Paul est marié, il regarde Marie (non mariée). Si Paul n'est pas mari�
 
 ---
 
-### Question 3 (ID: disj-3)
+### Question 49 (ID: disj-3)
 
 **Type:** Choix multiple
 
@@ -1186,7 +1200,7 @@ On ne peut pas déterminer. Si B est ouverte : A-B sont consécutives et ouverte
 
 ---
 
-### Question 4 (ID: disj-4)
+### Question 50 (ID: disj-4)
 
 **Type:** Choix multiple
 
@@ -1210,7 +1224,7 @@ Non. Si Marc porte une cravate, alors Jean (son voisin) ne devrait pas en porter
 
 ---
 
-### Question 5 (ID: disj-5)
+### Question 51 (ID: disj-5)
 
 **Type:** Choix multiple
 
@@ -1240,13 +1254,15 @@ e. On ne peut pas déterminer
 
 **Points:** 3 | **Temps:** 4 min
 
-### Question 1 (ID: anchor-1)
+### Question 52 (ID: anchor-1)
 
-**Type:** Number
+**Type:** Numérique
 
 **Question:**
 
 La distance de San Francisco à Hawaï est-elle supérieure à 500 miles ? Quelle est selon vous la distance exacte ?
+
+**Réponse correcte:** 2387 miles
 
 **Explication:**
 
@@ -1254,15 +1270,19 @@ La distance réelle est ~2387 miles. L'ancre de 500 miles peut influencer votre 
 
 **Points:** 0.5
 
+*Question d'ancrage (ancre basse)*
+
 ---
 
-### Question 2 (ID: anchor-2)
+### Question 53 (ID: anchor-2)
 
-**Type:** Number
+**Type:** Numérique
 
 **Question:**
 
 La durée de l'orbite de Mars autour du Soleil est-elle supérieure à 1500 jours ? Quelle est selon vous la durée exacte ?
+
+**Réponse correcte:** 687 jours
 
 **Explication:**
 
@@ -1270,15 +1290,19 @@ La durée réelle est 687 jours. L'ancre de 1500 jours peut influencer votre est
 
 **Points:** 0.5
 
+*Question d'ancrage (ancre haute)*
+
 ---
 
-### Question 3 (ID: anchor-3)
+### Question 54 (ID: anchor-3)
 
-**Type:** Number
+**Type:** Numérique
 
 **Question:**
 
 La vitesse maximale d'un guépard est-elle supérieure à 45 km/h ? Quelle est selon vous cette vitesse exacte ?
+
+**Réponse correcte:** 110 km/h
 
 **Explication:**
 
@@ -1286,15 +1310,19 @@ La vitesse maximale d'un guépard est d'environ 110 km/h. L'ancre de 45 km/h peu
 
 **Points:** 0.5
 
+*Question d'ancrage (ancre basse)*
+
 ---
 
-### Question 4 (ID: anchor-4)
+### Question 55 (ID: anchor-4)
 
-**Type:** Number
+**Type:** Numérique
 
 **Question:**
 
 Le poids moyen d'un éléphant d'Afrique mâle adulte est-il supérieur à 1,5 tonnes ? Quel est selon vous ce poids exact ?
+
+**Réponse correcte:** 6 tonnes
 
 **Explication:**
 
@@ -1302,15 +1330,19 @@ Un éléphant d'Afrique mâle adulte pèse en moyenne environ 6 tonnes. L'ancre 
 
 **Points:** 0.5
 
+*Question d'ancrage (ancre basse)*
+
 ---
 
-### Question 5 (ID: anchor-5)
+### Question 56 (ID: anchor-5)
 
-**Type:** Number
+**Type:** Numérique
 
 **Question:**
 
 La vitesse de croisière d'un avion de ligne est-elle supérieure à 340 km/h ? Quelle est selon vous cette vitesse exacte ?
+
+**Réponse correcte:** 900 km/h
 
 **Explication:**
 
@@ -1318,15 +1350,19 @@ La vitesse de croisière d'un avion de ligne est d'environ 900 km/h. L'ancre de 
 
 **Points:** 0.5
 
+*Question d'ancrage (ancre basse)*
+
 ---
 
-### Question 6 (ID: anchor-6)
+### Question 57 (ID: anchor-6)
 
-**Type:** Number
+**Type:** Numérique
 
 **Question:**
 
 Le nombre d'os dans le corps humain adulte est-il supérieur à 65 ? Quel est selon vous ce nombre exact ?
+
+**Réponse correcte:** 206 os
 
 **Explication:**
 
@@ -1334,57 +1370,17 @@ Le corps humain adulte contient 206 os. L'ancre de 65 peut influencer votre esti
 
 **Points:** 0.5
 
----
-
-## Calibration des Connaissances (20 items)
-
-**Points:** 2.4 | **Temps:** 7 min
-
-### Système de Scoring CART
-
-Ce module utilise la méthodologie de scoring CART (Comprehensive Assessment of Rational Thinking) qui mesure la **calibration** plutôt que la précision.
-
-#### Partie 1 : Questions à choix multiples avec confiance (10 items)
-
-Les questions 1-10 demandent de choisir une réponse ET d'indiquer votre niveau de confiance (%).
-
-**Scoring CART - Partie 1 (0-2 points) :**
-- Calcul de la différence de calibration : |Confiance moyenne - % de réponses correctes|
-- Si différence ≤ 2% → **2 points** (parfaitement calibré)
-- Si différence < 10% → **1 point** (bien calibré)
-- Si différence ≥ 10% → **0 point** (mal calibré)
-
-Les 2 points sont ensuite distribués proportionnellement sur les 10 questions (0.2 point chacune maximum).
-
-**Exemple :** Si vous répondez avec 80% de confiance en moyenne mais n'avez que 50% de bonnes réponses, vous êtes surconfiant de 30 points → 0 point.
-
-#### Partie 2 : Intervalles de confiance à 90% (10 items)
-
-Les questions 11-20 demandent de donner un intervalle qui a **90% de chances** de contenir la vraie valeur.
-
-**Scoring CART - Partie 2 (0-2 points) selon la méthodologie CART Appendix :**
-
-Pour chaque question :
-- Si la valeur correcte est **dans l'intervalle** → **1 hit**
-- Si la valeur correcte est **hors de l'intervalle** → **0 hit**
-- **Aucune pénalité pour des intervalles larges** (bien calibré = savoir qu'on ne sait pas)
-
-Score global selon le nombre de hits sur 10 questions :
-- ≥ 6 hits (≥60%) → **2 points** (bien calibré : proche des 90% attendus en tenant compte de la variabilité)
-- 4-5 hits (40-50%) → **1 point** (sous-calibré : intervalles trop étroits)
-- < 4 hits (<40%) → **0 point** (fortement sous-calibré : excès de confiance)
-
-Les 2 points sont ensuite distribués proportionnellement sur les 10 questions (0.2 point chacune maximum).
-
-**Pourquoi 60% suffit pour 2 points ?** Avec un échantillon de 10 questions, obtenir exactement 9 hits est statistiquement peu probable. Un intervalle de 6-10 hits reste compatible avec une bonne calibration à 90%.
-
-**Note importante :** Ce scoring mesure votre capacité à **évaluer votre propre incertitude**, pas votre connaissance générale. Être bien calibré signifie donner des intervalles larges quand vous êtes incertain, et des intervalles étroits quand vous êtes sûr.
+*Question d'ancrage (ancre basse)*
 
 ---
 
-### Question 1 (ID: calib-mc-1)
+## Calibration des Connaissances (22 items)
 
-**Type:** Multiple-Choice-Confidence
+**Points:** 6 | **Temps:** 8 min
+
+### Question 58 (ID: calib-mc-1)
+
+**Type:** Choix multiple avec confiance
 
 **Question:**
 
@@ -1397,13 +1393,13 @@ b. Les journalistes doivent être autorisés à observer les effets de la Révol
 
 **Réponse correcte:** a
 
-**Points:** 0.12
+**Points:** 0.2
 
 ---
 
-### Question 2 (ID: calib-mc-2)
+### Question 59 (ID: calib-mc-2)
 
-**Type:** Multiple-Choice-Confidence
+**Type:** Choix multiple avec confiance
 
 **Question:**
 
@@ -1416,13 +1412,13 @@ b. La Guerre de Sept Ans
 
 **Réponse correcte:** a
 
-**Points:** 0.12
+**Points:** 0.2
 
 ---
 
-### Question 3 (ID: calib-mc-3)
+### Question 60 (ID: calib-mc-3)
 
-**Type:** Multiple-Choice-Confidence
+**Type:** Choix multiple avec confiance
 
 **Question:**
 
@@ -1435,13 +1431,13 @@ b. L'océan Atlantique et l'océan Pacifique
 
 **Réponse correcte:** a
 
-**Points:** 0.12
+**Points:** 0.2
 
 ---
 
-### Question 4 (ID: calib-mc-4)
+### Question 61 (ID: calib-mc-4)
 
-**Type:** Multiple-Choice-Confidence
+**Type:** Choix multiple avec confiance
 
 **Question:**
 
@@ -1454,13 +1450,13 @@ b. 1648
 
 **Réponse correcte:** a
 
-**Points:** 0.12
+**Points:** 0.2
 
 ---
 
-### Question 5 (ID: calib-mc-5)
+### Question 62 (ID: calib-mc-5)
 
-**Type:** Multiple-Choice-Confidence
+**Type:** Choix multiple avec confiance
 
 **Question:**
 
@@ -1473,13 +1469,13 @@ b. 1789
 
 **Réponse correcte:** a
 
-**Points:** 0.12
+**Points:** 0.2
 
 ---
 
-### Question 6 (ID: calib-mc-6)
+### Question 63 (ID: calib-mc-6)
 
-**Type:** Multiple-Choice-Confidence
+**Type:** Choix multiple avec confiance
 
 **Question:**
 
@@ -1492,13 +1488,13 @@ b. Les Andes
 
 **Réponse correcte:** a
 
-**Points:** 0.12
+**Points:** 0.2
 
 ---
 
-### Question 7 (ID: calib-mc-7)
+### Question 64 (ID: calib-mc-7)
 
-**Type:** Multiple-Choice-Confidence
+**Type:** Choix multiple avec confiance
 
 **Question:**
 
@@ -1511,13 +1507,13 @@ b. 1917
 
 **Réponse correcte:** a
 
-**Points:** 0.12
+**Points:** 0.2
 
 ---
 
-### Question 8 (ID: calib-mc-8)
+### Question 65 (ID: calib-mc-8)
 
-**Type:** Multiple-Choice-Confidence
+**Type:** Choix multiple avec confiance
 
 **Question:**
 
@@ -1530,13 +1526,13 @@ b. Plus petite que le Groenland
 
 **Réponse correcte:** a
 
-**Points:** 0.12
+**Points:** 0.2
 
 ---
 
-### Question 9 (ID: calib-mc-9)
+### Question 66 (ID: calib-mc-9)
 
-**Type:** Multiple-Choice-Confidence
+**Type:** Choix multiple avec confiance
 
 **Question:**
 
@@ -1549,13 +1545,13 @@ b. 1789
 
 **Réponse correcte:** a
 
-**Points:** 0.12
+**Points:** 0.2
 
 ---
 
-### Question 10 (ID: calib-mc-10)
+### Question 67 (ID: calib-mc-10)
 
-**Type:** Multiple-Choice-Confidence
+**Type:** Choix multiple avec confiance
 
 **Question:**
 
@@ -1568,167 +1564,239 @@ b. Moins de 5 000 km
 
 **Réponse correcte:** a
 
-**Points:** 0.12
+**Points:** 0.2
 
 ---
 
-### Question 11 (ID: calib-interval-1)
+### Question 68 (ID: calib-aggregate-1)
 
-**Type:** Confidence-Interval
+**Type:** Estimation agrégée
+
+**Question:**
+
+Sur les 10 questions précédentes, combien pensez-vous avoir répondu correctement ? (Rappel : en devinant au hasard, on s'attend à en avoir 5 de bonnes)
+
+**Explication:**
+
+Cette question mesure votre capacité à estimer globalement vos performances (calibration agrégée).
+
+**Points:** 1
+
+---
+
+### Question 69 (ID: calib-interval-1)
+
+**Type:** Intervalle de confiance
 
 **Question:**
 
 Donnez un intervalle à 90% : Quelle est la hauteur de la Tour Eiffel ?
 
+**Réponse correcte:** 330 mètres
+
 **Explication:**
 
 La Tour Eiffel mesure 330 mètres (avec antenne).
 
-**Points:** 0.12
+**Points:** 0.2
+
+*Vous devez donner un intervalle de confiance à 80% (min - max).*
 
 ---
 
-### Question 12 (ID: calib-interval-2)
+### Question 70 (ID: calib-interval-2)
 
-**Type:** Confidence-Interval
+**Type:** Intervalle de confiance
 
 **Question:**
 
 Donnez un intervalle à 90% : Quelle est la population du Japon ?
 
+**Réponse correcte:** 125 millions d'habitants
+
 **Explication:**
 
 Le Japon a environ 125 millions d'habitants.
 
-**Points:** 0.12
+**Points:** 0.2
+
+*Vous devez donner un intervalle de confiance à 80% (min - max).*
 
 ---
 
-### Question 13 (ID: calib-interval-3)
+### Question 71 (ID: calib-interval-3)
 
-**Type:** Confidence-Interval
+**Type:** Intervalle de confiance
 
 **Question:**
 
 Donnez un intervalle à 90% : En quelle année Christophe Colomb a-t-il découvert l'Amérique ?
 
+**Réponse correcte:** 1492 année
+
 **Explication:**
 
 Christophe Colomb a découvert l'Amérique en 1492.
 
-**Points:** 0.12
+**Points:** 0.2
+
+*Vous devez donner un intervalle de confiance à 80% (min - max).*
 
 ---
 
-### Question 14 (ID: calib-interval-4)
+### Question 72 (ID: calib-interval-4)
 
-**Type:** Confidence-Interval
+**Type:** Intervalle de confiance
 
 **Question:**
 
 Donnez un intervalle à 90% : Quelle est la longueur du fleuve Amazone ?
 
+**Réponse correcte:** 6400 kilomètres
+
 **Explication:**
 
 L'Amazone mesure environ 6 400 km de long.
 
-**Points:** 0.12
+**Points:** 0.2
+
+*Vous devez donner un intervalle de confiance à 80% (min - max).*
 
 ---
 
-### Question 15 (ID: calib-interval-5)
+### Question 73 (ID: calib-interval-5)
 
-**Type:** Confidence-Interval
+**Type:** Intervalle de confiance
 
 **Question:**
 
 Donnez un intervalle à 90% : Combien d'éléments contient le tableau périodique ?
 
+**Réponse correcte:** 118 éléments
+
 **Explication:**
 
 Le tableau périodique contient 118 éléments.
 
-**Points:** 0.12
+**Points:** 0.2
+
+*Vous devez donner un intervalle de confiance à 80% (min - max).*
 
 ---
 
-### Question 16 (ID: calib-interval-6)
+### Question 74 (ID: calib-interval-6)
 
-**Type:** Confidence-Interval
+**Type:** Intervalle de confiance
 
 **Question:**
 
 Donnez un intervalle à 90% : Quelle est la vitesse de la lumière ?
 
+**Réponse correcte:** 300000 km/s
+
 **Explication:**
 
 La vitesse de la lumière est d'environ 300 000 km/s.
 
-**Points:** 0.12
+**Points:** 0.2
+
+*Vous devez donner un intervalle de confiance à 80% (min - max).*
 
 ---
 
-### Question 17 (ID: calib-interval-7)
+### Question 75 (ID: calib-interval-7)
 
-**Type:** Confidence-Interval
+**Type:** Intervalle de confiance
 
 **Question:**
 
 Donnez un intervalle à 90% : Quelle est la température d'ébullition de l'eau au niveau de la mer ?
 
+**Réponse correcte:** 100 degrés Celsius
+
 **Explication:**
 
 L'eau bout à 100°C au niveau de la mer.
 
-**Points:** 0.12
+**Points:** 0.2
+
+*Vous devez donner un intervalle de confiance à 80% (min - max).*
 
 ---
 
-### Question 18 (ID: calib-interval-8)
+### Question 76 (ID: calib-interval-8)
 
-**Type:** Confidence-Interval
+**Type:** Intervalle de confiance
 
 **Question:**
 
 Donnez un intervalle à 90% : Combien de pays sont membres des Nations Unies ?
 
+**Réponse correcte:** 193 pays
+
 **Explication:**
 
 L'ONU compte 193 États membres.
 
-**Points:** 0.12
+**Points:** 0.2
+
+*Vous devez donner un intervalle de confiance à 80% (min - max).*
 
 ---
 
-### Question 19 (ID: calib-interval-9)
+### Question 77 (ID: calib-interval-9)
 
-**Type:** Confidence-Interval
+**Type:** Intervalle de confiance
 
 **Question:**
 
 Donnez un intervalle à 90% : Quelle est la distance Terre-Lune ?
 
+**Réponse correcte:** 384 milliers de km
+
 **Explication:**
 
 La distance moyenne Terre-Lune est de 384 400 km.
 
-**Points:** 0.12
+**Points:** 0.2
+
+*Vous devez donner un intervalle de confiance à 80% (min - max).*
 
 ---
 
-### Question 20 (ID: calib-interval-10)
+### Question 78 (ID: calib-interval-10)
 
-**Type:** Confidence-Interval
+**Type:** Intervalle de confiance
 
 **Question:**
 
 Donnez un intervalle à 90% : En quelle année a eu lieu la Révolution française ?
 
+**Réponse correcte:** 1789 année
+
 **Explication:**
 
 La Révolution française a commencé en 1789.
 
-**Points:** 0.12
+**Points:** 0.2
+
+*Vous devez donner un intervalle de confiance à 80% (min - max).*
+
+---
+
+### Question 79 (ID: calib-aggregate-2)
+
+**Type:** Estimation agrégée
+
+**Question:**
+
+Sur les 10 questions d'intervalles précédentes, pour combien de ces questions pensez-vous que votre intervalle contient la bonne réponse ?
+
+**Explication:**
+
+Cette question mesure votre capacité à estimer globalement la qualité de vos intervalles de confiance (calibration agrégée).
+
+**Points:** 1
 
 ---
 
@@ -1736,13 +1804,15 @@ La Révolution française a commencé en 1789.
 
 **Points:** 5 | **Temps:** 3 min
 
-### Question 1 (ID: num-1)
+### Question 80 (ID: num-1)
 
-**Type:** Number
+**Type:** Numérique
 
 **Question:**
 
 Un médicament réduit le risque d'infection de 40% à 20%. De combien de points de pourcentage le risque diminue-t-il ?
+
+**Réponse correcte:** 20 points de %
 
 **Explication:**
 
@@ -1752,13 +1822,15 @@ Un médicament réduit le risque d'infection de 40% à 20%. De combien de points
 
 ---
 
-### Question 2 (ID: num-2)
+### Question 81 (ID: num-2)
 
-**Type:** Number
+**Type:** Numérique
 
 **Question:**
 
 Dans un groupe de 800 personnes, 3 sur 10 portent des lunettes. Combien de personnes portent des lunettes ?
+
+**Réponse correcte:** 240 personnes
 
 **Explication:**
 
@@ -1768,13 +1840,15 @@ Dans un groupe de 800 personnes, 3 sur 10 portent des lunettes. Combien de perso
 
 ---
 
-### Question 3 (ID: num-3)
+### Question 82 (ID: num-3)
 
-**Type:** Number
+**Type:** Numérique
 
 **Question:**
 
 Dans une loterie, la probabilité de gagner est de 1 sur 500. Si 5000 personnes jouent, combien environ peut-on s'attendre à ce qu'elles gagnent ?
+
+**Réponse correcte:** 10 personnes
 
 **Explication:**
 
@@ -1784,13 +1858,15 @@ Dans une loterie, la probabilité de gagner est de 1 sur 500. Si 5000 personnes 
 
 ---
 
-### Question 4 (ID: num-4)
+### Question 83 (ID: num-4)
 
-**Type:** Number
+**Type:** Numérique
 
 **Question:**
 
 Un test médical a un taux de faux positifs de 3%. Si 10 000 personnes saines passent le test, combien environ recevront un résultat faussement positif ?
+
+**Réponse correcte:** 300 personnes
 
 **Explication:**
 
@@ -1800,13 +1876,15 @@ Un test médical a un taux de faux positifs de 3%. Si 10 000 personnes saines pa
 
 ---
 
-### Question 5 (ID: num-5)
+### Question 84 (ID: num-5)
 
-**Type:** Number
+**Type:** Numérique
 
 **Question:**
 
 Un traitement augmente le taux de survie de 80% à 92%. Quel est le pourcentage de réduction du risque de décès ?
+
+**Réponse correcte:** 60 %
 
 **Explication:**
 
@@ -1820,17 +1898,15 @@ Risque initial : 20% (100-80). Risque final : 8% (100-92). Réduction : (20-8)/2
 
 **Points:** 4.2 | **Temps:** 4 min
 
-### Question 1 (ID: super-1)
+### Question 85 (ID: super-1)
 
-**Type:** Likert
+**Type:** Échelle de Likert
 
 **Question:**
 
 Les pensées d'une personne peuvent influencer le mouvement d'un objet physique.
 
-**Échelle:** 1 (Pas du tout d'accord) à 7 (Tout à fait d'accord)
-
-**Réponse rationnelle:** 1
+**Réponse correcte:** 1
 
 **Explication:**
 
@@ -1838,19 +1914,19 @@ La télékinésie (influencer des objets par la pensée) n'a jamais été démon
 
 **Points:** 0.42
 
+*Échelle : 1 (Fortement en désaccord) à 6 (Fortement d'accord)*
+
 ---
 
-### Question 2 (ID: super-2)
+### Question 86 (ID: super-2)
 
-**Type:** Likert
+**Type:** Échelle de Likert
 
 **Question:**
 
 L'astrologie peut être utile pour juger de la personnalité.
 
-**Échelle:** 1 (Pas du tout d'accord) à 7 (Tout à fait d'accord)
-
-**Réponse rationnelle:** 1
+**Réponse correcte:** 1
 
 **Explication:**
 
@@ -1858,21 +1934,19 @@ L'astrologie n'a aucun fondement scientifique. Les études contrôlées montrent
 
 **Points:** 0.42
 
+*Échelle : 1 (Fortement en désaccord) à 6 (Fortement d'accord)*
+
 ---
 
-### Question 3 (ID: super-3)
+### Question 87 (ID: super-3)
 
-**Type:** Likert
+**Type:** Échelle de Likert
 
 **Question:**
 
 La lecture de la pensée n'est pas possible.
 
-**Échelle:** 1 (Pas du tout d'accord) à 7 (Tout à fait d'accord)
-
-**Réponse rationnelle:** 7
-
-**Note:** Question inversée
+**Réponse correcte:** 7
 
 **Explication:**
 
@@ -1880,19 +1954,19 @@ En effet, la télépathie (lecture de pensée) n'a jamais été démontrée de m
 
 **Points:** 0.42
 
+*Échelle : 1 (Fortement en désaccord) à 7 (Fortement d'accord)*
+
 ---
 
-### Question 4 (ID: super-4)
+### Question 88 (ID: super-4)
 
-**Type:** Likert
+**Type:** Échelle de Likert
 
 **Question:**
 
 Certaines personnes peuvent prédire l'avenir avec précision.
 
-**Échelle:** 1 (Pas du tout d'accord) à 7 (Tout à fait d'accord)
-
-**Réponse rationnelle:** 1
+**Réponse correcte:** 1
 
 **Explication:**
 
@@ -1900,21 +1974,19 @@ La précognition (prédire l'avenir de manière précise et systématique) n'a j
 
 **Points:** 0.42
 
+*Échelle : 1 (Fortement en désaccord) à 6 (Fortement d'accord)*
+
 ---
 
-### Question 5 (ID: super-5)
+### Question 89 (ID: super-5)
 
-**Type:** Likert
+**Type:** Échelle de Likert
 
 **Question:**
 
 Les fantômes ou esprits n'existent pas.
 
-**Échelle:** 1 (Pas du tout d'accord) à 7 (Tout à fait d'accord)
-
-**Réponse rationnelle:** 7
-
-**Note:** Question inversée
+**Réponse correcte:** 7
 
 **Explication:**
 
@@ -1922,19 +1994,19 @@ Il n'existe aucune preuve scientifique de l'existence de fantômes ou d'esprits.
 
 **Points:** 0.42
 
+*Échelle : 1 (Fortement en désaccord) à 7 (Fortement d'accord)*
+
 ---
 
-### Question 6 (ID: super-6)
+### Question 90 (ID: super-6)
 
-**Type:** Likert
+**Type:** Échelle de Likert
 
 **Question:**
 
 Certains porte-bonheur peuvent vraiment influencer les événements.
 
-**Échelle:** 1 (Pas du tout d'accord) à 7 (Tout à fait d'accord)
-
-**Réponse rationnelle:** 1
+**Réponse correcte:** 1
 
 **Explication:**
 
@@ -1942,19 +2014,19 @@ Les porte-bonheur n'ont aucun effet causal sur les événements. L'impression qu
 
 **Points:** 0.42
 
+*Échelle : 1 (Fortement en désaccord) à 6 (Fortement d'accord)*
+
 ---
 
-### Question 7 (ID: super-7)
+### Question 91 (ID: super-7)
 
-**Type:** Likert
+**Type:** Échelle de Likert
 
 **Question:**
 
 Il est possible de communiquer avec les morts.
 
-**Échelle:** 1 (Pas du tout d'accord) à 7 (Tout à fait d'accord)
-
-**Réponse rationnelle:** 1
+**Réponse correcte:** 1
 
 **Explication:**
 
@@ -1962,21 +2034,19 @@ La communication avec les morts n'a jamais été démontrée scientifiquement. L
 
 **Points:** 0.42
 
+*Échelle : 1 (Fortement en désaccord) à 6 (Fortement d'accord)*
+
 ---
 
-### Question 8 (ID: super-8)
+### Question 92 (ID: super-8)
 
-**Type:** Likert
+**Type:** Échelle de Likert
 
 **Question:**
 
 Les rêves prémonitoires sont de simples coïncidences.
 
-**Échelle:** 1 (Pas du tout d'accord) à 7 (Tout à fait d'accord)
-
-**Réponse rationnelle:** 7
-
-**Note:** Question inversée
+**Réponse correcte:** 7
 
 **Explication:**
 
@@ -1984,19 +2054,19 @@ Les rêves prémonitoires apparents sont effectivement des coïncidences. Nous r
 
 **Points:** 0.42
 
+*Échelle : 1 (Fortement en désaccord) à 7 (Fortement d'accord)*
+
 ---
 
-### Question 9 (ID: super-9)
+### Question 93 (ID: super-9)
 
-**Type:** Likert
+**Type:** Échelle de Likert
 
 **Question:**
 
 Certaines personnes possèdent des pouvoirs psychiques réels.
 
-**Échelle:** 1 (Pas du tout d'accord) à 7 (Tout à fait d'accord)
-
-**Réponse rationnelle:** 1
+**Réponse correcte:** 1
 
 **Explication:**
 
@@ -2004,21 +2074,19 @@ Les pouvoirs psychiques (ESP, télékinésie, etc.) n'ont jamais été démontr�
 
 **Points:** 0.42
 
+*Échelle : 1 (Fortement en désaccord) à 6 (Fortement d'accord)*
+
 ---
 
-### Question 10 (ID: super-10)
+### Question 94 (ID: super-10)
 
-**Type:** Likert
+**Type:** Échelle de Likert
 
 **Question:**
 
 Les cristaux et pierres n'ont aucun pouvoir de guérison.
 
-**Échelle:** 1 (Pas du tout d'accord) à 7 (Tout à fait d'accord)
-
-**Réponse rationnelle:** 7
-
-**Note:** Question inversée
+**Réponse correcte:** 7
 
 **Explication:**
 
@@ -2026,23 +2094,23 @@ Les cristaux et pierres n'ont aucun pouvoir de guérison démontré au-delà de 
 
 **Points:** 0.42
 
+*Échelle : 1 (Fortement en désaccord) à 7 (Fortement d'accord)*
+
 ---
 
 ## Attitudes Anti-Science (11 items)
 
 **Points:** 4.18 | **Temps:** 4 min
 
-### Question 1 (ID: science-1)
+### Question 95 (ID: science-1)
 
-**Type:** Likert
+**Type:** Échelle de Likert
 
 **Question:**
 
 Le fait que les scientifiques ne soient souvent pas d'accord montre que la science implique plus d'opinions personnelles que de preuves réelles.
 
-**Échelle:** 1 (Pas du tout d'accord) à 7 (Tout à fait d'accord)
-
-**Réponse rationnelle:** 1
+**Réponse correcte:** 1
 
 **Explication:**
 
@@ -2050,21 +2118,19 @@ Les désaccords scientifiques portent sur l'interprétation des preuves, pas sur
 
 **Points:** 0.38
 
+*Échelle : 1 (Fortement en désaccord) à 6 (Fortement d'accord)*
+
 ---
 
-### Question 2 (ID: science-2)
+### Question 96 (ID: science-2)
 
-**Type:** Likert
+**Type:** Échelle de Likert
 
 **Question:**
 
 Quand la science entre en conflit avec la sagesse conventionnelle, c'est généralement la science qui a raison.
 
-**Échelle:** 1 (Pas du tout d'accord) à 7 (Tout à fait d'accord)
-
-**Réponse rationnelle:** 7
-
-**Note:** Question inversée
+**Réponse correcte:** 7
 
 **Explication:**
 
@@ -2072,19 +2138,19 @@ La connaissance scientifique est la forme de connaissance la plus fiable car ell
 
 **Points:** 0.38
 
+*Échelle : 1 (Fortement en désaccord) à 7 (Fortement d'accord)*
+
 ---
 
-### Question 3 (ID: science-3)
+### Question 97 (ID: science-3)
 
-**Type:** Likert
+**Type:** Échelle de Likert
 
 **Question:**
 
 La science change trop souvent d'avis pour qu'on puisse lui faire confiance.
 
-**Échelle:** 1 (Pas du tout d'accord) à 7 (Tout à fait d'accord)
-
-**Réponse rationnelle:** 1
+**Réponse correcte:** 1
 
 **Explication:**
 
@@ -2092,21 +2158,19 @@ La science progresse en questionnant et en révisant ses théories face à de no
 
 **Points:** 0.38
 
+*Échelle : 1 (Fortement en désaccord) à 6 (Fortement d'accord)*
+
 ---
 
-### Question 4 (ID: science-4)
+### Question 98 (ID: science-4)
 
-**Type:** Likert
+**Type:** Échelle de Likert
 
 **Question:**
 
 Les scientifiques sont généralement plus fiables que les sources d'information non scientifiques.
 
-**Échelle:** 1 (Pas du tout d'accord) à 7 (Tout à fait d'accord)
-
-**Réponse rationnelle:** 7
-
-**Note:** Question inversée
+**Réponse correcte:** 7
 
 **Explication:**
 
@@ -2114,19 +2178,19 @@ Les scientifiques utilisent des méthodes rigoureuses, la revue par les pairs et
 
 **Points:** 0.38
 
+*Échelle : 1 (Fortement en désaccord) à 7 (Fortement d'accord)*
+
 ---
 
-### Question 5 (ID: science-5)
+### Question 99 (ID: science-5)
 
-**Type:** Likert
+**Type:** Échelle de Likert
 
 **Question:**
 
 Les découvertes scientifiques qui contredisent le bon sens sont probablement fausses.
 
-**Échelle:** 1 (Pas du tout d'accord) à 7 (Tout à fait d'accord)
-
-**Réponse rationnelle:** 1
+**Réponse correcte:** 1
 
 **Explication:**
 
@@ -2134,21 +2198,19 @@ Le bon sens est souvent trompeur (ex: la Terre semble plate, les objets lourds s
 
 **Points:** 0.38
 
+*Échelle : 1 (Fortement en désaccord) à 6 (Fortement d'accord)*
+
 ---
 
-### Question 6 (ID: science-6)
+### Question 100 (ID: science-6)
 
-**Type:** Likert
+**Type:** Échelle de Likert
 
 **Question:**
 
 La méthode scientifique est le meilleur moyen d'obtenir des connaissances fiables.
 
-**Échelle:** 1 (Pas du tout d'accord) à 7 (Tout à fait d'accord)
-
-**Réponse rationnelle:** 7
-
-**Note:** Question inversée
+**Réponse correcte:** 7
 
 **Explication:**
 
@@ -2156,21 +2218,19 @@ La méthode scientifique repose sur l'observation, l'expérimentation, la falsif
 
 **Points:** 0.38
 
+*Échelle : 1 (Fortement en désaccord) à 7 (Fortement d'accord)*
+
 ---
 
-### Question 7 (ID: science-7)
+### Question 101 (ID: science-7)
 
-**Type:** Likert
+**Type:** Échelle de Likert
 
 **Question:**
 
 Les études scientifiques sont parfois biaisées par les intérêts financiers de ceux qui les financent.
 
-**Échelle:** 1 (Pas du tout d'accord) à 7 (Tout à fait d'accord)
-
-**Réponse rationnelle:** 7
-
-**Note:** Question inversée
+**Réponse correcte:** 7
 
 **Explication:**
 
@@ -2178,19 +2238,19 @@ Les conflits d'intérêts peuvent influencer les résultats de recherche (ex: é
 
 **Points:** 0.38
 
+*Échelle : 1 (Fortement en désaccord) à 7 (Fortement d'accord)*
+
 ---
 
-### Question 8 (ID: science-8)
+### Question 102 (ID: science-8)
 
-**Type:** Likert
+**Type:** Échelle de Likert
 
 **Question:**
 
 La science ne peut pas expliquer les choses vraiment importantes de la vie.
 
-**Échelle:** 1 (Pas du tout d'accord) à 7 (Tout à fait d'accord)
-
-**Réponse rationnelle:** 1
+**Réponse correcte:** 1
 
 **Explication:**
 
@@ -2198,21 +2258,19 @@ La science peut éclairer de nombreux aspects importants de la vie (santé, rela
 
 **Points:** 0.38
 
+*Échelle : 1 (Fortement en désaccord) à 6 (Fortement d'accord)*
+
 ---
 
-### Question 9 (ID: science-9)
+### Question 103 (ID: science-9)
 
-**Type:** Likert
+**Type:** Échelle de Likert
 
 **Question:**
 
 Les preuves scientifiques devraient avoir plus de poids que les témoignages personnels.
 
-**Échelle:** 1 (Pas du tout d'accord) à 7 (Tout à fait d'accord)
-
-**Réponse rationnelle:** 7
-
-**Note:** Question inversée
+**Réponse correcte:** 7
 
 **Explication:**
 
@@ -2220,19 +2278,19 @@ Les études scientifiques à grande échelle et bien contrôlées sont plus fiab
 
 **Points:** 0.38
 
+*Échelle : 1 (Fortement en désaccord) à 7 (Fortement d'accord)*
+
 ---
 
-### Question 10 (ID: science-10)
+### Question 104 (ID: science-10)
 
-**Type:** Likert
+**Type:** Échelle de Likert
 
 **Question:**
 
 L'intuition personnelle est souvent plus fiable que les résultats d'études scientifiques.
 
-**Échelle:** 1 (Pas du tout d'accord) à 7 (Tout à fait d'accord)
-
-**Réponse rationnelle:** 1
+**Réponse correcte:** 1
 
 **Explication:**
 
@@ -2240,19 +2298,19 @@ L'intuition est sujette à de nombreux biais cognitifs (heuristiques, effet de h
 
 **Points:** 0.38
 
+*Échelle : 1 (Fortement en désaccord) à 6 (Fortement d'accord)*
+
 ---
 
-### Question 11 (ID: science-11)
+### Question 105 (ID: science-11)
 
-**Type:** Likert
+**Type:** Échelle de Likert
 
 **Question:**
 
 La science a créé plus de problèmes qu'elle n'en a résolu.
 
-**Échelle:** 1 (Pas du tout d'accord) à 7 (Tout à fait d'accord)
-
-**Réponse rationnelle:** 2
+**Réponse correcte:** 2
 
 **Explication:**
 
@@ -2260,23 +2318,23 @@ La science a considérablement amélioré la qualité de vie (médecine, agricul
 
 **Points:** 0.38
 
+*Échelle : 1 (Fortement en désaccord) à 6 (Fortement d'accord)*
+
 ---
 
 ## Croyances Conspirationnistes (11 items)
 
 **Points:** 4.62 | **Temps:** 3 min
 
-### Question 1 (ID: conspiracy-1)
+### Question 106 (ID: conspiracy-1)
 
-**Type:** Likert
+**Type:** Échelle de Likert
 
 **Question:**
 
 Les preuves que certains vaccins infantiles peuvent causer l'autisme ont été cachées par des compagnies pharmaceutiques.
 
-**Échelle:** 1 (Pas du tout d'accord) à 7 (Tout à fait d'accord)
-
-**Réponse rationnelle:** 1
+**Réponse correcte:** 1
 
 **Explication:**
 
@@ -2284,19 +2342,19 @@ Il n'existe aucune preuve scientifique liant les vaccins à l'autisme. L'étude 
 
 **Points:** 0.42
 
+*Échelle : 1 (Fortement en désaccord) à 6 (Fortement d'accord)*
+
 ---
 
-### Question 2 (ID: conspiracy-2)
+### Question 107 (ID: conspiracy-2)
 
-**Type:** Likert
+**Type:** Échelle de Likert
 
 **Question:**
 
 Des gouvernements ont caché des preuves de l'existence des extraterrestres et d'OVNI.
 
-**Échelle:** 1 (Pas du tout d'accord) à 7 (Tout à fait d'accord)
-
-**Réponse rationnelle:** 1
+**Réponse correcte:** 1
 
 **Explication:**
 
@@ -2304,19 +2362,19 @@ Malgré des décennies d'observation du ciel par des millions de personnes, il n
 
 **Points:** 0.42
 
+*Échelle : 1 (Fortement en désaccord) à 6 (Fortement d'accord)*
+
 ---
 
-### Question 3 (ID: conspiracy-3)
+### Question 108 (ID: conspiracy-3)
 
-**Type:** Likert
+**Type:** Échelle de Likert
 
 **Question:**
 
 L'alunissage d'Apollo était une mise en scène filmée dans un studio.
 
-**Échelle:** 1 (Pas du tout d'accord) à 7 (Tout à fait d'accord)
-
-**Réponse rationnelle:** 1
+**Réponse correcte:** 1
 
 **Explication:**
 
@@ -2324,19 +2382,19 @@ L'alunissage d'Apollo est l'un des événements les mieux documentés de l'histo
 
 **Points:** 0.42
 
+*Échelle : 1 (Fortement en désaccord) à 6 (Fortement d'accord)*
+
 ---
 
-### Question 4 (ID: conspiracy-4)
+### Question 109 (ID: conspiracy-4)
 
-**Type:** Likert
+**Type:** Échelle de Likert
 
 **Question:**
 
 Le changement climatique est un canular inventé pour contrôler l'économie mondiale.
 
-**Échelle:** 1 (Pas du tout d'accord) à 7 (Tout à fait d'accord)
-
-**Réponse rationnelle:** 1
+**Réponse correcte:** 1
 
 **Explication:**
 
@@ -2344,19 +2402,19 @@ Le consensus scientifique sur le changement climatique anthropique est écrasant
 
 **Points:** 0.42
 
+*Échelle : 1 (Fortement en désaccord) à 6 (Fortement d'accord)*
+
 ---
 
-### Question 5 (ID: conspiracy-5)
+### Question 110 (ID: conspiracy-5)
 
-**Type:** Likert
+**Type:** Échelle de Likert
 
 **Question:**
 
 Les chemtrails (traînées d'avion) sont utilisés pour répandre des produits chimiques sur la population.
 
-**Échelle:** 1 (Pas du tout d'accord) à 7 (Tout à fait d'accord)
-
-**Réponse rationnelle:** 1
+**Réponse correcte:** 1
 
 **Explication:**
 
@@ -2364,19 +2422,19 @@ Les traînées d'avion (contrails) sont de la vapeur d'eau condensée, un phéno
 
 **Points:** 0.42
 
+*Échelle : 1 (Fortement en désaccord) à 6 (Fortement d'accord)*
+
 ---
 
-### Question 6 (ID: conspiracy-6)
+### Question 111 (ID: conspiracy-6)
 
-**Type:** Likert
+**Type:** Échelle de Likert
 
 **Question:**
 
 La Terre est plate, contrairement à ce que la science officielle prétend.
 
-**Échelle:** 1 (Pas du tout d'accord) à 7 (Tout à fait d'accord)
-
-**Réponse rationnelle:** 1
+**Réponse correcte:** 1
 
 **Explication:**
 
@@ -2384,19 +2442,19 @@ La forme sphérique de la Terre est établie depuis l'Antiquité et confirmée p
 
 **Points:** 0.42
 
+*Échelle : 1 (Fortement en désaccord) à 6 (Fortement d'accord)*
+
 ---
 
-### Question 7 (ID: conspiracy-7)
+### Question 112 (ID: conspiracy-7)
 
-**Type:** Likert
+**Type:** Échelle de Likert
 
 **Question:**
 
 Un 'Nouvel Ordre Mondial' tente d'établir un gouvernement mondial unique.
 
-**Échelle:** 1 (Pas du tout d'accord) à 7 (Tout à fait d'accord)
-
-**Réponse rationnelle:** 1
+**Réponse correcte:** 1
 
 **Explication:**
 
@@ -2404,19 +2462,19 @@ Bien que des organisations internationales existent (ONU, UE), il n'existe aucun
 
 **Points:** 0.42
 
+*Échelle : 1 (Fortement en désaccord) à 6 (Fortement d'accord)*
+
 ---
 
-### Question 8 (ID: conspiracy-8)
+### Question 113 (ID: conspiracy-8)
 
-**Type:** Likert
+**Type:** Échelle de Likert
 
 **Question:**
 
 Des technologies secrètes de contrôle mental télépathique existent.
 
-**Échelle:** 1 (Pas du tout d'accord) à 7 (Tout à fait d'accord)
-
-**Réponse rationnelle:** 1
+**Réponse correcte:** 1
 
 **Explication:**
 
@@ -2424,19 +2482,19 @@ Il n'existe aucune preuve scientifique de technologies de contrôle mental tél�
 
 **Points:** 0.42
 
+*Échelle : 1 (Fortement en désaccord) à 6 (Fortement d'accord)*
+
 ---
 
-### Question 9 (ID: conspiracy-9)
+### Question 114 (ID: conspiracy-9)
 
-**Type:** Likert
+**Type:** Échelle de Likert
 
 **Question:**
 
 Les grandes entreprises pharmaceutiques cachent des remèdes contre le cancer pour continuer à vendre des traitements.
 
-**Échelle:** 1 (Pas du tout d'accord) à 7 (Tout à fait d'accord)
-
-**Réponse rationnelle:** 1
+**Réponse correcte:** 1
 
 **Explication:**
 
@@ -2444,19 +2502,19 @@ Les entreprises pharmaceutiques ont un intérêt économique à développer des 
 
 **Points:** 0.42
 
+*Échelle : 1 (Fortement en désaccord) à 6 (Fortement d'accord)*
+
 ---
 
-### Question 10 (ID: conspiracy-10)
+### Question 115 (ID: conspiracy-10)
 
-**Type:** Likert
+**Type:** Échelle de Likert
 
 **Question:**
 
 Les Illuminati existent et contrôlent secrètement les affaires mondiales.
 
-**Échelle:** 1 (Pas du tout d'accord) à 7 (Tout à fait d'accord)
-
-**Réponse rationnelle:** 1
+**Réponse correcte:** 1
 
 **Explication:**
 
@@ -2464,19 +2522,19 @@ Il n'existe aucune preuve de l'existence des Illuminati comme organisation contr
 
 **Points:** 0.42
 
+*Échelle : 1 (Fortement en désaccord) à 6 (Fortement d'accord)*
+
 ---
 
-### Question 11 (ID: conspiracy-11)
+### Question 116 (ID: conspiracy-11)
 
-**Type:** Likert
+**Type:** Échelle de Likert
 
 **Question:**
 
 Des gouvernements mènent actuellement des expérimentations médicales secrètes à grande échelle sur leurs citoyens à leur insu.
 
-**Échelle:** 1 (Pas du tout d'accord) à 7 (Tout à fait d'accord)
-
-**Réponse rationnelle:** 1
+**Réponse correcte:** 1
 
 **Explication:**
 
@@ -2484,23 +2542,23 @@ Bien que des expérimentations contraires à l'éthique aient existé historique
 
 **Points:** 0.42
 
+*Échelle : 1 (Fortement en désaccord) à 6 (Fortement d'accord)*
+
 ---
 
 ## Croyances Dysfonctionnelles (9 items)
 
 **Points:** 5.04 | **Temps:** 3 min
 
-### Question 1 (ID: dysfunc-1)
+### Question 117 (ID: dysfunc-1)
 
-**Type:** Likert
+**Type:** Échelle de Likert
 
 **Question:**
 
 Je DOIS être aimé et approuvé par toutes les personnes importantes de ma vie.
 
-**Échelle:** 1 (Pas du tout d'accord) à 7 (Tout à fait d'accord)
-
-**Réponse rationnelle:** 1
+**Réponse correcte:** 1
 
 **Explication:**
 
@@ -2508,19 +2566,19 @@ Cette croyance est irrationnelle car elle transforme un désir légitime (être 
 
 **Points:** 0.56
 
+*Échelle : 1 (Fortement en désaccord) à 6 (Fortement d'accord)*
+
 ---
 
-### Question 2 (ID: dysfunc-2)
+### Question 118 (ID: dysfunc-2)
 
-**Type:** Likert
+**Type:** Échelle de Likert
 
 **Question:**
 
 Je dois être parfaitement compétent dans tout ce que j'entreprends.
 
-**Échelle:** 1 (Pas du tout d'accord) à 7 (Tout à fait d'accord)
-
-**Réponse rationnelle:** 1
+**Réponse correcte:** 1
 
 **Explication:**
 
@@ -2528,19 +2586,19 @@ Exiger la perfection dans tout est irréaliste et source d'anxiété. Il est plu
 
 **Points:** 0.56
 
+*Échelle : 1 (Fortement en désaccord) à 6 (Fortement d'accord)*
+
 ---
 
-### Question 3 (ID: dysfunc-3)
+### Question 119 (ID: dysfunc-3)
 
-**Type:** Likert
+**Type:** Échelle de Likert
 
 **Question:**
 
 Les gens qui se comportent mal ou commettent des erreurs méritent d'être blâmés et punis sévèrement.
 
-**Échelle:** 1 (Pas du tout d'accord) à 7 (Tout à fait d'accord)
-
-**Réponse rationnelle:** 1
+**Réponse correcte:** 1
 
 **Explication:**
 
@@ -2548,19 +2606,19 @@ Blâmer et punir sévèrement les autres pour leurs erreurs est contre-productif
 
 **Points:** 0.56
 
+*Échelle : 1 (Fortement en désaccord) à 6 (Fortement d'accord)*
+
 ---
 
-### Question 4 (ID: dysfunc-4)
+### Question 120 (ID: dysfunc-4)
 
-**Type:** Likert
+**Type:** Échelle de Likert
 
 **Question:**
 
 C'est catastrophique quand les choses ne se passent pas comme je le voudrais.
 
-**Échelle:** 1 (Pas du tout d'accord) à 7 (Tout à fait d'accord)
-
-**Réponse rationnelle:** 1
+**Réponse correcte:** 1
 
 **Explication:**
 
@@ -2568,19 +2626,19 @@ Cette croyance reflète une pensée catastrophique irrationnelle. Les problèmes
 
 **Points:** 0.56
 
+*Échelle : 1 (Fortement en désaccord) à 6 (Fortement d'accord)*
+
 ---
 
-### Question 5 (ID: dysfunc-5)
+### Question 121 (ID: dysfunc-5)
 
-**Type:** Likert
+**Type:** Échelle de Likert
 
 **Question:**
 
 Quand quelque chose de mauvais m'arrive, c'est toujours dû à des facteurs externes, jamais à mes décisions.
 
-**Échelle:** 1 (Pas du tout d'accord) à 7 (Tout à fait d'accord)
-
-**Réponse rationnelle:** 1
+**Réponse correcte:** 1
 
 **Explication:**
 
@@ -2588,19 +2646,19 @@ Cette affirmation reflète un biais d'attribution externe systématique et une s
 
 **Points:** 0.56
 
+*Échelle : 1 (Fortement en désaccord) à 6 (Fortement d'accord)*
+
 ---
 
-### Question 6 (ID: dysfunc-6)
+### Question 122 (ID: dysfunc-6)
 
-**Type:** Likert
+**Type:** Échelle de Likert
 
 **Question:**
 
 Je dois constamment m'inquiéter des choses dangereuses ou effrayantes qui pourraient arriver.
 
-**Échelle:** 1 (Pas du tout d'accord) à 7 (Tout à fait d'accord)
-
-**Réponse rationnelle:** 1
+**Réponse correcte:** 1
 
 **Explication:**
 
@@ -2608,19 +2666,19 @@ L'inquiétude excessive et constante n'augmente pas le contrôle sur les événe
 
 **Points:** 0.56
 
+*Échelle : 1 (Fortement en désaccord) à 6 (Fortement d'accord)*
+
 ---
 
-### Question 7 (ID: dysfunc-7)
+### Question 123 (ID: dysfunc-7)
 
-**Type:** Likert
+**Type:** Échelle de Likert
 
 **Question:**
 
 Si j'ignore un problème, il finira par se résoudre tout seul.
 
-**Échelle:** 1 (Pas du tout d'accord) à 7 (Tout à fait d'accord)
-
-**Réponse rationnelle:** 1
+**Réponse correcte:** 1
 
 **Explication:**
 
@@ -2628,19 +2686,19 @@ Cette croyance repose sur une fausse relation causale entre l'inaction et la ré
 
 **Points:** 0.56
 
+*Échelle : 1 (Fortement en désaccord) à 6 (Fortement d'accord)*
+
 ---
 
-### Question 8 (ID: dysfunc-8)
+### Question 124 (ID: dysfunc-8)
 
-**Type:** Likert
+**Type:** Échelle de Likert
 
 **Question:**
 
 Je ne peux rien accomplir d'important sans que quelqu'un me dise exactement quoi faire.
 
-**Échelle:** 1 (Pas du tout d'accord) à 7 (Tout à fait d'accord)
-
-**Réponse rationnelle:** 1
+**Réponse correcte:** 1
 
 **Explication:**
 
@@ -2648,19 +2706,19 @@ Cette croyance reflète une sous-estimation systématique de ses propres capacit
 
 **Points:** 0.56
 
+*Échelle : 1 (Fortement en désaccord) à 6 (Fortement d'accord)*
+
 ---
 
-### Question 9 (ID: dysfunc-9)
+### Question 125 (ID: dysfunc-9)
 
-**Type:** Likert
+**Type:** Échelle de Likert
 
 **Question:**
 
 Si quelque chose m'a affecté dans le passé, cela continuera toujours à m'affecter de la même manière.
 
-**Échelle:** 1 (Pas du tout d'accord) à 7 (Tout à fait d'accord)
-
-**Réponse rationnelle:** 1
+**Réponse correcte:** 1
 
 **Explication:**
 
@@ -2668,21 +2726,21 @@ Cette croyance suggère un déterminisme psychologique irréaliste et ignore la 
 
 **Points:** 0.56
 
+*Échelle : 1 (Fortement en désaccord) à 6 (Fortement d'accord)*
+
 ---
 
 ## Évaluation d'Arguments (8 items)
 
 **Points:** 2.5 | **Temps:** 8 min
 
-### Question 1 (ID: arg-eval-1a)
+### Question 126 (ID: arg-eval-1a)
 
-**Type:** Likert
+**Type:** Échelle de Likert
 
 **Question:**
 
 **Partie A - Votre opinion** : Les étudiants devraient avoir une voix plus forte que le grand public dans la définition des politiques universitaires.
-
-**Échelle:** 1 (Pas du tout d'accord) à 7 (Tout à fait d'accord)
 
 **Explication:**
 
@@ -2690,9 +2748,11 @@ Cette question mesure votre opinion préalable pour détecter le biais de croyan
 
 **Points:** 0
 
+*Échelle : 1 (Fortement en désaccord) à 6 (Fortement d'accord)*
+
 ---
 
-### Question 2 (ID: arg-eval-1b)
+### Question 127 (ID: arg-eval-1b)
 
 **Type:** Choix multiple
 
@@ -2727,15 +2787,13 @@ La réponse de Marc est très faible car il esquive explicitement le contre-argu
 
 ---
 
-### Question 3 (ID: arg-eval-2a)
+### Question 128 (ID: arg-eval-2a)
 
-**Type:** Likert
+**Type:** Échelle de Likert
 
 **Question:**
 
 **Partie A - Votre opinion** : Le tabac devrait être interdit dans tous les lieux publics fermés.
-
-**Échelle:** 1 (Pas du tout d'accord) à 7 (Tout à fait d'accord)
 
 **Explication:**
 
@@ -2743,9 +2801,11 @@ Cette question mesure votre opinion préalable pour détecter le biais de croyan
 
 **Points:** 0
 
+*Échelle : 1 (Fortement en désaccord) à 6 (Fortement d'accord)*
+
 ---
 
-### Question 4 (ID: arg-eval-2b)
+### Question 129 (ID: arg-eval-2b)
 
 **Type:** Choix multiple
 
@@ -2780,15 +2840,13 @@ d. 4 - Très fort
 
 ---
 
-### Question 5 (ID: arg-eval-3a)
+### Question 130 (ID: arg-eval-3a)
 
-**Type:** Likert
+**Type:** Échelle de Likert
 
 **Question:**
 
 **Partie A - Votre opinion** : Les téléphones portables devraient être interdits dans toutes les écoles.
-
-**Échelle:** 1 (Pas du tout d'accord) à 7 (Tout à fait d'accord)
 
 **Explication:**
 
@@ -2796,9 +2854,11 @@ Un raisonnement solide peut être jugé indépendamment de nos émotions personn
 
 **Points:** 0
 
+*Échelle : 1 (Fortement en désaccord) à 6 (Fortement d'accord)*
+
 ---
 
-### Question 6 (ID: arg-eval-3b)
+### Question 131 (ID: arg-eval-3b)
 
 **Type:** Choix multiple
 
@@ -2833,15 +2893,13 @@ La réponse de Marc est très faible car elle commet un 'appel à la tradition' 
 
 ---
 
-### Question 7 (ID: arg-eval-4a)
+### Question 132 (ID: arg-eval-4a)
 
-**Type:** Likert
+**Type:** Échelle de Likert
 
 **Question:**
 
 **Partie A - Votre opinion** : Il faut augmenter significativement les taxes sur les produits sucrés pour réduire l'obésité.
-
-**Échelle:** 1 (Pas du tout d'accord) à 7 (Tout à fait d'accord)
 
 **Explication:**
 
@@ -2849,9 +2907,11 @@ La cohérence logique et les preuves sont les critères essentiels pour évaluer
 
 **Points:** 0
 
+*Échelle : 1 (Fortement en désaccord) à 6 (Fortement d'accord)*
+
 ---
 
-### Question 8 (ID: arg-eval-4b)
+### Question 133 (ID: arg-eval-4b)
 
 **Type:** Choix multiple
 
@@ -2890,7 +2950,7 @@ La réponse de Marc est forte car elle répond directement au contre-argument. L
 
 **Points:** 5 | **Temps:** 5 min
 
-### Question 1 (ID: causal-1)
+### Question 134 (ID: causal-1)
 
 **Type:** Choix multiple
 
@@ -2916,7 +2976,7 @@ Non, la corrélation n'implique pas la causation. D'autres facteurs (niveau soci
 
 ---
 
-### Question 2 (ID: causal-2)
+### Question 135 (ID: causal-2)
 
 **Type:** Choix multiple
 
@@ -2928,11 +2988,11 @@ Peut-on conclure que prendre des vitamines augmente l'espérance de vie ?
 
 **Options:**
 
-a. Oui, la différence d'espérance de vie prouve l'effet des vitamines
-b. Non, car les personnes qui prennent des vitamines ont probablement déjà un mode de vie plus sain
+a. Non, car les personnes qui prennent des vitamines ont probablement déjà un mode de vie plus sain
+b. Oui, la différence d'espérance de vie prouve l'effet des vitamines
 c. Oui, mais seulement pour certains types de vitamines
 
-**Réponse correcte:** b
+**Réponse correcte:** a
 
 **Explication:**
 
@@ -2942,7 +3002,7 @@ Non, on ne peut pas conclure à un effet causal. Les personnes qui prennent des 
 
 ---
 
-### Question 3 (ID: causal-4)
+### Question 136 (ID: causal-4)
 
 **Type:** Choix multiple
 
@@ -2969,7 +3029,7 @@ Un groupe contrôle est essentiel. Les scores auraient peut-être augmenté de t
 
 ---
 
-### Question 4 (ID: causal-5)
+### Question 137 (ID: causal-5)
 
 **Type:** Choix multiple
 
@@ -2981,12 +3041,12 @@ Quel serait le meilleur moyen de vérifier cette affirmation ?
 
 **Options:**
 
-a. Augmenter le nombre de participants
-b. Comparer avec un groupe qui a pris un placebo
+a. Comparer avec un groupe qui a pris un placebo
+b. Augmenter le nombre de participants
 c. Prolonger l'étude à 6 mois
 d. Demander aux participants de tenir un journal
 
-**Réponse correcte:** b
+**Réponse correcte:** a
 
 **Explication:**
 
@@ -2996,7 +3056,7 @@ Un groupe placebo est essentiel pour contrôler l'effet placebo (amélioration s
 
 ---
 
-### Question 5 (ID: causal-6)
+### Question 138 (ID: causal-6)
 
 **Type:** Choix multiple
 
@@ -3025,9 +3085,9 @@ La principale limite est l'absence de groupe contrôle. Beaucoup de conditions s
 
 ## Effets de Cadrage (10 items)
 
-**Points:** 3.0 | **Temps:** 8 min
+**Points:** 3 | **Temps:** 8 min
 
-### Question 1 (ID: frame-1a)
+### Question 139 (ID: frame-1a)
 
 **Type:** Choix multiple
 
@@ -3054,11 +3114,9 @@ Un produit décrit comme '95% efficace' et '5% d'échec' est mathématiquement i
 
 **Points:** 0
 
-**Paire:** frame-pair-1 (positive)
-
 ---
 
-### Question 2 (ID: frame-1b)
+### Question 140 (ID: frame-1b)
 
 **Type:** Choix multiple
 
@@ -3070,14 +3128,14 @@ Comment évaluez-vous la situation de l'emploi dans cette région ?
 
 **Options:**
 
-a. Très favorable
-b. Favorable
+a. Favorable
+b. Très favorable
 c. Légèrement favorable
 d. Légèrement défavorable
 e. Défavorable
 f. Très défavorable
 
-**Réponse correcte:** b
+**Réponse correcte:** a
 
 **Explication:**
 
@@ -3085,11 +3143,9 @@ Un produit décrit comme '95% efficace' et '5% d'échec' est mathématiquement i
 
 **Points:** 0.6
 
-**Paire:** frame-pair-1 (negative)
-
 ---
 
-### Question 3 (ID: frame-2a)
+### Question 141 (ID: frame-2a)
 
 **Type:** Choix multiple
 
@@ -3113,11 +3169,9 @@ Cette question teste l'effet de cadrage (framing effect). La formulation en term
 
 **Points:** 0
 
-**Paire:** frame-pair-2 (gain)
-
 ---
 
-### Question 4 (ID: frame-2b)
+### Question 142 (ID: frame-2b)
 
 **Type:** Choix multiple
 
@@ -3141,11 +3195,9 @@ Cette question est mathématiquement équivalente à la version 'cadre gain' mai
 
 **Points:** 0.6
 
-**Paire:** frame-pair-2 (loss)
-
 ---
 
-### Question 5 (ID: frame-3a)
+### Question 143 (ID: frame-3a)
 
 **Type:** Choix multiple
 
@@ -3172,11 +3224,9 @@ Un véhicule qui 'fonctionne 94% du temps' est identique à un véhicule qui 'dy
 
 **Points:** 0
 
-**Paire:** frame-pair-3 (positive)
-
 ---
 
-### Question 6 (ID: frame-3b)
+### Question 144 (ID: frame-3b)
 
 **Type:** Choix multiple
 
@@ -3188,14 +3238,14 @@ Quelle est votre impression de la fiabilité de ce véhicule ?
 
 **Options:**
 
-a. Très favorable
-b. Favorable
+a. Favorable
+b. Très favorable
 c. Légèrement favorable
 d. Légèrement défavorable
 e. Défavorable
 f. Très défavorable
 
-**Réponse correcte:** b
+**Réponse correcte:** a
 
 **Explication:**
 
@@ -3203,11 +3253,9 @@ Cette formulation négative décrit exactement la même réalité que la version
 
 **Points:** 0.6
 
-**Paire:** frame-pair-3 (negative)
-
 ---
 
-### Question 7 (ID: frame-4a)
+### Question 145 (ID: frame-4a)
 
 **Type:** Choix multiple
 
@@ -3234,11 +3282,9 @@ Une viande décrite comme '75% maigre' est identique à '25% de matière grasse'
 
 **Points:** 0
 
-**Paire:** frame-pair-4 (positive)
-
 ---
 
-### Question 8 (ID: frame-4b)
+### Question 146 (ID: frame-4b)
 
 **Type:** Choix multiple
 
@@ -3250,14 +3296,14 @@ Que pensez-vous de la sécurité de cette compagnie ?
 
 **Options:**
 
-a. Très sûre
-b. Sûre
+a. Sûre
+b. Très sûre
 c. Légèrement sûre
 d. Légèrement risquée
 e. Risquée
 f. Très risquée
 
-**Réponse correcte:** b
+**Réponse correcte:** a
 
 **Explication:**
 
@@ -3265,11 +3311,9 @@ Cette formulation en termes de matière grasse décrit le même produit que '75%
 
 **Points:** 0.6
 
-**Paire:** frame-pair-4 (negative)
-
 ---
 
-### Question 9 (ID: frame-5a)
+### Question 147 (ID: frame-5a)
 
 **Type:** Choix multiple
 
@@ -3296,11 +3340,9 @@ Un programme avec '90% de réussite' est identique à '10% d'échec'. Le cadrage
 
 **Points:** 0
 
-**Paire:** frame-pair-5 (positive)
-
 ---
 
-### Question 10 (ID: frame-5b)
+### Question 148 (ID: frame-5b)
 
 **Type:** Choix multiple
 
@@ -3327,15 +3369,13 @@ Cette formulation en termes d'échec décrit le même taux de succès (90%). Les
 
 **Points:** 0.6
 
-**Paire:** frame-pair-5 (negative)
-
 ---
 
 ## Sensibilité à la Valeur Espérée (6 items)
 
 **Points:** 2.52 | **Temps:** 3 min
 
-### Question 1 (ID: ev-2)
+### Question 149 (ID: ev-2)
 
 **Type:** Choix multiple
 
@@ -3361,7 +3401,7 @@ VE(A) = 0.15×150 + 0.85×8 = 29€. VE(B) = 0.15×40 + 0.85×10 = 14,50€. Par
 
 ---
 
-### Question 2 (ID: ev-3)
+### Question 150 (ID: ev-3)
 
 **Type:** Choix multiple
 
@@ -3387,7 +3427,7 @@ VE(A) = 0.10×200 + 0.90×12 = 30,80€. VE(B) = 0.10×60 + 0.90×15 = 19,50€.
 
 ---
 
-### Question 3 (ID: ev-4)
+### Question 151 (ID: ev-4)
 
 **Type:** Choix multiple
 
@@ -3413,7 +3453,7 @@ VE(A) = 0,75€. VE(B) = 0.40×2,50 = 1,00€. Pari B est optimal.
 
 ---
 
-### Question 4 (ID: ev-6)
+### Question 152 (ID: ev-6)
 
 **Type:** Choix multiple
 
@@ -3439,7 +3479,7 @@ VE(A) = 0.20×500 + 0.80×20 = 116€. VE(B) = 0.20×100 + 0.80×80 = 84€. Par
 
 ---
 
-### Question 5 (ID: ev-7)
+### Question 153 (ID: ev-7)
 
 **Type:** Choix multiple
 
@@ -3465,7 +3505,7 @@ VE(A) = 0.50×300 + 0.50×100 = 200€. VE(B) = 0.50×250 + 0.50×150 = 200€. 
 
 ---
 
-### Question 6 (ID: ev-10)
+### Question 154 (ID: ev-10)
 
 **Type:** Choix multiple
 
@@ -3495,7 +3535,7 @@ VE(A) = 0.60×200 + 0.40×50 = 140€. VE(B) = 0.60×150 + 0.40×100 = 130€. P
 
 **Points:** 3 | **Temps:** 4 min
 
-### Question 1 (ID: sunk-1)
+### Question 155 (ID: sunk-1)
 
 **Type:** Choix multiple
 
@@ -3511,17 +3551,17 @@ a. Aller au concert quand même pour ne pas perdre les 80€
 b. Rester chez vous vous reposer, les 80€ sont déjà perdus
 c. Essayer de vendre le billet
 
-**Réponse correcte:** b
+**Réponses correctes:** b, c
 
 **Explication:**
 
-Les 80€ sont un coût irrécupérable (sunk cost). La décision rationnelle considère uniquement le futur : aller malade vs rester et guérir. Le passé ne doit pas influencer.
+Les 80€ sont un coût irrécupérable (sunk cost). La décision rationnelle considère uniquement le futur. Deux options sont rationnelles : (1) Rester chez vous pour vous reposer et guérir, ou (2) Essayer de vendre le billet pour récupérer l'argent. L'important est de ne PAS aller au concert juste parce que vous avez payé.
 
 **Points:** 0.75
 
 ---
 
-### Question 2 (ID: sunk-2)
+### Question 156 (ID: sunk-2)
 
 **Type:** Choix multiple
 
@@ -3536,11 +3576,11 @@ Que faire ?
 
 **Options:**
 
-a. Continuer, sinon les 10 000€ auront été gaspillés pour rien
-b. Arrêter immédiatement pour limiter les pertes
+a. Arrêter immédiatement pour limiter les pertes
+b. Continuer, sinon les 10 000€ auront été gaspillés pour rien
 c. Continuer encore 3 mois pour être sûr
 
-**Réponse correcte:** b
+**Réponse correcte:** a
 
 **Explication:**
 
@@ -3550,7 +3590,7 @@ Arrêter est rationnel. Les 10 000€ sont perdus quoi qu'il arrive (sunk cost).
 
 ---
 
-### Question 3 (ID: sunk-3)
+### Question 157 (ID: sunk-3)
 
 **Type:** Choix multiple
 
@@ -3566,17 +3606,17 @@ a. Manger le plat raté pour ne pas gâcher les 3 heures de travail
 b. Commander à manger, les 3 heures sont déjà perdues
 c. Essayer de corriger le plat
 
-**Réponse correcte:** b
+**Réponses correctes:** b, c
 
 **Explication:**
 
-Commander est rationnel. Les 3 heures sont un sunk cost. Le choix est maintenant : manger quelque chose d'immangeable vs payer 15€ pour un bon repas.
+Les 3 heures de cuisine sont un sunk cost. Deux options sont rationnelles : (1) Commander à manger pour avoir un bon repas, ou (2) Essayer de corriger le plat si c'est possible (par exemple, diluer avec des ingrédients non salés). L'important est de ne PAS se forcer à manger quelque chose d'immangeable juste pour "ne pas gaspiller" le temps passé.
 
 **Points:** 0.75
 
 ---
 
-### Question 4 (ID: sunk-4)
+### Question 158 (ID: sunk-4)
 
 **Type:** Choix multiple
 

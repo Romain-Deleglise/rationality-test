@@ -1,6 +1,6 @@
 {
   "version": "complète",
-  "totalPoints": 102.02,
+  "totalPoints": 93.06,
   "estimatedTime": 87,
   "modules": [
     {
@@ -479,7 +479,7 @@
     {
       "id": "belief-bias",
       "name": "Biais de Croyance (12 items)",
-      "points": 8,
+      "points": 6,
       "time": 5,
       "questions": [
         {
@@ -1136,7 +1136,7 @@
     {
       "id": "superstition",
       "name": "Pensée Superstitieuse (10 items)",
-      "points": 5,
+      "points": 4.2,
       "time": 4,
       "questions": [
         {
@@ -1234,7 +1234,7 @@
     {
       "id": "anti-science",
       "name": "Attitudes Anti-Science (11 items)",
-      "points": 5,
+      "points": 4.18,
       "time": 4,
       "questions": [
         {
@@ -1341,7 +1341,7 @@
     {
       "id": "conspiracy",
       "name": "Croyances Conspirationnistes (11 items)",
-      "points": 10,
+      "points": 4.62,
       "time": 3,
       "questions": [
         {
@@ -1448,7 +1448,7 @@
     {
       "id": "dysfunctional-beliefs",
       "name": "Croyances Dysfonctionnelles (9 items)",
-      "points": 5,
+      "points": 5.04,
       "time": 3,
       "questions": [
         {
@@ -1979,9 +1979,12 @@
             "Rester chez vous vous reposer, les 80€ sont déjà perdus",
             "Essayer de vendre le billet"
           ],
-          "correct": 1,
           "points": 0.75,
-          "explanation": "Les 80€ sont un coût irrécupérable (sunk cost). La décision rationnelle considère uniquement le futur : aller malade vs rester et guérir. Le passé ne doit pas influencer."
+          "explanation": "Les 80€ sont un coût irrécupérable (sunk cost). La décision rationnelle considère uniquement le futur. Deux options sont rationnelles : (1) Rester chez vous pour vous reposer et guérir, ou (2) Essayer de vendre le billet pour récupérer l'argent. L'important est de ne PAS aller au concert juste parce que vous avez payé.",
+          "correctAnswers": [
+            1,
+            2
+          ]
         },
         {
           "id": "sunk-2",
@@ -2005,9 +2008,12 @@
             "Commander à manger, les 3 heures sont déjà perdues",
             "Essayer de corriger le plat"
           ],
-          "correct": 1,
           "points": 0.75,
-          "explanation": "Commander est rationnel. Les 3 heures sont un sunk cost. Le choix est maintenant : manger quelque chose d'immangeable vs payer 15€ pour un bon repas."
+          "explanation": "Les 3 heures de cuisine sont un sunk cost. Deux options sont rationnelles : (1) Commander à manger pour avoir un bon repas, ou (2) Essayer de corriger le plat si c'est possible (par exemple, diluer avec des ingrédients non salés). L'important est de ne PAS se forcer à manger quelque chose d'immangeable juste pour \"ne pas gaspiller\" le temps passé.",
+          "correctAnswers": [
+            1,
+            2
+          ]
         },
         {
           "id": "sunk-4",
