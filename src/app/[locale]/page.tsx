@@ -142,7 +142,7 @@ export default function Home() {
           />
           <p className="text-gray-700 dark:text-gray-300 leading-relaxed text-justify">
             {t('whatIsRationality.testDescription')}{' '}
-            <a href={`${wikipediaUrl}/wiki/Cognitive_bias`} target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 hover:underline">
+            <a href={locale === 'fr' ? 'https://fr.wikipedia.org/wiki/Biais_cognitif' : 'https://en.wikipedia.org/wiki/Cognitive_bias'} target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 hover:underline">
               {t('whatIsRationality.cognitiveBiases')}
             </a>
             {t('whatIsRationality.andUpdating')}
@@ -175,7 +175,7 @@ export default function Home() {
             </p>
             <ul className="list-disc pl-6 space-y-2">
               <li><strong>{t('whatIsTested.scientific.falsification')}</strong> : {t('whatIsTested.scientific.falsificationDesc')} (
-                <a href={`${wikipediaUrl}/wiki/Falsifiability`} target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 hover:underline">
+                <a href={locale === 'fr' ? 'https://fr.wikipedia.org/wiki/Réfutabilité' : 'https://en.wikipedia.org/wiki/Falsifiability'} target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 hover:underline">
                   {t('whatIsTested.scientific.popperCriterion')}
                 </a>)
               </li>
