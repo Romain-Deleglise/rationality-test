@@ -1,7 +1,7 @@
 {
   "version": "complète",
-  "totalPoints": 89.46,
-  "estimatedTime": 86,
+  "totalPoints": 93.06,
+  "estimatedTime": 87,
   "modules": [
     {
       "id": "prob-stats",
@@ -732,50 +732,50 @@
         {
           "id": "anchor-3",
           "type": "number",
-          "text": "La population de l'Australie est-elle supérieure à 10 millions d'habitants ? Quelle est selon vous la population exacte ?",
-          "unit": "millions d'habitants",
-          "correct": 26,
+          "text": "La vitesse maximale d'un guépard est-elle supérieure à 45 km/h ? Quelle est selon vous cette vitesse exacte ?",
+          "unit": "km/h",
+          "correct": 110,
           "anchorType": "low",
           "points": 0.5,
-          "explanation": "L'Australie compte environ 26 millions d'habitants. L'ancre de 10 millions peut influencer votre estimation à la baisse. Pour marquer des points, vous devez donner une estimation très éloignée de l'ancre (< 5 millions OU > 20 millions), montrant que vous n'avez pas été influencé. Cette question mesure la résistance à l'ancrage, pas la connaissance de la bonne réponse."
+          "explanation": "La vitesse maximale d'un guépard est d'environ 110 km/h. L'ancre de 45 km/h peut influencer votre estimation à la baisse. Les personnes résistant à l'effet d'ancrage donnent une estimation indépendante de l'ancre présentée."
         },
         {
           "id": "anchor-4",
           "type": "number",
-          "text": "La température la plus chaude jamais enregistrée sur Terre est-elle supérieure à 70°C ? Quelle est selon vous cette température ?",
-          "unit": "°C",
-          "correct": 56.7,
-          "anchorType": "high",
+          "text": "Le poids moyen d'un éléphant d'Afrique mâle adulte est-il supérieur à 1,5 tonnes ? Quel est selon vous ce poids exact ?",
+          "unit": "tonnes",
+          "correct": 6,
+          "anchorType": "low",
           "points": 0.5,
-          "explanation": "Le record est de 56,7°C (Vallée de la Mort, 1913). L'ancre de 70°C peut influencer votre estimation à la hausse. Pour marquer des points, vous devez donner une estimation très éloignée de l'ancre (< 35°C OU > 140°C), montrant que vous n'avez pas été influencé. Cette question mesure la résistance à l'ancrage, pas la connaissance de la bonne réponse."
+          "explanation": "Un éléphant d'Afrique mâle adulte pèse en moyenne environ 6 tonnes. L'ancre de 1,5 tonnes peut influencer votre estimation à la baisse. Les personnes résistant à l'effet d'ancrage donnent une estimation indépendante de l'ancre présentée."
         },
         {
           "id": "anchor-5",
           "type": "number",
-          "text": "Le Burj Khalifa à Dubaï mesure-t-il plus de 500 mètres ? Quelle est selon vous sa hauteur exacte ?",
-          "unit": "mètres",
-          "correct": 828,
+          "text": "La vitesse de croisière d'un avion de ligne est-elle supérieure à 340 km/h ? Quelle est selon vous cette vitesse exacte ?",
+          "unit": "km/h",
+          "correct": 900,
           "anchorType": "low",
           "points": 0.5,
-          "explanation": "Le Burj Khalifa mesure 828 mètres. L'ancre de 500 mètres peut influencer votre estimation à la baisse. Pour marquer des points, vous devez donner une estimation très éloignée de l'ancre (< 250 mètres OU > 1000 mètres), montrant que vous n'avez pas été influencé. Cette question mesure la résistance à l'ancrage, pas la connaissance de la bonne réponse."
+          "explanation": "La vitesse de croisière d'un avion de ligne est d'environ 900 km/h. L'ancre de 340 km/h peut influencer votre estimation à la baisse. Les personnes résistant à l'effet d'ancrage donnent une estimation indépendante de l'ancre présentée."
         },
         {
           "id": "anchor-6",
           "type": "number",
-          "text": "La bataille de Waterloo a-t-elle eu lieu avant 1750 ? En quelle année exactement ?",
-          "unit": "année",
-          "correct": 1815,
+          "text": "Le nombre d'os dans le corps humain adulte est-il supérieur à 65 ? Quel est selon vous ce nombre exact ?",
+          "unit": "os",
+          "correct": 206,
           "anchorType": "low",
           "points": 0.5,
-          "explanation": "La bataille de Waterloo date de 1815. L'ancre de 1750 peut influencer votre estimation à la baisse. Pour marquer des points, vous devez donner une estimation très éloignée de l'ancre (< 875 OU > 3500), montrant que vous n'avez pas été influencé. Cette question mesure la résistance à l'ancrage, pas la connaissance de la bonne réponse."
+          "explanation": "Le corps humain adulte contient 206 os. L'ancre de 65 peut influencer votre estimation à la baisse. Les personnes résistant à l'effet d'ancrage donnent une estimation indépendante de l'ancre présentée."
         }
       ]
     },
     {
       "id": "calibration-full",
-      "name": "Calibration des Connaissances (20 items)",
-      "points": 2.4,
-      "time": 7,
+      "name": "Calibration des Connaissances (22 items)",
+      "points": 6,
+      "time": 8,
       "questions": [
         {
           "id": "calib-mc-1",
@@ -786,7 +786,7 @@
             "Les journalistes doivent être autorisés à observer les effets de la Révolution culturelle"
           ],
           "correct": 0,
-          "points": 0.12,
+          "points": 0.2,
           "confidenceLevels": [
             50,
             60,
@@ -805,7 +805,7 @@
             "La Guerre de Sept Ans"
           ],
           "correct": 0,
-          "points": 0.12,
+          "points": 0.2,
           "confidenceLevels": [
             50,
             60,
@@ -824,7 +824,7 @@
             "L'océan Atlantique et l'océan Pacifique"
           ],
           "correct": 0,
-          "points": 0.12,
+          "points": 0.2,
           "confidenceLevels": [
             50,
             60,
@@ -843,7 +843,7 @@
             "1648"
           ],
           "correct": 0,
-          "points": 0.12,
+          "points": 0.2,
           "confidenceLevels": [
             50,
             60,
@@ -862,7 +862,7 @@
             "1789"
           ],
           "correct": 0,
-          "points": 0.12,
+          "points": 0.2,
           "confidenceLevels": [
             50,
             60,
@@ -881,7 +881,7 @@
             "Les Andes"
           ],
           "correct": 0,
-          "points": 0.12,
+          "points": 0.2,
           "confidenceLevels": [
             50,
             60,
@@ -900,7 +900,7 @@
             "1917"
           ],
           "correct": 0,
-          "points": 0.12,
+          "points": 0.2,
           "confidenceLevels": [
             50,
             60,
@@ -919,7 +919,7 @@
             "Plus petite que le Groenland"
           ],
           "correct": 0,
-          "points": 0.12,
+          "points": 0.2,
           "confidenceLevels": [
             50,
             60,
@@ -938,7 +938,7 @@
             "1789"
           ],
           "correct": 0,
-          "points": 0.12,
+          "points": 0.2,
           "confidenceLevels": [
             50,
             60,
@@ -957,7 +957,7 @@
             "Moins de 5 000 km"
           ],
           "correct": 0,
-          "points": 0.12,
+          "points": 0.2,
           "confidenceLevels": [
             50,
             60,
@@ -968,12 +968,22 @@
           ]
         },
         {
+          "id": "calib-aggregate-1",
+          "type": "aggregate-estimate",
+          "text": "Sur les 10 questions précédentes, combien pensez-vous avoir répondu correctement ? (Rappel : en devinant au hasard, on s'attend à en avoir 5 de bonnes)",
+          "unit": "questions",
+          "aggregateScope": "part1-mc",
+          "aggregateTotal": 10,
+          "points": 1,
+          "explanation": "Cette question mesure votre capacité à estimer globalement vos performances (calibration agrégée)."
+        },
+        {
           "id": "calib-interval-1",
           "type": "confidence-interval",
           "text": "Donnez un intervalle à 90% : Quelle est la hauteur de la Tour Eiffel ?",
           "unit": "mètres",
           "correct": 330,
-          "points": 0.12,
+          "points": 0.2,
           "explanation": "La Tour Eiffel mesure 330 mètres (avec antenne)."
         },
         {
@@ -982,7 +992,7 @@
           "text": "Donnez un intervalle à 90% : Quelle est la population du Japon ?",
           "unit": "millions d'habitants",
           "correct": 125,
-          "points": 0.12,
+          "points": 0.2,
           "explanation": "Le Japon a environ 125 millions d'habitants."
         },
         {
@@ -991,7 +1001,7 @@
           "text": "Donnez un intervalle à 90% : En quelle année Christophe Colomb a-t-il découvert l'Amérique ?",
           "unit": "année",
           "correct": 1492,
-          "points": 0.12,
+          "points": 0.2,
           "explanation": "Christophe Colomb a découvert l'Amérique en 1492."
         },
         {
@@ -1000,7 +1010,7 @@
           "text": "Donnez un intervalle à 90% : Quelle est la longueur du fleuve Amazone ?",
           "unit": "kilomètres",
           "correct": 6400,
-          "points": 0.12,
+          "points": 0.2,
           "explanation": "L'Amazone mesure environ 6 400 km de long."
         },
         {
@@ -1009,7 +1019,7 @@
           "text": "Donnez un intervalle à 90% : Combien d'éléments contient le tableau périodique ?",
           "unit": "éléments",
           "correct": 118,
-          "points": 0.12,
+          "points": 0.2,
           "explanation": "Le tableau périodique contient 118 éléments."
         },
         {
@@ -1018,7 +1028,7 @@
           "text": "Donnez un intervalle à 90% : Quelle est la vitesse de la lumière ?",
           "unit": "km/s",
           "correct": 300000,
-          "points": 0.12,
+          "points": 0.2,
           "explanation": "La vitesse de la lumière est d'environ 300 000 km/s."
         },
         {
@@ -1027,7 +1037,7 @@
           "text": "Donnez un intervalle à 90% : Quelle est la température d'ébullition de l'eau au niveau de la mer ?",
           "unit": "degrés Celsius",
           "correct": 100,
-          "points": 0.12,
+          "points": 0.2,
           "explanation": "L'eau bout à 100°C au niveau de la mer."
         },
         {
@@ -1036,7 +1046,7 @@
           "text": "Donnez un intervalle à 90% : Combien de pays sont membres des Nations Unies ?",
           "unit": "pays",
           "correct": 193,
-          "points": 0.12,
+          "points": 0.2,
           "explanation": "L'ONU compte 193 États membres."
         },
         {
@@ -1045,7 +1055,7 @@
           "text": "Donnez un intervalle à 90% : Quelle est la distance Terre-Lune ?",
           "unit": "milliers de km",
           "correct": 384,
-          "points": 0.12,
+          "points": 0.2,
           "explanation": "La distance moyenne Terre-Lune est de 384 400 km."
         },
         {
@@ -1054,8 +1064,18 @@
           "text": "Donnez un intervalle à 90% : En quelle année a eu lieu la Révolution française ?",
           "unit": "année",
           "correct": 1789,
-          "points": 0.12,
+          "points": 0.2,
           "explanation": "La Révolution française a commencé en 1789."
+        },
+        {
+          "id": "calib-aggregate-2",
+          "type": "aggregate-estimate",
+          "text": "Sur les 10 questions d'intervalles précédentes, pour combien de ces questions pensez-vous que votre intervalle contient la bonne réponse ?",
+          "unit": "questions",
+          "aggregateScope": "part2-interval",
+          "aggregateTotal": 10,
+          "points": 1,
+          "explanation": "Cette question mesure votre capacité à estimer globalement la qualité de vos intervalles de confiance (calibration agrégée)."
         }
       ]
     },

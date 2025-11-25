@@ -577,12 +577,12 @@ Pour Bayes, il faut le rapport de vraisemblance : P(preuve|H) et P(preuve|non-H)
 Pour tester si un nouveau médicament réduit la fièvre, quelle expérience est la meilleure ?
 
 **Options:**
-A. Donner le médicament à des patients fiévreux et mesurer la température 2h après 
-B. Donner le médicament à un groupe et un placebo à un groupe contrôle, en double aveugle **✓**
-C. Demander aux patients s'ils se sentent mieux après le médicament 
-D. Comparer avec d'autres médicaments existants 
+A. Donner le médicament à des patients fiévreux et mesurer la température 2h après
+B. Demander aux patients s'ils se sentent mieux après le médicament
+C. Donner le médicament à un groupe et un placebo à un groupe contrôle, en double aveugle **✓**
+D. Comparer avec d'autres médicaments existants
 
-**Réponse correcte:** B
+**Réponse correcte:** C
 
 **Points:** 1
 
@@ -1162,16 +1162,16 @@ La durée réelle est 687 jours. L'ancre de 1500 jours peut influencer votre est
 **Type:** number
 
 **Question:**
-La population de l'Australie est-elle supérieure à 10 millions d'habitants ? Quelle est selon vous la population exacte ?
+La vitesse maximale d'un guépard est-elle supérieure à 45 km/h ? Quelle est selon vous cette vitesse exacte ?
 
 **Type de réponse:** Numérique
 
-**Réponse correcte:** (non définie)
+**Réponse correcte:** 110
 
 **Points:** 0.5
 
 **Explication:**
-L'Australie compte environ 26 millions d'habitants. L'ancre de 10 millions peut influencer votre estimation à la baisse. Points attribués selon la précision : estimation à ±30% = points complets, ±60% = points partiels. Cette question teste votre capacité à faire des estimations raisonnables malgré l'ancrage.
+La vitesse maximale d'un guépard est d'environ 110 km/h. L'ancre de 45 km/h peut influencer votre estimation à la baisse. Les personnes résistant à l'effet d'ancrage donnent une estimation indépendante de l'ancre présentée.
 
 ---
 
@@ -1180,16 +1180,16 @@ L'Australie compte environ 26 millions d'habitants. L'ancre de 10 millions peut 
 **Type:** number
 
 **Question:**
-La température la plus chaude jamais enregistrée sur Terre est-elle supérieure à 70°C ? Quelle est selon vous cette température ?
+Le poids moyen d'un éléphant d'Afrique mâle adulte est-il supérieur à 1,5 tonnes ? Quel est selon vous ce poids exact ?
 
 **Type de réponse:** Numérique
 
-**Réponse correcte:** (non définie)
+**Réponse correcte:** 6
 
 **Points:** 0.5
 
 **Explication:**
-Le record est de 56,7°C (Vallée de la Mort, 1913). L'ancre de 70°C peut influencer votre estimation à la hausse. Points attribués selon la précision : estimation à ±30% = points complets, ±60% = points partiels. Cette question teste votre capacité à faire des estimations raisonnables malgré l'ancrage.
+Un éléphant d'Afrique mâle adulte pèse en moyenne environ 6 tonnes. L'ancre de 1,5 tonnes peut influencer votre estimation à la baisse. Les personnes résistant à l'effet d'ancrage donnent une estimation indépendante de l'ancre présentée.
 
 ---
 
@@ -1198,16 +1198,16 @@ Le record est de 56,7°C (Vallée de la Mort, 1913). L'ancre de 70°C peut influ
 **Type:** number
 
 **Question:**
-Le Burj Khalifa à Dubaï mesure-t-il plus de 500 mètres ? Quelle est selon vous sa hauteur exacte ?
+La vitesse de croisière d'un avion de ligne est-elle supérieure à 340 km/h ? Quelle est selon vous cette vitesse exacte ?
 
 **Type de réponse:** Numérique
 
-**Réponse correcte:** (non définie)
+**Réponse correcte:** 900
 
 **Points:** 0.5
 
 **Explication:**
-Le Burj Khalifa mesure 828 mètres. L'ancre de 500m peut influencer votre estimation à la baisse. Points attribués selon la précision : estimation à ±30% = points complets, ±60% = points partiels. Cette question teste votre capacité à faire des estimations raisonnables malgré l'ancrage.
+La vitesse de croisière d'un avion de ligne est d'environ 900 km/h. L'ancre de 340 km/h peut influencer votre estimation à la baisse. Les personnes résistant à l'effet d'ancrage donnent une estimation indépendante de l'ancre présentée.
 
 ---
 
@@ -1216,16 +1216,16 @@ Le Burj Khalifa mesure 828 mètres. L'ancre de 500m peut influencer votre estima
 **Type:** number
 
 **Question:**
-La bataille de Waterloo a-t-elle eu lieu avant 1750 ? En quelle année exactement ?
+Le nombre d'os dans le corps humain adulte est-il supérieur à 65 ? Quel est selon vous ce nombre exact ?
 
 **Type de réponse:** Numérique
 
-**Réponse correcte:** (non définie)
+**Réponse correcte:** 206
 
 **Points:** 0.5
 
 **Explication:**
-La bataille de Waterloo date de 1815. L'ancre de 1750 peut influencer votre estimation à la baisse. Points attribués selon la précision : estimation à ±30% = points complets, ±60% = points partiels. Cette question teste votre capacité à faire des estimations raisonnables malgré l'ancrage.
+Le corps humain adulte contient 206 os. L'ancre de 65 peut influencer votre estimation à la baisse. Les personnes résistant à l'effet d'ancrage donnent une estimation indépendante de l'ancre présentée.
 
 ---
 

@@ -151,6 +151,9 @@
     "likertSlightlyAgree": "Slightly agree",
     "likertModeratelyAgree": "Moderately agree",
     "likertStronglyAgree": "Strongly agree",
+    "yourEstimate": "Your estimate",
+    "aggregateEstimatePrompt1": "💡 Overall estimate: After answering the 10 previous questions, how many do you think you got correct?",
+    "aggregateEstimatePrompt2": "💡 Overall estimate: For how many of your 10 previous intervals do you think the true answer is actually within your interval?",
     "unsupportedQuestionType": "Unsupported question type"
   },
   "results": {

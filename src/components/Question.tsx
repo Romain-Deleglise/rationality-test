@@ -284,6 +284,34 @@ export default function Question({ question, onAnswer, defaultValue }: QuestionP
             )}
           </div>
         );
+
+      case 'aggregate-estimate':
+        return (
+          <div className="space-y-4">
+            <div className="bg-amber-50 dark:bg-amber-900/30 border-l-4 border-amber-500 p-4 rounded">
+              <p className="text-sm text-amber-800 dark:text-amber-200 font-medium">
+                {question.aggregateScope === 'part1-mc'
+                  ? t('aggregateEstimatePrompt1')
+                  : t('aggregateEstimatePrompt2')}
+              </p>
+            </div>
+            <Input
+              type="number"
+              min="0"
+              max={question.aggregateTotal || 10}
+              value={value}
+              onChange={(e) => setValue(e.target.value)}
+              placeholder={t('yourEstimate')}
+              className="text-lg p-4"
+            />
+            {question.unit && (
+              <p className="text-sm text-gray-500 dark:text-gray-400">
+                {t('unit')} : {question.unit}
+              </p>
+            )}
+          </div>
+        );
+
       default:
         return <p className="text-red-500 dark:text-red-400">{t('unsupportedQuestionType')}</p>;
     }
@@ -294,15 +322,20 @@ export default function Question({ question, onAnswer, defaultValue }: QuestionP
       const interval = value || {};
       return interval.min && interval.max && Number(interval.min) < Number(interval.max);
     }
-    
+
     if (question.type === 'ranking') {
       return value && Array.isArray(value) && value.length === question.options?.length;
     }
-    
+
     if (question.type === 'multiple-choice-confidence') {
       return value.choice !== undefined && value.confidence !== undefined;
     }
-    
+
+    if (question.type === 'aggregate-estimate') {
+      const num = Number(value);
+      return value !== '' && value !== null && value !== undefined && !isNaN(num) && num >= 0 && num <= (question.aggregateTotal || 10);
+    }
+
     return value !== '' && value !== null && value !== undefined;
   };
 
