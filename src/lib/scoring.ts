@@ -43,7 +43,7 @@ export function scoreQuestion(
   // Apply randomization if available
   const effectiveQuestion = getRandomizedQuestion(question, randomizedValues);
   let earned = 0;
-  const possible = question.points || 1; // Défaut à 1 si pas défini
+  const possible = question.points ?? 1; // Défaut à 1 si null/undefined, mais 0 reste 0
   let correct = false;
 
   // Si pas de réponse, score = 0
@@ -835,7 +835,7 @@ export function scoreModule(
       return {
         questionId: question.id,
         earned: 0,
-        possible: question.points || 1,
+        possible: question.points ?? 1,
         correct: false,
       };
     }

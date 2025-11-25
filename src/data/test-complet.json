@@ -1769,10 +1769,11 @@
             "Traitement A",
             "Traitement B"
           ],
+          "correct": 0,
           "points": 0.6,
           "pairId": "frame-pair-2",
           "framingType": "loss",
-          "explanation": "Cette question est mathématiquement équivalente à la version 'cadre gain' mais formulée en termes de pertes. Les personnes rationnelles devraient faire le même choix dans les deux cas."
+          "explanation": "Cette question est mathématiquement équivalente à la version 'cadre gain' mais formulée en termes de pertes. Les deux traitements sont équivalents en valeur espérée (200 vies sauvées = 400 morts). Les personnes rationnelles devraient faire le même choix dans les deux cas, indépendamment du cadrage."
         },
         {
           "id": "frame-3a",
