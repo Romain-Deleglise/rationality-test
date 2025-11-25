@@ -1,5 +1,95 @@
 # Changelog - Test de Rationalité
 
+## [2025-11-25] - Implémentation complète de la méthodologie CART de scoring
+
+### 🎯 Scoring CART authentique pour 6 modules
+
+**Contexte :** Le CART (Comprehensive Assessment of Rational Thinking) utilise des méthodologies de scoring spécifiques par tranches et courbes de transformation, plutôt qu'un scoring proportionnel simple. Cette approche reflète mieux la non-linéarité de la rationalité.
+
+#### **1. Knowledge Calibration (Calibration des Connaissances)**
+- **Structure:** 22 items (10 MC + aggregate + 10 intervals + aggregate)
+- **Scoring CART authentique:**
+  - Part 1 item-by-item: |moyenne_confiance% - %_correct| → 0-2 pts
+  - Part 1 aggregate: estimation ≤ réel → 1 pt (pas de surconfiance)
+  - Part 2 item-by-item: ≥6/10 hits → 2pts, 4-5/10 → 1pt, <4/10 → 0pts
+  - Part 2 aggregate: estimation ≤ hits → 1 pt
+- **Points:** 2.4 → **6 points CART**
+
+#### **2. Superstitious Thinking (Pensée Superstitieuse)**
+- **10 items Likert** (vs 12 CART original)
+- **Scoring par somme composite avec seuils adaptés:**
+  - ≤17 → 5pts, ≤23 → 4pts, ≤27 → 3pts, ≤31 → 2pts, ≤35 → 1pt, >35 → 0pt
+- **Points:** 4.2 → **5 points CART**
+
+#### **3. Antiscience Attitudes (Attitudes Anti-Science)**
+- **11 items Likert** (vs 13 CART original)
+- **Scoring par somme composite avec seuils adaptés:**
+  - ≤27 → 5pts, ≤31 → 4pts, ≤34 → 3pts, ≤36 → 2pts, ≤39 → 1pt, >39 → 0pt
+- **Points:** 4.18 → **5 points CART**
+
+#### **4. Conspiracy Beliefs (Croyances Conspirationnistes)**
+- **11 items Likert** (vs 24 CART original)
+- **Scoring par somme composite avec seuils adaptés:**
+  - 11 tranches de 0 à 10 points
+  - ≤17 → 10pts ... >38 → 0pt
+- **Points:** 4.62 → **10 points CART**
+
+#### **5. Dysfunctional Beliefs (Croyances Dysfonctionnelles)**
+- **9 items Likert** - EXACT MATCH CART!
+- **Scoring avec seuils CART exacts:**
+  - ≤24 → 5pts, ≤28 → 4pts, ≤31 → 3pts, ≤34 → 2pts, ≤38 → 1pt, >38 → 0pt
+- **Points:** 5.04 → **5 points CART**
+
+#### **6. Belief Bias (Biais de Croyance)**
+- **12 items** (vs 16 CART original)
+- **Scoring par courbe de transformation CART:**
+  - 12/12 → 8pts, 11/12 → 7pts, 10/12 → 6pts, 9/12 → 5pts, 8/12 → 4pts, 7/12 → 2pts, ≤6 → 0pts
+- **Points:** 6 → **8 points CART**
+
+### 📊 Impact Global
+
+**Points totaux:** 93.06 → **102.02 points**
+**Temps estimé:** 86 → **87 minutes**
+
+### 🔧 Implémentation Technique
+
+**Nouvelles fonctions de scoring (src/lib/scoring.ts):**
+- `scoreCalibrationModule()` - Méthodologie CART complète Part 1 & Part 2
+- `scoreSuperstitionModule()` - Composite sum avec tranches
+- `scoreAntiscienceModule()` - Composite sum avec tranches
+- `scoreConspiracyModule()` - Composite sum avec tranches (10 niveaux)
+- `scoreDysfunctionalModule()` - Seuils CART exacts
+- `scoreBeliefBiasModule()` - Courbe de transformation CART
+
+**Logique:**
+1. Calculer la somme composite des réponses Likert (ou score brut)
+2. Appliquer les seuils CART pour obtenir le score CART
+3. Distribuer le score CART proportionnellement sur les questions individuelles
+
+### ✅ Validation
+
+- ✅ TypeScript compilation sans erreurs
+- ✅ Seuils CART adaptés proportionnellement au nombre de questions
+- ✅ Documentation des thresholds dans le code
+- ✅ Points des modules mis à jour dans les JSON (FR & EN)
+- ✅ README.md mis à jour avec la nouvelle structure
+
+### 📁 Fichiers modifiés
+
+- `src/lib/scoring.ts` - 6 nouvelles fonctions de scoring CART
+- `src/data/test-complet.json` - Points des modules mis à jour
+- `src/data/test-complet-en.json` - Points des modules mis à jour
+- `README.md` - Documentation mise à jour
+
+### 🔗 Commits
+
+**Branch:** `claude/clarify-test-questions-01AZv6yraUp7koQNrpwvcui1`
+
+1. `feat: Implémentation complète de la méthodologie CART pour le module Knowledge Calibration`
+2. `feat: Implémentation du scoring CART pour 5 modules supplémentaires`
+
+---
+
 ## [2025-11-25] - Réorganisation des options + Fix navigation
 
 ### 🎯 Réorganisation des options pour éviter les patterns de réponses

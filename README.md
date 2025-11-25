@@ -39,25 +39,31 @@ Créer un test de rationalité scientifiquement validé, accessible gratuitement
 - 6 modules essentiels
 - Aperçu rapide des principaux biais cognitifs
 
-#### 🎯 **Version Complète** : ~119 points, 90 minutes
+#### 🎯 **Version Complète** : ~102 points, 87 minutes
 - 17 modules approfondis
 - Évaluation exhaustive sur toutes les dimensions de la rationalité
+- **Scoring CART authentique** par seuils et courbes de transformation
 - **RECOMMANDÉ** pour une analyse détaillée
 
 ### Modules Évalués (Version Complète)
 
-1. **Raisonnement Probabiliste** (18 items) - Probability matching, erreur du parieur, taux de base
-2. **Raisonnement Scientifique** (20 items) - Falsification, corrélation/causation, groupes contrôles
-3. **Réflexion vs Intuition** (11 items) - Cognitive Reflection Test (CRT)
-4. **Biais de Croyance** (16 items) - Raisonnement syllogistique
-5. **Raisonnement Disjonctif** (6 items) - Logique des énoncés "OU"
-6. **Ancrage** (8 items) - Résistance à l'ancrage numérique
-7. **Calibration des Connaissances** (26 items) - Overconfidence
-8. **Numératie Probabiliste** (5 items) - Manipulation des probabilités
-9. **Pensée Superstitieuse** (12 items Likert) - Croyances paranormales
-10. **Attitudes Anti-Science** (13 items Likert) - Rejet de la science
-11. **Croyances Conspirationnistes** (12 items Likert) - Théories du complot
-12. **Croyances Dysfonctionnelles** (9 items Likert) - Croyances irrationnelles
+1. **Raisonnement Probabiliste** (13 items, 13 pts) - Probability matching, erreur du parieur, taux de base
+2. **Raisonnement Scientifique** (14 items, 14 pts) - Falsification, corrélation/causation, groupes contrôles
+3. **Réflexion vs Intuition** (7 items, 7 pts) - Cognitive Reflection Test (CRT)
+4. **Biais de Croyance** (12 items, 8 pts CART) - Raisonnement syllogistique avec courbe de transformation
+5. **Raisonnement Disjonctif** (5 items, 5 pts) - Logique des énoncés "OU"
+6. **Ancrage** (6 items, 3 pts) - Résistance à l'ancrage numérique
+7. **Calibration des Connaissances** (22 items, 6 pts CART) - Overconfidence, méthode CART authentique
+8. **Numératie Probabiliste** (5 items, 5 pts) - Manipulation des probabilités
+9. **Pensée Superstitieuse** (10 items Likert, 5 pts CART) - Croyances paranormales, scoring par tranches
+10. **Attitudes Anti-Science** (11 items Likert, 5 pts CART) - Rejet de la science, scoring par tranches
+11. **Croyances Conspirationnistes** (11 items Likert, 10 pts CART) - Théories du complot, scoring par tranches
+12. **Croyances Dysfonctionnelles** (9 items Likert, 5 pts CART) - Croyances irrationnelles, seuils CART exacts
+13. **Évaluation d'Arguments** (8 items, 2.5 pts) - Raisonnement critique
+14. **Raisonnement Causal** (5 items, 5 pts) - Causalité vs corrélation
+15. **Effets de Cadrage** (10 items, 3 pts) - Résistance au framing
+16. **Sensibilité à la Valeur Espérée** (6 items, 2.52 pts) - Choix rationnels de paris
+17. **Coûts Irrécupérables** (4 items, 3 pts) - Sunk cost fallacy
 
 ---
 
