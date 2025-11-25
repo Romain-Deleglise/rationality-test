@@ -1332,6 +1332,48 @@ The adult human body contains 206 bones. The anchor of 65 can influence your est
 
 **Points:** 2.4 | **Time:** 7 min
 
+### CART Scoring System
+
+This module uses the CART (Comprehensive Assessment of Rational Thinking) scoring methodology, which measures **calibration** rather than accuracy.
+
+#### Part 1: Multiple-choice questions with confidence (10 items)
+
+Questions 1-10 ask you to choose an answer AND indicate your confidence level (%).
+
+**CART Scoring - Part 1 (0-2 points):**
+- Calculate calibration difference: |Average confidence - % correct answers|
+- If difference ≤ 2% → **2 points** (perfectly calibrated)
+- If difference < 10% → **1 point** (well calibrated)
+- If difference ≥ 10% → **0 points** (poorly calibrated)
+
+The 2 points are then distributed proportionally across the 10 questions (maximum 0.2 points each).
+
+**Example:** If you answer with 80% average confidence but only get 50% correct, you're overconfident by 30 points → 0 points.
+
+#### Part 2: 90% Confidence Intervals (10 items)
+
+Questions 11-20 ask you to provide an interval that has a **90% chance** of containing the true value.
+
+**CART Scoring - Part 2 (0-2 points) according to CART Appendix methodology:**
+
+For each question:
+- If the correct value is **inside the interval** → **1 hit**
+- If the correct value is **outside the interval** → **0 hit**
+- **No penalty for wide intervals** (well calibrated = knowing that you don't know)
+
+Overall score based on number of hits out of 10 questions:
+- ≥ 6 hits (≥60%) → **2 points** (well calibrated: close to expected 90% accounting for variability)
+- 4-5 hits (40-50%) → **1 point** (under-calibrated: intervals too narrow)
+- < 4 hits (<40%) → **0 points** (strongly under-calibrated: overconfidence)
+
+The 2 points are then distributed proportionally across the 10 questions (maximum 0.2 points each).
+
+**Why is 60% enough for 2 points?** With a sample of 10 questions, getting exactly 9 hits is statistically unlikely. A range of 6-10 hits remains consistent with good 90% calibration.
+
+**Important note:** This scoring measures your ability to **assess your own uncertainty**, not your general knowledge. Being well calibrated means giving wide intervals when you're uncertain, and narrow intervals when you're confident.
+
+---
+
 ### Question 58 (ID: calib-mc-1)
 
 **Type:** multiple-choice-confidence

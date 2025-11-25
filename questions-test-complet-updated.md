@@ -1340,6 +1340,48 @@ Le corps humain adulte contient 206 os. L'ancre de 65 peut influencer votre esti
 
 **Points:** 2.4 | **Temps:** 7 min
 
+### Système de Scoring CART
+
+Ce module utilise la méthodologie de scoring CART (Comprehensive Assessment of Rational Thinking) qui mesure la **calibration** plutôt que la précision.
+
+#### Partie 1 : Questions à choix multiples avec confiance (10 items)
+
+Les questions 1-10 demandent de choisir une réponse ET d'indiquer votre niveau de confiance (%).
+
+**Scoring CART - Partie 1 (0-2 points) :**
+- Calcul de la différence de calibration : |Confiance moyenne - % de réponses correctes|
+- Si différence ≤ 2% → **2 points** (parfaitement calibré)
+- Si différence < 10% → **1 point** (bien calibré)
+- Si différence ≥ 10% → **0 point** (mal calibré)
+
+Les 2 points sont ensuite distribués proportionnellement sur les 10 questions (0.2 point chacune maximum).
+
+**Exemple :** Si vous répondez avec 80% de confiance en moyenne mais n'avez que 50% de bonnes réponses, vous êtes surconfiant de 30 points → 0 point.
+
+#### Partie 2 : Intervalles de confiance à 90% (10 items)
+
+Les questions 11-20 demandent de donner un intervalle qui a **90% de chances** de contenir la vraie valeur.
+
+**Scoring CART - Partie 2 (0-2 points) selon la méthodologie CART Appendix :**
+
+Pour chaque question :
+- Si la valeur correcte est **dans l'intervalle** → **1 hit**
+- Si la valeur correcte est **hors de l'intervalle** → **0 hit**
+- **Aucune pénalité pour des intervalles larges** (bien calibré = savoir qu'on ne sait pas)
+
+Score global selon le nombre de hits sur 10 questions :
+- ≥ 6 hits (≥60%) → **2 points** (bien calibré : proche des 90% attendus en tenant compte de la variabilité)
+- 4-5 hits (40-50%) → **1 point** (sous-calibré : intervalles trop étroits)
+- < 4 hits (<40%) → **0 point** (fortement sous-calibré : excès de confiance)
+
+Les 2 points sont ensuite distribués proportionnellement sur les 10 questions (0.2 point chacune maximum).
+
+**Pourquoi 60% suffit pour 2 points ?** Avec un échantillon de 10 questions, obtenir exactement 9 hits est statistiquement peu probable. Un intervalle de 6-10 hits reste compatible avec une bonne calibration à 90%.
+
+**Note importante :** Ce scoring mesure votre capacité à **évaluer votre propre incertitude**, pas votre connaissance générale. Être bien calibré signifie donner des intervalles larges quand vous êtes incertain, et des intervalles étroits quand vous êtes sûr.
+
+---
+
 ### Question 1 (ID: calib-mc-1)
 
 **Type:** Multiple-Choice-Confidence
