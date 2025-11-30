@@ -328,11 +328,11 @@
         {
           "id": "crt-4",
           "type": "number",
-          "text": "Un ascenseur met 1 minute pour monter d'un étage. Combien de temps met-il pour aller du rez-de-chaussée au 25ème étage ?",
+          "text": "Un ascenseur met 1 minute pour monter d'un étage. Combien de temps met-il pour aller du 1er étage au 25ème étage ?",
           "unit": "minutes",
           "correct": 24,
           "points": 1,
-          "explanation": "24 minutes. Il faut monter 24 étages pour aller du rez-de-chaussée (étage 0) au 25ème étage. L'intuition suggère 25 minutes."
+          "explanation": "24 minutes. Il faut monter 24 étages pour aller du 1er étage au 25ème étage (25 - 1 = 24). L'intuition suggère 25 minutes."
         },
         {
           "id": "crt-6",
