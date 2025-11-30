@@ -42,6 +42,11 @@ export interface Question {
   confidenceLevels?: number[];
   reverse?: boolean;
   anchorType?: 'low' | 'high';
+  // For anchoring questions: manually defined thresholds (CART methodology)
+  anchoringThreshold?: {
+    min?: number;
+    max?: number;
+  };
   randomization?: QuestionRandomization;
   scoring?: {
     type?: string;

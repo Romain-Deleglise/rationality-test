@@ -712,62 +712,83 @@
         {
           "id": "anchor-1",
           "type": "number",
-          "text": "La distance de San Francisco à Hawaï est-elle supérieure à 500 miles ? Quelle est selon vous la distance exacte ?",
+          "text": "La distance de San Francisco à Hawaï est-elle supérieure à 500 miles ?\n\nQuelle est selon vous la distance exacte de San Francisco à Hawaï ?",
           "unit": "miles",
           "correct": 2387,
           "anchorType": "low",
+          "anchoringThreshold": {
+            "min": 1000
+          },
           "points": 0.5,
-          "explanation": "La distance réelle est ~2387 miles. L'ancre de 500 miles peut influencer votre estimation à la baisse. Pour marquer des points, vous devez donner une estimation très éloignée de l'ancre (< 250 miles OU > 1000 miles), montrant que vous n'avez pas été influencé. Cette question mesure la résistance à l'ancrage, pas la connaissance de la bonne réponse."
+          "explanation": "La distance réelle est ~2387 miles. L'ancre de 500 miles (présentée dans la première partie de la question) peut influencer votre estimation à la baisse. Selon la méthode CART, vous résistez à l'ancrage si votre estimation est ≥ 1000 miles. Cette question ne mesure pas votre connaissance géographique, mais votre capacité à ne pas être influencé par l'ancre."
         },
         {
           "id": "anchor-2",
           "type": "number",
-          "text": "La durée de l'orbite de Mars autour du Soleil est-elle supérieure à 1500 jours ? Quelle est selon vous la durée exacte ?",
+          "text": "La durée de l'orbite de Mars autour du Soleil est-elle supérieure à 1500 jours ?\n\nQuelle est selon vous la durée exacte de l'orbite de Mars ?",
           "unit": "jours",
           "correct": 687,
           "anchorType": "high",
+          "anchoringThreshold": {
+            "min": 50,
+            "max": 1000
+          },
           "points": 0.5,
-          "explanation": "La durée réelle est 687 jours. L'ancre de 1500 jours peut influencer votre estimation à la hausse. Pour marquer des points, vous devez donner une estimation très éloignée de l'ancre (< 750 jours OU > 3000 jours), montrant que vous n'avez pas été influencé. Cette question mesure la résistance à l'ancrage, pas la connaissance de la bonne réponse."
+          "explanation": "La durée réelle est 687 jours. L'ancre de 1500 jours (présentée dans la première partie) peut influencer votre estimation à la hausse. Selon la méthode CART, vous résistez à l'ancrage si votre estimation est entre 50 et 1000 jours. Cette question ne mesure pas vos connaissances astronomiques, mais votre résistance à l'effet d'ancrage."
         },
         {
           "id": "anchor-3",
           "type": "number",
-          "text": "La vitesse maximale d'un guépard est-elle supérieure à 45 km/h ? Quelle est selon vous cette vitesse exacte ?",
-          "unit": "km/h",
-          "correct": 110,
+          "text": "Le nombre d'os dans le corps humain adulte est-il supérieur à 65 ?\n\nQuel est selon vous le nombre exact d'os dans le corps humain adulte ?",
+          "unit": "os",
+          "correct": 206,
           "anchorType": "low",
+          "anchoringThreshold": {
+            "min": 100
+          },
           "points": 0.5,
-          "explanation": "La vitesse maximale d'un guépard est d'environ 110 km/h. L'ancre de 45 km/h peut influencer votre estimation à la baisse. Les personnes résistant à l'effet d'ancrage donnent une estimation indépendante de l'ancre présentée."
+          "explanation": "Le corps humain adulte contient 206 os. L'ancre de 65 peut influencer votre estimation à la baisse. Vous résistez à l'ancrage si votre estimation est ≥ 100. Cette question mesure votre résistance à l'effet d'ancrage, pas vos connaissances anatomiques."
         },
         {
           "id": "anchor-4",
           "type": "number",
-          "text": "Le poids moyen d'un éléphant d'Afrique mâle adulte est-il supérieur à 1,5 tonnes ? Quel est selon vous ce poids exact ?",
-          "unit": "tonnes",
-          "correct": 6,
-          "anchorType": "low",
+          "text": "La population actuelle du Canada est-elle supérieure à 80 millions d'habitants ?\n\nQuelle est selon vous la population exacte du Canada ?",
+          "unit": "millions d'habitants",
+          "correct": 38,
+          "anchorType": "high",
+          "anchoringThreshold": {
+            "min": 5,
+            "max": 60
+          },
           "points": 0.5,
-          "explanation": "Un éléphant d'Afrique mâle adulte pèse en moyenne environ 6 tonnes. L'ancre de 1,5 tonnes peut influencer votre estimation à la baisse. Les personnes résistant à l'effet d'ancrage donnent une estimation indépendante de l'ancre présentée."
+          "explanation": "La population du Canada est d'environ 38 millions. L'ancre de 80 millions peut influencer votre estimation à la hausse. Vous résistez à l'ancrage si votre estimation est entre 5 et 60 millions. Cette question mesure votre résistance à l'effet d'ancrage, pas vos connaissances démographiques."
         },
         {
           "id": "anchor-5",
           "type": "number",
-          "text": "La vitesse de croisière d'un avion de ligne est-elle supérieure à 340 km/h ? Quelle est selon vous cette vitesse exacte ?",
-          "unit": "km/h",
-          "correct": 900,
+          "text": "L'altitude du sommet de l'Everest est-elle supérieure à 4000 mètres ?\n\nQuelle est selon vous l'altitude exacte du sommet de l'Everest ?",
+          "unit": "mètres",
+          "correct": 8849,
           "anchorType": "low",
+          "anchoringThreshold": {
+            "min": 6000
+          },
           "points": 0.5,
-          "explanation": "La vitesse de croisière d'un avion de ligne est d'environ 900 km/h. L'ancre de 340 km/h peut influencer votre estimation à la baisse. Les personnes résistant à l'effet d'ancrage donnent une estimation indépendante de l'ancre présentée."
+          "explanation": "L'Everest culmine à 8849 mètres. L'ancre de 4000 mètres peut influencer votre estimation à la baisse. Vous résistez à l'ancrage si votre estimation est ≥ 6000 mètres. Cette question mesure votre résistance à l'ancrage, pas vos connaissances géographiques."
         },
         {
           "id": "anchor-6",
           "type": "number",
-          "text": "Le nombre d'os dans le corps humain adulte est-il supérieur à 65 ? Quel est selon vous ce nombre exact ?",
-          "unit": "os",
-          "correct": 206,
-          "anchorType": "low",
+          "text": "La durée de gestation d'un éléphant est-elle supérieure à 36 mois ?\n\nQuelle est selon vous la durée exacte de gestation d'un éléphant ?",
+          "unit": "mois",
+          "correct": 22,
+          "anchorType": "high",
+          "anchoringThreshold": {
+            "min": 6,
+            "max": 30
+          },
           "points": 0.5,
-          "explanation": "Le corps humain adulte contient 206 os. L'ancre de 65 peut influencer votre estimation à la baisse. Les personnes résistant à l'effet d'ancrage donnent une estimation indépendante de l'ancre présentée."
+          "explanation": "La gestation d'un éléphant dure environ 22 mois. L'ancre de 36 mois peut influencer votre estimation à la hausse. Vous résistez à l'ancrage si votre estimation est entre 6 et 30 mois. Cette question mesure votre résistance à l'ancrage, pas vos connaissances zoologiques."
         }
       ]
     },

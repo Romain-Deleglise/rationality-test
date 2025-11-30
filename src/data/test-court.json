@@ -514,22 +514,29 @@
         {
           "id": "anchor-1",
           "type": "number",
-          "text": "La distance de San Francisco à Hawaï est-elle supérieure à 500 miles ? Quelle est selon vous la distance exacte ?",
+          "text": "La distance de San Francisco à Hawaï est-elle supérieure à 500 miles ?\n\nQuelle est selon vous la distance exacte de San Francisco à Hawaï ?",
           "unit": "miles",
           "correct": 2387,
           "anchorType": "low",
+          "anchoringThreshold": {
+            "min": 1000
+          },
           "points": 0.5,
-          "explanation": "La distance réelle est ~2387 miles. L'ancre de 500 miles peut influencer votre estimation à la baisse. Pour marquer des points, vous devez donner une estimation très éloignée de l'ancre (< 250 miles OU > 1000 miles), montrant que vous n'avez pas été influencé. Cette question mesure la résistance à l'ancrage, pas la connaissance de la bonne réponse."
+          "explanation": "La distance réelle est ~2387 miles. L'ancre de 500 miles (présentée dans la première partie de la question) peut influencer votre estimation à la baisse. Selon la méthode CART, vous résistez à l'ancrage si votre estimation est ≥ 1000 miles. Cette question ne mesure pas votre connaissance géographique, mais votre capacité à ne pas être influencé par l'ancre."
         },
         {
           "id": "anchor-2",
           "type": "number",
-          "text": "La durée de l'orbite de Mars autour du Soleil est-elle supérieure à 1500 jours ? Quelle est selon vous la durée exacte ?",
+          "text": "La durée de l'orbite de Mars autour du Soleil est-elle supérieure à 1500 jours ?\n\nQuelle est selon vous la durée exacte de l'orbite de Mars ?",
           "unit": "jours",
           "correct": 687,
           "anchorType": "high",
+          "anchoringThreshold": {
+            "min": 50,
+            "max": 1000
+          },
           "points": 0.5,
-          "explanation": "La durée réelle est 687 jours. L'ancre de 1500 jours peut influencer votre estimation à la hausse. Pour marquer des points, vous devez donner une estimation très éloignée de l'ancre (< 750 jours OU > 3000 jours), montrant que vous n'avez pas été influencé. Cette question mesure la résistance à l'ancrage, pas la connaissance de la bonne réponse."
+          "explanation": "La durée réelle est 687 jours. L'ancre de 1500 jours (présentée dans la première partie) peut influencer votre estimation à la hausse. Selon la méthode CART, vous résistez à l'ancrage si votre estimation est entre 50 et 1000 jours. Cette question ne mesure pas vos connaissances astronomiques, mais votre résistance à l'effet d'ancrage."
         }
       ]
     }
