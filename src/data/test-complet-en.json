@@ -712,62 +712,83 @@
         {
           "id": "anchor-1",
           "type": "number",
-          "text": "Is the distance from San Francisco to Hawaii greater than 500 miles? In your opinion, what is the exact distance?",
+          "text": "Is the distance from San Francisco to Hawaii greater than 500 miles?\n\nWhat is your estimate of the exact distance from San Francisco to Hawaii?",
           "unit": "miles",
           "correct": 2387,
           "anchorType": "low",
+          "anchoringThreshold": {
+            "min": 1000
+          },
           "points": 0.5,
-          "explanation": "The actual distance is ~2387 miles. The anchor of 500 miles can influence your estimate downward. To score points, you must give an estimate far from the anchor (< 250 miles OR > 1000 miles), showing you were not influenced. This question measures resistance to anchoring, not knowledge of the correct answer."
+          "explanation": "The actual distance is ~2387 miles. The anchor of 500 miles (presented in the first part of the question) can influence your estimate downward. According to CART methodology, you resist anchoring if your estimate is ≥ 1000 miles. This question does not measure your geographical knowledge, but your ability not to be influenced by the anchor."
         },
         {
           "id": "anchor-2",
           "type": "number",
-          "text": "Is Mars's orbital period around the Sun greater than 1500 days? In your opinion, what is the exact duration?",
+          "text": "Is Mars's orbital period around the Sun greater than 1500 days?\n\nWhat is your estimate of the exact duration of Mars's orbit?",
           "unit": "days",
           "correct": 687,
           "anchorType": "high",
+          "anchoringThreshold": {
+            "min": 50,
+            "max": 1000
+          },
           "points": 0.5,
-          "explanation": "The actual duration is ~687 days. The anchor of 1500 days can influence your estimate upward. To score points, you must give an estimate far from the anchor (< 750 days OR > 3000 days), showing you were not influenced. This question measures resistance to anchoring, not knowledge of the correct answer."
+          "explanation": "The actual duration is 687 days. The anchor of 1500 days (presented in the first part) can influence your estimate upward. According to CART methodology, you resist anchoring if your estimate is between 50 and 1000 days. This question does not measure your astronomical knowledge, but your resistance to the anchoring effect."
         },
         {
           "id": "anchor-3",
           "type": "number",
-          "text": "Is a cheetah's maximum speed greater than 45 km/h? What do you think this exact speed is?",
-          "unit": "km/h",
-          "correct": 110,
+          "text": "Is the number of bones in an adult human body greater than 65?\n\nWhat is your estimate of the exact number of bones in an adult human body?",
+          "unit": "bones",
+          "correct": 206,
           "anchorType": "low",
+          "anchoringThreshold": {
+            "min": 100
+          },
           "points": 0.5,
-          "explanation": "A cheetah's maximum speed is approximately 110 km/h. The anchor of 45 km/h can influence your estimate downward. People resistant to the anchoring effect give an estimate independent of the presented anchor."
+          "explanation": "The adult human body contains 206 bones. The anchor of 65 can influence your estimate downward. You resist anchoring if your estimate is ≥ 100. This question measures your resistance to the anchoring effect, not your anatomical knowledge."
         },
         {
           "id": "anchor-4",
           "type": "number",
-          "text": "Is the average weight of an adult male African elephant greater than 1.5 tons? What do you think this exact weight is?",
-          "unit": "tons",
-          "correct": 6,
-          "anchorType": "low",
+          "text": "Is Canada's current population greater than 80 million inhabitants?\n\nWhat is your estimate of Canada's exact population?",
+          "unit": "million inhabitants",
+          "correct": 38,
+          "anchorType": "high",
+          "anchoringThreshold": {
+            "min": 5,
+            "max": 60
+          },
           "points": 0.5,
-          "explanation": "An adult male African elephant weighs on average about 6 tons. The anchor of 1.5 tons can influence your estimate downward. People resistant to the anchoring effect give an estimate independent of the presented anchor."
+          "explanation": "Canada's population is approximately 38 million. The anchor of 80 million can influence your estimate upward. You resist anchoring if your estimate is between 5 and 60 million. This question measures your resistance to the anchoring effect, not your demographic knowledge."
         },
         {
           "id": "anchor-5",
           "type": "number",
-          "text": "Is the cruising speed of a commercial airliner greater than 340 km/h? What do you think this exact speed is?",
-          "unit": "km/h",
-          "correct": 900,
+          "text": "Is Mount Everest's summit altitude greater than 4000 meters?\n\nWhat is your estimate of Mount Everest's exact summit altitude?",
+          "unit": "meters",
+          "correct": 8849,
           "anchorType": "low",
+          "anchoringThreshold": {
+            "min": 6000
+          },
           "points": 0.5,
-          "explanation": "The cruising speed of a commercial airliner is approximately 900 km/h. The anchor of 340 km/h can influence your estimate downward. People resistant to the anchoring effect give an estimate independent of the presented anchor."
+          "explanation": "Mount Everest stands at 8849 meters. The anchor of 4000 meters can influence your estimate downward. You resist anchoring if your estimate is ≥ 6000 meters. This question measures your resistance to anchoring, not your geographical knowledge."
         },
         {
           "id": "anchor-6",
           "type": "number",
-          "text": "Is the number of bones in an adult human body greater than 65? What do you think this exact number is?",
-          "unit": "bones",
-          "correct": 206,
-          "anchorType": "low",
+          "text": "Is the gestation period of an elephant greater than 36 months?\n\nWhat is your estimate of the exact gestation period of an elephant?",
+          "unit": "months",
+          "correct": 22,
+          "anchorType": "high",
+          "anchoringThreshold": {
+            "min": 6,
+            "max": 30
+          },
           "points": 0.5,
-          "explanation": "The adult human body contains 206 bones. The anchor of 65 can influence your estimate downward. People resistant to the anchoring effect give an estimate independent of the presented anchor."
+          "explanation": "An elephant's gestation period is approximately 22 months. The anchor of 36 months can influence your estimate upward. You resist anchoring if your estimate is between 6 and 30 months. This question measures your resistance to anchoring, not your zoological knowledge."
         }
       ]
     },

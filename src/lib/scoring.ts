@@ -90,48 +90,11 @@ export function scoreQuestion(
           break;
         }
 
-        // Special scoring for anchoring questions
-        if (effectiveQuestion.anchorType) {
-          // For anchoring questions, we measure resistance to the anchor, not accuracy
-          // We extract the anchor value from the question text (e.g., "500 miles" or "1500 jours")
-          // Try matching with various patterns: "X unit", "avant X", "before X"
-          let anchorMatch = effectiveQuestion.text.match(/(\d+)\s*(miles|jours|days|mètres|meters|habitants|millions?\s+d'habitants|million\s+inhabitants|°C|année|year)/i);
-
-          // Special case for years without explicit unit (e.g., "avant 1750" or "before 1750")
-          if (!anchorMatch) {
-            anchorMatch = effectiveQuestion.text.match(/(?:avant|before)\s+(\d+)/i);
-          }
-
-          if (anchorMatch) {
-            const anchorValue = Number(anchorMatch[1]);
-
-            if (effectiveQuestion.anchorType === 'low') {
-              // Low anchor: user should give an answer far from the anchor
-              // They resist if: answer < anchor/2 OR answer > anchor*2
-              // This shows they're not influenced by the anchor in either direction
-              const resistedAnchor = userAnswer < (anchorValue / 2) || userAnswer > (anchorValue * 2);
-              earned = resistedAnchor ? possible : 0;
-              correct = resistedAnchor;
-            } else if (effectiveQuestion.anchorType === 'high') {
-              // High anchor: user should give an answer far from the anchor
-              // They resist if: answer < anchor/2 OR answer > anchor*2
-              // This shows they're not influenced by the anchor in either direction
-              const resistedAnchor = userAnswer < (anchorValue / 2) || userAnswer > (anchorValue * 2);
-              earned = resistedAnchor ? possible : 0;
-              correct = resistedAnchor;
-            }
-          } else {
-            // Fallback to standard tolerance-based scoring if anchor not found
-            const tolerance = effectiveQuestion.tolerance || 0;
-            correct = Math.abs(userAnswer - correctAnswer) <= tolerance;
-            earned = correct ? possible : 0;
-          }
-        } else {
-          // Standard number question scoring
-          const tolerance = effectiveQuestion.tolerance || 0;
-          correct = Math.abs(userAnswer - correctAnswer) <= tolerance;
-          earned = correct ? possible : 0;
-        }
+        // Anchoring questions are now scored by scoreAnchoringModule()
+        // This handles only standard number questions
+        const tolerance = effectiveQuestion.tolerance || 0;
+        correct = Math.abs(userAnswer - correctAnswer) <= tolerance;
+        earned = correct ? possible : 0;
         break;
 
       case 'confidence-interval':
@@ -565,6 +528,116 @@ function scoreDysfunctionalModule(
 }
 
 /**
+ * Special scoring function for Anchoring using CART methodology
+ * CART: 8 items (4 low anchors + 4 high anchors)
+ * Our versions: 6 items (test complet) or 2 items (test court)
+ * Each question has manually defined thresholds based on CART methodology
+ */
+function scoreAnchoringModule(
+  module: Module,
+  answers: Answer[]
+): ModuleScore {
+  const questionScores: QuestionScore[] = [];
+  let rawScore = 0;
+
+  module.questions.forEach((question) => {
+    const answer = answers.find((a) => a.questionId === question.id);
+    let correct = false;
+
+    if (answer && answer.value !== null && answer.value !== undefined) {
+      const userAnswer = Number(answer.value);
+
+      // Each question has specific thresholds defined in anchoringThreshold field
+      if (!isNaN(userAnswer) && question.anchoringThreshold) {
+        const threshold = question.anchoringThreshold;
+
+        if (threshold.min !== undefined && threshold.max !== undefined) {
+          // Two-sided threshold: min < answer < max
+          correct = userAnswer > threshold.min && userAnswer < threshold.max;
+        } else if (threshold.min !== undefined) {
+          // Lower bound only: answer >= min
+          correct = userAnswer >= threshold.min;
+        } else if (threshold.max !== undefined) {
+          // Upper bound only: answer <= max
+          correct = userAnswer <= threshold.max;
+        }
+      }
+
+      if (correct) rawScore++;
+    }
+
+    questionScores.push({
+      questionId: question.id,
+      earned: 0, // Will be distributed later
+      possible: question.points || 0.5,
+      correct,
+    });
+  });
+
+  // Apply CART transformation curve
+  // CART thresholds for 8 items: 5-8 → 3pts, 3-4 → 2pts, 2 → 1pt, 0-1 → 0pts
+  // Adapted for 6 items: 4-6 → 3pts, 2-3 → 2pts, 1 → 1pt, 0 → 0pts
+  // Adapted for 2 items: 2 → 3pts, 1 → 1.5pts, 0 → 0pts
+  const maxScore = module.points;
+  const totalQuestions = module.questions.length;
+  let cartScore = 0;
+
+  if (totalQuestions === 8) {
+    // Full CART (8 items)
+    if (rawScore >= 5) {
+      cartScore = maxScore;
+    } else if (rawScore >= 3) {
+      cartScore = maxScore * (2/3);
+    } else if (rawScore === 2) {
+      cartScore = maxScore * (1/3);
+    } else {
+      cartScore = 0;
+    }
+  } else if (totalQuestions === 6) {
+    // Test complet (6 items) - proportional adaptation
+    if (rawScore >= 4) {
+      cartScore = maxScore;
+    } else if (rawScore >= 2) {
+      cartScore = maxScore * (2/3);
+    } else if (rawScore === 1) {
+      cartScore = maxScore * (1/3);
+    } else {
+      cartScore = 0;
+    }
+  } else if (totalQuestions === 2) {
+    // Test court (2 items)
+    if (rawScore === 2) {
+      cartScore = maxScore;
+    } else if (rawScore === 1) {
+      cartScore = maxScore * 0.5;
+    } else {
+      cartScore = 0;
+    }
+  } else {
+    // Fallback: proportional scoring
+    cartScore = totalQuestions > 0 ? maxScore * (rawScore / totalQuestions) : 0;
+  }
+
+  // Distribute CART score proportionally
+  const totalPossible = questionScores.reduce((sum, qs) => sum + qs.possible, 0);
+  questionScores.forEach(qs => {
+    qs.earned = totalPossible > 0 ? (qs.possible / totalPossible) * cartScore : 0;
+  });
+
+  const earned = questionScores.reduce((sum, qs) => sum + (qs.earned || 0), 0);
+  const percentage = totalPossible > 0 ? (earned / totalPossible) * 100 : 0;
+
+  return {
+    moduleId: module.id,
+    moduleName: module.name,
+    earned,
+    possible: totalPossible,
+    percentage,
+    questions: questionScores,
+  };
+}
+
+/**
  * Special scoring function for Belief Bias using CART methodology
  * CART: 16 items (8 consistent + 8 inconsistent)
  * Our versions: 12 items (test complet) or 8 items (test court)
@@ -845,6 +918,10 @@ export function scoreModule(
 
   if (module.id === 'belief-bias') {
     return scoreBeliefBiasModule(module, answers);
+  }
+
+  if (module.id === 'anchoring') {
+    return scoreAnchoringModule(module, answers);
   }
 
   const questionScores = module.questions.map((question) => {

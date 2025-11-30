@@ -514,22 +514,29 @@
         {
           "id": "anchor-1",
           "type": "number",
-          "text": "Is the distance from San Francisco to Hawaii greater than 500 miles? What do you think is the exact distance?",
+          "text": "Is the distance from San Francisco to Hawaii greater than 500 miles?\n\nWhat is your estimate of the exact distance from San Francisco to Hawaii?",
           "unit": "miles",
           "correct": 2387,
           "anchorType": "low",
+          "anchoringThreshold": {
+            "min": 1000
+          },
           "points": 0.5,
-          "explanation": "The actual distance is ~2387 miles. The anchor of 500 miles can influence your estimate downward. Points awarded by accuracy: estimate within ±30% = full points, ±60% = partial points. This question tests your ability to make reasonable estimates despite anchoring."
+          "explanation": "The actual distance is ~2387 miles. The anchor of 500 miles (presented in the first part of the question) can influence your estimate downward. According to CART methodology, you resist anchoring if your estimate is ≥ 1000 miles. This question does not measure your geographical knowledge, but your ability not to be influenced by the anchor."
         },
         {
           "id": "anchor-2",
           "type": "number",
-          "text": "Is the duration of Mars' orbit around the Sun greater than 1500 days? What do you think is the exact duration?",
+          "text": "Is Mars's orbital period around the Sun greater than 1500 days?\n\nWhat is your estimate of the exact duration of Mars's orbit?",
           "unit": "days",
           "correct": 687,
           "anchorType": "high",
+          "anchoringThreshold": {
+            "min": 50,
+            "max": 1000
+          },
           "points": 0.5,
-          "explanation": "The actual duration is ~687 days. The anchor of 1500 days can influence your estimate upward. Points awarded by accuracy: estimate within ±30% = full points, ±60% = partial points. This question tests your ability to make reasonable estimates despite anchoring."
+          "explanation": "The actual duration is 687 days. The anchor of 1500 days (presented in the first part) can influence your estimate upward. According to CART methodology, you resist anchoring if your estimate is between 50 and 1000 days. This question does not measure your astronomical knowledge, but your resistance to the anchoring effect."
         }
       ]
     }
