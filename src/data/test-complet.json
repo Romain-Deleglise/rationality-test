@@ -410,11 +410,11 @@
         {
           "id": "crt-1",
           "type": "number",
-          "text": "Une batte et une balle coûtent 1,10€ au total. La batte coûte 1€ de plus que la balle. Combien coûte la balle ?",
-          "unit": "centimes",
-          "correct": 5,
+          "text": "Une baignoire a deux robinets. Le premier la remplit en 6 minutes. Le second la remplit en 12 minutes. Si on ouvre les deux robinets en même temps, en combien de temps sera-t-elle remplie ?",
+          "unit": "minutes",
+          "correct": 4,
           "points": 1,
-          "explanation": "5 centimes. Si la balle = 5c, la batte = 1,05€ (1€ de plus), total = 1,10€. L'intuition suggère 10c, mais cela donnerait un total de 1,20€."
+          "explanation": "4 minutes. Le premier robinet remplit 1/6 de la baignoire par minute, le second 1/12. Ensemble : 1/6 + 1/12 = 3/12 = 1/4 de la baignoire par minute. Donc il faut 4 minutes pour la remplir complètement. L'intuition suggère de faire la moyenne (9 minutes), mais les débits s'additionnent."
         },
         {
           "id": "crt-2",
