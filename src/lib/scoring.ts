@@ -566,9 +566,10 @@ function scoreDysfunctionalModule(
 
 /**
  * Special scoring function for Belief Bias using CART methodology
- * CART: 16 items (8 consistent + 8 inconsistent), our version: 12 items
- * Raw score range: 0-12
- * CART curve transformation adapted proportionally (12/16 = 0.75)
+ * CART: 16 items (8 consistent + 8 inconsistent)
+ * Our versions: 12 items (test complet) or 8 items (test court)
+ * Raw score range: 0-N (where N is the number of questions)
+ * CART curve transformation adapted proportionally based on percentage correct
  */
 function scoreBeliefBiasModule(
   module: Module,
@@ -597,20 +598,27 @@ function scoreBeliefBiasModule(
   // Apply CART transformation curve (adapted thresholds)
   // Use module.points as the maximum score to ensure consistency
   const maxScore = module.points;
+  const totalQuestions = module.questions.length;
+
+  // Calculate percentage of correct answers
+  const percentageCorrect = totalQuestions > 0 ? (rawScore / totalQuestions) : 0;
+
+  // Apply thresholds based on percentage rather than absolute values
+  // This ensures the scoring works correctly for both test-court (8 items) and test-complet (12 items)
   let cartScore = 0;
-  if (rawScore >= 12) {
+  if (percentageCorrect >= 1.0) {        // 100% correct (12/12 or 8/8)
     cartScore = maxScore;
-  } else if (rawScore >= 11) {
+  } else if (percentageCorrect >= 11/12) { // ≥91.7% correct (11/12 or 7.3/8 → 8/8)
     cartScore = maxScore * 0.875;
-  } else if (rawScore >= 10) {
+  } else if (percentageCorrect >= 10/12) { // ≥83.3% correct (10/12 or 6.7/8 → 7/8)
     cartScore = maxScore * 0.75;
-  } else if (rawScore >= 9) {
+  } else if (percentageCorrect >= 9/12) {  // ≥75% correct (9/12 or 6/8)
     cartScore = maxScore * 0.625;
-  } else if (rawScore >= 8) {
+  } else if (percentageCorrect >= 8/12) {  // ≥66.7% correct (8/12 or 5.3/8 → 6/8)
     cartScore = maxScore * 0.5;
-  } else if (rawScore >= 7) {
+  } else if (percentageCorrect >= 7/12) {  // ≥58.3% correct (7/12 or 4.7/8 → 5/8)
     cartScore = maxScore * 0.25;
-  } else {
+  } else {                                 // <58.3% correct
     cartScore = 0;
   }
 
