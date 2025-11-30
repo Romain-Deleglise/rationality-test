@@ -308,7 +308,7 @@
       "title": "📚 Resources to Go Deeper",
       "essentialReading": "Essential Reading",
       "thinkingFastSlow": "Thinking, Fast and Slow",
-      "thinkingFastSlowDesc": "THE foundational book (2002 Nobel Prize)",
+      "thinkingFastSlowDesc": "Synthesis of decades of research by Kahneman (2002 Nobel Prize)",
       "rationalityQuotient": "The Rationality Quotient",
       "rationalityQuotientDesc": "The academic book on CART",
       "superforecasting": "Superforecasting",
@@ -322,7 +322,7 @@
       "lesswrongDesc": "Community and articles on rationality"
     },
     "scientificSources": {
-      "title": "📖 Complete Scientific Sources",
+      "title": "📖 Main Scientific Sources",
       "mainFoundations": "Main Foundations",
       "stanovich2016": "The Rationality Quotient: Toward a Test of Rational Thinking. MIT Press.",
       "kahneman1974": "Judgment under Uncertainty: Heuristics and Biases. Science, 185(4157), 1124-1131.",
@@ -351,7 +351,7 @@
       "question1": "Why is transfer so limited?",
       "question1Text": "Training improves performance on specific tasks but rarely generalizes to novel contexts. Why don't debiasing skills transfer? We lack a clear theoretical account. Most interventions fail outside laboratory conditions.",
       "question2": "How do System 1 and System 2 actually interact?",
-      "question2Text": "The dual-process framework (intuitive vs. analytical thinking) faces serious criticisms: oversimplification, unfalsifiability, vague definitions. Critics argue it's too simplistic and can't explain the complex interplay between intuitive and deliberate processes. The field lacks consensus.",
+      "question2Text": "The dual-process framework (intuitive vs. analytical thinking) faces serious criticisms: oversimplification, unfalsifiability, vague definitions. Alternative approaches like Gigerenzer's fast and frugal heuristics and ecological rationality suggest that intuitive processes are not \"errors\" but rational adaptations to specific environments. The field lacks consensus on these fundamental issues.",
       "question3": "What makes debiasing stick?",
       "question3Text": "Effects often dissipate within days without practice. We don't know how to achieve lasting behavioral change at acceptable cost. Real-world evidence of sustained improvement remains scarce.",
       "question4": "Does bias awareness translate to better decisions?",
