@@ -437,11 +437,11 @@
         {
           "id": "crt-4",
           "type": "number",
-          "text": "Un ascenseur met 1 minute pour monter d'un étage. Combien de temps met-il pour aller du 1er étage au 25ème étage ?",
-          "unit": "minutes",
-          "correct": 24,
+          "text": "Il y a une rangée de 50 arbres espacés de 10 mètres. Quelle est la distance entre le premier et le dernier arbre ?",
+          "unit": "mètres",
+          "correct": 490,
           "points": 1,
-          "explanation": "24 minutes. Il faut monter 24 étages pour aller du 1er étage au 25ème étage (25 - 1 = 24). L'intuition suggère 25 minutes."
+          "explanation": "490 mètres. Entre 50 arbres, il y a 49 intervalles (50 - 1 = 49). Donc 49 × 10 = 490 mètres. L'intuition suggère 500 mètres (50 × 10)."
         },
         {
           "id": "crt-6",
