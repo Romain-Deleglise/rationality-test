@@ -512,31 +512,55 @@
       "time": 3,
       "questions": [
         {
+          "id": "anchor-1-anchor",
+          "type": "multiple-choice",
+          "text": "La distance de San Francisco à Hawaï est-elle supérieure à 500 miles ?",
+          "options": [
+            "Oui",
+            "Non"
+          ],
+          "points": 0,
+          "explanation": ""
+        },
+        {
           "id": "anchor-1",
           "type": "number",
-          "text": "La distance de San Francisco à Hawaï est-elle supérieure à 500 miles ?\n\nQuelle est selon vous la distance exacte de San Francisco à Hawaï ?",
+          "text": "Quelle est selon vous la distance exacte de San Francisco à Hawaï ?",
           "unit": "miles",
           "correct": 2387,
           "anchorType": "low",
+          "anchorValue": 500,
           "anchoringThreshold": {
             "min": 1000
           },
           "points": 0.5,
-          "explanation": "La distance réelle est ~2387 miles. L'ancre de 500 miles (présentée dans la première partie de la question) peut influencer votre estimation à la baisse. Selon la méthode CART, vous résistez à l'ancrage si votre estimation est ≥ 1000 miles. Cette question ne mesure pas votre connaissance géographique, mais votre capacité à ne pas être influencé par l'ancre."
+          "explanation": "La distance réelle est ~2387 miles. L'ancre de 500 miles (présentée dans la question précédente) peut influencer votre estimation à la baisse. Selon la méthode CART, vous résistez à l'ancrage si votre estimation est ≥ 1000 miles. Cette question ne mesure pas votre connaissance géographique, mais votre capacité à ne pas être influencé par l'ancre."
+        },
+        {
+          "id": "anchor-2-anchor",
+          "type": "multiple-choice",
+          "text": "La durée de l'orbite de Mars autour du Soleil est-elle supérieure à 1500 jours ?",
+          "options": [
+            "Oui",
+            "Non"
+          ],
+          "points": 0,
+          "explanation": ""
         },
         {
           "id": "anchor-2",
           "type": "number",
-          "text": "La durée de l'orbite de Mars autour du Soleil est-elle supérieure à 1500 jours ?\n\nQuelle est selon vous la durée exacte de l'orbite de Mars ?",
+          "text": "Quelle est selon vous la durée exacte de l'orbite de Mars ?",
           "unit": "jours",
           "correct": 687,
           "anchorType": "high",
+          "anchorValue": 1500,
           "anchoringThreshold": {
             "min": 50,
             "max": 1000
           },
           "points": 0.5,
-          "explanation": "La durée réelle est 687 jours. L'ancre de 1500 jours (présentée dans la première partie) peut influencer votre estimation à la hausse. Selon la méthode CART, vous résistez à l'ancrage si votre estimation est entre 50 et 1000 jours. Cette question ne mesure pas vos connaissances astronomiques, mais votre résistance à l'effet d'ancrage."
+          "explanation": "La durée réelle est 687 jours. L'ancre de 1500 jours (présentée dans la question précédente) peut influencer votre estimation à la hausse. Selon la méthode CART, vous résistez à l'ancrage si votre estimation est entre 50 et 1000 jours. Cette question ne mesure pas vos connaissances astronomiques, mais votre résistance à l'effet d'ancrage."
         }
       ]
     }
