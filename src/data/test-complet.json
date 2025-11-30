@@ -12,7 +12,7 @@
         {
           "id": "prob-match-1",
           "type": "multiple-choice",
-          "text": "Un jeu de cartes contient 60% de cartes rouges et 40% de cartes bleues. Vous devez prédire la couleur avant chaque tirage (avec remise). Sur 100 tirages, quelle stratégie vous donnera le PLUS grand nombre de prédictions correctes ?",
+          "text": "Un jeu de cartes contient 60% de cartes rouges et 40% de cartes bleues. Vous devez prédire la couleur avant chaque tirage (avec remise). Sur 100 tirages, quelle stratégie vous donnera EN MOYENNE le plus grand nombre de prédictions correctes ?",
           "options": [
             "Toujours prédire rouge",
             "Prédire rouge 60 fois et bleu 40 fois",
@@ -85,7 +85,7 @@
           ],
           "correct": 1,
           "points": 1,
-          "explanation": "Chaque naissance est indépendante. Les naissances précédentes n'affectent pas la probabilité du prochain enfant (~50% garçon/fille)."
+          "explanation": "Environ 50%. Bien que certaines personnes puissent avoir une légère prédisposition biologique à avoir plus de garçons ou de filles, sans données spécifiques sur ce couple, l'erreur du 'sophisme du joueur' serait de penser que 'après 4 filles, un garçon devient plus probable'. La meilleure estimation reste la probabilité de base (~50%), car chaque naissance est un événement largement indépendant."
         },
         {
           "id": "gambler-5",
@@ -497,7 +497,7 @@
         {
           "id": "syllogism-2",
           "type": "multiple-choice",
-          "text": "Prémisse 1 : Tous les fruits sont sucrés. Prémisse 2 : Aucun citron n'est sucré. Conclusion : Aucun citron n'est un fruit.",
+          "text": "Évaluez uniquement la LOGIQUE (pas la vérité dans la réalité) :\n\nPrémisse 1 : Tous les fruits sont sucrés. Prémisse 2 : Aucun citron n'est sucré. Conclusion : Aucun citron n'est un fruit.",
           "options": [
             "La conclusion suit logiquement des prémisses",
             "La conclusion ne suit PAS logiquement des prémisses"
@@ -509,7 +509,7 @@
         {
           "id": "syllogism-3",
           "type": "multiple-choice",
-          "text": "Prémisse 1 : Toutes les fleurs ont besoin d'eau. Prémisse 2 : Les roses ont besoin d'eau. Conclusion : Les roses sont des fleurs.",
+          "text": "Évaluez uniquement la LOGIQUE (pas la vérité dans la réalité) :\n\nPrémisse 1 : Toutes les fleurs ont besoin d'eau. Prémisse 2 : Les roses ont besoin d'eau. Conclusion : Les roses sont des fleurs.",
           "options": [
             "La conclusion suit logiquement des prémisses",
             "La conclusion ne suit PAS logiquement des prémisses"
@@ -521,7 +521,7 @@
         {
           "id": "syllogism-4",
           "type": "multiple-choice",
-          "text": "Prémisse 1 : Toutes les choses précieuses sont rares. Prémisse 2 : Les diamants sont rares. Conclusion : Les diamants sont précieux.",
+          "text": "Évaluez uniquement la LOGIQUE (pas la vérité dans la réalité) :\n\nPrémisse 1 : Toutes les choses précieuses sont rares. Prémisse 2 : Les diamants sont rares. Conclusion : Les diamants sont précieux.",
           "options": [
             "La conclusion suit logiquement des prémisses",
             "La conclusion ne suit PAS logiquement des prémisses"
@@ -533,7 +533,7 @@
         {
           "id": "syllogism-5",
           "type": "multiple-choice",
-          "text": "Prémisse 1 : Aucun reptile n'a de fourrure. Prémisse 2 : Tous les serpents sont des reptiles. Conclusion : Aucun serpent n'a de fourrure.",
+          "text": "Évaluez uniquement la LOGIQUE (pas la vérité dans la réalité) :\n\nPrémisse 1 : Aucun reptile n'a de fourrure. Prémisse 2 : Tous les serpents sont des reptiles. Conclusion : Aucun serpent n'a de fourrure.",
           "options": [
             "La conclusion suit logiquement des prémisses",
             "La conclusion ne suit PAS logiquement des prémisses"
@@ -545,7 +545,7 @@
         {
           "id": "syllogism-6",
           "type": "multiple-choice",
-          "text": "Prémisse 1 : Tous les oiseaux peuvent voler. Prémisse 2 : Les pingouins sont des oiseaux. Conclusion : Les pingouins peuvent voler.",
+          "text": "Évaluez uniquement la LOGIQUE (pas la vérité dans la réalité) :\n\nPrémisse 1 : Tous les oiseaux peuvent voler. Prémisse 2 : Les pingouins sont des oiseaux. Conclusion : Les pingouins peuvent voler.",
           "options": [
             "La conclusion suit logiquement des prémisses",
             "La conclusion ne suit PAS logiquement des prémisses"
@@ -557,7 +557,7 @@
         {
           "id": "syllogism-7",
           "type": "multiple-choice",
-          "text": "Prémisse 1 : Tous les métaux conduisent l'électricité. Prémisse 2 : Le cuivre conduit l'électricité. Conclusion : Le cuivre est un métal.",
+          "text": "Évaluez uniquement la LOGIQUE (pas la vérité dans la réalité) :\n\nPrémisse 1 : Tous les métaux conduisent l'électricité. Prémisse 2 : Le cuivre conduit l'électricité. Conclusion : Le cuivre est un métal.",
           "options": [
             "La conclusion suit logiquement des prémisses",
             "La conclusion ne suit PAS logiquement des prémisses"
@@ -569,7 +569,7 @@
         {
           "id": "syllogism-8",
           "type": "multiple-choice",
-          "text": "Prémisse 1 : Tous les insectes ont six pattes. Prémisse 2 : Les araignées ont huit pattes. Conclusion : Les araignées ne sont pas des insectes.",
+          "text": "Évaluez uniquement la LOGIQUE (pas la vérité dans la réalité) :\n\nPrémisse 1 : Tous les insectes ont six pattes. Prémisse 2 : Les araignées ont huit pattes. Conclusion : Les araignées ne sont pas des insectes.",
           "options": [
             "La conclusion suit logiquement des prémisses",
             "La conclusion ne suit PAS logiquement des prémisses"
@@ -593,7 +593,7 @@
         {
           "id": "syllogism-10",
           "type": "multiple-choice",
-          "text": "Prémisse 1 : Tous les carnivores mangent de la viande. Prémisse 2 : Les tigres mangent de la viande. Conclusion : Les tigres sont des carnivores.",
+          "text": "Évaluez uniquement la LOGIQUE (pas la vérité dans la réalité) :\n\nPrémisse 1 : Tous les carnivores mangent de la viande. Prémisse 2 : Les tigres mangent de la viande. Conclusion : Les tigres sont des carnivores.",
           "options": [
             "La conclusion suit logiquement des prémisses",
             "La conclusion ne suit PAS logiquement des prémisses"
@@ -605,19 +605,19 @@
         {
           "id": "syllogism-11",
           "type": "multiple-choice",
-          "text": "Prémisse 1 : Aucun mammifère ne pond d'œufs. Prémisse 2 : Les ornitorynques pondent des œufs. Conclusion : Les ornitorynques ne sont pas des mammifères.",
+          "text": "Évaluez uniquement la LOGIQUE (pas la vérité dans la réalité) :\n\nPrémisse 1 : Aucun mammifère ne pond d'œufs. Prémisse 2 : Les ornithorynques pondent des œufs. Conclusion : Les ornithorynques ne sont pas des mammifères.",
           "options": [
             "La conclusion suit logiquement des prémisses",
             "La conclusion ne suit PAS logiquement des prémisses"
           ],
           "correct": 0,
           "points": 0.5,
-          "explanation": "Valide logiquement (EAE2). La conclusion suit des prémisses, même si elle est fausse (les ornitorynques sont des mammifères). Syllogisme inconsistant."
+          "explanation": "Valide logiquement (EAE2). La conclusion suit des prémisses, même si elle est fausse (les ornithorynques sont des mammifères). Syllogisme inconsistant."
         },
         {
           "id": "syllogism-12",
           "type": "multiple-choice",
-          "text": "Prémisse 1 : Tous les véhicules terrestres ont des roues. Prémisse 2 : Les trains ont des roues. Conclusion : Les trains sont des véhicules terrestres.",
+          "text": "Évaluez uniquement la LOGIQUE (pas la vérité dans la réalité) :\n\nPrémisse 1 : Tous les véhicules terrestres ont des roues. Prémisse 2 : Les trains ont des roues. Conclusion : Les trains sont des véhicules terrestres.",
           "options": [
             "La conclusion suit logiquement des prémisses",
             "La conclusion ne suit PAS logiquement des prémisses"
@@ -637,7 +637,7 @@
         {
           "id": "disj-1",
           "type": "multiple-choice",
-          "text": "Trois boîtes empilées : [Haut : fraises fraîches], [Milieu : ?], [Bas : fraises congelées]. Les fraises fraîches ne doivent PAS toucher les congelées. Une boîte de fraises fraîches touche-t-elle une boîte de fraises congelées ?",
+          "text": "Trois boîtes sont empilées : [Haut : fraises fraîches], [Milieu : soit fraises fraîches, soit fraises congelées], [Bas : fraises congelées]. La boîte du milieu contient soit des fraises fraîches, soit des fraises congelées, mais on ne sait pas laquelle. Est-il certain qu'une boîte de fraises fraîches touche une boîte de fraises congelées ?",
           "options": [
             "Oui",
             "Non",
