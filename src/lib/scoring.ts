@@ -569,7 +569,7 @@ function scoreAnchoringModule(
     questionScores.push({
       questionId: question.id,
       earned: 0, // Will be distributed later
-      possible: question.points || 0.5,
+      possible: question.points ?? 0.5,
       correct,
     });
   });
@@ -579,7 +579,8 @@ function scoreAnchoringModule(
   // Adapted for 6 items: 4-6 → 3pts, 2-3 → 2pts, 1 → 1pt, 0 → 0pts
   // Adapted for 2 items: 2 → 3pts, 1 → 1.5pts, 0 → 0pts
   const maxScore = module.points;
-  const totalQuestions = module.questions.length;
+  // Count only questions that have anchoringThreshold (exclude preliminary anchor questions)
+  const totalQuestions = module.questions.filter(q => q.anchoringThreshold !== undefined).length;
   let cartScore = 0;
 
   if (totalQuestions === 8) {
@@ -663,7 +664,7 @@ function scoreBeliefBiasModule(
     questionScores.push({
       questionId: question.id,
       earned: 0, // Will be distributed later
-      possible: question.points || 0.5,
+      possible: question.points ?? 0.5,
       correct,
     });
   });
