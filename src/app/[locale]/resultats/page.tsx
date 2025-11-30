@@ -2157,7 +2157,6 @@ export default function ResultatsPage() {
                 <li>{t('scientificSources.limitation1')}</li>
                 <li>{t('scientificSources.limitation2')}</li>
                 <li>{t('scientificSources.limitation3')}</li>
-                <li>{t('scientificSources.limitation4')}</li>
               </ul>
             </div>
           </div>
