@@ -77,15 +77,15 @@
         {
           "id": "gambler-4",
           "type": "multiple-choice",
-          "text": "Un couple a 4 filles. Ils veulent un cinquième enfant. Quelle est la probabilité que ce soit un garçon ?",
+          "text": "Un paquet de 52 cartes contient 26 cartes rouges et 26 cartes noires. On tire une carte, on note sa couleur, on la remet et on mélange le paquet. Après avoir tiré 4 cartes rouges consécutives, quelle est la probabilité que la prochaine soit noire ?",
           "options": [
-            "Plus de 50% (ils sont 'dus' pour un garçon)",
-            "Environ 50% (indépendant des naissances précédentes)",
-            "Moins de 50% (ils ont tendance à faire des filles)"
+            "Plus de 50% (on est 'dû' pour une noire)",
+            "Exactement 50% (chaque tirage est indépendant)",
+            "Moins de 50% (tendance au rouge)"
           ],
           "correct": 1,
           "points": 1,
-          "explanation": "Environ 50%. Bien que certaines personnes puissent avoir une légère prédisposition biologique à avoir plus de garçons ou de filles, sans données spécifiques sur ce couple, l'erreur du 'sophisme du joueur' serait de penser que 'après 4 filles, un garçon devient plus probable'. La meilleure estimation reste la probabilité de base (~50%), car chaque naissance est un événement largement indépendant."
+          "explanation": "Exactement 50%. Puisque la carte est remise et le paquet mélangé après chaque tirage, chaque tirage est totalement indépendant. Les résultats précédents n'influencent pas le prochain tirage. C'est l'erreur du 'sophisme du joueur' (gambler's fallacy) de penser qu'après une série de rouges, une noire devient plus probable."
         },
         {
           "id": "gambler-5",

@@ -38,15 +38,15 @@
         {
           "id": "gambler-4",
           "type": "multiple-choice",
-          "text": "A couple has 4 daughters. They want a fifth child. What is the probability that it will be a boy?",
+          "text": "A deck of 52 cards contains 26 red cards and 26 black cards. You draw a card, note its color, replace it, and shuffle the deck. After drawing 4 red cards in a row, what is the probability that the next card will be black?",
           "options": [
-            "More than 50% (after 4 girls, a boy becomes more likely)",
-            "Less than 50% (they tend to have girls)",
-            "About 50% (each birth is independent)"
+            "More than 50% (we are 'due' for a black card)",
+            "Less than 50% (tendency towards red)",
+            "Exactly 50% (each draw is independent)"
           ],
           "correct": 2,
           "points": 1,
-          "explanation": "Each birth is independent. Previous births do not affect the probability of the next child (~50% boy/girl)."
+          "explanation": "Exactly 50%. Since the card is replaced and the deck is shuffled after each draw, each draw is completely independent. Previous results do not influence the next draw. This is the gambler's fallacy: thinking that after a series of reds, a black card becomes more likely."
         },
         {
           "id": "conjunction-3",
