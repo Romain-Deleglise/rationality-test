@@ -10,7 +10,7 @@ export default async function Home({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
-  const t = await getTranslations('home');
+  const t = await getTranslations({ locale, namespace: 'home' });
 
   // Wikipedia base URL based on locale
   const wikipediaUrl = locale === 'fr' ? 'https://fr.wikipedia.org' : 'https://en.wikipedia.org';
