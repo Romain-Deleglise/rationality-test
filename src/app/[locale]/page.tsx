@@ -1,16 +1,16 @@
 import Link from 'next/link';
-import { useTranslations } from 'next-intl';
+import { getTranslations } from 'next-intl/server';
 import { ChevronDown, BookOpen, Clock, BarChart3, CheckCircle } from 'lucide-react';
 import { AccordionItem } from '@/components/AccordionItem';
 import { StartTestButton } from '@/components/StartTestButton';
 
-export default function Home({
+export default async function Home({
   params,
 }: {
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 }) {
-  const { locale } = params;
-  const t = useTranslations('home');
+  const { locale } = await params;
+  const t = await getTranslations('home');
 
   // Wikipedia base URL based on locale
   const wikipediaUrl = locale === 'fr' ? 'https://fr.wikipedia.org' : 'https://en.wikipedia.org';
@@ -115,14 +115,16 @@ export default function Home({
               {t('whatIsRationality.title')}
             </h2>
             <div className="space-y-4 text-sm sm:text-base">
-              <p
-                className="text-gray-700 dark:text-gray-300 leading-relaxed text-justify"
-                dangerouslySetInnerHTML={{ __html: t('whatIsRationality.intro') }}
-              />
-              <p
-                className="text-gray-700 dark:text-gray-300 leading-relaxed text-justify"
-                dangerouslySetInnerHTML={{ __html: t('whatIsRationality.improvable') }}
-              />
+              <p className="text-gray-700 dark:text-gray-300 leading-relaxed text-justify">
+                {t.rich('whatIsRationality.intro', {
+                  strong: (chunks) => <strong>{chunks}</strong>
+                })}
+              </p>
+              <p className="text-gray-700 dark:text-gray-300 leading-relaxed text-justify">
+                {t.rich('whatIsRationality.improvable', {
+                  strong: (chunks) => <strong>{chunks}</strong>
+                })}
+              </p>
               <p className="text-gray-700 dark:text-gray-300 leading-relaxed text-justify">
                 {t('whatIsRationality.testDescription')}{' '}
                 <a href={locale === 'fr' ? 'https://fr.wikipedia.org/wiki/Biais_cognitif' : 'https://en.wikipedia.org/wiki/Cognitive_bias'} target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 underline decoration-2 underline-offset-2 transition-colors font-medium">
@@ -254,7 +256,9 @@ export default function Home({
         {/* Privacy */}
         <AccordionItem title={t('privacy.title')}>
           <p className="mb-3">
-            <span dangerouslySetInnerHTML={{ __html: t('privacy.anonymous') }} />
+            {t.rich('privacy.anonymous', {
+              strong: (chunks) => <strong>{chunks}</strong>
+            })}
           </p>
           <ul className="list-disc pl-6 space-y-2 mb-3">
             <li>{t('privacy.responses')}</li>
