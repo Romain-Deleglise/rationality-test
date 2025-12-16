@@ -1,215 +1,95 @@
-'use client';
-
-import { useState } from 'react';
 import Link from 'next/link';
-import { useParams } from 'next/navigation';
 import { useTranslations } from 'next-intl';
 import { ChevronDown, BookOpen, Clock, BarChart3, CheckCircle } from 'lucide-react';
-import { motion, useScroll, useTransform } from 'framer-motion';
-import { track } from '@vercel/analytics';
+import { AccordionItem } from '@/components/AccordionItem';
+import { StartTestButton } from '@/components/StartTestButton';
 
-const AccordionItem = ({ title, children, defaultOpen = false }: {
-  title: string;
-  children: React.ReactNode;
-  defaultOpen?: boolean
-}) => {
-  const [isOpen, setIsOpen] = useState(defaultOpen);
-
-  const handleToggle = (e: React.MouseEvent) => {
-    e.preventDefault();
-    e.stopPropagation();
-
-    // Capturer la position de scroll AVANT le changement
-    const scrollY = window.scrollY;
-
-    setIsOpen(!isOpen);
-
-    // Restaurer la position immédiatement après le render
-    requestAnimationFrame(() => {
-      window.scrollTo(0, scrollY);
-    });
-  };
-
-  return (
-    <div className="group relative bg-white/60 dark:bg-gray-800/60 backdrop-blur-lg border border-gray-200/50 dark:border-gray-700/50 rounded-2xl mb-4 shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden">
-      <button
-        onClick={handleToggle}
-        type="button"
-        className="w-full px-6 sm:px-8 py-5 flex items-center justify-between bg-gradient-to-r from-transparent to-blue-50/30 dark:to-blue-950/20 hover:to-blue-100/40 dark:hover:to-blue-900/30 transition-all duration-300"
-      >
-        <span className="font-semibold text-left text-gray-900 dark:text-gray-100 text-base sm:text-lg">{title}</span>
-        <ChevronDown className={`w-5 h-5 text-blue-600 dark:text-blue-400 flex-shrink-0 ml-4 transition-transform duration-300 ${isOpen ? 'rotate-180' : 'rotate-0'}`} />
-      </button>
-      {isOpen && (
-        <div className="px-6 sm:px-8 py-6 bg-white/40 dark:bg-gray-900/40 backdrop-blur-sm text-gray-700 dark:text-gray-300 leading-relaxed text-justify">
-          {children}
-        </div>
-      )}
-    </div>
-  );
-};
-
-export default function Home() {
-  const params = useParams();
-  const locale = params.locale as string;
+export default function Home({
+  params,
+}: {
+  params: { locale: string };
+}) {
+  const { locale } = params;
   const t = useTranslations('home');
 
   // Wikipedia base URL based on locale
   const wikipediaUrl = locale === 'fr' ? 'https://fr.wikipedia.org' : 'https://en.wikipedia.org';
 
-  // Scroll tracking for lightweight title effects (mobile-optimized)
-  const { scrollY } = useScroll();
-
-  // Only use lightweight transforms: scale and opacity (no blur, no 3D rotation)
-  // These are GPU-accelerated and perform well on mobile
-  const titleScale = useTransform(scrollY, [0, 300], [1, 0.9]);
-  const titleOpacity = useTransform(scrollY, [0, 300], [1, 0.4]);
-
   return (
     <div className="min-h-screen relative overflow-hidden bg-gradient-to-br from-slate-50 via-blue-50/30 to-indigo-50/40 dark:from-gray-950 dark:via-blue-950/20 dark:to-indigo-950/30 transition-colors">
-      {/* Animated background elements */}
+      {/* Simplified background elements - removed blur-3xl */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute -top-1/2 -right-1/2 w-full h-full bg-gradient-to-br from-blue-400/10 to-purple-400/10 dark:from-blue-600/5 dark:to-purple-600/5 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute -bottom-1/2 -left-1/2 w-full h-full bg-gradient-to-tr from-indigo-400/10 to-cyan-400/10 dark:from-indigo-600/5 dark:to-cyan-600/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+        <div className="absolute -top-1/2 -right-1/2 w-full h-full bg-gradient-to-br from-blue-400/10 to-purple-400/10 dark:from-blue-600/5 dark:to-purple-600/5 rounded-full opacity-50"></div>
+        <div className="absolute -bottom-1/2 -left-1/2 w-full h-full bg-gradient-to-tr from-indigo-400/10 to-cyan-400/10 dark:from-indigo-600/5 dark:to-cyan-600/5 rounded-full opacity-50"></div>
       </div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
         {/* Header - Hero Section */}
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          className="text-center mb-16 sm:mb-20"
-        >
-          <motion.div
-            initial={{ scale: 0.9, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 1, delay: 0.2 }}
-            className="relative inline-block mb-8 px-4"
-            style={{ overflow: 'visible', paddingBottom: '2rem' }}
-          >
-            <motion.h1
+        <div className="text-center mb-16 sm:mb-20 animate-fade-in-up">
+          <div className="relative inline-block mb-8 px-4" style={{ paddingBottom: '2rem' }}>
+            <h1
               className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tight"
               style={{
-                overflow: 'visible',
                 lineHeight: '1.5',
                 paddingBottom: '1rem',
-                scale: titleScale,
-                opacity: titleOpacity,
-                willChange: 'transform, opacity', // Hint browser for GPU optimization
               }}
             >
               <span className="block bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 dark:from-blue-400 dark:via-purple-400 dark:to-indigo-400 bg-clip-text text-transparent animate-gradient bg-[length:200%_auto]">
                 {t('title')}
               </span>
-            </motion.h1>
+            </h1>
 
-            {/* Enhanced glow effect - animated pulse */}
-            <motion.div
-              className="absolute -inset-4 bg-gradient-to-r from-blue-600/20 via-purple-600/20 to-indigo-600/20 dark:from-blue-400/10 dark:via-purple-400/10 dark:to-indigo-400/10 blur-2xl -z-10"
-              animate={{
-                opacity: [0.4, 0.7, 0.4],
-                scale: [1, 1.05, 1],
-              }}
-              transition={{
-                duration: 4,
-                repeat: Infinity,
-                ease: 'easeInOut',
-              }}
-            />
-          </motion.div>
+            {/* Simplified glow effect */}
+            <div className="absolute -inset-4 bg-gradient-to-r from-blue-600/20 via-purple-600/20 to-indigo-600/20 dark:from-blue-400/10 dark:via-purple-400/10 dark:to-indigo-400/10 blur-2xl -z-10 opacity-60" />
+          </div>
 
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-base sm:text-lg md:text-xl text-gray-700 dark:text-gray-300 mb-10 max-w-2xl mx-auto font-light leading-relaxed"
-          >
+          <p className="text-base sm:text-lg md:text-xl text-gray-700 dark:text-gray-300 mb-10 max-w-2xl mx-auto font-light leading-relaxed">
             {t('subtitle')}
-          </motion.p>
+          </p>
 
-          {/* Key Features with Icons - Glassmorphism Design */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-            className="flex flex-wrap justify-center gap-4 sm:gap-6 mb-10"
-          >
-            <motion.div
-              whileHover={{ scale: 1.05, y: -5 }}
-              transition={{ type: "spring", stiffness: 300 }}
-              className="group relative flex items-center gap-3 bg-white/70 dark:bg-gray-800/70 backdrop-blur-lg px-6 py-4 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-white/20 dark:border-gray-700/50"
-            >
+          {/* Key Features with Icons - Simplified */}
+          <div className="flex flex-wrap justify-center gap-4 sm:gap-6 mb-10">
+            <div className="group relative flex items-center gap-3 bg-white/70 dark:bg-gray-800/70 px-6 py-4 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-white/20 dark:border-gray-700/50 hover:-translate-y-1">
               <div className="p-2 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl group-hover:scale-110 transition-transform">
                 <Clock className="w-5 h-5 text-white" />
               </div>
               <span className="text-sm font-semibold text-gray-800 dark:text-gray-200">{t('duration')}</span>
-            </motion.div>
-            <motion.div
-              whileHover={{ scale: 1.05, y: -5 }}
-              transition={{ type: "spring", stiffness: 300 }}
-              className="group relative flex items-center gap-3 bg-white/70 dark:bg-gray-800/70 backdrop-blur-lg px-6 py-4 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-white/20 dark:border-gray-700/50"
-            >
+            </div>
+            <div className="group relative flex items-center gap-3 bg-white/70 dark:bg-gray-800/70 px-6 py-4 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-white/20 dark:border-gray-700/50 hover:-translate-y-1">
               <div className="p-2 bg-gradient-to-br from-purple-500 to-pink-600 rounded-xl group-hover:scale-110 transition-transform">
                 <BarChart3 className="w-5 h-5 text-white" />
               </div>
               <span className="text-sm font-semibold text-gray-800 dark:text-gray-200">{t('detailedFeedback')}</span>
-            </motion.div>
-            <motion.div
-              whileHover={{ scale: 1.05, y: -5 }}
-              transition={{ type: "spring", stiffness: 300 }}
-              className="group relative flex items-center gap-3 bg-white/70 dark:bg-gray-800/70 backdrop-blur-lg px-6 py-4 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-white/20 dark:border-gray-700/50"
-            >
+            </div>
+            <div className="group relative flex items-center gap-3 bg-white/70 dark:bg-gray-800/70 px-6 py-4 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-white/20 dark:border-gray-700/50 hover:-translate-y-1">
               <div className="p-2 bg-gradient-to-br from-indigo-500 to-blue-600 rounded-xl group-hover:scale-110 transition-transform">
                 <BookOpen className="w-5 h-5 text-white" />
               </div>
               <span className="text-sm font-semibold text-gray-800 dark:text-gray-200">{t('scientificallyValidated')}</span>
-            </motion.div>
-          </motion.div>
+            </div>
+          </div>
 
-          {/* Feature Badges - Enhanced */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, delay: 0.8 }}
-            className="flex flex-wrap justify-center gap-3 mb-8"
-          >
-            <motion.span
-              whileHover={{ scale: 1.05 }}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-green-500 to-emerald-600 text-white text-sm font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
-            >
+          {/* Feature Badges */}
+          <div className="flex flex-wrap justify-center gap-3 mb-8">
+            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-green-500 to-emerald-600 text-white text-sm font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300">
               <CheckCircle className="w-4 h-4" />
               {t('features.free')}
-            </motion.span>
-            <motion.span
-              whileHover={{ scale: 1.05 }}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-purple-500 to-violet-600 text-white text-sm font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
-            >
+            </span>
+            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-purple-500 to-violet-600 text-white text-sm font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300">
               <CheckCircle className="w-4 h-4" />
               {t('features.openSource')}
-            </motion.span>
-            <motion.span
-              whileHover={{ scale: 1.05 }}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-blue-500 to-cyan-600 text-white text-sm font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
-            >
+            </span>
+            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-blue-500 to-cyan-600 text-white text-sm font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300">
               <CheckCircle className="w-4 h-4" />
               {t('features.anonymous')}
-            </motion.span>
-            <motion.span
-              whileHover={{ scale: 1.05 }}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-orange-500 to-red-600 text-white text-sm font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
-            >
+            </span>
+            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-orange-500 to-red-600 text-white text-sm font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300">
               <CheckCircle className="w-4 h-4" />
               {t('features.publicInterest')}
-            </motion.span>
-          </motion.div>
+            </span>
+          </div>
 
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 1 }}
-            className="mt-6"
-          >
+          <div className="mt-6">
             <a
               href="https://github.com/Romain-Deleglise/rationality-test"
               target="_blank"
@@ -224,17 +104,12 @@ export default function Home() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
             </a>
-          </motion.div>
-        </motion.div>
+          </div>
+        </div>
 
-        {/* Intro Card - Glassmorphism Enhanced */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
-          className="relative bg-white/80 dark:bg-gray-800/80 backdrop-blur-xl rounded-3xl shadow-2xl p-8 sm:p-10 mb-12 border border-white/50 dark:border-gray-700/50 overflow-hidden"
-        >
-          <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-blue-400/20 to-purple-400/20 dark:from-blue-600/10 dark:to-purple-600/10 rounded-full blur-3xl -z-0"></div>
+        {/* Intro Card - Simplified */}
+        <div className="relative bg-white/80 dark:bg-gray-800/80 rounded-3xl shadow-2xl p-8 sm:p-10 mb-12 border border-white/50 dark:border-gray-700/50 overflow-hidden">
+          <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-blue-400/20 to-purple-400/20 dark:from-blue-600/10 dark:to-purple-600/10 rounded-full -z-0"></div>
           <div className="relative z-10">
             <h2 className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 dark:from-white dark:to-gray-300 bg-clip-text text-transparent mb-6">
               {t('whatIsRationality.title')}
@@ -257,18 +132,13 @@ export default function Home() {
               </p>
             </div>
           </div>
-        </motion.div>
+        </div>
 
         {/* What is tested */}
         <div className="mb-12">
-          <motion.h2
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 dark:from-white dark:to-gray-300 bg-clip-text text-transparent mb-8"
-          >
+          <h2 className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 dark:from-white dark:to-gray-300 bg-clip-text text-transparent mb-8">
             {t('whatIsTested.title')}
-          </motion.h2>
+          </h2>
 
           <AccordionItem title={t('whatIsTested.probabilistic.title')}>
             <p className="mb-3">
@@ -333,16 +203,10 @@ export default function Home() {
           </AccordionItem>
         </div>
 
-        {/* Foundations - Enhanced */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="relative bg-gradient-to-br from-blue-50/80 via-indigo-50/50 to-purple-50/80 dark:from-blue-950/30 dark:via-indigo-950/20 dark:to-purple-950/30 backdrop-blur-lg rounded-3xl p-8 sm:p-10 mb-12 border border-blue-200/50 dark:border-blue-800/50 shadow-xl overflow-hidden"
-        >
-          <div className="absolute -top-20 -right-20 w-40 h-40 bg-blue-400/20 dark:bg-blue-600/10 rounded-full blur-3xl"></div>
-          <div className="absolute -bottom-20 -left-20 w-40 h-40 bg-purple-400/20 dark:bg-purple-600/10 rounded-full blur-3xl"></div>
+        {/* Foundations */}
+        <div className="relative bg-gradient-to-br from-blue-50/80 via-indigo-50/50 to-purple-50/80 dark:from-blue-950/30 dark:via-indigo-950/20 dark:to-purple-950/30 rounded-3xl p-8 sm:p-10 mb-12 border border-blue-200/50 dark:border-blue-800/50 shadow-xl overflow-hidden">
+          <div className="absolute -top-20 -right-20 w-40 h-40 bg-blue-400/20 dark:bg-blue-600/10 rounded-full"></div>
+          <div className="absolute -bottom-20 -left-20 w-40 h-40 bg-purple-400/20 dark:bg-purple-600/10 rounded-full"></div>
 
           <div className="relative z-10">
             <h3 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-gray-100 mb-6 flex items-center gap-3">
@@ -368,7 +232,7 @@ export default function Home() {
               </p>
 
               {/* Key References Section */}
-              <div className="mt-6 p-6 bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm rounded-2xl border border-gray-200/50 dark:border-gray-700/50">
+              <div className="mt-6 p-6 bg-white/60 dark:bg-gray-800/60 rounded-2xl border border-gray-200/50 dark:border-gray-700/50">
                 <h4 className="text-lg font-bold text-gray-900 dark:text-gray-100 mb-4">
                   {t('foundations.keyReferences')}
                 </h4>
@@ -385,7 +249,7 @@ export default function Home() {
               </p>
             </div>
           </div>
-        </motion.div>
+        </div>
 
         {/* Privacy */}
         <AccordionItem title={t('privacy.title')}>
@@ -404,47 +268,26 @@ export default function Home() {
           </p>
         </AccordionItem>
 
-        {/* Choose version - Premium Design */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="relative bg-white/70 dark:bg-gray-800/70 backdrop-blur-xl rounded-3xl shadow-2xl p-8 sm:p-12 overflow-hidden border border-white/50 dark:border-gray-700/50"
-        >
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-96 bg-gradient-to-br from-blue-400/20 via-indigo-400/20 to-purple-400/20 dark:from-blue-600/10 dark:via-indigo-600/10 dark:to-purple-600/10 rounded-full blur-3xl"></div>
+        {/* Choose version */}
+        <div className="relative bg-white/70 dark:bg-gray-800/70 rounded-3xl shadow-2xl p-8 sm:p-12 overflow-hidden border border-white/50 dark:border-gray-700/50">
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-96 bg-gradient-to-br from-blue-400/20 via-indigo-400/20 to-purple-400/20 dark:from-blue-600/10 dark:via-indigo-600/10 dark:to-purple-600/10 rounded-full"></div>
 
           <div className="relative z-10">
-            <motion.h2
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-xl sm:text-2xl md:text-3xl font-black text-center mb-4"
-            >
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-black text-center mb-4">
               <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 dark:from-blue-400 dark:via-purple-400 dark:to-indigo-400 bg-clip-text text-transparent">
                 {t('chooseVersion.title')}
               </span>
-            </motion.h2>
+            </h2>
 
             <div className="grid md:grid-cols-2 gap-6 sm:gap-8 mt-10 items-stretch">
               {/* Short version */}
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.3 }}
-                className="group relative"
-              >
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-cyan-500/20 dark:from-blue-600/20 dark:to-cyan-600/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500 opacity-0 group-hover:opacity-100"></div>
-                <div className="relative bg-white/90 dark:bg-gray-900/90 backdrop-blur-lg border-2 border-gray-200/50 dark:border-gray-700/50 rounded-2xl p-5 hover:border-blue-400 dark:hover:border-blue-500 transition-all duration-500 transform hover:-translate-y-2 hover:shadow-2xl h-full flex flex-col">
+              <div className="group relative">
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-cyan-500/20 dark:from-blue-600/20 dark:to-cyan-600/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
+                <div className="relative bg-white/90 dark:bg-gray-900/90 border-2 border-gray-200/50 dark:border-gray-700/50 rounded-2xl p-5 hover:border-blue-400 dark:hover:border-blue-500 transition-all duration-500 transform hover:-translate-y-2 hover:shadow-2xl h-full flex flex-col">
                   <div className="text-center mb-5">
-                    <motion.div
-                      whileHover={{ scale: 1.1, rotate: 5 }}
-                      transition={{ type: "spring", stiffness: 300 }}
-                      className="inline-flex items-center justify-center w-12 h-12 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-xl mb-3 shadow-lg"
-                    >
+                    <div className="inline-flex items-center justify-center w-12 h-12 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-xl mb-3 shadow-lg">
                       <Clock className="w-6 h-6 text-white" />
-                    </motion.div>
+                    </div>
                     <h3 className="text-base font-bold text-gray-900 dark:text-gray-100 mb-2">{t('chooseVersion.express.title')}</h3>
                     <p className="text-xl sm:text-2xl font-black bg-gradient-to-r from-blue-600 to-cyan-600 dark:from-blue-400 dark:to-cyan-400 bg-clip-text text-transparent mb-1">{t('chooseVersion.express.duration')}</p>
                     <p className="text-xs font-medium text-gray-600 dark:text-gray-400">{t('chooseVersion.express.modules')}</p>
@@ -459,38 +302,22 @@ export default function Home() {
                       <span className="text-sm sm:text-base">{t('chooseVersion.express.feature2')}</span>
                     </li>
                   </ul>
-                  <Link
-                    href={`/${locale}/test?reset=true`}
-                    onClick={() => track('test_started', { version: 'express', locale })}
-                    className="block w-full bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 dark:from-blue-500 dark:to-cyan-500 dark:hover:from-blue-600 dark:hover:to-cyan-600 text-white font-bold py-4 rounded-2xl transition-all duration-300 text-center shadow-lg hover:shadow-xl transform hover:scale-[1.02]"
-                  >
-                    {t('chooseVersion.express.start')}
-                  </Link>
+                  <StartTestButton version="express" locale={locale} />
                 </div>
-              </motion.div>
+              </div>
 
-              {/* Full version - COPIE de Express avec juste couleurs changées */}
-              <motion.div
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.4 }}
-                className="group relative"
-              >
-                <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/20 to-violet-500/20 dark:from-indigo-600/20 dark:to-violet-600/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500 opacity-0 group-hover:opacity-100"></div>
-                <div className="relative bg-white/90 dark:bg-gray-900/90 backdrop-blur-lg border-2 border-gray-200/50 dark:border-gray-700/50 rounded-2xl p-5 hover:border-indigo-400 dark:hover:border-indigo-500 transition-all duration-500 transform hover:-translate-y-2 hover:shadow-2xl h-full flex flex-col">
+              {/* Full version */}
+              <div className="group relative">
+                <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/20 to-violet-500/20 dark:from-indigo-600/20 dark:to-violet-600/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
+                <div className="relative bg-white/90 dark:bg-gray-900/90 border-2 border-gray-200/50 dark:border-gray-700/50 rounded-2xl p-5 hover:border-indigo-400 dark:hover:border-indigo-500 transition-all duration-500 transform hover:-translate-y-2 hover:shadow-2xl h-full flex flex-col">
                   {/* Badge Recommandé */}
                   <div className="absolute top-3 right-3 bg-gradient-to-r from-indigo-600 to-violet-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg">
                     {t('chooseVersion.full.recommended')}
                   </div>
                   <div className="text-center mb-5">
-                    <motion.div
-                      whileHover={{ scale: 1.1, rotate: 5 }}
-                      transition={{ type: "spring", stiffness: 300 }}
-                      className="inline-flex items-center justify-center w-12 h-12 bg-gradient-to-br from-indigo-500 to-violet-600 rounded-xl mb-3 shadow-lg"
-                    >
+                    <div className="inline-flex items-center justify-center w-12 h-12 bg-gradient-to-br from-indigo-500 to-violet-600 rounded-xl mb-3 shadow-lg">
                       <BarChart3 className="w-6 h-6 text-white" />
-                    </motion.div>
+                    </div>
                     <h3 className="text-base font-bold text-gray-900 dark:text-gray-100 mb-2">{t('chooseVersion.full.title')}</h3>
                     <p className="text-xl sm:text-2xl font-black bg-gradient-to-r from-indigo-600 to-violet-600 dark:from-indigo-400 dark:to-violet-400 bg-clip-text text-transparent mb-1">{t('chooseVersion.full.duration')}</p>
                     <p className="text-xs font-medium text-gray-600 dark:text-gray-400">{t('chooseVersion.full.modules')}</p>
@@ -505,37 +332,20 @@ export default function Home() {
                       <span className="text-sm sm:text-base">{t('chooseVersion.full.feature2')}</span>
                     </li>
                   </ul>
-                  <Link
-                    href={`/${locale}/test?reset=true&version=full`}
-                    onClick={() => track('test_started', { version: 'full', locale })}
-                    className="block w-full bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-700 hover:to-violet-700 dark:from-indigo-500 dark:to-violet-500 dark:hover:from-indigo-600 dark:hover:to-violet-600 text-white font-bold py-4 rounded-2xl transition-all duration-300 text-center shadow-lg hover:shadow-xl transform hover:scale-[1.02]"
-                  >
-                    {t('chooseVersion.full.start')}
-                  </Link>
+                  <StartTestButton version="full" locale={locale} />
                 </div>
-              </motion.div>
+              </div>
             </div>
 
-            <motion.p
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.6, delay: 0.6 }}
-              className="text-center text-sm sm:text-base text-gray-600 dark:text-gray-400 mt-8 bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm p-4 rounded-2xl"
-            >
+            <p className="text-center text-sm sm:text-base text-gray-600 dark:text-gray-400 mt-8 bg-white/50 dark:bg-gray-800/50 p-4 rounded-2xl">
               {t('chooseVersion.tip')} <strong className="text-gray-900 dark:text-gray-100">{t('chooseVersion.tipText')}</strong>
-            </motion.p>
+            </p>
           </div>
-        </motion.div>
+        </div>
 
-        {/* Footer - Enhanced */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mt-16 sm:mt-20 pb-8"
-        >
-          <div className="bg-white/40 dark:bg-gray-800/40 backdrop-blur-sm rounded-2xl p-6 border border-gray-200/50 dark:border-gray-700/50">
+        {/* Footer */}
+        <div className="text-center mt-16 sm:mt-20 pb-8">
+          <div className="bg-white/40 dark:bg-gray-800/40 rounded-2xl p-6 border border-gray-200/50 dark:border-gray-700/50">
             <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400 mb-3">
               {t('footer')}
             </p>
@@ -549,7 +359,7 @@ export default function Home() {
               </svg>
             </Link>
           </div>
-        </motion.div>
+        </div>
       </div>
     </div>
   );
